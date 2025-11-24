@@ -14,6 +14,10 @@
 \usepackage{subcaption}
 \usepackage{gensymb}
 
+\def\rcurs{{\mbox{$\resizebox{.16in}{.08in}{\includegraphics{imgs/6-tetel/script-r/ScriptR.pdf}}$}}}
+\def\brcurs{{\mbox{$\resizebox{.16in}{.08in}{\includegraphics{imgs/6-tetel/script-r/BoldR.pdf}}$}}}
+\def\hrcurs{{\mbox{$\hat \brcurs$}}}
+
 \title{Fizika BSc. tétel kidolgozás}
 \author{Dobos Krisztián}
 \date{\today}
@@ -8055,15 +8059,1301 @@ Ennek a tételnek van pár következménye is:
 
 \section{Elektro- és magnetosztatika, áramkörök}
 Coulomb- és Gauss-törvény, szuperpozíció elve. Vezetők, szigetelők, dielektromos polarizáció. Kondenzátor. Magnetosztatika, Lorentz-erő. Stacionárius áram, áramköri törvények: Kirchhoff-törvények, Ohm-törvény.
+\newline
+\newline
+Jelölések:
+\begin{itemize}
+    \item $\bold{\hat{x}}, \bold{\hat{y}}, \bold{\hat{z}}$: Egységvektorok a háromdimenziós térben.
+    \item $s$: z tengelytől vett távolság.
+    \item $\bold{r}$: Pozícióvektor a térben.
+    \item $\bold{r'}$: Forrás pozícióvektora.
+    \item $\brcurs$: Forrás és a megfigyelési pont közötti vektor: $\brcurs = \bold{r} - \bold{r'}$.
+\end{itemize}
+
+\subsection{Bevezetés}
+A fizika mai állása szerint 4 különböző nagy domaint különböztetünk meg:
+\begin{itemize}
+    \item Klasszikus Mechanika
+    \item Speciális Relativitáselmélet
+    \item Kvantummechanika
+    \item Kvantum térelmélet
+\end{itemize}
+Ezek a szegmensek az univerzum különböző aspektusait írják le, és mindegyiknek megvan a maga alkalmazási területe. A klasszikus mechanika a mindennapi életben tapasztalható mozgásokat
+írja le, míg a speciális relativitáselmélet a nagy sebességgel mozgó objektumok viselkedését tárgyalja. A kvantummechanika a mikroszkopikus részecskék viselkedését írja le, míg a kvantum térelmélet
+az alapvető kölcsönhatásokat és részecskéket vizsgálja. A kvantum térelmélet a relativisztikus hatásokat próbálja ötvözni a kvantummechanikával, és főként gyorsan mozgó részecskék kölcsönhatásait vizsgálja.
+\newline
+\newline
+Az elektromágnesesség azért különleges, mert mindegyik domainben fontos szerepet játszik. A klasszikus mechanikában az elektromágneses erők hatnak a töltött részecskékre,
+a speciális relativitáselméletben az elektromágneses mezők viselkedése nagy sebességgel mozgó megfigyelők számára változik,
+a kvantummechanikában az elektromágneses kölcsönhatások befolyásolják az atomok és molekulák szerkezetét,
+és a kvantum térelméletben az elektromágneses kölcsönhatásokat fotonok közvetítik. Így az elektromágnesesség egy olyan terület, amely átfogóan jelen van a fizika különböző aspektusaiban.
+\newline
+\newline
+Az elektromágnesesség tanulmányozása során három fő területet különböztetünk meg: Az elektromosságtant, a mágnesességtant és az optikát.
+Ezek a területek történelmileg teljesen különállóak voltak, amíg az 1860-as évekre James Clerk Maxwell és kollégái rá nem jöttek, hogy a három jelenség
+teljesmértékben elválaszthatatlan egymástól. Ez egy egyesített elméletet eredményezett, amely az elektromágnesesség néven ismert. Ez az elmélet pedig mai napig a 
+fizika egyik legnagyobb eredménye, hiszen az egyik legteljesebb és legjobban működő elmélet a tudományban. Az elektromágnesesség elmélete olyan nagy hatással volt
+a fizikára, hogy a mai napig az új elméletek egyik fő inspirációjaként szolgál. Mindenki azon van, hogy megtalálja a saját területe "elektromágnesességét".
+
+\subsubsection{a négy fundamentális erő}
+A tudomány jelen állása szerint négy fundamentális kölcsönhatás létezik a természetben:
+\begin{itemize}
+    \item Gravitációs kölcsönhatás
+    \item Elektromágneses kölcsönhatás
+    \item Gyenge kölcsönhatás
+    \item Erős kölcsönhatás
+\end{itemize}
+Bármilyen más interakciót vissza lehet vezetni erre a négyre. Ezek közül viszont az erős és a gyenge kölcsönhatás borzasztó rövid távon hat csak, ezért a mindennapi életben
+nem igazán érezzük a hatásukat. Ezzel szemben a gravitációs és az elektromágneses kölcsönhatás hatása már makroszkopikus méretekben is érezhető, de a gravitáció gyengesége miatt,
+csak hatalmas mennyiségű anyag esetén válik jelentőssé (pl. bolygók, csillagok). Ezzel szemben az elektromágneses kölcsönhatás az élet minden szegmensében megjelenik, ha 
+két autó összeütközik, ha egy mágnest forgatunk, ha kinyitjuk a szemünket, akkor mindig valamiféle elektromágneses kölcsönhatást tapasztalunk.
+\newline
+\newline
+Ezeket a kölcsönhatásokat többen megpróbálták már egyesíteni (többek között az elektromágnesesség sikeressége miatt is), de jelenleg csak érdekes hipotézisek léteznek, 
+mint a húrelmélet vagy a kvantumgravitáció, de ezek kísérleti validációja egyelőre még várat magára.
+
+\subsubsection{elektrodinamika és térelmélet}
+Az elektromágnesesség fundamentális egysége a töltés. Ezek a töltések maguk körül elektromágneses teret hoznak létre, amit más töltések éreznek, és ennek megfelelően mozognak.
+Ez a kölcsönhatás kétféleképpen írható le: vagy a töltések közötti erőhatásként, vagy a töltések által létrehozott mezőként. Az első megközelítést \textbf{elektrodinamikának} nevezzük,
+míg a második megközelítést \text{térelméletnek}. Az elektrodinamika a töltések közötti erőhatásokat vizsgálja, míg a térelmélet a töltések által létrehozott mezőket és azok hatását más töltésekre.
+
+\subsubsection{A töltés}
+A fentebb említett töltésről kísérleti úton meg tudtunk határozni pár alapvető tulajdonságot:
+\begin{itemize}
+    \item Kétféle töltés létezik: pozitív és negatív. Az azonos előjelű töltések taszítják egymást, míg a különböző előjelű töltések vonzzák egymást. Azért pozitív és negatív a jelölésük, mert kioltják egymást. Ha egy pontba helyezünk egy pozitív és egy negatív töltést, akkor azok semmilyen hatást nem fejtenek ki a környezetükre.
+    \item A töltés megmaradó mennyiség. Ez azt jelenti, hogy a töltés nem keletkezik és nem vész el, csak átalakul egyik formából a másikba. Például egy semleges testet fel tudunk tölteni pozitív vagy negatív töltéssel, de a teljes töltés mennyisége a rendszerben változatlan marad. Továbbá azi is igaz, hogy a töltés lokálisan megmaradó mennyiség, tehát ha egy adott térfogatban a töltés megváltozik, akkor az csak úgy történhet, hogy a töltés áramlik be vagy ki a térfogatból.
+    \item A töltés kvantált mennyiség. Ez azt jelenti, hogy a töltés csak meghatározott diszkrét értékeket vehet fel, amelyek az elemi töltés egész számú többszörösei. Az elemi töltés értéke körülbelül $e \approx 1.602 \times 10^{-19} \, C$ (Coulomb). Ez azt jelenti, hogy bármilyen töltés mennyiség kifejezhető az elemi töltés egész számú többszöröseként: $q = n \cdot e$, ahol $n$ egy egész szám. (a kvarkok világában léteziknek töltések amik nem egész számú többszörösei az elemi töltésnek, de ezek sosem jelennek meg szabadon, csak hadronok belsejében, és ez csak azt jelenti, hogy az elemi egység kisebb mint az elektron töltése)
+\end{itemize}
 
 \subsection{Coulomb- és Gauss-törvény, szuperpozíció elve}
+Az elektromágnesesség a természet egyik alapvető kölcsönhatása, amely az elektromos töltések és az elektromos és mágneses mezők közötti kapcsolatot írja le.
+A töltés egy olyan fundamentális tulajdonsága egy részecskének mint a tömege vagy a sebessége. Az elektromágnesesség rendkívül hasonlít a mechanikában megtanult
+kölcsönhatásokhoz, hiszen itt is van egy erőhatás ami a töltött részecskék között jön létre. Az elektromágnesesség segítségével olyan alapvető dolgokat lehet leírni,
+mint az elektromos áram, a mágneses mezők, a fény és az elektromágneses hullámok.
+\newline
+\newline
+Az eketromágnesességnek két ága van, az elektomosságtan és a mágnesességtan. Az elektomosságtan az elektromos töltések és az elektromos mezők közötti kapcsolatot vizsgálja,
+míg a mágnesességtan a mágneses mezők és az elektromos töltések közötti kapcsolatot tárja fel. Ezeket tovább is lehet bontani elektrosztatikára és elektrodinamikára,
+illetve magnetosztatikára. Az elektrosztatika az elektromos töltések nyugalmi állapotban lévő kölcsönhatásait vizsgálja, míg az elektrodinamika a mozgó töltések és az időben változó elektromos mezők közötti kapcsolatot tárja fel.
+A magnetosztatika pedig a mágneses mezők nyugalmi állapotban lévő kölcsönhatásait vizsgálja.
+\newline
+\newline
+Az elektroszatikában fel lehet írni néhány kvalitatív szabályt ami leírja a töltések közötti kölcsönhatásokat:
+\begin{itemize}
+    \item Az azonos előjelű töltések taszítják egymást.
+    \item A különböző előjelű töltések vonzzák egymást.
+    \item A töltések közötti erő csökken a távolsággal.
+\end{itemize}
+Ezen kivül fel tudunk írni pár kvantitatív összefüggést is:
+\begin{itemize}
+    \item Az erő a két test összekötő vonalában hat.
+    \item Az erő nagysága egyenesen arányos a töltések nagyságával.
+    \item Az erő nagysága fordítottan arányos a töltések közötti távolság négyzetével.
+\end{itemize}
+Ezeket az összefüggéseket először Coulomb fogalmazta meg 1785-ben, és az ő nevét viseli a következő törvény:
+\begin{quote}
+    Két pontszerű töltés között ható erő nagysága egyenesen arányos a töltések nagyságával, fordítottan arányos a távolságuk négyzetével, és a két töltés közötti egyenes mentén hat.
+\end{quote}
+Matematikailag ezt a következőképpen tudjuk felírni (SI mértékegységrendszerben):
+\begin{equation}
+    \bold{F_{12}} = - k \cdot \frac{q_1 q_2}{r^2}  \frac{\bold{r_{12}}}{|\bold{r_{12}}|} = \frac{1}{4 \pi \varepsilon_0} \cdot \frac{q Q}{\rcurs^2}  \hrcurs
+\end{equation}
+Ahol $Q$ a teszt töltés, $\brcurs = \bold{r'} - \bold{r}$ a töltések közötti vektor és $k$ a Coulomb-állandó ami a vákuumbeli permittivitással van összefüggésben:
+\begin{equation}
+    k = \frac{1}{4 \pi \varepsilon_0} \qquad \varepsilon_0 \approx 8.854 \times 10^{-12} \frac{F}{m}
+\end{equation}
+Ahol $\varepsilon_0$ a vákuumbeli permittivitás, ami egy anyagi állandó, és a vákuum elektromos tulajdonságait jellemzi. A Coulomb-törvény tehát leírja, hogy két pontszerű töltés között
+milyen erőhatás jön létre, és ez az erőhatás a töltések nagyságától és a közöttük lévő távolságtól függ. Látható, hogy a Coulomb-törvény formailag teljesen azonos a gravitációs törvénnyel,
+ami a tömegek közötti kölcsönhatást írja le, csak itt a töltések helyett tömegekről beszélünk, és a gravitációs állandó szerepel a Coulomb-állandó helyett.
+A Coulomb erő nagysága:
+\begin{equation}
+    F = |\bold{F_{12}}| = k \cdot \frac{|q_1 q_2|}{r^2}
+\end{equation}
+Ahol a vektoriális mennyiség a két töltés közötti egyenes irányába mutat, és az előjele határozza meg, hogy vonzó vagy taszító erőről van-e szó.
+Ebből pedig látjuk, hogy mivel a Coulomb-erő mértékegysége Newton, vagyis $N = \frac{kg \cdot m}{s^2}$, ezért a töltés mértékegysége a következőképpen alakul:
+\begin{equation}
+    \left[q\right] = C = A \cdot s = \frac{N \cdot m^2}{V} \qquad C: \text{Coulomb}
+\end{equation}
+Ahol $A$ az amper, ami az elektromos áram mértékegysége, és $V$ a volt, ami az elektromos feszültség mértékegysége. Az Amper és a Volt pedig a teljesitmény fogalmából jön,
+ugyanis:
+\begin{equation}
+    AV = W = J/s = \frac{N \cdot m}{s}
+\end{equation}
+
+\subsubsection{szuperpozíció}
+A Coulomb-törvényt több részecskére is ki tudjuk terjeszteni a \textbf{szuperpozíció elve} alapján. Ez az elv kimondja, hogy ha több töltés van jelen egy rendszerben,
+akkor az egyes töltések által keltett elektromos mezők összeadódnak, és az összesített mező határozza meg a rendszer elektromos tulajdonságait. Ez azt jelenti, hogy
+ha van egy töltés $q_1$ ami hat egy másik töltésre $q_2$, és van egy harmadik töltés $q_3$ is a rendszerben, akkor az $q_3$ töltés által keltett mező is hat az $q_2$ töltésre,
+és az összesített mező határozza meg az $q_2$ töltésre ható erőt Matematikailag ezt a következőképpen tudjuk felírni:
+\begin{equation}
+    \bold{F_i} = \sum_{j} - \frac{1}{4 \pi \varepsilon_0} \cdot \frac{q_i q_j}{|r_j - r_i|^2} (r_j - r_i) = q_i' \underbrace{\sum_{j} - \frac{1}{4 \pi \varepsilon_0} \cdot \frac{q_j}{|r_j - r_i|^2} (r_j - r_i)}_{térerősség} = \sum_j \bold{F_{ij}}
+\end{equation}
+Ebben az egyenletben megjelenik a \textbf{térerősség} fogalma is, ami az elektromos mező erősségét jellemzi egy adott pontban. A térerősség mértékegysége $N/C$ vagy $V/m$:
+\begin{equation}
+    \left[E\right] = \frac{N}{C} = \frac{V}{m}
+\end{equation}
+\begin{equation}
+    \bold{E}(\bold{r}) = \frac{\bold{F}( \bold{r})}{q} \qquad E_{ii} = 0
+\end{equation}
+A térerősség egy darab vektor ami megadja, hogy egy adott pontban mekkora erő hat egy egységnyi töltésre. A térerősség iránya pedig megegyezik a pozitív töltésre ható erő irányával.
+Ahhoz, hogy a térerősséget ki tudjuk számolni egy adott pontban, össze kell adnunk az összes töltés által keltett térerősséget abban a pontban:
+\begin{equation}
+    \bold{E}(\bold{r}) = \sum_{i} \bold{E_i}(\bold{r}) = \sum_{i} \frac{1}{4 \pi \varepsilon_0} \cdot \frac{q_i}{|\bold{r} - \bold{r_i}|^2} \cdot \frac{\bold{r} - \bold{r_i}}{|\bold{r} - \bold{r_i}|} = \frac{1}{4 \pi \varepsilon_0} \sum_{i} \frac{q_i}{\rcurs_i^2} \hrcurs_i
+\end{equation}
+De itt feltételezük, hogy a töltések pontszerűek. Ha viszont egy folyamatos töltéseloszlásról van szó, akkor integrálni az adott geometria felett:
+\begin{equation}
+    \bold{E}(\bold{r}) = \frac{1}{4 \pi \varepsilon_0} \int \frac{1}{\rcurs^2} \hrcurs dq
+\end{equation}
+Ez különböző geometriai eloszlások esetén különböző integrálokat jelent:
+\begin{itemize}
+    \item Ha egy vonal mentén helyezkednek el a töltések, akkor egy vonalintegrált kell számolni:
+    \begin{equation}
+        \bold{E}(\bold{r}) = \frac{1}{4 \pi \varepsilon_0} \int_{l} \frac{1}{\rcurs^2} \hrcurs \lambda dl
+    \end{equation}
+    Ahol $\lambda$ a vonal menti töltéssűrűség.
+    \item Ha egy felületen helyezkednek el a töltések, akkor egy felületi integrált kell számolni:
+    \begin{equation}
+        \bold{E}(\bold{r}) = \frac{1}{4 \pi \varepsilon_0} \int_{f} \frac{1}{\rcurs^2} \hrcurs \sigma df
+    \end{equation}
+    Ahol $\sigma$ a felületi töltéssűrűség.
+    \item Ha egy térfogatban helyezkednek el a töltések, akkor egy térfogati integrált kell számolni:
+    \begin{equation}
+        \boxed{\bold{E}(\bold{r}) = \frac{1}{4 \pi \varepsilon_0} \int_{V} \frac{1}{\rcurs^2} \hrcurs \rho dV}
+    \end{equation}
+    Ahol $\rho$ a térfogati töltéssűrűség.
+\end{itemize}
+Gyakran ezt a térfogati integrált nevezik Coulomb-törvénynek, ugyanis a valóságban leggyakrabban ezzel az alakkal találkozunk. Ez a törvény tehát leírja, hogy egy adott pontban
+milyen térerősség jön létre egy adott töltéseloszlás hatására.
+
+\subsubsection{Gauss-törvény}
+Teoretikusan a Coulomb-törvény segítségével teljes mértékben le tudjuk írni az elektrosztatikai jelenségeket, de a gyakorlatban ez sokszor nehézkes, mert 
+az integrálok megoldása sokszor nagyon nehéz. Ezért az elektrosztatika többi része arra épül, hogy a Coulomb-törvényből kiindulva egyszerűbb módszereket találjunk a térerősség kiszámítására. Ehhez azt kell megvizsgálni, hogy milyen más módokkal lehet egy teret vizsgálni azon felül, hogy minden pontjában kiszámoljuk a térerősséget.
+Erre vannak a vektor-kalkulus módszerei, mint például a divergencia és a rotáció, amik segítségével, ha az egész teret nem is, bizonyos aspektusait jellemezhetjük, amik megkönnyítik 
+a térerősség vizsgálatát. 
+Vegyük elsőként a legegyszerűbb esetet, amikor egy darab töltés van a koordináta rendszerünk origójában. Ekkor a térerősség a Coulomb-törvény alapján a következőképpen alakul egy tetszőleges $\bold{r}$ pontban:
+\begin{equation}
+    \bold{E}(\bold{r}) = \frac{1}{4 \pi \varepsilon_0} \cdot \frac{q}{r^2} \bold{\hat{r}}
+\end{equation}
+A teret ekkor a pontból radiálisan kifelé mutató vektorok jellemzik, amik nagysága a távolság négyzetével csökken. Természetesen más töltéskonfiguciók is elképzelhetőek,
+amiknek megvan a saját térerősség eloszlása:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{imgs/6-tetel/erovonalak.png}
+    \caption{Elektromos erővonalak különböző töltéseloszlások esetén}
+\end{figure}
+Ezeket a térerősség eloszlásokat vektormezőknek nevezzük, hiszen minden pontban van egy vektor ami jellemzi a térerősséget. Ezeket a vektormezőket erővonalakkal is lehet jellemezni,
+amik kvázi "összekötik" a térerősség vektorait egy irány mentén. Ekkor a térerősség nagyságát a vonalak sűrűsége jellemzi, hiszen minél sűrűbben vannak az erővonalak, annál nagyobb a térerősség. Ha kijelülünk egy zárt felületet a térben, akkor meg tudjuk számolni, hogy hány erővonal lép ki vagy be a felületen. Ezt a mennyiséget \textbf{fluxusnak} nevezzük, és a következőképpen számolható ki:
+\begin{equation}
+    \Phi = \int_S \bold{E} d\bold{a}
+\end{equation}
+Ahol $d\bold{a}$ a felület egy kis darabjának vektor mennyisége, ami merőleges a felületre és nagysága megegyezik a felületdarab területével. A fluxus tehát megadja, hogy mennyi erővonal halad át egy adott felületen. Természetesen a valóságban "végtelen" erővonal van, de a fluxus fogalma akkor is jól használható, hiszen a térerősség nagysága arányos az erővonalak sűrűségével, ha pedig csak "mintát veszek" az erővonalakból, akkor azoknak már van értelmezhető száma.
+Tehát az elektrosztatikus tér erővonalaira a következő szabályok érvényesek:
+\begin{itemize}
+    \item Az erővonalak folytonosak és a pozitív töltésektől indulnak és a negatív töltések felé tartanak. $\oint \vec{E} d\vec{f} = \frac{q}{\varepsilon_0}$
+    \item Az erővonalak soha nem keresztezik egymást.
+    \item Az erővonalak sűrűsége arányos a térerősséggel ($E$).
+    \item Az erővonalak száma a felületen keresztül arányos a felület által bezárt töltéssel.
+    \item Az erővonalak nem alkotnak zárt hurkot. $\oint \bold{E} d\bold{r} = 0$
+    \item Az erővonalak iránya megegyezik a térerősség irányával.
+\end{itemize}
+
+A fluxus definíciójából következik, hogy egy zárt felületen a fluxus csak akkor lehet nem nulla, ha a felületből indul ki vagy oda érkezik egy erővonal. Ez pedig csak akkor történhet meg, ha a felület által bezárt térben van töltés. Ez a lényege a Gauss-törvénynek, ami a következőképpen szól:
+\begin{quote}
+    Az elektromos térerősség fluxusa egy zárt felületen keresztül egyenesen arányos a felület által bezárt töltéssel.
+\end{quote}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{imgs/6-tetel/fluxus.png}
+    \caption{A fluxus értéke zárt felület esetén csak akkor különbözik nullától, ha a felületből indul ki vagy oda érkezik egy erővonal}
+\end{figure}
+Tehát egy ponttöltés esetén, ha egy gömbfelületet veszünk körülötte, akkor a fluxus értéke a gömbfelületen keresztül a következőképpen számolható ki:
+\begin{equation}
+    \Phi = \oint_S \bold{E} d\bold{a} = \oint_S \frac{1}{4 \pi \varepsilon_0} \cdot \frac{q}{r^2} \bold{\hat{r}} d\bold{a} = \frac{q}{4 \pi \varepsilon_0 r^2} \oint_S \bold{\hat{r}} d\bold{a} = \frac{q}{4 \pi \varepsilon_0 r^2} \cdot 4 \pi r^2 = \frac{q}{\varepsilon_0}
+\end{equation}
+Ez az eredmény független a gömb sugárától, hiszen a $r^2$ tagok kiesnek. Ez azt jelenti, hogy bármilyen zárt felület esetén, ami egy ponttöltést foglal magába, a fluxus értéke ugyanaz lesz:
+\begin{equation}
+    \Phi = \oint_S \bold{E} d\bold{a} = \frac{q}{\varepsilon_0}
+\end{equation}
+Ez az eredmény általánosítható bármilyen töltéseloszlásra, hiszen a szuperpozíció elve alapján az összes töltés által keltett térerősség összeadódik, és a fluxus is összeadódik:
+\begin{equation}
+    \boxed{\Phi = \oint_S \bold{E} d\bold{a} = \frac{Q_{in}}{\varepsilon_0}}
+\end{equation}
+Ahol $Q_{in}$ a felület által bezárt összes töltés. Ez a \textbf{Gauss-törvény} kvantitatív megfogalmazása, ami az elektrosztatika egyik alapvető törvénye. A Gauss-törvény segítségével sokkal egyszerűbben lehet kiszámolni a térerősséget bizonyos szimmetrikus töltéseloszlások esetén, mint a Coulomb-törvényből kiindulva.
+\newline
+\newline
+A Gauss-törvényt egyszerűen meg lehet fogalmazni differenciális alakban is a vektor-kalkulus segítségével. Ehhez használjuk a divergencia tételt, ami kimondja, hogy egy vektormező fluxusa egy zárt felületen keresztül egyenlő a mező divergenciájának térfogati integráljával a felület által bezárt térfogatban:
+\begin{equation}
+    \oint_S \bold{E} d\bold{a} = \int_V (\nabla \cdot \bold{E}) dV
+\end{equation}
+Ezt behelyettesítve a Gauss-törvénybe:
+\begin{equation}
+    \int_V (\nabla \cdot \bold{E}) dV = \frac{{Q_{in}}}{\varepsilon_0} = \frac{1}{\varepsilon_0} \int_V \rho dV
+\end{equation}
+Mivel ez az egyenlet bármilyen térfogat esetén igaz, ezért a két integrandusnak is egyenlőnek kell lennie:
+\begin{equation}
+    \boxed{\nabla \cdot \bold{E} = \frac{\rho}{\varepsilon_0}}
+\end{equation}
+Ez a Gauss-törvény differenciális alakja, ami azt mondja meg, hogy a térerősség divergenciája egyenlő a töltéssűrűség osztva a vákuumbeli permittivitással. Ez az egyenlet is az elektrosztatika egyik alapvető törvénye, és sokszor használják a térerősség kiszámítására különböző töltéseloszlások esetén.
+\newline
+\newline
+A Gauss-törvény mindig igaz, de mindig hasznos. Ha a töltéseloszlás nem szimmetrikus vagy a térerősség és a felület normálisa nem párhuzamos, akkor a Gauss-törvény alkalmazása nem egyszerűsíti a feladatot. Ezért olyan esetekben érdemes használni, ahol szimmetria van jelen a problémában:
+\begin{itemize}
+    \item gömbszimmetria: A Gauss-felület egy koncentrikus gömb
+    \item hengerszimmetria: A Gauss-felület egy henger
+    \item síkszimmetria: A Gauss-felület egy téglalapú doboz ami felfelé és lefelé is pont ugyanannyira lóg ki a síkból
+\end{itemize}
+
+\subsubsection*{Példa: Egyenletesen töltött tömör gömb térerőssége}
+Vegyünk egy $R$ sugarú, egyenletesen töltött tömör gömböt, aminek a töltése $q$. Határozzuk meg a térerősséget a gömb belsejében és kívül.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{imgs/6-tetel/gomb-felulet.png}
+    \caption{Gömbfelület ábrázolása}
+\end{figure}
+Először nézzük meg a gömbön kívüli pontokat ($r > R$). Ebben az esetben a gömb teljes töltése be van zárva egy $r$ sugarú gömbfelület által. A Gauss-törvény alapján a térerősség nagysága:
+\begin{equation}
+    \oint_S \bold{E} d\bold{a} = \frac{Q_{in}}{\varepsilon_0} = \frac{q}{\varepsilon_0}
+\end{equation}
+Mivel a gömb szimmetrikus, ezért a térerősség iránya radiálisan kifelé mutat, és nagysága állandó a gömbfelületen. Ezért a térerősség párhuzamos a felület normálvektorával, és a kettejük közötti szorzat egyszerűsüdik:
+\begin{equation}
+    \bold{E} \cdot d\bold{a} = |\bold{E}| \cdot |d\bold{a}| \cdot \cos(0) = E \cdot da
+\end{equation}
+Ezt visszahelyettesítve a Gauss-törvénybe:
+\begin{equation}
+    E \oint_S da = \frac{q}{\varepsilon_0} \implies E \cdot 4 \pi r^2 = \frac{q}{\varepsilon_0} \implies E = \frac{1}{4 \pi \varepsilon_0} \cdot \frac{q}{r^2}
+\end{equation}
+Tehát a térerősség a gömbön kívül megegyezik egy ponttöltés térerősségével, mintha a teljes töltés a gömb középpontjában lenne elhelyezve.
+\newline
+\newline
+Most nézzük meg a gömb belsejében lévő pontokat ($r < R$). Ebben az esetben csak a gömb belsejében lévő töltés járul hozzá a fluxushoz. Mivel a töltés egyenletesen oszlik el, a belső töltés mennyisége:
+\begin{equation}
+    Q_{in} = Q \cdot \frac{V_{in}}{V_{total}} = Q \cdot \frac{\frac{4}{3} \pi r^3}{\frac{4}{3} \pi R^3} = Q \cdot \frac{r^3}{R^3}
+\end{equation}
+A Gauss-törvény alapján a térerősség nagysága a gömb belsejében:
+\begin{equation}
+    E \cdot 4 \pi r^2 = \frac{Q_{in}}{\varepsilon_0} = \frac{Q}{\varepsilon_0} \cdot \frac{r^3}{R^3} \implies E = \frac{1}{4 \pi \varepsilon_0} \cdot \frac{Q}{R^3} \cdot r
+\end{equation}
+Tehát a térerősség a gömb belsejében lineárisan nő a távolsággal a középponttól, míg a gömbön kívül a térerősség a távolság négyzetével csökken.
+
+\subsubsection{Elektromos tér rotációja}
+Láttuk, hogy a térerősség divergenciája egy nagyon fontos összefüggésre vezet. De mi a helyzet a rotációval? A rotáció egy vektortérre értelmezhető művelet, és azt adja meg, hogy egy adott pontban
+mennyire "forog" a vektortér. Minél nagyobb a rotáció, annál inkább egy őrvényre hasonlít a mező a pont körül. Ez a forgása a mezőnek pedig Később, a magnetosztatikában nagyon fontos szerepet fog játszani.
+
+Nézzük meg ismét a ponttöltés esetét. A Coulomb-törvény alapján a térerősség a következőképpen alakul egy tetszőleges $\bold{r}$ pontban:
+\begin{equation}
+    \bold{E}(\bold{r}) = \frac{1}{4 \pi \varepsilon_0} \cdot \frac{q}{r^2} \bold{\hat{r}}
+\end{equation}
+Most számoljuk ki a térerősséget egy vonal mentén a töltés körül:
+\begin{equation}
+    \int_{a}^{b} \bold{E} d\bold{l}
+\end{equation}
+Mivel a térerősségnek gömbszimmetriája van, ezért használjunk gömbi koordinátákat, ezért $\bold{l} = dr \bold{\hat{r}} + r d\theta \bold{\hat{\theta}} + r \sin\theta d\phi \bold{\hat{\phi}}$, szóval:
+\begin{equation}
+    \int_{a}^{b} \bold{E} d\bold{l} = \int_{a}^{b} \frac{1}{4 \pi \varepsilon_0} \cdot \frac{q}{r^2} \bold{\hat{r}} (dr \bold{\hat{r}} + r d\theta \bold{\hat{\theta}} + r \sin\theta d\phi \bold{\hat{\phi}}) = \int_{a}^{b} \frac{1}{4 \pi \varepsilon_0} \cdot \frac{q}{r^2} dr
+\end{equation}
+Mivel csak a radiális komponens marad meg, ezért az integrál eredménye:
+\begin{equation}
+    \int_{a}^{b} \bold{E} d\bold{l} = \frac{q}{4 \pi \varepsilon_0} \left( -\frac{{1}}{r} \right)_{a}^{b} = \frac{q}{4 \pi \varepsilon_0} \left( \frac{1}{a} - \frac{1}{b} \right)
+\end{equation}
+Most nézzük meg, mi történik, ha egy zárt görbén számoljuk az integrált. Például egy kör mentén a töltés körül:
+\begin{equation}
+    \oint \bold{E} d\bold{l} = \oint \frac{1}{4 \pi \varepsilon_0} \cdot \frac{q}{r^2} \bold{\hat{r}} (dr \bold{\hat{r}} + r d\theta \bold{\hat{\theta}} + r \sin\theta d\phi \bold{\hat{\phi}}) = 0
+\end{equation}
+Mivel a kör mentén $a = b$, ezért az integrál értéke nulla lesz. Ez azt jelenti, hogy a térerősségnek nincs rotációja a ponttöltés esetén:
+\begin{equation}
+    \boxed{\nabla \times \bold{E} = 0}
+\end{equation}
+Ez az eredmény általánosítható bármilyen töltéseloszlásra is, hiszen a szuperpozíció elve alapján az összes töltés által keltett térerősség összeadódik, és az integrál is összeadódik:
+\begin{equation}
+    \oint \bold{E} d\bold{l} = 0
+\end{equation}
+Tehát a térerősség rotációja mindig nulla az elektrosztatikában. Ez a \textbf{Faraday-törvény} elektrosztatikai esete, ami azt mondja meg, hogy az elektromos mező nem rendelkezik örvénylő komponenssel nyugalmi töltések esetén.
+
+\subsubsection{Elektromos potenciál}
+Az, hogy az elektromos térerősség rotációja nulla, nagyon komoly implikációkkal jár. A tér nem lehet akármilyen függvény, csak olyan ami ennek a feltételnek megfelel.
+Ez azt is jelenti, hogy két pont között a vonalintegrál értéke csak a két pont helyétől függ, és nem attól az úttól amin végighaladtunk. Ha nem így lenne, akkor egy úton elmehetnénk $a$ pontból $b$ pontba, majd vissza $a$ pontba egy másik úton, és az integrál értéke nem lenne nulla, ami ellentmondana a rotáció nulla értékének.
+Tehát egy nyugvó töltés esetén a térerősség mindig konzervatív mezőt alkot. Ez lehetővé teszi, hogy felírjunk egy általános függvényt:
+\begin{equation}
+    V(\bold{r}) = - \int_{r_0}^{r} \bold{E} d\bold{l}
+\end{equation}
+Ahol $V(\bold{r})$ az elektromos potenciál egy adott pontban (más néven \textbf{elektromos feszültség}), és $r_0$ egy referencia pont, ahol a potenciált nullának vesszük. Az elektromos potenciál mértékegysége a volt ($V$), ami megegyezik egy joule per coulomb ($J/C$):
+\begin{equation}
+    \left[V\right] = V = \frac{J}{C} = \frac{N \cdot m}{C}
+\end{equation}
+Látható, hogy a potenciál csak a kezdeti és a végponttól függ, és nem az úttól amin végighaladtunk. Ez azt jelenti, hogy a potenciál egy skalár mező, ami minden pontban egy számot rendel hozzá.
+\begin{equation}
+    V(\bold{b}) - V(\bold{a}) = - \int_{r_0}^{b} \bold{E} d\bold{l} + \int_{r_0}^{a} \bold{E} d\bold{l} = - \int_{r_0}^{b} \bold{E} d\bold{l} + \int_{r_0}^{a} \bold{E} d\bold{l} = - \int_{a}^{b} \bold{E} d\bold{l} 
+\end{equation}
+De a gradiens fundamentális elvéből következik, hogy egy skalár mező gradiensének vonalintegrálja a mező értékének különbségét adja meg a két pont között:
+\begin{equation}
+    \int_{a}^{b} \nabla V d\bold{l} = V(\bold{b}) - V(\bold{a})
+\end{equation}
+Ezt összevetve az előző egyenlettel kapjuk, hogy a térerősség és a potenciál között a következő összefüggés áll fenn:
+\begin{equation}
+    \boxed{\bold{E} = - \nabla V}
+\end{equation}
+Ez az összefüggés nagyon fontos, hiszen megmutatja, hogy a térerősség a potenciál gradiensének negatívja. Ez azt jelenti, hogy a térerősség iránya mindig a potenciál csökkenésének irányába mutat.
+A negatív előjel konvenció kérdése, hiszen azt jelenti, hogy a pozitív töltés a magasabb potenciál felől a alacsonyabb potenciál felé mozog. Ez az összefüggés lehetővé teszi, hogy a térerősséget a potenciálból számoljuk ki, ami sokszor egyszerűbb feladat, mint közvetlenül a térerősségből indulni ki.
+\newline
+\newline
+Az elektromos potenciál ereje abban rejlik, hogy a vektormezőkön alapuló térerősséget egy skalár mezővel tudjuk jellemezni. Ez sokszor leegyszerűsíti a problémákat, hiszen a skalár mezők kezelése általában egyszerűbb, mint a vektormezőké.
+Felmerülhet a kérdés, hogy hogyan tudja egy sima skalár aszt, hogy tartalmazza a térerősség vektormennyiség információit. A válasz az, hogy a térerősség komponensei nem függetlenek egymástól, hiszen köti őket a $\nabla \times \bold{E} = 0$ összefüggés. Ez azt jelenti, hogy
+hogy a térerősség komponensei között fennáll a következő kapcsolat:
+\begin{equation}
+    \frac{\partial E_x}{\partial y} = \frac{\partial E_y}{\partial x}, \quad \frac{\partial E_y}{\partial z} = \frac{\partial E_z}{\partial y}, \quad \frac{\partial E_z}{\partial x} = \frac{\partial E_x}{\partial z}
+\end{equation}
+Ez a kapcsolatot használja ki a potenciál, amiben csak egyértelművé válik ez a kötöttség.
+\newline
+\newline
+Azt is érdemes lehet megjegyezni, hogy a potenciálra is érvényes a szuperpozíció elve. Ez azt jelenti, hogy ha több töltés van jelen egy rendszerben, akkor az egyes töltések által keltett potenciálok összeadódnak, és az összesített potenciál határozza meg a rendszer elektromos tulajdonságait. Matematikailag ezt a következőképpen tudjuk felírni:
+\begin{equation}
+    V(\bold{r}) = \sum_{i} V_i(\bold{r}) = \sum_{i} \frac{1}{4 \pi \varepsilon_0} \cdot \frac{q_i}{|\bold{r} - \bold{r_i}|}
+\end{equation}
+Ha viszont egy folyamatos töltéseloszlásról van szó, akkor integrálni az adott geometria felett:
+\begin{equation}
+    V(\bold{r}) = \frac{1}{4 \pi \varepsilon_0} \int \frac{1}{\rcurs} dq
+\end{equation}
+Viszont ez egy skaláris összegzés ami lényegesen egyszerűbb...
+
+\subsubsection*{Példa: Egy egyenletesen töltött gömbhély potenciálja}
+Vegyünk egy $R$ sugarú, egyenletesen töltött gömbhéjat, aminek a töltése $q$. Határozzuk meg a potenciált a gömbhéj belsejében és kívül.
+A Gauss-törvény alapján már kiszámoltuk a térerősséget mindkét esetben:
+\begin{equation}
+    E(r) = \begin{cases}
+        \frac{1}{4 \pi \varepsilon_0} \cdot \frac{q}{r^2}, & r > R \\
+        0, & r < R
+    \end{cases}
+\end{equation}
+Most használjuk fel ezt az eredményt a potenciál kiszámítására. Először nézzük meg a gömbhéjon kívüli pontokat ($r > R$). Ebben az esetben a potenciál a következőképpen számolható ki:
+\begin{equation}
+    V(r) = - \int_{\infty}^{r} E(r') dr' = - \int_{\infty}^{r} \frac{1}{4 \pi \varepsilon_0} \cdot \frac{q}{r'^2} dr' = \frac{{q}}{4 \pi \varepsilon_0 r}
+\end{equation}
+Most nézzük meg a gömbhéj belsejében lévő pontokat ($r < R$). Ebben az esetben a térerősség nulla, ezért a potenciál a következőképpen számolható ki:
+\begin{equation}
+    V(r) = V(R) - \int_{R}^{r} E(r') dr' = V(R) - \int_{R}^{r} 0 \, dr' = V(R) = \frac{q}{4 \pi \varepsilon_0 R}
+\end{equation}
+
+\subsubsection{Poisson és Laplace egyenletek}
+Az elektromos potenciál és a térerősség közötti kapcsolatot már ismertük:
+\begin{equation}
+    \bold{E} = - \nabla V
+\end{equation}
+Ezt behelyettesítve a Gauss-törvény differenciális alakjába:
+\begin{equation}
+    \nabla \cdot \bold{E} = \frac{\rho}{\varepsilon_0} \implies \nabla \cdot (- \nabla V) = \frac{\rho}{\varepsilon_0} \implies - \nabla^2 V = \frac{\rho}{\varepsilon_0}
+\end{equation}
+Ahol $\nabla^2$ a Laplace-operátor, ami a vektor-kalkulusban a divergencia és a gradiens műveletek kombinációja (szokás $\Delta$ jelölést is használni). Ez az egyenlet a \textbf{Poisson-egyenlet}, ami az elektromos potenciál és a töltéssűrűség közötti kapcsolatot írja le:
+\begin{equation}
+    \boxed{\nabla^2 V = - \frac{\rho}{\varepsilon_0}}
+\end{equation}
+Ha a térben nincs töltés ($\rho = 0$), akkor a Poisson-egyenlet leegyszerűsödik a \textbf{Laplace-egyenletre}:
+\begin{equation}
+    \boxed{\nabla^2 V = 0}
+\end{equation}
+Mind a Poisson, mind a Laplace egyenlet másodrendű parciális differenciálegyenlet, és megoldásukhoz általában határfeltételeket kell megadni. Ezek az egyenletek nagyon fontosak az elektrosztatikaban, hiszen segítségükkel lehet meghatározni a potenciált és a térerősséget különböző töltéseloszlások és geometriai konfigurációk esetén.
+
+A teljesség kedvéért nézzük meg a potenciál rotációját is:
+\begin{equation}
+    \nabla \times \bold{E} = \nabla \times (- \nabla V) = - (\nabla \times \nabla V) = 0
+\end{equation}
+Ez az eredmény megerősíti, hogy a potenciálból származtatt térerősség mindig konzervatív mezőt alkot, hiszen a rotációja nulla. Ez már csak abból is következik, hogy egy gradiens rotációja mindig nulla.
+
+A poission-egyenlettel csak egy probléma van, hogy a segítségével a töltéseloszlást tudjuk megadni, ha ismerjük a potenciált. A valóságban viszont pont a forditottjára van szükségünk, hiszen általában azt tudjuk, hogy
+hol vannak a töltések, és a potenciált szeretnénk megkapni (amiből aztán a téresősséget már könnyen meghatározhatjuk). Ehhez "invertálni" kéne a Poisson-egyenletet. Ehhez vegyük a potenciál megoldását egy folytonos eloszlásra:
+\begin{equation}
+    V(\bold{r}) = \frac{1}{4 \pi \varepsilon_0} \int_{V} \frac{1}{\rcurs} dq
+\end{equation}
+Ez egy térfogatra nézve $dq =\rho dV$, így:
+\begin{equation}
+    \boxed{V(\bold{r}) = \frac{1}{4 \pi \varepsilon_0} \int_{V} \frac{1}{\rcurs} \rho dV}
+\end{equation}
+Ez az egyenlet tehát megadja a potenciált egy adott töltéseloszlás hatására. Ez az egyenlet a Poisson-egyenlet "inverze", hiszen ha ezt az egyenletet használjuk, akkor a töltéseloszlásból kiindulva meg tudjuk határozni a potenciált.
+Ez az egyenlet nagyon hasonlít a térerősség Coulomb-törvényére, csak itt a skalár potenciált számoljuk ki egy integrál segítségével. 
+
+Fontos megjegyezni, hogy ez a számolás csak akkor érvényes, hogy ha a $r_0$ referencia-pont a végtelenben van, ahol a potenciált nullának vesszük. Ha más referencia pontot választunk, akkor megjelenek konstans tagok, amik a térerősséget nem befolyásolják, de a potenciált eltolják.
+
+\subsubsection{Elektromos tér munkavégzése}
+Az elektromos térerősség munkavégzését már korábban is érintettük, amikor a potenciált definiáltuk. Ismételjük át ezt a fogalmat részletesebben. Tegyük fel, hogy egy $q$ töltésű részecskét mozgatunkunk az elektromos térben egy $a$ pontból egy $b$ pontba. A munkavégzés, amit a térerősség végez a részecskén,
+amikor az $a$ pontból a $b$ pontba mozog, a következőképpen számolható ki:
+\begin{equation}
+    W_{a \to b} = \int_{a}^{b} \bold{F} d\bold{l} = \int_{a}^{b} q \bold{E} d\bold{l} = q \int_{a}^{b} \bold{E} d\bold{l}
+\end{equation}
+Ezt az előzőekben már kiszámoltuk, és a potenciál különbségét kaptuk eredményül:
+\begin{equation}
+    W_{a \to b} = q (V(\bold{a}) - V(\bold{b}))
+\end{equation}
+Ez az eredmény azt jelenti, hogy az elektromos térerősség munkavégzése a részecskén csak a kezdeti és a végpont potenciáljától függ, és nem az úttól amin végighaladtunk. Ez is megerősíti, hogy a térerősség konzervatív mezőt alkot.
+\newline
+\newline
+Ez az eredmény fontos szerepet játszik az elektromos potenciális energia fogalmában. Az elektromos potenciális energia ($U$) egy adott töltés ($q$) helyzetéhez kapcsolódó energia, ami a töltés és az elektromos mező közötti kölcsönhatásból származik. Az elektromos potenciális energia a következőképpen definiálható:
+\begin{equation}
+    U(\bold{r}) = q V(\bold{r})
+\end{equation}
+Ez azt jelenti, hogy az elektromos potenciális energia egy adott pontban a töltés és a potenciál szorzata. Ha egy töltést mozgatunk az elektromos térben, akkor a potenciális energia változása a következőképpen számolható ki:
+\begin{equation}
+    \Delta U = U(\bold{b}) - U(\bold{a}) = q (V(\bold{b}) - V(\bold{a})) = - W_{a \to b}
+\end{equation}
+Ez az eredmény azt jelenti, hogy amikor a térerősség munkát végez a töltésen, akkor a potenciális energia csökken, és fordítva. Ez az összefüggés az energia megmaradásának elvéből következik, ami azt mondja meg, hogy az energia nem vész el, csak átalakul egyik formából a másikba.
+
+\subsection{Vezetők, szigetelők, dielektromos polarizáció. Kondenzátor}
+\subsubsection{Vezetők és szigetelők}
+Szigetelőknek azokat az anyagokat nevezzük, amelyekben az elektromos töltések nem képesek szabadon mozogni. Ezek az anyagok általában nagy ellenállással rendelkeznek, és az elektromos mező hatására csak nagyon kis mértékben képesek töltést vezetni. Példák szigetelő anyagokra a műanyagok, üveg, kerámia és számos más anyag.
+Ezekben az anyagokban minden töltés hozzá van kötve az atomokhoz vagy molekulákhoz, és nem képesek szabadon mozogni az anyagban. Emiatt csak nagyon nagy térerősség hatására képesek töltést vezetni, és általában nem használják őket elektromos vezetőként. Ennek ellenére ezek
+az anyagok is képesek elektromos jelenségekre, ugyanis a térerősség hatására képesek a töltések elmozdulni az atomokon belül, ami dielektromos polarizációt eredményez, ami később részletesen tárgyalunk.
+\newline
+\newline
+Vezetőknek ezzel ellentétben azokat az anyagokat nevezzük, amelyekben az elektromos töltések szabadon képesek mozogni. Ezek az anyagok általában alacsony ellenállással rendelkeznek, és az elektromos mező hatására könnyen képesek töltést vezetni. Példák vezető anyagokra a fémek, mint például a réz, alumínium és ezüst.
+Léteznek folyadék és gáz vezetők is, de ezekben ionok végzik az áramlást a töltések helyett. A vezetőkben a töltések szabadon mozognak az anyagban, és az elektromos mező hatására könnyen képesek áramlani. Emiatt ezeket az anyagokat gyakran használják elektromos vezetőként különböző alkalmazásokban.ű
+A vezetők tárgyalásánál be lehet vezetni a tökéletes vezető fogalmát, ami egy olyan ideális anyagot jelent, amiben a töltések teljesen szabadon mozognak, és az ellenállásuk nulla. Ez azt jelenti, hogy egy tökéletes vezetőben az elektromos mező hatására a töltések azonnal elmozdulnak, és nincs ellenállásuk az áramlásban.
+Emellett végtelen mennyiségű töltést képesek "produkálni" a felületükön. A valóságban nincsenek tökéletes vezetők, de a fémek nagyon közel állnak ehhez az ideális viselkedéshez.
+\newline
+\newline
+A vezetők tulajdonságai alapján megállapíthatunk néhány alapvető tulajdonságot:
+\begin{itemize}
+    \item A vezetőkben az elektromos mező belül nulla ($\bold{E} = 0$). Ez azért van, mert a töltések szabadon mozognak, és az elektromos mező hatására azonnal elmozdulnak, és belül a külső mezővel ellentétes irányú mezőt hoznak létre, ami kioltja a külső mezőt.
+    \item Az előzőből következik, hogy egy vezető belsejében nincs töltés ($\rho = 0$). Ez a Gauss-törvényből következik, hiszen $\nabla \cdot \bold{E} = \frac{\rho}{\varepsilon_0}$, és ha $\bold{E} = 0$, akkor $\rho$ is nulla kell legyen.
+    \item Az első kétpontból következik, hogy egy vezetőben lévő töltések csak a felületen helyezkedhetnek el, és a belsejében nincs töltés. Ez azt jelenti, hogy a vezető felszínén a töltések eloszlása határozza meg a vezető elektromos tulajdonságait.
+    \item A vezető felülete mindig ekvipotenciális felület. Ez azt jelenti, hogy a vezető felületén a potenciál minden pontban ugyanaz, hiszen ha lenne potenciálkülönbség, akkor a töltések elmozdulnának a vezetőben, amíg a potenciál kiegyenlítődik. $V(\bold{b}) - V(\bold{a}) = - \int_{a}^{b} \bold{E} d\bold{l} = 0 \Rightarrow V(\bold{b}) = V(\bold{a})$
+    \item A vezető felületén a térerősség iránya mindig merőleges a felületre. Ez azért van, mert ha lenne párhuzamos komponens, akkor a töltések elmozdulnának a felületen, amíg a párhuzamos komponens ki nem oltódik. A felületre merőleges komponens irányába viszont az anyaghoz kötöttség miatt nem tudnak elmozdulni, ezért ezekben a pontokban fognak "megnyugodni".
+\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{imgs/6-tetel/vezeto_ter.png}
+    \caption{Vezető elektromos tere}
+\end{figure}
+Látható, hogy a vezetők esetében a töltések kizárólag a felületen helyezkednek el, és ott oszlanak el úgy, hogy a lehető legtávolabb legyenek egymástól. Intuitívan gondolhatnánk azt, hogy vezető belseje
+ezzel "elpazarolt" tér, de a valóság az, hogy 3D-ben valóban úgy tudjuk részecskék egymástól való távolságát maximalizálni, ha a felületen helyezzük el őket. Ugyanez 2D-ben vagy 1D-ben már nem analóg, tehát egy 2D lemezen nem a lemez szélén helyezkednek el a töltések, hanem a lemez teljes felületén egyenletesen elosztva.
+
+\subsubsection{Keltett töltés vezetőkben}
+Ha egy pozitív töltést teszünk egy vezető mellé, akkor vonzani fogják egymást, mivel a töltés a vezetőben lévő negatív töltéseket vonzza magához, míg a pozitív töltéseket taszítja. Ez azt eredményezi, hogy a vezető felületén egy negatív töltés halmozódik fel a közelében, míg a távolabbi részeken pozitív töltés jelenik meg.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{imgs/6-tetel/keltett_toltes.jpeg}
+    \caption{Keltett töltés vezetőben}
+\end{figure}
+Ez a jelenség a \textbf{keltett töltés}, ami azt jelenti, hogy egy külső töltés hatására a vezető felületén töltések halmozódnak fel.
+\newline
+\newline
+Ha a vezető belsejében van egy üreg, akkor a külső töltés hatására a vezető felületén keltett töltések jelennek meg, de az üreg belsejében nem lesz töltés. Ez azt jelenti, hogy az üreg belsejében a térerősség nulla lesz, hiszen a vezető felületén lévő töltések hatására a belső térben a mező kioltódik. Ez a jelenség a \textbf{Faraday-kalitka}, ami azt jelenti, hogy egy vezető burkolat megvédi a belsejét az elektromos mezőtől.
+
+Ha az üregben van egy töltés akkor a belső térben a térerősség nem lesz nulla, hiszen a töltés hatására a vezető felületén keltett töltések jelennek meg, amik hatással vannak a belső térre is. Ebben az esetben a vezető felületén lévő töltések eloszlása úgy alakul ki, hogy a belső térben a térerősség megfeleljen a töltés által keltett mezőnek, ezáltal a külvilág számára ez a tér le van árnyékolva, és nincs hatással a vezető külső terére.
+
+\subsubsection{Kondenzátor}
+A kondenzátor egy olyan konfiguráció, ami két vezetőből áll amiknek elletétes a töltése. Ha veszünk két vezetőt amik $+Q$ és $-Q$ töltéssel rendelkeznek, és közel helyezzük el őket egymás mellett, akkor egy elektromos mező alakul ki közöttük.
+A potenciál a két vezető között ekkor könnyen megadható:
+\begin{equation}
+    V = V_+ - V_- = - \int_{-}^{+} \bold{E} \, d\bold{l} 
+\end{equation}
+Azt nem tudjuk, hogy a töltések hogyan oszlanak el a vezetők felületén és a térerősség kiszámítása sem egyszerű, ha komplexebb a geometria.
+Viszont azt tudjuk a Coulomb-törvényből, hogy a térerősség arányos a töltéssel:
+\begin{equation}
+    \bold{E} = \frac{1}{4\pi \varepsilon_0} \cdot \int \frac{Q}{\rcurs^2} \hrcurs dV \Rightarrow E \propto Q
+\end{equation}
+És mivel $\bold{E} \propto Q$, ezért a potenciál is arányos lesz a töltéssel:
+\begin{equation}
+    V = - \int_{-}^{+} \bold{E} \, d\bold{l} \propto Q
+\end{equation}
+Ezért bevezethetünk egy új mennyiséget, a \textbf{kapacitást} ($C$), ami a töltés és a potenciál arányát adja meg:
+\begin{equation}
+    C = \frac{Q}{V}
+\end{equation}
+A kapacitás mértékegysége a farad ($F$), ami megegyezik egy coulomb per volt-al ($C/V$):
+\begin{equation}
+    \left[C\right] = F = \frac{C}{V} = \frac{C^2}{J} = \frac{C^2}{N \cdot m}
+\end{equation}
+A valóságban a farad egy nagyon nagy egység, ezért gyakran használunk kisebb egységeket, mint a mikrofarad ($\mu F = 10^{-6} F$), nanofarad ($nF = 10^{-9} F$) vagy picofarad ($pF = 10^{-12} F$).
+\newline
+\newline
+A kapacitás egy olyan mennyiség, ami csak a geometriai konfigurációtól függ, és nem függ a töltéstől vagy a potenciáltól. Ez azt jelenti, hogy ha megváltoztatjuk a töltést vagy a potenciált, akkor a kapacitás értéke nem változik. Ezért a kapacitás egy olyan mennyiség, ami a kondenzátor "tároló képességét" jellemzi.
+Definiálhatunk ezáltal egy darab vezetőre is kapacitást, ami azt jelenti, hogy veszünk egy képzeletbeli második vezetőt ami egy végtelen sugarú gömbfelület a vezető körül ellentétes töltéssel. Ez a második vezető az elektromos térhez nem járul hozzá,
+de a potenciálkülönbséget meg lehet vele adni, mint egy referenciapont a végtelemben.
+
+Kondenzátoroknál fontos lehet megtudni, hogy mennyi munkára van szükség, hogy feltöltsük őket egy adott töltéssel. Ezt a munkát a következőképpen számolhatjuk ki:
+\begin{equation}
+    W = \int_{0}^{Q} V dq' = \int_{0}^{Q} \frac{q'}{C} dq' = \frac{1}{C} \int_{0}^{Q} q' dq' = \frac{1}{C} \cdot \frac{Q^2}{2} = \frac{Q^2}{2C}
+\end{equation}
+Ezt az eredményt átírhatjuk a potenciál segítségével is:
+\begin{equation}
+    W = \frac{Q^2}{2C} = \frac{Q}{2} \cdot \frac{Q}{C} = \frac{Q V}{2} = \frac{C V^2}{2}
+\end{equation}
+Ez az eredmény azt jelenti, hogy a kondenzátor feltöltéséhez szükséges munka arányos a töltés négyzetével, vagy a potenciál négyzetével, és fordítottan arányos a kapacitással.
+
+\subsubsection*{Példa: Két lemez kapacitása}
+Vegyünk két párhuzamos fémlemezt egymástól $d$ távolságra, amiknek a felülete $A$. Az egyik lemez töltése legyen $+Q$, míg a másiké $-Q$. Határozzuk meg a kapacitásukat:
+A két lemez között a térerősség egyenletes (feltéve ha elég közel vannak egymáshoz és a felületük elég nagy), ekkor a felületi töltéssűrűség:
+\begin{equation}
+    \sigma = \frac{Q}{A}
+\end{equation}
+A potenciál a két lemez között pedig:
+\begin{equation}
+    V = - \int_{-}^{+} \bold{E} \, d\bold{l} = E \cdot d = \frac{\sigma}{\varepsilon_0} \cdot d = \frac{Q}{A \varepsilon_0} \cdot d
+\end{equation}
+Innen a kapacitás már könnyen megadható:
+\begin{equation}
+    C = \frac{Q}{V} = \frac{Q}{\frac{Q}{A \varepsilon_0} \cdot d} = \frac{A \varepsilon_0}{d}
+\end{equation}
+Tehát a két párhuzamos lemez kapacitása arányos a lemezek felületével, és fordítottan arányos a közöttük lévő távolsággal.
+
+\subsubsection*{Példa: Két gömbfelület kapacitása}
+Vegyünk két koncentrikus gömbfelületet, amiknek a sugara $R_1$ és $R_2$ ($R_2 > R_1$). Az belső gömb töltése legyen $+Q$, míg a külsőé $-Q$. Határozzuk meg a kapacitásukat:
+A két gömb között a térerősség a Gauss-törvény alapján:
+\begin{equation}
+    E(r) = \frac{1}{4 \pi \varepsilon_0} \cdot \frac{Q}{r^2}, \quad R_1 < r < R_2
+\end{equation}
+A potenciál a két gömb között pedig:
+\begin{equation}
+    V = - \int_{R_1}^{R_2} E(r) \, dr = - \int_{R_1}^{R_2} \frac{1}{4 \pi \varepsilon_0} \cdot \frac{Q}{r^2} \, dr = \frac{Q}{4 \pi \varepsilon_0} \left( \frac{1}{R_1} - \frac{1}{R_2} \right)
+\end{equation}
+Innen a kapacitás már könnyen megadható:
+\begin{equation}
+    C = \frac{Q}{V} = \frac{Q}{\frac{Q}{4 \pi \varepsilon_0} \left( \frac{1}{R_1} - \frac{1}{R_2} \right)} = 4 \pi \varepsilon_0 \cdot \frac{R_1 R_2}{R_2 - R_1}
+\end{equation}
+Tehát a két koncentrikus gömbfelület kapacitása függ a gömbök sugarától, és a közöttük lévő távolságtól.
+
+\subsubsection{Dielektromos polarizáció}
+A dielektromos anyagok olyan szigetelők, amelyben nincsenek szabad elektronok, ezért töltést nem tudnak vezetni, de az elektromos mező hatására a molekulákon belüli töltések elmozdulnak, ami dipólusokat hoz létre. Ez a jelenség a \textbf{dielektromos polarizáció}, ami azt jelenti, hogy a dielektromos anyagokban az elektromos mező hatására dipólusok jönnek létre.
+Ezeket a dipólusokat az úgynevezett \textbf{polarizációs vektor} ($\bold{P}$) jellemzi, ami megadja a dipólusmomentum sűrűségét egy adott pontban.
+A dipólusmomentum általában nem túl nagy külső térerősség esetén arányos a térerősséggel:
+\begin{equation}
+    \bold{P} = \alpha \bold{E}
+\end{equation}
+Az arányossági tényezőtpedig \textbf{atomi polarizálhatóságnak} nevezzük. Az értéke az atom vagy molekula típusától függ, és általában kicsi. Ha például egy egyszerű
+Hidrogénatomot veszünk, ahol van egy nagy pozitív töltésű proton és egy negatív töltésű elektron, akkor a polarizálhatósági együttható könnyen megadható:
+Tegyük az atomot egy elektromos térbe, ahol az elektron és a proton úgy áll be, hogy egyensúlyban vannak a térrel $d$ távolságra egymástól. Ekkor az elektronfelhő térerőssége
+pontosan megegyezik a külső térrel ($E_e = E$):
+\begin{equation}
+    E_e = \frac{1}{4 \pi \varepsilon_0} \cdot \frac{qd}{a^3} = E
+\end{equation}
+Ahol $a$ a nukleusz sugara. Innen kifejezve $d$-t bevezethetjük a \textbf{dipólusmomentumot} ($\bold{p} = q \cdot \bold{d}$):
+\begin{equation}
+    d = \frac{4 \pi \varepsilon_0 a^3}{q} E \Rightarrow p = qd = 4 \pi \varepsilon_0 a^3 E
+\end{equation}
+Tehát az atomi polarizálhatóság ebben az esetben:
+\begin{equation}
+    \alpha = 4 \pi \varepsilon_0 a^3 = 3V \varepsilon_0
+\end{equation}
+Ahol $V$ az atom térfogata. Ez az eredmény meglepően pontosan egyezik a valósággal, 4 faktorig sok egyszerűbb atomnál.
+\newline
+\newline
+De milyen ezeknek a polarizált atomoknak az elektromos potenciálja? Mivel ezekben a részecskékben a pozitív és negatív töltések el vannak választva egymástól, ezért ezeket a részecskéket dipólusoknak nevezik.
+A dipólusokat skematikusan úgy ábrázolhatjuk mint két ellentétes töltés ($+q$ és $-q$), amik egy adott $d$ távolságra vannak egymástól. Legyen $\rcurs_-$ a távolság a negatív töltéstől, míg $\rcurs_+$ a távolság a pozitív töltéstől. Ekkor a dipólus potenciálja a következőképpen számolható ki:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{imgs/6-tetel/dipolus.jpg}
+    \caption{Dipólus skematikus ábrázolása}
+\end{figure}
+
+\begin{equation}
+    V(\bold{r}) = \frac{1}{4 \pi \varepsilon_0} \left( \frac{+q}{\rcurs_+} + \frac{-q}{\rcurs_-} \right) = \frac{1}{4 \pi \varepsilon_0} \left( \frac{q}{\rcurs_+} - \frac{q}{\rcurs_-} \right)
+\end{equation}
+Ekkor a cosinus tétel segítségével kifejezhetjük a két távolságot a dipólus és a megfigyelési pont között:
+\begin{equation}
+    \rcurs_{\pm} = r^2 + \left(\frac{d}{2}\right)^2 \mp r d \cos \theta = r^2 \left(1 \mp \frac{d}{r} \cos \theta + \frac{d^2}{4r^2}\right)
+\end{equation}
+Ahol $\theta$ a dipólus tengelye és a megfigyelési pont közötti szög. Ha most feltételezzük, hogy a dipólus mérete ($d$) sokkal kisebb mint a távolság a dipólustól a megfigyelési pontig ($r$) ($d \ll r$), akkor a gyökökben lévő kifejezéseket sorfejthetjük:
+\begin{equation}
+    \frac{1}{\rcurs_{\pm}} = \frac{1}{r} \left(1 \mp \frac{d}{r} \cos \theta + \frac{d^2}{4r^2}\right)^{-\frac{1}{2}} \approx \frac{1}{r} \left(1 \pm \frac{d}{2r} \cos \theta\right)
+\end{equation}
+Vagyis:
+\begin{equation}
+    \frac{1}{\rcurs_+} - \frac{1}{\rcurs_-} \approx \frac{1}{r} \left(1 + \frac{d}{2r} \cos \theta\right) - \frac{1}{r} \left(1 - \frac{d}{2r} \cos \theta\right) = \frac{d \cos \theta}{r^2}
+\end{equation}
+Ezt visszahelyettesítve a potenciál kifejezésébe:
+\begin{equation}
+    V(\bold{r}) \approx \frac{1}{4 \pi \varepsilon_0} \cdot \frac{q d \cos \theta}{r^2}
+\end{equation}
+Ha a dipólus mérete ($d$) sokkal kisebb mint a távolság a dipólustól a megfigyelési pontig ($r$), akkor a két távolság közelítőleg egyenlő lesz ($\rcurs_+ \approx \rcurs_- \approx r$), és a potenciál kifejezhető lesz a dipólusmomentummal ($\bold{p} = q \cdot \bold{d}$):
+\begin{equation}
+    V(\bold{r}) \approx \frac{1}{4 \pi \varepsilon_0} \cdot \frac{\bold{p} \cdot \hat{\rcurs}}{r^2}
+\end{equation}
+Ahol $\hat{\rcurs}$ a megfigyelési pont irányvektora a dipólus felé. Ez az eredmény azt mutatja, hogy a dipólus potenciálja fordítottan arányos a távolság négyzetével, és a dipólusmomentummal arányos.
+
+Ebből a potenciálból már könnyen kiszámolható a dipólus által keltett térerősség is:
+\begin{equation}
+    \bold{E}(\bold{r}) = - \nabla V(\bold{r}) = - \nabla \left( \frac{1}{4 \pi \varepsilon_0} \cdot \frac{\bold{p} \cdot \hat{\rcurs}}{r^2} \right)
+\end{equation}
+A részletes számolás során a következő eredményt kapjuk:
+\begin{equation}
+    \bold{E}(\bold{r}) = \frac{1}{4 \pi \varepsilon_0} \cdot \frac{1}{r^3} \left( 3 (\bold{p} \cdot \hat{\rcurs}) \hat{\rcurs} - \bold{p} \right)
+\end{equation}
+Ez az eredmény azt mutatja, hogy a dipólus által keltett térerősség fordítottan arányos a távolság köbével, és a dipólusmomentummal kapcsolatos irányfüggő kifejezést tartalmaz
+
+\subsubsection{Polarizált anyag elektromos tere}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{imgs/6-tetel/polarizalt_anyag.png}
+\end{figure}
+Most hogy meghatároztuk egy dipólus potenciálját és térerősségét, nézzük meg hogyan néz ki egy polarizált anyag elektromos tere. Mivel a polarizált dielektromos anyagokban dipólusok jönnek létre, ezért az anyag elektromos tere a benne lévő dipólusok összességéből adódik össze.
+Ezért ninc más dolgunk mint kis részekre bontani az anyagot, és az egyes részek dipólusainak hatását összeadni. Ha egy kis térfogatot veszünk az anyagban ($dV$), akkor annak a dipólusmomentuma:
+\begin{equation}
+    d\bold{p} = \bold{P} \, dV
+\end{equation}
+Ahol $\bold{P}$ a polarizációs vektor az adott pontban. Ekkor az anyag teljes potenciálja a következőképpen számolható ki:
+\begin{equation}
+    V(\bold{r}) = \frac{1}{4 \pi \varepsilon_0} \int_{V} \frac{\bold{P}(\bold{r'}) \cdot \hat{\brcurs}}{\rcurs^2} dV'
+\end{equation}
+Ahol $\rcurs = |\bold{r} - \bold{r'}|$, és az integrál az anyag teljes térfogatára vonatkozik. Ez az egyenlet megadja a polarizált anyag elektromos potenciálját egy adott pontban.
+Ez a megoldás azonban nem túl praktikus, mivel az integrál elég bonyolult lehet. Viszont észrevehetjük, hogy az irányvektor $\hat{\brcurs}$ gyakorlatilag egy gradiens művelet eredménye:
+\begin{equation}
+    \nabla' \frac{1}{\rcurs} = \frac{\hat{\brcurs}}{\rcurs^2}
+\end{equation}
+Ezt visszahelyettesítve a potenciál kifejezésébe:
+\begin{equation}
+    V(\bold{r}) = \frac{1}{4 \pi \varepsilon_0} \int_{V} \bold{P}(\bold{r'}) \cdot \nabla' \frac{1}{\rcurs} dV'
+\end{equation}
+Most alkalmazhatjuk a vektoranalízis egyik fontos tételét, a divergencia tételt, ami lehetővé teszi számunkra, hogy az integrálban lévő skalár szorzatot átalakítsuk egy másik formára:
+\begin{equation}
+    \int_{V} \bold{A} \cdot \nabla' f \, dV' = \int_{S} f \bold{A} \cdot d\bold{S'} - \int_{V} f \nabla' \cdot \bold{A} \, dV'
+\end{equation}
+Ahol $S$ a térfogat határfelülete. Ezt alkalmazva a potenciál kifejezésére:
+\begin{equation}
+    V(\bold{r}) = \frac{1}{4 \pi \varepsilon_0} \left( \int_{S} \frac{1}{\rcurs} \bold{P}(\bold{r'}) \cdot d\bold{S'} - \int_{V} \frac{1}{\rcurs} \nabla' \cdot \bold{P}(\bold{r'}) \, dV' \right)
+\end{equation}
+Itt bevezethetünk két új mennyiséget:
+\begin{itemize}
+    \item A \textbf{felszíni töltéssűrűség} ($\sigma_b$), ami a polarizációs vektor normális komponensét jelenti a felületen:
+    \begin{equation}
+        \sigma_b = \bold{P} \cdot \hat{\bold{n}}
+    \end{equation}
+    \item A \textbf{térfogati töltéssűrűség} ($\rho_b$), ami a polarizációs vektor divergenciáját jelenti a térfogatban:
+    \begin{equation}
+        \rho_b = - \nabla \cdot \bold{P}
+    \end{equation}
+\end{itemize}
+Ezeket visszahelyettesítve a potenciál kifejezésébe:
+\begin{equation}
+    V(\bold{r}) = \frac{1}{4 \pi \varepsilon_0} \left( \int_{S} \frac{\sigma_b}{\rcurs} dS' + \int_{V} \frac{\rho_b}{\rcurs} dV' \right)
+\end{equation}
+Ez az eredmény azt mutatja, hogy a polarizált anyag elektromos potenciálja úgy számolható ki, mintha a felületen és a térfogatban töltések lennének jelen, amiket a polarizációs vektor határoz meg.
+Ezzel sokkal egyszerűbben kiszámolhatjuk a polarizált anyag elektromos potenciálját, ugyanis nem kell egyenként a dipólusokat szummázni, hanem elég a felületen és a felület által határolt térfogatban lévő "töltéseket" figyelembe venni,
+mondjuk a Gauss-törvény segítségével.
+
+\subsubsection*{Példa: egyenletesen polarizált gömb}
+Vegyünk egy gömböt, aminek a sugara $R$, és ami egyenletesen polarizált, azaz a polarizációs vektora minden pontban ugyanaz ($\bold{P} = P_0 \hat{z}$). Határozzuk meg a gömb elektromos terét kívül és belül:
+Először is határozzuk meg a felszíni és térfogati töltéssűrűséget:
+\begin{equation}
+    \sigma_b = \bold{P} \cdot \hat{\bold{n}} = P_0 \cos \theta
+\end{equation}
+\begin{equation}
+    \rho_b = - \nabla \cdot \bold{P} = 0
+\end{equation}
+Mivel a polarizációs vektor egyenletes, ezért a térfogati töltéssűrűség nulla lesz. Ez azt jelenti, hogy csak a felszíni töltéssűrűséget kell figyelembe venni a potenciál számításánál:
+\begin{equation}
+    V(\bold{r}) = \frac{1}{4 \pi \varepsilon_0} \int_{S} \frac{\sigma_b}{\rcurs} dS'
+\end{equation}
+Ahol $\rcurs = |\bold{r} - \bold{r'}|$.
+Most két esetet kell megvizsgálni: amikor a megfigyelési pont kívül van a gömbön ($r > R$), és amikor belül van ($r < R$).
+\newline
+\newline
+\textbf{Kívül a gömbön ($r > R$):}
+Ebben az esetben a gömböt egy dipólusként kezelhetjük, mivel a felszíni töltéssűrűség dipólus eloszlást eredményez. A gömb dipólusmomentuma:
+\begin{equation}
+    \bold{p} = \int_{S} \bold{r'} \sigma_b \, dS' = \frac{4 \pi R^3}{3} \bold{P}
+\end{equation}
+Ezért a potenciál kívül a gömbön:
+\begin{equation}
+    V(\bold{r}) = \frac{1}{4 \pi \varepsilon_0} \cdot \frac{\bold{p} \cdot \hat{\rcurs}}{r^2} = \frac{1}{4 \pi \varepsilon_0} \cdot \frac{\left( \frac{4 \pi R^3}{3} \bold{P} \right) \cdot \hat{\rcurs}}{r^2} = \frac{R^3}{3 \varepsilon_0} \cdot \frac{\bold{P} \cdot \hat{\rcurs}}{r^2}
+\end{equation}
+\newline
+\textbf{Belül a gömbön ($r < R$):}
+Ebben az esetben a potenciált a felszíni töltéssűrűség integráljával kell kiszámolni. A gömb felületén a töltéssűrűség:
+\begin{equation}
+    \sigma_b = P_0 \cos \theta
+\end{equation}
+A potenciál belül a gömbön:
+\begin{equation}
+    V(\bold{r}) = \frac{1}{4 \pi \varepsilon_0} \int_{S} \frac{P_0 \cos \theta}{\rcurs} dS'
+\end{equation}
+A részletes számolás során a következő eredményt kapjuk:
+\begin{equation}
+    V(\bold{r}) = - \frac{P_0}{3 \varepsilon_0} r \cos \theta
+\end{equation}
+Összefoglalva, a gömb elektromos potenciálja:
+\begin{equation}
+    V(\bold{r}) = \begin{cases}
+    \frac{R^3}{3 \varepsilon_0} \cdot \frac{\bold{P} \cdot \hat{\rcurs}}{r^2}, & r > R \\
+    - \frac{P_0}{3 \varepsilon_0} r \cos \theta, & r < R
+    \end{cases}
+\end{equation}
+Tehát a gömb potenciálja kívül úgy viselkedik mint egy tökéletes dipólus potenciálja, míg belül lineárisan változik a távolsággal és a szöggel.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{imgs/6-tetel/polarizalt_gomb.png}
+    \caption{Egyenletesen polarizált gömb elektromos tere}
+\end{figure}
+
+\subsubsection{Elektromos eltolás}
+Láttuk, hogy a polarizáció hatására egy dielektrikumban megjelenik egy kötött töltés az anyag belsejében ($\rho_b = - \nabla \cdot \bold{P}$) és egy kötött töltés az anyag
+felületén ($\sigma_b = \bold{P} \cdot \hat{\bold{n}}$). Ez a két tér adja ki a teljes elektromos terét egy polarizált dielektrikumnak. A teljes elektromos teret pedig emiatt két komponens
+alkotja, a kötött töltések polarizált tere és minden más (amit "szabad töltésnek" hívnak: $\rho_f$). Ez a szabad töltés bármi lehet, egy közeli vezetőn lévő töltésektől kezdve a dielekteikumból leszakadó szabad töltéseken át bármi.
+A lényeg, hogy ezek a töltések nem asszociáltak a $\bold{P}$-vel. Tehát a teljes töltéssűrűség:
+\begin{equation}
+    \rho = \rho_f + \rho_b
+\end{equation}
+A Gauss-törvény pedig:
+\begin{equation}
+    \varepsilon_0 \nabla \cdot \bold{E} = \rho = \rho_f + \rho_b = - \nabla \bold{P} + \rho_f
+\end{equation} 
+Itt $\bold{E}$ a teljes elektromos térerősség, nem csak a polarizált anyagban generált tér. Ha rendezzük az egyenletet, hogy a divergenciák együtt legyenek, akkor:
+\begin{equation}
+    \nabla \cdot (\varepsilon_0 \bold{E} + \bold{P}) = \rho_f
+\end{equation}
+A divergenciában lévő tagra meg bevezethetünk egy új mennyiséget, amit \textbf{elektromos eltolás mezőnek} nevezünk:
+\begin{equation}
+    \boxed{\bold{D} = \varepsilon_0 \bold{E} + \bold{P}}
+\end{equation}
+Ezt visszahelyettesítve a Gauss-törvénybe:
+\begin{equation}
+    \boxed{\nabla \cdot \bold{D} = \rho_f}
+\end{equation}
+Vagy integrális alakban:
+\begin{equation}
+    \oint \bold{D} \cdot d\bold{a} = Q_{fenc}
+\end{equation}
+Ahol a $Q_{fenc}$ a felület által bezárt szabad töltés mennyisége. Ez a felírás rendkívül hasznos mert kizárólag a szabad töltéseket tartalmazza, ami az amit tudunk kontrollálni.
+A kötött töltések egy elektromos térben automatikusan polarizálódnak valahogy, és ez generál kötött töltéseket amiket nem ismerünk azonnal. De ha a problémának megvan a megfelelő szimmetriája,
+akkor a $\bold{D}$-t azonnal meg tudjuk határozni a Gauss törvényből.
+
+\subsubsection*{Példa: Egy hosszú vékony vezeték, szigetelővel körbevéve}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{imgs/6-tetel/szigetelt_vezetek.png}
+    \caption{Hosszú vékony vezeték szigetelővel körbevéve}
+\end{figure}
+Vegyünk egy hosszú vezetőt amit egy szigetelővel becsavarunk. Ilyen konfigurációval gyakran találkozunk, hisz a legtöbb vezeték a lakásunkban is ilyen. Legyen a vezeték töltése
+egy egyenletes $\lambda$ és a szigetelés sugara $a$. Ha felveszünk egy Gauss-felületet (a Gauss-felület az a felület amin a fluxust számoljuk ki, és tetszőlegesen határozzuk meg) $s$ sugárral és $L$ hosszal, akkor
+a Gauss-törvény szerint:
+\begin{equation}
+    \oint \bold{D} d\bold{a} = Q_{fenc} \rightarrow \bold{D} \cdot 2\pi s L = \lambda L
+\end{equation}
+Ezt átrendezve:
+\begin{equation}
+    \bold{D} = \frac{\lambda}{2 \pi s} \hat{s}
+\end{equation}
+ahol $\hat{s}$ a radiális irány a vezeték körül. Ez az eredmény igaz minden $s < a$ és $s > a$ esetén is, hiszen a Gauss-felület mindig ugyanannyi szabad töltést zár be.
+A külső régióban ($s > a$) a szigetelés nem befolyásolja a teret, hiszen ott nincs kötött töltés, így az elektromos térerősség:
+\begin{equation}
+    \bold{E} = \frac{\bold{D}}{\varepsilon_0} = \frac{\lambda}{2 \pi \varepsilon_0 s} \hat{s} \quad \text{, ha } s > a
+\end{equation}
+Belül viszont nem ismerjük a polarizációs vektort, így nem tudjuk közvetlenül kiszámolni az elektromos térerősséget.
+
+\subsubsection{Lineáris dielektrikum}
+Eddig általánosan kezeltük a dielektromos anyagokat, de most nézzük meg egy speciális esetet, amikor a dielektrikum lineáris. Ez azt jelenti, hogy a polarizációs vektor
+arányos a térerősséggel:
+\begin{equation}
+    \bold{P} = \chi_e \varepsilon_0 \bold{E}
+\end{equation}
+Ahol $\chi_e$ az anyag \textbf{elektromos szuszceptibilitása}, ami egy dimenzió nélküli mennyiség. Ezt visszahelyettesítve az elektromos eltolás definíciójába:
+\begin{equation}
+    \bold{D} = \varepsilon_0 \bold{E} + \bold{P} = \varepsilon_0 \bold{E} + \chi_e \varepsilon_0 \bold{E} = \varepsilon_0 (1 + \chi_e) \bold{E}
+\end{equation}
+Bevezethetünk egy új mennyiséget, a \textbf{relatív permittivitást} ($\varepsilon_r$), ami az anyag elektromos tulajdonságait jellemzi:
+\begin{equation}
+    \varepsilon_r = 1 + \chi_e
+\end{equation}
+Így az elektromos eltolás kifejezése a lineáris dielektrikum esetén:
+\begin{equation}
+    \bold{D} = \varepsilon_0 \varepsilon_r \bold{E}
+\end{equation}
+Ez az eredmény azt mutatja, hogy a lineáris dielektrikumokban az elektromos eltolás arányos az elektromos térerősséggel, és az arányossági tényező a permittivitás ($\varepsilon = \varepsilon_0 \varepsilon_r$).
+Ezt visszahelyettesítve a Gauss-törvénybe:
+\begin{equation}
+    \nabla \cdot (\varepsilon \bold{E}) = \rho_f
+\end{equation}
+Vagy integrális alakban:
+\begin{equation}
+    \oint \varepsilon \bold{E} \cdot d\bold{a} = Q_{fenc}
+\end{equation}
+Ez az egyenlet nagyon hasonló a vákuumbeli Gauss-törvényhez, de itt a permittivitás szerepel a vákuum permittivitása helyett. Ez azt jelenti, hogy a lineáris dielektrikumokban az elektromos tér viselkedése hasonló a vákuumbelihez, de a permittivitás miatt módosul.
+
+A lineáris dielektrikum standard körülmények között egy elég jó közelítése a valós dielektrikumoknak, hiszen sok anyagban a polarizációs vektor és a térerősség közötti kapcsolat közel lineáris alacsony térerősségek esetén.
+
+\subsubsection{Kondenzátor dielektrikummal}
+Vegyünk egy párhuzamos lemez kondenzátort, aminek a lemezei $A$ felületűek és $d$ távolságra vannak egymástól. Tegyük fel, hogy a kondenzátor lemezei között egy dielektrikum van, aminek a relatív permittivitása $\varepsilon_r$. Határozzuk meg a kondenzátor kapacitását:
+A kondenzátor lemezei között a térerősség a Gauss-törvény alapján:
+\begin{equation}
+    \bold{D} = \frac{Q}{A} \hat{n}
+\end{equation}
+Ahol $Q$ a lemezek töltése, és $\hat{n}$ a lemezek közötti irányvektor. Mivel a dielektrikum lineáris, ezért az elektromos térerősség:
+\begin{equation}
+    \bold{E} = \frac{\bold{D}}{\varepsilon_0 \varepsilon_r} = \frac{Q}{\varepsilon_0 \varepsilon_r A} \hat{n}
+\end{equation}
+A potenciálkülönbség a két lemez között pedig:
+\begin{equation}
+    V = E \cdot d = \frac{Q}{\varepsilon_0 \varepsilon_r A} \cdot d
+\end{equation}
+Innen a kapacitás már könnyen megadható:
+\begin{equation}
+    C = \frac{Q}{V} = \frac{Q}{\frac{Q}{\varepsilon_0 \varepsilon_r A} \cdot d} = \frac{\varepsilon_0 \varepsilon_r A}{d} = \varepsilon_r \cdot C_{\text{vákuum}}
+\end{equation}
+Tehát a kondenzátor kapacitása a dielektrikum jelenlétében megnő a relatív permittivitás szorzatával. Ezt a jelenséget gyakran használják ki a valós kondenzátorok tervezésénél, hogy növeljék a kapacitást anélkül, hogy a méretet növelnék.
+
+\subsection{Magnetosztatika, Lorentz-erő}
+Eddig olyan elektromos mezőkkel foglalkoztunk, amik statikus töltésekből származnak. Ezek egy statikus elektromos teret hoznak létre, amit egyszerűen leírhatunk a Coulomb-törvénnyel és a Gauss-törvénnyel.
+Azonban ha mozgásba hozzuk a forrás-töltéseket, akkor egy nagyon érdekes jelenség jelentkezik: Vegyünk egy vezetéket aminek a két végén potenciálkülönbség van.
+Ekkor a vezetékben lévő szabad elektronok elkezdenek a vezeték egyik végéből a másikba áramlani, létrehozva egy \textbf{elektromos áramot}. Most vegyünk még egy vezetéket, ami párhuzamosan van az elsővel,
+de ellentétes irányú az áram benne. Ekkor azt tapasztaljuk, hogy a két vezeték taszítja egymást! Itt még feltehetnénk, hogy a taszítás elektromos eredetű, hisz az azonos polaitású töltések is taszítják egymást, de
+ha elhejezünk a rendszerben egy álló próbatöltést, akkor azt tapasztaljuk, hogy a próbátöltésre semmilyen erő nem hat. Mi több, ha megfordítjuk az áram irányát az egyik vezetékben, akkor a két vezeték vonzani fogja egymást!
+Ez tehát nem lehet az elektromos tér következménye, be kell vezetni egy új jelenséget, amit mágneses térnek nevezünk.
+
+A mágneses térnek még több furcsasága is van, ugyanis ha veszünk egy iránytűt, ami mindig a mágneses tér irányába mutat, és odavisszük az egyik vezetékhez, akkor azt látjuk, hogy az iránytű nem a vezeték felé vagy onnan elfele mutat,
+hanem körbe-körbe forog a vezeték körül. Tehát a mágneses tér egy körkörös teret alkot az áramló töltések körül. A tér mindig a jobbkéz szabályt követi, tehát ha a jobbkezünk hüvelykujját az áram irányába mutatjuk,
+akkor a többi ujjunk mutatja a mágneses tér irányát. Tehát azt látjuk, hogy ha van egy elektromos áramunk, akkor megjelenik egy mágneses tér körülötte, de az erő amit a mágneses tér kifejt, merőleges mind az áam irányára, mind a mágneses tér irányára.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{imgs/6-tetel/jobbkez_szabaly.png}
+    \caption{Jobbkéz szabály az áram és mágneses tér kapcsolatára}
+\end{figure}
+A mágneses tér körkörös mivolta miatt ésszerű azt gondolni, hogy a mágneses tér és a mozgó töltés valamilyen módon vektor szorzatban kapcsolódik egymáshoz:
+\begin{equation}
+    \bold{F}_{mag} = Q (\bold{v} \times \bold{B})
+\end{equation}
+Ahol $\bold{F}_{mag}$ a mágneses erő, $Q$ a töltés, $\bold{v}$ a töltés sebessége, és $\bold{B}$ a mágneses tér vektora. Ez az egyenlet azt mutatja, hogy a mágneses erő mindig merőleges lesz a töltés sebességére és a mágneses tér irányára.
+Ha a teljes tért akarjuk leírni, akkor hozzá kell adnunk az elektromos erőt is, ami a töltésre hat:
+\begin{equation}
+    \bold{F} = Q \left[\bold{E} + (\bold{v} \times \bold{B})\right]
+\end{equation}
+Ezt az egyenletet \textbf{Lorentz-erőnek} nevezzük, és ez írja le a töltött részecskére ható teljes elektromágneses erőt egy adott elektromos és mágneses térben. Ez az egyenlet kísérleti úton
+lett maghatározva és a Magnetosztatika fundamentális egyenlete.
+
+A Lorentz-erőben megjelenő mágneses tér $\bold{B}$ mértékegysége a Tesla (T), ami a következőképpen definiált: 1 Tesla az a mágneses tér, ami egy 1 Coulomb töltésre 1 m/s sebességgel hatva 1 Newton erőt fejt ki, ha a sebesség és a mágneses tér merőleges egymásra.
+A $\bold{B}$ bár vektorként viselkedik, de valójában egy pseudovektornak tekinthető, mivel tükrözés hatására nem úgy transzformálódik mint egy valós vektor (mivel ellentétes irányú áramhoz ellentétes irányú mágneses tér tartozik).
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{imgs/6-tetel/pseudovektor.png}
+    \caption{Pseudovektor viselkedése tükrözés alatt}
+\end{figure}
+
+Egy extra speciális tulajdonsága a mágneses térnek, hogy nem végez munkát a töltésen. Ezt könnyen beláthatjuk a Lorentz-erőből:
+\begin{equation}
+    W = \int \bold{F} \cdot d\bold{s} = \int Q \left[\bold{E} + (\bold{v} \times \bold{B})\right] \cdot d\bold{s}
+\end{equation}
+A mágneses erő komponensére nézve:
+\begin{equation}
+    W_{mag} = \int Q (\bold{v} \times \bold{B}) \cdot d\bold{s}
+\end{equation}
+Mivel a sebesség és a mágneses tér merőleges egymásra, ezért a vektorszorzat is merőleges lesz a sebességre, így:
+\begin{equation}
+    W_{mag} = \int Q (\bold{v} \times \bold{B}) \cdot \bold{v} dt = 0
+\end{equation}
+Tehát a mágneses tér nem végez munkát a töltésen, csak irányt változtat rajta. Ez azt is jelenti, hogy a mágneses tér nem tudja megváltoztatni a töltés kinetikus energiáját, csak az irányát.
+
+\subsubsection*{Példa: Ciklotron}
+A ciklotron az egyik első részecskegyorsító eszköz, amit protonok és más töltött részecskék gyorsítására használnak. A ciklotron működési elve a Lorentz-erőn alapul, és egy mágneses tér segítségével
+körpályára kényszeríti a töltött részecskéket, miközben egy váltakozó elektromos térrel gyorsítja őket. Ha veszünk egy $Q$ töltött részecskét, ami egy $B$ mágneses térben mozog $\bold{v}$ sebességgel, akkor a Lorentz-erő miatt a részecske
+egy körpályára kényszerül, aminek a centripetális ereje a következőképpen számolható ki:
+\begin{equation}
+    F_{cent} = \frac{m v^2}{R}
+\end{equation}
+Ahol $m$ a részecske tömege, $v$ a sebessége, és $R$ a körpálya sugara. A Lorentz-erő pedig:
+\begin{equation}
+    F_{mag} = Q v B
+\end{equation}
+A két erő egyensúlyban van, így:
+\begin{equation}
+    \frac{m v^2}{R} = Q v B
+\end{equation}
+Ebből kifejezve a körpálya sugarát:
+\begin{equation}
+    R = \frac{m v}{Q B}
+\end{equation}
+Ez az egyenlet azt mutatja, hogy a részecske pályájának sugara arányos a sebességével és fordítottan arányos a töltésével és a mágneses tér erősségével. A részecske momentuma pedig:
+\begin{equation}
+    p = m v = Q B R
+\end{equation}
+Ezt nevezik Ciklotron formulának, és nagyon hasznos, ugyanis ha egy ismeretlen töltöttségű részecskét egy ismert mágneses térben mozgatunk, akkor a pályájának sugara alapján meg tudjuk határozni a részecske töltését.
+Ezt az elvet használják az elementáris részecskék azonosítására különböző kísérletekben.
+
+\subsubsection{Áram}
+Az elektromos áram egy egységnyi idő alatt egy adott keresztmetszeten áthaladó töltés mennyisége. defínicó szerint a negatív töltések áramlanak a bal oldalról a jobb oldalra és a pozitív töltések fordítva.
+A valóságban azonban az áramot a negatív elektronok hozzák létre, amik a vezetékben a külső elektromos tér hatására mozognak. Azonban a konvencionális áramirány a pozitív töltések mozgásának irányába mutat,
+tehát ellentétes az elektronok mozgásirányával. Az áramot Ampiére tiszteletére Amperben mérik, ami a következőképpen definiált: 1 Amper az az áram, ami 1 Coulomb töltést visz át egy keresztmetszeten 1 másodperc alatt:
+\begin{equation}
+    1 \, \text{A} = 1 \, \frac{\text{C}}{\text{s}}
+\end{equation}
+Egy vonaltöltés $\lambda$ töltéssűrűséggel rendelkezik és $v$ sebességgel mozog, akkor az áram:
+\begin{equation}
+    I = \lambda v
+\end{equation}
+Mert egy hosszúság szegmens $v\Delta t$ alatt $\lambda v \Delta t$ töltést visz át a keresztmetszeten, így az áram:
+\begin{equation}
+    I = \frac{\lambda v \Delta t}{\Delta t} = \lambda v
+\end{equation}
+Az áram maga egy vektoriális mennyiség:
+\begin{equation}
+    \bold{I} = \lambda \bold{v}
+\end{equation}
+Ha egy vezetékben az áram egyenletesen oszlik el a keresztmetszeten, akkor bevezethetjük az \textbf{áramsűrűség} vektort ($\bold{J}$), ami az áram és a keresztmetszet hányadosa:
+\begin{equation}
+    \bold{J} = \frac{I}{A} \hat{n}
+\end{equation}
+Ahol $A$ a keresztmetszet területe és $\hat{n}$ a vezeték irányába mutató egységvektor. Az áramsűrűség mértékegysége az Amper per négyzetméter (A/m²).
+
+A mágneses erő ezen a szegmensen a Lorentz-erőből adódik:
+\begin{equation}
+    d\bold{F}_{mag} = dQ (\bold{v} \times \bold{B}) = \lambda dl (\bold{v} \times \bold{B}) = \bold{I} dl \times \bold{B}
+\end{equation}
+Integrálva a teljes vezeték mentén:
+\begin{equation}
+    \bold{F}_{mag} = \int \bold{I} dl \times \bold{B}
+\end{equation}
+Mivel $\bold{I}$ és $dl$ párhuzamosak, ezért az egyenlet egyszerűsödik:
+\begin{equation}
+   \boxed{\bold{F}_{mag} = \int I (d\bold{l} \times \bold{B})}
+\end{equation}
+Ez az egyenlet írja le a mágneses erőt egy áramot hordozó vezeték szegmensen, ami egy mágneses térben helyezkedik el.
+
+Ha egy felületen keresztül áramlik az áram, akkor a mágneses erő a felületen lévő áramra a következőképpen számolható ki:
+\begin{equation}
+    \bold{F}_{mag} = \int \int_S (\bold{J} \times \bold{B}) dA
+\end{equation}
+Ahol a felület $S$ az a felület amin keresztül az áram folyik. Ez az egyenlet a mágneses erőt írja le egy felületen keresztül áramló áram esetén egy mágneses térben.
+
+Az áramosűrűséget fel lehet írni a töltéssűrűség és a sebesség szorzataként is:
+\begin{equation}
+    \bold{J} = \rho \bold{v}
+\end{equation}
+Ahol $\rho$ a töltéssűrűség és $\bold{v}$ a töltések átlagos sebessége. Az áram pedig a töltéssűrűség és a keresztmetszet szorzataként is kifejezhető:
+\begin{equation}
+    I = \int_S \bold{J} \cdot d\bold{A} = \int_S \rho \bold{v} \cdot d\bold{A}
+\end{equation}
+Ha pedig egy térfogati egységre nézzük meg:
+\begin{equation}
+    \oint_S \bold{J} \cdot d\bold{A} = \int_V \nabla \cdot \bold{J} dV
+\end{equation}
+Mivel a töltés megmaradó mennyiség, a kiáramló töltések csak a bennlévő töltések "kárára" tudnak kijutni:
+\begin{equation}
+    \oint_V \nabla \cdot \bold{J} dV = - \frac{d}{dt} \int_V \rho dV = - \int_V \frac{\partial \rho}{\partial t} dV
+\end{equation}
+Mivel ez az egyenlet tetszőleges térfogatra igaz, ezért a következő differenciálegyenletet kapjuk:
+\begin{equation}
+    \boxed{\nabla \cdot \bold{J} = - \frac{\partial \rho}{\partial t}}
+\end{equation}
+Ezt az egyenletet \textbf{kontinuitási egyenletnek} nevezzük, és azt fejezi ki, hogy a töltés nem tűnik el sehol, csak áramlik egyik helyről a másikra.
 
 
+\subsection{Stacionárius áram, áramköri törvények: Kirchhoff-törvények, Ohm-törvény}
 
+\subsubsection{Stacionárius áram}
+Stacionárius áramról akkor beszélünk, amikor az áram időben állandó, azaz az áram erőssége és iránya nem változik időben. Ebben az esetben a töltéssűrűség sem változik időben, így a kontinuitási egyenlet a következőképpen egyszerűsödik:
+\begin{equation}
+    \nabla \cdot \bold{J} = 0
+\end{equation}
+Ez azt jelenti, hogy a stacionárius áram esetén a beáramló és kiáramló töltések mennyisége egyensúlyban van minden pontban.
 
+A stacionárius áram azt is feltételezi, hogy az áram által generált mágneses tér időben állandó, vagyis \textbf{magnetosztatikáról} beszélünk. Ebben az esetben a mágneses tér és az elektromos tér közötti kölcsönhatások időben állandóak, és a Lorentz-erő is időben állandó marad.
+Stacionárius áram esetén felirható még két differenciálegyenlet is:
+\begin{equation}
+    \frac{\partial \rho}{\partial t} = 0 \qquad \text{és} \qquad \frac{\partial \bold{J}}{\partial t} = 0
+\end{equation}
+Ezek az egyenletek azt fejezik ki, hogy a töltéssűrűség és az áramsűrűség időben nem változik.
 
+\subsubsection{Biot-Savart Törvény}
+A stacionárius áram által generált mágneses teret a \textbf{Biot-Savart Törvény} segítségével jellemezhetjük:
+\begin{equation}
+    \bold{B}(\bold{r}) = \frac{\mu_0}{4 \pi} \int \frac{\bold{I} \times \hat{\brcurs}}{\rcurs^2} dl' = \frac{\mu_0}{4 \pi} I \int \frac{d\bold{I'} \times \hat{\brcurs}}{\rcurs^2} dl'
+\end{equation}
+Ahol a pálya mentén integrálunk, és a $d\bold{I'}$ az egységnyi hossz a vezeték mentén és a $\hat{\brcurs}$ a megfigyelési pont és az integrációs pont közötti egységvektor.
+Felületre és térfogatra kiterjesztve az egyenlet a következőképpen alakul:
+\begin{equation}
+    \bold{B}(\bold{r}) = \frac{\mu_0}{4 \pi} \int \frac{\bold{K} \times \hat{\brcurs}}{\rcurs^2} dA' \qquad \text{és} \qquad \bold{B}(\bold{r}) = \frac{\mu_0}{4 \pi} \int \frac{\bold{J} \times \hat{\brcurs}}{\rcurs^2} dV'
+\end{equation}
+Ahol $\mu_0$ a vákuum permeabilitása, ami a mágneses tér egy alapvető fizikai állandója, és értéke:
+\begin{equation}
+    \mu_0 = 4 \pi \times 10^{-7} \, \text{H/m} \quad (\text{Henry per meter})
+\end{equation}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{imgs/6-tetel/biot-savart.png}
+    \caption{Biot-Savart törvény geometriai ábrája}
+\end{figure}
+A Biot-Savart törvény a magnetosztatika alapvető egyenlete, és analóg az elektrosztatika Coulomb-törvényével.
 
+De mi a helyzet a mágneses tér divergenciájával és rotációjával? A Biot-Savart törvényt vizsgálva meghatározhatjuk a $\bold{B}$ őket.
+Először, hogy biztosan egyértelmű legyen melyik jelölés mit jelent, egy kis névmutató:
+\begin{itemize}
+    \item $\bold{r} = (x,y,z)$: Megfigyelési pont helyvektora
+    \item $\bold{r'} = (x',y',z')$: a térfogategység helyvektora
+    \item $\brcurs = \bold{r} - \bold{r'} = (x-x')\hat{\bold{x}} + (y-y')\hat{\bold{y}} + (z-z')\hat{\bold{z}}$: A megfigyelési pont és a forráspont közötti vektor
+    \item $\bold{J}$: Áram sűrűség a integrált terület alatt, $(x',y',z')$-től függ.
+    \item $\bold{B}$ mágneses tér a megfigyelési pont, $(x,y,z)$-től függ.
+    \item $dV' (\text{vagy } d\tau ') = dx' dy' dz'$: A térfogatelem ami szerint integrálunk
+\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{imgs/6-tetel/magneses_ter_rot.png}
+    \caption{Biot-Savart törvény jelölései}
+\end{figure}
+Ekkor a Biot-Savart törvény egy tetszőleges térfogatra nézve:
+\begin{equation}
+    \bold{B}(\bold{r}) = \frac{\mu_0}{4 \pi} \int \frac{\bold{J}(\bold{r'}) \times \hat{\brcurs}}{\rcurs^2} dV'
+\end{equation}
+Most vegyük a divergenciáját a $\bold{B}$-nek:
+\begin{equation}
+    \nabla \cdot \bold{B} = \frac{\mu_0}{4 \pi} \nabla \cdot \int \frac{\bold{J}(\bold{r'}) \times \hat{\brcurs}}{\rcurs^2} dV'
+\end{equation}
+Mivel a $\bold{r'}$-re integrálunk, ezért a $\nabla$ operátor bevihető az integrálba:
+\begin{equation}
+    \nabla \cdot \bold{B} = \frac{\mu_0}{4 \pi} \int \nabla \cdot \left(\frac{\bold{J}(\bold{r'}) \times \hat{\brcurs}}{\rcurs^2}\right) dV'
+\end{equation}
+Ezt a divergenciát a vektoriális identitások segítségével számolhatjuk ki:
+\begin{equation}
+    \nabla \cdot (\bold{A} \times \bold{B}) = \bold{B} \cdot (\nabla \times \bold{A}) - \bold{A} \cdot (\nabla \times \bold{B})
+\end{equation}
+Ha $\bold{A} = \bold{J}(\bold{r'})$ és $\bold{B} = \frac{\hat{\brcurs}}{\rcurs^2}$, akkor:
+\begin{equation}
+    \nabla \cdot \left(\frac{\bold{J}(\bold{r'}) \times \hat{\brcurs}}{\rcurs^2}\right) = \frac{\hat{\brcurs}}{\rcurs^2} \cdot (\nabla \times \bold{J}(\bold{r'})) - \bold{J}(\bold{r'}) \cdot \left(\nabla \times \frac{\hat{\brcurs}}{\rcurs^2}\right)
+\end{equation}
+Mivel a $\bold{J}(\bold{r'})$ csak $\bold{r'}$-től függ, ezért a $\nabla \times \bold{J}(\bold{r'}) = 0$. A második tagot pedig a következőképpen számolhatjuk ki:
+\begin{equation}
+    \nabla \times \frac{\hat{\brcurs}}{\rcurs^2} = 0
+\end{equation}
+Így a divergencia kifejezése nullává válik:
+\begin{equation}
+    \nabla \cdot \left(\frac{\bold{J}(\bold{r'}) \times \hat{\brcurs}}{\rcurs^2}\right) = 0
+\end{equation}
+Ezt visszahelyettesítve az integrálba:
+\begin{equation}
+    \nabla \cdot \bold{B} = \frac{\mu_0}{4 \pi} \int 0 \, dV' = 0
+\end{equation}
+Tehát a mágneses tér divergenciája mindig nulla:
+\begin{equation}
+    \boxed{\nabla \cdot \bold{B} = 0}
+\end{equation}
+Ez azt jelenti, hogy nincsenek mágneses monopólusok, azaz a mágneses tér vonalai mindig záródnak.
 
+Most vegyük a rotációját a $\bold{B}$-nek:
+\begin{equation}
+    \nabla \times \bold{B} = \frac{\mu_0}{4 \pi} \nabla \times \int \frac{\bold{J}(\bold{r'}) \times \hat{\brcurs}}{\rcurs^2} dV'
+\end{equation}
+Ismét bevihetjük az integrálba a rotációs operátort:
+\begin{equation}
+    \nabla \times \bold{B} = \frac{\mu_0}{4 \pi} \int \nabla \times \left(\frac{\bold{J}(\bold{r'}) \times \hat{\brcurs}}{\rcurs^2}\right) dV'
+\end{equation}
+Ezt a rotációt a vektoriális identitások segítségével számolhatjuk ki:
+\begin{equation}
+    \nabla \times (\bold{A} \times \bold{B}) = \bold{A} (\nabla \cdot \bold{B}) - \bold{B} (\nabla \cdot \bold{A}) + (\bold{B} \cdot \nabla) \bold{A} - (\bold{A} \cdot \nabla) \bold{B}
+\end{equation}
+Ha $\bold{A} = \bold{J}(\bold{r'})$ és $\bold{B} = \frac{\hat{\brcurs}}{\rcurs^2}$, akkor:
+\begin{equation}
+    \nabla \times \left(\frac{\bold{J}(\bold{r'}) \times \hat{\brcurs}}{\rcurs^2}\right) = \bold{J}(\bold{r'}) (\nabla \cdot \frac{\hat{\brcurs}}{\rcurs^2}) - \frac{\hat{\brcurs}}{\rcurs^2} (\nabla \cdot \bold{J}(\bold{r'})) + \left(\frac{\hat{\brcurs}}{\rcurs^2} \cdot \nabla\right) \bold{J}(\bold{r'}) - (\bold{J}(\bold{r'}) \cdot \nabla) \frac{\hat{\brcurs}}{\rcurs^2}
+\end{equation}
+Mivel a $\bold{J}(\bold{r'})$ csak $\bold{r'}$-től függ, ezért a $\nabla \cdot \bold{J}(\bold{r'}) = 0$ és a $\left(\frac{\hat{\brcurs}}{\rcurs^2} \cdot \nabla\right) \bold{J}(\bold{r'}) = 0$. A divergencia pedig:
+\begin{equation}
+    \nabla \cdot \frac{\hat{\brcurs}}{\rcurs^2} = 4 \pi \delta^3(\brcurs)
+\end{equation}
+Ahol $\delta^3(\brcurs)$ a háromdimenziós Dirac-delta függvény. Így a rotáció kifejezése:
+\begin{equation}
+    \nabla \times \left(\frac{\bold{J}(\bold{r'}) \times \hat{\brcurs}}{\rcurs^2}\right) = 4 \pi \bold{J}(\bold{r'}) \delta^3(\brcurs) - (\bold{J}(\bold{r'}) \cdot \nabla) \frac{\hat{\brcurs}}{\rcurs^2}
+\end{equation}
+Ezt visszahelyettesítve az integrálba:
+\begin{equation}
+    \nabla \times \bold{B} = \frac{\mu_0}{4 \pi} \int \left(4 \pi \bold{J}(\bold{r'}) \delta^3(\brcurs) - (\bold{J}(\bold{r'}) \cdot \nabla) \frac{\hat{\brcurs}}{\rcurs^2}\right) dV'
+\end{equation}
+Az első tag integrálja egyszerűen:
+\begin{equation}
+    \int 4 \pi \bold{J}(\bold{r'}) \delta^3(\brcurs) dV' = 4 \pi \bold{J}(\bold{r})
+\end{equation}
+A második tagot pedig átirhatjuk, úgy, hogy a Nabla operátort a $\bold{r'}$-re alkalmazzuk:
+\begin{equation}
+    - (\bold{J} \cdot \nabla) \frac{\hat{\brcurs}}{\rcurs^2} = (\bold{J} \cdot \nabla') \frac{\hat{\brcurs}}{\rcurs^2}
+\end{equation}
+Ezt azért tehetjük meg, mert  $(\partial/\partial x) f(x-x') = -(\partial/\partial x') f(x-x')$. A második tagot felírhatjuk az x komponens szerint (a többire is igaz lesz):
+\begin{equation}
+    (\bold{J} \cdot \nabla')\left(\frac{x-x'}{\rcurs^3}\right) = \nabla' \cdot \left[\frac{(x - x')}{\rcurs^3} \bold{J}(\bold{r'})\right] - \frac{(x - x')}{\rcurs^3} (\nabla' \cdot \bold{J}(\bold{r'}))
+\end{equation}
+Állandó áram esetén a kontinuitási egyenlet miatt $\nabla' \cdot \bold{J}(\bold{r'}) = 0$, így az utolsó tag eltűnik, és az x komponensre a következőt kapjuk:
+\begin{equation}
+    \left[ (\bold{J} \cdot \nabla)\frac{\hat{\brcurs}}{\rcurs^2} \right]_x = \nabla' \cdot \left[\frac{(x - x')}{\rcurs^3} \bold{J}(\bold{r'})\right]
+\end{equation}
+És ezzel az alakkal már használhatjuk a divergencia tételt:
+\begin{equation}
+    \int \left[ (\bold{J} \cdot \nabla)\frac{\hat{\brcurs}}{\rcurs^2} \right]_x dV' = \int \nabla' \cdot \left[\frac{(x - x')}{\rcurs^3} \bold{J}(\bold{r'})\right] dV' = \oint \frac{(x - x')}{\rcurs^3} \bold{J}(\bold{r'}) \cdot d\bold{A'}  
+\end{equation}
+Ha a térfogat elég nagy, akkor a felületi integrál a végtelenben eltűnik, mivel a $\frac{(x - x')}{\rcurs^3}$ gyorsabban csökken, mint a $\bold{J}(\bold{r'})$ nő. A területet pedig nagyra kell választani, mert az összes áramot bele akarjuk foglalni. 
+Tehát az egész integrál nulla lesz:
+\begin{equation}
+    \int \left[ (\bold{J} \cdot \nabla)\frac{\hat{\brcurs}}{\rcurs^2} \right]_x dV' = 0
+\end{equation}
+Hasonlóan a y és z komponensekre is igaz lesz, így a teljes integrál nulla lesz:
+\begin{equation}
+    \int (\bold{J} \cdot \nabla) \frac{\hat{\brcurs}}{\rcurs^2} dV' = 0
+\end{equation}
+Ezt visszahelyettesítve az integrálba:
+\begin{equation}
+    \nabla \times \bold{B} = \frac{\mu_0}{4 \pi} \int 4 \pi \bold{J}(\bold{r'}) \delta^3(\brcurs) dV' = \mu_0 \bold{J}(\bold{r})
+\end{equation}
+Tehát a mágneses tér rotációja a következőképpen alakul:
+\begin{equation}
+    \boxed{\nabla \times \bold{B} = \mu_0 \bold{J}}
+\end{equation}
+Ez a \textbf{Ampiére-törvény} és ez az egyenlet a magnetosztatika egyik alapvető egyenlete, és analóg az elektrosztatika Gauss-törvényével. Fel lehet integrális alakban is írni:
+\begin{equation}
+    \oint_C \bold{B} \cdot d\bold{l} = \mu_0 I_{enc}
+\end{equation}
+Ahol az integrál egy zárt görbe mentén történik, és $I_{enc}$ az áram, ami a görbe által határolt felületen keresztül folyik.
+
+Összességében tehát fel lehet írni a magnetosztatika egyenleteit az elektrosztatika egyenleteivel analóg formában:
+\begin{equation}
+    \nabla \cdot \bold{B} = 0 \qquad \text{és} \qquad \nabla \times \bold{B} = \mu_0 \bold{J}
+\end{equation}
+Az ezzel analóg elektrosztatikai egyenletek pedig:
+\begin{equation}
+    \nabla \cdot \bold{E} = \frac{\rho}{\epsilon_0} \qquad \text{és} \qquad \nabla \times \bold{E} = 0
+\end{equation}
+    
+
+\subsubsection{Ohm-törvény}
+Ahhoz, hogy a részecskéket áramoltatni tudjuk a vezetékben, egy erőt kell kifejtenünk rájuk. Az, hogy milyen gyorsan mozognak, az erő nagyságától és a vezeték anyagának tulajdonságaitól függ.
+A legtöbb anyagban az áramlási sűrűség lienaáris arányban van a egységnyi töltésre jutó erőre:
+\begin{equation}
+    \bold{J} = \sigma \bold{f}
+\end{equation}
+Ahol $\sigma$ az anyag \textbf{fajlagos vezetőképessége}, ami azt méri, hogy mennyire könnyen áramlik az áram az anyagon keresztül, és $\bold{f}$ az egységnyi töltésre jutó erő.
+Sok esetben a vezetőképesség reciprokát adják meg amit \textbf{fajlagos ellenállásnak} (rezisztivitásnak) neveznek:
+\begin{equation}
+    \rho = \frac{1}{\sigma}
+\end{equation}
+Itt a jelőlések nem összekeverendőek a felületi töltéssel és a töltéssűrűséggel! Minden anyagra meghatározhatóak ezek az értékek, de általában vezetőknél lehet a vezetőképességet végtelennek venni (vagyis bármekkora erő képes áramot létrehozni), míg szigetelőknél a vezetőképesség nulla (vagyis semmilyen erő nem képes áramot létrehozni).
+Elméletileg ez az erő bármilyen eredetű lehetne, de az esetek nagy részében elektromos eredetű lesz, vagyis az elektromágneses térerősséggel adható meg:
+\begin{equation}
+    \bold{J} = \sigma (\bold{E} + \bold{v} \times \bold{B})
+\end{equation}
+Ha a vezetékben a töltések átlagos sebessége kicsi, akkor a mágneses tér hatása elhanyagolható, és az egyenlet egyszerűsödik:
+\begin{equation}
+    \boxed{\bold{J} = \sigma \bold{E}}
+\end{equation}
+Ezt az egyenletet \textbf{Ohm-törvénynek} nevezzük, és ez írja le a vezetőkben az áram és az elektromos tér kapcsolatát. Az Ohm-törvény azt mondja ki, hogy az áram sűrűség arányos az elektromos térrel, és a vezetőképesség az arányossági tényező.
+
+Itt feltűnhet, hogy $\bold{E} \neq 0$ a vezetékben, holott korábban azt mondtuk, hogy egy vezető belsejében nincs térerősség. Ez azért van mert az csak stacionárius töltésekre volt igaz ($\bold{J} = 0$), mozgó töltések esetén viszont a vezetékben egy kis elektromos térnek kell lennie, hogy az áramot fenntartsa.
+Azt is láthatjuk, hogy tökéletes vezetőkben $\bold{E} = \frac{\bold{J}}{\sigma} = 0$, még ha folyik is az áram. A valóságban viszont még a legjobb vezetőkben is van egy kis ellenállás, így ott is kell lennie egy kis elektromos térnek az áram fenntartásához, de ez elhanyagolható.
+Ezért áramkörökben a vezetékeket gyakran ekvipotenciális vezetékekként kezelik, ahol a potenciálkülönbség csak az ellenállásokon és egyéb komponenseken jelentkezik.
+
+\subsubsection*{Példa: Két fém henger közötti áram}
+Vegyünk két fém hengert, amik között egy $V$ feszültségkülönbség van, és az egyik henger sugara $a$, a másiké pedig $b$. A hengerek valami anyag van $\sigma$ vezetőképességgel kitöltve. Milyen áram folyik a hengerek között $L$ hosszúságban?
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{imgs/6-tetel/two_cylinders.png}
+    \caption{Két fém henger közötti áram}
+\end{figure}
+A hengerek között az elektromos tér szimmetrikus lesz, és csak a radiális irányban lesz komponense:
+\begin{equation}
+    \bold{E}(r) = E(r) \hat{\bold{r}}
+\end{equation}
+A potenciálkülönbség a hengerek között:
+\begin{equation}
+    V = - \int_a^b \bold{E} \cdot d\bold{l} = - \int_a^b E(r) dr = - \int_a^b E(r) dr
+\end{equation}
+Mivel az elektromos tér csak radiális irányban van, ezért a $d\bold{l} = dr \hat{\bold{r}}$, így az egyenlet egyszerűsödik:
+\begin{equation}
+    V = - \int_a^b E(r) dr
+\end{equation}
+Az Ohm-törvény szerint az áram sűrűség:
+\begin{equation}
+    \bold{J}(r) = \sigma \bold{E}(r) = \sigma E(r) \hat{\bold{r}}
+\end{equation}
+Az áram pedig a keresztmetszet és az áramsűrűség szorzata:
+\begin{equation}
+    I = \int_S \bold{J} \cdot d\bold{A} = \int_0^{2\pi} \int_0^L J(r) r d\phi dz = J(r) (2 \pi r L)
+\end{equation}
+Mivel az áram állandó a hengerek között, ezért $J(r)$ nem függ $r$-től, így az egyenlet egyszerűsödik:
+\begin{equation}
+    I = J(r) (2 \pi r L)
+\end{equation}
+Ebből kifejezve az elektromos teret:
+\begin{equation}
+    E(r) = \frac{I}{\sigma (2 \pi r L)}
+\end{equation}
+Ezt visszahelyettesítve a potenciálkülönbség egyenletébe:
+\begin{equation}
+    V = - \int_a^b \frac{I}{\sigma (2 \pi r L)} dr = - \frac{I}{\sigma (2 \pi L)} \int_a^b \frac{1}{r} dr = - \frac{I}{\sigma (2 \pi L)} \ln\left(\frac{b}{a}\right)
+\end{equation}
+Ebből kifejezve az áramot:
+\begin{equation}
+    I = - \frac{V \sigma (2 \pi L)}{\ln\left(\frac{b}{a}\right)}
+\end{equation}
+Tehát a két henger között folyó áram:
+\begin{equation}
+    \boxed{I = \frac{V \sigma (2 \pi L)}{\ln\left(\frac{b}{a}\right)}}
+\end{equation}
+
+\subsubsection{Ohm-törvény klasszikus alak}
+A példából látható, hogy az Áram lineárisan függ a potenciáltól, és a kettő közötti arányossági tényezőt a vezető anyag fizikai 
+tulajdonságai határozzák meg. Ezt el lehet nevezni \textbf{ellenállásnak} ($R$) és a következőképpen definiálható:
+\begin{equation}
+    R = \frac{V}{I} \qquad \left[R\right] = \Omega \, (\text{Ohm}) = \frac{\text{V}}{\text{A}}
+\end{equation}
+Ahol az ellenállás mértékegysége az Ohm ($\Omega$). Ezzel az ellenállással az Ohm-törvény klasszikus alakja a következő lesz:
+\begin{equation}
+    \boxed{V = IR}
+\end{equation}
+Ez az egyenlet azt mondja ki, hogy a vezetőn eső feszültség arányos az árammal, és az arányossági tényező az ellenállás.
+
+Az áram teljesitményét is ki lehet számolni:
+\begin{equation}
+    P = IV = I^2 R = \frac{V^2}{R}
+\end{equation}
+Az ellenállás egy anyag fizikai tulajdonsága, és a következőképpen számolható ki egy egyenes vezeték esetén:
+\begin{equation}
+    R = \rho \frac{L}{A}
+\end{equation}
+Ahol $L$ a vezeték hossza, $A$ a keresztmetsete, és $\rho$ az anyag ellenállásképessége (rezisztivitás). Minél nagyobb a vezeték hossza, annál nagyobb az ellenállás, és minél nagyobb a keresztmetszet, annál kisebb az ellenállás.
+
+\subsubsection{Elektromotoros erő}
+Az \textbf{elektromotoros erő} (röviden: emf) egy olyan mennyiség, ami egy áramkörben a töltések mozgatásáért felelős. Az emf-et általában $ \mathcal{E} $-vel jelölik, és mértékegysége a Volt (V). Az emf nem egy valódi erő, hanem egy potenciálkülönbség, ami a töltések mozgatásához szükséges. Az emf-et gyakran használják olyan eszközökben, mint az akkumulátorok és a generátorok, ahol a kémiai vagy mechanikai energia elektromos energiává alakul.
+Az emf-en kívül van még egy erő ami jelen van az áramkörben: amennyiben jelen van egy potenciálkülönbség, a töltés egyenletesen oszlik el a vezetékben. Ha nem ez lenne a helyzet, és egy pontban felgyülnének a töltések, akkor az elektromos tér olyan erőssé válna, hogy a töltések gyorsan elmozdulnának onnan, és az egyensúly helyreállna.
+Ez a hatás tehet arról, hogy bár az elektronok nem mozognak valami gyorsan a vezetékben, a köztük lévő hatás fénysebességgel terjed, így az áramkörben az elektromos jel szinte azonnal eljut a vezeték másik végére is.
+
+Tehát a töltésre két erő hat igazából, az egyik a forrás ($qf_s$) ami a töltést mozgatja és az árramforrásban öszpontosul, a másik pedig az elektrosztatikus tér ($qE$), ami kiegyenlíti a töltéseket a hálózatban:
+\begin{equation}
+    \bold{f} = \bold{f_s} + \bold{E}
+\end{equation}
+Az emf-et pedig úgy definiáljuk, mint a forrás által kifejtett munka egységnyi töltésre vetítve egy teljes körbefutás során:
+\begin{equation}
+    \boxed{\mathcal{E} = \oint \bold{f_s} \cdot d\bold{l} = \oint \bold{f} \cdot d\bold{l}} \qquad \left[\mathcal{E}\right] = \text{V}
+\end{equation}
+Mivel $\oint \bold{E} \cdot d\bold{l} = 0$ egy konzervatív mezőben, ezért mindegy melyik erőt használjuk. A név kicsit félrevezető, mert a mennyiség nem egy erő,
+hanem az erő integrálja egy egységnyi töltésre, ezért van, hogy "electromotonance"-nek is hívják néha. Egy ideális forrásban, amiben nincs ellenállás, a teljes erő a töltésen nulla, vagyis $E = - f_s$, a feszültség pedig megegyezik az emf-el:
+\begin{equation}
+    V = \mathcal{E}
+\end{equation}
+Ha viszont a forrásban van ellenállás is, akkor a feszültség kisebb lesz, mint az emf, mivel a forrás belső ellenállása miatt egy része elvész:
+\begin{equation}
+    V = \mathcal{E} - Ir_{int}
+\end{equation}
+Ahol $r_{int}$ a forrás belső ellenállása.
+
+\subsubsection{Kirchhoff Törvények}
+Gustav Kirchhoff német fizikus két alapvető törvényt fogalmazott meg az elektromos áramkörökre vonatkozóan, amelyek az áramkörök elemzésének alapját képezik. Ezek a törvények a töltés és energia megmaradásán alapulnak.  
+\begin{itemize}
+    \item \textbf{Kirchhoff első törvénye (csomóponti törvény)}: Egy csomópontban a beáramló áramok összege egyenlő a kiáramló áramok összegével. Matematikailag kifejezve:
+    \begin{equation}
+        \sum I_{be} = \sum I_{ki}
+    \end{equation}
+    Ez a törvény a töltés megmaradását fejezi ki egy csomópontban.
+    
+    \item \textbf{Kirchhoff második törvénye (huroktörvény)}: Egy zárt hurokban a feszültségek összege nulla. Matematikailag kifejezve:
+    \begin{equation}
+        \sum V = 0
+    \end{equation}
+    Ez a törvény az energia megmaradását fejezi ki egy zárt hurokban.
+\end{itemize}
+Ezek a törvények alapvető eszközök az elektromos áramkörök elemzésében, és lehetővé teszik a bonyolult áramkörök viselkedésének megértését és kiszámítását.
+
+A Kirchhoff-törvények alkalmazásával bármilyen lineáris áramkör elemzése elvégezhető, függetlenül attól, hogy hány ellenállás, kondenzátor vagy induktivitás van benne. Ezek a törvények lehetővé teszik az áramkörök egyenleteinek felírását, amelyek megoldásával meghatározhatók az áramok és feszültségek értékei az áramkör különböző pontjain.
+A törvények alapján megadható, hogy különböző kapcsolások esetén hogyan kell összeadni a hálózati komponensek ellenállásait, kapacitásait és induktivitásait:
+\begin{itemize}
+    \item Soros kapcsolás esetén az ellenállások összeadódnak: $R_{össz} = R_1 + R_2 + \ldots + R_n$
+    \item Párhuzamos kapcsolás esetén az ellenállások reciprokai összeadódnak: $\frac{1}{R_{össz}} = \frac{1}{R_1} + \frac{1}{R_2} + \ldots + \frac{1}{R_n}$
+    \item Soros kapcsolás esetén a kapacitások reciprokai összeadódnak: $\frac{1}{C_{össz}} = \frac{1}{C_1} + \frac{1}{C_2} + \ldots + \frac{1}{C_n}$
+    \item Párhuzamos kapcsolás esetén a kapacitások összeadódnak: $C_{össz} = C_1 + C_2 + \ldots + C_n$
+    \item Soros kapcsolás esetén az induktivitások összeadódnak: $L_{össz} = L_1 + L_2 + \ldots + L_n$
+    \item Párhuzamos kapcsolás esetén az induktivitások reciprokai összeadódnak: $\frac{1}{L_{össz}} = \frac{1}{L_1} + \frac{1}{L_2} + \ldots + \frac{1}{L_n}$
+\end{itemize}
+
+\section{Elektrodinamika}
+Elektromágneses indukció, Faraday-törvény. Váltakozó áram, rezgőkör, transzformátor. Maxwell-egyenletek, anyagi összefüggések, illesztési feltételek.
+Elektromágneses potenciálok, mértékinvariancia. Elektromágneses tér energiája és impulzusa.
 
 
 
