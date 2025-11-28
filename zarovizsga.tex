@@ -1851,6 +1851,7 @@ A négyesimpulzus komponensei a következőképpen transzformálódnak a Lorentz
 \end{equation}
 ahol $\Lambda^\mu_\nu$ a Lorentz transzformáció mátrixa. Ez az invariancia biztosítja, hogy a fizikai törvények formája ugyanaz maradjon minden inerciarendszerben, és lehetővé teszi a relativisztikus dinamika alkalmazását különböző helyzetekben.
 
+\newpage
 \section{A klasszikus mechanika elvei}
 
 Virtuális munka elve, Hamilton-elv. Legkisebb hatás elve. Lagrange-féle elsőfajú és másodfajú mozgásegyenletek. Hamilton-függvény, kanonikus egyenletek. Kanonikus transzformációk. Szimmetriák és megmaradási tételek.
@@ -2714,6 +2715,7 @@ akkor a terület mérete nem változik meg. Matematikailag ez a következőképp
 Ez a tétel nagyon fontos a statisztikus mechanikában, ahol a fázistér térfogatának megőrzése biztosítja, hogy a rendszer állapotainak száma nem változik meg kanonikus transzformációk alatt. Ez felfogható úgy is,
 hogy a fázistérben egy "folyadék" áramlik, amely nem összenyomható, tehát a térfogat nem változik meg.
 
+\newpage
 \section{Egzaktul megldható Fizikai problémák}
 Csillapított és kényszerrezgések, csatolt rezgések, lineáris lánc. Kepler-probléma, bolygómozgás. Kvantummechanikai problémák: potenciálvölgy, oszcillátor, rotátor. Hidrogénatom. Keltő és eltüntető operátorok.
 
@@ -4645,6 +4647,7 @@ Ez pedig a híres Rydberg formula, amit empirikus úton fedeztek fel a hidrogén
     \caption{A Hidrogén atom spektrumának Energia szintjei és átmenetei.}
 \end{figure}
 
+\newpage
 \section{Folytonos közegek mechanikája}
 Rugalmas és képlékeny alakváltozások, Hooke-törvény, speciális deformációk. A deformáció jellemzése, feszültség- és deformációs tenzor.
 Folyadékok tulajdonságai, hidrosztatika, felületi feszültség, görbületi nyomás, felhajtóerő. Áramlások jellemzése, Bernoulli-egyenlet,
@@ -5753,6 +5756,7 @@ Látható, hogy az áramlási sebesség arányos a nyomáskülönbséggel és a 
 Mivel a cső sugarának negyedik hatványával arányos az áramlás, ezért a cső átmérőjének kis változása is jelentős hatással van az áramlásra, ezért fontos, hogy
 nagy nyomású rendszereknél fokozottan figyeljünk a cső eltömődésére vagy szűkületére.
 
+\newpage
 \section{Fenomenologikus termodinamika}
 Termodinamikai állapotjelzők, hőtágulás, ideális gáz, kinetikus modell., Nyílt és zárt folyamatok, Carnot-folyamat. Főtételek.
 Termodinamikai potenciálok, fundamentális egyenlet. Van der Waals- gázok. Fázisátalakulások jellemzői, típusai, Gibbs-féle fázisszabály, fázisdiagramok.
@@ -8057,6 +8061,7 @@ Ennek a tételnek van pár következménye is:
     \item Abszolút nulla fokon a lehetséges állapotok száma egy, mivel az entrópia nulla: $S = k_B \ln \Omega = 0 \quad \to \quad \Omega = 1$. (Planck-tétel)
 \end{itemize}
 
+\newpage
 \section{Elektro- és magnetosztatika, áramkörök}
 Coulomb- és Gauss-törvény, szuperpozíció elve. Vezetők, szigetelők, dielektromos polarizáció. Kondenzátor. Magnetosztatika, Lorentz-erő. Stacionárius áram, áramköri törvények: Kirchhoff-törvények, Ohm-törvény.
 \newline
@@ -9351,12 +9356,945 @@ A törvények alapján megadható, hogy különböző kapcsolások esetén hogya
     \item Párhuzamos kapcsolás esetén az induktivitások reciprokai összeadódnak: $\frac{1}{L_{össz}} = \frac{1}{L_1} + \frac{1}{L_2} + \ldots + \frac{1}{L_n}$
 \end{itemize}
 
+\newpage
 \section{Elektrodinamika}
 Elektromágneses indukció, Faraday-törvény. Váltakozó áram, rezgőkör, transzformátor. Maxwell-egyenletek, anyagi összefüggések, illesztési feltételek.
 Elektromágneses potenciálok, mértékinvariancia. Elektromágneses tér energiája és impulzusa.
 
+\subsection{Elektromágneses indukció, Faraday-törvény}
 
+1831-ben Michael Faraday angol fizikus és kémikus publikálta a kísérletei eredményit ahol a mágneses és az elektromos tér interakcióit vizsgálta. Faraday három fő kísérletet végzett el, amelyek mindegyike az \textbf{elektromágneses indukció} jelenségét demonstrálta:
+\begin{itemize}
+    \item \textbf{Mozgó mágnes és tekercs}: Faraday megmutatta, hogy ha egy mágneses mezőben lévő tekercset mozgatunk, akkor a tekercsben elektromos áram indukálódik. Ez azt jelenti, hogy a mágneses tér változása elektromos feszültséget hoz létre a tekercsben.
+    
+    \item \textbf{Változó mágneses tér}: Faraday azt is kimutatta, hogy ha egy álló tekercs körül változtatjuk a mágneses teret (például egy mágnes közelítésével vagy távolításával), akkor szintén elektromos áram indukálódik a tekercsben.
+    
+    \item \textbf{Térerősség változása}: Faraday harmadik kísérletében nem mozgatott semmit se, hanem csak a mágneses tér erősségét változtatta egy tekercs körül (pl. egy elektromágnessel). Ekkor is elektromos áram keletkezett a tekercsben, ami azt mutatja, hogy a mágneses tér időbeli változása is indukál elektromos feszültséget.
+\end{itemize}
+Faraday eredményei, bár egyszerűek voltak, forradalmi hatással voltak a fizikára és az elektromágneses elméletre. Ezek a kísérletek vezettek az \textbf{elektromágneses indukció törvényének} megfogalmazásához, amely kimondja, hogy:
+\begin{quote}
+    \boxed{\textbf{A változó mágneses tér elektromos teret indukál.}}
+\end{quote}
+Ahhoz, hogy ezt megértsük, nyúljunk vissza az Elektromotoros erő fogalmához.
 
+Korábban láttuk, hogy az elektromotoros erő (emf) egy zárt áramkörben a töltések mozgatásáért felelős mennyiség, és a következőképpen definiálható:
+\begin{equation}
+    \mathcal{E} = \oint \bold{f_s} \cdot d\bold{l} = \oint \bold{f} \cdot d\bold{l}
+\end{equation}
+Ezt eddig stacionárius árramforrásokra írtuk fel (mint pl. egy Akkumulátor), de változó mágneses terekre is értelmezhetjük. Ilyen például a Generátor, amiben egy tekercset forgatunk egy mágneses térben, ami elektromos teret indukál.
+Ezt \textbf{mozgó elektromotoros erőnek} nevezzük. Vegyünk tehát egy zárt vezető hurkot és mozgassuk azt egy mágneses térben (a relativitás elmélet is kimondja, hogy mindegy, hogy a mágneses tér változik-e, vagy hozzá képest a vezető, a lényeg a relatív változás).
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{imgs/6-tetel/mozgo_vezeto.png}
+    \caption{Elektromágneses indukció egy zárt vezető hurokban}
+\end{figure}
+Ha az ábrán látható vezetőt $v$ sebességgel mozgatjuk egy $\bold{B}$ mágneses térben, akkor az $ab$ szakaszban található mozgó töltések "átvágják" a mágneses erővonalakat (amik a kép síkjára merőlegesen befelé mutatnak), és a Lorentz-erő hatására egy erő lép fel rajtuk:
+\begin{equation}
+    \bold{f} = q(\bold{E} + \bold{v} \times \bold{B})
+\end{equation}
+Mivel a vezetőben nincs külső elektromos tér ($\bold{E} = 0$), ezért az erő csak a mágneses térből származik:
+\begin{equation}
+    \bold{f} = q(\bold{v} \times \bold{B})
+\end{equation}
+Az $ab$ szakaszban a vezető mentén a töltésekre ható erő nagysága:
+\begin{equation}
+    f = q \cdot |\bold{v} \times \bold{B}| = q \cdot |\bold{v}| |\bold{B}| \sin (\frac{\pi}{2}) = qvB
+\end{equation}
+Ekkor az elektromotoros erő a körön:
+\begin{equation}
+    \mathcal{E} = \oint \bold{f} \cdot d\bold{l} = \int_{ab} \frac{f}{q} dl = \int_{ab} vB dl = vB \int_{ab} dl = vB h
+\end{equation}
+Ahol $h$ az $ab$ szakasz hossza. Vegyük észre, hogy az integrál nem függ az időtől, az egész számolást egy időpillanatra nézzük csak. Azt is fontos megemlíteni, hogy korábban azt mondtuk, a mágneses tér nem végez munkát.
+De akkor ki mozgatja a töltéseket? A válasz az, hogy aki húzza a vezetőt, az végzi el a munkát a töltéseken keresztül. A mágneses tér csak irányítja a töltéseket, de nem végzi el a munkát helyettük. A töltéseknek ugyanis van egy
+vertikális sebessége is (nevezzük $u$-nak), ami $ab$ irányba mutat és ezáltal egy $quB$ nagyságú erőt generál a bal irányba. ennek az erőnek pedig ellen kell tartani miközben a vezetőt húzzuk, tehát a munkát végzőnek ekkora erőt kell kifejtenie egységnyi töltésre:
+\begin{equation}
+    f_{huz} = uB
+\end{equation}
+Eközben a részecskék mozognak az eredményezett sebesség irányába ($\bold{v} + \bold{u} = \bold{w}$), miközben $hl cos\theta$ távolságot tesznek meg az $ab$ szakaszon. Tehát az egységnyi töltésre vett munka:
+\begin{equation}
+    \int f_{huz} d\bold{l} = (uB) (\frac{h}{cos\theta}) sin\theta = vhB = \mathcal{E}
+\end{equation}
+A $sin\theta$ a skalárszorzat miatt jött be. A munkavégzés tehát pontosan annyi mint az elektromotoros erő, így a mágneses tér nem végez munkát, hanem csak irányítja a töltéseket. A húzó erő
+pedig nem ad semmit az emf-hez mert merőleges a vezetőre.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{imgs/6-tetel/integral_utak.png}
+    \caption{A húzó erő és a töltések mozgása a vezetőben}
+\end{figure}
+Tehát mindegy, hogy egy időpillanatban megyünk végig a körön és számoljuk ki az emf-et, vagy a töltéseken végzett munkát határozzuk meg a teljes utuk alatt, ugyan azt az eredményt kapjuk.
+
+Van még egy módja, hogy az emf-et kifejezzük, ahogy egy mozgó körben generálódik. Vegyük a mágneses tér fluxusát a körön keresztül:
+\begin{equation}
+    \Phi_B = \int_S \bold{B} \cdot d\bold{A} = B hx
+\end{equation}
+Ahol $x$ az a szakasza a vezetőnek ami épp a térben van. Ahogy a kör mozog, a fluxus csökken:
+\begin{equation}
+    \frac{d\Phi_B}{dt} = B h \frac{dx}{dt} = - B h v
+\end{equation}
+A negatív előjel azért van mert kifele mozgunk a térből ezért $\frac{d}{dx}$ negatív lesz. Ez viszont az előjeltől eltekintve pontosan ugyanaz mint az emf:
+\begin{equation}
+    \boxed{\mathcal{E} = - \frac{d\Phi_B}{dt}}
+\end{equation}
+Ez az egyenlet a \textbf{Fluxus szabály} és a szépsége, hogy nem csak olyan egyszerű geometriákon igaz mint egy téglalap, hanem bármilyen körön, bármilyen irányú mozgás esetén, bármilyen mágneses térben. Sőt, a körnek nem is kell fix alakúnak lennie.
+Ezzel a fluxus szabállyal kicsit óvatosan kell bánni, ugyanis van egy pár szabad paraméter benne: például befele vagy kifele húzásnál integrálok, illetve melyik irányba választom meg a $d\bold{A}$ vektort? Mindegy hogy vannak megválasztva, de konzisztensen kell alkalmazni őket (a jobbkéz szabyály segíthet ebben).
+A másik dolog amire figyelni kell, az a fluxus-paradox. Ha egy olyan kört teszek bele a mágneses térbe, amin van egy kapcsoló, amivel két kör között tudok váltani, amiknek más a mérete, akkor a kapcsoló átváltásával,
+tudom változtatni a fluxust anélkül, hogy elektromotoros erőt generálnék. Tehát a szabály csak akkor igaz ha a töltések a vezetőn mozognak, és nem csak úgy változik a fluxus.
+
+Ha tehát a fluxus szabályt és Faraday felfedezését ötvözzük, akkor láthatjuk, hogy a változó mágneses fluxus nem csak az elektromotoros erőt, de a teret is változtatja:
+\begin{equation}
+    \mathcal{E} = \oint \bold{E} \cdot d\bold{l} = - \frac{d\Phi_B}{dt} = - \frac{d}{dt} \int_S \bold{B} \cdot d\bold{A}
+\end{equation}
+Ez pedig a \textbf{Faraday-törvény} Integrális alakja. A Stokes tétel alkamazásával pedig fel tudjuk írni differenciális alakban is:
+\begin{equation}
+    \boxed{\nabla \times \bold{E} = - \frac{\partial \bold{B}}{\partial t}}
+\end{equation}
+Ez az egyenlet azt mondja ki, hogy a változó mágneses tér egy örvényes elektromos teret hoz létre. 
+Ez a törvény redukálódik $\nabla \times \bold{E} = 0$-ra, ha a mágneses tér állandó, ami visszaadja az elektrosztatika alapszabályát.
+
+Tehát általánosan kimondhatjuk, hogy bármilyen okból is változik a mágneses tér, az egy elektromotoros erőt fog kelteni vezetőkben, ami elektromos tér indukciójához vezet.
+
+Egy másik szembszögből is megérthetjük a jelenséget, amit Heinrich Lenz német fizikus fogalmazott meg 1834-ben, és \textbf{Lenz törvényeként} ismert. Lenz törvénye kimondja, hogy:
+\begin{quote}
+    \boxed{\textbf{A természet gyűlöli a Fluxusváltozást}}
+\end{quote}
+Ez azt jelenti, hogy amikor csak lehet, a természet megpróbálja úgy alakítani a rendszert, hogy minimalizálja a mágneses fluxus változását. Az indukált áram emiatt mindig olyan lesz aminek az indukált mágneses tere pont ellentétes irányú az őt létrehozóval, ezáltal megpróbálja kiejteni azt. 
+Ez nem sikerül tökéletesen neki, de ez akadályozza meg, hogy végtelen méretű elektromos teret indukáljunk,. hisz minél erősebbben változtatjuk a mágneses teret, annál erősebb lesz az ellenhatás is. Tehát úgy is nézhetnénk a Faraday-törvényt mint a természet próbálkozását, hogy a mi fluxusváltoztatási igényeinknek keresztbe tegyen.
+
+\subsubsection*{Példa: Mágnesezett henger egy kör alakú vezetőn át}
+Vegyünk egy $a$ sugarú, $L$ hosszúságú hengert melynek $\bold{M}$ mágneses momentuma van, toljuk át $v$ sebességgel egy $R$ sugarú vezető gyűrűn. Mekkora elektromotoros erő indukálódik a gyűrűben?
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{imgs/6-tetel/magnetized_cylinder.png}
+    \caption{Mágnesezett henger egy kör alakú vezetőn át}
+\end{figure}
+A henger mágneses terét a következőképpen számolhatjuk ki az axiális pontokon:
+\begin{equation}
+    B(z) = \frac{\mu_0}{2} M \left( \frac{z + L/2}{\sqrt{(z + L/2)^2 + a^2}} - \frac{z - L/2}{\sqrt{(z - L/2)^2 + a^2}} \right)
+\end{equation}
+Ahol $z$ a henger középpontjától mért távolság a gyűrű síkjában. A gyűrűben a mágneses fluxus:
+\begin{equation}
+    \Phi_B = \int_S \bold{B} \cdot d\bold{A} = B(z) \cdot \pi R^2
+\end{equation}
+Ahogy a henger mozog, a fluxus változik:
+\begin{equation}
+    \frac{d\Phi_B}{dt} = \pi R^2 \frac{dB(z)}{dt} = \pi R^2 \frac{dB(z)}{dz} \frac{dz}{dt} = \pi R^2 \frac{dB(z)}{dz} v
+\end{equation}
+Ebből az emf:
+\begin{equation}
+    \mathcal{E} = - \frac{d\Phi_B}{dt} = - \pi R^2 v \frac{dB(z)}{dz}
+\end{equation}
+A $dB(z)/dz$ kifejezést kiszámolva:
+\begin{equation}
+    \frac{dB(z)}{dz} = \frac{\mu_0}{2} M \left( \frac{a^2}{((z + L/2)^2 + a^2)^{3/2}} - \frac{a^2}{((z - L/2)^2 + a^2)^{3/2}} \right)
+\end{equation}
+Így az emf:
+\begin{equation}
+    \boxed{\mathcal{E} = - \frac{\mu_0}{2} \pi R^2 v M \left( \frac{a^2}{((z + L/2)^2 + a^2)^{3/2}} - \frac{a^2}{((z - L/2)^2 + a^2)^{3/2}} \right)}
+\end{equation}
+
+\subsubsection{Indukált elektromos tér}
+A Faraday-törvény általánosította az elektrosztatikus törvényt $\nabla \times \bold{E} = 0$-ról $\nabla \times \bold{E} = - \frac{\partial \bold{B}}{\partial t}$-re, ami azt jelenti, hogy a változó mágneses terek örvényes elektromos tereket hoznak létre. 
+A Gauss.törvény viszont továbbra is érvényes, tehát, ha egy elektromos tér tisztán a Faraday-törvényből származik, akkor annak divergenciája nulla lesz:
+\begin{equation}
+    \nabla \cdot \bold{E} = 0 \qquad \text{ha} \quad \nabla \times \bold{E} = - \frac{\partial \bold{B}}{\partial t}
+\end{equation}
+Tehát a Faraday-indukált terek teljesen meg vannak határozva a $\partial \bold{B}/\partial t$-ből, pontosan úgy mint a statikus mágneses tér a $\mu_0\bold{J}$-ből:
+\begin{equation}
+    \nabla \cdot \bold{B} = 0 \qquad \nabla \times \bold{B} = \mu_0\bold{J}
+\end{equation}
+Az indukált elektromos térre is fel lehet ezáltal írni a Biot-Savart törvény analógiáját:
+\begin{equation}
+    \bold{E}(\bold{r}, t) = - \frac{1}{4 \pi} \int \frac{(\partial \bold{B}/\partial t) \times \hrcurs}{\rcurs^2} dA = - \frac{1}{4 \pi} \frac{\partial }{\partial t} \int \frac{\bold{B} \times \hrcurs}{\rcurs^2} dA
+\end{equation}
+És az Ampière-törvény ($\oint \bold{B} \cdot d\bold{l} = \mu_0 I_{enc}$) analógiáját is:
+\begin{equation}
+    \oint \bold{E} \cdot d\bold{l} = - \frac{d}{dt} \int \bold{B} \cdot d\bold{A} = - \frac{d\Phi_B}{dt}
+\end{equation}
+Ami itt a Faraday-törvény integrális alakja.
+
+Egy fontos megjegyzés, hogy az indukált eletromos térhez változó mágneses térre van szükség. De a mágneses tér kiszámolásához használt összefüggéseink statikus térre vonatkoztak! Ez azt jelenti, hogy ezek a számítások csak körülbelül jók!
+Az esetek nagy részében a különbség elhanyagolható, ezért ezeket a tereket kvázistatikusnak nevezzük. Ha viszont nagyon gyorsan változik a mágneses tér, vagy nagyon messze vagyunk a forrástól, akkor már nem lesz érvényes a statikus közelítés, és a teljes Maxwell-egyenleteket kell használni.
+Ez általában sugárzásoknál és ekeltromágneses hullámoknál jön elő.
+
+\subsubsection{Induktivitás}
+Vegyünk két áramkört és helyezzük el őket egymás mellé. Vezessünk áramot az egyik körben ($I_1$), ami egy mágneses teret hoz létre. A tér egy része áthalad a másik körön, és egy mágneses fluxust generál benne. Legyen $\Phi_{2}$ a mágneses fluxus $\bold{B}_1$ generál a második körön.
+Az első körben lévő mágneses teret a Biot-Savart törvény segítségével számolhatjuk ki:
+\begin{equation}
+    \bold{B}_1(\bold{r}) = \frac{\mu_0}{4 \pi} I_1 \oint \frac{d\bold{l}_1 \times \hrcurs}{\rcurs^2}
+\end{equation}
+Ebből látszódik, hogy a mágneses tér arányos az első körben lévő árammal. Mivel a fluxus a mágneses tér integrálja a második körön keresztül, ezért a fluxus is arányos lesz az első körben lévő árammal:
+\begin{equation}
+    \Phi_{2} = \int_{S_2} \bold{B}_1 \cdot d\bold{A}_2 = M_{21} I_1
+\end{equation}
+Ahol $M_{21}$ a két kör közötti \textbf{közös induktivitás}, ami csak a geometriai elrendezéstől függ (a körök mérete, távolsága és orientációja). A közös induktivitás mértékegysége a Henry (H):
+\begin{equation}
+    \left[M_{21}\right] = \text{H} = \frac{\text{Wb}}{\text{A}}
+\end{equation}
+A fluxust felírhatjuk úgy is mint egy vektor-potenciál:
+\begin{equation}
+    \Phi_{2} = \int \bold{B}_1 \cdot d\bold{A}_2 = \int (\nabla \times \bold{A}_1) \cdot d\bold{A}_2 = \oint \bold{A}_1 \cdot d\bold{l}_2
+\end{equation}
+Ahol $\bold{A}_1$ az első kör által generált vektor-potenciál a második kör helyén. A vektor potenciált úgy tudjuk kiszámolni, hogy:
+\begin{equation}
+    \bold{A}_1(\bold{r}) = \frac{\mu_0}{4 \pi} I_1 \oint \frac{d\bold{l}_1}{\rcurs}
+\end{equation}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{imgs/6-tetel/induktivitas.png}
+    \caption{Két kör közötti kölcsönös induktivitás}
+\end{figure}
+Ezt visszahelyettesítve a fluxus kifejezésbe:
+\begin{equation}
+    \Phi_{2} = \frac{\mu_0}{4 \pi} I_1 \oint_{C_2} (\oint_{C_1} \frac{d\bold{l}_1}{\rcurs}) \cdot d\bold{l}_2
+\end{equation}
+Ebből kiolvasható a kölcsönös induktivitás:
+\begin{equation}
+    \boxed{M_{21} = \frac{\mu_0}{4 \pi} \oint_{C_2} (\oint_{C_1} \frac{d\bold{l}_1}{\rcurs}) \cdot d\bold{l}_2}
+\end{equation}
+Ez az egyenlet a Neumann-féle integrál, ami a két kör geometriai elrendezésétől függően meghatározza a kölcsönös induktivitást. Ez a formula nem sok gyakorlati haszonnal rendelkezik, de rávilágít egy nagyon fontos tulajdonságára az induktivitásnak:
+\begin{itemize}
+    \item Az induktivitás csak a geometriai elrendezéstől függ, nem függ az anyagoktól vagy az áram nagyságától.
+    \item A kölcsönös induktivitás szimmetrikus: $M_{21} = M_{12}$, mivel az integrálok sorrendje felcserélhető.
+\end{itemize}
+Ez egy nagyon fontos konklúzióhoz vezet: Teljesen mindegy hogy hol vannak a körök vagy milyen az alakjuk, ha az 1-ben $I$ áramot engedek akkor a 2-ben indukált fluxus pontosan ugyan annyi lesz, mint ha a 2-ben engednék $I$ áramot és az 1-ben mérném a fluxust.
+Tehát a kölcsönös induktivitásnál el is hagyhatjuk a sorszámokat, és csak $M$-et írunk.
+
+De nem csak két két kör között tud fellépni induktivitás, hanem egy esetében is. A Lenz törvényből láttuk, hogy egy változó áram mágneses teret hoz létre, ami egy ellenirányú elektromotoros erőt indukál az áramkörben, ami cserébe egy ellentétes irányú mágneses teret generál. Ez az ellenhatás az \textbf{öninduktivitás}, ami egy körben lévő áram változásával szembeni ellenállást jelenti.
+Ez az önindukció is arányos az árammal, tehát:
+\begin{equation}
+    \Phi = L I
+\end{equation}
+Ahol $L$ az öninduktivitás, ami szintén csak a kör geometriai elrendezésétől függ. Az öninduktivitás mértékegysége is a Henry:
+\begin{equation}
+    \left[L\right] = \text{H} = \frac{\text{Wb}}{\text{A}}
+\end{equation}
+Az öninduktivitás kifejezhető a kölcsönös induktivitás segítségével is, ha a kört két részre osztjuk:
+\begin{equation}
+    L = M_{11} = M_{22} = \frac{\mu_0}{4 \pi} \oint_{C} (\oint_{C} \frac{d\bold{l}_1}{\rcurs}) \cdot d\bold{l}_2
+\end{equation}
+Az öninduktivitás egy fontos jellemzője az áramkörökben, mivel meghatározza, hogy mennyire ellenáll egy áramkör az áramváltozásoknak. Minél nagyobb az öninduktivitás, annál nehezebb megváltoztatni az áramot az áramkörben, mivel az indukált elektromotoros erő mindig ellentétes irányú a változással.
+
+Az induktivitás bizonyos szempontból analóg a mechanikai rendszerekből a tömeggel, ugyanis a ahogy a tömeg a gyorsulással szembeni ellenállást felyezi ki, így az induktivitás az áram változásával szembeni ellenállást fejezi ki. Ha az áramerősség változik, akkor az elektromotoros erő:
+\begin{equation}
+    \mathcal{E} = - L \frac{dI}{dt}
+\end{equation}
+Ezt az indukált emf-et \textbf{önindukciós emf-nek} nevezzük, és ez az, ami megakadályozza az áram gyors változását egy induktív áramkörben.
+
+\subsection{Váltakozó áram, rezgőkör, transzformátor}
+\subsubsection{Váltakozó áram}
+A váltakozó áram (AC) olyan elektromos áram, amely időben periodikusan változik, ellentétben az egyenárammal (DC), amely állandó irányú és nagyságú. A váltakozó áramot széles körben használják az elektromos energia szállítására és elosztására, mivel hatékonyabb és gazdaságosabb nagy távolságokra eljuttatni, mint az egyenáramot.
+A váltakozó áramot általában úgy állítják elő, hogy egy mágnest forgatnak tekercsek körül ami áramot indukál bennük. Ahogy a mágnes közeledik egy tekercshez, az elektromotoros erő elkezdi tolni a töltéseket az egyik irányba,
+majd ahogy távolodik, a másik irányba indul. Mivel a mágnes többé-kevésbé egyenletes sebességgel forog, az indukált feszültség és áram is szinuszosan változik időben. Ipari körülmények között általában 3 tekercs van a mágnes körül (vagy 6 ha a két átellenes oldalra teszünk, amik ezért azonos fázisban lesznek), ami ezért három fázisú váltakozó áramot eredményez, de létezik öt fázisú és más konfiguráció is.
+Magát a mágnest sokféleképpen lehet forgatni, például gőzturbinával, vízturbinával, belső égésű motorral vagy akár szélturbinával vagy atomenergia által kreált gőznyomással. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{imgs/6-tetel/ac_generator.jpg}
+    \caption{Váltakozó áram generátora 3 fázissal}
+\end{figure}
+Az indukált áram a tekercsben a következőképpen adható meg:
+\begin{equation}
+    I(t) = I_0 \sin(\omega t + \phi) \qquad V(t) = V_0 \sin(\omega t + \phi)
+\end{equation}
+Ahol $I_0$ az áram amplitúdója (maximuma) és $V_0$ a feszültség amplitúdója, $\omega$ a körfrekvencia, és $\phi$ a fázisszög. A körfrekvencia és a frekvencia közötti kapcsolat:
+\begin{equation}
+    \omega = 2 \pi f
+\end{equation}
+A váltóáramnál definiálhatunk egy \textbf{effektív értéket} is, azt az áramerősség vagy feszültség, amely ugyanannyi hőt termel egy ellenálláson, mint az adott váltakozó áramú jel. Az effektív értékeket a következőképpen számoljuk ki:
+Egy tetszőleges periodikus függvényre ($v(t)$) igaz, hogy az effektív érték a négyzetes középérték (RMS):
+\begin{equation}
+    V_{eff} = \sqrt{\frac{1}{T} \int_0^T \left[v\right]^2(t) dt}
+\end{equation}
+Ha tehát a feszültségünk $V(t) = V_0 \sin(\omega t + \phi)$, akkor az effektív érték:
+\begin{equation}
+    V_{eff} = \sqrt{\frac{1}{T} \int_0^T V_0^2 \sin^2(\omega t + \phi) dt}
+\end{equation}
+A $\sin^2$ függvény integrálja egy perióduson át $T/2$, így az effektív érték:
+\begin{equation}
+    V_{eff} = \sqrt{\frac{V_0^2}{T} \cdot \frac{T}{2}} = \frac{V_0}{\sqrt{2}}
+\end{equation}
+Ugyanez igaz az áramra is, tehát összefoglalva:
+\begin{equation}
+    \boxed{V_{eff} = \frac{V_0}{\sqrt{2}} \qquad I_{eff} = \frac{I_0}{\sqrt{2}}}
+\end{equation}
+Az effektív értékek hasznos amikor a teljesítményt akarjuk megadni, ugyanis az átlagos teljesítmény egy ellenálláson:
+\begin{equation}
+    P_{avg} = \frac{V_{eff}^2}{R}
+\end{equation}
+Ahol $R$ az ellenállás értéke.
+
+\subsubsection{Rezgőkör}
+A rezgőkör (vagy RLC-áramkör) olyan passzív elemekből (tekercsből, kondenzátorból és ellenállásból) álló elektromos áramkör, amely külső energia hatására rezgésbe, oszcillációba hozható.
+Megkülönböztetnek soros és párhuzamos rezgőköröket aszerint, hogy bennük a tekercs és a kondenzátor soros illetve párhuzamos kapcsolásban áll-e. Általánosan a következő differenciál egyenletet írhatjuk fel:
+\begin{equation}
+    L \frac{d^2 q}{dt^2} + R \frac{dq}{dt} + \frac{1}{C} q = V(t)
+\end{equation}
+Ahol $L$ az öninduktivitás, $R$ az ellenállás, $C$ a kapacitás, $q$ a töltés a kondenzátoron, és $V(t)$ a külső feszültségforrás. Ha nincs külső feszültségforrás ($V(t) = 0$), akkor a homogén egyenletet kapjuk:
+\begin{equation}
+    L \frac{d^2 q}{dt^2} + R \frac{dq}{dt} + \frac{1}{C} q = 0
+\end{equation}
+Ennek a megoldása a következő alakú lesz:
+\begin{equation}
+    q(t) = Q e^{-\alpha t} \cos(\omega_d t + \phi)
+\end{equation}
+Ahol $\alpha = \frac{R}{2L}$ a csillapítási tényező, $\omega_d = \sqrt{\frac{1}{LC} - \alpha^2}$ a csillapított rezgési frekvencia, $Q$ a kezdeti töltés, és $\phi$ a kezdeti fázis. Ez a megoldás azt mutatja, hogy a töltés időben csillapodó oszcillációt végez a kondenzátoron.
+Ha van külső feszültségforrás, akkor a megoldás egy állandó részből és egy csillapodó részből áll:
+\begin{equation}
+    q(t) = q_{steady}(t) + q_{transient}(t)
+\end{equation}
+Ahol $q_{steady}(t)$ az állandó megoldás, amely a külső feszültségforrástól függ, és $q_{transient}(t)$ a csillapodó megoldás, amely a kezdeti feltételektől függ.
+
+\subsubsection{Transzormátor}
+A transzformátor egy olyan elektromos eszköz, amely váltakozó áram feszültségét és áramerősségét képes megváltoztatni anélkül, hogy mechanikai mozgást végezne. A transzformátor két vagy több tekercsből áll, amelyek egy közös mágneses mag köré vannak tekerve. Az egyik tekercset primer tekercsnek, a másikat szekunder tekercsnek nevezzük.
+Amikor váltakozó áramot vezetünk a primer tekercsbe, az változó mágneses teret hoz létre a mágneses magban. Ez a változó mágneses tér pedig elektromotoros erőt indukál a szekunder tekercsben, amely feszültséget és áramot generál.
+A transzformátor működését a Faraday-törvény és a kölcsönös induktivitás elve magyarázza. A primer tekercsben folyó áram változása változó mágneses fluxust hoz létre, amely a szekunder tekercsben elektromotoros erőt indukál. A transzformátor feszültség- és áramerősségváltoztatását a következő képletek írják le:
+\begin{equation}
+    \frac{V_s}{V_p} = \frac{N_s}{N_p} \qquad \text{és} \qquad \frac{I_s}{I_p} = \frac{N_p}{N_s}
+\end{equation}
+Ahol $V_p$ és $V_s$ a primer és szekunder feszültség, $I_p$ és $I_s$ a primer és szekunder áramerősség, és $N_p$ és $N_s$ a primer és szekunder tekercsek menetszáma.
+A transzformátorok hatékony eszközök az elektromos energia átvitelére és elosztására, mivel lehetővé teszik a feszültség szintjének megváltoztatását a veszteségek minimalizálása érdekében. Például a nagyfeszültségű áramot alacsony feszültségű árammá alakítják a háztartási használathoz.
+
+A szabályozni tudjuk a feszültséget és az áramot, transzformátorokra van szükségünk, amik csak váltakozó árammal működnek. Ezért a váltakozó áram az ipari és háztartási elektromos rendszerekben is elterjedt.
+
+\subsection{Maxwell-egyenletek, anyagi összefüggések, illesztési feltételek}
+
+Eddigi ismereteink alapján négy alapvető törvényt sikerült azonosítanunk, amelyek leírják az elektromágneses jelenségeket. Ezek a törvények a következők:
+\begin{enumerate}
+    \item Gauss törvénye az elektromos térre: $\nabla \cdot \bold{E} = \frac{\rho}{\epsilon_0}$
+    \item (nincs neve): $\nabla \cdot \bold{B} = 0$
+    \item Faraday törvénye: $\nabla \times \bold{E} = - \frac{\partial \bold{B}}{\partial t}$
+    \item Ampère törvénye: $\nabla \times \bold{B} = \mu_0 \bold{J}$
+\end{enumerate}
+Ez az állapot ahol a 19. század közepén tartott a fizika az elektromágnesesség területén. Azonban akad egy probléma ezekkel az egyenletekkel: nem konzisztensek!
+Minden a divergencia tétellel kezdődik. Ha például vesszük a Faraday törvényt és alkalmazzuk rá a divergencia tételt:
+\begin{equation}
+    \nabla \cdot (\nabla \times \bold{E}) = - \nabla \cdot \frac{\partial \bold{B}}{\partial t}
+\end{equation}
+A bal oldalon a divergencia tétel miatt nulla lesz:
+\begin{equation}
+    0 = - \frac{\partial }{\partial t} (\nabla \cdot \bold{B}) 
+\end{equation}
+Ahol a jobb oldalon kivettem a deriváltat, mivel az idő szerinti derivált és a térbeli divergencia operátor függetlenek egymástól. Ez az egyenlet pedig mindig igaz lesz, hisz a $\nabla \cdot \bold{B} = 0$-ból indulunk ki.
+Ezzel eddig tehát minden oké. De most nézzük meg az Ampiére törvényt:
+\begin{equation}
+    \nabla \cdot (\nabla \times \bold{B}) = \mu_0 \nabla \cdot \bold{J}
+\end{equation}
+Ismét a bal oldalon nulla lesz:
+\begin{equation}
+    0 = \mu_0 \nabla \cdot \bold{J}
+\end{equation}
+De a jobb oldalon a töltésmegmaradás törvénye miatt:
+\begin{equation}
+    \nabla \cdot \bold{J} = - \frac{\partial \rho}{\partial t}
+\end{equation}
+Ezt visszahelyettesítve:
+\begin{equation}
+    0 = - \mu_0 \frac{\partial \rho}{\partial t}
+\end{equation}
+Ez az egyenlet csak akkor igaz, ha a töltéssűrűség időben állandó, ami nyilvánvalóan nem igaz általánosan. Tehát az Ampère törvénye nem konzisztens a töltésmegmaradás törvényével!
+
+Van egy másik eset is ahol az Ampiére-törvény nem érvényesül nem állandó áram esetén. Vegyünk egy kondenzátort amit éppen feltöltünk. Ekkor az Ampiére törvény integrális alakja:
+\begin{equation}
+    \oint \bold{B} \cdot d\bold{l} = \mu_0 I_{enc}
+\end{equation}
+Vegyük úgy, hogy a körünk egy olyan felületet határol ami áthalad a vezetőn, így az $I_{enc}$ a vezetőn átfolyó áram lesz. De most vegyünk egy másik felületet ami egy buborék ami nem metszi a vezetőt, hanem csak a kondenzátor lemezei között halad át. Ezt megtehetem,
+hisz azt mondtuk az Ampière törvény integrális alakjánál, hogy a felület tetszőleges lehet. De ebben az esetben az $I_{enc} = 0$, hisz a buborék nem metszi a vezetőt. Tehát két különböző felületre két különböző eredményt kaptunk ugyan arra a körre:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{imgs/6-tetel/amper_torveny_rossz.png}
+    \caption{Ampère paradoxon kondenzátornál}
+\end{figure}
+Ez nem volt probléma a magnesztotatikában, hisz ott az áram állandó volt, de itt "felgyülnek" a töltések a kondenzátor lemezein, tehát az áram nem állandó. Tehát az Ampère törvénye itt sem érvényesül.
+Természetesen nincs okunk feltételezni, hogy a törvénynek érvényesnek kellene lennie nem állandó áram esetén is, hisz az egész törvényt a Biot-Savart törvényből vezettük le, ami csak állandó áramra érvényes.
+De a 19. században nem volt okuk feltételezni, hogy ez a törvény nem általánosabban érvényes, mert nem tudtak olyan váltakozó áramot előállítani ami elég gyors lett volna ahhoz, hogy a különbségek megjelenjenek.
+Ezért ez egy pusztán teoretikus probléma volt, amire James Clerk Maxwell skót fizikus adott egy teoretikus megoldást.
+
+\subsubsection{Maxwell-Egyenletek}
+Maxwell, egy rendkívül egyszerű megoldással oldotta meg a problémát. Egyszerűen vette a kontinuitási egyenenletet és a Gauss-törvényt:
+\begin{equation}
+    \nabla \cdot \bold{J} = - \frac{\partial \rho}{\partial t} \qquad \text{és} \qquad \nabla \cdot \bold{E} = \frac{\rho}{\epsilon_0}
+\end{equation}
+A Gauss-törvényből kifejezte a töltéssűrűséget:
+\begin{equation}
+    \rho = \epsilon_0 \nabla \cdot \bold{E}
+\end{equation}
+Ezt visszahelyettesítette a kontinuitási egyenletbe:
+\begin{equation}
+    \nabla \cdot \bold{J} = - \epsilon_0 \frac{\partial }{\partial t} (\nabla \cdot \bold{E})
+\end{equation}
+Mivel az időderivált és a térbeli divergencia operátor függetlenek egymástól, ezért a jobb oldalon kivehette a deriváltat:
+\begin{equation}
+    \nabla \cdot \bold{J} = - \epsilon_0 \nabla \cdot \frac{\partial \bold{E}}{\partial t}
+\end{equation}
+Maxwell pedig felismerte, hogy ha ezt a tagot hozzáadjuk az Ampère törvény jobb oldalához, akkor a divergencia vételekor, pont meg fogja enni a $\bold{J}$ által hozott tagot, ezzel konzisztensé teszi a törvényt!
+így született meg a \textbf{Maxwell-Ampère törvény}:
+\begin{equation}
+    \nabla \times \bold{B} = \mu_0 \bold{J} + \mu_0 \epsilon_0 \frac{\partial \bold{E}}{\partial t}
+\end{equation}
+Ahol a plusz tagot \textbf{eltolási áramnak} ($\bold{J}_D$) nevezzük, bár a név kicsit félrevezető, mert ez a tag nem egy áram, csak az áramhoz adjuk hozzá.
+Ezt a megoldást egyébként Maxwell nem csak az Ampère törvény inkonzisztenciája miatt adta hozzá, hanem az akkoriban népszerű, de azóta cáfolt éter elméket miatt is.
+Ezt a kiegészítést akkoriban nem igazán tudták validálni kísérletileg, de később Hertz-nek sikerült validálnia amikor az elektromágneses hullámokat vizsgálta.
+
+Ennek van viszont egy mélyebb implikációja is, ugyanis ez a kiegészítés szimetrikussá tette az alap törvényeket, ugyanis ebből az egyenletből kijün, hogy, ahogy a változó mágneset tér képes elektromos teret
+indukálni (Faraday törvény), úgy a változó elektromos tér is képes mágneses teret indukálni (Maxwell-Ampère törvény). Ez a szimmetria vezetett el minket az elektromágneses hullámok felfedezéséhez is.
+
+Ez az eredmény a kondenzátoros problémát is megoldotta, hiszen ha veszünk egy kondenzátort ahol a pofák kellően közel vannak egymáshoz, akkor az elektromos terük:
+\begin{equation}
+    \bold{E} = \frac{\sigma}{\epsilon_0} \hat{n} = \frac{Q}{\epsilon_0 A} \hat{n}
+\end{equation}
+Ahol $\sigma$ a felületi töltéssűrűség, $\hat{n}$ a pofákra merőleges egységvektor, $Q$ a töltés a pofákon, és $A$ a pofák területe. Ha most a kondenzátort töltjük, akkor a töltés időben változik, tehát az elektromos tér is időben változik:
+\begin{equation}
+    \frac{\partial \bold{E}}{\partial t} = \frac{1}{\epsilon_0 A} \frac{dQ}{dt} \hat{n} = \frac{I}{\epsilon_0 A} \hat{n}
+\end{equation}
+Ezt visszahelyettesítve a Maxwell-Ampère törvénybe:
+\begin{equation}
+    \nabla \times \bold{B} = \mu_0 \bold{J} + \mu_0 \epsilon_0 \frac{I}{\epsilon_0 A} \hat{n} = \mu_0 \bold{J} + \mu_0 \frac{I}{A} \hat{n}
+\end{equation}
+Most vegyünk egy olyan felületet ami egy buborék ami nem metszi a vezetőt, hanem csak a kondenzátor lemezei között halad át. Ezt megtehetem,
+hisz azt mondtuk az Ampière törvény integrális alakjánál, hogy a felület tetszőleges lehet. Ebben az esetben az $I_{enc} = 0$, hisz a buborék nem metszi a vezetőt, de a Maxwell-Ampère törvény miatt a jobb oldalon van egy plusz tag is:
+\begin{equation}
+    I_{enc} = \int \bold{J} \cdot d\bold{A} + \epsilon_0 \int \frac{\partial \bold{E}}{\partial t} \cdot d\bold{A} = 0 + \epsilon_0 \cdot \frac{I}{\epsilon_0 A} \cdot A = I
+\end{equation}
+Tehát a Maxwell-Ampère törvény konzisztens marad minden felület választásánál!
+
+Ezzel tehát megvan mind a négy \textbf{Maxwell-egyenlet}:
+\begin{equation}
+    \boxed{\begin{aligned}
+        \nabla \cdot \bold{E} &= \frac{\rho}{\epsilon_0} \\
+        \nabla \cdot \bold{B} &= 0 \\
+        \nabla \times \bold{E} &= - \frac{\partial \bold{B}}{\partial t} \\
+        \nabla \times \bold{B} &= \mu_0 \bold{J} + \mu_0 \epsilon_0 \frac{\partial \bold{E}}{\partial t}
+    \end{aligned}}
+\end{equation}
+Ezek a Lorentz-törvénnyel együtt:
+\begin{equation}
+    \bold{F} = q(\bold{E} + \bold{v} \times \bold{B})
+\end{equation}
+leírják az összes klasszikus elektromágneses jelenséget. Még a Kontinuitási egyenletet is levezethetjük, ha vesszük a Maxwell-Ampère törvény divergenciáját.
+
+Az egyenletek szimmetriája a mai napig a fizikusok legszebb álma. A hasonlóság főként vákuumban feltűnő:
+\begin{equation}
+    \begin{aligned}
+        \nabla \cdot \bold{E} &= 0 \\
+        \nabla \cdot \bold{B} &= 0 \\
+        \nabla \times \bold{E} &= - \frac{\partial \bold{B}}{\partial t} \\
+        \nabla \times \bold{B} &= \mu_0 \epsilon_0 \frac{\partial \bold{E}}{\partial t}
+    \end{aligned}
+\end{equation}
+De sajnos nem lehet minden tökéletes, ezért itt is akad egy probléma.
+Látható, hogy a mágneses tér divergenciája mindig nulla, míg az elektromos tér divergenciája a töltéssűrűségtől függ. Ez pedig azt jelenti, hogy nincsenek mágneses monopólusok. De ennek semmilyen teoretikus oka sincs.
+A mágneses tér divergenciájának értéke teljesen empírikus eredmény. Nincs semmi akadálya egy "mágneses töltéssűrűség" létezésének, de akármennyire is próbálkoztak a kutatók, sose sikerült bizonyítékot találni rájuk.
+Pedig Dirac még azt is bizonyította, hogy ha léteznének mágneses monopólusok, az megmagyarázná a kvantum elektrodinamikában, hogy a töltés miért kvantált. Tehát nem tehetnek mást a fizikusok mint próbálkoznak a mágneses monopólus megtalálásával,
+vagy találnak egy elméletet, ami megmagyarázza, hogy miért nem léteznek.
+
+\subsubsection{Maxwell-egyenletek anyagban, anyagi összefüggések}
+A Maxwell-egyenletek általánosan igazak ahogy vannak. De ennek ellenére van, hogy érdemes egy kicsit más alakban felírni őket, amikor anyagokban vizsgáljuk az elektromágneses mezőket.
+Az anyag ugyanis polarizálódhat, illetve megkülönböztethetünk bennük szabad és kötött töltéseket és áramokat is. És ezek a kötött töltések és áramokra nincs közvetlen ráhatásunk,
+ezért érdemes lenne őket leválasztani a szabad töltésekről és áramokról és úgy felírni a Maxwell-egyenleteket, hogy csak a szabad töltések és áramok szerepeljenek bennük.
+
+Az elektromos polarizációs vektort már bevezettük, mint a kötött töltéssűrűség függvényét:
+\begin{equation}
+    \rho_{b} = - \nabla \cdot \bold{P}
+\end{equation}
+Ahol $\bold{P}$ az elektromos polarizációs vektor, ami megadja az egységnyi térfogatban lévő dipólusmomentumot. Hasonlóan a mágneses polarizációs vektort is láttuk,
+ami a kötött áramokhoz kapcsolódik:
+\begin{equation}
+    \bold{J}_{b} = \nabla \times \bold{M}
+\end{equation}
+Ahol $\bold{M}$ a mágneses polarizációs vektor, ami megadja az egységnyi térfogatban lévő mágneses dipólusmomentumot. Ehhez egy extra elemet kell megfontolnunk a nem statikus esetben,
+Ha megváltozik az elektromos polarizáció, az egy "áramot" jelent a kötött töltésekben.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{imgs/6-tetel/polarizacios_aram.png}
+    \caption{Polarizációs áram egy polarizált anyagban}
+\end{figure}
+Vegyünk például egy polarizált anyag darabot, amiben a polarizáció keltett egy $\sigma_b = P$ töltéssűrűséget
+az egyik oldalon, és egy $-\sigma_b = -P$ töltéssűrűséget a másik oldalon. Ha most megváltoztatjuk a polarizációt, akkor ezek a töltések is meg fognak változni, ami egy áramot jelent a kötött töltésekben:
+\begin{equation}
+    dI = \frac{\partial \sigma_b}{\partial t} dA_\perp = \frac{\partial P}{\partial t} \cdot dA_\perp
+\end{equation}
+Ahol $dA_\perp$ a felületnek az a komponense ami merőleges a polarizációra. Az áramsűrűség ebből pedig:
+\begin{equation}
+    \bold{J}_{p} = \frac{\partial \bold{P}}{\partial t}
+\end{equation}
+Ahol $\bold{J}_p$ a polarizációs áram sűrűség. Ennek a polarizációs áramsűrűségnek semmi köze sincs a $\bold{J}_b$-hez, mert a kötött áramokat a magnetizáció okozza és az elektron spinjéhez és pályamomentumához van köze.
+Ezzel szemben a polarizációs áramsűrűséget kizárólag a megváltozott elektromos polarizáció okozza. Ha $\bold{P}$ jobbra mutat és kicsit megnő, akkor a pozitív töltések egy kicsit jobbra fognak elmozdulni, a negatívok pedig kicsit balra,
+ami egy kis áramot eredményez.
+
+Mielőtt továbbmenyünk nézzük meg, hogy ez a $\bold{J}_b$ is konzisztens a kontinuitási egyenlettel:
+\begin{equation}
+    \nabla \cdot \bold{J}_b = \nabla \cdot \frac{\partial \bold{P}}{\partial t} = \frac{\partial }{\partial t} (\nabla \cdot \bold{P}) = - \frac{\partial \rho_b}{\partial t}
+\end{equation}
+Tehát igen, ez az áramsűrűség is kielégíti a kontinuitási egyenletet.
+
+Ebből kifojólag a teljes töltéssűrűség felírható a szabad és kötött töltéssűrűségek összegeként:
+\begin{equation}
+    \rho = \rho_f + \rho_b = \rho_f - \nabla \cdot \bold{P}
+\end{equation}
+Hasonlóan a teljes áramsűrűség is felírható a szabad és kötött áramsűrűségek összegeként, de itt bejön a polarizációs áramsűrűség is:
+\begin{equation}
+    \bold{J} = \bold{J}_f + \bold{J}_b + \bold{J}_p = \bold{J}_f + \nabla \times \bold{M} + \frac{\partial \bold{P}}{\partial t}
+\end{equation}
+Ezek alapján a Gauss-törvényt átírhatjuk úgy, hogy csak a szabad töltéssűrűség szerepeljen benne:
+\begin{equation}
+    \nabla \cdot \bold{E} = \frac{1}{\epsilon_0} \left( \rho_f - \nabla \cdot \bold{P} \right)
+\end{equation}
+Ezt átrendezve:
+\begin{equation}
+    \nabla \cdot \left( \epsilon_0 \bold{E} + \bold{P} \right) = \rho_f
+\end{equation}
+Itt bevezethetjük az elektromos eltolás vektort ($\bold{D}$):
+\begin{equation}
+    \bold{D} = \epsilon_0 \bold{E} + \bold{P}
+\end{equation}
+Így a Gauss-törvény felírható a következő formában:
+\begin{equation}
+    \nabla \cdot \bold{D} = \rho_f
+\end{equation}
+Hasonlóan az Ampère törvényt is átírhatjuk úgy, hogy csak a szabad áramsűrűség szerepeljen benne:
+\begin{equation}
+    \nabla \times \bold{B} = \mu_0 \left( \bold{J}_f + \nabla \times \bold{M} + \frac{\partial \bold{P}}{\partial t} \right) + \mu_0 \epsilon_0 \frac{\partial \bold{E}}{\partial t}
+\end{equation}
+Ezt átrendezve:
+\begin{equation}
+    \nabla \times \left( \frac{1}{\mu_0} \bold{B} - \bold{M} \right) = \bold{J}_f + \frac{\partial }{\partial t} \left( \epsilon_0 \bold{E} + \bold{P} \right)
+\end{equation}
+Itt bevezethetjük a mágneses intenzitás vektort ($\bold{H}$):
+\begin{equation}
+    \bold{H} = \frac{1}{\mu_0} \bold{B} - \bold{M}
+\end{equation}
+Így az Ampère törvény felírható a következő formában:
+\begin{equation}
+    \nabla \times \bold{H} = \bold{J}_f + \frac{\partial \bold{D}}{\partial t}
+\end{equation}
+Faraday törvénye és a mágneses tér Gauss-törvénye változatlan marad, mert nem szerepel bennük a $\bold{J}$. Tehát a Maxwell-egyenletek anyagban a következő formában írhatók fel:
+\begin{equation}
+    \boxed{\begin{aligned}
+        \nabla \cdot \bold{D} &= \rho_f \\
+        \nabla \cdot \bold{B} &= 0 \\
+        \nabla \times \bold{E} &= - \frac{\partial \bold{B}}{\partial t} \\
+        \nabla \times \bold{H} &= \bold{J}_f + \frac{\partial \bold{D}}{\partial t}
+    \end{aligned}}
+\end{equation}
+Vannak akik ezeket tartják a "tényleges" Maxwell-egyenleteknek, de ezek semmilyen módon nem általánosabbak mint az eddig látott felírás. Ez csak egy kényelmesebb megfogalmazás olyan esetekben amikor anyagokkal dolgozunk.
+Az egyik hátránya ennek a felírásnak, hogy be kell vezetnünk két új vektort ($\bold{D}$ és $\bold{H}$), amik az anyag tulajdonságaitól is függenek. Felírva őket $\bold{E}$ és $\bold{B}$ függvényében:
+\begin{equation}
+    \bold{P} = \epsilon_0 \chi_e \bold{E} \qquad \text{és} \qquad \bold{M} = \chi_m \bold{H}
+\end{equation}
+Ahol $\chi_e$ az elektromos polarizálhatóság és $\chi_m$ a mágneses polarizálhatóság. Ezek alapján a következő anyagi összefüggéseket kapjuk:
+\begin{equation}
+    \bold{D} = \epsilon \bold{E} \qquad \text{és} \qquad \bold{H} = \frac{1}{\mu} \bold{B}
+\end{equation}
+Ahol $\epsilon = \epsilon_0 (1 + \chi_e)$ az anyag permittivitása és $\mu = \frac{\mu_0}{1 + \chi_m}$ az anyag permeabilitása. A $\bold{D}$ továbbra is az elektromos eltolás vektor, míg a $\bold{H}$ a mágneses intenzitás vektor.
+Ebben a kontextusban az elektromos eltolási áramsűrűség a következőképpen írható fel:
+\begin{equation}
+    \bold{J}_d = \frac{\partial \bold{D}}{\partial t} = \epsilon \frac{\partial \bold{E}}{\partial t}
+\end{equation}
+
+\subsubsection*{Illesztési feltételek}
+Általában a $\bold{E}$, $\bold{E}$, $\bold{D}$ és $\bold{H}$ mezők nem folytonosak különböző anyagok határainál, vagy a felületen amin a töltések és áramok koncentrálódnak.
+Ezért ezeken a szakaszokon illesztési feltételeket kell alkalmaznunk a határfeltételek alapján. Ehhez vegyük a Maxwell-egyenletek integrális alakját:
+\begin{equation}
+    \begin{aligned}
+        \oint_S \bold{E} \cdot d\bold{l} &= - \frac{d}{dt} \int_S \bold{B} \cdot d\bold{A} \\
+        \oint_S \bold{H} \cdot d\bold{l} &= I_{enc} + \frac{d}{dt} \int_S \bold{D} \cdot d\bold{A} \\
+        \oint_P \bold{D} \cdot d\bold{A} &= Q_{fenc} \\
+        \oint_P \bold{B} \cdot d\bold{A} &= 0
+    \end{aligned}
+\end{equation}
+Vegyünk egy kis "gyufásdobozt" a felületen, aminek a teteje és alja párhuzamos a felülettel, és kicsit kilóg felfele és lefele a felületből.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{imgs/6-tetel/Gaussian_pillbox.png}
+    \caption{Egy "Gauss doboz" a felületen}
+\end{figure}
+Ekkor azt kapjuk, hogy:
+\begin{equation}
+    \bold{D}_{\text{felül}} \cdot \bold{a} - \bold{D}_{\text{alul}} \cdot \bold{a} = \sigma_f a
+\end{equation}
+Ahol $\sigma_f$ a felületi szabad töltéssűrűség, és $\bold{a}$ a felület normális egységvektora, aminek a pozitív iránya felfelé mutat. A doboz szélei nem adnak semmit, hisz azok végtelenül kicsik.
+Tehát a $\bold{D}$ komponense, amelyik merőleges a felületre, diszkontinuitást mutat, ha van felületi szabad töltéssűrűség:
+\begin{equation}
+   \bold{D}^{ \perp}_{\text{felül}} - \bold{D}^{ \perp}_{\text{alul}} = \sigma_f
+\end{equation}
+Ugyanez a mágneses térre:
+\begin{equation}
+    \bold{B}^{ \perp}_{\text{felül}} - \bold{B}^{ \perp}_{\text{alul}} = 0
+\end{equation}
+A Faraday törvényből pedig azt kapjuk, hogy ha veszünk egy hurkot a felületen, akkor:
+\begin{equation}
+    \bold{E}_{\text{felül}} \cdot \bold{I} - \bold{E}_{\text{alul}} \cdot \bold{I} = - \frac{d}{dt} \int_S \bold{B} \cdot d\bold{A}
+\end{equation}
+Ahol $\bold{I}$ a hurok menti irányított vonalelem. Ha viszont a határt vesszük, akkor a hurok szélessége nulla lesz, és ezért nem lesz fluxus benne (emiatt esett ki a $\oint \bold{E} \cdot d\bold{l}$ tag is), tehát:
+\begin{equation}
+    \bold{E}^{ \parallel}_{\text{felül}} - \bold{E}^{ \parallel}_{\text{alul}} = 0
+\end{equation}
+Tehát az elektromos tér párhuzamos komponense folytonos marad a felületen. Hasonlóan az Ampère törvényből:
+\begin{equation}
+    \bold{H}_{\text{felül}} \cdot \bold{I} - \bold{H}_{\text{alul}} \cdot \bold{I} = I_{enc}
+\end{equation}
+Ahol $I_{enc}$ a felületen lévő felületi szabad áram. Térfogati töltéssűrűség szintén nincsen akkor ha a határban vagyunk ahol nulla a doboz szélessége, de a felületi áram nem feltétlenül nulla.
+Sőt, ha vesszük a felület normálvektorát $\bold{\hat{n}}$, akkor a felületi áram:
+\begin{equation}
+    I_{enc} = \bold{K}_f \cdot (\bold{I} \times \bold{\hat{n}}) = (\bold{K}_f \times \bold{\hat{n}}) \cdot \bold{I}
+\end{equation}
+Ahol $\bold{K}_f$ a felületi szabad áram sűrűség, és $\bold{b}$ a hurok menti irányított vonalelem ami párhuzamos a felülettel. Tehát az Ampère törvényből a következőt kapjuk:
+\begin{equation}
+    \bold{H}^{ \parallel}_{\text{felül}} - \bold{H}^{ \parallel}_{\text{alul}} = \bold{K}_f \times \bold{\hat{n}}
+\end{equation}
+Tehát a párhuzamos elemei a mágneses intenzitás vektornak diszkontinuitást mutatnak, ha van felületi szabad áram sűrűség.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/6-tetel/Gaussian_loop.png}
+    \caption{Gaussi hurok a felületen}
+\end{figure}
+Ezek az egyenletek adják az általános illesztési feltételeket a terekre, amik segítségével át tudjuk hidalni a diszkontinuitásokat a felületeken:
+\begin{equation}
+    \begin{aligned}
+        \bold{D}^{ \perp}_{\text{felül}} - \bold{D}^{ \perp}_{\text{alul}} &= \sigma_f \\
+        \bold{B}^{ \perp}_{\text{felül}} - \bold{B}^{ \perp}_{\text{alul}} &= 0 \\
+        \bold{E}^{ \parallel}_{\text{felül}} - \bold{E}^{ \parallel}_{\text{alul}} &= 0 \\
+        \bold{H}^{ \parallel}_{\text{felül}} - \bold{H}^{ \parallel}_{\text{alul}} &= \bold{K}_f \times \bold{\hat{n}}
+    \end{aligned}
+\end{equation}
+Ha nincsenek szabad töltések akkor tovább egyszerűsödnek az illesztési feltételek:
+\begin{equation}
+    \begin{aligned}
+        \bold{D}^{ \perp}_{\text{felül}} &= \bold{D}^{ \perp}_{\text{alul}} \\
+        \bold{B}^{ \perp}_{\text{felül}} &= \bold{B}^{ \perp}_{\text{alul}} \\
+        \bold{E}^{ \parallel}_{\text{felül}} &= \bold{E}^{ \parallel}_{\text{alul}} \\
+        \bold{H}^{ \parallel}_{\text{felül}} &= \bold{H}^{ \parallel}_{\text{alul}}
+    \end{aligned}
+\end{equation}
+Ezek az egyenletek nagyon fontos szerepet fognak játszani az elektromágneses hullámok visszaverődésénél és törésénél.
+
+\subsection{Elektromágneses potenciálok, mértékinvariancia}
+Most, hogy sikerült felírni az Elektrodinamika alapvető egyenleteit, már csak meg kell oldalni őket. Ez természetesen függ a határfeltételetől és a forrásoktól is, de lehet találni egy
+általános megoldást, feltéve, hogy a mezőket potenciálokként kezeljük. Időben statikus esetben a megoldás egyszerű, a Biot-Savart és a Coulomb törvény lesz.
+De időfüggő esetben ennél jóval komplikáltabb a dolog. A Maxwell egyenletek általános alakja:
+\begin{equation}
+    \begin{aligned}
+        \nabla \cdot \bold{E} &= \frac{\rho}{\epsilon_0} \qquad \nabla \times \bold{E} = - \frac{\partial \bold{B}}{\partial t} \\
+        \nabla \cdot \bold{B} &= 0 \qquad \nabla \times \bold{B} = \mu_0 \bold{J} + \mu_0 \epsilon_0 \frac{\partial \bold{E}}{\partial t} \\
+    \end{aligned}
+\end{equation}
+Ekkor az az általános kérdés, hogy ismerve $\rho(\bold{r},t)$ és $\bold{J}(\bold{r},t)$-t, Mi az $\bold{E}(\bold{r},t)$ és $\bold{B}(\bold{r},t)$ mezők?
+
+Átírni a mezőket potenciállá nem egyszerű. Elektrosztatikában meg tudtuk tenni, mivel az elektromos tér rotációja nulla volt ($\nabla \times \bold{E} = 0$), így felírhattuk egy skalár potenciálként: $\bold{E} = - \nabla V$.
+De dinamikában a rotáció nem nulla, ezért ez nem fog működni. Szerencsére viszont a mágneses tér divergenciája mindig nulla ($\nabla \cdot \bold{B} = 0$), így azt felírhatjuk egy vektor potenciálként:
+\begin{equation}
+    \bold{B} = \nabla \times \bold{A}
+\end{equation}
+Ahol $\bold{A}$ a mágneses vektor potenciál. Ezt visszahelyettesítve a Faraday törvénybe:
+\begin{equation}
+    \nabla \times \bold{E} = - \frac{\partial }{\partial t} (\nabla \times \bold{A})
+\end{equation}
+vagy
+\begin{equation}
+    \nabla \times \left( \bold{E} + \frac{\partial \bold{A}}{\partial t} \right) = 0
+\end{equation}
+Ez az egység a sima elektromos mezővel ellentétben rotációmentes, így felírható egy skalár potenciálként:
+\begin{equation}
+    \bold{E} + \frac{\partial \bold{A}}{\partial t} = - \nabla V
+\end{equation}
+Ezt $\bold{E}$-re rendezve:
+\begin{equation}
+    \boxed{\bold{E} = - \nabla V - \frac{\partial \bold{A}}{\partial t}}
+\end{equation}
+Ebből természetesen visszakapjuk az elektrosztatikus megoldást, amennyiben $\bold{A}$ konstans.
+
+Ez a megoldás automatikusan teljesíti a két homogén törvént, a Faraday törvényt és a mágneses tér Gauss-törvényét. De mi történik, ha az Ampère törvénybe és a Gauss-törvénybe helyettesítjük be ezeket az alakokat?
+Kezdjük a Gauss-törvénnyel:
+\begin{equation}
+    \nabla \cdot \bold{E} = \nabla \cdot \left( - \nabla V - \frac{\partial \bold{A}}{\partial t} \right) = - \nabla^2 V - \frac{\partial }{\partial t} (\nabla \cdot \bold{A}) = \frac{\rho}{\epsilon_0}
+\end{equation}
+Tehát a Gauss-törvény a következő alakot ölti:
+\begin{equation}
+    \boxed{\nabla^2 V + \frac{\partial }{\partial t} (\nabla \cdot \bold{A}) = - \frac{\rho}{\epsilon_0}}
+\end{equation}
+Ez a Poisson-egyenlet megfelelője, amire redukálódik is statikus esetben. Most nézzük meg az Ampère törvényt:
+\begin{equation}
+    \nabla \times \bold{B} = \nabla \times (\nabla \times \bold{A}) = \mu_0 \bold{J} + \mu_0 \epsilon_0 \frac{\partial }{\partial t} \left( - \nabla V - \frac{\partial \bold{A}}{\partial t} \right)
+\end{equation}
+Ezt átrendezve:
+\begin{equation}
+    \nabla \times (\nabla \times \bold{A}) = \mu_0 \bold{J} - \mu_0 \epsilon_0 \nabla \frac{\partial V}{\partial t} - \mu_0 \epsilon_0 \frac{\partial^2 \bold{A}}{\partial t^2}
+\end{equation}
+Itt kihasználva a vektor identitást ($\nabla \times (\nabla \times \bold{A}) = \nabla (\nabla \cdot \bold{A}) - \nabla^2 \bold{A}$) és egy kicsit átrendezve, az egyenlet a következő alakot ölti:
+\begin{equation}
+    \boxed{\left(\nabla^2 \bold{A} - \mu_0 \epsilon_0 \frac{\partial^2 \bold{A}}{\partial t^2}\right) - \nabla \left(\nabla \cdot \bold{A} + \mu_0 \epsilon_0 \frac{\partial V}{\partial t}\right) = - \mu_0 \bold{J}}
+\end{equation}
+Ez a két egyenlet pedig tartalmazza a Maxwell egyenletek összes információját.
+
+\subsubsection{mértékinvariancia (Gauge Transformation)}
+Az elektromos és mágneses tér potrnciálokkal való felírása elég csúnya egyenleteket eredményezett. De van egy nagy előnyük, hogy 6 problémát ($\bold{E}$ és $\bold{B}$ is 3 komponensből áll) le tudtunk redukálni 4 problémára ($V$ és $\bold{A}$ komponensek).
+Emellett egyszerűsíteni is tudunk a felírásokon, mivel a potenciálok nincsenek az egyenletek által egyértelműen meghatározva. 
+
+Vegyünk két potenciált, ($V$, $\bold{A}$) és ($V'$, $\bold{A}'$), amik ugyanazt az elektromos és mágneses teret adják vissza. Ekkor tegyük fel, hogy felírhatjuk őket a következő alakban:
+\begin{equation}
+    \bold{A}' = \bold{A} + \alpha \qquad V' = V + \beta
+\end{equation}
+A kérdés, hogy ezek mikor tudják ugyanazt az $\bold{E}$ és $\bold{B}$ mezőt visszaadni? Kezdjük a mágneses térrel. Mivel $\bold{A}$ és $\bold{A}'$ is ugyanazt a mágneses teret adják vissza, ezért a rotációjuknak meg kell egyeznie:
+\begin{equation}
+    \bold{B}' = \nabla \times \bold{A}' = \nabla \times \bold{A} + \nabla \times \alpha = \nabla \times \bold{A} = \bold{B}
+\end{equation}
+Ebből következik, hogy:
+\begin{equation}
+    \nabla \times \alpha = 0
+\end{equation}
+Ez azt jelenti, hogy az $\alpha$ vektornak rotációmentesnek kell lennie, és mivel egy gradiens rotációja mindig nulla, ezért felírhatjuk egy skalár potenciál gradiensének is:
+\begin{equation}
+    \alpha = \nabla \lambda
+\end{equation}
+Most nézzük meg az elektromos teret:
+\begin{equation}
+    \bold{E}' = - \nabla V' - \frac{\partial \bold{A}'}{\partial t} = - \nabla (V + \beta) - \frac{\partial }{\partial t} (\bold{A} + \alpha) = - \nabla V - \frac{\partial \bold{A}}{\partial t}
+\end{equation}
+Ebből következik, hogy:
+\begin{equation}
+    \nabla \beta + \frac{\partial \alpha}{\partial t} = 0 \quad \Rightarrow \quad \nabla \beta + \frac{\partial }{\partial t} (\nabla \lambda) = \nabla (\beta + \frac{\partial \lambda}{\partial t}) = 0
+\end{equation}
+A zárójelben lévő kifejezés tehát független a térbeli koordinátáktól, de időfüggő lehet. Ezt az időfüggést vegyük ki és nevezzük el $k(t)$-nek:
+\begin{equation}
+    \beta + \frac{\partial \lambda}{\partial t} = k(t) \quad \Rightarrow \quad \beta = - \frac{\partial \lambda}{\partial t} + k(t)
+\end{equation}
+De ezt az időfüggést bele is vihetjük a $\lambda$-ba, mert a gradiensén nem fog változtatni, ha hozzáadunk $\int_{0}^{t} k(t') dt'$-t, mert csak bejön egy $k(t)$ a $\partial \lambda / \partial t$-be, ami pont ki fogja nullázni a $k(t)$-t.
+Tehát a potenciálok \textbf{mértékinvarianciája} a következő alakban írható fel:
+\begin{equation}
+    \boxed{\begin{aligned}
+        \bold{A}' &= \bold{A} + \nabla \lambda \\
+        V' &= V - \frac{\partial \lambda}{\partial t}
+    \end{aligned}}
+\end{equation}
+Ahol $\lambda(\bold{r},t)$ egy tetszőleges skalár függvény. 
+
+Tehát bármilyen skalárfügvényre ($\lambda(\bold{r},t)$) igaz, hogy hozzáadhatjuk a gradiensét $\nabla \lambda$ az $\bold{A}$ vektor potenciálhoz, Amennyiben ki is vonjuk az időbeli deriváltját $\partial \lambda / \partial t$ $V$-ből. 
+Ennek $\bold{E}$ és $\bold{B}$-re nem lesz hatása. Ezeket pedig fel lehet használni arra, hogy egyszerűsítsük a Maxwell-egyenleteket azáltal, hogy egy megfelelő $\lambda$-t választunk.
+Több mértékvariancia is létezik, amik közül a probléma kontextusa szabja meg, hogy melyiket érdemes használni.
+
+\subsubsection{Coulomb mérték}
+Az egyik leggyakrabban használt mérték a Coulomb mérték, mint például a magnetosztatikában, ami a következő feltételt szabja meg az $\bold{A}$ vektor potenciálra:
+\begin{equation}
+    \nabla \cdot \bold{A} = 0
+\end{equation}
+Ha ezt behelyettesítjük a potenciál felírásnak a Poisson-egyenletébe:
+\begin{equation}
+    \nabla^2 V + \frac{\partial }{\partial t} (0) = - \frac{\rho}{\epsilon_0} \quad \Rightarrow \quad \nabla^2 V = - \frac{\rho}{\epsilon_0}
+\end{equation}
+Akkor visszakapjuk a Poisson-egyenletet az elektrosztatikából. Ezt pedig már tudjuk hogy kell megoldani, az elektromos potenciált nullának kell venni a végtelenben $V_\infty = 0$:
+\begin{equation}
+    V(\bold{r},t) = \frac{1}{4 \pi \epsilon_0} \int \frac{\rho(\bold{r}',t)}{\rcurs} dV'
+\end{equation}
+Ennek a potenciálnak a Coulomb mértékben van egy különlegessége: A potenciál a töltés eloszlás pillanatnyi állapotától függ, nem pedig a múltbeli állapotoktól. Ez azt jelenti, hogy ha itt és most egy töltést elmozdítok ott ahol vagyok,
+akkor a potenciál a holdon AZONNAL érzékeli a változást. Ez nyilvánvalóan ellentmond a speciális relativitáselméletnek, ami szerint semmi sem terjedhet gyorsabban mint a fény. De van egy trükk a dologban,
+ugyanis a $V$ potenciál maga nem egy mérhető fizikai mennyiség. Amit mérni tudok az a $\bold{E}$ elektromos tér ami tartalmazza a $\bold{A}$ vektor potenciált is. Az pedig már $- \nabla V- \partial \bold{A} / \partial t$-tól függ,
+aminek már kell idő, hogy "megérkezzen a hírrel". 
+
+Az előnye a Coulomb mértéknek, hogy a skalár potenciált könnyű kiszámolni, a nehézsége, hogy $\bold{A}$-t kifejezetten nehéz. A differenciálegyenlet amit $\bold{A}$-ra kapunk az Ampère törvényből tudjuk megkapni:
+\begin{equation}
+    \left(\nabla^2 \bold{A} - \mu_0 \epsilon_0 \frac{\partial^2 \bold{A}}{\partial t^2}\right) - \nabla \left(0 + \mu_0 \epsilon_0 \frac{\partial V}{\partial t}\right) = - \mu_0 \bold{J}
+\end{equation}
+Ezt átrendezve:
+\begin{equation}
+    \nabla^2 \bold{A} - \mu_0 \epsilon_0 \frac{\partial^2 \bold{A}}{\partial t^2} = - \mu_0 \bold{J} + \mu_0 \epsilon_0 \nabla \frac{\partial V}{\partial t}
+\end{equation}
+Ez a Coulomb mértékben az Ampère törvény.
+
+\subsubsection{Lorentz mérték}
+Egy másik gyakori mérték a Lorentz mérték, ami a következő feltételt szabja meg az $\bold{A}$ vektor potenciálra és a $V$ skalár potenciálra:
+\begin{equation}
+    \boxed{\nabla \cdot \bold{A} = - \mu_0 \epsilon_0 \frac{\partial V}{\partial t}}
+\end{equation}
+Ennek az a célja, hogy kiejtse a második tagot a második potenciál-egyenletből:
+\begin{equation}
+    \left(\nabla^2 \bold{A} - \mu_0 \epsilon_0 \frac{\partial^2 \bold{A}}{\partial t^2}\right) - \nabla \underbrace{\left(- \mu_0 \epsilon_0 \frac{\partial V}{\partial t} + \mu_0 \epsilon_0 \frac{\partial V}{\partial t}\right)}_{0} = - \mu_0 \bold{J}
+\end{equation}
+Tehát:
+\begin{equation}
+    \nabla^2 \bold{A} - \mu_0 \epsilon_0 \frac{\partial^2 \bold{A}}{\partial t^2} = - \mu_0 \bold{J}
+\end{equation}
+Ekkor pedig a $V$-re vett potenciális diff. egyenlet a következőképp módosul:
+\begin{equation}
+    \nabla^2 V + \frac{\partial }{\partial t} \left(- \mu_0 \epsilon_0 \frac{\partial V}{\partial t}\right) = - \frac{\rho}{\epsilon_0}
+\end{equation}
+Vagyis:
+\begin{equation}
+    \nabla^2 V - \mu_0 \epsilon_0 \frac{\partial^2 V}{\partial t^2} = - \frac{\rho}{\epsilon_0}
+\end{equation}
+A két egyenletbe pedig megjelent egy operátor, amit \textbf{D'alambert} operátonak hívunk:
+\begin{equation}
+    \boxed{\Box^2 \equiv \nabla^2 - \mu_0 \epsilon_0 \frac{\partial^2 }{\partial t^2}}
+\end{equation}
+Így a Lorentz mértékben a potenciálokra kapott egyenletek a következő formában írhatók fel:
+\begin{equation}
+    \boxed{\begin{aligned}
+        \Box^2 V &= - \frac{\rho}{\epsilon_0} \\
+        \Box^2 \bold{A} &= - \mu_0 \bold{J}
+    \end{aligned}}
+\end{equation}
+Ez a forma a relativitás elméletben nyer igazán értelmet, ugyanis a D'alambert a Laplace operátor a természetes általánosított formája a négydimenziós téridőben. A kapott egyenletek pedig gyakorlatilag
+a Poisson-egyenlet 4 dimenziós megfelelői. Ebben a mértékben $\bold{A}$ és $V$ inhomogén hullámegyenleteket elégítenek ki, amiknek a forrásai a töltéssűrűség és az áramsűrűség.
+
+\subsection{Elektromágneses tér energiája és impulzusa}
+\subsubsection{Kontinuitási Egyenlet}
+A fizika alaptörvényei érrvényesek az elektromágneses esetben is, Tehát az energia és az impulzus ugyanúgy megmaradnak mint a mechanikában. De az eletromosságtanban megjelenik egy új egység is,
+a töltés! A töltésre pedig ugyanúgy vannak megmaradási törvények, mint az energiára és az impulzusra. De mit is jelent ez? Az univerzum töltése állandó? Igen, ez a \textbf{globális} töltésmegmaradás törvénye.
+De van egy ennél jóval erősebb állítás is, a \textbf{lokális} töltésmegmaradás törvénye, ami azt mondja ki, hogy a töltés nem tűnhet el egyik pillanatról a másikra, csak áramolhat egyik helyről a másikra.
+Formálisan, ha veszünk egy térfogatot ($\mathcal{V}$), aminek a térfogati töltéssűrűsége:
+\begin{equation}
+    Q(t) = \int_{\mathcal{V}} \rho(\bold{r}, t) \, dV
+\end{equation}
+Akkor az áram ami átfolyik a felületén ($\mathcal{S}$) a következőképpen írható fel:
+\begin{equation}
+    I(t) = - \oint_{\mathcal{S}} \bold{J}(\bold{r}, t) \cdot d\bold{A}
+\end{equation}
+Ekkor a lokális töltésmegmaradás törvénye azt mondja ki, hogy a térfogatban lévő töltés időbeli változása egyenlő az árammal ami átfolyik a felületén:
+\begin{equation}
+    \frac{dQ}{dt} = - \oint_{\mathcal{S}} \bold{J} \cdot d\bold{A}
+\end{equation}
+Ha pedig behelyettesítjük a $Q$-t, akkor a következőt kapjuk:
+\begin{equation}
+    \frac{d}{dt} \int_{\mathcal{V}} \rho \, dV = - \oint_{\mathcal{S}} \bold{J} \cdot d\bold{A}
+\end{equation}
+Mivel ez minden térfogatra igaz, ezért:
+\begin{equation}
+    \boxed{\frac{\partial \rho}{\partial t} = -  \nabla \cdot \bold{J}}
+\end{equation}
+Ez a kontinuitási egyenlet, ami a lokális töltésmegmaradást fejezi ki differenciális formában. Ez az egyenlet azt mondja ki, hogy a töltéssűrűség időbeli változása egyenlő a rá ható áram divergenciájának negatívjával.
+Ez az eredmény a Maxwell egyenletekből is levezethető, és egy megkötést ad a forrásokra ($\rho$ és $\bold{J}$). Ezek nem lehetnek akármik, csak olyan függvények amikre teljesül a töltésmegmaradás!
+Hasonló módon lehet az energiára és az impulzusra is létrehozni megmaradási törvényeket, ahol az áramra és a töltéssűrűségre is találhatunk analógiákat.
+
+\subsubsection{Poynting tétel}
+Korábban láttuk, hogy a munka, ami szükséges, hogy beállítsuk az elektromos mezőt egy adott konfigurációba, a következőképpen írható fel:
+\begin{equation}
+    W_e = \frac{\epsilon_0}{2} \int \bold{E}^2 \, dV
+\end{equation}
+Ahol $\bold{E}$ a keletkező elektromos tér. Hasonlóan fel lehet írni a mágneses tér munkáját is, hogy egy áramot beindítsunk az ellentétes emf ellenében:
+\begin{equation}
+    W_m = \frac{1}{2 \mu_0} \int \bold{B}^2 \, dV
+\end{equation}
+Ahol $\bold{B}$ a keletkező mágneses tér. Ezek alapján feltételezhetjük, hogy az elektromágneses tér teljes energiája egy egységnyi térfogatra a következőképpen írható fel:
+\begin{equation}
+    \boxed{u = u_e + u_m = \frac{1}{2} \left( \epsilon_0 \bold{E}^2 + \frac{1}{\mu_0} \bold{B}^2 \right)}
+\end{equation}
+De kérdés, hogy valóban ez-e a helyes megoldás? Illetve milyen alakban vannak ezekre a megmaradási törvények?
+
+Tegyük fel, hogy van egy töltés és áram konfigurációnk, ami $t$ időpillanatban egy adott elektromos ($\bold{E}$) és mágneses teret ($\bold{B}$) hoz létre.
+A következő $dt$ időpillanatban egy kicsit megváltoztatjuk ezt a konfigurációt. Kérdés: Mennyi $dW$ munkát végzünk a töltéseken a $dt$ idő alatt?
+A Lorentz erő alapján a munkavégzés $q$ töltésre a következőképpen írható fel:
+\begin{equation}
+    dW = \bold{F} \cdot d\bold{l} = q (\bold{E} + \bold{v} \times \bold{B}) \cdot \bold{v} dt = q \bold{E} \cdot \bold{v} dt
+\end{equation}
+Ha nem egy töltésünk van, hanem egy töltéssűrűségünk, akkor $q \rightarrow \rho dV$ és $\rho \bold{v} \rightarrow \bold{J}$, így a munkavégzés a következőképpen írható fel:
+\begin{equation}
+    dW = \int_{\mathcal{V}} \bold{E} \cdot \bold{J} \, dV \, dt
+\end{equation}
+Az elképzelhető, hogy ha pozitív és negatív töltések is vannak, akkor a nettó töltéssűrűség nulla, de az áramsűrűség nem, ahogy ez egy vezetékben is szokott történni.
+
+Ebből természetesen következik, hogy $\bold{E} \cdot \bold{J}$ az egységnyi térfogatban végzett munka időegység alatt - ami azt jelenti, hogy ez a teljesítmény egységnyi térfogatra vetítve.
+Most az Ampère-Maxwell törvényt használva behelyettesítjük a $\bold{J}$-t:
+\begin{equation}
+    \bold{E} \cdot \bold{J} = \bold{E} \cdot \left( \frac{1}{\mu_0} \nabla \times \bold{B} - \epsilon_0 \frac{\partial \bold{E}}{\partial t} \right) = \frac{1}{\mu_0} \bold{E} \cdot (\nabla \times \bold{B}) - \epsilon_0 \bold{E} \cdot \frac{\partial \bold{E}}{\partial t}
+\end{equation}
+Itt a vektor szorzási szabály miatt:
+\begin{equation}
+    \nabla \cdot (\bold{E} \times \bold{B}) = \bold{B} \cdot (\nabla \times \bold{E}) - \bold{E} \cdot (\nabla \times \bold{B})
+\end{equation}
+Ehhez hozzáveszzük a Faraday törvényt ($\nabla \times \bold{E} = - \partial \bold{B} / \partial t$):
+\begin{equation}
+    \bold{E} \cdot (\nabla \times \bold{B}) = - \bold{B} \cdot \frac{\partial \bold{B}}{\partial t} - \nabla \cdot (\bold{E} \times \bold{B})
+\end{equation}
+Itt megjelenik két derivált tag:
+\begin{equation}
+    \bold{E} \cdot \frac{\partial \bold{E}}{\partial t} = \frac{1}{2} \frac{\partial }{\partial t} (E^2) \qquad \bold{B} \cdot \frac{\partial \bold{B}}{\partial t} = \frac{1}{2} \frac{\partial }{\partial t} (B^2)
+\end{equation}
+Ezeket mind összerakva és visszahelyettesítve a $\bold{E} \cdot \bold{J}$-be:
+\begin{equation}
+    \bold{E} \cdot \bold{J} = - \frac{1}{2} \frac{\partial}{\partial t} \left( \epsilon_0 E^2 + \frac{1}{\mu_0} B^2 \right) - \frac{1}{\mu_0} \nabla \cdot (\bold{E} \times \bold{B})
+\end{equation}
+Ha pedig ezt visszahelyettesítjük az időegységnyi munkavégzés egyenletébe és a divergencia tételt alkalmazva:
+\begin{equation}
+    \frac{dW}{dt} = \int_{\mathcal{V}} \bold{E} \cdot \bold{J} \, dV = - \frac{d}{dt} \int_{\mathcal{V}} \frac{1}{2} \left( \epsilon_0 E^2 + \frac{1}{\mu_0} B^2 \right) dV - \frac{1}{\mu_0} \oint_{\mathcal{S}} (\bold{E} \times \bold{B}) \cdot d\bold{A}
+\end{equation}
+Ez a \textbf{Poynting tétel}, ami az elektromágneses tér energiájának megmaradását írja le. $\mathcal{S}$ a térfogatot körülvevő felület. Ez a tétel a "munka-energia" tétele az elektrodinamikának.
+Az első integrál adja meg a teljes energiát ami a terekben tárolva van: $\int u dV$, ahol $u$ az elektromágneses tér energiasűrűsége. A második tag pedig az energia kiáramlásának a rátáját adja meg a $\mathcal{V}$ térfogatból,
+az őt határoló felületen keresztül, az elektromágneses terek által. A Poynting tétel kimondja, hogy:
+\begin{quote}
+    Az elektromágneses tér által végzett munka a töltéseken az elektromágneses erőn keresztül megegyezik az energia csökkenésével a terekben, minusz a térfogatból a felületen keresztül kiáramló energia.
+\end{quote}
+Az energia amit a terek egy egységnyi idő alatt, egy egységnyi felületen keresztül szállítanak, \textbf{Poynting vektornak} ($\bold{S}$) nevezik, és a következőképpen definiálják:
+\begin{equation}
+    \boxed{\bold{S} \equiv \frac{1}{\mu_0} (\bold{E} \times \bold{B})}
+\end{equation}
+Ez a vektor megadja az elektromágneses energia áramlási irányát és nagyságát. Az irányt a jobbkéz szabály alapján határozhatjuk meg: Ha a jobb kezünk hüvelykujját az $\bold{E}$ irányába,
+akkor a behajlított ujjaink mutatják az $\bold{B}$ irányát, és a tenyér iránya pedig az $\bold{S}$ irányát.
+Tehát a munkavégzés egységnyi idő alatt a következőképpen írható fel:
+\begin{equation}
+    \boxed{\frac{dW}{dt} = - \frac{d}{dt} \int_{\mathcal{V}} u \, dV - \oint_{\mathcal{S}} \bold{S} \cdot d\bold{A}}
+\end{equation}
+Ha nincs munkavégzés a térfogatban (pl. mert vákuum-ban van), akkor $dW/dt = 0$, tehát:
+\begin{equation}
+    \int \frac{\partial u}{\partial t} \, dV = - \oint_{\mathcal{S}} \bold{S} \cdot d\bold{A} = - \int \nabla \cdot \bold{S} \, dV
+\end{equation}
+Tehát:
+\begin{equation}
+    \boxed{\frac{\partial u}{\partial t} + \nabla \cdot \bold{S} = 0}
+\end{equation}
+Ez az elektromágneses tér kontinuitási egyenlete, ami az energia megmaradását írja le. Itt $u$ energiasűrűség játsza a $\rho$ töltéssűrűség szerepét, és $\bold{S}$ az energiaáram sűrűség szerepét.
+Ez a lokális energia megmaradás törvénye az elektromágneses térre. Általánosságban viszont az elektromágneses energia nem marad meg magában, hiszen a tér munkát végez a töltéseken,
+és a töltések teret generálnak. Tehát az energia ide-oda "pattog" közöttük. A teljes energiához hozzá kell venni a terek és az anyag energiáját is.
+
+\subsubsection{Impulzus}
+Képzeljünk el egy töltést ami x-tengely mentén mozog $v$ sebességgel. Mivel mozog, ezért az elektromos tért NEM a Coulomb törvény írja le, de ettől meg radiális irányú marad. Emellett a mozgó töltés nem számít statikus áramnak,
+ezért a mágneses teret NEM a Biot-Savart törvény írja le. Azonban a mozgó töltés körül egy mágneses tér is kialakul, ami körkörös irányú lesz a mozgás irányára merőlegesen.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/6-tetel/mozgo_toltes_tere.png}
+    \caption{Mozgó töltés körüli elektromos és mágneses tér}
+\end{figure}
+Most tegyük fel, hogy van egy másik töltés, ami szintén $v$ sebességgel mozog, csak az y-tengely mentén. Természetesen a két részecske elektromos tere tasztja egymást, de 
+tegyük fel, hogy egy olyan pályára vannak kényszerítve, ahol ez a taszítás nem tudja eltéríteni őket. Ebben az esetben a két töltés pályája metszeni fogja egymást.
+Ekkor mi a helyzet a mágneses térrel? A $q_1$ tere befele mutat a képen, tehát a mágneses erő a $q_2$-n jobbra mutat. A $q_2$ tere pedig kifelé mutat a képen, tehát a mágneses erő a $q_1$-en felfelé mutat.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/6-tetel/mozgo_toltesek_utkozes.png}
+    \caption{Mozgó töltések ütközése}
+\end{figure}
+A teljes elektromágneses erő tehát azonos nagyságú, de nem ellentétes irányú. Ez pedig sérti Newton III. törvényét!
+Ez pedig komoly probléma, mert ez a törvény az egyik legfontosabb törvény a mechanikában, és ha nem teljesül, az egész impulzusmaradás bajba kerül, ugyanis a az impulzusmegmaradás erősen támszkodik a belső erők kiejtésére a Newton III. által.
+De van megoldás, ugyanis maguk a terek is hordoznak impulzust magukban! Ez nem túl meglepő, hiszen energiát már párosítottunk hozzájuk. Tehát az elveszett impulzust megtaláljuk a tér impulzusának megváltozásában.
+Az elektromágneses tér impulzus sűrűsége a következőképpen írható fel:
+\begin{equation}
+    \boxed{\bold{g} = \epsilon_0 (\bold{E} \times \bold{B}) = \mu_0 \epsilon_0 \bold{S}}
+\end{equation}
+Ez az impulzus sűrűség nagyon hasonló a Poynting vektorhoz, csak egy $\mu_0 c^2$-szoros különbség van közöttük, ahol $c$ a fénysebesség vákuumban. Ez nem véletlen, hiszen a fénysebesség a két mennyiség között az
+átviteli sebességet adja meg az elektromágneses térben. Az elektromágneses tér teljes impulzusa pedig a következőképpen írható fel:
+\begin{equation}
+    \boxed{\bold{P}_{em} = \int \bold{g} \, dV = \epsilon_0 \int (\bold{E} \times \bold{B}) \, dV}
+\end{equation}
+Ez az impulzus kiegészíti a töltések és áramok mechanikai impulzusát, így az impulzusmegmaradás törvénye helyreáll.
+
+\subsubsection*{Perdületmegmaradás}
+Hasonlóan az impulzushoz, a perdület is megmarad az elektromágneses térben. Az elektromágneses tér energia sűrűsége a következőképpen írható fel:
+\begin{equation}
+    u = \frac{1}{2} \left( \epsilon_0 \bold{E}^2 + \frac{1}{\mu_0} \bold{B}^2 \right)
+\end{equation}
+Az elektromágneses tér impulzus sűrűsége pedig:
+\begin{equation}
+    \bold{g} = \epsilon_0 (\bold{E} \times \bold{B})
+\end{equation}
+Ebből pedig a perdület sűrűség a következőképpen adódik:
+\begin{equation}
+    \bold{l} = \bold{r} \times \bold{g} = \epsilon_0 \bold{r} \times (\bold{E} \times \bold{B})
+\end{equation}
+Ennek a teljes perdülete pedig a következőképpen írható fel:
+\begin{equation}
+    \bold{L}_{em} = \int \bold{l} \, dV = \epsilon_0 \int \bold{r} \times (\bold{E} \times \bold{B}) \, dV
+\end{equation}
+
+\newpage
+\section{Hullámegyenlet és hullámjelenségek}
+Hullámegyenletek származtatása, megoldásai, rugalmas és elektromágneses hullámok. Diszperzió, csoport- és fázissebesség, Doppler-effektus.
+Interferencia, diffrakció. Elektromágneses hullámok terjedése vákuumban, dielektrikumban és vezetőkben. Polarizáció. Retardált potenciálok. Dipólsugárzás.
 
 
 \end{document}
