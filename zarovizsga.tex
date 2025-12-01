@@ -840,9 +840,9 @@ Ilyen erőtér esetén a test munkavégző képessége csak a helyzetétől füg
 Ahol $r_0$ egy tetszőleges referencia pont, ahol a potenciális energia nulla. A negatív előjel konvenció által lett meghatozva és azt jelenti, hogy a potenciális energia csökken, amikor a test a potenciális energia minimuma felé mozog.
 A potenciális energia tehát a test helyzetétől függ, és a következő kapcsolat áll fenn az erő és a potenciális energia között:
 \begin{equation}
-    \bold{F}(\bold{r}) = - \nabla U(\bold{r})
+    \bold{F}(\bold{r}) = - \boldsymbol{\nabla} U(\bold{r})
 \end{equation}
-Ahol $\nabla U(\bold{r})$ a potenciális energia gradiensét jelenti. Ez az összefüggés azt mutatja, hogy a konzervatív erőtérben az erő a potenciális energia csökkenésének irányába mutat. A munka-energia tétel konzervatív erőtér esetén a következőképpen írható fel:
+Ahol $\boldsymbol{\nabla} U(\bold{r})$ a potenciális energia gradiensét jelenti. Ez az összefüggés azt mutatja, hogy a konzervatív erőtérben az erő a potenciális energia csökkenésének irányába mutat. A munka-energia tétel konzervatív erőtér esetén a következőképpen írható fel:
 \begin{equation}
     W = K(t_2) - K(t_1) = U(\bold{r_1}) - U(\bold{r_2})
 \end{equation}
@@ -1935,19 +1935,19 @@ Mivel $\phi_j (\bold{r}_i) = 0$, ezért a fenti egyenlet egyszerűsödik:
 \end{equation}
 Vagy a Nabla jelöléssel:
 \begin{equation}
-    \sum_i \nabla_i \phi_j(\bold{r}_i) \cdot \delta \bold{r}_i = 0
+    \sum_i \boldsymbol{\nabla}_i \phi_j(\bold{r}_i) \cdot \delta \bold{r}_i = 0
 \end{equation}
 Ezt az egyenletet a Lagrange multiplikátor módszerével oldhatjuk meg, amelynek használatával megtaláhatjuk egy függvény szélsőértékét kényszerfeltételek mellett. A módszer lényege, hogy bevezetünk egy új függvényt, amely a keresett függvény és a kényszerfeltételek lineáris kombinációja:
 \begin{equation}
-    \mathcal{L} = \delta W + \sum_j \lambda_j \sum_i \nabla_i \phi_j(\bold{r}_i) \cdot \delta \bold{r}_i
+    \mathcal{L} = \delta W + \sum_j \lambda_j \sum_i \boldsymbol{\nabla}_i \phi_j(\bold{r}_i) \cdot \delta \bold{r}_i
 \end{equation}
 ahol $\lambda_j$ a Lagrange multiplikátorok. Most már alkalmazhatjuk a virtuális munka elvét a $\mathcal{L}$ függvényre:
 \begin{equation}
-    \mathcal{L} = \sum_i \bold{F}_i \cdot \delta \bold{r}_i + \sum_j \lambda_j \sum_i \nabla_i \phi_j(\bold{r}_i) \cdot \delta \bold{r}_i = 0
+    \mathcal{L} = \sum_i \bold{F}_i \cdot \delta \bold{r}_i + \sum_j \lambda_j \sum_i \boldsymbol{\nabla}_i \phi_j(\bold{r}_i) \cdot \delta \bold{r}_i = 0
 \end{equation}
 Mivel a virtuális elmozdulások tetszőlegesek, ezért a fenti egyenlet csak akkor teljesülhet, ha az egyes tagok külön-külön is nulla:
 \begin{equation}
-    \bold{F}_i + \sum_j \lambda_j \nabla_i \phi_j(\bold{r}_i) = 0
+    \bold{F}_i + \sum_j \lambda_j \boldsymbol{\nabla}_i \phi_j(\bold{r}_i) = 0
 \end{equation}
 Ez az egyenlet a rendszer mozgásegyenleteit írja le kényszerfeltételek mellett, ahol a $\lambda_j$ multiplikátorok a kényszererőket reprezentálják.
 
@@ -2227,16 +2227,16 @@ Ahol $m$ a test tömege, és $\bold{a}$ a test gyorsulása. Ekkor a virtuális m
 Ez onnan ered, hogy a tehetetlenségi erőket D'Alembert azért vezette be, hogy a dinamikai rendszert "egyensúlyi rendszerként" kezelhesse, ahol a virtuális munka elve alkalmazható. Ezt az elvet D'Alembert elvének nevezzük.
 Ebbe a formalizmusba beilleszthetjük a kényszerfeltételeket is a Euler-Lagrange egyenlet alapján, hasonlóan ahogy azt a virtuális munka elvében tettük:
 \begin{equation}
-    \sum_i (\bold{F}_i - \bold{\dot{p}}_i) \cdot \delta \bold{r}_i + \sum_j \lambda_j \sum_i \nabla_i \phi_j(\bold{r}_i) \cdot \delta \bold{r}_i = 0  
+    \sum_i (\bold{F}_i - \bold{\dot{p}}_i) \cdot \delta \bold{r}_i + \sum_j \lambda_j \sum_i \boldsymbol{\nabla}_i \phi_j(\bold{r}_i) \cdot \delta \bold{r}_i = 0  
 \end{equation}
 \begin{equation}
-    \bold{F}_i - \bold{\dot{p}}_i + \sum_j \lambda_j \nabla_i \phi_j(\bold{r}_i) = 0
+    \bold{F}_i - \bold{\dot{p}}_i + \sum_j \lambda_j \boldsymbol{\nabla}_i \phi_j(\bold{r}_i) = 0
 \end{equation}
 \begin{equation}
-    \bold{\dot{p}}_i = \bold{F}_i + \sum_j \lambda_j \nabla_i \phi_j(\bold{r}_i)
+    \bold{\dot{p}}_i = \bold{F}_i + \sum_j \lambda_j \boldsymbol{\nabla}_i \phi_j(\bold{r}_i)
 \end{equation}
 \begin{equation}
-    m_i \bold{\ddot{r}}_i = \bold{F}_i + \sum_j \lambda_j \nabla_i \phi_j(\bold{r}_i)
+    m_i \bold{\ddot{r}}_i = \bold{F}_i + \sum_j \lambda_j \boldsymbol{\nabla}_i \phi_j(\bold{r}_i)
 \end{equation}
 Ez az egyenlet a rendszer mozgásegyenleteit írja le kényszerfeltételek mellett, ahol a $\lambda_j$ multiplikátorok a kényszererőket reprezentálják. Ezt az egyenletet Lagrange-féle elsőfajú egyenletnek nevezzük.
 
@@ -4179,7 +4179,7 @@ Ahhoz, hogy a rotátort értelmezni tudjuk, ki kell terjesztenünk a Schrödinge
 \end{equation}
 Ahol a Laplace operátor a következőképpen definiált:
 \begin{equation}
-    \Delta = \nabla^2 = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}
+    \Delta = \boldsymbol{\nabla}^2 = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}
 \end{equation}
 Ezt lehet tovább egyszerűsíteni a változók szétválasztásával:
 \begin{equation}
@@ -5534,12 +5534,12 @@ Végezetül nézzük meg, hogy hogyan illeszkedik ez az egész a folytonos köze
 \end{equation}
 Viszont itt a $\bold{v}$ nem egy sima vektor, hanem egy vektortér ($\bold{v} \rightarrow \bold{v}(\bold{x}, t)$), tehát az időbeli derivált egy komplexebb alakot ölt:
 \begin{equation}
-    \frac{d \bold{v}}{dt} \equiv \frac{\partial \bold{v}}{\partial t} + (\bold{v} \cdot \nabla) \bold{v}
+    \frac{d \bold{v}}{dt} \equiv \frac{\partial \bold{v}}{\partial t} + (\bold{v} \cdot \boldsymbol{\nabla}) \bold{v}
 \end{equation}
 Ez az úgynevezett anyagderivált, ami figyelembe veszi, hogy a folyadék részecskéi mozognak a térben. Ez a derivált láncszabály alapján jön létre és két tagból áll: az első tag a helyi időbeli változást méri,
 a második tag pedig a konvektív változást méri, ami a részecskék térbeli elmozdulásából származik. Ezt beírva a mozgásegyenletbe:
 \begin{equation}
-    \bold{f} + div \hat{\sigma} = \varrho \left(\frac{\partial \bold{v}}{\partial t} + (\bold{v} \cdot \nabla) \bold{v}\right)
+    \bold{f} + div \hat{\sigma} = \varrho \left(\frac{\partial \bold{v}}{\partial t} + (\bold{v} \cdot \boldsymbol{\nabla}) \bold{v}\right)
 \end{equation}
 Ez pedig a mozgásegyenlet folyadékokra. Ha ideális folyadékról beszélünk, akkor a feszültség tenzor csak a nyomásból áll:
 \begin{equation}
@@ -5547,7 +5547,7 @@ Ez pedig a mozgásegyenlet folyadékokra. Ha ideális folyadékról beszélünk,
 \end{equation}
 Ezt beírva a mozgásegyenletbe:
 \begin{equation}
-    \bold{f} - \nabla p = \varrho \left(\frac{\partial \bold{v}}{\partial t} + (\bold{v} \cdot \nabla) \bold{v}\right)
+    \bold{f} - \boldsymbol{\nabla} p = \varrho \left(\frac{\partial \bold{v}}{\partial t} + (\bold{v} \cdot \boldsymbol{\nabla}) \bold{v}\right)
 \end{equation}
 Ez pedig az Euler-egyenlet ideális folyadékokra.
 
@@ -5596,17 +5596,17 @@ Mivel a folyadékok mozgásegyenletében a feszültség tenzor divergenciája sz
 \end{equation}
 Tehát a teljes feszültség tenzor divergenciája:
 \begin{equation}
-    div \bold{\hat{\sigma}} = - \nabla p + \eta \Delta \bold{v} + (\eta + \eta')  \nabla\left(\nabla \bold{v}\right)
+    div \bold{\hat{\sigma}} = - \boldsymbol{\nabla} p + \eta \Delta \bold{v} + (\eta + \eta')  \boldsymbol{\nabla}\left(\boldsymbol{\nabla} \bold{v}\right)
 \end{equation}
 Ezt beírva a mozgásegyenletbe:
 \begin{equation}
-    \bold{f} - \nabla p + \eta \Delta \bold{v} + (\eta + \eta')  \nabla\left(\nabla \bold{v}\right) = \varrho \left(\frac{\partial \bold{v}}{\partial t} + (\bold{v} \cdot \nabla) \bold{v}\right)
+    \bold{f} - \boldsymbol{\nabla} p + \eta \Delta \bold{v} + (\eta + \eta')  \boldsymbol{\nabla}\left(\boldsymbol{\nabla} \bold{v}\right) = \varrho \left(\frac{\partial \bold{v}}{\partial t} + (\bold{v} \cdot \boldsymbol{\nabla}) \bold{v}\right)
 \end{equation}
 Ez pedig a Navier-Stokes egyenlet viszkózus folyadékokra.
 Látható, hogy ha a viszkozitás elhanyagolható, akkor visszaáll az Euler-egyenlet ideális folyadékokra. Ha pedig a folyadék összenyomhatatlan,
 akkor a divergencia nulla lesz, és a harmadik tag is eltűnik az egyenletből:
 \begin{equation}
-    \bold{f} - \nabla p + \eta \Delta \bold{v} = \varrho \left(\frac{\partial \bold{v}}{\partial t} + (\bold{v} \cdot \nabla) \bold{v}\right)
+    \bold{f} - \boldsymbol{\nabla} p + \eta \Delta \bold{v} = \varrho \left(\frac{\partial \bold{v}}{\partial t} + (\bold{v} \cdot \boldsymbol{\nabla}) \bold{v}\right)
 \end{equation}
 A Navier-Stokes egyenlet egy nemlineáris parciális differenciálegyenlet, ami azt jelenti, hogy az egyenlet megoldása nem egyszerű feladat és sok esetben nem is lehet egzaktul megoldani.
 Van néhány "szép" megoldása, például a Couette-áromlás, ahol két párhuzamos lemez között áramlik a folyadék, de általánosságban véve numerikus módszerekkel kell megoldani az egyenletet.
@@ -5614,10 +5614,10 @@ Van néhány "szép" megoldása, például a Couette-áromlás, ahol két párhu
 A turbulens áramlás egy olyan kaotikus áramlás amit csak statisztikai módszerekkel lehet jellemezni. 
 
 Ahhoz hogy meg tudjuk határozni, hogy egy adott áramlás lamináris vagy turbulens lesz-e,
-Bevezetünk pár közelítést a Navier-Stokes egyenletbe - a viszkozitást az $\eta$-s tag jellemzi, míg a nemlineáris tagot a $\left(\bold{v} \nabla\right)\bold{v}$ tag.
+Bevezetünk pár közelítést a Navier-Stokes egyenletbe - a viszkozitást az $\eta$-s tag jellemzi, míg a nemlineáris tagot a $\left(\bold{v} \boldsymbol{\nabla}\right)\bold{v}$ tag.
 Itt bevezethetek egy karrakterisztikus hosszúságot $L$ ami a folyadék áramlásának jellemző méretét jelenti:
 \begin{equation}
-    \underbrace{\eta \Delta \bold{v}}_{\text{viszkozitás}} \sim \eta \frac{v}{L^2} \quad \quad \underbrace{\left(\bold{v} \nabla\right)\bold{v}}_{\text{nemlineáris}} \sim \varrho \frac{v^2}{L}
+    \underbrace{\eta \Delta \bold{v}}_{\text{viszkozitás}} \sim \eta \frac{v}{L^2} \quad \quad \underbrace{\left(\bold{v} \boldsymbol{\nabla}\right)\bold{v}}_{\text{nemlineáris}} \sim \varrho \frac{v^2}{L}
 \end{equation}
 A karakterisztikus hosszúság és sebesség a folyadék áramlásának jellemző méreteit és sebességeit jelenti. Ezeknek az aránya pedig megmondja, hogy melyik tag dominál:
 \begin{equation}
@@ -5635,38 +5635,38 @@ Az örvények jellemzéséhez alakítsuk át egy kicsit a Navier-Stokes egyenlet
 \end{equation}
 Ezt alkalmazva a sebességvektorra:
 \begin{equation}
-    \bold{v} \times (\nabla \times \bold{v}) = \underbrace{\nabla \left(v^2\right)}_{\text{rossz!}} - \bold{v} (\bold{v} \nabla)
+    \bold{v} \times (\boldsymbol{\nabla} \times \bold{v}) = \underbrace{\boldsymbol{\nabla} \left(v^2\right)}_{\text{rossz!}} - \bold{v} (\bold{v} \boldsymbol{\nabla})
 \end{equation}
-Itt írjuk át $\bold{v} (\bold{v} \nabla)$-t $(\bold{v} \nabla)\bold{v}$-re, hogy jobban látszódjon, hogy mire hat a Nabla operátor. Illetve van egy kis probléma,
-mégpedig, hogy a $\nabla \left(v^2\right)$ nem egészen ugyan az mint a $\nabla \left(\bold{v} \cdot \bold{v}\right)$, ugyanis az utóbbiban csak az egyik vektor komponenseire hat a Nabla operátor,
+Itt írjuk át $\bold{v} (\bold{v} \boldsymbol{\nabla})$-t $(\bold{v} \boldsymbol{\nabla})\bold{v}$-re, hogy jobban látszódjon, hogy mire hat a Nabla operátor. Illetve van egy kis probléma,
+mégpedig, hogy a $\boldsymbol{\nabla} \left(v^2\right)$ nem egészen ugyan az mint a $\boldsymbol{\nabla} \left(\bold{v} \cdot \bold{v}\right)$, ugyanis az utóbbiban csak az egyik vektor komponenseire hat a Nabla operátor,
 az előbbiben pedig a négyzetre. Ezt orvosolhatjuk egy kis trükkel:
 \begin{equation}
-    \bold{v} \times (\nabla \times \bold{v}) = \nabla \left(\frac{v^2}{2}\right) - (\bold{v} \nabla)\bold{v}
+    \bold{v} \times (\boldsymbol{\nabla} \times \bold{v}) = \boldsymbol{\nabla} \left(\frac{v^2}{2}\right) - (\bold{v} \boldsymbol{\nabla})\bold{v}
 \end{equation}
 Ezt átrendezve:
 \begin{equation}
-    (\bold{v} \nabla)\bold{v} = \nabla \left(\frac{v^2}{2}\right) - \bold{v} \times (\nabla \times \bold{v})
+    (\bold{v} \boldsymbol{\nabla})\bold{v} = \boldsymbol{\nabla} \left(\frac{v^2}{2}\right) - \bold{v} \times (\boldsymbol{\nabla} \times \bold{v})
 \end{equation}
 Ezt beírva a Navier-Stokes egyenletbe:
 \begin{equation}
-    \bold{f} - \nabla p + \eta \Delta \bold{v} = \varrho \left(\frac{\partial \bold{v}}{\partial t} + \nabla \left(\frac{v^2}{2}\right) - \bold{v} \times (\nabla \times \bold{v})\right)
+    \bold{f} - \boldsymbol{\nabla} p + \eta \Delta \bold{v} = \varrho \left(\frac{\partial \bold{v}}{\partial t} + \boldsymbol{\nabla} \left(\frac{v^2}{2}\right) - \bold{v} \times (\boldsymbol{\nabla} \times \bold{v})\right)
 \end{equation}
-És ez miért érdekes? Mert a $\nabla \times \bold{v} = rot(\bold{v})$ kifejezést a folyadék örvényességének nevezzük, és jelölése $\bold{\omega}$:
+És ez miért érdekes? Mert a $\boldsymbol{\nabla} \times \bold{v} = rot(\bold{v})$ kifejezést a folyadék örvényességének nevezzük, és jelölése $\bold{\omega}$:
 \begin{equation}
     \bold{\omega} = rot(\bold{v})
 \end{equation}
 És ez a mennyiség adja meg, hogy egy adott pontban mennyire "forog" a folyadék. Ha tudok olyan zárt görbét venni a folyadékban, ahol az örvényesség nem nulla,
 akkor ott örvénylés van jelen. Ha viszont nincsenek örvények, akkor a Navier-Stokes egyenlet a következő alakot ölti:
 \begin{equation}
-    \bold{f} - \nabla p + \eta \Delta \bold{v} = \varrho \left(\frac{\partial \bold{v}}{\partial t} + \nabla \left(\frac{v^2}{2}\right)\right)
+    \bold{f} - \boldsymbol{\nabla} p + \eta \Delta \bold{v} = \varrho \left(\frac{\partial \bold{v}}{\partial t} + \boldsymbol{\nabla} \left(\frac{v^2}{2}\right)\right)
 \end{equation}
 Most tegyük fel, hogy a folyadék stacionáriusan áramlik, tehát az időbeli derivált nulla lesz és a viszkozitás is elhanyagolható és külső erő sincsen:
 \begin{equation}
-    - \nabla p = \varrho \nabla \left(\frac{v^2}{2}\right)
+    - \boldsymbol{\nabla} p = \varrho \boldsymbol{\nabla} \left(\frac{v^2}{2}\right)
 \end{equation}
 Ezt átrendezve:
 \begin{equation}
-    \nabla \left(\frac{p}{\varrho} + \frac{v^2}{2}\right) = 0
+    \boldsymbol{\nabla} \left(\frac{p}{\varrho} + \frac{v^2}{2}\right) = 0
 \end{equation}
 Tehát a következő összefüggést kapjuk:
 \begin{equation}
@@ -5678,7 +5678,7 @@ Ez pedig nem más mint a Bernoulli-egyenlet. Tehát a Bernoulli-egyenlet csak ak
 Nézzük meg egy egyszerű példán keresztül, hogy hogyan alkalmazhatjuk a Bernoulli-egyenletet és az anyagmegmaradást egy csőben áramló folyadék esetén.
 Tegyük fel, hogy van egy cső amiben egy ideális folyadék áramlik, és a cső keresztmetszete állandó, de a nyomás különbözik. Ekkor a következő egyenleteket tudjuk felírni:
 \begin{itemize}
-    \item $\nabla \bold{p} = \eta \Delta \bold{v}$ Ahol a többi tagot elhagyjuk mivel lassan laminárisan áramló ideális folyadékról van szó.
+    \item $\boldsymbol{\nabla} \bold{p} = \eta \Delta \bold{v}$ Ahol a többi tagot elhagyjuk mivel lassan laminárisan áramló ideális folyadékról van szó.
     \item $div( \bold{v}) = 0$ Az anyagmegmaradás differenciálegyenlete.
     \item $\oint \bold{\hat{\sigma}} dA = 0$ Nincs külső erő hatás a folyadékra.
 \end{itemize}
@@ -6362,7 +6362,7 @@ Két pont között tehát a belső energia változása:
 \end{equation}
 Ha ezt egy zárt görbén veszem, akkor a belső energia változása nulla kell legyen, hiszen ugyanabba az állapotba térek vissza:
 \begin{equation}
-    \oint dU = \oint \nabla E d \bold{r} = 0
+    \oint dU = \oint \boldsymbol{\nabla} E d \bold{r} = 0
 \end{equation}
 Ez pedig azt jelenti, hogy a belső energia egy jól definiált állapotjelző, hiszen a belső energia változása csak a kezdő és végponttól függ, és nem az úttól.
 
@@ -8288,15 +8288,15 @@ Ahol $Q_{in}$ a felület által bezárt összes töltés. Ez a \textbf{Gauss-tö
 \newline
 A Gauss-törvényt egyszerűen meg lehet fogalmazni differenciális alakban is a vektor-kalkulus segítségével. Ehhez használjuk a divergencia tételt, ami kimondja, hogy egy vektormező fluxusa egy zárt felületen keresztül egyenlő a mező divergenciájának térfogati integráljával a felület által bezárt térfogatban:
 \begin{equation}
-    \oint_S \bold{E} d\bold{a} = \int_V (\nabla \cdot \bold{E}) dV
+    \oint_S \bold{E} d\bold{a} = \int_V (\boldsymbol{\nabla} \cdot \bold{E}) dV
 \end{equation}
 Ezt behelyettesítve a Gauss-törvénybe:
 \begin{equation}
-    \int_V (\nabla \cdot \bold{E}) dV = \frac{{Q_{in}}}{\varepsilon_0} = \frac{1}{\varepsilon_0} \int_V \rho dV
+    \int_V (\boldsymbol{\nabla} \cdot \bold{E}) dV = \frac{{Q_{in}}}{\varepsilon_0} = \frac{1}{\varepsilon_0} \int_V \rho dV
 \end{equation}
 Mivel ez az egyenlet bármilyen térfogat esetén igaz, ezért a két integrandusnak is egyenlőnek kell lennie:
 \begin{equation}
-    \boxed{\nabla \cdot \bold{E} = \frac{\rho}{\varepsilon_0}}
+    \boxed{\boldsymbol{\nabla} \cdot \bold{E} = \frac{\rho}{\varepsilon_0}}
 \end{equation}
 Ez a Gauss-törvény differenciális alakja, ami azt mondja meg, hogy a térerősség divergenciája egyenlő a töltéssűrűség osztva a vákuumbeli permittivitással. Ez az egyenlet is az elektrosztatika egyik alapvető törvénye, és sokszor használják a térerősség kiszámítására különböző töltéseloszlások esetén.
 \newline
@@ -8366,7 +8366,7 @@ Most nézzük meg, mi történik, ha egy zárt görbén számoljuk az integrált
 \end{equation}
 Mivel a kör mentén $a = b$, ezért az integrál értéke nulla lesz. Ez azt jelenti, hogy a térerősségnek nincs rotációja a ponttöltés esetén:
 \begin{equation}
-    \boxed{\nabla \times \bold{E} = 0}
+    \boxed{\boldsymbol{\nabla} \times \bold{E} = 0}
 \end{equation}
 Ez az eredmény általánosítható bármilyen töltéseloszlásra is, hiszen a szuperpozíció elve alapján az összes töltés által keltett térerősség összeadódik, és az integrál is összeadódik:
 \begin{equation}
@@ -8391,18 +8391,18 @@ Látható, hogy a potenciál csak a kezdeti és a végponttól függ, és nem az
 \end{equation}
 De a gradiens fundamentális elvéből következik, hogy egy skalár mező gradiensének vonalintegrálja a mező értékének különbségét adja meg a két pont között:
 \begin{equation}
-    \int_{a}^{b} \nabla V d\bold{l} = V(\bold{b}) - V(\bold{a})
+    \int_{a}^{b} \boldsymbol{\nabla} V d\bold{l} = V(\bold{b}) - V(\bold{a})
 \end{equation}
 Ezt összevetve az előző egyenlettel kapjuk, hogy a térerősség és a potenciál között a következő összefüggés áll fenn:
 \begin{equation}
-    \boxed{\bold{E} = - \nabla V}
+    \boxed{\bold{E} = - \boldsymbol{\nabla} V}
 \end{equation}
 Ez az összefüggés nagyon fontos, hiszen megmutatja, hogy a térerősség a potenciál gradiensének negatívja. Ez azt jelenti, hogy a térerősség iránya mindig a potenciál csökkenésének irányába mutat.
 A negatív előjel konvenció kérdése, hiszen azt jelenti, hogy a pozitív töltés a magasabb potenciál felől a alacsonyabb potenciál felé mozog. Ez az összefüggés lehetővé teszi, hogy a térerősséget a potenciálból számoljuk ki, ami sokszor egyszerűbb feladat, mint közvetlenül a térerősségből indulni ki.
 \newline
 \newline
 Az elektromos potenciál ereje abban rejlik, hogy a vektormezőkön alapuló térerősséget egy skalár mezővel tudjuk jellemezni. Ez sokszor leegyszerűsíti a problémákat, hiszen a skalár mezők kezelése általában egyszerűbb, mint a vektormezőké.
-Felmerülhet a kérdés, hogy hogyan tudja egy sima skalár aszt, hogy tartalmazza a térerősség vektormennyiség információit. A válasz az, hogy a térerősség komponensei nem függetlenek egymástól, hiszen köti őket a $\nabla \times \bold{E} = 0$ összefüggés. Ez azt jelenti, hogy
+Felmerülhet a kérdés, hogy hogyan tudja egy sima skalár aszt, hogy tartalmazza a térerősség vektormennyiség információit. A válasz az, hogy a térerősség komponensei nem függetlenek egymástól, hiszen köti őket a $\boldsymbol{\nabla} \times \bold{E} = 0$ összefüggés. Ez azt jelenti, hogy
 hogy a térerősség komponensei között fennáll a következő kapcsolat:
 \begin{equation}
     \frac{\partial E_x}{\partial y} = \frac{\partial E_y}{\partial x}, \quad \frac{\partial E_y}{\partial z} = \frac{\partial E_z}{\partial y}, \quad \frac{\partial E_z}{\partial x} = \frac{\partial E_x}{\partial z}
@@ -8441,25 +8441,25 @@ Most nézzük meg a gömbhéj belsejében lévő pontokat ($r < R$). Ebben az es
 \subsubsection{Poisson és Laplace egyenletek}
 Az elektromos potenciál és a térerősség közötti kapcsolatot már ismertük:
 \begin{equation}
-    \bold{E} = - \nabla V
+    \bold{E} = - \boldsymbol{\nabla} V
 \end{equation}
 Ezt behelyettesítve a Gauss-törvény differenciális alakjába:
 \begin{equation}
-    \nabla \cdot \bold{E} = \frac{\rho}{\varepsilon_0} \implies \nabla \cdot (- \nabla V) = \frac{\rho}{\varepsilon_0} \implies - \nabla^2 V = \frac{\rho}{\varepsilon_0}
+    \boldsymbol{\nabla} \cdot \bold{E} = \frac{\rho}{\varepsilon_0} \implies \boldsymbol{\nabla} \cdot (- \boldsymbol{\nabla} V) = \frac{\rho}{\varepsilon_0} \implies - \boldsymbol{\nabla}^2 V = \frac{\rho}{\varepsilon_0}
 \end{equation}
-Ahol $\nabla^2$ a Laplace-operátor, ami a vektor-kalkulusban a divergencia és a gradiens műveletek kombinációja (szokás $\Delta$ jelölést is használni). Ez az egyenlet a \textbf{Poisson-egyenlet}, ami az elektromos potenciál és a töltéssűrűség közötti kapcsolatot írja le:
+Ahol $\boldsymbol{\nabla}^2$ a Laplace-operátor, ami a vektor-kalkulusban a divergencia és a gradiens műveletek kombinációja (szokás $\Delta$ jelölést is használni). Ez az egyenlet a \textbf{Poisson-egyenlet}, ami az elektromos potenciál és a töltéssűrűség közötti kapcsolatot írja le:
 \begin{equation}
-    \boxed{\nabla^2 V = - \frac{\rho}{\varepsilon_0}}
+    \boxed{\boldsymbol{\nabla}^2 V = - \frac{\rho}{\varepsilon_0}}
 \end{equation}
 Ha a térben nincs töltés ($\rho = 0$), akkor a Poisson-egyenlet leegyszerűsödik a \textbf{Laplace-egyenletre}:
 \begin{equation}
-    \boxed{\nabla^2 V = 0}
+    \boxed{\boldsymbol{\nabla}^2 V = 0}
 \end{equation}
 Mind a Poisson, mind a Laplace egyenlet másodrendű parciális differenciálegyenlet, és megoldásukhoz általában határfeltételeket kell megadni. Ezek az egyenletek nagyon fontosak az elektrosztatikaban, hiszen segítségükkel lehet meghatározni a potenciált és a térerősséget különböző töltéseloszlások és geometriai konfigurációk esetén.
 
 A teljesség kedvéért nézzük meg a potenciál rotációját is:
 \begin{equation}
-    \nabla \times \bold{E} = \nabla \times (- \nabla V) = - (\nabla \times \nabla V) = 0
+    \boldsymbol{\nabla} \times \bold{E} = \boldsymbol{\nabla} \times (- \boldsymbol{\nabla} V) = - (\boldsymbol{\nabla} \times \boldsymbol{\nabla} V) = 0
 \end{equation}
 Ez az eredmény megerősíti, hogy a potenciálból származtatt térerősség mindig konzervatív mezőt alkot, hiszen a rotációja nulla. Ez már csak abból is következik, hogy egy gradiens rotációja mindig nulla.
 
@@ -8516,7 +8516,7 @@ Emellett végtelen mennyiségű töltést képesek "produkálni" a felületükö
 A vezetők tulajdonságai alapján megállapíthatunk néhány alapvető tulajdonságot:
 \begin{itemize}
     \item A vezetőkben az elektromos mező belül nulla ($\bold{E} = 0$). Ez azért van, mert a töltések szabadon mozognak, és az elektromos mező hatására azonnal elmozdulnak, és belül a külső mezővel ellentétes irányú mezőt hoznak létre, ami kioltja a külső mezőt.
-    \item Az előzőből következik, hogy egy vezető belsejében nincs töltés ($\rho = 0$). Ez a Gauss-törvényből következik, hiszen $\nabla \cdot \bold{E} = \frac{\rho}{\varepsilon_0}$, és ha $\bold{E} = 0$, akkor $\rho$ is nulla kell legyen.
+    \item Az előzőből következik, hogy egy vezető belsejében nincs töltés ($\rho = 0$). Ez a Gauss-törvényből következik, hiszen $\boldsymbol{\nabla} \cdot \bold{E} = \frac{\rho}{\varepsilon_0}$, és ha $\bold{E} = 0$, akkor $\rho$ is nulla kell legyen.
     \item Az első kétpontból következik, hogy egy vezetőben lévő töltések csak a felületen helyezkedhetnek el, és a belsejében nincs töltés. Ez azt jelenti, hogy a vezető felszínén a töltések eloszlása határozza meg a vezető elektromos tulajdonságait.
     \item A vezető felülete mindig ekvipotenciális felület. Ez azt jelenti, hogy a vezető felületén a potenciál minden pontban ugyanaz, hiszen ha lenne potenciálkülönbség, akkor a töltések elmozdulnának a vezetőben, amíg a potenciál kiegyenlítődik. $V(\bold{b}) - V(\bold{a}) = - \int_{a}^{b} \bold{E} d\bold{l} = 0 \Rightarrow V(\bold{b}) = V(\bold{a})$
     \item A vezető felületén a térerősség iránya mindig merőleges a felületre. Ez azért van, mert ha lenne párhuzamos komponens, akkor a töltések elmozdulnának a felületen, amíg a párhuzamos komponens ki nem oltódik. A felületre merőleges komponens irányába viszont az anyaghoz kötöttség miatt nem tudnak elmozdulni, ezért ezekben a pontokban fognak "megnyugodni".
@@ -8675,7 +8675,7 @@ Ahol $\hat{\rcurs}$ a megfigyelési pont irányvektora a dipólus felé. Ez az e
 
 Ebből a potenciálból már könnyen kiszámolható a dipólus által keltett térerősség is:
 \begin{equation}
-    \bold{E}(\bold{r}) = - \nabla V(\bold{r}) = - \nabla \left( \frac{1}{4 \pi \varepsilon_0} \cdot \frac{\bold{p} \cdot \hat{\rcurs}}{r^2} \right)
+    \bold{E}(\bold{r}) = - \boldsymbol{\nabla} V(\bold{r}) = - \boldsymbol{\nabla} \left( \frac{1}{4 \pi \varepsilon_0} \cdot \frac{\bold{p} \cdot \hat{\rcurs}}{r^2} \right)
 \end{equation}
 A részletes számolás során a következő eredményt kapjuk:
 \begin{equation}
@@ -8700,19 +8700,19 @@ Ahol $\bold{P}$ a polarizációs vektor az adott pontban. Ekkor az anyag teljes 
 Ahol $\rcurs = |\bold{r} - \bold{r'}|$, és az integrál az anyag teljes térfogatára vonatkozik. Ez az egyenlet megadja a polarizált anyag elektromos potenciálját egy adott pontban.
 Ez a megoldás azonban nem túl praktikus, mivel az integrál elég bonyolult lehet. Viszont észrevehetjük, hogy az irányvektor $\hat{\brcurs}$ gyakorlatilag egy gradiens művelet eredménye:
 \begin{equation}
-    \nabla' \frac{1}{\rcurs} = \frac{\hat{\brcurs}}{\rcurs^2}
+    \boldsymbol{\nabla}' \frac{1}{\rcurs} = \frac{\hat{\brcurs}}{\rcurs^2}
 \end{equation}
 Ezt visszahelyettesítve a potenciál kifejezésébe:
 \begin{equation}
-    V(\bold{r}) = \frac{1}{4 \pi \varepsilon_0} \int_{V} \bold{P}(\bold{r'}) \cdot \nabla' \frac{1}{\rcurs} dV'
+    V(\bold{r}) = \frac{1}{4 \pi \varepsilon_0} \int_{V} \bold{P}(\bold{r'}) \cdot \boldsymbol{\nabla}' \frac{1}{\rcurs} dV'
 \end{equation}
 Most alkalmazhatjuk a vektoranalízis egyik fontos tételét, a divergencia tételt, ami lehetővé teszi számunkra, hogy az integrálban lévő skalár szorzatot átalakítsuk egy másik formára:
 \begin{equation}
-    \int_{V} \bold{A} \cdot \nabla' f \, dV' = \int_{S} f \bold{A} \cdot d\bold{S'} - \int_{V} f \nabla' \cdot \bold{A} \, dV'
+    \int_{V} \bold{A} \cdot \boldsymbol{\nabla}' f \, dV' = \int_{S} f \bold{A} \cdot d\bold{S'} - \int_{V} f \boldsymbol{\nabla}' \cdot \bold{A} \, dV'
 \end{equation}
 Ahol $S$ a térfogat határfelülete. Ezt alkalmazva a potenciál kifejezésére:
 \begin{equation}
-    V(\bold{r}) = \frac{1}{4 \pi \varepsilon_0} \left( \int_{S} \frac{1}{\rcurs} \bold{P}(\bold{r'}) \cdot d\bold{S'} - \int_{V} \frac{1}{\rcurs} \nabla' \cdot \bold{P}(\bold{r'}) \, dV' \right)
+    V(\bold{r}) = \frac{1}{4 \pi \varepsilon_0} \left( \int_{S} \frac{1}{\rcurs} \bold{P}(\bold{r'}) \cdot d\bold{S'} - \int_{V} \frac{1}{\rcurs} \boldsymbol{\nabla}' \cdot \bold{P}(\bold{r'}) \, dV' \right)
 \end{equation}
 Itt bevezethetünk két új mennyiséget:
 \begin{itemize}
@@ -8722,7 +8722,7 @@ Itt bevezethetünk két új mennyiséget:
     \end{equation}
     \item A \textbf{térfogati töltéssűrűség} ($\rho_b$), ami a polarizációs vektor divergenciáját jelenti a térfogatban:
     \begin{equation}
-        \rho_b = - \nabla \cdot \bold{P}
+        \rho_b = - \boldsymbol{\nabla} \cdot \bold{P}
     \end{equation}
 \end{itemize}
 Ezeket visszahelyettesítve a potenciál kifejezésébe:
@@ -8740,7 +8740,7 @@ Először is határozzuk meg a felszíni és térfogati töltéssűrűséget:
     \sigma_b = \bold{P} \cdot \hat{\bold{n}} = P_0 \cos \theta
 \end{equation}
 \begin{equation}
-    \rho_b = - \nabla \cdot \bold{P} = 0
+    \rho_b = - \boldsymbol{\nabla} \cdot \bold{P} = 0
 \end{equation}
 Mivel a polarizációs vektor egyenletes, ezért a térfogati töltéssűrűség nulla lesz. Ez azt jelenti, hogy csak a felszíni töltéssűrűséget kell figyelembe venni a potenciál számításánál:
 \begin{equation}
@@ -8788,7 +8788,7 @@ Tehát a gömb potenciálja kívül úgy viselkedik mint egy tökéletes dipólu
 \end{figure}
 
 \subsubsection{Elektromos eltolás}
-Láttuk, hogy a polarizáció hatására egy dielektrikumban megjelenik egy kötött töltés az anyag belsejében ($\rho_b = - \nabla \cdot \bold{P}$) és egy kötött töltés az anyag
+Láttuk, hogy a polarizáció hatására egy dielektrikumban megjelenik egy kötött töltés az anyag belsejében ($\rho_b = - \boldsymbol{\nabla} \cdot \bold{P}$) és egy kötött töltés az anyag
 felületén ($\sigma_b = \bold{P} \cdot \hat{\bold{n}}$). Ez a két tér adja ki a teljes elektromos terét egy polarizált dielektrikumnak. A teljes elektromos teret pedig emiatt két komponens
 alkotja, a kötött töltések polarizált tere és minden más (amit "szabad töltésnek" hívnak: $\rho_f$). Ez a szabad töltés bármi lehet, egy közeli vezetőn lévő töltésektől kezdve a dielekteikumból leszakadó szabad töltéseken át bármi.
 A lényeg, hogy ezek a töltések nem asszociáltak a $\bold{P}$-vel. Tehát a teljes töltéssűrűség:
@@ -8797,11 +8797,11 @@ A lényeg, hogy ezek a töltések nem asszociáltak a $\bold{P}$-vel. Tehát a t
 \end{equation}
 A Gauss-törvény pedig:
 \begin{equation}
-    \varepsilon_0 \nabla \cdot \bold{E} = \rho = \rho_f + \rho_b = - \nabla \bold{P} + \rho_f
+    \varepsilon_0 \boldsymbol{\nabla} \cdot \bold{E} = \rho = \rho_f + \rho_b = - \boldsymbol{\nabla} \bold{P} + \rho_f
 \end{equation} 
 Itt $\bold{E}$ a teljes elektromos térerősség, nem csak a polarizált anyagban generált tér. Ha rendezzük az egyenletet, hogy a divergenciák együtt legyenek, akkor:
 \begin{equation}
-    \nabla \cdot (\varepsilon_0 \bold{E} + \bold{P}) = \rho_f
+    \boldsymbol{\nabla} \cdot (\varepsilon_0 \bold{E} + \bold{P}) = \rho_f
 \end{equation}
 A divergenciában lévő tagra meg bevezethetünk egy új mennyiséget, amit \textbf{elektromos eltolás mezőnek} nevezünk:
 \begin{equation}
@@ -8809,7 +8809,7 @@ A divergenciában lévő tagra meg bevezethetünk egy új mennyiséget, amit \te
 \end{equation}
 Ezt visszahelyettesítve a Gauss-törvénybe:
 \begin{equation}
-    \boxed{\nabla \cdot \bold{D} = \rho_f}
+    \boxed{\boldsymbol{\nabla} \cdot \bold{D} = \rho_f}
 \end{equation}
 Vagy integrális alakban:
 \begin{equation}
@@ -8863,7 +8863,7 @@ Bevezethetünk egy új mennyiséget, a \textbf{relatív permittivitást} ($\vare
 Ez az eredmény azt mutatja, hogy a lineáris dielektrikumokban az elektromos eltolás arányos az elektromos térerősséggel, és az arányossági tényező a permittivitás ($\varepsilon = \varepsilon_0 \varepsilon_r$).
 Ezt visszahelyettesítve a Gauss-törvénybe:
 \begin{equation}
-    \nabla \cdot (\varepsilon \bold{E}) = \rho_f
+    \boldsymbol{\nabla} \cdot (\varepsilon \bold{E}) = \rho_f
 \end{equation}
 Vagy integrális alakban:
 \begin{equation}
@@ -9024,15 +9024,15 @@ Ahol $\rho$ a töltéssűrűség és $\bold{v}$ a töltések átlagos sebessége
 \end{equation}
 Ha pedig egy térfogati egységre nézzük meg:
 \begin{equation}
-    \oint_S \bold{J} \cdot d\bold{A} = \int_V \nabla \cdot \bold{J} dV
+    \oint_S \bold{J} \cdot d\bold{A} = \int_V \boldsymbol{\nabla} \cdot \bold{J} dV
 \end{equation}
 Mivel a töltés megmaradó mennyiség, a kiáramló töltések csak a bennlévő töltések "kárára" tudnak kijutni:
 \begin{equation}
-    \oint_V \nabla \cdot \bold{J} dV = - \frac{d}{dt} \int_V \rho dV = - \int_V \frac{\partial \rho}{\partial t} dV
+    \oint_V \boldsymbol{\nabla} \cdot \bold{J} dV = - \frac{d}{dt} \int_V \rho dV = - \int_V \frac{\partial \rho}{\partial t} dV
 \end{equation}
 Mivel ez az egyenlet tetszőleges térfogatra igaz, ezért a következő differenciálegyenletet kapjuk:
 \begin{equation}
-    \boxed{\nabla \cdot \bold{J} = - \frac{\partial \rho}{\partial t}}
+    \boxed{\boldsymbol{\nabla} \cdot \bold{J} = - \frac{\partial \rho}{\partial t}}
 \end{equation}
 Ezt az egyenletet \textbf{kontinuitási egyenletnek} nevezzük, és azt fejezi ki, hogy a töltés nem tűnik el sehol, csak áramlik egyik helyről a másikra.
 
@@ -9042,7 +9042,7 @@ Ezt az egyenletet \textbf{kontinuitási egyenletnek} nevezzük, és azt fejezi k
 \subsubsection{Stacionárius áram}
 Stacionárius áramról akkor beszélünk, amikor az áram időben állandó, azaz az áram erőssége és iránya nem változik időben. Ebben az esetben a töltéssűrűség sem változik időben, így a kontinuitási egyenlet a következőképpen egyszerűsödik:
 \begin{equation}
-    \nabla \cdot \bold{J} = 0
+    \boldsymbol{\nabla} \cdot \bold{J} = 0
 \end{equation}
 Ez azt jelenti, hogy a stacionárius áram esetén a beáramló és kiáramló töltések mennyisége egyensúlyban van minden pontban.
 
@@ -9095,65 +9095,65 @@ Ekkor a Biot-Savart törvény egy tetszőleges térfogatra nézve:
 \end{equation}
 Most vegyük a divergenciáját a $\bold{B}$-nek:
 \begin{equation}
-    \nabla \cdot \bold{B} = \frac{\mu_0}{4 \pi} \nabla \cdot \int \frac{\bold{J}(\bold{r'}) \times \hat{\brcurs}}{\rcurs^2} dV'
+    \boldsymbol{\nabla} \cdot \bold{B} = \frac{\mu_0}{4 \pi} \boldsymbol{\nabla} \cdot \int \frac{\bold{J}(\bold{r'}) \times \hat{\brcurs}}{\rcurs^2} dV'
 \end{equation}
-Mivel a $\bold{r'}$-re integrálunk, ezért a $\nabla$ operátor bevihető az integrálba:
+Mivel a $\bold{r'}$-re integrálunk, ezért a $\boldsymbol{\nabla}$ operátor bevihető az integrálba:
 \begin{equation}
-    \nabla \cdot \bold{B} = \frac{\mu_0}{4 \pi} \int \nabla \cdot \left(\frac{\bold{J}(\bold{r'}) \times \hat{\brcurs}}{\rcurs^2}\right) dV'
+    \boldsymbol{\nabla} \cdot \bold{B} = \frac{\mu_0}{4 \pi} \int \boldsymbol{\nabla} \cdot \left(\frac{\bold{J}(\bold{r'}) \times \hat{\brcurs}}{\rcurs^2}\right) dV'
 \end{equation}
 Ezt a divergenciát a vektoriális identitások segítségével számolhatjuk ki:
 \begin{equation}
-    \nabla \cdot (\bold{A} \times \bold{B}) = \bold{B} \cdot (\nabla \times \bold{A}) - \bold{A} \cdot (\nabla \times \bold{B})
+    \boldsymbol{\nabla} \cdot (\bold{A} \times \bold{B}) = \bold{B} \cdot (\boldsymbol{\nabla} \times \bold{A}) - \bold{A} \cdot (\boldsymbol{\nabla} \times \bold{B})
 \end{equation}
 Ha $\bold{A} = \bold{J}(\bold{r'})$ és $\bold{B} = \frac{\hat{\brcurs}}{\rcurs^2}$, akkor:
 \begin{equation}
-    \nabla \cdot \left(\frac{\bold{J}(\bold{r'}) \times \hat{\brcurs}}{\rcurs^2}\right) = \frac{\hat{\brcurs}}{\rcurs^2} \cdot (\nabla \times \bold{J}(\bold{r'})) - \bold{J}(\bold{r'}) \cdot \left(\nabla \times \frac{\hat{\brcurs}}{\rcurs^2}\right)
+    \boldsymbol{\nabla} \cdot \left(\frac{\bold{J}(\bold{r'}) \times \hat{\brcurs}}{\rcurs^2}\right) = \frac{\hat{\brcurs}}{\rcurs^2} \cdot (\boldsymbol{\nabla} \times \bold{J}(\bold{r'})) - \bold{J}(\bold{r'}) \cdot \left(\boldsymbol{\nabla} \times \frac{\hat{\brcurs}}{\rcurs^2}\right)
 \end{equation}
-Mivel a $\bold{J}(\bold{r'})$ csak $\bold{r'}$-től függ, ezért a $\nabla \times \bold{J}(\bold{r'}) = 0$. A második tagot pedig a következőképpen számolhatjuk ki:
+Mivel a $\bold{J}(\bold{r'})$ csak $\bold{r'}$-től függ, ezért a $\boldsymbol{\nabla} \times \bold{J}(\bold{r'}) = 0$. A második tagot pedig a következőképpen számolhatjuk ki:
 \begin{equation}
-    \nabla \times \frac{\hat{\brcurs}}{\rcurs^2} = 0
+    \boldsymbol{\nabla} \times \frac{\hat{\brcurs}}{\rcurs^2} = 0
 \end{equation}
 Így a divergencia kifejezése nullává válik:
 \begin{equation}
-    \nabla \cdot \left(\frac{\bold{J}(\bold{r'}) \times \hat{\brcurs}}{\rcurs^2}\right) = 0
+    \boldsymbol{\nabla} \cdot \left(\frac{\bold{J}(\bold{r'}) \times \hat{\brcurs}}{\rcurs^2}\right) = 0
 \end{equation}
 Ezt visszahelyettesítve az integrálba:
 \begin{equation}
-    \nabla \cdot \bold{B} = \frac{\mu_0}{4 \pi} \int 0 \, dV' = 0
+    \boldsymbol{\nabla} \cdot \bold{B} = \frac{\mu_0}{4 \pi} \int 0 \, dV' = 0
 \end{equation}
 Tehát a mágneses tér divergenciája mindig nulla:
 \begin{equation}
-    \boxed{\nabla \cdot \bold{B} = 0}
+    \boxed{\boldsymbol{\nabla} \cdot \bold{B} = 0}
 \end{equation}
 Ez azt jelenti, hogy nincsenek mágneses monopólusok, azaz a mágneses tér vonalai mindig záródnak.
 
 Most vegyük a rotációját a $\bold{B}$-nek:
 \begin{equation}
-    \nabla \times \bold{B} = \frac{\mu_0}{4 \pi} \nabla \times \int \frac{\bold{J}(\bold{r'}) \times \hat{\brcurs}}{\rcurs^2} dV'
+    \boldsymbol{\nabla} \times \bold{B} = \frac{\mu_0}{4 \pi} \boldsymbol{\nabla} \times \int \frac{\bold{J}(\bold{r'}) \times \hat{\brcurs}}{\rcurs^2} dV'
 \end{equation}
 Ismét bevihetjük az integrálba a rotációs operátort:
 \begin{equation}
-    \nabla \times \bold{B} = \frac{\mu_0}{4 \pi} \int \nabla \times \left(\frac{\bold{J}(\bold{r'}) \times \hat{\brcurs}}{\rcurs^2}\right) dV'
+    \boldsymbol{\nabla} \times \bold{B} = \frac{\mu_0}{4 \pi} \int \boldsymbol{\nabla} \times \left(\frac{\bold{J}(\bold{r'}) \times \hat{\brcurs}}{\rcurs^2}\right) dV'
 \end{equation}
 Ezt a rotációt a vektoriális identitások segítségével számolhatjuk ki:
 \begin{equation}
-    \nabla \times (\bold{A} \times \bold{B}) = \bold{A} (\nabla \cdot \bold{B}) - \bold{B} (\nabla \cdot \bold{A}) + (\bold{B} \cdot \nabla) \bold{A} - (\bold{A} \cdot \nabla) \bold{B}
+    \boldsymbol{\nabla} \times (\bold{A} \times \bold{B}) = \bold{A} (\boldsymbol{\nabla} \cdot \bold{B}) - \bold{B} (\boldsymbol{\nabla} \cdot \bold{A}) + (\bold{B} \cdot \boldsymbol{\nabla}) \bold{A} - (\bold{A} \cdot \boldsymbol{\nabla}) \bold{B}
 \end{equation}
 Ha $\bold{A} = \bold{J}(\bold{r'})$ és $\bold{B} = \frac{\hat{\brcurs}}{\rcurs^2}$, akkor:
 \begin{equation}
-    \nabla \times \left(\frac{\bold{J}(\bold{r'}) \times \hat{\brcurs}}{\rcurs^2}\right) = \bold{J}(\bold{r'}) (\nabla \cdot \frac{\hat{\brcurs}}{\rcurs^2}) - \frac{\hat{\brcurs}}{\rcurs^2} (\nabla \cdot \bold{J}(\bold{r'})) + \left(\frac{\hat{\brcurs}}{\rcurs^2} \cdot \nabla\right) \bold{J}(\bold{r'}) - (\bold{J}(\bold{r'}) \cdot \nabla) \frac{\hat{\brcurs}}{\rcurs^2}
+    \boldsymbol{\nabla} \times \left(\frac{\bold{J}(\bold{r'}) \times \hat{\brcurs}}{\rcurs^2}\right) = \bold{J}(\bold{r'}) (\boldsymbol{\nabla} \cdot \frac{\hat{\brcurs}}{\rcurs^2}) - \frac{\hat{\brcurs}}{\rcurs^2} (\boldsymbol{\nabla} \cdot \bold{J}(\bold{r'})) + \left(\frac{\hat{\brcurs}}{\rcurs^2} \cdot \boldsymbol{\nabla}\right) \bold{J}(\bold{r'}) - (\bold{J}(\bold{r'}) \cdot \boldsymbol{\nabla}) \frac{\hat{\brcurs}}{\rcurs^2}
 \end{equation}
-Mivel a $\bold{J}(\bold{r'})$ csak $\bold{r'}$-től függ, ezért a $\nabla \cdot \bold{J}(\bold{r'}) = 0$ és a $\left(\frac{\hat{\brcurs}}{\rcurs^2} \cdot \nabla\right) \bold{J}(\bold{r'}) = 0$. A divergencia pedig:
+Mivel a $\bold{J}(\bold{r'})$ csak $\bold{r'}$-től függ, ezért a $\boldsymbol{\nabla} \cdot \bold{J}(\bold{r'}) = 0$ és a $\left(\frac{\hat{\brcurs}}{\rcurs^2} \cdot \boldsymbol{\nabla}\right) \bold{J}(\bold{r'}) = 0$. A divergencia pedig:
 \begin{equation}
-    \nabla \cdot \frac{\hat{\brcurs}}{\rcurs^2} = 4 \pi \delta^3(\brcurs)
+    \boldsymbol{\nabla} \cdot \frac{\hat{\brcurs}}{\rcurs^2} = 4 \pi \delta^3(\brcurs)
 \end{equation}
 Ahol $\delta^3(\brcurs)$ a háromdimenziós Dirac-delta függvény. Így a rotáció kifejezése:
 \begin{equation}
-    \nabla \times \left(\frac{\bold{J}(\bold{r'}) \times \hat{\brcurs}}{\rcurs^2}\right) = 4 \pi \bold{J}(\bold{r'}) \delta^3(\brcurs) - (\bold{J}(\bold{r'}) \cdot \nabla) \frac{\hat{\brcurs}}{\rcurs^2}
+    \boldsymbol{\nabla} \times \left(\frac{\bold{J}(\bold{r'}) \times \hat{\brcurs}}{\rcurs^2}\right) = 4 \pi \bold{J}(\bold{r'}) \delta^3(\brcurs) - (\bold{J}(\bold{r'}) \cdot \boldsymbol{\nabla}) \frac{\hat{\brcurs}}{\rcurs^2}
 \end{equation}
 Ezt visszahelyettesítve az integrálba:
 \begin{equation}
-    \nabla \times \bold{B} = \frac{\mu_0}{4 \pi} \int \left(4 \pi \bold{J}(\bold{r'}) \delta^3(\brcurs) - (\bold{J}(\bold{r'}) \cdot \nabla) \frac{\hat{\brcurs}}{\rcurs^2}\right) dV'
+    \boldsymbol{\nabla} \times \bold{B} = \frac{\mu_0}{4 \pi} \int \left(4 \pi \bold{J}(\bold{r'}) \delta^3(\brcurs) - (\bold{J}(\bold{r'}) \cdot \boldsymbol{\nabla}) \frac{\hat{\brcurs}}{\rcurs^2}\right) dV'
 \end{equation}
 Az első tag integrálja egyszerűen:
 \begin{equation}
@@ -9161,36 +9161,36 @@ Az első tag integrálja egyszerűen:
 \end{equation}
 A második tagot pedig átirhatjuk, úgy, hogy a Nabla operátort a $\bold{r'}$-re alkalmazzuk:
 \begin{equation}
-    - (\bold{J} \cdot \nabla) \frac{\hat{\brcurs}}{\rcurs^2} = (\bold{J} \cdot \nabla') \frac{\hat{\brcurs}}{\rcurs^2}
+    - (\bold{J} \cdot \boldsymbol{\nabla}) \frac{\hat{\brcurs}}{\rcurs^2} = (\bold{J} \cdot \boldsymbol{\nabla}') \frac{\hat{\brcurs}}{\rcurs^2}
 \end{equation}
 Ezt azért tehetjük meg, mert  $(\partial/\partial x) f(x-x') = -(\partial/\partial x') f(x-x')$. A második tagot felírhatjuk az x komponens szerint (a többire is igaz lesz):
 \begin{equation}
-    (\bold{J} \cdot \nabla')\left(\frac{x-x'}{\rcurs^3}\right) = \nabla' \cdot \left[\frac{(x - x')}{\rcurs^3} \bold{J}(\bold{r'})\right] - \frac{(x - x')}{\rcurs^3} (\nabla' \cdot \bold{J}(\bold{r'}))
+    (\bold{J} \cdot \boldsymbol{\nabla}')\left(\frac{x-x'}{\rcurs^3}\right) = \boldsymbol{\nabla}' \cdot \left[\frac{(x - x')}{\rcurs^3} \bold{J}(\bold{r'})\right] - \frac{(x - x')}{\rcurs^3} (\boldsymbol{\nabla}' \cdot \bold{J}(\bold{r'}))
 \end{equation}
-Állandó áram esetén a kontinuitási egyenlet miatt $\nabla' \cdot \bold{J}(\bold{r'}) = 0$, így az utolsó tag eltűnik, és az x komponensre a következőt kapjuk:
+Állandó áram esetén a kontinuitási egyenlet miatt $\boldsymbol{\nabla}' \cdot \bold{J}(\bold{r'}) = 0$, így az utolsó tag eltűnik, és az x komponensre a következőt kapjuk:
 \begin{equation}
-    \left[ (\bold{J} \cdot \nabla)\frac{\hat{\brcurs}}{\rcurs^2} \right]_x = \nabla' \cdot \left[\frac{(x - x')}{\rcurs^3} \bold{J}(\bold{r'})\right]
+    \left[ (\bold{J} \cdot \boldsymbol{\nabla})\frac{\hat{\brcurs}}{\rcurs^2} \right]_x = \boldsymbol{\nabla}' \cdot \left[\frac{(x - x')}{\rcurs^3} \bold{J}(\bold{r'})\right]
 \end{equation}
 És ezzel az alakkal már használhatjuk a divergencia tételt:
 \begin{equation}
-    \int \left[ (\bold{J} \cdot \nabla)\frac{\hat{\brcurs}}{\rcurs^2} \right]_x dV' = \int \nabla' \cdot \left[\frac{(x - x')}{\rcurs^3} \bold{J}(\bold{r'})\right] dV' = \oint \frac{(x - x')}{\rcurs^3} \bold{J}(\bold{r'}) \cdot d\bold{A'}  
+    \int \left[ (\bold{J} \cdot \boldsymbol{\nabla})\frac{\hat{\brcurs}}{\rcurs^2} \right]_x dV' = \int \boldsymbol{\nabla}' \cdot \left[\frac{(x - x')}{\rcurs^3} \bold{J}(\bold{r'})\right] dV' = \oint \frac{(x - x')}{\rcurs^3} \bold{J}(\bold{r'}) \cdot d\bold{A'}  
 \end{equation}
 Ha a térfogat elég nagy, akkor a felületi integrál a végtelenben eltűnik, mivel a $\frac{(x - x')}{\rcurs^3}$ gyorsabban csökken, mint a $\bold{J}(\bold{r'})$ nő. A területet pedig nagyra kell választani, mert az összes áramot bele akarjuk foglalni. 
 Tehát az egész integrál nulla lesz:
 \begin{equation}
-    \int \left[ (\bold{J} \cdot \nabla)\frac{\hat{\brcurs}}{\rcurs^2} \right]_x dV' = 0
+    \int \left[ (\bold{J} \cdot \boldsymbol{\nabla})\frac{\hat{\brcurs}}{\rcurs^2} \right]_x dV' = 0
 \end{equation}
 Hasonlóan a y és z komponensekre is igaz lesz, így a teljes integrál nulla lesz:
 \begin{equation}
-    \int (\bold{J} \cdot \nabla) \frac{\hat{\brcurs}}{\rcurs^2} dV' = 0
+    \int (\bold{J} \cdot \boldsymbol{\nabla}) \frac{\hat{\brcurs}}{\rcurs^2} dV' = 0
 \end{equation}
 Ezt visszahelyettesítve az integrálba:
 \begin{equation}
-    \nabla \times \bold{B} = \frac{\mu_0}{4 \pi} \int 4 \pi \bold{J}(\bold{r'}) \delta^3(\brcurs) dV' = \mu_0 \bold{J}(\bold{r})
+    \boldsymbol{\nabla} \times \bold{B} = \frac{\mu_0}{4 \pi} \int 4 \pi \bold{J}(\bold{r'}) \delta^3(\brcurs) dV' = \mu_0 \bold{J}(\bold{r})
 \end{equation}
 Tehát a mágneses tér rotációja a következőképpen alakul:
 \begin{equation}
-    \boxed{\nabla \times \bold{B} = \mu_0 \bold{J}}
+    \boxed{\boldsymbol{\nabla} \times \bold{B} = \mu_0 \bold{J}}
 \end{equation}
 Ez a \textbf{Ampiére-törvény} és ez az egyenlet a magnetosztatika egyik alapvető egyenlete, és analóg az elektrosztatika Gauss-törvényével. Fel lehet integrális alakban is írni:
 \begin{equation}
@@ -9200,11 +9200,11 @@ Ahol az integrál egy zárt görbe mentén történik, és $I_{enc}$ az áram, a
 
 Összességében tehát fel lehet írni a magnetosztatika egyenleteit az elektrosztatika egyenleteivel analóg formában:
 \begin{equation}
-    \nabla \cdot \bold{B} = 0 \qquad \text{és} \qquad \nabla \times \bold{B} = \mu_0 \bold{J}
+    \boldsymbol{\nabla} \cdot \bold{B} = 0 \qquad \text{és} \qquad \boldsymbol{\nabla} \times \bold{B} = \mu_0 \bold{J}
 \end{equation}
 Az ezzel analóg elektrosztatikai egyenletek pedig:
 \begin{equation}
-    \nabla \cdot \bold{E} = \frac{\rho}{\epsilon_0} \qquad \text{és} \qquad \nabla \times \bold{E} = 0
+    \boldsymbol{\nabla} \cdot \bold{E} = \frac{\rho}{\epsilon_0} \qquad \text{és} \qquad \boldsymbol{\nabla} \times \bold{E} = 0
 \end{equation}
     
 
@@ -9446,10 +9446,10 @@ Ha tehát a fluxus szabályt és Faraday felfedezését ötvözzük, akkor láth
 \end{equation}
 Ez pedig a \textbf{Faraday-törvény} Integrális alakja. A Stokes tétel alkamazásával pedig fel tudjuk írni differenciális alakban is:
 \begin{equation}
-    \boxed{\nabla \times \bold{E} = - \frac{\partial \bold{B}}{\partial t}}
+    \boxed{\boldsymbol{\nabla} \times \bold{E} = - \frac{\partial \bold{B}}{\partial t}}
 \end{equation}
 Ez az egyenlet azt mondja ki, hogy a változó mágneses tér egy örvényes elektromos teret hoz létre. 
-Ez a törvény redukálódik $\nabla \times \bold{E} = 0$-ra, ha a mágneses tér állandó, ami visszaadja az elektrosztatika alapszabályát.
+Ez a törvény redukálódik $\boldsymbol{\nabla} \times \bold{E} = 0$-ra, ha a mágneses tér állandó, ami visszaadja az elektrosztatika alapszabályát.
 
 Tehát általánosan kimondhatjuk, hogy bármilyen okból is változik a mágneses tér, az egy elektromotoros erőt fog kelteni vezetőkben, ami elektromos tér indukciójához vezet.
 
@@ -9493,14 +9493,14 @@ A $dB(z)/dz$ kifejezést kiszámolva:
 \end{equation}
 
 \subsubsection{Indukált elektromos tér}
-A Faraday-törvény általánosította az elektrosztatikus törvényt $\nabla \times \bold{E} = 0$-ról $\nabla \times \bold{E} = - \frac{\partial \bold{B}}{\partial t}$-re, ami azt jelenti, hogy a változó mágneses terek örvényes elektromos tereket hoznak létre. 
+A Faraday-törvény általánosította az elektrosztatikus törvényt $\boldsymbol{\nabla} \times \bold{E} = 0$-ról $\boldsymbol{\nabla} \times \bold{E} = - \frac{\partial \bold{B}}{\partial t}$-re, ami azt jelenti, hogy a változó mágneses terek örvényes elektromos tereket hoznak létre. 
 A Gauss.törvény viszont továbbra is érvényes, tehát, ha egy elektromos tér tisztán a Faraday-törvényből származik, akkor annak divergenciája nulla lesz:
 \begin{equation}
-    \nabla \cdot \bold{E} = 0 \qquad \text{ha} \quad \nabla \times \bold{E} = - \frac{\partial \bold{B}}{\partial t}
+    \boldsymbol{\nabla} \cdot \bold{E} = 0 \qquad \text{ha} \quad \boldsymbol{\nabla} \times \bold{E} = - \frac{\partial \bold{B}}{\partial t}
 \end{equation}
 Tehát a Faraday-indukált terek teljesen meg vannak határozva a $\partial \bold{B}/\partial t$-ből, pontosan úgy mint a statikus mágneses tér a $\mu_0\bold{J}$-ből:
 \begin{equation}
-    \nabla \cdot \bold{B} = 0 \qquad \nabla \times \bold{B} = \mu_0\bold{J}
+    \boldsymbol{\nabla} \cdot \bold{B} = 0 \qquad \boldsymbol{\nabla} \times \bold{B} = \mu_0\bold{J}
 \end{equation}
 Az indukált elektromos térre is fel lehet ezáltal írni a Biot-Savart törvény analógiáját:
 \begin{equation}
@@ -9532,7 +9532,7 @@ Ahol $M_{21}$ a két kör közötti \textbf{közös induktivitás}, ami csak a g
 \end{equation}
 A fluxust felírhatjuk úgy is mint egy vektor-potenciál:
 \begin{equation}
-    \Phi_{2} = \int \bold{B}_1 \cdot d\bold{A}_2 = \int (\nabla \times \bold{A}_1) \cdot d\bold{A}_2 = \oint \bold{A}_1 \cdot d\bold{l}_2
+    \Phi_{2} = \int \bold{B}_1 \cdot d\bold{A}_2 = \int (\boldsymbol{\nabla} \times \bold{A}_1) \cdot d\bold{A}_2 = \oint \bold{A}_1 \cdot d\bold{l}_2
 \end{equation}
 Ahol $\bold{A}_1$ az első kör által generált vektor-potenciál a második kör helyén. A vektor potenciált úgy tudjuk kiszámolni, hogy:
 \begin{equation}
@@ -9659,32 +9659,32 @@ A szabályozni tudjuk a feszültséget és az áramot, transzformátorokra van s
 
 Eddigi ismereteink alapján négy alapvető törvényt sikerült azonosítanunk, amelyek leírják az elektromágneses jelenségeket. Ezek a törvények a következők:
 \begin{enumerate}
-    \item Gauss törvénye az elektromos térre: $\nabla \cdot \bold{E} = \frac{\rho}{\epsilon_0}$
-    \item (nincs neve): $\nabla \cdot \bold{B} = 0$
-    \item Faraday törvénye: $\nabla \times \bold{E} = - \frac{\partial \bold{B}}{\partial t}$
-    \item Ampère törvénye: $\nabla \times \bold{B} = \mu_0 \bold{J}$
+    \item Gauss törvénye az elektromos térre: $\boldsymbol{\nabla} \cdot \bold{E} = \frac{\rho}{\epsilon_0}$
+    \item (nincs neve): $\boldsymbol{\nabla} \cdot \bold{B} = 0$
+    \item Faraday törvénye: $\boldsymbol{\nabla} \times \bold{E} = - \frac{\partial \bold{B}}{\partial t}$
+    \item Ampère törvénye: $\boldsymbol{\nabla} \times \bold{B} = \mu_0 \bold{J}$
 \end{enumerate}
 Ez az állapot ahol a 19. század közepén tartott a fizika az elektromágnesesség területén. Azonban akad egy probléma ezekkel az egyenletekkel: nem konzisztensek!
 Minden a divergencia tétellel kezdődik. Ha például vesszük a Faraday törvényt és alkalmazzuk rá a divergencia tételt:
 \begin{equation}
-    \nabla \cdot (\nabla \times \bold{E}) = - \nabla \cdot \frac{\partial \bold{B}}{\partial t}
+    \boldsymbol{\nabla} \cdot (\boldsymbol{\nabla} \times \bold{E}) = - \boldsymbol{\nabla} \cdot \frac{\partial \bold{B}}{\partial t}
 \end{equation}
 A bal oldalon a divergencia tétel miatt nulla lesz:
 \begin{equation}
-    0 = - \frac{\partial }{\partial t} (\nabla \cdot \bold{B}) 
+    0 = - \frac{\partial }{\partial t} (\boldsymbol{\nabla} \cdot \bold{B}) 
 \end{equation}
-Ahol a jobb oldalon kivettem a deriváltat, mivel az idő szerinti derivált és a térbeli divergencia operátor függetlenek egymástól. Ez az egyenlet pedig mindig igaz lesz, hisz a $\nabla \cdot \bold{B} = 0$-ból indulunk ki.
+Ahol a jobb oldalon kivettem a deriváltat, mivel az idő szerinti derivált és a térbeli divergencia operátor függetlenek egymástól. Ez az egyenlet pedig mindig igaz lesz, hisz a $\boldsymbol{\nabla} \cdot \bold{B} = 0$-ból indulunk ki.
 Ezzel eddig tehát minden oké. De most nézzük meg az Ampiére törvényt:
 \begin{equation}
-    \nabla \cdot (\nabla \times \bold{B}) = \mu_0 \nabla \cdot \bold{J}
+    \boldsymbol{\nabla} \cdot (\boldsymbol{\nabla} \times \bold{B}) = \mu_0 \boldsymbol{\nabla} \cdot \bold{J}
 \end{equation}
 Ismét a bal oldalon nulla lesz:
 \begin{equation}
-    0 = \mu_0 \nabla \cdot \bold{J}
+    0 = \mu_0 \boldsymbol{\nabla} \cdot \bold{J}
 \end{equation}
 De a jobb oldalon a töltésmegmaradás törvénye miatt:
 \begin{equation}
-    \nabla \cdot \bold{J} = - \frac{\partial \rho}{\partial t}
+    \boldsymbol{\nabla} \cdot \bold{J} = - \frac{\partial \rho}{\partial t}
 \end{equation}
 Ezt visszahelyettesítve:
 \begin{equation}
@@ -9711,24 +9711,24 @@ Ezért ez egy pusztán teoretikus probléma volt, amire James Clerk Maxwell skó
 \subsubsection{Maxwell-Egyenletek}
 Maxwell, egy rendkívül egyszerű megoldással oldotta meg a problémát. Egyszerűen vette a kontinuitási egyenenletet és a Gauss-törvényt:
 \begin{equation}
-    \nabla \cdot \bold{J} = - \frac{\partial \rho}{\partial t} \qquad \text{és} \qquad \nabla \cdot \bold{E} = \frac{\rho}{\epsilon_0}
+    \boldsymbol{\nabla} \cdot \bold{J} = - \frac{\partial \rho}{\partial t} \qquad \text{és} \qquad \boldsymbol{\nabla} \cdot \bold{E} = \frac{\rho}{\epsilon_0}
 \end{equation}
 A Gauss-törvényből kifejezte a töltéssűrűséget:
 \begin{equation}
-    \rho = \epsilon_0 \nabla \cdot \bold{E}
+    \rho = \epsilon_0 \boldsymbol{\nabla} \cdot \bold{E}
 \end{equation}
 Ezt visszahelyettesítette a kontinuitási egyenletbe:
 \begin{equation}
-    \nabla \cdot \bold{J} = - \epsilon_0 \frac{\partial }{\partial t} (\nabla \cdot \bold{E})
+    \boldsymbol{\nabla} \cdot \bold{J} = - \epsilon_0 \frac{\partial }{\partial t} (\boldsymbol{\nabla} \cdot \bold{E})
 \end{equation}
 Mivel az időderivált és a térbeli divergencia operátor függetlenek egymástól, ezért a jobb oldalon kivehette a deriváltat:
 \begin{equation}
-    \nabla \cdot \bold{J} = - \epsilon_0 \nabla \cdot \frac{\partial \bold{E}}{\partial t}
+    \boldsymbol{\nabla} \cdot \bold{J} = - \epsilon_0 \boldsymbol{\nabla} \cdot \frac{\partial \bold{E}}{\partial t}
 \end{equation}
 Maxwell pedig felismerte, hogy ha ezt a tagot hozzáadjuk az Ampère törvény jobb oldalához, akkor a divergencia vételekor, pont meg fogja enni a $\bold{J}$ által hozott tagot, ezzel konzisztensé teszi a törvényt!
 így született meg a \textbf{Maxwell-Ampère törvény}:
 \begin{equation}
-    \nabla \times \bold{B} = \mu_0 \bold{J} + \mu_0 \epsilon_0 \frac{\partial \bold{E}}{\partial t}
+    \boldsymbol{\nabla} \times \bold{B} = \mu_0 \bold{J} + \mu_0 \epsilon_0 \frac{\partial \bold{E}}{\partial t}
 \end{equation}
 Ahol a plusz tagot \textbf{eltolási áramnak} ($\bold{J}_D$) nevezzük, bár a név kicsit félrevezető, mert ez a tag nem egy áram, csak az áramhoz adjuk hozzá.
 Ezt a megoldást egyébként Maxwell nem csak az Ampère törvény inkonzisztenciája miatt adta hozzá, hanem az akkoriban népszerű, de azóta cáfolt éter elméket miatt is.
@@ -9747,7 +9747,7 @@ Ahol $\sigma$ a felületi töltéssűrűség, $\hat{n}$ a pofákra merőleges eg
 \end{equation}
 Ezt visszahelyettesítve a Maxwell-Ampère törvénybe:
 \begin{equation}
-    \nabla \times \bold{B} = \mu_0 \bold{J} + \mu_0 \epsilon_0 \frac{I}{\epsilon_0 A} \hat{n} = \mu_0 \bold{J} + \mu_0 \frac{I}{A} \hat{n}
+    \boldsymbol{\nabla} \times \bold{B} = \mu_0 \bold{J} + \mu_0 \epsilon_0 \frac{I}{\epsilon_0 A} \hat{n} = \mu_0 \bold{J} + \mu_0 \frac{I}{A} \hat{n}
 \end{equation}
 Most vegyünk egy olyan felületet ami egy buborék ami nem metszi a vezetőt, hanem csak a kondenzátor lemezei között halad át. Ezt megtehetem,
 hisz azt mondtuk az Ampière törvény integrális alakjánál, hogy a felület tetszőleges lehet. Ebben az esetben az $I_{enc} = 0$, hisz a buborék nem metszi a vezetőt, de a Maxwell-Ampère törvény miatt a jobb oldalon van egy plusz tag is:
@@ -9759,10 +9759,10 @@ Tehát a Maxwell-Ampère törvény konzisztens marad minden felület választás
 Ezzel tehát megvan mind a négy \textbf{Maxwell-egyenlet}:
 \begin{equation}
     \boxed{\begin{aligned}
-        \nabla \cdot \bold{E} &= \frac{\rho}{\epsilon_0} \\
-        \nabla \cdot \bold{B} &= 0 \\
-        \nabla \times \bold{E} &= - \frac{\partial \bold{B}}{\partial t} \\
-        \nabla \times \bold{B} &= \mu_0 \bold{J} + \mu_0 \epsilon_0 \frac{\partial \bold{E}}{\partial t}
+        \boldsymbol{\nabla} \cdot \bold{E} &= \frac{\rho}{\epsilon_0} \\
+        \boldsymbol{\nabla} \cdot \bold{B} &= 0 \\
+        \boldsymbol{\nabla} \times \bold{E} &= - \frac{\partial \bold{B}}{\partial t} \\
+        \boldsymbol{\nabla} \times \bold{B} &= \mu_0 \bold{J} + \mu_0 \epsilon_0 \frac{\partial \bold{E}}{\partial t}
     \end{aligned}}
 \end{equation}
 Ezek a Lorentz-törvénnyel együtt:
@@ -9774,10 +9774,10 @@ leírják az összes klasszikus elektromágneses jelenséget. Még a Kontinuitá
 Az egyenletek szimmetriája a mai napig a fizikusok legszebb álma. A hasonlóság főként vákuumban feltűnő:
 \begin{equation}
     \begin{aligned}
-        \nabla \cdot \bold{E} &= 0 \\
-        \nabla \cdot \bold{B} &= 0 \\
-        \nabla \times \bold{E} &= - \frac{\partial \bold{B}}{\partial t} \\
-        \nabla \times \bold{B} &= \mu_0 \epsilon_0 \frac{\partial \bold{E}}{\partial t}
+        \boldsymbol{\nabla} \cdot \bold{E} &= 0 \\
+        \boldsymbol{\nabla} \cdot \bold{B} &= 0 \\
+        \boldsymbol{\nabla} \times \bold{E} &= - \frac{\partial \bold{B}}{\partial t} \\
+        \boldsymbol{\nabla} \times \bold{B} &= \mu_0 \epsilon_0 \frac{\partial \bold{E}}{\partial t}
     \end{aligned}
 \end{equation}
 De sajnos nem lehet minden tökéletes, ezért itt is akad egy probléma.
@@ -9793,12 +9793,12 @@ ezért érdemes lenne őket leválasztani a szabad töltésekről és áramokró
 
 Az elektromos polarizációs vektort már bevezettük, mint a kötött töltéssűrűség függvényét:
 \begin{equation}
-    \rho_{b} = - \nabla \cdot \bold{P}
+    \rho_{b} = - \boldsymbol{\nabla} \cdot \bold{P}
 \end{equation}
 Ahol $\bold{P}$ az elektromos polarizációs vektor, ami megadja az egységnyi térfogatban lévő dipólusmomentumot. Hasonlóan a mágneses polarizációs vektort is láttuk,
 ami a kötött áramokhoz kapcsolódik:
 \begin{equation}
-    \bold{J}_{b} = \nabla \times \bold{M}
+    \bold{J}_{b} = \boldsymbol{\nabla} \times \bold{M}
 \end{equation}
 Ahol $\bold{M}$ a mágneses polarizációs vektor, ami megadja az egységnyi térfogatban lévő mágneses dipólusmomentumot. Ehhez egy extra elemet kell megfontolnunk a nem statikus esetben,
 Ha megváltozik az elektromos polarizáció, az egy "áramot" jelent a kötött töltésekben.
@@ -9822,25 +9822,25 @@ ami egy kis áramot eredményez.
 
 Mielőtt továbbmenyünk nézzük meg, hogy ez a $\bold{J}_b$ is konzisztens a kontinuitási egyenlettel:
 \begin{equation}
-    \nabla \cdot \bold{J}_b = \nabla \cdot \frac{\partial \bold{P}}{\partial t} = \frac{\partial }{\partial t} (\nabla \cdot \bold{P}) = - \frac{\partial \rho_b}{\partial t}
+    \boldsymbol{\nabla} \cdot \bold{J}_b = \boldsymbol{\nabla} \cdot \frac{\partial \bold{P}}{\partial t} = \frac{\partial }{\partial t} (\boldsymbol{\nabla} \cdot \bold{P}) = - \frac{\partial \rho_b}{\partial t}
 \end{equation}
 Tehát igen, ez az áramsűrűség is kielégíti a kontinuitási egyenletet.
 
 Ebből kifojólag a teljes töltéssűrűség felírható a szabad és kötött töltéssűrűségek összegeként:
 \begin{equation}
-    \rho = \rho_f + \rho_b = \rho_f - \nabla \cdot \bold{P}
+    \rho = \rho_f + \rho_b = \rho_f - \boldsymbol{\nabla} \cdot \bold{P}
 \end{equation}
 Hasonlóan a teljes áramsűrűség is felírható a szabad és kötött áramsűrűségek összegeként, de itt bejön a polarizációs áramsűrűség is:
 \begin{equation}
-    \bold{J} = \bold{J}_f + \bold{J}_b + \bold{J}_p = \bold{J}_f + \nabla \times \bold{M} + \frac{\partial \bold{P}}{\partial t}
+    \bold{J} = \bold{J}_f + \bold{J}_b + \bold{J}_p = \bold{J}_f + \boldsymbol{\nabla} \times \bold{M} + \frac{\partial \bold{P}}{\partial t}
 \end{equation}
 Ezek alapján a Gauss-törvényt átírhatjuk úgy, hogy csak a szabad töltéssűrűség szerepeljen benne:
 \begin{equation}
-    \nabla \cdot \bold{E} = \frac{1}{\epsilon_0} \left( \rho_f - \nabla \cdot \bold{P} \right)
+    \boldsymbol{\nabla} \cdot \bold{E} = \frac{1}{\epsilon_0} \left( \rho_f - \boldsymbol{\nabla} \cdot \bold{P} \right)
 \end{equation}
 Ezt átrendezve:
 \begin{equation}
-    \nabla \cdot \left( \epsilon_0 \bold{E} + \bold{P} \right) = \rho_f
+    \boldsymbol{\nabla} \cdot \left( \epsilon_0 \bold{E} + \bold{P} \right) = \rho_f
 \end{equation}
 Itt bevezethetjük az elektromos eltolás vektort ($\bold{D}$):
 \begin{equation}
@@ -9848,15 +9848,15 @@ Itt bevezethetjük az elektromos eltolás vektort ($\bold{D}$):
 \end{equation}
 Így a Gauss-törvény felírható a következő formában:
 \begin{equation}
-    \nabla \cdot \bold{D} = \rho_f
+    \boldsymbol{\nabla} \cdot \bold{D} = \rho_f
 \end{equation}
 Hasonlóan az Ampère törvényt is átírhatjuk úgy, hogy csak a szabad áramsűrűség szerepeljen benne:
 \begin{equation}
-    \nabla \times \bold{B} = \mu_0 \left( \bold{J}_f + \nabla \times \bold{M} + \frac{\partial \bold{P}}{\partial t} \right) + \mu_0 \epsilon_0 \frac{\partial \bold{E}}{\partial t}
+    \boldsymbol{\nabla} \times \bold{B} = \mu_0 \left( \bold{J}_f + \boldsymbol{\nabla} \times \bold{M} + \frac{\partial \bold{P}}{\partial t} \right) + \mu_0 \epsilon_0 \frac{\partial \bold{E}}{\partial t}
 \end{equation}
 Ezt átrendezve:
 \begin{equation}
-    \nabla \times \left( \frac{1}{\mu_0} \bold{B} - \bold{M} \right) = \bold{J}_f + \frac{\partial }{\partial t} \left( \epsilon_0 \bold{E} + \bold{P} \right)
+    \boldsymbol{\nabla} \times \left( \frac{1}{\mu_0} \bold{B} - \bold{M} \right) = \bold{J}_f + \frac{\partial }{\partial t} \left( \epsilon_0 \bold{E} + \bold{P} \right)
 \end{equation}
 Itt bevezethetjük a mágneses intenzitás vektort ($\bold{H}$):
 \begin{equation}
@@ -9864,15 +9864,15 @@ Itt bevezethetjük a mágneses intenzitás vektort ($\bold{H}$):
 \end{equation}
 Így az Ampère törvény felírható a következő formában:
 \begin{equation}
-    \nabla \times \bold{H} = \bold{J}_f + \frac{\partial \bold{D}}{\partial t}
+    \boldsymbol{\nabla} \times \bold{H} = \bold{J}_f + \frac{\partial \bold{D}}{\partial t}
 \end{equation}
 Faraday törvénye és a mágneses tér Gauss-törvénye változatlan marad, mert nem szerepel bennük a $\bold{J}$. Tehát a Maxwell-egyenletek anyagban a következő formában írhatók fel:
 \begin{equation}
     \boxed{\begin{aligned}
-        \nabla \cdot \bold{D} &= \rho_f \\
-        \nabla \cdot \bold{B} &= 0 \\
-        \nabla \times \bold{E} &= - \frac{\partial \bold{B}}{\partial t} \\
-        \nabla \times \bold{H} &= \bold{J}_f + \frac{\partial \bold{D}}{\partial t}
+        \boldsymbol{\nabla} \cdot \bold{D} &= \rho_f \\
+        \boldsymbol{\nabla} \cdot \bold{B} &= 0 \\
+        \boldsymbol{\nabla} \times \bold{E} &= - \frac{\partial \bold{B}}{\partial t} \\
+        \boldsymbol{\nabla} \times \bold{H} &= \bold{J}_f + \frac{\partial \bold{D}}{\partial t}
     \end{aligned}}
 \end{equation}
 Vannak akik ezeket tartják a "tényleges" Maxwell-egyenleteknek, de ezek semmilyen módon nem általánosabbak mint az eddig látott felírás. Ez csak egy kényelmesebb megfogalmazás olyan esetekben amikor anyagokkal dolgozunk.
@@ -9973,55 +9973,55 @@ Most, hogy sikerült felírni az Elektrodinamika alapvető egyenleteit, már csa
 De időfüggő esetben ennél jóval komplikáltabb a dolog. A Maxwell egyenletek általános alakja:
 \begin{equation}
     \begin{aligned}
-        \nabla \cdot \bold{E} &= \frac{\rho}{\epsilon_0} \qquad \nabla \times \bold{E} = - \frac{\partial \bold{B}}{\partial t} \\
-        \nabla \cdot \bold{B} &= 0 \qquad \nabla \times \bold{B} = \mu_0 \bold{J} + \mu_0 \epsilon_0 \frac{\partial \bold{E}}{\partial t} \\
+        \boldsymbol{\nabla} \cdot \bold{E} &= \frac{\rho}{\epsilon_0} \qquad \boldsymbol{\nabla} \times \bold{E} = - \frac{\partial \bold{B}}{\partial t} \\
+        \boldsymbol{\nabla} \cdot \bold{B} &= 0 \qquad \boldsymbol{\nabla} \times \bold{B} = \mu_0 \bold{J} + \mu_0 \epsilon_0 \frac{\partial \bold{E}}{\partial t} \\
     \end{aligned}
 \end{equation}
 Ekkor az az általános kérdés, hogy ismerve $\rho(\bold{r},t)$ és $\bold{J}(\bold{r},t)$-t, Mi az $\bold{E}(\bold{r},t)$ és $\bold{B}(\bold{r},t)$ mezők?
 
-Átírni a mezőket potenciállá nem egyszerű. Elektrosztatikában meg tudtuk tenni, mivel az elektromos tér rotációja nulla volt ($\nabla \times \bold{E} = 0$), így felírhattuk egy skalár potenciálként: $\bold{E} = - \nabla V$.
-De dinamikában a rotáció nem nulla, ezért ez nem fog működni. Szerencsére viszont a mágneses tér divergenciája mindig nulla ($\nabla \cdot \bold{B} = 0$), így azt felírhatjuk egy vektor potenciálként:
+Átírni a mezőket potenciállá nem egyszerű. Elektrosztatikában meg tudtuk tenni, mivel az elektromos tér rotációja nulla volt ($\boldsymbol{\nabla} \times \bold{E} = 0$), így felírhattuk egy skalár potenciálként: $\bold{E} = - \boldsymbol{\nabla} V$.
+De dinamikában a rotáció nem nulla, ezért ez nem fog működni. Szerencsére viszont a mágneses tér divergenciája mindig nulla ($\boldsymbol{\nabla} \cdot \bold{B} = 0$), így azt felírhatjuk egy vektor potenciálként:
 \begin{equation}
-    \bold{B} = \nabla \times \bold{A}
+    \bold{B} = \boldsymbol{\nabla} \times \bold{A}
 \end{equation}
 Ahol $\bold{A}$ a mágneses vektor potenciál. Ezt visszahelyettesítve a Faraday törvénybe:
 \begin{equation}
-    \nabla \times \bold{E} = - \frac{\partial }{\partial t} (\nabla \times \bold{A})
+    \boldsymbol{\nabla} \times \bold{E} = - \frac{\partial }{\partial t} (\boldsymbol{\nabla} \times \bold{A})
 \end{equation}
 vagy
 \begin{equation}
-    \nabla \times \left( \bold{E} + \frac{\partial \bold{A}}{\partial t} \right) = 0
+    \boldsymbol{\nabla} \times \left( \bold{E} + \frac{\partial \bold{A}}{\partial t} \right) = 0
 \end{equation}
 Ez az egység a sima elektromos mezővel ellentétben rotációmentes, így felírható egy skalár potenciálként:
 \begin{equation}
-    \bold{E} + \frac{\partial \bold{A}}{\partial t} = - \nabla V
+    \bold{E} + \frac{\partial \bold{A}}{\partial t} = - \boldsymbol{\nabla} V
 \end{equation}
 Ezt $\bold{E}$-re rendezve:
 \begin{equation}
-    \boxed{\bold{E} = - \nabla V - \frac{\partial \bold{A}}{\partial t}}
+    \boxed{\bold{E} = - \boldsymbol{\nabla} V - \frac{\partial \bold{A}}{\partial t}}
 \end{equation}
 Ebből természetesen visszakapjuk az elektrosztatikus megoldást, amennyiben $\bold{A}$ konstans.
 
 Ez a megoldás automatikusan teljesíti a két homogén törvént, a Faraday törvényt és a mágneses tér Gauss-törvényét. De mi történik, ha az Ampère törvénybe és a Gauss-törvénybe helyettesítjük be ezeket az alakokat?
 Kezdjük a Gauss-törvénnyel:
 \begin{equation}
-    \nabla \cdot \bold{E} = \nabla \cdot \left( - \nabla V - \frac{\partial \bold{A}}{\partial t} \right) = - \nabla^2 V - \frac{\partial }{\partial t} (\nabla \cdot \bold{A}) = \frac{\rho}{\epsilon_0}
+    \boldsymbol{\nabla} \cdot \bold{E} = \boldsymbol{\nabla} \cdot \left( - \boldsymbol{\nabla} V - \frac{\partial \bold{A}}{\partial t} \right) = - \boldsymbol{\nabla}^2 V - \frac{\partial }{\partial t} (\boldsymbol{\nabla} \cdot \bold{A}) = \frac{\rho}{\epsilon_0}
 \end{equation}
 Tehát a Gauss-törvény a következő alakot ölti:
 \begin{equation}
-    \boxed{\nabla^2 V + \frac{\partial }{\partial t} (\nabla \cdot \bold{A}) = - \frac{\rho}{\epsilon_0}}
+    \boxed{\boldsymbol{\nabla}^2 V + \frac{\partial }{\partial t} (\boldsymbol{\nabla} \cdot \bold{A}) = - \frac{\rho}{\epsilon_0}}
 \end{equation}
 Ez a Poisson-egyenlet megfelelője, amire redukálódik is statikus esetben. Most nézzük meg az Ampère törvényt:
 \begin{equation}
-    \nabla \times \bold{B} = \nabla \times (\nabla \times \bold{A}) = \mu_0 \bold{J} + \mu_0 \epsilon_0 \frac{\partial }{\partial t} \left( - \nabla V - \frac{\partial \bold{A}}{\partial t} \right)
+    \boldsymbol{\nabla} \times \bold{B} = \boldsymbol{\nabla} \times (\boldsymbol{\nabla} \times \bold{A}) = \mu_0 \bold{J} + \mu_0 \epsilon_0 \frac{\partial }{\partial t} \left( - \boldsymbol{\nabla} V - \frac{\partial \bold{A}}{\partial t} \right)
 \end{equation}
 Ezt átrendezve:
 \begin{equation}
-    \nabla \times (\nabla \times \bold{A}) = \mu_0 \bold{J} - \mu_0 \epsilon_0 \nabla \frac{\partial V}{\partial t} - \mu_0 \epsilon_0 \frac{\partial^2 \bold{A}}{\partial t^2}
+    \boldsymbol{\nabla} \times (\boldsymbol{\nabla} \times \bold{A}) = \mu_0 \bold{J} - \mu_0 \epsilon_0 \boldsymbol{\nabla} \frac{\partial V}{\partial t} - \mu_0 \epsilon_0 \frac{\partial^2 \bold{A}}{\partial t^2}
 \end{equation}
-Itt kihasználva a vektor identitást ($\nabla \times (\nabla \times \bold{A}) = \nabla (\nabla \cdot \bold{A}) - \nabla^2 \bold{A}$) és egy kicsit átrendezve, az egyenlet a következő alakot ölti:
+Itt kihasználva a vektor identitást ($\boldsymbol{\nabla} \times (\boldsymbol{\nabla} \times \bold{A}) = \boldsymbol{\nabla} (\boldsymbol{\nabla} \cdot \bold{A}) - \boldsymbol{\nabla}^2 \bold{A}$) és egy kicsit átrendezve, az egyenlet a következő alakot ölti:
 \begin{equation}
-    \boxed{\left(\nabla^2 \bold{A} - \mu_0 \epsilon_0 \frac{\partial^2 \bold{A}}{\partial t^2}\right) - \nabla \left(\nabla \cdot \bold{A} + \mu_0 \epsilon_0 \frac{\partial V}{\partial t}\right) = - \mu_0 \bold{J}}
+    \boxed{\left(\boldsymbol{\nabla}^2 \bold{A} - \mu_0 \epsilon_0 \frac{\partial^2 \bold{A}}{\partial t^2}\right) - \boldsymbol{\nabla} \left(\boldsymbol{\nabla} \cdot \bold{A} + \mu_0 \epsilon_0 \frac{\partial V}{\partial t}\right) = - \mu_0 \bold{J}}
 \end{equation}
 Ez a két egyenlet pedig tartalmazza a Maxwell egyenletek összes információját.
 
@@ -10035,23 +10035,23 @@ Vegyünk két potenciált, ($V$, $\bold{A}$) és ($V'$, $\bold{A}'$), amik ugyan
 \end{equation}
 A kérdés, hogy ezek mikor tudják ugyanazt az $\bold{E}$ és $\bold{B}$ mezőt visszaadni? Kezdjük a mágneses térrel. Mivel $\bold{A}$ és $\bold{A}'$ is ugyanazt a mágneses teret adják vissza, ezért a rotációjuknak meg kell egyeznie:
 \begin{equation}
-    \bold{B}' = \nabla \times \bold{A}' = \nabla \times \bold{A} + \nabla \times \alpha = \nabla \times \bold{A} = \bold{B}
+    \bold{B}' = \boldsymbol{\nabla} \times \bold{A}' = \boldsymbol{\nabla} \times \bold{A} + \boldsymbol{\nabla} \times \alpha = \boldsymbol{\nabla} \times \bold{A} = \bold{B}
 \end{equation}
 Ebből következik, hogy:
 \begin{equation}
-    \nabla \times \alpha = 0
+    \boldsymbol{\nabla} \times \alpha = 0
 \end{equation}
 Ez azt jelenti, hogy az $\alpha$ vektornak rotációmentesnek kell lennie, és mivel egy gradiens rotációja mindig nulla, ezért felírhatjuk egy skalár potenciál gradiensének is:
 \begin{equation}
-    \alpha = \nabla \lambda
+    \alpha = \boldsymbol{\nabla} \lambda
 \end{equation}
 Most nézzük meg az elektromos teret:
 \begin{equation}
-    \bold{E}' = - \nabla V' - \frac{\partial \bold{A}'}{\partial t} = - \nabla (V + \beta) - \frac{\partial }{\partial t} (\bold{A} + \alpha) = - \nabla V - \frac{\partial \bold{A}}{\partial t}
+    \bold{E}' = - \boldsymbol{\nabla} V' - \frac{\partial \bold{A}'}{\partial t} = - \boldsymbol{\nabla} (V + \beta) - \frac{\partial }{\partial t} (\bold{A} + \alpha) = - \boldsymbol{\nabla} V - \frac{\partial \bold{A}}{\partial t}
 \end{equation}
 Ebből következik, hogy:
 \begin{equation}
-    \nabla \beta + \frac{\partial \alpha}{\partial t} = 0 \quad \Rightarrow \quad \nabla \beta + \frac{\partial }{\partial t} (\nabla \lambda) = \nabla (\beta + \frac{\partial \lambda}{\partial t}) = 0
+    \boldsymbol{\nabla} \beta + \frac{\partial \alpha}{\partial t} = 0 \quad \Rightarrow \quad \boldsymbol{\nabla} \beta + \frac{\partial }{\partial t} (\boldsymbol{\nabla} \lambda) = \boldsymbol{\nabla} (\beta + \frac{\partial \lambda}{\partial t}) = 0
 \end{equation}
 A zárójelben lévő kifejezés tehát független a térbeli koordinátáktól, de időfüggő lehet. Ezt az időfüggést vegyük ki és nevezzük el $k(t)$-nek:
 \begin{equation}
@@ -10061,24 +10061,24 @@ De ezt az időfüggést bele is vihetjük a $\lambda$-ba, mert a gradiensén nem
 Tehát a potenciálok \textbf{mértékinvarianciája} a következő alakban írható fel:
 \begin{equation}
     \boxed{\begin{aligned}
-        \bold{A}' &= \bold{A} + \nabla \lambda \\
+        \bold{A}' &= \bold{A} + \boldsymbol{\nabla} \lambda \\
         V' &= V - \frac{\partial \lambda}{\partial t}
     \end{aligned}}
 \end{equation}
 Ahol $\lambda(\bold{r},t)$ egy tetszőleges skalár függvény. 
 
-Tehát bármilyen skalárfügvényre ($\lambda(\bold{r},t)$) igaz, hogy hozzáadhatjuk a gradiensét $\nabla \lambda$ az $\bold{A}$ vektor potenciálhoz, Amennyiben ki is vonjuk az időbeli deriváltját $\partial \lambda / \partial t$ $V$-ből. 
+Tehát bármilyen skalárfügvényre ($\lambda(\bold{r},t)$) igaz, hogy hozzáadhatjuk a gradiensét $\boldsymbol{\nabla} \lambda$ az $\bold{A}$ vektor potenciálhoz, Amennyiben ki is vonjuk az időbeli deriváltját $\partial \lambda / \partial t$ $V$-ből. 
 Ennek $\bold{E}$ és $\bold{B}$-re nem lesz hatása. Ezeket pedig fel lehet használni arra, hogy egyszerűsítsük a Maxwell-egyenleteket azáltal, hogy egy megfelelő $\lambda$-t választunk.
 Több mértékvariancia is létezik, amik közül a probléma kontextusa szabja meg, hogy melyiket érdemes használni.
 
 \subsubsection{Coulomb mérték}
 Az egyik leggyakrabban használt mérték a Coulomb mérték, mint például a magnetosztatikában, ami a következő feltételt szabja meg az $\bold{A}$ vektor potenciálra:
 \begin{equation}
-    \nabla \cdot \bold{A} = 0
+    \boldsymbol{\nabla} \cdot \bold{A} = 0
 \end{equation}
 Ha ezt behelyettesítjük a potenciál felírásnak a Poisson-egyenletébe:
 \begin{equation}
-    \nabla^2 V + \frac{\partial }{\partial t} (0) = - \frac{\rho}{\epsilon_0} \quad \Rightarrow \quad \nabla^2 V = - \frac{\rho}{\epsilon_0}
+    \boldsymbol{\nabla}^2 V + \frac{\partial }{\partial t} (0) = - \frac{\rho}{\epsilon_0} \quad \Rightarrow \quad \boldsymbol{\nabla}^2 V = - \frac{\rho}{\epsilon_0}
 \end{equation}
 Akkor visszakapjuk a Poisson-egyenletet az elektrosztatikából. Ezt pedig már tudjuk hogy kell megoldani, az elektromos potenciált nullának kell venni a végtelenben $V_\infty = 0$:
 \begin{equation}
@@ -10086,43 +10086,43 @@ Akkor visszakapjuk a Poisson-egyenletet az elektrosztatikából. Ezt pedig már 
 \end{equation}
 Ennek a potenciálnak a Coulomb mértékben van egy különlegessége: A potenciál a töltés eloszlás pillanatnyi állapotától függ, nem pedig a múltbeli állapotoktól. Ez azt jelenti, hogy ha itt és most egy töltést elmozdítok ott ahol vagyok,
 akkor a potenciál a holdon AZONNAL érzékeli a változást. Ez nyilvánvalóan ellentmond a speciális relativitáselméletnek, ami szerint semmi sem terjedhet gyorsabban mint a fény. De van egy trükk a dologban,
-ugyanis a $V$ potenciál maga nem egy mérhető fizikai mennyiség. Amit mérni tudok az a $\bold{E}$ elektromos tér ami tartalmazza a $\bold{A}$ vektor potenciált is. Az pedig már $- \nabla V- \partial \bold{A} / \partial t$-tól függ,
+ugyanis a $V$ potenciál maga nem egy mérhető fizikai mennyiség. Amit mérni tudok az a $\bold{E}$ elektromos tér ami tartalmazza a $\bold{A}$ vektor potenciált is. Az pedig már $- \boldsymbol{\nabla} V- \partial \bold{A} / \partial t$-tól függ,
 aminek már kell idő, hogy "megérkezzen a hírrel". 
 
 Az előnye a Coulomb mértéknek, hogy a skalár potenciált könnyű kiszámolni, a nehézsége, hogy $\bold{A}$-t kifejezetten nehéz. A differenciálegyenlet amit $\bold{A}$-ra kapunk az Ampère törvényből tudjuk megkapni:
 \begin{equation}
-    \left(\nabla^2 \bold{A} - \mu_0 \epsilon_0 \frac{\partial^2 \bold{A}}{\partial t^2}\right) - \nabla \left(0 + \mu_0 \epsilon_0 \frac{\partial V}{\partial t}\right) = - \mu_0 \bold{J}
+    \left(\boldsymbol{\nabla}^2 \bold{A} - \mu_0 \epsilon_0 \frac{\partial^2 \bold{A}}{\partial t^2}\right) - \boldsymbol{\nabla} \left(0 + \mu_0 \epsilon_0 \frac{\partial V}{\partial t}\right) = - \mu_0 \bold{J}
 \end{equation}
 Ezt átrendezve:
 \begin{equation}
-    \nabla^2 \bold{A} - \mu_0 \epsilon_0 \frac{\partial^2 \bold{A}}{\partial t^2} = - \mu_0 \bold{J} + \mu_0 \epsilon_0 \nabla \frac{\partial V}{\partial t}
+    \boldsymbol{\nabla}^2 \bold{A} - \mu_0 \epsilon_0 \frac{\partial^2 \bold{A}}{\partial t^2} = - \mu_0 \bold{J} + \mu_0 \epsilon_0 \boldsymbol{\nabla} \frac{\partial V}{\partial t}
 \end{equation}
 Ez a Coulomb mértékben az Ampère törvény.
 
 \subsubsection{Lorentz mérték}
 Egy másik gyakori mérték a Lorentz mérték, ami a következő feltételt szabja meg az $\bold{A}$ vektor potenciálra és a $V$ skalár potenciálra:
 \begin{equation}
-    \boxed{\nabla \cdot \bold{A} = - \mu_0 \epsilon_0 \frac{\partial V}{\partial t}}
+    \boxed{\boldsymbol{\nabla} \cdot \bold{A} = - \mu_0 \epsilon_0 \frac{\partial V}{\partial t}}
 \end{equation}
 Ennek az a célja, hogy kiejtse a második tagot a második potenciál-egyenletből:
 \begin{equation}
-    \left(\nabla^2 \bold{A} - \mu_0 \epsilon_0 \frac{\partial^2 \bold{A}}{\partial t^2}\right) - \nabla \underbrace{\left(- \mu_0 \epsilon_0 \frac{\partial V}{\partial t} + \mu_0 \epsilon_0 \frac{\partial V}{\partial t}\right)}_{0} = - \mu_0 \bold{J}
+    \left(\boldsymbol{\nabla}^2 \bold{A} - \mu_0 \epsilon_0 \frac{\partial^2 \bold{A}}{\partial t^2}\right) - \boldsymbol{\nabla} \underbrace{\left(- \mu_0 \epsilon_0 \frac{\partial V}{\partial t} + \mu_0 \epsilon_0 \frac{\partial V}{\partial t}\right)}_{0} = - \mu_0 \bold{J}
 \end{equation}
 Tehát:
 \begin{equation}
-    \nabla^2 \bold{A} - \mu_0 \epsilon_0 \frac{\partial^2 \bold{A}}{\partial t^2} = - \mu_0 \bold{J}
+    \boldsymbol{\nabla}^2 \bold{A} - \mu_0 \epsilon_0 \frac{\partial^2 \bold{A}}{\partial t^2} = - \mu_0 \bold{J}
 \end{equation}
 Ekkor pedig a $V$-re vett potenciális diff. egyenlet a következőképp módosul:
 \begin{equation}
-    \nabla^2 V + \frac{\partial }{\partial t} \left(- \mu_0 \epsilon_0 \frac{\partial V}{\partial t}\right) = - \frac{\rho}{\epsilon_0}
+    \boldsymbol{\nabla}^2 V + \frac{\partial }{\partial t} \left(- \mu_0 \epsilon_0 \frac{\partial V}{\partial t}\right) = - \frac{\rho}{\epsilon_0}
 \end{equation}
 Vagyis:
 \begin{equation}
-    \nabla^2 V - \mu_0 \epsilon_0 \frac{\partial^2 V}{\partial t^2} = - \frac{\rho}{\epsilon_0}
+    \boldsymbol{\nabla}^2 V - \mu_0 \epsilon_0 \frac{\partial^2 V}{\partial t^2} = - \frac{\rho}{\epsilon_0}
 \end{equation}
 A két egyenletbe pedig megjelent egy operátor, amit \textbf{D'alambert} operátonak hívunk:
 \begin{equation}
-    \boxed{\Box^2 \equiv \nabla^2 - \mu_0 \epsilon_0 \frac{\partial^2 }{\partial t^2}}
+    \boxed{\Box^2 \equiv \boldsymbol{\nabla}^2 - \mu_0 \epsilon_0 \frac{\partial^2 }{\partial t^2}}
 \end{equation}
 Így a Lorentz mértékben a potenciálokra kapott egyenletek a következő formában írhatók fel:
 \begin{equation}
@@ -10157,7 +10157,7 @@ Ha pedig behelyettesítjük a $Q$-t, akkor a következőt kapjuk:
 \end{equation}
 Mivel ez minden térfogatra igaz, ezért:
 \begin{equation}
-    \boxed{\frac{\partial \rho}{\partial t} = -  \nabla \cdot \bold{J}}
+    \boxed{\frac{\partial \rho}{\partial t} = -  \boldsymbol{\nabla} \cdot \bold{J}}
 \end{equation}
 Ez a kontinuitási egyenlet, ami a lokális töltésmegmaradást fejezi ki differenciális formában. Ez az egyenlet azt mondja ki, hogy a töltéssűrűség időbeli változása egyenlő a rá ható áram divergenciájának negatívjával.
 Ez az eredmény a Maxwell egyenletekből is levezethető, és egy megkötést ad a forrásokra ($\rho$ és $\bold{J}$). Ezek nem lehetnek akármik, csak olyan függvények amikre teljesül a töltésmegmaradás!
@@ -10193,15 +10193,15 @@ Az elképzelhető, hogy ha pozitív és negatív töltések is vannak, akkor a n
 Ebből természetesen következik, hogy $\bold{E} \cdot \bold{J}$ az egységnyi térfogatban végzett munka időegység alatt - ami azt jelenti, hogy ez a teljesítmény egységnyi térfogatra vetítve.
 Most az Ampère-Maxwell törvényt használva behelyettesítjük a $\bold{J}$-t:
 \begin{equation}
-    \bold{E} \cdot \bold{J} = \bold{E} \cdot \left( \frac{1}{\mu_0} \nabla \times \bold{B} - \epsilon_0 \frac{\partial \bold{E}}{\partial t} \right) = \frac{1}{\mu_0} \bold{E} \cdot (\nabla \times \bold{B}) - \epsilon_0 \bold{E} \cdot \frac{\partial \bold{E}}{\partial t}
+    \bold{E} \cdot \bold{J} = \bold{E} \cdot \left( \frac{1}{\mu_0} \boldsymbol{\nabla} \times \bold{B} - \epsilon_0 \frac{\partial \bold{E}}{\partial t} \right) = \frac{1}{\mu_0} \bold{E} \cdot (\boldsymbol{\nabla} \times \bold{B}) - \epsilon_0 \bold{E} \cdot \frac{\partial \bold{E}}{\partial t}
 \end{equation}
 Itt a vektor szorzási szabály miatt:
 \begin{equation}
-    \nabla \cdot (\bold{E} \times \bold{B}) = \bold{B} \cdot (\nabla \times \bold{E}) - \bold{E} \cdot (\nabla \times \bold{B})
+    \boldsymbol{\nabla} \cdot (\bold{E} \times \bold{B}) = \bold{B} \cdot (\boldsymbol{\nabla} \times \bold{E}) - \bold{E} \cdot (\boldsymbol{\nabla} \times \bold{B})
 \end{equation}
-Ehhez hozzáveszzük a Faraday törvényt ($\nabla \times \bold{E} = - \partial \bold{B} / \partial t$):
+Ehhez hozzáveszzük a Faraday törvényt ($\boldsymbol{\nabla} \times \bold{E} = - \partial \bold{B} / \partial t$):
 \begin{equation}
-    \bold{E} \cdot (\nabla \times \bold{B}) = - \bold{B} \cdot \frac{\partial \bold{B}}{\partial t} - \nabla \cdot (\bold{E} \times \bold{B})
+    \bold{E} \cdot (\boldsymbol{\nabla} \times \bold{B}) = - \bold{B} \cdot \frac{\partial \bold{B}}{\partial t} - \boldsymbol{\nabla} \cdot (\bold{E} \times \bold{B})
 \end{equation}
 Itt megjelenik két derivált tag:
 \begin{equation}
@@ -10209,7 +10209,7 @@ Itt megjelenik két derivált tag:
 \end{equation}
 Ezeket mind összerakva és visszahelyettesítve a $\bold{E} \cdot \bold{J}$-be:
 \begin{equation}
-    \bold{E} \cdot \bold{J} = - \frac{1}{2} \frac{\partial}{\partial t} \left( \epsilon_0 E^2 + \frac{1}{\mu_0} B^2 \right) - \frac{1}{\mu_0} \nabla \cdot (\bold{E} \times \bold{B})
+    \bold{E} \cdot \bold{J} = - \frac{1}{2} \frac{\partial}{\partial t} \left( \epsilon_0 E^2 + \frac{1}{\mu_0} B^2 \right) - \frac{1}{\mu_0} \boldsymbol{\nabla} \cdot (\bold{E} \times \bold{B})
 \end{equation}
 Ha pedig ezt visszahelyettesítjük az időegységnyi munkavégzés egyenletébe és a divergencia tételt alkalmazva:
 \begin{equation}
@@ -10233,11 +10233,11 @@ Tehát a munkavégzés egységnyi idő alatt a következőképpen írható fel:
 \end{equation}
 Ha nincs munkavégzés a térfogatban (pl. mert vákuum-ban van), akkor $dW/dt = 0$, tehát:
 \begin{equation}
-    \int \frac{\partial u}{\partial t} \, dV = - \oint_{\mathcal{S}} \bold{S} \cdot d\bold{A} = - \int \nabla \cdot \bold{S} \, dV
+    \int \frac{\partial u}{\partial t} \, dV = - \oint_{\mathcal{S}} \bold{S} \cdot d\bold{A} = - \int \boldsymbol{\nabla} \cdot \bold{S} \, dV
 \end{equation}
 Tehát:
 \begin{equation}
-    \boxed{\frac{\partial u}{\partial t} + \nabla \cdot \bold{S} = 0}
+    \boxed{\frac{\partial u}{\partial t} + \boldsymbol{\nabla} \cdot \bold{S} = 0}
 \end{equation}
 Ez az elektromágneses tér kontinuitási egyenlete, ami az energia megmaradását írja le. Itt $u$ energiasűrűség játsza a $\rho$ töltéssűrűség szerepét, és $\bold{S}$ az energiaáram sűrűség szerepét.
 Ez a lokális energia megmaradás törvénye az elektromágneses térre. Általánosságban viszont az elektromágneses energia nem marad meg magában, hiszen a tér munkát végez a töltéseken,
@@ -10295,6 +10295,1438 @@ Ennek a teljes perdülete pedig a következőképpen írható fel:
 \section{Hullámegyenlet és hullámjelenségek}
 Hullámegyenletek származtatása, megoldásai, rugalmas és elektromágneses hullámok. Diszperzió, csoport- és fázissebesség, Doppler-effektus.
 Interferencia, diffrakció. Elektromágneses hullámok terjedése vákuumban, dielektrikumban és vezetőkben. Polarizáció. Retardált potenciálok. Dipólsugárzás.
+
+\subsection{Hullámegyenletek származtatása, megoldásai}
+\subsubsection{A hullámegyenlet}
+Mi a "hullám"? A hullám egy nehezen megfogható jelenség, mert a koncepció alapvetően kicsit ködös. De általánosságban elmondható, hogy a hullám egy zavar egy folytonos közegben,
+ami képes terjedni egy fix alakban és konstans sebességgel. Ez a definíció nem fed le minden esetet, de kiindulási alapnak megfelelő.
+
+De hogyan lehet ezt az objektumot matematikailag reprezentálni? A "zavart" magát jellemezhetjük egy skalár fügvénnyel ($f(z, t)$), ami a közeg minden pontjához hozzárendel egy értéket.
+Erről a függvényről tudjuk, hogy $v$ sebességgel terjed a $z$ tengely mentén, de mivel az alakja állandó, ezért $t=0$-ban (itt legyen a függvény $f(0, t) = g(z)$) a függvény értéke ugyanaz lesz mint $t$ időpillanatban a $z - vt$ helyen:
+\begin{equation}
+    f(z, t) = f(z-vt, 0) = g(z - vt)
+\end{equation}
+Ez az állítás jellemzi matematikailag a hullámok lényegét.  Ez elmondja, hogy a $f$ függvény, bár függhet $z$-től és $t$-től is, de csak egy nagyon speciális kombinációban: $z - vt$.
+Tehát csak olyan függvényeket tekinthetünk hullámnak, amiben teljesül ez a feltétel. Tehát ezek a függvények lehetnek hullámok:
+\begin{equation}
+    f(z, t) = A \sin(k(z - vt)) \qquad f(z, t) = \frac{1}{b(z-vt)^2 + 1} \qquad f(z, t) = A e^{i k (z - vt)}
+\end{equation}
+De ezek a függvények NEM lehetnek hullámok:
+\begin{equation}
+    f(z, t) = Ae^{-b(bz^2 + vt)} \qquad f(z, t) = A \sin(bz) \cos(bvt)^3
+\end{equation}
+
+\subsubsection{Klasszikus hullám}
+A klasszikus mechanikus hullámok esetében valóban van egy közeg amiben a hullám terjed. Vegyünk például egy kötelet ami a $z$ tengely mentén van kifeszítve, és az egyik végét $t=0$ időpillanatban megmozgatjuk.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/6-tetel/kotel_hullam.png}
+    \caption{Kötél hulláma}
+\end{figure}
+Tegyük fel, hogy a kötél $T$ feszültség alatt van, és $\mu$ lineáris tömegsűrűséggel rendelkezik. Ekkor meghatározhatjuk az erőt ami hat egy kis $dz$ hosszúságú darabra ($z$ és $dz$ pontok között) a kötélen hat, amikor az egyensúlyból kicsit kimozdítjuk:
+\begin{equation}
+    \Delta F = T \sin \theta' - T \sin \theta
+\end{equation}
+Ahol $\theta'$ az a szög ami a $z + dz$ pontban lévő kötéldarabra jellemző, és $\theta$ a $z$ pontban lévő kötéldarabra jellemző. Ha a kimozdulás kicsi, akkor a szögek is kicsik lesznek, és akkor a szinuszokat kicserélhetjük tangensre:
+\begin{equation}
+\Delta F \approx T \tan \theta' - T \tan \theta = T \frac{\partial f}{\partial z} \Big|_{z+dz} - T \frac{\partial f}{\partial z} \Big|_{z} = T \frac{\partial^2 f}{\partial z^2} dz
+\end{equation}
+De ugyanezt az erőt a Newton II. törvénye alapján is meghatározhatjuk. Ha a kötélnek egy egységen $\mu$ a tömege, akkor az erő a következőképpen írható fel a $dz$ hosszúságú kötéldarabra:
+\begin{equation}
+   \Delta F = \mu dz \frac{\partial^2 f}{\partial t^2}
+\end{equation}
+Tehát a két egyenletnek egyenlőnek kell lennie:
+\begin{equation}
+    T \frac{\partial^2 f}{\partial z^2} dz = \mu dz \frac{\partial^2 f}{\partial t^2}
+\end{equation}
+Ahol a $dz$-k kiesnek, és a következőt kapjuk:
+\begin{equation}
+    \frac{\partial^2 f}{\partial z^2} = \frac{\mu}{T} \frac{\partial^2 f}{\partial t^2}
+\end{equation}
+Ez a \textbf{klasszikus hullámegyenlet} egy dimenzióban. Ha bevezetjük a hullámsebességet:
+\begin{equation}
+    v = \sqrt{\frac{T}{\mu}}
+\end{equation}
+Akkor a hullámegyenlet a következő formát ölti:
+\begin{equation}
+    \boxed{\frac{\partial^2 f}{\partial z^2} = \frac{1}{v^2} \frac{\partial^2 f}{\partial t^2}}
+\end{equation}
+Ez az egyenlet írja le a klasszikus mechanikai hullámokat egy dimenzióban. Az egyenlet megoldásai azok a függvények, amik kielégítik a hullám feltételt, azaz $f(z, t) = g(z - vt)$ formában vannak.
+Bizonyítás:
+\begin{equation}
+    \frac{\partial f}{\partial z} = \frac{dg}{du} \frac{\partial u}{\partial z} = \frac{dg}{du}, \qquad \frac{\partial f}{\partial t} = \frac{dg}{du} \frac{\partial u}{\partial t} = -v \frac{dg}{du}
+\end{equation}
+A második deriváltak pedig:
+\begin{equation}
+    \begin{aligned}
+        \frac{\partial^2 f}{\partial z^2} &= \frac{d}{dz} \left( \frac{dg}{du} \right) = \frac{d^2 g}{du^2} \frac{\partial u}{\partial z} = \frac{d^2 g}{du^2} \\
+        \frac{\partial^2 f}{\partial t^2} &= \frac{d}{dt} \left( -v \frac{dg}{du} \right) = -v \frac{d^2 g}{du^2} \frac{\partial u}{\partial t} = v^2 \frac{d^2 g}{du^2}
+    \end{aligned}
+\end{equation}
+Behelyettesítve a hullámegyenletbe:
+\begin{equation}
+    \frac{\partial^2 f}{\partial z^2} = \frac{1}{v^2} \frac{\partial^2 f}{\partial t^2} \qquad \Rightarrow \qquad \frac{d^2 g}{du^2} = \frac{1}{v^2} \left( v^2 \frac{d^2 g}{du^2} \right)
+\end{equation}
+Tehát a hullám feltétel kielégíti a hullámegyenletet. $g(u)$ bármilyen differenciálható függvény lehet. Felmerülhet a kérdés, hogy hogyan lehetséges ez, hiszen egy másodrendű differenciálegyenletnek
+két független megoldása kell legyen. A válasz az, hogy ez a megkötés csak sima differenciáltakra igaz, parciális deriváltaknak nem kell ennek a megkötésnek megfelelnie! De nem csak ezek oldják meg
+az egyenletet, hanem a $g(z + vt)$ formájú függvények is, amik a negatív irányba terjedő hullámokat írják le. Tehát a hullámegyenlet általános megoldása a következőképpen írható fel:
+\begin{equation}
+    \boxed{f(z, t) = g(z - vt) + h(z + vt)}
+\end{equation}
+Ahol $g$ és $h$ tetszőleges differenciálható függvények. Ebből az is jól látszik, hogy a hullámegyenlet lineáris, hiszen két megoldás összege is megoldás.
+
+A leggyakabban használt megoldás a szinuszos hullám, ami a következőképpen írható fel:
+\begin{equation}
+    f(z, t) = A \sin(kz - \omega t + \phi)
+\end{equation}
+Ahol $A$ a hullám amplitúdója, $k$ a hullámszám, $\omega$ a körfrekvencia, és $\phi$ a kezdeti fázis. Ezek a mennyiségek a következőképpen kapcsolódnak egymáshoz:
+\begin{equation}
+    k = \frac{2 \pi}{\lambda} \qquad \omega = 2 \pi f = kv \qquad v = \frac{\omega}{k} = \lambda f
+\end{equation}
+Ahol $\lambda$ a hullámhossz, $k$ a hullámszám, és $f$ a frekvencia.
+
+A másik gyakan használt megoldás a komplex hullám:
+\begin{equation}
+    f(z, t) = A e^{i(kz - \omega t)}
+\end{equation}
+Ez a megoldás is kielégíti a hullámegyenletet, és a valós részét véve visszakapjuk a szinuszos hullámot (ha $\phi = 0$). A komplex exponenciális forma kényelmesebb a számolások során.
+
+Nagyon fontos tulajdonsága a szinuszos hullámoknak, hogy bármelyik hullám kifejezhető szinuszos hullámok lineáris kombinációjaként! Tehát egy tetszőleges hullámfüggvényt fel tudjuk írni a következő alakban:
+\begin{equation}
+    \bar{f}(z, t) = \int_{-\infty}^{\infty} \bar{A}(k) e^{i(kz - \omega t)} \, dk
+\end{equation}
+Ez a Fourier-transzformáció, ami segítségével bármilyen hullámot fel tudunk bontani komponenseire.
+
+\subsubsection{Határfeltételek: Visszaverődés és transzmisszió}
+Eddig azt feltételeztük, hogy a hullám egy végtelen közegben terjed. De mi történik akkor, ha a hullám egy határfelülethez érkezik, ahol a közeg megváltozik?
+Például tegyük fel, hogy a kötelet egy másik kötélhez kötöttük, aminek azonos a feszültsége, de eltérő a lineáris tömegsűrűsége. Ekkor a hullám terjedési sebessége más lesza két kötélben (hiszen $v = \sqrt{T/\mu}$).
+Az egyszerűség kedvéért tegyük a közési pontot a $z=0$ helyre. Ekkor a hullám a $z<0$ tartományból érkezik, és a következőképpen írható fel:
+\begin{equation}
+    \bar{f}(z, t) = \bar{A}_1 e^{i(k_1 z - \omega t)} \qquad z < 0
+\end{equation}
+Ekkor a bal oldalól megjelenik egy \textbf{visszavert hullám} is, ami a következőképpen írható fel:
+\begin{equation}
+    \bar{f}_r(z, t) = \bar{A}_R e^{i(-k_1 z - \omega t)} \qquad z < 0
+\end{equation}
+A jobb oldalra pedig egy \textbf{átvitt hullám} is megjelenik, ami a következőképpen írható fel:
+\begin{equation}
+    \bar{f}_t(z, t) = \bar{A}_T e^{i(k_2 z - \omega t)} \qquad z > 0
+\end{equation}
+Ami folytatódik a második kötélben. Itt $k_1$ és $k_2$ a két kötél hullámszámai, amik a következőképpen kapcsolódnak a frekvenciához:
+\begin{equation}
+    k_1 = \frac{\omega}{v_1} = \omega \sqrt{\frac{\mu_1}{T}} \qquad k_2 = \frac{\omega}{v_2} = \omega \sqrt{\frac{\mu_2}{T}}
+\end{equation}
+Mivel a hullám sebesség eltér a két kötélen, ezért a hullámszám és a hullámhossz is eltérő lesz:
+\begin{equation}
+    \frac{\lambda_1}{\lambda_2} = \frac{k_2}{k_1} = \frac{v_1}{v_2}
+\end{equation}
+Tehát egy szinuszos hullám egy határfelületnél:
+\begin{equation}
+    \bar{f}(z, t) = \begin{cases}
+        \bar{A}_1 e^{i(k_1 z - \omega t)} + \bar{A}_R e^{i(-k_1 z - \omega t)} & z < 0 \\
+        \bar{A}_T e^{i(k_2 z - \omega t)} & z > 0
+    \end{cases}
+\end{equation}
+Ha a kapcsolódási pont $z=0$ helyen van. A zavarnak egy kicsit balra ($z = 0^-$) ugyanannyinak kell lennie mint egy kicsit jobbra ($z = 0^+$), hiszen a kötél folytonos:
+\begin{equation}
+    \bar{f}(0^-, t) = \bar{f}(0^+, t)
+\end{equation}
+Ha a köteleknek elhanyagolható a tömege, akkor a derviáltjuk is ugyanaz:
+\begin{equation}
+    \frac{\partial \bar{f}}{\partial z} \Big|_{0^-} = \frac{\partial \bar{f}}{\partial z} \Big|_{0^+}
+\end{equation}
+különben lenne egy nettó erő ami erre a kötéldarabra hat és végtelenül gyorsulna. Ezek a határfeltételek a valós hullámfüggvényekre igazak, de mivel a komplex exponenciális imaginárius része csak egy $\pi/2$ fáziseltolódásban tér el,
+ezért a komplex hullámokra is ezek lesznek a határfeltételek.A határfeltételekből az amplitúdókra a következő összefüggések adódnak:
+\begin{equation}
+    \begin{aligned}
+        \bar{A}_1 + \bar{A}_R &= \bar{A}_T \\
+        k_1 (\bar{A}_1 - \bar{A}_R) &= k_2 \bar{A}_T
+    \end{aligned}
+\end{equation}
+Amiből kifejezve az amplitúdókat:
+\begin{equation}
+    \begin{aligned}
+        \bar{A}_R &= \frac{k_1 - k_2}{k_1 + k_2} \bar{A}_1 \\
+        \bar{A}_T &= \frac{2 k_1}{k_1 + k_2} \bar{A}_1
+    \end{aligned}
+\end{equation}
+Ezek az amplitúdók arányai a visszavert és az átvitt hullámoknak az eredeti hullám amplitúdójához képest. Ugyanezt a hullám sebességével is kifejezhetjük:
+\begin{equation}
+    \begin{aligned}
+        \bar{A}_R &= \frac{v_2 - v_1}{v_2 + v_1} \bar{A}_1 \\
+        \bar{A}_T &= \frac{2 v_2}{v_2 + v_1} \bar{A}_1
+    \end{aligned}
+\end{equation}
+A valós amplitúdók és fázisok pedig:
+\begin{equation}
+    A_R e^{i \phi_R} = \frac{v_2 - v_1}{v_2 + v_1} A_1 e^{i \phi_1} \qquad A_T e^{i \phi_T} = \frac{2 v_2}{v_2 + v_1} A_1 e^{i \phi_1}
+\end{equation}
+
+Tehát ha például a második kötél könnyebb mint az első, akkor a második kötélen nagyobb a hullámsebesség ($v_2 > v_1$), de a fázis azonos lesz minden hullámnál ($\phi_R = \phi_T = \phi_1$).
+Tehát az amplitúdók a következőképpen alakulnak:
+\begin{equation}
+    A_R = \frac{v_2 - v_1}{v_2 + v_1} A_1 \qquad A_T = \frac{2 v_2}{v_2 + v_1} A_1
+\end{equation}
+Ha viszont a második kötél nehezebb mint az első, akkor a második kötélen kisebb a hullámsebesség ($v_2 < v_1$), és a visszavert hullám fázisa eltolódik $\pi$-val ($\phi_R = \phi_1 + \pi$), míg az átvitt hullám fázisa
+azonos marad ($\phi_T = \phi_1$). Az amplitúdók pedig a következőképpen alakulnak:
+\begin{equation}
+    A_R = \frac{v_1 - v_2}{v_2 + v_1} A_1 \qquad A_T = \frac{2 v_2}{v_2 + v_1} A_1
+\end{equation}
+Mivel (ha $cos$-al adjuk meg a hullámot):
+\begin{equation}
+    \cos(- k_1z - \omega t + \phi_1 + \pi) = - \cos(-k_1z - \omega t + \phi_1)
+\end{equation}
+Egy speciális eset ha a második kötél végtelen nehéz - vagy egy elmozdithatatlan tárgyhoz van a kötél hozzákötve (pl. egy fal), ekkor:
+\begin{equation}
+    A_R = A_1 \qquad \phi_R = \phi_1 + \pi \qquad A_T = 0
+\end{equation}
+Tehát a hullám teljesen visszaverődik, és fáziseltolódik $\pi$-val.
+
+\subsection{Polarizáció}
+Azokat a hullámokat amiket eddig vizsgáltunk, \textbf{transzverzális hullámoknak} nevezzük, mert a kimozdulás iránya merőleges a hullám terjedési irányára. De léteznek olyan hullámok is, amiknél a kimozdulás iránya párhuzamos a hullám terjedési irányával.
+Ezeket a hullámokat \textbf{longitudinális hullámoknak} nevezzük. Ilyen hullámok például a hanghullámok, amik sűrűség és nyomás ingadozásokat hoznak létre a közegben. A hanghullámok terjedése során a levegő részecskéi előre-hátra mozognak
+a hullám terjedési irányában, létrehozva a hanghullámot.
+
+De természetesen 3D-ben két irány is lehet merőleges a hullám terjedési irányára. Például egy $z$ tengely mentén terjedő hullám esetében a kimozdulás lehet $x$ vagy $y$ irányú is. Ezeket az irányokat \textbf{polarizációs irányoknak} nevezzük.
+A polarizáció azt írja le, hogy az adott hullám melyik irányt preferálja:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/6-tetel/hullam_polarizacio.png}
+    \caption{Polarizáció}
+\end{figure}
+Pl. ha egy kötelet rángatunk, akkor rángathatjuk fel-le, vagy jobbra-balra, vagy akár körkörösen is. Ezek a különböző rángatási irányok különböző polarizációkat hoznak létre a hullámban.
+A lineárisan polarizált hullámok esetében a kimozdulás egy adott irányban történik (pl. csak fel-le). A körkörösen polarizált hullámok esetében a kimozdulás iránya folyamatosan változik, és egy kör mentén forog.
+Léteznek polarizálatlan hullámok is (pl. a napból érkező fény), ahol nincs egy kitüntetett irány, hanem kvázi random rezeg minden irányba. A polarizációt matematikailag a következőképp írhatjuk le:
+\begin{equation}
+    \begin{aligned}
+        \tilde{\bold{f}}(z, t) &= \tilde{A} e^{i(kz - \omega t)}\hat{\bold{x}} \qquad \text{vertikális polarizáció}\\
+        \tilde{\bold{f}}(z, t) &= \tilde{A} e^{i(kz - \omega t)}\hat{\bold{y}} \qquad \text{horizontális polarizáció}\\
+        \tilde{\bold{f}}(z, t) &= \tilde{A} e^{i(kz - \omega t)} \hat{\bold{n}} \qquad \text{általános lineáris polarizáció}\\
+        \tilde{\bold{f}}(z, t) &= \tilde{A} \left( e^{i(kz - \omega t)}\hat{\bold{x}} + i e^{i(kz - \omega t)}\hat{\bold{y}} \right) \qquad \text{körkörös polarizáció}
+    \end{aligned}
+\end{equation}
+Ahol $\hat{\bold{n}}$ a \textbf{polarizációs vektor}, ami megadja a kimozdulás irányát a $x$ és $y$ tengelyekhez képest. Ez a vektor mindig merőleges a hullám terjedési irányára:
+\begin{equation}
+    \hat{\bold{n}} \cdot \hat{\bold{z}} = 0
+\end{equation}
+Azt a szöget amit a polarizációs vektor bezár az $x$ tengellyel, a \textbf{polarizációs szögnek} hívunk. Ha a polarizációs szög $0^\circ$, akkor a hullám vertikálisan polarizált, ha $90^\circ$, akkor horizontálisan polarizált:
+\begin{equation}
+    \hat{\bold{n}} = \cos \theta_p \hat{\bold{x}} + \sin \theta_p \hat{\bold{y}}
+\end{equation}
+Ha egy hullám több irányba rezeg, akkor az felgható úgy is, mint több polarizáció szuperpozíciója. Például egy általános lineárisan polarizált hullám felírható úgy is, hogy két különböző irányba polarizált hullám összege:
+\begin{equation}
+    \tilde{\bold{f}}(z, t) = (\tilde{A} \cos \theta_p) e^{i(kz - \omega t)}\hat{\bold{x}} + (\tilde{A} \sin \theta_p) e^{i(kz - \omega t)}\hat{\bold{y}}
+\end{equation}
+Ahol $\tilde{A}_x$ és $\tilde{A}_y$ a két irány amplitúdói. Ha ezek az amplitúdók megegyeznek és $\pi/2$ fáziseltolódás van közöttük, akkor körkörös polarizáció jön létre:
+\begin{equation}
+    \tilde{\bold{f}}(z, t) = \tilde{A} e^{i(kz - \omega t)}\hat{\bold{x}} + \tilde{A} e^{i(kz - \omega t + \frac{\pi}{2})}\hat{\bold{y}}
+\end{equation}
+
+\subsection{Elektromágneses hullámok}
+\subsubsection{Elektromágneses hullám vákuumban}
+Egy olyan térben ahol vákuum van, a Maxwell-egyenletek a következőképpen alakulnak:
+\begin{equation}
+    \begin{aligned}
+        \boldsymbol{\nabla} \cdot \bold{E} &= 0 \qquad \boldsymbol{\nabla} \times \bold{E} = -\frac{\partial \bold{B}}{\partial t} \\
+        \boldsymbol{\nabla} \cdot \bold{B} &= 0 \qquad \boldsymbol{\nabla} \times \bold{B} = \mu_0 \epsilon_0 \frac{\partial \bold{E}}{\partial t} 
+    \end{aligned}
+\end{equation}
+Ezek egy kapcsolt, elsőrendű parciális differenciálegyenlet rendszert alkotnak a $\bold{E}$ és $\bold{B}$ terekre. A kapcsoltságot meg lehet szüntetni, ha mindkét egyenletet rotáljuk:
+\begin{equation}
+    \begin{aligned}
+        \boldsymbol{\nabla} \times (\boldsymbol{\nabla} \times \bold{E}) &= \boldsymbol{\nabla} (\boldsymbol{\nabla} \cdot \bold{E}) - \boldsymbol{\nabla}^2 \bold{E} = \boldsymbol{\nabla} \times \left(-\frac{\partial \bold{B}}{\partial t}\right) \\
+        &= -\frac{\partial}{\partial t} (\boldsymbol{\nabla} \times \bold{B}) = -\mu_0 \epsilon_0 \frac{\partial^2 \bold{E}}{\partial t^2} \\
+        \boldsymbol{\nabla} \times (\boldsymbol{\nabla} \times \bold{B}) &= \boldsymbol{\nabla} (\boldsymbol{\nabla} \cdot \bold{B}) - \boldsymbol{\nabla}^2 \bold{B} = \boldsymbol{\nabla} \times \left( \mu_0 \epsilon_0 \frac{\partial \bold{E}}{\partial t} \right) \\
+        &= \mu_0 \epsilon_0 \frac{\partial}{\partial t} (\boldsymbol{\nabla} \times \bold{E}) = -\mu_0 \epsilon_0
+    \end{aligned}
+\end{equation}
+De mivel $\boldsymbol{\nabla} \cdot \bold{E} = 0$ és $\boldsymbol{\nabla} \cdot \bold{B} = 0$, ezért a bal oldali első tagok kiesnek, és a következőket kapjuk:
+\begin{equation}
+    \boxed{\boldsymbol{\nabla}^2 \bold{E} = \mu_0 \epsilon_0 \frac{\partial^2 \bold{E}}{\partial t^2}} \qquad \boxed{\boldsymbol{\nabla}^2 \bold{B} = \mu_0 \epsilon_0 \frac{\partial^2 \bold{B}}{\partial t^2}}
+\end{equation}
+Ezek az egyenletek a \textbf{hullámegyenletek} az elektromágneses térre vákuumban. Ezek azt jelentik, hogy az elektromágneses térnek vannak hullámszerű megoldásai, amik a Maxwell-egyenleteknek is megfelelnek.
+Ezzel tehát megszüntettük a $\bold{E}$ és $\bold{B}$ terek közötti kapcsoltságát, viszont cserébe másodrendű differenciálegyenleteket kaptunk. Ezek az egyenletek leírják az elektromágneses hullámok terjedését vákuumban,
+mivel kielégítik a háromdimenziós hullámegyenletet:
+\begin{equation}
+    \boldsymbol{\nabla}^2 f = \frac{1}{v^2} \frac{\partial^2 f}{\partial t^2}
+\end{equation}
+Ahol $v$ a hullám terjedési sebessége. Az elektromágneses hullámok esetében a hullámsebesség a következőképpen adódik:
+\begin{equation}
+    v = \frac{1}{\sqrt{\mu_0 \epsilon_0}} = c = 3 \times 10^8 \, \text{m/s}
+\end{equation}
+Tehát az elektromágneses hullámok vákuumban a fénysebességgel terjednek.
+
+\subsubsection{Monokromatikus hullámok}
+Az elektromágneses hullámok megoldásai hasonlóak a korábban tárgyalt mechanikai hullámokéhoz, ezért itt is szinuszos hullámalakokat keresünk. Ezeket a hullámokat monokromatikus hullámoknak nevezzük,
+mert az elektromágneses hullámok színe a frekvenciától függ, ezét ha egy frekvenciájú hullámot nézünk, akkor az monokromatikus hullám lesz. Ha pedig nincs $x$ és $y$ függése, akkor \textbf{planáris hullámnak} bevezzük. A számunkra érdekes alakja az elektromos és a mágneses térnek:
+\begin{equation}
+    \tilde{\bold{E}}(z, t) = \tilde{\bold{E}}_0 e^{i(kz - \omega t)} \qquad \tilde{\bold{B}}(z, t) = \tilde{\bold{B}}_0 e^{i(kz - \omega t)}
+\end{equation}
+Ahol $\tilde{E}_0$ és $\tilde{B}_0$ a komplex amplitúdók. Temészetesen a fizikai terek ezek valós részei lesznek. Az $\omega$ pedig a frekvencia ($\omega = ck$).
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/6-tetel/planaris_hullam.png}
+    \caption{Planáris elektromágneses hullám vákuumban}
+\end{figure}
+Az egyenletek amiket kaptunk $\bold{E}$ és $\bold{B}$ terekre, a Maxwell-egyenletekből vezettük le, de ettől még az eredménynek teljesítenie kell a hullámegyenletet. De a Maxwell-egynlet is ad megközéseket,
+mégpedig, mivel $\boldsymbol{\nabla} \cdot \bold{E} = 0$ és $\boldsymbol{\nabla} \cdot \bold{B} = 0$, ezért a tereknek divergenciamentesnek kell lenniük. Ez a feltétel a következőképpen írható fel a monokromatikus hullámokra :
+\begin{equation}
+    (\tilde{E}_0)_z = 0 \qquad (\tilde{B}_0)_z = 0
+\end{equation}
+Tehát az elektromos és mágneses tereknek merrőlegesnek kell lennie egymásnak, vagyis az elektromágneses hullámok \textbf{transzverzális hullámok}.
+Továbbá a Faraday-törvény ($\boldsymbol{\nabla} \times \bold{E} = -\frac{\partial \bold{B}}{\partial t}$) feltételezi, hogy az elektromos és a mágneses terek amplitúdói között a következő kapcsolat áll fenn:
+\begin{equation}
+    -k(\tilde{E}_0)_y = i \omega (\tilde{B}_0)_x \qquad k(\tilde{E}_0)_x = i \omega (\tilde{B}_0)_y
+\end{equation}
+Vagy kompaktabb formában:
+\begin{equation}
+    \bold{B}_0 = \frac{k}{\omega} (\hat{\bold{z}} \times \tilde{\bold{E}}_0)
+\end{equation}
+Ezekszerint az elektromos és mágneses terek amplitúdói is merőlegesek egymásra, és a hullám terjedési irányára is. Tehát igazából csak egy nem nulla komponense lehet mindegyiknek. Emelett fázisban is Vannak
+és a valós amplitúdójuk is kapcsolódik:
+\begin{equation}
+    B_0 = \frac{k}{\omega} E_0 = \frac{1}{c} E_0
+\end{equation}
+A Maxwell-Ampère törvény nem ad újabb megkötést, csak reprrodukálja az amplitúdók merőlegességét.
+
+Tehát, ha például az elektromos tér ($\bold{E}$) az $x$ irányba mutat és a mágneses tér ($\bold{B}$) az $y$ irányba mutat, akkor a terek alakjai:
+\begin{equation}
+    \tilde{\bold{E}}(z, t) = \tilde{E}_0 e^{i(kz - \omega t )} \hat{\bold{x}} \qquad \tilde{\bold{B}}(z, t) = \frac{1}{c} \tilde{E}_0 e^{i(kz - \omega t)} \hat{\bold{y}}
+\end{equation}
+A fizikai terek pedig a valós részek:
+\begin{equation}
+    \boxed{\bold{E}(z, t) = E_0 \cos(kz - \omega t + \phi) \hat{\bold{x}} \qquad \bold{B}(z, t) = \frac{E_0}{c} \cos(kz - \omega t + \phi) \hat{\bold{y}}}
+\end{equation}
+Ez a monokromatikus planáris hullám lényege. Ezt a polarizáltságot konvenció alapján x irányú polarizációnak nevezzük.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/6-tetel/x_polarizalt_hullam.png}
+    \caption{x irányú polarizált elektromágneses hullám vákuumban}
+\end{figure}
+Természetesen nincsen semmi különleges a $z$ irányban, lehet általánosítani tetszőleges irányú terjedésre:
+\begin{equation}
+    \boxed{
+    \begin{aligned}
+        \bold{E}(\bold{r}, t) &= E_0 e^{i(\bold{k} \cdot \bold{r} - \omega t)} \hat{\bold{n}} \\
+        \bold{B}(\bold{r}, t) &= \frac{E_0}{c} e^{i(\bold{k} \cdot \bold{r} - \omega t)} (\hat{\bold{k}} \times \hat{\bold{n}}) = \frac{1}{c} (\hat{\bold{k}} \times \bold{E} )
+    \end{aligned}}
+\end{equation}
+Ahol $\hat{\bold{n}}$ a polarizációs vektor, ami merőleges a hullám terjedési irányára:
+\begin{equation}
+    \hat{\bold{n}} \cdot \hat{\bold{k}} = 0
+\end{equation}
+A mágneses tér pedig egyértelműen merőleges az elektromos térre a keresztszorzat miatt. A valós terek pedig a valós részek:
+\begin{equation}
+    \begin{aligned}
+        \bold{E}(\bold{r}, t) &= E_0 \cos(\bold{k} \cdot \bold{r} - \omega t + \phi) \hat{\bold{n}} \\
+        \bold{B}(\bold{r}, t) &= \frac{E_0}{c} \cos(\bold{k} \cdot \bold{r} - \omega t + \phi) (\hat{\bold{k}} \times \hat{\bold{n}})
+    \end{aligned}
+\end{equation}
+
+\subsubsection{Elektromágneses hullámok energia és impulzusa}
+Az elektromágneses tér energiája:
+\begin{equation}
+    u = \frac{1}{2} \left( \epsilon_0 E^2 + \frac{1}{\mu_0} B^2 \right)
+\end{equation}
+Ahol monokromatikus hullámok esetében:
+\begin{equation}
+    E = E_0 \cos(kz - \omega t + \phi) \qquad B = \frac{E_0}{c} \cos(kz - \omega t + \phi)
+\end{equation}
+Tehát:
+\begin{equation}
+    B^2 = \frac{E_0^2}{c^2} E^2 = \mu_0 \epsilon_0 E^2
+\end{equation}
+Vagyis az elektromos és a mágneses tér energiája megegyezik monokromatikus hullámok esetében:
+\begin{equation}
+    u = \epsilon_0 E^2 = \epsilon_0 E_0^2 \cos^2(kz - \omega t + \phi)
+\end{equation}
+Az enegia fluxus sűrűséget a Poynting-vektorral írhatjuk le:
+\begin{equation}
+    \bold{S} = \frac{1}{\mu_0} (\bold{E} \times \bold{B})
+\end{equation}
+Monokromatikus hullámok esetében:
+\begin{equation}
+    \bold{S} = c\epsilon_0 E^2 \cos^2(kz - \omega t + \phi) \hat{\bold{z}} = cu \hat{\bold{z}}
+\end{equation}
+A Poynting vektor tehát az energia sűrűség és a hullámsebesség szorzata, ami logikus, hiszen az energia fluxus sűrűség azt jelenti, hogy egységnyi területen egységnyi idő alatt mennyi energia halad át.
+Tehát egy egységnyi területen egységnyi idő alatt $uc$ energiát szállít át a hullám.
+
+De nem csak energiájuk van az elektromágneses hullámoknak, hanem impulzusuk is. Az elektromágneses hullámok impulzus sűrűsége a következőképpen adódik:
+\begin{equation}
+    \bold{g} = \frac{\bold{S}}{c^2}
+\end{equation}
+Monokromatikus hullámok esetében:
+\begin{equation}
+    \bold{g} = \frac{1}{c}\epsilon_0 E_0^2 \cos^2(kz - \omega t + \phi) \hat{\bold{z}} = \frac{u}{c} \hat{\bold{z}}
+\end{equation}
+De a fény esetében a hullámhossz túl kicsi és a frekvencia túl nagy, ezért minden makroszkopikus mérés sok hullámot fog magába foglalni. ezért nem a pillanatnyi értékekkel dolgozunk,
+hanem az időátlagolt értékekkel. Az időátlagolt energia sűrűség és impulzus sűrűség a következőképpen adódik:
+\begin{equation}
+    \langle u \rangle = \frac{1}{2} \epsilon_0 E_0^2 \qquad \langle \bold{g} \rangle = \frac{1}{2c} \epsilon_0 E_0^2 \hat{\bold{z}} \qquad \langle \bold{S} \rangle = \frac{1}{2} c \epsilon_0 E_0^2 \hat{\bold{z}}
+\end{equation}
+Ahol $\langle ... \rangle$ az időátlagot jelöli. Az átlagos teljesítmény sűrűség egységnyi területre (intenzitás) pedig:
+\begin{equation}
+    I \equiv |\langle \bold{S} \rangle| = \frac{1}{2} c \epsilon_0 E_0^2
+\end{equation}
+Ha a fény egy tökéletes elnyelőbe ütközik, akkorr az impulzusát átadja, amit \textbf{sugárzási nyomásnak} nevezünk. Ez a nyomás az intenzitás és a fénysebesség hányadosa:
+\begin{equation}
+    P = \frac{1}{A} \frac{\Delta p}{\Delta t} = \frac{1}{2} \epsilon_0 E_0^2 =\frac{I}{c}
+\end{equation}
+Egy tökéletes visszaverő felületen pedig 2x ekkora mert az impulzus nem csak elnyelődik, hanem az ellentétes irányba vált át.
+
+\subsubsection{Elektomágneses hullámok anyagban}
+\subsubsection*{dielektrikum}
+Anyagban, ha nincsenek szabad töltések és áramok, akkor a Maxwell-egyenletek a következőképpen alakulnak:
+\begin{equation}
+    \begin{aligned}
+        \boldsymbol{\nabla} \cdot \bold{D} &= 0 \qquad \boldsymbol{\nabla} \times \bold{E} = -\frac{\partial \bold{B}}{\partial t} \\
+        \boldsymbol{\nabla} \cdot \bold{B} &= 0 \qquad \boldsymbol{\nabla} \times \bold{H} = \frac{\partial \bold{D}}{\partial t} 
+    \end{aligned}
+\end{equation}
+Ha a közeg lineáris (vagyis a polarizáció és a mágnesezhetőség arányos a térerősséggel), akkor:
+\begin{equation}
+    \bold{D} = \epsilon \bold{E} \qquad \bold{B} = \frac{1}{\mu} \bold{H}
+\end{equation}
+Ahol $\epsilon$ a közeg permittivitása és $\mu$ a közeg permeabilitása. Ha pedig homogén is (vagyis a permittivitás és permeabilitás nem függ a helytől), akkor a Maxwell-egyenletek tovább egyszerűsödnek:
+\begin{equation}
+    \begin{aligned}
+        \boldsymbol{\nabla} \cdot \bold{E} &= 0 \qquad \boldsymbol{\nabla} \times \bold{E} = -\frac{\partial \bold{B}}{\partial t} \\
+        \boldsymbol{\nabla} \cdot \bold{B} &= 0 \qquad \boldsymbol{\nabla} \times \bold{B} = \mu \epsilon \frac{\partial \bold{E}}{\partial t} 
+    \end{aligned}
+\end{equation}
+Amik a vákuumbeli egyenletektől csak annyiban térnek el, hogy a vákuumbeli $\mu_0$ és $\epsilon_0$ helyett a közegbeli $\mu$ és $\epsilon$ szerepel. Innen ugyanúgy levezethető a hullámegyenlet:
+\begin{equation}
+    \boxed{\boldsymbol{\nabla}^2 \bold{E} = \mu \epsilon \frac{\partial^2 \bold{E}}{\partial t^2}} \qquad \boxed{\boldsymbol{\nabla}^2 \bold{B} = \mu \epsilon \frac{\partial^2 \bold{B}}{\partial t^2}}
+\end{equation}
+Ami azt jelenti, hogy az elektromágneses hullámoknak vannak hullámszerű megoldásai anyagban is. Az elektromágneses hullámok terjedési sebessége anyagban pedig a következőképpen adódik:
+\begin{equation}
+    v = \frac{1}{\sqrt{\mu \epsilon}} = \frac{c}{n} \qquad \text{ahol } n = \sqrt{\frac{\mu \epsilon}{\mu_0 \epsilon_0}}
+\end{equation}
+Ahol $n$ a közeg \textbf{törésmutatója}. Mivel a legtöbb anyagnak $\mu \approx \mu_0$, ezért a törésmutató főként a permittivitástól függ:
+\begin{equation}
+    n \approx \sqrt{\frac{\epsilon}{\epsilon_0}} \approx \sqrt(\epsilon_r)
+\end{equation}
+Ahol $\epsilon_r$ a közeg \textbf{relatív permittivitása}. Mivel a legtöbb anyagnak $\epsilon > \epsilon_0$, ezért a törésmutató általában nagyobb mint 1, így az elektromágneses hullámok anyagban lassabban terjednek mint vákuumban.
+
+A többi megoldásunk is használható itt, az energia sűrűségnél például csak az $\epsilon_0$ helyett $\epsilon$-t kell használni és a mágneses térnél a $\mu_0$ helyett $\mu$-t:
+\begin{equation}
+    u = \frac{1}{2} \left( \epsilon E^2 + \frac{1}{\mu} B^2 \right)
+\end{equation}
+A Poynting-vektor is hasonlóan alakul:
+\begin{equation}
+    \bold{S} = \frac{1}{\mu} (\bold{E} \times \bold{B})
+\end{equation}
+Monokromatikus hullámoknál a frekvencia és a hullámszám függnek egymástól $\omega = vk = \frac{c}{n} k$, és a $\bold{B}$ amplitúdója $1/v$-vel lesz kisebb az $\bold{E}$ amplitúdójánál:
+\begin{equation}
+    B_0 = \frac{k}{\omega} E_0 = \frac{1}{v} E_0 = \frac{n}{c} E_0
+\end{equation}
+Az intenzitás pedig:
+\begin{equation}
+    I = \frac{1}{2} v \epsilon E_0^2 = \frac{1}{2} \frac{c}{n} \epsilon E_0^2
+\end{equation}
+A határfeltételek is nagyon hasonlóan fognak alakulni:
+\begin{equation}
+    \begin{aligned}
+        \epsilon_1 E_1^\perp &= \epsilon_2 E_2^\perp \qquad E_{1}^\parallel = E_{2}^\parallel \\
+        B_1^\perp &= B_2^\perp \qquad \frac{1}{\mu_1} B_{1}^\parallel = \frac{1}{\mu_2} B_{2}^\parallel
+    \end{aligned}
+\end{equation}
+
+\subsubsection*{Vezetők}
+A vezetők esetében már nem igaz, hogy nincsenek szabad töltések és áramok, hiszen a vezetőkben szabadon mozoghatnak a töltések. Ezért az áramsűrűség Ohm törvénye alapján a következőképpen írható fel:
+\begin{equation}
+    \bold{J}_f = \sigma \bold{E}
+\end{equation}
+Ahol $\sigma$ a vezető \textbf{vezetőképessége}. Ezt az áramsűrűséget be kell helyettesíteni a Maxwell-Ampère törvénybe:
+\begin{equation}
+    \boldsymbol{\nabla} \times \bold{B} = \mu \left( \bold{J}_f + \epsilon \frac{\partial \bold{E}}{\partial t} \right) = \mu \left( \sigma \bold{E} + \epsilon \frac{\partial \bold{E}}{\partial t} \right)
+\end{equation}
+Tehát a Maxwell-egyenletek a vezetőben a következőképpen alakulnak:
+\begin{equation}
+    \begin{aligned}
+        \boldsymbol{\nabla} \cdot \bold{E} &= \frac{1}{\epsilon} \rho_f \qquad \boldsymbol{\nabla} \times \bold{E} = -\frac{\partial \bold{B}}{\partial t} \\
+        \boldsymbol{\nabla} \cdot \bold{B} &= 0 \qquad \boldsymbol{\nabla} \times \bold{B} = \mu \left( \sigma \bold{E} + \epsilon \frac{\partial \bold{E}}{\partial t} \right)
+    \end{aligned}
+\end{equation}
+A kontinuitási egyenlet a szabad töltésre:
+\begin{equation}
+    \boldsymbol{\nabla} \cdot \bold{J}_f = - \frac{\partial \rho_f}{\partial t}
+\end{equation}
+Ez pedig az Ohm-törvénnyel és a Gauss törvénnyel együtt a következőképpen alakul:
+\begin{equation}
+    \frac{\partial \rho_f}{\partial t} = -\sigma (\boldsymbol{\nabla} \cdot \bold{E}) = - \frac{\sigma}{\epsilon} \rho_f
+\end{equation}
+Ami egy elsőrendű differenciálegyenlet $\rho_f$-re, aminek a megoldása, amennyiben homogén közegben vagyunk:
+\begin{equation}
+    \rho_f(t) = \rho_f(0) e^{-\frac{\sigma}{\epsilon} t}
+\end{equation}
+Tehát a vezetőben a szabad töltés $\rho_f(0)$ exponenciális sebességgel szétoszlik, a karakterisztikus $\tau \equiv \frac{\epsilon}{\sigma}$ idővel.
+Ez megerősíti azt a tudásunkat, hogy ha egy szabad töltést teszünk egy vezetőre, akkor az ki fog áramlani a szélekre. A $\tau$-t használhatjuk egyfajta mérőszámként arra, hogy
+megmondjuk mennyire "jó" egy vezető. Egy ideális vezető esetében $\sigma \to \infty$, így $\tau \to 0$, vagyis a töltések azonnal eltűnnek a vezetőből. Egy "jó" vezető esetében pedig $\sigma$ nagy, és $\tau \ll 1/\omega$.
+De ez a tranziens viselkedés nem érdekel most minket, tehát tegyük fel, hogy várunk elég időt, hogy a szabad töltések már eltűnjenek a vezetőkről. Ekkor a Maxwell-egyenletek a következőképpen alakulnak:
+\begin{equation}
+    \begin{aligned}
+        \boldsymbol{\nabla} \cdot \bold{E} &= 0 \qquad \boldsymbol{\nabla} \times \bold{E} = -\frac{\partial \bold{B}}{\partial t} \\
+        \boldsymbol{\nabla} \cdot \bold{B} &= 0 \qquad \boldsymbol{\nabla} \times \bold{B} = \mu \left( \sigma \bold{E} + \epsilon \frac{\partial \bold{E}}{\partial t} \right)
+    \end{aligned}
+\end{equation}
+Ez eltér a nem vezető anyagokban lévő Maxwell-egyenletektől az extra $\mu \sigma \bold{E}$ tag miatt. Ezt a tagot figyelembe véve a hullámegyenlet a következőképpen alakul:
+\begin{equation}
+    \boldsymbol{\nabla}^2 \bold{E} = \mu \epsilon \frac{\partial^2 \bold{E}}{\partial t^2} + \mu \sigma \frac{\partial \bold{E}}{\partial t} \qquad \boldsymbol{\nabla}^2 \bold{B} = \mu \epsilon \frac{\partial^2 \bold{B}}{\partial t^2} + \mu \sigma \frac{\partial \bold{B}}{\partial t}
+\end{equation}
+Ezek az egyenletek továbbra is engednek planáris hullám megoldásokat:
+\begin{equation}
+    \tilde{\bold{E}}(z, t) = \tilde{\bold{E}}_0 e^{i(\tilde{k}z - \omega t)} \qquad \tilde{\bold{B}}(z, t) = \tilde{\bold{B}}_0 e^{i(\tilde{k}z - \omega t)}
+\end{equation}
+De a hullámszám most már komplex lesz a vezetőben:
+\begin{equation}
+    \tilde{k}^2 = \mu \epsilon \omega^2 + i \mu \sigma \omega
+\end{equation}
+Ahol $\tilde{k} = k + i \kappa$:
+\begin{equation}
+    k \equiv \omega \sqrt{\frac{\mu \epsilon}{2}} \left[ \sqrt{1 + \left( \frac{\sigma}{\epsilon \omega} \right)^2} + 1 \right]^{1/2} \qquad \kappa \equiv \omega \sqrt{\frac{\mu \epsilon}{2}} \left[ \sqrt{1 + \left( \frac{\sigma}{\epsilon \omega} \right)^2} - 1 \right]^{1/2}
+\end{equation}
+Ahol $k$ a hullámszám valós része, és $\kappa$ az imaginárius része. Az imaginárius része a hullámnak elnyelődését írja le a vezetőben:
+\begin{equation}
+    \tilde{\bold{E}}(z, t) = \tilde{E}_0 e^{-\kappa z} e^{i(kz - \omega t)} \qquad \tilde{\bold{B}}(z, t) = \tilde{B}_0 e^{-\kappa z} e^{i(kz - \omega t)}
+\end{equation}
+Az a távolság amit a hullám megtesz a vezetőben, mire az intenzitása $1/e$-ed részére csökken (kb. $1/3$), a \textbf{skin-mélység} (behatolási mélység):
+\begin{equation}
+    d \equiv \frac{1}{\kappa}
+\end{equation}
+A $\tilde{k}$ valós része pedig továbbra is meghatározza a frekvenciát, a terjedési sebességet és a refrakciós indexet:
+\begin{equation}
+    \lambda = \frac{2\pi}{k} \qquad v = \frac{\omega}{k} \qquad n = \frac{ck}{\omega}
+\end{equation}
+
+Az elnyelődő hullámok kielégítik a módosított hullámegyenletet bármilyen $\tilde{E}_0$ és $\tilde{B}_0$-ra, de a Maxwell-egyenletek további megkötéseket szabnak az amplitúdókra és a fázisokra.
+A Gauss és a mágneses Gauss törvény miatt csak egy irányú komponense lehet mindkét térnek. Emiatt akár meg is választhatjuk a teret úgy, hogy az elektromos tér az $x$ irányba legyen polarizált és a hullám a $z$ irányba terjedjen:
+\begin{equation}
+    \tilde{\bold{E}}(z, t) = \tilde{E}_0 e^{-\kappa z} e^{i(kz - \omega t)} \hat{\bold{x}}
+\end{equation}
+A Faraday-törvényből pedig:
+\begin{equation}
+    \tilde{\bold{B}}(z, t) = \frac{\tilde{k}}{\omega} \tilde{E}_0 e^{-\kappa z} e^{i(kz - \omega t)} \hat{\bold{y}}
+\end{equation}
+A Maxwell-Ampère törvény pedig nem ad újabb megkötést. Ez megint kimondja, hogy az elektromos és mágneses terek merőlegesek egymásra és a hullám terjedési irányára is.
+
+Mint minden komplex szám, $\tilde{k}$ is felírható poláris alakban:
+\begin{equation}
+    \tilde{k} = K e^{i \phi} \qquad \text{ahol } \phi = \tan^{-1} \left( \frac{\kappa}{k} \right)
+\end{equation}
+Ahol:
+\begin{equation}
+    K = |\tilde{k}| = \sqrt{k^2 + \kappa^2} = \omega \sqrt{\epsilon \mu \sqrt{1 + \left( \frac{\sigma}{\epsilon \omega} \right)^2}}
+\end{equation}
+Az amplitúdók pedig a $\tilde{\bold{E}}$ és $\tilde{\bold{B}}$ függvényei alapján kacsolódnak egymáshoz:
+\begin{equation}
+    \tilde{E}_0 = E_0 e^{i \phi_E} \qquad \tilde{B}_0 = B_0 e^{i \phi_B} \quad \rightarrow \quad B_0 e^{i \phi_B} = \frac{K e^{i \phi}}{\omega} E_0 e^{i\phi_E}
+\end{equation}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/6-tetel/hullam_vezeto.png}
+    \caption{Elektromágneses hullám vezetőben}
+\end{figure}
+Látható, hogy a vezetőben az elektromos és mágneses terek között fáziskülönbség van:
+\begin{equation}
+    \Delta \phi = \phi_B - \phi_E = \phi = \tan^{-1} \left( \frac{\kappa}{k} \right)
+\end{equation}
+Ez azt jelenti, hogy a vezetőben a mágneses tér le van maradva az elektromos mögött. A valós aplitúdók $\bold{E}$ és $\bold{B}$ szintén függnek egymástól:
+\begin{equation}
+    \frac{B_0}{E_0} = \frac{K}{\omega} = \sqrt{\mu \epsilon \sqrt{1 + \left( \frac{\sigma}{\epsilon \omega} \right)^2}}
+\end{equation}
+Tehát a valós elektromos és mágneses terek pedig:
+\begin{equation}
+    \boxed{
+    \begin{aligned}
+        \bold{E}(z, t) &= E_0 e^{-\kappa z} \cos(kz - \omega t + \phi_E) \hat{\bold{x}} \\
+        \bold{B}(z, t) &= B_0 e^{-\kappa z} \cos(kz - \omega t + \phi_E + \phi) \hat{\bold{y}}
+    \end{aligned}}
+\end{equation}
+
+\subsubsection*{transzmisszió és reflexió}
+Vegyünk egy határfelületet két különböző \textbf{dielektrikus} anyag között, amit egy felület reprezentál az $x-y$ síkban.
+A sugár utazzon a $z$ irányba, $x$ irányba polarizálva, a bal oldalról érkezve ($z < 0$).
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/6-tetel/reflekcio_normal.png}
+    \caption{Elektromágneses hullám határfelületen}
+\end{figure}
+Ekkor a beérkező hullámok egyenletei:
+\begin{equation}
+    \tilde{\bold{E}}_I(z, t) = \tilde{E}_{0I} e^{i(k_1 z - \omega t)} \hat{\bold{x}} \qquad \tilde{\bold{B}}_I(z, t) = \frac{\tilde{E}_{0I}}{v_1} e^{i(k_1 z - \omega t)} \hat{\bold{y}}
+\end{equation}
+Ekkor a visszavert hullámok egyenletei:
+\begin{equation}
+    \tilde{\bold{E}}_R(z, t) = \tilde{E}_{0R} e^{i(-k_1 z - \omega t)} \hat{\bold{x}} \qquad \tilde{\bold{B}}_R(z, t) = -\frac{\tilde{E}_{0R}}{v_1} e^{i(-k_1 z - \omega t)} \hat{\bold{y}}
+\end{equation}
+Ami visszafelé utazik az 1. közegben. Végül a továbbított hullámok egyenletei a 2. közegben:
+\begin{equation}
+    \tilde{\bold{E}}_T(z, t) = \tilde{E}_{0T} e^{i(k_2 z - \omega t)} \hat{\bold{x}} \qquad \tilde{\bold{B}}_T(z, t) = \frac{\tilde{E}_{0T}}{v_2} e^{i(k_2 z - \omega t)} \hat{\bold{y}}
+\end{equation}
+Ahol $k_1 = \frac{\omega}{v_1}$ és $k_2 = \frac{\omega}{v_2}$. Ahol $v_1$ és $v_2$ a hullámok sebessége az 1. és 2. közegben.Vegyük észre, hogy a $\tilde{\bold{B}}_r$-nél bejön egy negatív előjel,
+mivel a $\bold{B}$ értéke függ a hullám terjedési irányától is. A $z = 0$ pontban a kombinált tereknek a bal oldalon kapcsolódniuk kell a jobb oldalon lévő terekhez a határfeltételek alapján.
+Az első két határfeltétel triviálisan teljesül:
+\begin{equation}
+    \epsilon_1 E_{I}^\perp + \epsilon_1 E_{R}^\perp = \epsilon_2 E_{T}^\perp \quad \rightarrow \quad \epsilon_1 \tilde{E}_{0I} + \epsilon_1 \tilde{E}_{0R} = \epsilon_2 \tilde{E}_{0T}
+\end{equation}
+Viszont a harmadik megköveteli, hogy:
+\begin{equation}
+    \tilde{E}_{0I} + \tilde{E}_{0R} = \tilde{E}_{0T}
+\end{equation}
+A negyedik határfeltétel pedig:
+\begin{equation}
+    \frac{1}{\mu_1} \left( \frac{\tilde{E}_{0I}}{v_1} - \frac{\tilde{E}_{0R}}{v_1} \right) = \frac{1}{\mu_2} \frac{\tilde{E}_{0T}}{v_2}
+\end{equation}
+Vagy átrendezve:
+\begin{equation}
+    \tilde{E}_{0I} - \tilde{E}_{0R} = \frac{\mu_1 v_1}{\mu_2 v_2} \tilde{E}_{0T}
+\end{equation}
+Ahol bevezethetjük a $\beta$ paramétert:
+\begin{equation}
+    \beta \equiv \frac{\mu_1 v_1}{\mu_2 v_2} = \frac{\mu_1 n_2}{\mu_2 n_1}
+\end{equation}
+Most már négy egyenletünk van négy ismeretlennel ($\tilde{E}_{0I}, \tilde{E}_{0R}, \tilde{E}_{0T}$). Ezek megoldásával megkaphatjuk a visszavert és továbbított hullámok amplitúdóit a beérkező hullám amplitúdójához képest:
+\begin{equation}
+    \tilde{E}_{0R} = \left(\frac{1 - \beta}{1 + \beta}\right) \tilde{E}_{0I} \qquad \tilde{E}_{0T} = \left(\frac{2}{1 + \beta}\right) \tilde{E}_{0I}
+\end{equation}
+Ezek a megoldások nagyon hasonlóak azokhoz amiket a rezgetett köteleken kaptunk. Ha a $\mu$ értéke közel van a vákuumbeli értékéhez (ami a legtöbb közegben igaz), akkor $\beta = v_1/v_2$, vagyis:
+\begin{equation}
+    \tilde{E}_{0R} = \left(\frac{v_2 - v_1}{v_2 + v_1}\right) \tilde{E}_{0I} \qquad \tilde{E}_{0T} = \left(\frac{2 v_2}{v_2 + v_1}\right) \tilde{E}_{0I}
+\end{equation}
+Ami teljesen megegyezik a rezgetett kötelek eredményével a sebességek helyettesítésével. Itt tehát ugyan úgy igaz, hogy a fázisok azonosak amíg $v_2 > v_1$, de ha $v_2 < v_1$, akkor a visszavert hullám fázisa eltolódik $\pi$-vel.
+A valós amplitúdók pedig:
+\begin{equation}
+    E_{0R} = \left|\frac{v_2 - v_1}{v_2 + v_1}\right| E_{0I} \qquad E_{0T} = \left(\frac{2 v_2}{v_2 + v_1}\right) E_{0I}
+\end{equation}
+Mivel a refrakciós index $n = c/v$, ezért felírhatjuk a visszaverési és transzmissziós együtthatókat is a refrakciós indexek segítségével is:
+\begin{equation}
+    E_{0R} = \left|\frac{n_1 - n_2}{n_1 + n_2}\right| E_{0I} \qquad E_{0T} = \left(\frac{2 n_1}{n_1 + n_2}\right) E_{0I}
+\end{equation}
+De kérdés, hogy mennyi energia tükröződik vissza és mennyi megy át a határfelületen. Az intenzitás megadható az elektromos tér amplitúdójával:
+\begin{equation}
+    I = \frac{1}{2} v \epsilon E_0^2
+\end{equation}
+És ha $\mu_1 = \mu_2 \approx \mu_0$ továbbra is fennáll, akkor a visszaverődő intenzitás és a teljes intenzitás aránya:
+\begin{equation}
+    R \equiv \frac{I_R}{I_I} = \left( \frac{E_{0R}}{E_{0I}} \right)^2 = \left(\frac{n_1 - n_2}{n_1 + n_2}\right)^2
+\end{equation}
+Ez a \textbf{reflexiós együttható}. A transzmissziós együttható pedig:
+\begin{equation}
+    T \equiv \frac{I_T}{I_I} = \frac{v_2 \epsilon_2 E_{0T}^2}{v_1 \epsilon_1 E_{0I}^2} = \frac{4 n_1 n_2}{(n_1 + n_2)^2}
+\end{equation}
+Ahol használtuk, hogy $n = c/v$ és $\epsilon \approx n^2 \epsilon_0$. Könnyen ellenőrizhető, hogy $R + T = 1$, vagyis az energia megmarad.
+
+De mi van akkor, ha a beesési szög nem pont $90^\circ$? Ekkor a bejövő hullámegyenletek a következőképpen alakulnak:
+\begin{equation}
+    \tilde{\bold{E}}_I(\bold{r}, t) = \tilde{E}_{0I} e^{i(\bold{k}_1 \cdot \bold{r} - \omega t)} \hat{\bold{n}}_I \qquad \tilde{\bold{B}}_I(\bold{r}, t) = \frac{1}{v_1} (\hat{\bold{k}}_I \times \tilde{\bold{E}}_I)
+\end{equation}
+A visszaverődő hullámok pedig:
+\begin{equation}
+    \tilde{\bold{E}}_R(\bold{r}, t) = \tilde{E}_{0R} e^{i(\bold{k}_R \cdot \bold{r} - \omega t)} \hat{\bold{n}}_R \qquad \tilde{\bold{B}}_R(\bold{r}, t) = \frac{1}{v_1} (\hat{\bold{k}}_R \times \tilde{\bold{E}}_R)
+\end{equation}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/6-tetel/refleckio_szog.png}
+    \caption{Elektromágneses hullám határfelületen nem normális beesés esetén}
+\end{figure}
+A továbbított hullámok pedig:
+\begin{equation}
+    \tilde{\bold{E}}_T(\bold{r}, t) = \tilde{E}_{0T} e^{i(\bold{k}_2 \cdot \bold{r} - \omega t)} \hat{\bold{n}}_T \qquad \tilde{\bold{B}}_T(\bold{r}, t) = \frac{1}{v_2} (\hat{\bold{k}}_T \times \tilde{\bold{E}}_T)
+\end{equation}
+Mindegyik hullámnak azonos a $\omega$ frekvenciája, amit csak a forrás határoz meg. A hullámszámok viszont különbözőek lehetnek, de függnek egymástól:
+\begin{equation}
+    k_1 v = k_R v_1 = k_T v_2 = \omega \quad \text{vagy} \quad k_1 = k_R = \frac{v_2}{v_1} k_T = \frac{n_1}{n_2} k_T
+\end{equation}
+A terek kapcsolódását megint a határfeltételek adják meg és ezeknek az egyenleteknek van egy általános struktúrája:
+\begin{equation}
+    ()e^{i(\bold{k}_1 \cdot \bold{r} - \omega t)} + ()e^{i(\bold{k}_R \cdot \bold{r} - \omega t)} = ()e^{i(\bold{k}_2 \cdot \bold{r} - \omega t)} \qquad z = 0\text{-nál}
+\end{equation}
+Ebből az alakból az a fontos tanulság, hogy az $x, y, t$ függés mind az exponensbe van "koncentrálva". Mivel pedig a határfeltételeknek a felület minden pontján igaznak kell lennie,
+és minden időpontban teljesülniük kell, ezért az exponenseknek egyenlőnek kell lennie $z=0$-ban! Különben egy kis változás, mondjuk $x$-ben egyből tönkretenné az egyenlőséget.
+Természetesen az idő komponensek már eleve egyenlőek, és a tér komponensekre igaz, hogy:
+\begin{equation}
+    \bold{k}_1 \cdot \bold{r} = \bold{k}_R \cdot \bold{r} = \bold{k}_2 \cdot \bold{r} \qquad \text{ha } z = 0
+\end{equation}
+Vagy explicitebben:
+\begin{equation}
+    x(k_I)_x + y(k_I)_y = x(k_R)_x + y(k_R)_y = x(k_T)_x + y(k_T)_y \qquad \text{ha } z = 0
+\end{equation}
+Minden $x$ és $y$ értékre. Ez csak akkor teljesülhet, ha a hullámszámok $x$ és $y$ komponensei megegyeznek:
+\begin{equation}
+    \begin{cases}
+        (k_I)_x = (k_R)_x = (k_T)_x \quad \text{ha, } x = 0\\
+        (k_I)_y = (k_R)_y = (k_T)_y \quad \text{ha, } y = 0
+    \end{cases}
+\end{equation}
+Ezekből az egyenletekből pedig levezethetjük az alapvető törvényeit a hullámok visszaverődésére és törésére:
+\begin{quote}
+     \textbf{Első törvény}: A bejövő, visszavert és továbbított hullámok vektorai egy felületet alkotnak (amit \textbf{beesési síknak} nevezünk), és ami tartalmazza a felület normál vektorát is. 
+     Miközben a hullámszám egyenlete $y = 0$-ban implikálja, hogy:
+        \begin{equation}
+            k_I sin \theta_I = k_R sin \theta_R = k_T sin \theta_T
+        \end{equation}
+\end{quote}
+Ahol $\theta_I, \theta_R, \theta_T$ a bejövő, visszavert és továbbított hullámok beesési szögei a felület normáljához képest.
+\begin{quote}
+    \textbf{Második törvény}: A visszavert hullám beesési szöge megegyezik a bejövő hullám beesési szögével:
+        \begin{equation}
+            \theta_R = \theta_I
+        \end{equation}
+\end{quote}
+Ezt nevezik \textbf{visszaverődési törvénynek}.
+\begin{quote}
+    \textbf{Harmadik törvény}: A továbbított hullám beesési szöge és a bejövő hullám beesési szöge között a következő kapcsolat áll fenn:
+        \begin{equation}
+            \frac{sin \theta_T}{sin \theta_I} = \frac{n_1}{n_2}
+        \end{equation}
+\end{quote}
+Ezt nevezik \textbf{Snellius-Descartes-törvénynek}. Ez a három törvény a geometriai optika fundamentális egyenletei. Érdekesség, hogy nagyon kevés "elektrodinamika" került ezekbe az egyenletekbe,
+semmilyen specifikus határfeltételt nem hoztunk még be, tehát ezek a törvények általánosabban is igazak a hullámokra, nem csak az elektromágnesesekre.
+
+Most, hogy az exponenciális faktorokat rendbe tettük, hisz láttuk $z = 0$-ban kiesnek, a határfeltételek a következőképpen alakulnak:
+\begin{equation}
+    \begin{aligned}
+        (i) \quad & \epsilon_1 (\tilde{E}_{0I} + \tilde{E}_{0R})_z = \epsilon_2 (\tilde{E}_{0T})_z \\
+        (ii) \quad & (\tilde{\bold{B}}_{0I} + \tilde{\bold{B}}_{0R})_z = (\tilde{\bold{B}}_{0T})_z \\
+        (iii) \quad & (\tilde{\bold{E}}_{0I} + \tilde{\bold{E}}_{0R})_z = (\tilde{\bold{E}}_{0T})_{x,y} \\
+        (iv) \quad & \frac{1}{\mu_1} (\tilde{\bold{B}}_{0I} + \tilde{\bold{B}}_{0R})_{x,y} = \frac{1}{\mu_2} (\tilde{\bold{B}}_{0T})_{x,y}
+    \end{aligned}
+\end{equation}
+Ahol $\tilde{\bold{B}}_0 = \frac{1}{v} (\hat{\bold{k}} \times \tilde{\bold{E}}_0)$. Az $(iii)$ és $(iv)$ egyenletek két egyenletet reprezentálnak $x$ és $y$ komponensekre külön-külön.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/6-tetel/refrakcio.png}
+    \caption{Beesési szög és törési szög}
+\end{figure}
+
+Tegyük fel, hogy a beeső hullám polarizációja a beesési síkban van ($x-y$ sík). Ekkor a továbbmenő és visszavert hullámok is ebben a síkban lesznek polarizálva.
+Ekkor a $(i)$ határfeltétel:
+\begin{equation}
+    \epsilon_1 (- \tilde{E}_{0I} \sin \theta_I + \tilde{E}_{0R} \sin \theta_R) = \epsilon_2 (- \tilde{E}_{0T} \sin \theta_T)
+\end{equation}
+A $(ii)$ feltétel nem ad semmi érdekeset, és mivel a mágneses tereknek nincsen $z$ komponense, ezért $(iii)$:
+\begin{equation}
+    \tilde{E}_{0I} \cos \theta_I + \tilde{E}_{0R} \cos \theta_R = \tilde{E}_{0T} \cos \theta_T
+\end{equation}
+Végül a $(iv)$ határfeltétel:
+\begin{equation}
+    \frac{1}{\mu_1 v_1} \left( \tilde{E}_{0I} - \tilde{E}_{0R} \right) = \frac{1}{\mu_2 v_2} \tilde{E}_{0T}
+\end{equation}
+Ha felhasználjuk a visszaverődési és törési törvényeket, akkor ezek az egyenletek a következőképpen egyszerűsödnek:
+\begin{equation}
+    \tilde{E}_{0I} - \tilde{E}_{0R} = \beta \tilde{E}_{0T}
+\end{equation}
+Ahol (ahogy korábban is):
+\begin{equation}
+    \beta \equiv \frac{\mu_1 v_1}{\mu_2 v_2} = \frac{\mu_1 n_2}{\mu_2 n_1}
+\end{equation}
+És a $(iii)$ határfeltétel redukált alakjából pedig:
+\begin{equation}
+    \tilde{E}_{0I} + \tilde{E}_{0R} = \alpha \tilde{E}_{0T}
+\end{equation}
+Ahol:
+\begin{equation}
+    \alpha \equiv \frac{\cos \theta_T}{\cos \theta_I}
+\end{equation}
+Most már megoldhatjuk ezt a két egyenletet a visszavert és továbbított hullámok amplitúdóira a bejövő hullám amplitúdójához képest:
+\begin{equation}
+    \boxed{\tilde{E}_{0R} = \left( \frac{\alpha - \beta}{\alpha + \beta} \right) \tilde{E}_{0I} \qquad \tilde{E}_{0T} = \left( \frac{2}{\alpha + \beta} \right) \tilde{E}_{0I}}
+\end{equation}
+Ezek a \textbf{Fresnel-egyenletek} a beesési síkban polarizált hullámokra. Hasonlóan, ha a hullám polarizációja merőleges a beesési síkra (azaz $y$ irányba), akkor a Fresnel-egyenletek a következőképpen alakulnak:
+\begin{equation}
+    \boxed{\tilde{E}_{0R} = \left( \frac{1 - \beta \alpha}{1 + \beta \alpha} \right) \tilde{E}_{0I} \qquad \tilde{E}_{0T} = \left( \frac{2}{1 + \beta \alpha} \right) \tilde{E}_{0I}}
+\end{equation}
+Észrevehetjük, hogy az átmenő hullám mindig fázisban vannak a bejövő hullámmal, de a visszavert hullám pedig fázisban van, ha $\alpha > \beta$, de $\pi$-vel el van tolódva, ha $\alpha < \beta$.
+
+A visszaverődési és transzmissziós együtthatók pedig a következőképpen alakulnak a beesési síkban polarizált hullámokra:
+\begin{equation}
+    R_\parallel \equiv \frac{I_R}{I_I} = \left( \frac{\alpha - \beta}{\alpha + \beta} \right)^2 \qquad T_\parallel \equiv \frac{I_T}{I_I} = \frac{4 \alpha \beta}{(\alpha + \beta)^2}
+\end{equation}
+Míg a merőleges polarizáció esetén:
+\begin{equation}
+    R_\perp \equiv \frac{I_R}{I_I} = \left( \frac{1 - \beta \alpha}{1 + \beta \alpha} \right)^2 \qquad T_\perp \equiv \frac{I_T}{I_I} = \frac{4 \beta \alpha}{(1 + \beta \alpha)^2}
+\end{equation}
+
+\subsubsection*{Visszaverődés Vezetőkön}
+A határfeltételek megváltoznak egy kicsit, ha a szabad töltés és a szabad áram nem nulla a határfelületen. Ez akkor fordul elő, ha az egyik közeg egy jó vezető. Ebben az esetben a határfeltételek a következőképpen alakulnak:
+\begin{equation}
+    \begin{aligned}
+        (i) \quad & \epsilon_1 E_1^{\perp} - \epsilon_2 E_2^{\perp} = \sigma_f \\
+        (ii) \quad & B_1^\perp - B_2^\perp = 0 \\
+        (iii) \quad & \bold{E}_1^\parallel - \bold{E}_2^\parallel = \bold{0} \\
+        (iv) \quad & \frac{1}{\mu_1} \bold{B}_1^\parallel - \frac{1}{\mu_2} \bold{B}_2^\parallel = \mu_0 \bold{K}_f \times \hat{\bold{n}}
+    \end{aligned}
+\end{equation} 
+Ahol $\sigma_f$ a felületi szabad töltéssűrűsé (nem összekeverendő a vezetőképességgel), $\bold{K}_f$ a felületi szabad áram sűrűség és $\hat{\bold{n}}$ a határfelület normálvektora (nem összekeverendő a polarizáció vektorral). 
+
+Most tegyük fel, hogy egy felület határt képez két közeg között $x-y$ síkban, ahol az 1. közeg egy dielektrikum, a 2. közeg pedig egy jó vezető. Ekkor egy monokromatikus hullám x irányba polarizálva utazik
+z irányban balról. Ekkor a bejövő hullámok egyenletei:
+\begin{equation}
+    \tilde{\bold{E}}_I(z, t) = \tilde{E}_{0I} e^{i(k_1 z - \omega t)} \hat{\bold{x}} \qquad \tilde{\bold{B}}_I(z, t) = \frac{\tilde{E}_{0I}}{v_1} e^{i(k_1 z - \omega t)} \hat{\bold{y}}
+\end{equation}
+A visszavert hullámok egyenletei:
+\begin{equation}
+    \tilde{\bold{E}}_R(z, t) = \tilde{E}_{0R} e^{i(-k_1 z - \omega t)} \hat{\bold{x}} \qquad \tilde{\bold{B}}_R(z, t) = -\frac{\tilde{E}_{0R}}{v_1} e^{i(-k_1 z - \omega t)} \hat{\bold{y}}
+\end{equation}
+A továbbmenő hullámok pedig a vezetőben:
+\begin{equation}
+    \tilde{\bold{E}}_T(z, t) = \tilde{E}_{0T} e^{i(\tilde{k}z - \omega t)} \hat{\bold{x}} \qquad \tilde{\bold{B}}_T(z, t) = \frac{\tilde{k}}{\omega} \tilde{E}_{0T} e^{i(\tilde{k}z - \omega t)} \hat{\bold{y}}
+\end{equation}
+Ahol $\tilde{k}$ a vezetőben lévő komplex hullámszám.
+
+Most alkalmazzuk a határfeltételeket a $z = 0$ pontban. Mivel $E^{\perp} = 0$ és $B^\perp = 0$ ezért $(i)$ és $(ii)$ feltételek automatikusan teljesünek. A $(iii)$ határfeltétel:
+\begin{equation}
+    \tilde{E}_{0I} + \tilde{E}_{0R} = \tilde{E}_{0T}
+\end{equation}
+Míg a $(iv)$ határfeltétel:
+\begin{equation}
+    \frac{1}{\mu_1} \left( \frac{\tilde{E}_{0I}}{v_1} - \frac{\tilde{E}_{0R}}{v_1} \right) = \frac{1}{\mu_2} \frac{\tilde{k}}{\omega} \tilde{E}_{0T} = 0
+\end{equation}
+Vagy átrendezve:
+\begin{equation}
+    \tilde{E}_{0I} - \tilde{E}_{0R} = \tilde{\beta} \tilde{E}_{0T}
+\end{equation}
+Ahol:
+\begin{equation}
+    \tilde{\beta} \equiv \frac{\mu_1 v_1}{\mu_2 \omega} \tilde{k}_2
+\end{equation}
+Most már megoldhatjuk ezt a két egyenletet a visszavert és továbbított hullámok amplitúdóira a bejövő hullám amplitúdójához képest:
+\begin{equation}
+    \boxed{\tilde{E}_{0R} = \left( \frac{1 - \tilde{\beta}}{1 + \tilde{\beta}} \right) \tilde{E}_{0I} \qquad \tilde{E}_{0T} = \left( \frac{2}{1 + \tilde{\beta}} \right) \tilde{E}_{0I}}
+\end{equation}
+Ami rendkívül hasonló a dielektrikum-dielektrikum határfelületen kapott eredményhez, csak itt $\tilde{\beta}$ komplex szám.
+
+Egy tökéletes vezetőben $\sigma = 0$ ezért $k_2 = \infty$ és így $\tilde{\beta} \rightarrow \infty$. Ekkor a visszaverődési együttható:
+\begin{equation}
+    \tilde{E}_{0R} = - \tilde{E}_{0I} \quad \text{és} \quad \tilde{E}_{0T} = 0 \qquad \text{vagyis} \qquad E_{0R} = E_{0I} \quad \text{és} \quad \phi_R = \phi_I + \pi
+\end{equation}
+Tehát egy tökéletes vezetőnél a hullám teljesen visszaverődik, és a visszavert hullám fázisa eltolódik $\pi$-vel a bejövő hullámhoz képest. Tehát a jó vezetők jó tükrök is.
+Az otthon használt tükrökben se a dielektrikus üveg a tükröződő felület, az csak a struktúra megtartása miatt van ott, ami a lényegi "munkát" végzi az egy vékony réteg ezüst ami fel van festve rá.
+Mivel az ezüst behatolási mélysége az optikai tartományba kevesebb mint $100 \: \text{\AA}$ ($1 \: \text{\AA} = 10^{-10} \: \text{m}$), ezért elég egy nagyon vékony réteg is a jó tükröződéshez.
+
+\subsection{Diszperzió, csoport- és fázissebesség, Doppler-effektus}
+Láttuk tehát, hogy az anyagban terjedő elektromágneses hullámok függnek az anyag három tulajdonságától:
+\begin{itemize}
+    \item dielektromos állandó $\epsilon$
+    \item permeabilitás $\mu$
+    \item vezetőképesség $\sigma$
+\end{itemize}
+Ezek az anyagtulajdonságok pedig valamilyen mértékben függnek a frekvenciától is. Például optikában jól ismert, hogy a törési index $n = \sqrt{\frac{\epsilon \mu}{\epsilon_0 \mu_0}} \approx \sqrt{\epsilon_r}$ a hullámhossz függvénye.
+Ez azt jelenti, hogy különböző hullámhosszú (és ezáltal más színű) fény máshogy törik egy határfelületen. Ezt a jelenséget figyelhetjük meg a prizmánál is, ahol a különböző színű fények kombinációjából álló
+beérkező fehér fény komponensei eltérő szögekben törnek meg, és emiatt szeparálódnak a prizmával való találkozás után. Ezt a jelenséget nevezzük \textbf{diszperziónak}. Ha pedig egy hullám sebessége függ a frekvenciájától, akkor közeget amiben ez a 
+szituáció fennáll \textbf{diszperzív közegnek} nevezzük.
+
+A különböző fekvenciájú hullámok nem csak különböző irányokba törnek meg, hanem különböző sebességgel is haladnak a közegben, ezért a hullám alakja, amiben több frekvencia is jelen van, megváltozik.
+Egy erősen csúcsos hullám általában szétfolyik, és bár mindegyik szinuszos komponens a már ismert hullámsebességgel (vagy \textbf{fázissebességgel}) halad:
+\begin{equation}
+    v_f = \frac{\omega}{k} = \frac{c}{n(\omega)}
+\end{equation}
+A hullámok együttes alakja (hullámcsomag) sebessége más lesz. Ezt \textbf{csoportsebességnek} nevezzük, és a következőképpen definiáljuk:
+\begin{equation}
+    v_g = \frac{d\omega}{dk}
+\end{equation}
+Ez azt jelenti, hogy a hullámok egy "levelet" alkotnak ami a csoportsebességgel halad, miközben a benne lévő szinuszos komponensek a fázissebességgel haladnak. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/6-tetel/csoport_fazis_sebesseg.png}
+    \caption{Csoportsebesség és fázissebesség}
+\end{figure}
+Ha például veszünk egy hullámot ami több különböző frekvenciából áll össze akkor tegyük fel, hogy a hullám a következő alakú:
+\begin{equation}
+    E(z, t) = \int_{-\infty}^{\infty} \tilde{E}(k) e^{i(kz - \omega(k)t)} dk
+\end{equation}
+Ahol a $\tilde{E}(k)$ a hullámcsomag spektruma, ami megadja, hogy az egyes hullámszámok milyen súllyal vannak jelen a hullámban. Tegyük fel, hogy a spektrum egy keskeny tartományban van középen
+$k_0$ körül, tehát csak egy kis tartományban vannak jelen a hullámszámok. Ekkor a $\omega(k)$ függvényt ki tudjuk bővíteni Taylor-sorba $k_0$ körül:
+\begin{equation}
+    \omega(k) \approx \omega(k_0) + \left. \frac{d\omega}{dk} \right|_{k_0} (k - k_0) + \ldots
+\end{equation}
+Ha csak az első két tagot tartjuk meg, akkor a hullám a következőképpen alakul:
+\begin{equation}
+    E(z, t) \approx e^{i(k_0 z - \omega(k_0) t)} \int_{-\infty}^{\infty} \tilde{E}(k) e^{i(k - k_0)(z - v_g t)} dk
+\end{equation}
+Ahol bevezettük a csoportsebességet:
+\begin{equation}
+    v_g = \left. \frac{d\omega}{dk} \right|_{k_0}
+\end{equation}
+Ebből az egyenletből látható, hogy a hullám két részből áll: egy gyorsan oszcilláló rész, ami a fázissebességgel halad, és egy burkoló rész, ami a csoportsebességgel halad.
+
+Érdekesség, de az energia, amit a hullámcsomag szállít nem a fázissebességgel, hanem a csoportsebességgel halad. Tehát előfordulhat, hogy a fázissebesség nagyobb, mint a fénysebesség.
+Ez elsőre a relativitáselmélet megsértésének tűnhet, de valójában nem az, mivel a relativitáselmélet csak az információ terjedésére ad megkötést. Olyan dolgokról amik nem hordoznak magukban információt, a relativitáselmélet nem mond semmit.
+És a fázissebesség önmagában nem tartalmaz információt. Egy hullám egy adott pontjának fázisa nem hordoz információt, csak a hullámcsomag alakja és annak változása hordoz információt.
+Ezért nem sértjük meg a relativitáselméletet, ha a fázissebesség nagyobb, mint a fénysebesség.
+
+\subsubsection{Doppler-Effektus}
+Ha egy hullámforrás és egy megfigyelő egymáshoz képest mozognak, akkor a megfigyelő által mért frekvencia eltér a forrás által kibocsátott frekvenciától. Ezt a jelenséget nevezzük \textbf{Doppler-effektusnak}.
+Ha a forrás és a megfigyelő közelednek egymáshoz, akkor a megfigyelt frekvencia nagyobb lesz, míg ha távolodnak egymástól, akkor kisebb lesz a megfigyelt frekvencia.
+Matematikailag ez a következőképpen írható fel: 
+\begin{equation}
+    \nu' = \nu \left( \frac{v \pm v_{m}}{v \pm v_f} \right)
+\end{equation}
+Ahol $\nu$ a forrás által kibocsátott frekvencia, $v$ a hullám terjedési sebessége a közegben, $v_m$ a megfigyelő sebessége a közeghez képest (pozitív, ha a forrás felé mozog), és $v_f$ a forrás sebessége a közeghez képest (pozitív, ha a megfigyelő felé mozog).
+Ha a forrás és a megfigyelő közelednek egymáshoz, akkor a képletben mindkét sebesség előjele pozitív lesz, és így a megfigyelt frekvencia nagyobb lesz, mint a kibocsátott frekvencia.
+Ha pedig távolodnak egymástól, akkor mindkét sebesség előjele negatív lesz, és így a megfigyelt frekvencia kisebb lesz, mint a kibocsátott frekvencia.
+Egy egyszerűbb esetet is megvizsgálhatunk, amikor a megfigyelő áll, és csak a forrás mozog egyenletes sebességgel $v$ a megfigyelő felé. Ekkor a megfigyelt frekvencia $\nu'$ a következőképpen alakul:
+\begin{equation}
+    \nu' = \nu \left( \frac{v}{v \pm v_f} \right)
+\end{equation} 
+
+Ahol $\nu$ a forrás által kibocsátott frekvencia. Ha a forrás és a megfigyelő távolodnak egymástól, akkor a képletben a $v$ előjele negatív lesz.
+Ez a jelenség mind a mechanikai hullámokra, mind az elektromágneses hullámokra igaz. Az elektromágneses hullámok esetén azonban figyelembe kell venni a relativisztikus hatásokat is, mivel az elektromágneses hullámok sebessége mindig $c$ a vákuumban. Ha egy forrás egyenletes sebességgel $v$ mozog a megfigyelő felé, akkor a megfigyelt frekvencia $\nu'$ a következőképpen alakul:
+\begin{equation}
+    \nu' = \nu \sqrt{\frac{1 + \frac{v}{c}}{1 - \frac{v}{c}}}
+\end{equation}
+Ahol $\nu$ a forrás által kibocsátott frekvencia. Ha a forrás és a megfigyelő távolodnak egymástól, akkor a képletben a $v$ előjele negatív lesz.
+
+A Doppler-effektusnak egyik legfontosabb alkalmazása a csillagászatban van, ahol a távoli csillagok és galaxisok mozgását tanulmányozzák a kibocsátott fény hullámhosszának változásán keresztül.
+Ezt a jelenséget nevezik vöröseltolódásnak (ha a forrás távolodik) vagy kékeltolódásnak (ha a forrás közeledik). A vöröseltolódás mértéke segít meghatározni a csillagok és galaxisok sebességét és távolságát a Földtől.
+
+\subsection{interferencia, diffrakció}
+\subsubsection{Interferencia}
+Az interferencia jelensége akkor fordul elő, amikor két vagy több hullám találkozik ugyanabban a térben, és ezek a hullámok kölcsönhatásba lépnek egymással.
+Az interferencia eredményeként a hullámok amplitúdója megváltozik, és bizonyos helyeken erősödik, míg más helyeken gyengül vagy kioltódik. Ez a jelenség jól ismert például a vízfelszínen, ahol két hullámforrás által keltett hullámok találkoznak és interferálnak egymással.
+Az interferencia jelenségét matematikailag a hullámok szuperpozíciójával írhatjuk le. Ha két hullám találkozik, akkor az eredő hullám amplitúdója az egyes hullámok amplitúdóinak összege lesz:
+\begin{equation}
+    E_{eredő} = E_1 + E_2
+\end{equation}
+Ahol $E_1$ és $E_2$ az egyes hullámok amplitúdói. Az interferencia eredményeként az eredő hullám amplitúdója függ a hullámok fáziskülönbségétől is. Ha a hullámok fázisban vannak, akkor az amplitúdók összeadódnak, és erősödik a hullám. Ha pedig a hullámok ellenfázisban vannak, akkor az amplitúdók kioltódnak, és gyengül a hullám.
+Az interferencia jelensége számos területen fontos szerepet játszik, például az optikában, ahol a fényhullámok interferenciája révén jönnek létre különböző optikai jelenségek, mint például a Young-féle kettős rés kísérlet.
+Az interferencia jelensége továbbá alapvető fontosságú a modern technológiákban is, például a lézerekben és a holográfiában.
+
+\subsubsection{diffrakció}
+A diffrakció jelensége akkor fordul elő, amikor egy hullám találkozik egy akadállyal vagy résen, és a hullám terjedési iránya megváltozik. A diffrakció eredményeként a hullám elhajlik az akadály körül, és új hullámfrontok jönnek létre. Ez a jelenség jól ismert például a vízfelszínen, ahol egy akadály elhelyezésekor a hullámok elhajlanak az akadály körül, és új hullámfrontok jönnek létre.
+A diffrakció jelenségét matematikailag a Huygens-Fresnel elvvel írhatjuk le:
+\begin{quote}
+    \textbf{Huygens-Fresnel elv}: Minden pont egy hullámfronton úgy viselkedik, mint egy újabb hullámforrás, amelyből szférikus hullámok indulnak ki. Az új hullámfrontot ezeknek a szférikus hullámoknak az interferenciája hozza létre.
+\end{quote}
+A diffrakció jelensége számos területen fontos szerepet játszik, például az optikában, ahol a fényhullámok diffrakciója révén jönnek létre különböző optikai jelenségek, mint például a rácsokon való elhajlás.
+A diffrakció jelensége továbbá alapvető fontosságú a modern technológiákban is, például a mikrohullámú antennákban és a rádióhullámok terjedésében.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/6-tetel/diffrakcio.png}
+    \caption{Diffrakció egy résen}
+\end{figure}
+
+Ha például egy vékony rést helyezünk el egy sík hullám útjába, akkor a hullám a résen áthaladva elhajlik, és új hullámfrontok jönnek létre a rés mögött. Ezek az új hullámfrontok interferálnak egymással, és diffrakciós mintázatot hoznak létre a térben.
+
+
+\subsection{Retardált potenciálok. Dipólsugárzás}
+\subsubsection{Retardált potenciálok}
+Statikus esetben a D'Alambert egyenletek a Poisson-egyenletekre egyszerűsödnek:
+\begin{equation}
+    \boldsymbol{\nabla}^2 \phi = - \frac{\rho}{\epsilon_0} \qquad \text{és} \qquad \boldsymbol{\nabla}^2 \bold{A} = - \mu_0 \bold{J}
+\end{equation}
+A jól ismert megoldásokkal:
+\begin{equation}
+    V(\bold{r}) = \frac{1}{4 \pi \epsilon_0} \int \frac{\rho(\bold{r}')}{\rcurs} dV' \qquad \text{és} \qquad \bold{A}(\bold{r}) = \frac{\mu_0}{4 \pi} \int \frac{\bold{J}(\bold{r}')}{\rcurs} dV'
+\end{equation}
+Ahol $\rcurs = |\bold{r} - \bold{r}'|$. Azt tudjuk, hogy az elektromágneses "hírek" fénysebességgel terjednek. A nem statikus esetben tehát nem az számít, hogy egy
+egy adott pillanatban milyen állapotban van a forrás, hanem, hogy egy korábbi állapotban milyen volt. Ezt a $t_r$ időt nevezzük \textbf{retardált időnek}, és a következőképpen definiáljuk:
+\begin{equation}
+    \boxed{t_r \equiv t - \frac{\rcurs}{c}}
+\end{equation}
+Ahol $t$ a megfigyelő időpontja, és $\frac{\rcurs}{c}$ az az idő, ami alatt a fény eljut a forrástól a megfigyelőhöz. Ekkor a potenciálok általános megoldása a következőképpen alakul:
+\begin{equation}
+    \boxed{V(\bold{r}, t) = \frac{1}{4 \pi \epsilon_0} \int \frac{\rho(\bold{r}', t_r)}{\rcurs} dV' \qquad \text{és} \qquad \bold{A}(\bold{r}, t) = \frac{\mu_0}{4 \pi} \int \frac{\bold{J}(\bold{r}', t_r)}{\rcurs} dV'}
+\end{equation}
+Ezeket nevezzük \textbf{retardált potenciáloknak}.
+Itt a $\rho(\bold{r}', t_r)$ a töltéssűrűség a $\bold{r}'$ helyen és a retardált időben. 
+
+\subsubsection*{Bizonyítás:}
+De ez valóban igaz? Eddig nem bizonyítottunk semmit se, csak logikusan levezettük abból az állításból, hogy az információ fénysebességgel terjed. Ahhoz, hogy bizonyítsuk,
+meg kell mutatni, hogy kielégítik az inhomogén hullámegyenleteket és kielégítik a Lorenz-feltételt. Ez azért fontos, mert ez nem egy egyértelmű dolog,
+például ha ezt a logikát a terekre alkalmazzuk, akkor ROSSZ választ fogunk kapni:
+\begin{equation}
+    \bold{E}(\bold{r}, t) \neq \frac{1}{4 \pi \epsilon_0} \int \frac{\rho(\bold{r}', t_r)}{\rcurs^2} \hat{\rcurs} dV' \qquad \text{és} \qquad \bold{B}(\bold{r}, t) \neq \frac{\mu_0}{4 \pi} \int \frac{\bold{J}(\bold{r}', t_r)}{\rcurs^2} \hat{\rcurs} \times dV'
+\end{equation}
+Ezért meg kell néznünk, hogy mi a retardált potenciál alakulását a Nabla-operátorral. A retardált potenciál két helyen függ $\bold{r}$-től: az egyik a $\rcurs$ a nevezőben, a másik pedig a $t_r = t - \frac{\rcurs}{c}$ a forrásfüggvényekben. 
+Tehát a potenciál gradiense a következőképpen alakul:
+\begin{equation}
+    \boldsymbol{\nabla} \cdot V(\bold{r}, t) = \frac{1}{4 \pi \epsilon_0} \int \left[(\boldsymbol{\nabla} \rho) \frac{1}{\rcurs} + \rho \boldsymbol{\nabla} (\frac{1}{\rcurs})\right] dV'
+\end{equation} 
+Ahol az első tagban a $\boldsymbol{\nabla} \rho$ a forrásfüggvényekre vonatkozik, és ezt a láncszabály segítségével tudjuk kiszámolni:
+\begin{equation}
+    \boldsymbol{\nabla} \rho(\bold{r}', t_r) = \frac{\partial \rho}{\partial t_r} \boldsymbol{\nabla} t_r = - \frac{1}{c} \frac{\partial \rho}{\partial t_r} \boldsymbol{\nabla} \rcurs
+\end{equation}
+Vezessünk pár extra jelölést: $\boldsymbol{\nabla} \rcurs = \hrcurs$ és $\boldsymbol{\nabla} (\frac{1}{\rcurs}) = - \frac{\hrcurs}{\rcurs^2}$. Ekkor a potenciál divergenciája a következőképpen alakul:
+\begin{equation}
+    \boldsymbol{\nabla} V = \frac{1}{4 \pi \epsilon_0} \int \left[- \frac{1}{c} \frac{\partial \rho}{\partial t_r} \frac{\hrcurs}{\rcurs} - \rho \frac{\hrcurs}{\rcurs^2}\right] dV'
+\end{equation}
+Most vennünk kell az eredmény divergenciáját (hogy megkapjuk $\boldsymbol{\nabla}^2 V$-t):
+\begin{equation}
+    \boldsymbol{\nabla}^2 V = \frac{1}{4 \pi \epsilon_0} \int \left[- \frac{1}{c} \boldsymbol{\nabla} \left(\frac{\partial \rho}{\partial t_r} \frac{\hrcurs}{\rcurs}\right) - \boldsymbol{\nabla} \left(\rho \frac{\hrcurs}{\rcurs^2}\right)\right] dV'
+\end{equation}
+Jelöljük a retardált időderiváltat a Newton jelöléssel ($\frac{\partial \rho}{\partial t_r} = \dot{\rho}$), tehát:
+\begin{equation}
+    \begin{aligned}
+        \boldsymbol{\nabla}^2 V = \frac{1}{4 \pi \epsilon_0} \int &- \frac{1}{c} \left[\frac{\brcurs}{\rcurs} \cdot (\boldsymbol{\nabla} \dot{\rho}) + \dot{\rho} \boldsymbol{\nabla} \cdot \frac{\brcurs}{\rcurs}\right] \\
+        &- \left[\frac{\brcurs}{\rcurs^2} \cdot (\boldsymbol{\nabla} \rho) + \rho \boldsymbol{\nabla} \cdot \frac{\brcurs}{\rcurs^2}\right] dV'
+    \end{aligned}
+\end{equation}
+És a láncszabály segítségével a következőképpen írhatjuk át a $\boldsymbol{\nabla} \dot{\rho}$ és $\boldsymbol{\nabla} \cdot \frac{\hrcurs}{\rcurs}$ kifejezéseket:
+\begin{equation}
+    \boldsymbol{\nabla} \dot{\rho} = - \frac{1}{c} \ddot{\rho} \hrcurs \qquad \text{és} \qquad \boldsymbol{\nabla} \cdot \frac{\hrcurs}{\rcurs} = \frac{1}{\rcurs^2}
+\end{equation}
+És:
+\begin{equation}
+    \boldsymbol{\nabla} \cdot (\frac{\hrcurs}{\rcurs^2}) = 4 \pi \delta^3(\brcurs)
+\end{equation}
+Ahol a $\delta^3(\brcurs)$ a háromdimenziós Dirac-delta függvény. Ezt beírva az előző egyenletbe, a következőképpen alakul $\boldsymbol{\nabla}^2 V$:
+\begin{equation}
+    \boldsymbol{\nabla}^2 V = \frac{1}{4 \pi \epsilon_0} \int \left[\frac{1}{c^2} \frac{\ddot{\rho}}{\rcurs} - 4 \pi \rho \delta^3(\brcurs)\right] dV' = \frac{1}{c^2} \frac{\partial^2 V}{\partial t^2} - \frac{1}{\epsilon_0}\rho(\bold{r}, t)
+\end{equation}
+Ez pontosan az inhomogén hullámegyenlet a potenciálra nézve. Érdekesség, hogy ez a Bizonyítás érvényes a fejlett potenciálra is:
+\begin{equation}
+    V_a(\bold{r}, t) = \frac{1}{4 \pi \epsilon_0} \int \frac{\rho(\bold{r}', t_a)}{\rcurs} dV' \qquad \text{ahol} \qquad t_a = t + \frac{\rcurs}{c}
+\end{equation}
+Viszont ennek nincs fizikai jelentése, hiszen ez azt jelentené, hogy a jövőbeli információk hatnak a jelenre, ami sérti a kauzalitás elvét.
+
+Most nézzük meg a Lorenz-feltételt:
+\begin{equation}
+    \boldsymbol{\nabla} \cdot \bold{A} + \mu_0 \epsilon_0 \frac{\partial V}{\partial t} = 0
+\end{equation}
+A potenciálok behelyettesítése után a következőképpen alakul:
+\begin{equation}
+    \boldsymbol{\nabla} \cdot \bold{A} = \frac{\mu_0}{4 \pi} \int \left[(\boldsymbol{\nabla} \cdot \bold{J}) \frac{1}{\rcurs} + \bold{J} \cdot \boldsymbol{\nabla} (\frac{1}{\rcurs})\right] dV'
+\end{equation}
+Ahol az első tagban a $\boldsymbol{\nabla} \cdot \bold{J}$ a forrásfüggvényekre vonatkozik, és ezt a láncszabály segítségével tudjuk kiszámolni:
+\begin{equation}
+    \boldsymbol{\nabla} \cdot \bold{J}(\bold{r}', t_r) = \frac{\partial \bold{J}}{\partial t_r} \cdot \boldsymbol{\nabla} t_r = - \frac{1}{c} \frac{\partial \bold{J}}{\partial t_r} \cdot \boldsymbol{\nabla} \rcurs
+\end{equation}
+Ezt beírva az előző egyenletbe, és a már ismert jelöléseket használva ($\boldsymbol{\nabla} \rcurs = \hrcurs$ és $\boldsymbol{\nabla} (\frac{1}{\rcurs}) = - \frac{\hrcurs}{\rcurs^2}$), a potenciál divergenciája a következőképpen alakul:
+\begin{equation}
+    \boldsymbol{\nabla} \cdot \bold{A} = \frac{\mu_0}{4 \pi} \int \left[- \frac{1}{c} \frac{\partial \bold{J}}{\partial t_r} \cdot \frac{\hrcurs}{\rcurs} - \bold{J} \cdot \frac{\hrcurs}{\rcurs^2}\right] dV'
+\end{equation}
+Most vegyük a potenciál időderiváltját:
+\begin{equation}
+    \frac{\partial V}{\partial t} = \frac{1}{4 \pi \epsilon_0} \int \frac{\partial \rho(\bold{r}', t_r)}{\partial t} \frac{1}{\rcurs} dV' = \frac{1}{4 \pi \epsilon_0} \int \frac{\partial \rho(\bold{r}', t_r)}{\partial t_r} \frac{\partial t_r}{\partial t} \frac{1}{\rcurs} dV' = \frac{1}{4 \pi \epsilon_0} \int \frac{\dot{\rho}}{\rcurs} dV'
+\end{equation}
+Most összeadva a két eredményt:
+\begin{equation}
+    \boldsymbol{\nabla} \cdot \bold{A} + \mu_0 \epsilon_0 \frac{\partial V}{\partial t} = \frac{\mu_0}{4 \pi} \int \left[- \frac{1}{c} \frac{\partial \bold{J}}{\partial t_r} \cdot \frac{\hrcurs}{\rcurs} - \bold{J} \cdot \frac{\hrcurs}{\rcurs^2} + \frac{1}{c} \frac{\dot{\rho}}{\rcurs}\right] dV'
+\end{equation}
+Most alkalmazzuk a töltésmegmaradás törvényét a forrásfüggvényekre:
+\begin{equation}
+    \boldsymbol{\nabla}' \cdot \bold{J}(\bold{r}', t_r) + \frac{\partial \rho(\bold{r}', t_r)}{\partial t_r} = 0
+\end{equation}
+Ezt beírva az előző egyenletbe, és alkalmazva a láncszabályt a $\boldsymbol{\nabla}' \cdot \bold{J}$ kifejezésre:
+\begin{equation}
+    \boldsymbol{\nabla}' \cdot \bold{J}(\bold{r}', t_r) = \frac{\partial \bold{J}}{\partial t_r} \cdot \boldsymbol{\nabla}' t_r = - \frac{1}{c} \frac{\partial \bold{J}}{\partial t_r} \cdot \boldsymbol{\nabla}' \rcurs = - \frac{1}{c} \frac{\partial \bold{J}}{\partial t_r} \cdot (-\hrcurs) = \frac{1}{c} \frac{\partial \bold{J}}{\partial t_r} \cdot \hrcurs
+\end{equation}
+Ezt beírva az előző egyenletbe, a következőképpen alakul:
+\begin{equation}
+    \boldsymbol{\nabla} \cdot \bold{A} + \mu_0 \epsilon_0 \frac{\partial V}{\partial t} = \frac{\mu_0}{4 \pi} \int \left[- \boldsymbol{\nabla}' \cdot \bold{J} \frac{1}{\rcurs} - \bold{J} \cdot \frac{\hrcurs}{\rcurs^2} + \frac{1}{c} \frac{\dot{\rho}}{\rcurs}\right] dV'
+\end{equation}
+Most alkalmazzuk a töltésmegmaradás törvényét az utolsó két tagra is:
+\begin{equation}
+    \boldsymbol{\nabla} \cdot \bold{A} + \mu_0 \epsilon_0 \frac{\partial V}{\partial t} = \frac{\mu_0}{4 \pi} \int \left[- \boldsymbol{\nabla}' \cdot \bold{J} \frac{1}{\rcurs} + \boldsymbol{\nabla}' \cdot \bold{J} \frac{1}{\rcurs}\right] dV' = 0
+\end{equation}
+Tehát a retardált potenciálok kielégítik a Lorenz-feltételt is.
+
+\subsubsection{Dipólsugárzás}
+Mi a sugárzás? Amikor a töltések gyorsulnak, az elektromágneses terük képes energiát szállítani a végtelenbe. Ezt a jelenséget nevezzük \textbf{sugárzásnak}.
+Tegyük fel, hogy a forrás nagyjából lokalizált az eredet környékén. Ekkor meg akarom határozni az energiát ami $t_0$ időben sugárzódik ki. Vegyünk egy nagy gömbfelületet,
+amelynek a sugara $r$, és amelynek a középpontja az eredetben van. Az ezen a felületen átmenő teljesítmény a Poynting-vektor integráljával adható meg:
+\begin{equation}
+    P(t_0) = \oint \bold{S}(\bold{r}, t_0) \cdot d\bold{a} = \oint \frac{1}{\mu_0} \bold{E} \times \bold{B} \cdot d\bold{a}
+\end{equation} 
+Mivel az információ fénysebességgel halad, ezért ennek az energiának kicsit korábban kellett elindulnia $t_0 = t - \frac{r}{c}$ időben. Tehát a kisugárzott teljesítmény:
+\begin{equation}
+    P_{rad}(t_0) = \lim_{r \to \infty} P(r, t_0 + \frac{r}{c})
+\end{equation}
+Ahol $t_0$ egy konstans maradt. Ez az energia (egységnyi idő alatt) távozik és sose jön vissza. 
+
+Mivel a gömbfelület területe $4 \pi r^2$, ezért a Poynting-vektor nagy $r$-nél maximum $1/r^2$-el tud csökkenni. A Coulomb törvény szerint az elektrosztatikus tér is $1/r^2$-el csökken
+és a Biot-Savart törvény szerint a mágneses tér is $1/r^2$-el (vagy gyorsabban) csökken. Tehát a Poynting-vektor $S \approx 1/r^4$-el (vagy gyorsabban) csökken statikus konfigurációkban.
+Ezért statikus konfigurációkban nincs sugárzás. Ahhoz, hogy legyen sugárzás, a tereknek lassabban kell csökkenniük, mint $1/r^2$. De  Jeremenko egyenletek segítségével megmutatható, hogy az
+időfüggő tereknek vannak olyan komponensei, amik $1/r$-el csökkennek. Ezek a komponensek felelősek az elektromágneses sugárzásért.
+
+A sugárzás tanulmányozása tehát arról szól, hogy kiszedjük $\bold{E}$ és $\bold{B}$ terek $1/r$-el csökkenő komponenseit (nagy $r$-nél), és ezeket hozzákapcsoljuk a Poynting-vektor $1/r^2$-el csökkenő komponenséhez és kiintegáljuk egy nagy gömbfelületen $r \to \infty$ határértékben.
+
+\subsubsection*{Elektromos dipólsugárzás}
+Képzeljünk el egy rrendszert amiben van két fémgömb amik egy vékony vezetékkel össze vannak kötve $d$ távolságban. $t$ időben a felső gömb töltése $+q(t)$, az alsó gömb töltése pedig $-q(t)$.
+Most tegyük fel, hogy le-fel mozgatjuk a töltéseket $\omega$ szögfrekvenciával:
+\begin{equation}
+    q(t) = q_0 \cos(\omega t)
+\end{equation}
+Ekkor a dipólmomentum a következőképpen alakul:
+\begin{equation}
+    \bold{p}(t) = q(t) d \hat{z} = p_0 \cos(\omega t) \hat{\bold{z}} \qquad \text{ahol} \qquad p_0 \equiv q_0 d
+\end{equation}
+Ahol $p_0$ a dipólmomentum maximum értéke. 
+
+A retardált potenciál:
+\begin{equation}
+    V(\bold{r}, t) = \frac{1}{4 \pi \epsilon_0} \left\{\frac{q_0 \cos \left[\omega(t - \frac{\rcurs_+}{c} )\right]}{\rcurs_+} - \frac{q_0 \cos \left[\omega(t - \frac{\rcurs_-}{c} )\right]}{\rcurs_-}\right\}
+\end{equation}
+Ahol $\rcurs_\pm$ a cosinus-tétel alapján a következőképpen alakul:
+\begin{equation}
+    \rcurs_\pm = \sqrt{r^2 + \left(\frac{d}{2}\right)^2 \mp r d \cos \theta} \approx r \mp \frac{d}{2} \cos \theta
+\end{equation}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/6-tetel/elektromos_dipol_szogek.png}
+    \caption{Elektromos dipólsugárzás geometriája}
+\end{figure}
+
+Ahhoz, hogy egy fizikai dipólust egy ideális dipólussá alakítsunk, a szeparációs távolságot nagyon kicsire kell vennünk:
+\begin{equation}
+    \text{\textbf{közelítés 1:}} \qquad d \ll r
+\end{equation}
+Természetesen ha $d = 0$, akkor nincs potenciál, amit akarunk az egy expanzió ami a $d$-ben elsőrendű, tehát:
+\begin{equation}
+    \rcurs_\pm \approx r \left(1 \mp \frac{d}{2r} \cos \theta \right)
+\end{equation}
+Vagyis:
+\begin{equation}
+    \frac{1}{\rcurs_\pm} \approx \frac{1}{r} \left(1 \pm \frac{d}{2r} \cos \theta \right)
+\end{equation}
+Tehát a $cos$ függvény:
+\begin{equation}
+    \begin{aligned}
+        \cos &\left[\omega (t - \frac{\rcurs_\pm}{c})\right] \approx \\
+        &\approx \cos \left[\omega \left(t - \frac{r}{c}\right) \pm \frac{\omega d}{2c} \cos \theta \right] = \\
+        &= \cos \left[\omega (t - \frac{r}{c})\right] \cos \left(\frac{\omega d}{2 c} \cos \theta \right) \mp \sin \left[\omega (t - \frac{r}{c})\right] \sin \left(\frac{\omega d}{2 c} \cos \theta \right)
+    \end{aligned}
+\end{equation}
+Most tegyük fel, hogy a dipólus nagyon kicsi a hullámhosszhoz képest:
+\begin{equation}
+    \text{\textbf{közelítés 2:}} \qquad d \ll \lambda = \frac{2 \pi c}{\omega} \implies d \ll \frac{c}{\omega}
+\end{equation}
+Ekkor a koszinusz függvényt tovább tudjuk közelíteni:
+\begin{equation}
+    \cos \left[\omega (t - \frac{\rcurs_\pm}{c})\right] \approx \cos \left[\omega (t - \frac{r}{c})\right] \mp \frac{\omega d}{2 c} \cos \theta \sin \left[\omega (t - \frac{r}{c})\right]
+\end{equation}
+Ezeket visszahelyettesítve a potenciálba, és csak az elsőrendű tagokat megtartva, a következőképpen alakul a potenciál:
+\begin{equation}
+    V(\bold{r}, \theta, t) = \frac{p_0 \cos \theta}{4 \pi \epsilon_0 r^2} \left\{- \frac{\omega}{c} \sin \left[\omega (t - \frac{r}{c})\right] + \frac{1}{r}\cos\left[\omega (t - \frac{r}{c})\right] \right\} 
+\end{equation}
+Statikus esetben ($\omega \to 0$) természetesen visszakapjuk a dipólus potenciált:
+\begin{equation}
+    V_{stat}(\bold{r}, \theta) = \frac{p_0 \cos \theta}{4 \pi \epsilon_0 r^2}
+\end{equation}
+Ez viszont nem az a régió ami minket érdekel. Mi arra vagyunk kíváncsiak, hogy milyen terek élik túl a nagy távolságot a forrástól, amit \textbf{sugárzási zónának} nevezünk:
+\begin{equation}
+    \text{\textbf{közelítés 3:}} \qquad r \gg \lambda = \frac{2 \pi c}{\omega} \implies r \gg \frac{c}{\omega}
+\end{equation}
+Ebben a régióban a potenciál a következő alakra egyszerűsödik:
+\begin{equation}
+    \boxed{V_{rad}(\bold{r}, \theta, t) = - \frac{p_0 \omega \cos \theta}{4 \pi \epsilon_0 c r} \sin \left[\omega (t - \frac{r}{c})\right]}
+\end{equation}
+A vektorpotenciál pedig meghatározza a vezetékben folyó áramot:
+\begin{equation}
+    \bold{A}(\bold{r}, t) = \frac{\mu_0}{4 \pi} \int_{-d/2}^{d/2} \frac{-q_0 \omega \sin \left[\omega (t - \frac{\rcurs}{c})\right] \hat{\bold{z}}}{\rcurs} dz
+\end{equation}
+Tehát:
+\begin{equation}
+    \bold{I}(\bold{r}, t) = \frac{d q}{d t} \hat{\bold{z}} = - q_0 \omega \sin \left[\omega (t - \frac{\rcurs}{c})\right] \hat{\bold{z}}
+\end{equation}
+Mivel az integrál bevezet egy faktort $d$-nek, ezért első rendben közelíthetünk azzal, hogy az integrált kicseréljük az értékével:
+\begin{equation}
+    \boxed{\bold{A}_{rad}(\bold{r}, \theta, t) = - \frac{\mu_0 p_0 \omega}{4 \pi r} \sin \left[\omega (t - \frac{r}{c})\right] \hat{\bold{z}}}
+\end{equation}
+Ebből a potenciálból pedig könnyen maghatárrozhatóak a terek a sugárzási zónában:
+\begin{equation}
+    \boxed{\bold{E}_{rad}(\bold{r}, \theta, t) = - \boldsymbol{\nabla} V - \frac{\partial \bold{A}}{\partial t} = - \frac{\mu_0 p_0 \omega^2}{4 \pi} \left(\frac{\sin \theta}{r}\right) \cos \left[\omega (t - \frac{r}{c})\right] \hat{\boldsymbol{\theta}}}
+\end{equation}
+\begin{equation}
+    \boxed{\bold{B}_{rad}(\bold{r}, \theta, t) = \boldsymbol{\nabla} \times \bold{A} = - \frac{\mu_0 p_0 \omega^2}{4 \pi c} \left(\frac{\sin \theta}{r}\right) \cos \left[\omega (t - \frac{r}{c})\right] \hat{\boldsymbol{\phi}}}
+\end{equation}
+Ahol a $\hat{\boldsymbol{\theta}}$ és $\hat{\boldsymbol{\phi}}$ a gömbi koordinátarendszer egységvektorai. Ezek a terek $1/r$-el csökkennek, és ezért képesek energiát szállítani a végtelenbe.
+Ezek az egyenletek monokromatikus hullámokat eprezentálnak $\omega$ frekvenciával, amelyek a dipólus tengelyére merőlegesen sugároznak. Az amplitúdóik hányadosa pedig $\frac{E_0}{B_0} = c$.
+A terek fázisban vannak egymással, merőlegesek egymásra és transzverzálisak. Tehát pontosan úgy viselkednek ahogy gondoltuk elektromágneses terek esetében vákuumban. Igazából, a valóságban
+ezek gömbhullámok lesznek, de elég távol jó közelítéssel síkhullámokként viselkednek.
+
+Az energia ami kisugárzik a dipólusból a Poynting-vektor segítségével határozható meg:
+\begin{equation}
+    \bold{S}_{rad}(\bold{r}, \theta, t) = \frac{1}{\mu_0} \bold{E}_{rad} \times \bold{B}_{rad} = \frac{\mu_0 p_0^2 \omega^4}{16 \pi^2 c} \left(\frac{\sin^2 \theta}{r^2}\right) \cos^2 \left[\omega (t - \frac{r}{c})\right] \hat{\boldsymbol{r}}
+\end{equation}
+Az intenzitrás pedig a Poynting-vektor időátlagolt értéke egy adott irányban:
+\begin{equation}
+    \langle S_{rad}(\bold{r}, \theta) \rangle = \frac{1}{T} \int_0^T \bold{S}_{rad}(\bold{r}, \theta, t) dt = \frac{\mu_0 p_0^2 \omega^4}{32 \pi^2 c} \left(\frac{\sin^2 \theta}{r^2}\right) \hat{\boldsymbol{r}}
+\end{equation}
+Ahol $T = \frac{2 \pi}{\omega}$ a hullám periódusa. Vegyük észre, hogy nincs sugárzás a dipólus tengelyének irányában ($\theta = 0$ vagy $\pi$), hiszen ott nincs gyorsuló töltés komponens.
+Ez azt jelenti, hogy az intenzitás profil egy toroid alakú minta lesz a dipólus körül, az egyenlítő síkjában maximum értékkel.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/6-tetel/dipol_sugarzas_intenzitas.png}
+    \caption{Dipólus sugárzás intenzitás profilja}
+\end{figure}
+A teljes kisugárzott teljesítmény pedig a következőképpen alakul:
+\begin{equation}
+    \langle P_{rad} \rangle = \oint \langle \bold{S}_{rad}(\bold{r}, \theta) \rangle \cdot d\bold{A} = \frac{\mu_0 p_0^2 \omega^4}{12 \pi c}
+\end{equation}
+
+\subsubsection*{Mágneses Dipólsugárzás}
+Most vegyünk egy vezető hurkot aminek $b$ a sugara, és $I(t)$ a váltakozó áram benne:
+\begin{equation}
+    I(t) = I_0 \cos(\omega t)
+\end{equation}
+Ez pedig az oszcilláló mágneses dipólusmomentum modellje:
+\begin{equation}
+    \bold{m}(t) = I(t) \pi b^2 \hat{z} = m_0 \cos(\omega t) \hat{z} \qquad \text{ahol} \qquad m_0 \equiv I_0 \pi b^2
+\end{equation}
+Ahol $m_0$ a mágneses dipólmomentum maximum értéke.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/6-tetel/magnetikus_dipol_szogek.png}
+    \caption{Mágneses dipólsugárzás geometriája}
+\end{figure}
+A hurok nem változik ezért a skalár potenciál nulla. A retardált vektorpotenciál pedig a következőképpen alakul:
+\begin{equation}
+    \bold{A}(\bold{r}, t) = \frac{\mu_0}{4 \pi} \int \frac{\bold{J}(\bold{r}', t_r)}{\rcurs} dV' = \frac{\mu_0}{4 \pi} \int \frac{I_0  cos \left[\omega (t - \frac{\rcurs}{c})\right]}{\rcurs} d\bold{I}'
+\end{equation}
+Egy pontra közvetlenül az $x$ tengely fölött. $\bold{A}$-nak $y$ irányba kell mutatnia mivel az $x$ komponens szimmetria miatt kiesik, és a $z$ komponens is kiesik mivel a $\bold{I}'$ és $\hat{\rcurs}$ vektorok merőlegesek egymásra.
+Tehát a vektorpotenciál a sugárzási zónában a következőképpen alakul:
+\begin{equation}
+    \bold{A}_{rad}(\bold{r}, \theta, t) = \frac{\mu_0 I_0 b}{4 \pi} \hat{\bold{y}} \int_0^{2 \pi} \frac{\cos \left[\omega (t - \frac{\rcurs}{c})\right]}{\rcurs} \cos \phi' d\phi'
+\end{equation}
+A $cos \phi'$ azért kell, hogy kiválassza az $y$ komponensét $d\bold{I}'$-nek. A Koszinusz tétel alapján a következőképpen alakul $\rcurs$:
+\begin{equation}
+    \rcurs = \sqrt{r^2 + b^2 - 2 r b \cos \psi}
+\end{equation}
+Ahol $\psi$ az a szög ami az $\bold{r}$ és $\bold{b}$ vektorok között van:
+\begin{equation}
+    \bold{r} = r \sin \theta \hat{\bold{x}} + r \cos \theta \hat{\bold{z}} \qquad \text{és} \qquad \bold{b} = b \cos \phi' \hat{\bold{x}} + b \sin \phi' \hat{\bold{y}}
+\end{equation}
+Tehát $\psi = \bold{r} \cdot \bold{b} = r b \sin \theta \cos \phi'$, ezért:
+\begin{equation}
+    \rcurs = \sqrt{r^2 + b^2 - 2 r b \sin \theta \cos \phi'}
+\end{equation}
+Most megint be kell vezetnünk néhány közelítést, ahhoz, hogy ideális dipólusokkal tudjunk számolni. Először is a hurkot nagyon kicsire vesszük a távolsághoz képest:
+\begin{equation}
+    \text{\textbf{közelítés 1:}} \qquad b \ll r
+\end{equation}
+Ekkor:
+\begin{equation}
+    \rcurs \approx r \left(1 - \frac{b}{r} \sin \theta \cos \phi' \right)
+\end{equation}
+Vagyis:
+\begin{equation}
+    \frac{1}{\rcurs} \approx \frac{1}{r} \left(1 + \frac{b}{r} \sin \theta \cos \phi' \right)
+\end{equation}
+És a koszinusz függvény:
+\begin{equation}
+    \begin{aligned}
+        \cos &\left[\omega (t - \frac{\rcurs}{c})\right] \approx \\
+        &\approx \cos \left[\omega \left(t - \frac{r}{c}\right) + \frac{\omega b}{c} \sin \theta \cos \phi' \right] = \\
+        &= \cos \left[\omega (t - \frac{r}{c})\right] \cos \left(\frac{\omega b}{c} \sin \theta \cos \phi'\right) = \\
+        &= \cos \left[\omega (t - \frac{r}{c})\right] \cos \left(\frac{\omega b}{c} \sin \theta \cos \phi' \right) - \sin \left[\omega (t - \frac{r}{c})\right] \sin \left(\frac{\omega b}{c} \sin \theta \cos \phi' \right)
+    \end{aligned}
+\end{equation}
+Mint az előbb, most is feltesszük, hogy a dipólus kicsi a sugárzás hullámhosszához képest:
+\begin{equation}
+    \text{\textbf{közelítés 2:}} \qquad b \ll \frac{c}{\omega}
+\end{equation}
+Ekkor a koszinusz függvényt tovább tudjuk közelíteni:
+\begin{equation}
+    \cos \left[\omega (t - \frac{\rcurs}{c})\right] \approx \cos \left[\omega (t - \frac{r}{c})\right] - \frac{\omega b}{c} \sin \theta \cos \phi' \sin \left[\omega (t - \frac{r}{c})\right]
+\end{equation}
+Ha behelyettesítjük a $1/\rcurs$ és a koszinusz közelítéseket a vektorpotenciálba, és csak az elsőrendű tagokat tartjuk meg, akkor a következőképpen alakul a vektorpotenciál:
+\begin{equation}
+    \begin{aligned}
+        \bold{A}(\bold{r}, \theta, t) \approx \frac{\mu_0 I_0 b}{4 \pi r} \hat{\bold{y}} \int_0^{2 \pi} &\left\{\cos \left[\omega (t - \frac{r}{c}) \right] + b \sin \theta \cos \phi' \times \right. \\
+        &\left. \times \left(\frac{1}{r} \cos \left[\omega (t - \frac{r}{c})\right]  - \frac{\omega}{c} \sin \left[\omega (t - \frac{r}{c})\right]\right) \right\} \cos \phi' d\phi'
+    \end{aligned}
+\end{equation}
+Az első tag untegrálja nulla, mivel az integrál egy teljes perióduson megy végig:
+\begin{equation}
+    \int_0^{2 \pi} \cos \phi' d\phi' = 0
+\end{equation}
+A második tagban $cos^2 \phi'$ szerepel, aminek az integrálja:
+\begin{equation}
+    \int_0^{2 \pi} \cos^2 \phi' d\phi' = \pi
+\end{equation}
+Ezt beírva a vektorpotenciálba, figyelembe véve, hogy általában a $\bold{A}$ a $\hat{\boldsymbol{\phi}}$ irányba mutat a sugárzási zónában, a következőképpen alakul a vektorpotenciál:
+\begin{equation}
+    \bold{A}_{rad}(\bold{r}, \theta, t) = \frac{\mu_0 m_0}{4 \pi} \left(\frac{sin \theta}{r}\right) \left\{\frac{1}{r} \cos \left[\omega (t - \frac{r}{c})\right] - \frac{\omega}{c} \sin \left[\omega (t - \frac{r}{c})\right] \right\} \hat{\boldsymbol{\phi}}
+\end{equation}
+Ez a tökéletes oszcilláló mágneses dipólus vektorpotenciálja a sugárzási zónában. Statikus esetben ($\omega = 0$) visszakapjuk a mágneses dipólus vektorpotenciált:
+\begin{equation}
+    \bold{A}_{stat}(\bold{r}, \theta) = \frac{\mu_0 m_0}{4 \pi} \left(\frac{sin \theta}{r^2}\right) \hat{\boldsymbol{\phi}}
+\end{equation}
+De minket a sugárzási zóna érdekel, tehát még egy közelítést be kell vezetnünk:
+\begin{equation}
+    \text{\textbf{közelítés 3:}} \qquad r \gg \frac{c}{\omega}
+\end{equation}
+Tehát a $\bold{A}$ első tagja elhanyagolható a másodikhoz képest, és a vektorpotenciál a következőképpen alakul:
+\begin{equation}
+    \boxed{\bold{A}_{rad}(\bold{r}, \theta, t) = - \frac{\mu_0 m_0 \omega}{4 \pi c} \left(\frac{sin \theta}{r}\right) \sin \left[\omega (t - \frac{r}{c})\right] \hat{\boldsymbol{\phi}}}
+\end{equation}
+Ebből a potenciálból pedig könnyen meghatározhatóak a terek a sugárzási zónában:
+\begin{equation}
+    \boxed{\bold{E}_{rad}(\bold{r}, \theta, t) = - \frac{\partial \bold{A}}{\partial t} = - \frac{\mu_0 m_0 \omega^2}{4 \pi c} \left(\frac{sin \theta}{r}\right) \cos \left[\omega (t - \frac{r}{c})\right] \hat{\boldsymbol{\phi}}}
+\end{equation}
+\begin{equation}
+    \boxed{\bold{B}_{rad}(\bold{r}, \theta, t) = \boldsymbol{\nabla} \times \bold{A} = - \frac{\mu_0 m_0 \omega^2}{4 \pi c^2} \left(\frac{sin \theta}{r}\right) \cos \left[\omega (t - \frac{r}{c})\right] \hat{\boldsymbol{\theta}}}
+\end{equation}
+Ahol a $\hat{\boldsymbol{\theta}}$ és $\hat{\boldsymbol{\phi}}$ a gömbi koordinátarendszer egységvektorai. Ezek a terek $1/r$-el csökkennek, és ezért képesek energiát szállítani a végtelenbe.
+Ezek az egyenletek monokromatikus hullámokat eprezentálnak $\omega$ frekvenciával, amelyek a dipólus tengelyére merőlegesen sugároznak. Az amplitúdóik hányadosa pedig $\frac{E_0}{B_0} = c$.
+A terek fázisban vannak egymással, merőlegesek egymásra és transzverzálisak. Tehát pontosan úgy viselkednek ahogy gondoltuk elektromágneses terek esetében vákuumban. Az energia ami kisugárzik a dipólusból a Poynting-vektor segítségével határozható meg:
+\begin{equation}
+    \bold{S}_{rad}(\bold{r}, \theta, t) = \frac{1}{\mu_0} \bold{E}_{rad} \times \bold{B}_{rad} = \frac{\mu_0 m_0^2 \omega^4}{16 \pi^2 c^3} \left(\frac{\sin^2 \theta}{r^2}\right) \cos^2 \left[\omega (t - \frac{r}{c})\right] \hat{\boldsymbol{r}}
+\end{equation}
+Az intenzitrás pedig a Poynting-vektor időátlagolt értéke egy adott irányban:
+\begin{equation}
+    \langle S_{rad}(\bold{r}, \theta) \rangle = \frac{1}{T} \int_0^T \bold{S}_{rad}(\bold{r}, \theta, t) dt = \frac{\mu_0 m_0^2 \omega^4}{32 \pi^2 c^3} \left(\frac{\sin^2 \theta}{r^2}\right) \hat{\boldsymbol{r}}
+\end{equation}
+Ahol $T = \frac{2 \pi}{\omega}$ a hullám periódusa. Vegyük észre, hogy itt sincs sugárzás a dipólus tengelyének irányában ($\theta = 0$ vagy $\pi$), hiszen ott nincs gyorsuló töltés komponens.
+Ez azt jelenti, hogy az intenzitás profil egy toroid alakú minta lesz a dipólus körül, az egyenlítő síkjában maximum értékkel.
+A teljes kisugárzott teljesítmény pedig a következőképpen alakul:
+\begin{equation}
+    \langle P_{rad} \rangle = \oint \langle \bold{S}_{rad}(\bold{r}, \theta) \rangle \cdot d\bold{A} = \frac{\mu_0 m_0^2 \omega^4}{12 \pi c^3}
+\end{equation}
+Viszont van egy fontos különbség az elektromos és a mágneses dipólus sugárzás között: Egy olyan konfigurációban, ahol a dimenziók hasonlóak, a teljesítmény az elektromos dipólsugárzás esetében sokkal nagyobb lesz, mint a mágneses dipólsugárzás esetében:
+\begin{equation}
+    \frac{P_{\text{mágneses}}}{P_{\text{elektromos}}} = \left(\frac{m_0}{p_0c}\right)^2
+\end{equation}
+Ahol $m_0 = \pi b^2 I_0$ a mágneses dipólmomentum maximum értéke, és $p_0 = q_0 d$ az elektromos dipólmomentum maximum értéke. Az áram az elektromos esetben $I_0 = q_0 \omega$ volt, és ha $d = \pi b$-nek vesszük, akkor:
+\begin{equation}
+    \frac{P_{\text{mágneses}}}{P_{\text{elektromos}}} = \left(\frac{\omega b}{c}\right)^2
+\end{equation}
+De a $\omega b / c$ pont az a mennyiség amit kicsinek feltételeztünk, és itt négyzetre van emelve. Tehát normál esetben az elektromos tér dominál. A mágneses sugárzást csak akkor lehet érzékelni,
+ha nagyon óvatosan úgy tervezzük meg a rendszert, hogy minden elektromos hozzájárulást kiiktassunk.
+
+\subsubsection*{Sugárzás tetszőleges forrásból}
+Eddig olyan rendszereket vizsgáltunk ahol a mágneses és az elektomos dipólusok oszcilláltak. De a dipólsugárzást nem túl nehéz általánosítani egy teljesen tetszőleges töltés és áram konfigurációra,
+feltéve, hogy a forrás relatíve lokalizált az eredet környékén. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/6-tetel/tetszoleges_forras.png}
+    \caption{Tetszőleges lokalizált forrás geometriája}
+\end{figure}
+Ekkor a retardált potenciálok a következőképpen alakulnak nagy $r$-nél:
+\begin{equation}
+    V_{rad}(\bold{r}, t) = \frac{1}{4 \pi \epsilon_0} \int \frac{\rho(\bold{r}', t - \frac{\rcurs}{c})}{\rcurs} dV'
+\end{equation}
+Ahol:
+\begin{equation}
+    \rcurs = |\bold{r} - \bold{r}'| = \sqrt{r^2 + r'^2 - 2 \bold{r} \cdot \bold{r}'}
+\end{equation}
+Ahogy eddig is, itt is bevezetjük a következő közelítést:
+\begin{equation}
+    \text{\textbf{közelítés 1:}} \qquad r' \ll r
+\end{equation}
+Itt $r'$ a változó ami szerint integrálunnk, az első közelítés ebben a kontextusban azt jelenti, hogy $r'$ maximum értéke sokkal kisebb, mint $r$. Ekkor:
+\begin{equation}
+    \rcurs \approx r\left(1 - \frac{\bold{r} \cdot \bold{r'}}{r^2}\right)
+\end{equation}
+Vagyis:
+\begin{equation}
+    \frac{1}{\rcurs} \approx \frac{1}{r} \left(1 + \frac{\bold{r} \cdot \bold{r'}}{r^2}\right)
+\end{equation}
+És a töltéssűrűség:
+\begin{equation}
+    \rho(\bold{r}', t - \frac{\rcurs}{c}) \approx \rho \left(\bold{r'}, t - \frac{r}{c} + \frac{\hat{\bold{r}} \cdot \bold{r'}}{c}\right)
+\end{equation}
+Ezt a töltéssűrűséget a retardált idő ($t_0 \equiv t - \frac{r}{c}$) körül Taylor sorba fejthetjük:
+\begin{equation}
+    \rho(\bold{r}', t - \frac{\rcurs}{c}) \approx \rho(\bold{r}', t_0) + \left(\frac{\hat{\bold{r}} \cdot \bold{r'}}{c} \right) \frac{\partial \rho(\bold{r}', t_0)}{\partial t} + \ldots
+\end{equation}
+A magasabb deriváljtainakltakat eldobhatjuk, ha a következő közelítés érvényes:
+\begin{equation}
+    \text{\textbf{közelítés 2:}} \qquad r' \ll \frac{c}{|\ddot{\rho}/\dot{\rho}|}, \quad \frac{c}{|\dddot{\rho}/\dot{\rho}|^{1/2}}, \quad \frac{c}{|\ddddot{\rho}/\dot{\rho}|^{1/3}}, \quad \ldots
+\end{equation}
+Ahol az időderviáltat megint a Newton jelöléssel jelöljük. Egy oszcilláló rendszerre ezek mind $\sim \frac{c}{\omega}$-ra redukálódnak, tehát visszakapjuk a korábbi közelítést.
+Ezeket a közelítéseket visszahelyettesítve a potenciálba, és csak az elsőrendű tagokat megtartva, a következőképpen alakul a potenciál:
+\begin{equation}
+    V_{rad}(\bold{r}, t) \approx \frac{1}{4 \pi \epsilon_0 r} \left[\int \rho(\bold{r'}, t_0) dV' + \frac{\hat{\bold{r}}}{r} \int \bold{r'} \rho(\bold{r'}, t_0) dV' + \frac{\hat{\bold{r}}}{c} \frac{d}{dt} \int \bold{r'} \rho(\bold{r'}, t_0) dV' \right]
+\end{equation}
+Az első integrál a teljes töltést $Q$ adja meg $t_0$ időpontban. Mivel a töltés időben megmarad, a másik két integrál az elektromos dipólmomentumot adja meg $t_0$-ban. Tehát:
+\begin{equation}
+    V_{rad}(\bold{r}, t) \approx \frac{1}{4 \pi \epsilon_0} \left[ \frac{Q}{r} + \frac{\hat{\bold{r}} \cdot \bold{p}(t_0)}{r^2} + \frac{\hat{\bold{r}} \cdot \dot{\bold{p}}(t_0)}{rc} \right]
+\end{equation} 
+Statikus esetben az első és a második tag a monopól és dipól hozzájárulást adja vissza a multipólus kifejtéséhez a potenciálnak. A harmadik tag pedig nulla lenne.
+
+A vektorpotenciál esetében hasonló közelítéseket alkalmazva, a következőképpen alakul a sugárzási zóna vektorpotenciálja:
+\begin{equation}
+    \bold{A}_{rad}(\bold{r}, t) = \frac{\mu_0}{4 \pi} \int \frac{\bold{J}(\bold{r'}, t - \frac{\rcurs}{c})}{\rcurs} dV'
+\end{equation}
+Az elsőrendű közelítés miatt $\rcurs$ felcserélhető $r$-rel az integrálban:
+\begin{equation}
+    \bold{A}_{rad}(\bold{r}, t) \approx \frac{\mu_0}{4 \pi r} \int \bold{J}(\bold{r'}, t_0) dV'
+\end{equation}
+A $\bold{J}$ integrálja pedig az áram időderiváltját adja meg a töltésmegmaradás törvénye alapján:
+\begin{equation}
+    \int \bold{J}(\bold{r'}, t_0) dV' = \frac{d}{dt} \int \bold{r'} \rho(\bold{r'}, t_0) dV' = \dot{\bold{p}}(t_0)
+\end{equation}
+Tehát a vektorpotenciál a következőképpen alakul:
+\begin{equation}
+    \bold{A}_{rad}(\bold{r}, t) \approx \frac{\mu_0}{4 \pi} \frac{\dot{\bold{p}}(t_0)}{r}
+\end{equation}
+Mostmár csak a tereket kell meghatározni, ahol még egy közelítést alkalmazunk:
+\begin{equation}
+    \text{\textbf{közelítés 3:}} \qquad \frac{1}{r^2} \text{-es tagok elhagyhatóak a $\bold{B}$ és $\bold{E}$ térben}
+\end{equation}
+Például a Coulomb-tér:
+\begin{equation}
+    \bold{E} = \frac{1}{4 \pi \epsilon_0} \frac{Q}{r^2} \hat{\bold{r}}
+\end{equation}
+Nem ad semmit az elektromágneses sugárzáshoz. Igazából a sugárzás teljes egészében azokból a részekből jönnek, amelyeket differenciálunk $t_0$ szerint:
+\begin{equation}
+    \boldsymbol{\nabla} t_0 = - \frac{1}{c} \boldsymbol{\nabla}r = - \frac{1}{c} \hat{\bold{r}}
+\end{equation}
+Tehát a potenciál gradiense:
+\begin{equation}
+    \boldsymbol{\nabla} V_{rad}(\bold{r}, t) = \boldsymbol{\nabla} \left[\frac{1}{4 \pi \epsilon_0} \frac{\hat{\bold{r}} \cdot \dot{\bold{p}}(t_0)}{rc}\right] \approx \frac{1}{4 \pi \epsilon_0} \left[\frac{\hat{\bold{r}} \cdot \ddot{\bold{p}}(t_0)}{rc}\right]\boldsymbol{\nabla} t_0 = - \frac{1}{4 \pi \epsilon_0 c^2} \frac{\left[\hat{\bold{r}} \cdot \ddot{\bold{p}}(t_0)\right]}{r} \hat{\bold{r}}
+\end{equation}
+Hasonlóan a vektor potenciál rotációja:
+\begin{equation}
+    \boldsymbol{\nabla} \times \bold{A}_{rad}(\bold{r}, t) \approx \frac{\mu_0}{4 \pi r} \left[\boldsymbol{\nabla} \times \dot{\bold{p}}(t_0) \right] = - \frac{\mu_0}{4 \pi c r} \left[\hat{\bold{r}} \times\dot{\bold{p}}(t_0) \right]
+\end{equation}
+Miközben a vektor potenciál időderiváltja:
+\begin{equation}
+    \frac{\partial \bold{A}_{rad}(\bold{r}, t)}{\partial t} \approx \frac{\mu_0}{4 \pi} \frac{\ddot{\bold{p}}(t_0)}{r}
+\end{equation}
+Ezeket visszahelyettesítve az elektromos és mágneses tér kifejezéseibe, a következőképpen alakulnak a terek a sugárzási zónában:
+\begin{equation}
+    \boxed{\bold{E}_{rad}(\bold{r}, t) = - \boldsymbol{\nabla} V_{rad} - \frac{\partial \bold{A}_{rad}}{\partial t} = \frac{\mu_0}{4 \pi r} \left[(\hat{\bold{r}} \cdot \ddot{\bold{p}})\hat{\bold{r}} - \ddot{\bold{p}}\right] = - \frac{\mu_0}{4 \pi r} \left[\hat{\bold{r}} \times (\hat{\bold{r}} \times \ddot{\bold{p}})\right]}
+\end{equation}
+Ahol $\ddot{\bold{p}}$ a $t_0 = t - \frac{r}{c}$ időpontban értékelt második időderivált. A mágneses tér pedig:
+\begin{equation}
+    \boxed{\bold{B}_{rad}(\bold{r}, t) = \boldsymbol{\nabla} \times \bold{A}_{rad} = - \frac{\mu_0}{4 \pi r c} \left[\hat{\bold{r}} \times \ddot{\bold{p}}\right]}
+\end{equation}
+Ha gömbi-koordinátákat használunk, és a $z$ tengely irányába helyezzük a dipólusmomentumot, akkor a terek a következőképpen alakulnak:
+        \begin{equation}
+            \bold{E}_{rad}(\bold{r}, \theta, t) = - \frac{\mu_0 \ddot{p}(t_0)}{4 \pi} \left(\frac{\sin \theta}{r}\right) \hat{\boldsymbol{\theta}}
+\end{equation}
+\begin{equation}
+    \bold{B}_{rad}(\bold{r}, \theta, t) = - \frac{\mu_0 \ddot{p}(t_0)}{4 \pi c} \left(\frac{\sin \theta}{r}\right) \hat{\boldsymbol{\phi}}
+\end{equation}
+És a Poynting-vektor:
+\begin{equation}
+    \bold{S}_{rad}(\bold{r}, \theta, t) \approx \frac{1}{\mu_0} \bold{E}_{rad} \times \bold{B}_{rad} = \frac{\mu_0}{16 \pi^2 c} \left[\ddot{p}(t_0)\right]^2 \left(\frac{\sin^2 \theta}{r^2}\right) \hat{\boldsymbol{r}}
+\end{equation}
+A teljesítmény pedig, ami átmegy a gömbfelületen:
+\begin{equation}
+    P_{rad}(t) = \oint \bold{S}_{rad}(\bold{r}, \theta, t) \cdot d\bold{A} = \frac{\mu_0}{6 \pi c} \left[\ddot{p}(t - \frac{r}{c})\right]^2
+\end{equation}
+A teljes kisugárzott teljesítmény tehát csak a dipólusmomentum második időderiváltjától függ:
+\begin{equation}
+    P_{rad}(t) \approx \frac{\mu_0}{6 \pi c} \left[\ddot{p}(t - \frac{r}{c})\right]^2
+\end{equation}
+
+\subsubsection*{Példa: egy töltés sugárzása}
+Ha egy töltés $q$ egyenes vonal mentén oszcillál, akkor a dipólusmomentuma:
+\begin{equation}
+    \bold{p}(t) = q \bold{r}(t)
+\end{equation}
+A második időderivált pedig:
+\begin{equation}
+    \ddot{\bold{p}}(t) = q \ddot{\bold{r}}(t) = q \bold{a}(t)
+\end{equation}
+Tehát a kisugárzott teljesítmény:
+\begin{equation}
+    P_{rad}(t) = \frac{\mu_0 q^2 a^2}{6 \pi c}
+\end{equation}
+Ez a híres \textbf{Larmor formula}, ami megadja a kisugárzott teljesítményt egy gyorsuló töltés esetében. Megjegyzendő, hogy a kisugárzott teljesítmény arányos a gyorsulás négyzetével, tehát egy állandó sebességgel mozgó töltés nem sugároz.
+Ez összhangban van azzal a ténnyel, hogy egy egyenes vonalú, egyenletes mozgás nem generál időben változó elektromágneses teret.
+
+\newpage
+\section{Geometriai optika és alkalmazásai}
+Fermat-elv. Paraxiális közelítés. Optikai, leképezési törvények, felbontóképesség. Optikai eszközök. Optikai jelenségek a természetben, kausztikák.
+
 
 
 \end{document}
