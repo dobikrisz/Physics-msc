@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.9.29)  1 DEC 2025 13:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.9.29)  7 DEC 2025 12:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -460,7 +460,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 52--54
 
  []
 
-<imgs/1-tetel/kinematika-pont.png, id=602, 1927.2pt x 1166.3575pt>
+<imgs/1-tetel/kinematika-pont.png, id=675, 1927.2pt x 1166.3575pt>
 File: imgs/1-tetel/kinematika-pont.png Graphic file (type png)
 <use imgs/1-tetel/kinematika-pont.png>
 Package pdftex.def Info: imgs/1-tetel/kinematika-pont.png  used on input line 60.
@@ -500,12 +500,12 @@ Overfull \hbox (3.90219pt too wide) in paragraph at lines 134--135
 \T1/lmr/m/n/12 A koordináta-rendszerek közötti átváltá-sokat a következ® ké-pletek segít-ségével végezhetjük
  []
 
-<imgs/1-tetel/descartes-henger.png, id=653, 776.9025pt x 419.5675pt>
+<imgs/1-tetel/descartes-henger.png, id=725, 776.9025pt x 419.5675pt>
 File: imgs/1-tetel/descartes-henger.png Graphic file (type png)
 <use imgs/1-tetel/descartes-henger.png>
 Package pdftex.def Info: imgs/1-tetel/descartes-henger.png  used on input line 158.
 (pdftex.def)             Requested size: 226.48395pt x 122.31166pt.
-<imgs/1-tetel/coord-systems.png, id=654, 754.82pt x 509.905pt>
+<imgs/1-tetel/coord-systems.png, id=726, 754.82pt x 509.905pt>
 File: imgs/1-tetel/coord-systems.png Graphic file (type png)
 <use imgs/1-tetel/coord-systems.png>
 Package pdftex.def Info: imgs/1-tetel/coord-systems.png  used on input line 185.
@@ -521,7 +521,7 @@ Overfull \hbox (42.37866pt too wide) detected at line 232
  []
 
 [5 <./imgs/1-tetel/coord-systems.png>]
-<imgs/1-tetel/natural-coord.jpg, id=691, 253.90434pt x 192.50682pt>
+<imgs/1-tetel/natural-coord.jpg, id=764, 253.90434pt x 192.50682pt>
 File: imgs/1-tetel/natural-coord.jpg Graphic file (type jpg)
 <use imgs/1-tetel/natural-coord.jpg>
 Package pdftex.def Info: imgs/1-tetel/natural-coord.jpg  used on input line 252.
@@ -542,7 +542,7 @@ Overfull \hbox (37.03596pt too wide) in paragraph at lines 298--300
  []
 
 [8] [9] [10] [11]
-<imgs/1-tetel/Centrifugal.png, id=762, 783.92876pt x 595.22375pt>
+<imgs/1-tetel/Centrifugal.png, id=834, 783.92876pt x 595.22375pt>
 File: imgs/1-tetel/Centrifugal.png Graphic file (type png)
 <use imgs/1-tetel/Centrifugal.png>
 Package pdftex.def Info: imgs/1-tetel/Centrifugal.png  used on input line 485.
@@ -583,7 +583,7 @@ Overfull \hbox (0.4729pt too wide) in paragraph at lines 1426--1426
  []
 
 [33] [34]
-<imgs/1-tetel/lorentz.png, id=1101, 527.9725pt x 313.17pt>
+<imgs/1-tetel/lorentz.png, id=1173, 527.9725pt x 313.17pt>
 File: imgs/1-tetel/lorentz.png Graphic file (type png)
 <use imgs/1-tetel/lorentz.png>
 Package pdftex.def Info: imgs/1-tetel/lorentz.png  used on input line 1486.
@@ -599,7 +599,7 @@ Overfull \hbox (3.41954pt too wide) in paragraph at lines 1672--1675
  []
 
 [38] [39] [40]
-<imgs/1-tetel/lorentz2.png, id=1203, 544.0325pt x 448.67625pt>
+<imgs/1-tetel/lorentz2.png, id=1275, 544.0325pt x 448.67625pt>
 File: imgs/1-tetel/lorentz2.png Graphic file (type png)
 <use imgs/1-tetel/lorentz2.png>
 Package pdftex.def Info: imgs/1-tetel/lorentz2.png  used on input line 1809.
@@ -625,7 +625,7 @@ Overfull \hbox (8.037pt too wide) in paragraph at lines 1939--1941
  []
 
 [45]
-<imgs/2-tetel/CalculusofVariations.png, id=1251, 653.44125pt x 338.26375pt>
+<imgs/2-tetel/CalculusofVariations.png, id=1324, 653.44125pt x 338.26375pt>
 File: imgs/2-tetel/CalculusofVariations.png Graphic file (type png)
 <use imgs/2-tetel/CalculusofVariations.png>
 Package pdftex.def Info: imgs/2-tetel/CalculusofVariations.png  used on input line 1975.
@@ -640,7 +640,7 @@ Overfull \hbox (0.78322pt too wide) in paragraph at lines 2046--2048
 \T1/lmr/m/n/12 A Hamilton-elv ha-sonló a Maupertuis-elvhez, de egy kic-sit ál-talános-abb for-mában. Hamil-
  []
 
-<imgs/2-tetel/Hamilton1.png, id=1278, 786.94pt x 645.41125pt>
+<imgs/2-tetel/Hamilton1.png, id=1350, 786.94pt x 645.41125pt>
 File: imgs/2-tetel/Hamilton1.png Graphic file (type png)
 <use imgs/2-tetel/Hamilton1.png>
 Package pdftex.def Info: imgs/2-tetel/Hamilton1.png  used on input line 2060.
@@ -651,7 +651,7 @@ Overfull \hbox (1.03247pt too wide) in paragraph at lines 2057--2063
  []
 
 [48 <./imgs/2-tetel/Hamilton1.png>]
-<imgs/2-tetel/Hamilton2.png, id=1290, 808.01875pt x 831.105pt>
+<imgs/2-tetel/Hamilton2.png, id=1362, 808.01875pt x 831.105pt>
 File: imgs/2-tetel/Hamilton2.png Graphic file (type png)
 <use imgs/2-tetel/Hamilton2.png>
 Package pdftex.def Info: imgs/2-tetel/Hamilton2.png  used on input line 2070.
@@ -682,24 +682,24 @@ Overfull \hbox (8.70544pt too wide) in paragraph at lines 2714--2717
  []
 
 [62]
-<imgs/3-tetel/csillapitott_rezges.jpg, id=1519, 108.405pt x 156.585pt>
+<imgs/3-tetel/csillapitott_rezges.jpg, id=1591, 108.405pt x 156.585pt>
 File: imgs/3-tetel/csillapitott_rezges.jpg Graphic file (type jpg)
 <use imgs/3-tetel/csillapitott_rezges.jpg>
 Package pdftex.def Info: imgs/3-tetel/csillapitott_rezges.jpg  used on input line 2728.
 (pdftex.def)             Requested size: 181.18439pt x 261.74449pt.
  [63 <./imgs/3-tetel/csillapitott_rezges.jpg>]
-<imgs/3-tetel/csillapitas_merteke.jpg, id=1527, 342.5598pt x 184.0476pt>
+<imgs/3-tetel/csillapitas_merteke.jpg, id=1599, 342.5598pt x 184.0476pt>
 File: imgs/3-tetel/csillapitas_merteke.jpg Graphic file (type jpg)
 <use imgs/3-tetel/csillapitas_merteke.jpg>
 Package pdftex.def Info: imgs/3-tetel/csillapitas_merteke.jpg  used on input line 2807.
 (pdftex.def)             Requested size: 226.48395pt x 121.68521pt.
-<imgs/3-tetel/csillapitott_rezgesek_tipusai.png, id=1528, 513.92pt x 385.44pt>
+<imgs/3-tetel/csillapitott_rezgesek_tipusai.png, id=1600, 513.92pt x 385.44pt>
 File: imgs/3-tetel/csillapitott_rezgesek_tipusai.png Graphic file (type png)
 <use imgs/3-tetel/csillapitott_rezgesek_tipusai.png>
 Package pdftex.def Info: imgs/3-tetel/csillapitott_rezgesek_tipusai.png  used on input line 2813.
 (pdftex.def)             Requested size: 226.48395pt x 169.86465pt.
  [64]
-<imgs/3-tetel/kenyszerrezges.png, id=1547, 1032.85875pt x 422.57875pt>
+<imgs/3-tetel/kenyszerrezges.png, id=1619, 1032.85875pt x 422.57875pt>
 File: imgs/3-tetel/kenyszerrezges.png Graphic file (type png)
 <use imgs/3-tetel/kenyszerrezges.png>
 Package pdftex.def Info: imgs/3-tetel/kenyszerrezges.png  used on input line 2828.
@@ -710,41 +710,41 @@ Overfull \hbox (63.99863pt too wide) detected at line 2860
  []
 
 [66]
-<imgs/3-tetel/resonance.png, id=1572, 682.55pt x 493.845pt>
+<imgs/3-tetel/resonance.png, id=1645, 682.55pt x 493.845pt>
 File: imgs/3-tetel/resonance.png Graphic file (type png)
 <use imgs/3-tetel/resonance.png>
 Package pdftex.def Info: imgs/3-tetel/resonance.png  used on input line 2923.
 (pdftex.def)             Requested size: 271.7835pt x 196.64531pt.
  [67]
-<imgs/3-tetel/csatolt_rezges.png, id=1588, 76.1244pt x 21.07875pt>
+<imgs/3-tetel/csatolt_rezges.png, id=1661, 76.1244pt x 21.07875pt>
 File: imgs/3-tetel/csatolt_rezges.png Graphic file (type png)
 <use imgs/3-tetel/csatolt_rezges.png>
 Package pdftex.def Info: imgs/3-tetel/csatolt_rezges.png  used on input line 2933.
 (pdftex.def)             Requested size: 271.7835pt x 75.28639pt.
  [68 <./imgs/3-tetel/resonance.png> <./imgs/3-tetel/csatolt_rezges.png>] [69]
-<imgs/3-tetel/lebeges.png, id=1622, 414.54875pt x 153.57375pt>
+<imgs/3-tetel/lebeges.png, id=1694, 414.54875pt x 153.57375pt>
 File: imgs/3-tetel/lebeges.png Graphic file (type png)
 <use imgs/3-tetel/lebeges.png>
 Package pdftex.def Info: imgs/3-tetel/lebeges.png  used on input line 3032.
 (pdftex.def)             Requested size: 271.7835pt x 100.68878pt.
-<imgs/3-tetel/linearis_lanc.png, id=1623, 386.44376pt x 134.5025pt>
+<imgs/3-tetel/linearis_lanc.png, id=1695, 386.44376pt x 134.5025pt>
 File: imgs/3-tetel/linearis_lanc.png Graphic file (type png)
 <use imgs/3-tetel/linearis_lanc.png>
 Package pdftex.def Info: imgs/3-tetel/linearis_lanc.png  used on input line 3043.
 (pdftex.def)             Requested size: 362.37569pt x 126.12654pt.
  [70 <./imgs/3-tetel/lebeges.png>] [71 <./imgs/3-tetel/linearis_lanc.png>]
-<imgs/3-tetel/egyatomos_linearis_lanc.png, id=1648, 255.95625pt x 252.945pt>
+<imgs/3-tetel/egyatomos_linearis_lanc.png, id=1720, 255.95625pt x 252.945pt>
 File: imgs/3-tetel/egyatomos_linearis_lanc.png Graphic file (type png)
 <use imgs/3-tetel/egyatomos_linearis_lanc.png>
 Package pdftex.def Info: imgs/3-tetel/egyatomos_linearis_lanc.png  used on input line 3126.
 (pdftex.def)             Requested size: 181.18439pt x 179.05185pt.
-<imgs/3-tetel/ketatomos_linearis_lanc.png, id=1649, 642.4pt x 161.60374pt>
+<imgs/3-tetel/ketatomos_linearis_lanc.png, id=1721, 642.4pt x 161.60374pt>
 File: imgs/3-tetel/ketatomos_linearis_lanc.png Graphic file (type png)
 <use imgs/3-tetel/ketatomos_linearis_lanc.png>
 Package pdftex.def Info: imgs/3-tetel/ketatomos_linearis_lanc.png  used on input line 3137.
 (pdftex.def)             Requested size: 362.37569pt x 91.16325pt.
  [72 <./imgs/3-tetel/egyatomos_linearis_lanc.png>] [73 <./imgs/3-tetel/ketatomos_linearis_lanc.png>]
-<imgs/3-tetel/ketatomos_linearis_lanc_diszperzio.png, id=1681, 280.04625pt x 253.94875pt>
+<imgs/3-tetel/ketatomos_linearis_lanc_diszperzio.png, id=1754, 280.04625pt x 253.94875pt>
 File: imgs/3-tetel/ketatomos_linearis_lanc_diszperzio.png Graphic file (type png)
 <use imgs/3-tetel/ketatomos_linearis_lanc_diszperzio.png>
 Package pdftex.def Info: imgs/3-tetel/ketatomos_linearis_lanc_diszperzio.png  used on input line 3233.
@@ -764,13 +764,13 @@ Overfull \hbox (9.67288pt too wide) in paragraph at lines 3351--3354
 \T1/lmr/m/n/12 el. Az el-lip-szis paraméterei az en-er-gia és az im-pulzus-mo-men-tum füg-gvényében határozhatók
  []
 
-<imgs/3-tetel/potencialvolgy.png, id=1729, 501.875pt x 329.23pt>
+<imgs/3-tetel/potencialvolgy.png, id=1801, 501.875pt x 329.23pt>
 File: imgs/3-tetel/potencialvolgy.png Graphic file (type png)
 <use imgs/3-tetel/potencialvolgy.png>
 Package pdftex.def Info: imgs/3-tetel/potencialvolgy.png  used on input line 3363.
 (pdftex.def)             Requested size: 271.7835pt x 178.29898pt.
 [77]
-<imgs/3-tetel/vegtelenpotencialvolgy.png, id=1741, 277.035pt x 195.73125pt>
+<imgs/3-tetel/vegtelenpotencialvolgy.png, id=1813, 277.035pt x 195.73125pt>
 File: imgs/3-tetel/vegtelenpotencialvolgy.png Graphic file (type png)
 <use imgs/3-tetel/vegtelenpotencialvolgy.png>
 Package pdftex.def Info: imgs/3-tetel/vegtelenpotencialvolgy.png  used on input line 3372.
@@ -785,19 +785,19 @@ Overfull \hbox (2.73753pt too wide) in paragraph at lines 3465--3466
 []\T1/lmr/m/n/12 a hul-lám-füg-gvények vál-to-gat-nak páros és párat-lan füg-gvények között, ah-ogy növeljük
  []
 
-<imgs/3-tetel/vegtelen_potencialvolgy_hullamfuggvenyek.png, id=1770, 547.04375pt x 125.46875pt>
+<imgs/3-tetel/vegtelen_potencialvolgy_hullamfuggvenyek.png, id=1842, 547.04375pt x 125.46875pt>
 File: imgs/3-tetel/vegtelen_potencialvolgy_hullamfuggvenyek.png Graphic file (type png)
 <use imgs/3-tetel/vegtelen_potencialvolgy_hullamfuggvenyek.png>
 Package pdftex.def Info: imgs/3-tetel/vegtelen_potencialvolgy_hullamfuggvenyek.png  used on input line 3469.
 (pdftex.def)             Requested size: 271.7835pt x 62.336pt.
 [80 <./imgs/3-tetel/vegtelen_potencialvolgy_hullamfuggvenyek.png>]
-<imgs/3-tetel/vegespotencialvolgy.png, id=1784, 290.08376pt x 193.72375pt>
+<imgs/3-tetel/vegespotencialvolgy.png, id=1856, 290.08376pt x 193.72375pt>
 File: imgs/3-tetel/vegespotencialvolgy.png Graphic file (type png)
 <use imgs/3-tetel/vegespotencialvolgy.png>
 Package pdftex.def Info: imgs/3-tetel/vegespotencialvolgy.png  used on input line 3487.
 (pdftex.def)             Requested size: 181.18439pt x 121.00018pt.
  [81 <./imgs/3-tetel/vegespotencialvolgy.png>] [82]
-<imgs/3-tetel/veges_potencialvolgy_megengedett_energiak.png, id=1812, 556.0775pt x 216.81pt>
+<imgs/3-tetel/veges_potencialvolgy_megengedett_energiak.png, id=1885, 556.0775pt x 216.81pt>
 File: imgs/3-tetel/veges_potencialvolgy_megengedett_energiak.png Graphic file (type png)
 <use imgs/3-tetel/veges_potencialvolgy_megengedett_energiak.png>
 Package pdftex.def Info: imgs/3-tetel/veges_potencialvolgy_megengedett_energiak.png  used on input line 3598.
@@ -808,7 +808,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 3661--3666
  []
 
 [85]
-<imgs/3-tetel/veges_potencialvolgy_atvitel.png, id=1861, 342.27875pt x 194.7275pt>
+<imgs/3-tetel/veges_potencialvolgy_atvitel.png, id=1933, 342.27875pt x 194.7275pt>
 File: imgs/3-tetel/veges_potencialvolgy_atvitel.png Graphic file (type png)
 <use imgs/3-tetel/veges_potencialvolgy_atvitel.png>
 Package pdftex.def Info: imgs/3-tetel/veges_potencialvolgy_atvitel.png  used on input line 3739.
@@ -834,7 +834,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 3897--3903
  []
 
 [89]
-<imgs/3-tetel/harmonikus_oszcillator_letra_operatorok.png, id=1924, 332.24126pt x 506.89375pt>
+<imgs/3-tetel/harmonikus_oszcillator_letra_operatorok.png, id=1997, 332.24126pt x 506.89375pt>
 File: imgs/3-tetel/harmonikus_oszcillator_letra_operatorok.png Graphic file (type png)
 <use imgs/3-tetel/harmonikus_oszcillator_letra_operatorok.png>
 Package pdftex.def Info: imgs/3-tetel/harmonikus_oszcillator_letra_operatorok.png  used on input line 3927.
@@ -850,12 +850,12 @@ Overfull \hbox (17.09323pt too wide) in paragraph at lines 4193--4196
  []
 
 [96] [97] [98]
-<imgs/3-tetel/hidrogen_atom.png, id=2067, 257.96375pt x 207.77625pt>
+<imgs/3-tetel/hidrogen_atom.png, id=2139, 257.96375pt x 207.77625pt>
 File: imgs/3-tetel/hidrogen_atom.png Graphic file (type png)
 <use imgs/3-tetel/hidrogen_atom.png>
 Package pdftex.def Info: imgs/3-tetel/hidrogen_atom.png  used on input line 4353.
 (pdftex.def)             Requested size: 181.18439pt x 145.94012pt.
-<imgs/3-tetel/hidrogen_atom_potencial.png, id=2068, 237.88875pt x 162.6075pt>
+<imgs/3-tetel/hidrogen_atom_potencial.png, id=2140, 237.88875pt x 162.6075pt>
 File: imgs/3-tetel/hidrogen_atom_potencial.png Graphic file (type png)
 <use imgs/3-tetel/hidrogen_atom_potencial.png>
 Package pdftex.def Info: imgs/3-tetel/hidrogen_atom_potencial.png  used on input line 4358.
@@ -866,13 +866,13 @@ Overfull \hbox (24.84065pt too wide) detected at line 4418
  []
 
 [101] [102] [103]
-<imgs/3-tetel/hidrogen_atom_energiak.png, id=2141, 426.59375pt x 415.5525pt>
+<imgs/3-tetel/hidrogen_atom_energiak.png, id=2214, 426.59375pt x 415.5525pt>
 File: imgs/3-tetel/hidrogen_atom_energiak.png Graphic file (type png)
 <use imgs/3-tetel/hidrogen_atom_energiak.png>
 Package pdftex.def Info: imgs/3-tetel/hidrogen_atom_energiak.png  used on input line 4583.
 (pdftex.def)             Requested size: 271.7835pt x 264.76695pt.
  [104] [105 <./imgs/3-tetel/hidrogen_atom_energiak.png>]
-<imgs/3-tetel/hidrogen_atom_spektrum.png, id=2167, 392.46625pt x 435.6275pt>
+<imgs/3-tetel/hidrogen_atom_spektrum.png, id=2240, 392.46625pt x 435.6275pt>
 File: imgs/3-tetel/hidrogen_atom_spektrum.png Graphic file (type png)
 <use imgs/3-tetel/hidrogen_atom_spektrum.png>
 Package pdftex.def Info: imgs/3-tetel/hidrogen_atom_spektrum.png  used on input line 4646.
@@ -892,83 +892,83 @@ Overfull \hbox (25.287pt too wide) in paragraph at lines 4674--4674
 []\T1/lmr/bx/n/14.4 Rugalmas és ké-plékeny alakvál-tozá-sok, Hooke-törvény, speciális
  []
 
-<imgs/4-tetel/linearis_deformacio.png, id=2185, 1445.4pt x 813.0375pt>
+<imgs/4-tetel/linearis_deformacio.png, id=2257, 1445.4pt x 813.0375pt>
 File: imgs/4-tetel/linearis_deformacio.png Graphic file (type png)
 <use imgs/4-tetel/linearis_deformacio.png>
 Package pdftex.def Info: imgs/4-tetel/linearis_deformacio.png  used on input line 4685.
 (pdftex.def)             Requested size: 181.18439pt x 101.91476pt.
 [108]
-<imgs/4-tetel/linearis_deformacio_grafikon.png, id=2190, 1445.4pt x 813.0375pt>
+<imgs/4-tetel/linearis_deformacio_grafikon.png, id=2262, 1445.4pt x 813.0375pt>
 File: imgs/4-tetel/linearis_deformacio_grafikon.png Graphic file (type png)
 <use imgs/4-tetel/linearis_deformacio_grafikon.png>
 Package pdftex.def Info: imgs/4-tetel/linearis_deformacio_grafikon.png  used on input line 4692.
 (pdftex.def)             Requested size: 271.7835pt x 152.87836pt.
-<imgs/4-tetel/auxetikus_anyag.png, id=2191, 360.8682pt x 160.9212pt>
+<imgs/4-tetel/auxetikus_anyag.png, id=2263, 360.8682pt x 160.9212pt>
 File: imgs/4-tetel/auxetikus_anyag.png Graphic file (type png)
 <use imgs/4-tetel/auxetikus_anyag.png>
 Package pdftex.def Info: imgs/4-tetel/auxetikus_anyag.png  used on input line 4713.
 (pdftex.def)             Requested size: 271.7835pt x 121.20134pt.
  [109 <./imgs/4-tetel/linearis_deformacio.png (PNG copy)> <./imgs/4-tetel/linearis_deformacio_grafikon.png (PNG copy)>]
-<imgs/4-tetel/nyiro_deformacio.png, id=2202, 1445.4pt x 813.0375pt>
+<imgs/4-tetel/nyiro_deformacio.png, id=2274, 1445.4pt x 813.0375pt>
 File: imgs/4-tetel/nyiro_deformacio.png Graphic file (type png)
 <use imgs/4-tetel/nyiro_deformacio.png>
 Package pdftex.def Info: imgs/4-tetel/nyiro_deformacio.png  used on input line 4750.
 (pdftex.def)             Requested size: 452.9679pt x 254.79314pt.
  [110 <./imgs/4-tetel/auxetikus_anyag.png>]
-<imgs/4-tetel/csavaras.png, id=2216, 1445.4pt x 813.0375pt>
+<imgs/4-tetel/csavaras.png, id=2288, 1445.4pt x 813.0375pt>
 File: imgs/4-tetel/csavaras.png Graphic file (type png)
 <use imgs/4-tetel/csavaras.png>
 Package pdftex.def Info: imgs/4-tetel/csavaras.png  used on input line 4763.
 (pdftex.def)             Requested size: 271.7835pt x 152.87836pt.
-<imgs/4-tetel/csavaras_2.png, id=2217, 1445.4pt x 813.0375pt>
+<imgs/4-tetel/csavaras_2.png, id=2289, 1445.4pt x 813.0375pt>
 File: imgs/4-tetel/csavaras_2.png Graphic file (type png)
 <use imgs/4-tetel/csavaras_2.png>
 Package pdftex.def Info: imgs/4-tetel/csavaras_2.png  used on input line 4771.
 (pdftex.def)             Requested size: 271.7835pt x 152.87836pt.
  [111 <./imgs/4-tetel/nyiro_deformacio.png (PNG copy)> <./imgs/4-tetel/csavaras.png (PNG copy)>]
-<imgs/4-tetel/hajlitas.png, id=2226, 1445.4pt x 813.0375pt>
+<imgs/4-tetel/hajlitas.png, id=2298, 1445.4pt x 813.0375pt>
 File: imgs/4-tetel/hajlitas.png Graphic file (type png)
 <use imgs/4-tetel/hajlitas.png>
 Package pdftex.def Info: imgs/4-tetel/hajlitas.png  used on input line 4804.
 (pdftex.def)             Requested size: 271.7835pt x 152.87836pt.
  [112 <./imgs/4-tetel/csavaras_2.png (PNG copy)>]
-<imgs/4-tetel/eltolas_vektor.png, id=2239, 910.40125pt x 761.84625pt>
+<imgs/4-tetel/eltolas_vektor.png, id=2311, 910.40125pt x 761.84625pt>
 File: imgs/4-tetel/eltolas_vektor.png Graphic file (type png)
 <use imgs/4-tetel/eltolas_vektor.png>
 Package pdftex.def Info: imgs/4-tetel/eltolas_vektor.png  used on input line 4840.
 (pdftex.def)             Requested size: 271.7835pt x 227.43965pt.
  [113 <./imgs/4-tetel/hajlitas.png (PNG copy)>] [114 <./imgs/4-tetel/eltolas_vektor.png>] [115]
-<imgs/4-tetel/felulet_integral.png, id=2280, 757.83125pt x 442.65375pt>
+<imgs/4-tetel/felulet_integral.png, id=2353, 757.83125pt x 442.65375pt>
 File: imgs/4-tetel/felulet_integral.png Graphic file (type png)
 <use imgs/4-tetel/felulet_integral.png>
 Package pdftex.def Info: imgs/4-tetel/felulet_integral.png  used on input line 4968.
 (pdftex.def)             Requested size: 271.7835pt x 158.74733pt.
  [116] [117 <./imgs/4-tetel/felulet_integral.png>] [118] [119] [120]
-<imgs/4-tetel/hidrosztatikai_nyomas.png, id=2353, 1445.4pt x 813.0375pt>
+<imgs/4-tetel/hidrosztatikai_nyomas.png, id=2425, 1445.4pt x 813.0375pt>
 File: imgs/4-tetel/hidrosztatikai_nyomas.png Graphic file (type png)
 <use imgs/4-tetel/hidrosztatikai_nyomas.png>
 Package pdftex.def Info: imgs/4-tetel/hidrosztatikai_nyomas.png  used on input line 5190.
 (pdftex.def)             Requested size: 181.18439pt x 101.91476pt.
  [121 <./imgs/4-tetel/hidrosztatikai_nyomas.png (PNG copy)>]
-<imgs/4-tetel/feluleti_feszultseg.png, id=2369, 1445.4pt x 813.0375pt>
+<imgs/4-tetel/feluleti_feszultseg.png, id=2442, 1445.4pt x 813.0375pt>
 File: imgs/4-tetel/feluleti_feszultseg.png Graphic file (type png)
 <use imgs/4-tetel/feluleti_feszultseg.png>
 Package pdftex.def Info: imgs/4-tetel/feluleti_feszultseg.png  used on input line 5256.
 (pdftex.def)             Requested size: 226.48395pt x 127.39656pt.
  [122]
-<imgs/4-tetel/csepp_kritikus.png, id=2385, 1445.4pt x 813.0375pt>
+<imgs/4-tetel/csepp_kritikus.png, id=2458, 1445.4pt x 813.0375pt>
 File: imgs/4-tetel/csepp_kritikus.png Graphic file (type png)
 <use imgs/4-tetel/csepp_kritikus.png>
 Package pdftex.def Info: imgs/4-tetel/csepp_kritikus.png  used on input line 5285.
 (pdftex.def)             Requested size: 181.18439pt x 101.91476pt.
  [123 <./imgs/4-tetel/feluleti_feszultseg.png (PNG copy)>]
-<imgs/4-tetel/gorbulet.png, id=2396, 1445.4pt x 813.0375pt>
+<imgs/4-tetel/gorbulet.png, id=2469, 1445.4pt x 813.0375pt>
 File: imgs/4-tetel/gorbulet.png Graphic file (type png)
 <use imgs/4-tetel/gorbulet.png>
 Package pdftex.def Info: imgs/4-tetel/gorbulet.png  used on input line 5304.
 (pdftex.def)             Requested size: 226.48395pt x 127.39656pt.
  [124 <./imgs/4-tetel/csepp_kritikus.png (PNG copy)> <./imgs/4-tetel/gorbulet.png (PNG copy)>]
-<imgs/4-tetel/kapillaritas.png, id=2408, 1445.4pt x 813.0375pt>
+<imgs/4-tetel/kapillaritas.png, id=2480, 1445.4pt x 813.0375pt>
 File: imgs/4-tetel/kapillaritas.png Graphic file (type png)
 <use imgs/4-tetel/kapillaritas.png>
 Package pdftex.def Info: imgs/4-tetel/kapillaritas.png  used on input line 5349.
@@ -978,7 +978,7 @@ Overfull \hbox (3.33308pt too wide) in paragraph at lines 5370--5370
 []\T1/lmr/bx/n/14.4 Áramlások jellemzése, Bernoulli-egyenlet, tökéletes folyadék
  []
 
-<imgs/4-tetel/anyagmegmaradas.png, id=2420, 1445.4pt x 813.0375pt>
+<imgs/4-tetel/anyagmegmaradas.png, id=2492, 1445.4pt x 813.0375pt>
 File: imgs/4-tetel/anyagmegmaradas.png Graphic file (type png)
 <use imgs/4-tetel/anyagmegmaradas.png>
 Package pdftex.def Info: imgs/4-tetel/anyagmegmaradas.png  used on input line 5382.
@@ -993,7 +993,7 @@ Overfull \hbox (20.1985pt too wide) in paragraph at lines 5554--5554
 []\T1/lmr/bx/n/14.4 Viszkózus folyadék áram-lása, örvények, tur-bu-len-cia, Reynolds-
  []
 
-<imgs/4-tetel/viszkozitas.png, id=2476, 1445.4pt x 813.0375pt>
+<imgs/4-tetel/viszkozitas.png, id=2548, 1445.4pt x 813.0375pt>
 File: imgs/4-tetel/viszkozitas.png Graphic file (type png)
 <use imgs/4-tetel/viszkozitas.png>
 Package pdftex.def Info: imgs/4-tetel/viszkozitas.png  used on input line 5559.
@@ -1004,13 +1004,13 @@ Overfull \hbox (9.25949pt too wide) in paragraph at lines 5630--5633
  []
 
 [132]
-<imgs/4-tetel/csoaramlas.png, id=2510, 1445.4pt x 813.0375pt>
+<imgs/4-tetel/csoaramlas.png, id=2583, 1445.4pt x 813.0375pt>
 File: imgs/4-tetel/csoaramlas.png Graphic file (type png)
 <use imgs/4-tetel/csoaramlas.png>
 Package pdftex.def Info: imgs/4-tetel/csoaramlas.png  used on input line 5689.
 (pdftex.def)             Requested size: 226.48395pt x 127.39656pt.
  [133]
-<imgs/4-tetel/poiseuille.png, id=2526, 1445.4pt x 813.0375pt>
+<imgs/4-tetel/poiseuille.png, id=2598, 1445.4pt x 813.0375pt>
 File: imgs/4-tetel/poiseuille.png Graphic file (type png)
 <use imgs/4-tetel/poiseuille.png>
 Package pdftex.def Info: imgs/4-tetel/poiseuille.png  used on input line 5718.
@@ -1041,18 +1041,18 @@ Overfull \hbox (19.7329pt too wide) in paragraph at lines 5786--5786
  []
 
 [136] [137]
-<imgs/5-tetel/idealisgaz.png, id=2562, 1445.4pt x 813.0375pt>
+<imgs/5-tetel/idealisgaz.png, id=2634, 1445.4pt x 813.0375pt>
 File: imgs/5-tetel/idealisgaz.png Graphic file (type png)
 <use imgs/5-tetel/idealisgaz.png>
 Package pdftex.def Info: imgs/5-tetel/idealisgaz.png  used on input line 5834.
 (pdftex.def)             Requested size: 317.07614pt x 178.34775pt.
  [138 <./imgs/5-tetel/idealisgaz.png (PNG copy)>] [139]
-<imgs/5-tetel/idealisgaz_felulet.png, id=2584, 1445.4pt x 813.0375pt>
+<imgs/5-tetel/idealisgaz_felulet.png, id=2656, 1445.4pt x 813.0375pt>
 File: imgs/5-tetel/idealisgaz_felulet.png Graphic file (type png)
 <use imgs/5-tetel/idealisgaz_felulet.png>
 Package pdftex.def Info: imgs/5-tetel/idealisgaz_felulet.png  used on input line 5912.
 (pdftex.def)             Requested size: 226.48395pt x 127.39656pt.
-<imgs/5-tetel/idealisgaz_felulet_2D.png, id=2585, 1445.4pt x 813.0375pt>
+<imgs/5-tetel/idealisgaz_felulet_2D.png, id=2657, 1445.4pt x 813.0375pt>
 File: imgs/5-tetel/idealisgaz_felulet_2D.png Graphic file (type png)
 <use imgs/5-tetel/idealisgaz_felulet_2D.png>
 Package pdftex.def Info: imgs/5-tetel/idealisgaz_felulet_2D.png  used on input line 5917.
@@ -1068,47 +1068,47 @@ Overfull \hbox (7.89174pt too wide) in paragraph at lines 5972--5974
  []
 
 [142]
-<imgs/5-tetel/termodinamika_felulet.png, id=2618, 1445.4pt x 813.0375pt>
+<imgs/5-tetel/termodinamika_felulet.png, id=2691, 1445.4pt x 813.0375pt>
 File: imgs/5-tetel/termodinamika_felulet.png Graphic file (type png)
 <use imgs/5-tetel/termodinamika_felulet.png>
 Package pdftex.def Info: imgs/5-tetel/termodinamika_felulet.png  used on input line 6021.
 (pdftex.def)             Requested size: 226.48395pt x 127.39656pt.
  [143] [144 <./imgs/5-tetel/termodinamika_felulet.png (PNG copy)>] [145]
-<imgs/5-tetel/kinetikus_model_eloszlas.png, id=2657, 1445.4pt x 813.0375pt>
+<imgs/5-tetel/kinetikus_model_eloszlas.png, id=2729, 1445.4pt x 813.0375pt>
 File: imgs/5-tetel/kinetikus_model_eloszlas.png Graphic file (type png)
 <use imgs/5-tetel/kinetikus_model_eloszlas.png>
 Package pdftex.def Info: imgs/5-tetel/kinetikus_model_eloszlas.png  used on input line 6121.
 (pdftex.def)             Requested size: 317.07614pt x 178.34775pt.
  [146 <./imgs/5-tetel/kinetikus_model_eloszlas.png (PNG copy)>]
-<imgs/5-tetel/kinetikus_model_doboz.png, id=2665, 1445.4pt x 813.0375pt>
+<imgs/5-tetel/kinetikus_model_doboz.png, id=2737, 1445.4pt x 813.0375pt>
 File: imgs/5-tetel/kinetikus_model_doboz.png Graphic file (type png)
 <use imgs/5-tetel/kinetikus_model_doboz.png>
 Package pdftex.def Info: imgs/5-tetel/kinetikus_model_doboz.png  used on input line 6137.
 (pdftex.def)             Requested size: 226.48395pt x 127.39656pt.
  [147 <./imgs/5-tetel/kinetikus_model_doboz.png (PNG copy)>] [148] [149] [150]
-<imgs/5-tetel/joule_kiserlet.jpeg, id=2706, 247.92625pt x 204.765pt>
+<imgs/5-tetel/joule_kiserlet.jpeg, id=2778, 247.92625pt x 204.765pt>
 File: imgs/5-tetel/joule_kiserlet.jpeg Graphic file (type jpg)
 <use imgs/5-tetel/joule_kiserlet.jpeg>
 Package pdftex.def Info: imgs/5-tetel/joule_kiserlet.jpeg  used on input line 6275.
 (pdftex.def)             Requested size: 271.7835pt x 224.48605pt.
-<imgs/5-tetel/adiabatikus_zart_rendszer.png, id=2707, 1445.4pt x 813.0375pt>
+<imgs/5-tetel/adiabatikus_zart_rendszer.png, id=2779, 1445.4pt x 813.0375pt>
 File: imgs/5-tetel/adiabatikus_zart_rendszer.png Graphic file (type png)
 <use imgs/5-tetel/adiabatikus_zart_rendszer.png>
 Package pdftex.def Info: imgs/5-tetel/adiabatikus_zart_rendszer.png  used on input line 6284.
 (pdftex.def)             Requested size: 226.48395pt x 127.39656pt.
  [151 <./imgs/5-tetel/joule_kiserlet.jpeg> <./imgs/5-tetel/adiabatikus_zart_rendszer.png (PNG copy)>]
-<imgs/5-tetel/pV_diagram_1.png, id=2716, 1445.4pt x 813.0375pt>
+<imgs/5-tetel/pV_diagram_1.png, id=2789, 1445.4pt x 813.0375pt>
 File: imgs/5-tetel/pV_diagram_1.png Graphic file (type png)
 <use imgs/5-tetel/pV_diagram_1.png>
 Package pdftex.def Info: imgs/5-tetel/pV_diagram_1.png  used on input line 6313.
 (pdftex.def)             Requested size: 226.48395pt x 127.39656pt.
-<imgs/5-tetel/pV_diagram_2.png, id=2717, 1445.4pt x 813.0375pt>
+<imgs/5-tetel/pV_diagram_2.png, id=2790, 1445.4pt x 813.0375pt>
 File: imgs/5-tetel/pV_diagram_2.png Graphic file (type png)
 <use imgs/5-tetel/pV_diagram_2.png>
 Package pdftex.def Info: imgs/5-tetel/pV_diagram_2.png  used on input line 6321.
 (pdftex.def)             Requested size: 226.48395pt x 127.39656pt.
  [152 <./imgs/5-tetel/pV_diagram_1.png (PNG copy)>] [153 <./imgs/5-tetel/pV_diagram_2.png (PNG copy)>]
-<imgs/5-tetel/nem_adiabatikus_zart_rendszer.png, id=2741, 1445.4pt x 813.0375pt>
+<imgs/5-tetel/nem_adiabatikus_zart_rendszer.png, id=2814, 1445.4pt x 813.0375pt>
 File: imgs/5-tetel/nem_adiabatikus_zart_rendszer.png Graphic file (type png)
 <use imgs/5-tetel/nem_adiabatikus_zart_rendszer.png>
 Package pdftex.def Info: imgs/5-tetel/nem_adiabatikus_zart_rendszer.png  used on input line 6372.
@@ -1147,29 +1147,29 @@ Overfull \hbox (19.94736pt too wide) in paragraph at lines 6692--6711
 \T1/lmr/m/n/12 Összefoglalva a ter-mod-i-namikai folyam-a-tokat ideális gá-zokra amikor $\OT1/lmr/m/n/12 (\OML/lmm/m/it/12 p[]; V[]; T[]\OT1/lmr/m/n/12 ) \OMS/lmsy/m/n/12 ! \OT1/lmr/m/n/12 (\OML/lmm/m/it/12 p[]; V[]; T[]\OT1/lmr/m/n/12 )$
  []
 
-<imgs/5-tetel/irreverzibilis_folyamatok.png, id=2833, 1445.4pt x 813.0375pt>
+<imgs/5-tetel/irreverzibilis_folyamatok.png, id=2906, 1445.4pt x 813.0375pt>
 File: imgs/5-tetel/irreverzibilis_folyamatok.png Graphic file (type png)
 <use imgs/5-tetel/irreverzibilis_folyamatok.png>
 Package pdftex.def Info: imgs/5-tetel/irreverzibilis_folyamatok.png  used on input line 6722.
 (pdftex.def)             Requested size: 226.48395pt x 127.39656pt.
 [161]
-<imgs/5-tetel/reverzibilis_folyamat.png, id=2845, 1445.4pt x 813.0375pt>
+<imgs/5-tetel/reverzibilis_folyamat.png, id=2918, 1445.4pt x 813.0375pt>
 File: imgs/5-tetel/reverzibilis_folyamat.png Graphic file (type png)
 <use imgs/5-tetel/reverzibilis_folyamat.png>
 Package pdftex.def Info: imgs/5-tetel/reverzibilis_folyamat.png  used on input line 6731.
 (pdftex.def)             Requested size: 226.48395pt x 127.39656pt.
-<imgs/5-tetel/irreverzibilis_folyamat_dugattyu.png, id=2846, 1445.4pt x 813.0375pt>
+<imgs/5-tetel/irreverzibilis_folyamat_dugattyu.png, id=2919, 1445.4pt x 813.0375pt>
 File: imgs/5-tetel/irreverzibilis_folyamat_dugattyu.png Graphic file (type png)
 <use imgs/5-tetel/irreverzibilis_folyamat_dugattyu.png>
 Package pdftex.def Info: imgs/5-tetel/irreverzibilis_folyamat_dugattyu.png  used on input line 6742.
 (pdftex.def)             Requested size: 226.48395pt x 127.39656pt.
  [162 <./imgs/5-tetel/irreverzibilis_folyamatok.png (PNG copy)> <./imgs/5-tetel/reverzibilis_folyamat.png (PNG copy)>] [163 <./imgs/5-tetel/irreverzibilis_folyamat_dugattyu.png (PNG copy)>]
-<imgs/5-tetel/II_fotetel.png, id=2860, 1445.4pt x 813.0375pt>
+<imgs/5-tetel/II_fotetel.png, id=2933, 1445.4pt x 813.0375pt>
 File: imgs/5-tetel/II_fotetel.png Graphic file (type png)
 <use imgs/5-tetel/II_fotetel.png>
 Package pdftex.def Info: imgs/5-tetel/II_fotetel.png  used on input line 6770.
 (pdftex.def)             Requested size: 226.48395pt x 127.39656pt.
-<imgs/5-tetel/carnot_korfolyamat.png, id=2861, 1445.4pt x 813.0375pt>
+<imgs/5-tetel/carnot_korfolyamat.png, id=2934, 1445.4pt x 813.0375pt>
 File: imgs/5-tetel/carnot_korfolyamat.png Graphic file (type png)
 <use imgs/5-tetel/carnot_korfolyamat.png>
 Package pdftex.def Info: imgs/5-tetel/carnot_korfolyamat.png  used on input line 6785.
@@ -1180,52 +1180,52 @@ Overfull \hbox (40.98961pt too wide) in paragraph at lines 6791--6804
  []
 
 [164 <./imgs/5-tetel/II_fotetel.png (PNG copy)> <./imgs/5-tetel/carnot_korfolyamat.png (PNG copy)>]
-<imgs/5-tetel/carnot_gep.png, id=2870, 1445.4pt x 813.0375pt>
+<imgs/5-tetel/carnot_gep.png, id=2942, 1445.4pt x 813.0375pt>
 File: imgs/5-tetel/carnot_gep.png Graphic file (type png)
 <use imgs/5-tetel/carnot_gep.png>
 Package pdftex.def Info: imgs/5-tetel/carnot_gep.png  used on input line 6809.
 (pdftex.def)             Requested size: 226.48395pt x 127.39656pt.
  [165 <./imgs/5-tetel/carnot_gep.png (PNG copy)>] [166]
-<imgs/5-tetel/carnot_id_gaz_hatasfok.png, id=2895, 1445.4pt x 813.0375pt>
+<imgs/5-tetel/carnot_id_gaz_hatasfok.png, id=2967, 1445.4pt x 813.0375pt>
 File: imgs/5-tetel/carnot_id_gaz_hatasfok.png Graphic file (type png)
 <use imgs/5-tetel/carnot_id_gaz_hatasfok.png>
 Package pdftex.def Info: imgs/5-tetel/carnot_id_gaz_hatasfok.png  used on input line 6897.
 (pdftex.def)             Requested size: 226.48395pt x 127.39656pt.
-<imgs/5-tetel/carnot_tobb_hotartaly.png, id=2896, 1445.4pt x 813.0375pt>
+<imgs/5-tetel/carnot_tobb_hotartaly.png, id=2968, 1445.4pt x 813.0375pt>
 File: imgs/5-tetel/carnot_tobb_hotartaly.png Graphic file (type png)
 <use imgs/5-tetel/carnot_tobb_hotartaly.png>
 Package pdftex.def Info: imgs/5-tetel/carnot_tobb_hotartaly.png  used on input line 6905.
 (pdftex.def)             Requested size: 226.48395pt x 127.39656pt.
  [167 <./imgs/5-tetel/carnot_id_gaz_hatasfok.png (PNG copy)>]
-<imgs/5-tetel/carnot_tobb_hotartaly_gep.png, id=2904, 1445.4pt x 813.0375pt>
+<imgs/5-tetel/carnot_tobb_hotartaly_gep.png, id=2976, 1445.4pt x 813.0375pt>
 File: imgs/5-tetel/carnot_tobb_hotartaly_gep.png Graphic file (type png)
 <use imgs/5-tetel/carnot_tobb_hotartaly_gep.png>
 Package pdftex.def Info: imgs/5-tetel/carnot_tobb_hotartaly_gep.png  used on input line 6911.
 (pdftex.def)             Requested size: 226.48395pt x 127.39656pt.
-<imgs/5-tetel/stirling_motor_schematikus.png, id=2905, 1061.9675pt x 796.9775pt>
+<imgs/5-tetel/stirling_motor_schematikus.png, id=2977, 1061.9675pt x 796.9775pt>
 File: imgs/5-tetel/stirling_motor_schematikus.png Graphic file (type png)
 <use imgs/5-tetel/stirling_motor_schematikus.png>
 Package pdftex.def Info: imgs/5-tetel/stirling_motor_schematikus.png  used on input line 6935.
 (pdftex.def)             Requested size: 226.48395pt x 169.96048pt.
  [168 <./imgs/5-tetel/carnot_tobb_hotartaly.png (PNG copy)> <./imgs/5-tetel/carnot_tobb_hotartaly_gep.png (PNG copy)>]
-<imgs/5-tetel/stirling_motor.png, id=2916, 773.89125pt x 642.4pt>
+<imgs/5-tetel/stirling_motor.png, id=2988, 773.89125pt x 642.4pt>
 File: imgs/5-tetel/stirling_motor.png Graphic file (type png)
 <use imgs/5-tetel/stirling_motor.png>
 Package pdftex.def Info: imgs/5-tetel/stirling_motor.png  used on input line 6941.
 (pdftex.def)             Requested size: 226.48395pt x 187.99681pt.
  [169 <./imgs/5-tetel/stirling_motor_schematikus.png> <./imgs/5-tetel/stirling_motor.png>]
-<imgs/5-tetel/ket_lepes_korfolyamat.png, id=2928, 1445.4pt x 813.0375pt>
+<imgs/5-tetel/ket_lepes_korfolyamat.png, id=3000, 1445.4pt x 813.0375pt>
 File: imgs/5-tetel/ket_lepes_korfolyamat.png Graphic file (type png)
 <use imgs/5-tetel/ket_lepes_korfolyamat.png>
 Package pdftex.def Info: imgs/5-tetel/ket_lepes_korfolyamat.png  used on input line 6987.
 (pdftex.def)             Requested size: 226.48395pt x 127.39656pt.
-<imgs/5-tetel/tetszoleges_korfolyamat.png, id=2929, 1445.4pt x 813.0375pt>
+<imgs/5-tetel/tetszoleges_korfolyamat.png, id=3001, 1445.4pt x 813.0375pt>
 File: imgs/5-tetel/tetszoleges_korfolyamat.png Graphic file (type png)
 <use imgs/5-tetel/tetszoleges_korfolyamat.png>
 Package pdftex.def Info: imgs/5-tetel/tetszoleges_korfolyamat.png  used on input line 6997.
 (pdftex.def)             Requested size: 226.48395pt x 127.39656pt.
  [170 <./imgs/5-tetel/ket_lepes_korfolyamat.png (PNG copy)>]
-<imgs/5-tetel/irreverzibilis_entrÃ³pia.png, id=2940, 1445.4pt x 813.0375pt>
+<imgs/5-tetel/irreverzibilis_entrÃ³pia.png, id=3012, 1445.4pt x 813.0375pt>
 File: imgs/5-tetel/irreverzibilis_entrÃ³pia.png Graphic file (type png)
 <use imgs/5-tetel/irreverzibilis_entrÃ³pia.png>
 Package pdftex.def Info: imgs/5-tetel/irreverzibilis_entrÃ³pia.png  used on input line 7028.
@@ -1266,7 +1266,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 7084--7101
  []
 
 [173]
-<imgs/5-tetel/entropia_statisztikus.png, id=2972, 1445.4pt x 813.0375pt>
+<imgs/5-tetel/entropia_statisztikus.png, id=3045, 1445.4pt x 813.0375pt>
 File: imgs/5-tetel/entropia_statisztikus.png Graphic file (type png)
 <use imgs/5-tetel/entropia_statisztikus.png>
 Package pdftex.def Info: imgs/5-tetel/entropia_statisztikus.png  used on input line 7106.
@@ -1277,7 +1277,7 @@ Overfull \hbox (12.52231pt too wide) in paragraph at lines 7109--7111
  []
 
 [174 <./imgs/5-tetel/entropia_statisztikus.png (PNG copy)>]
-<imgs/5-tetel/carnot_ts_diagram.jpg, id=2984, 770.88pt x 491.58656pt>
+<imgs/5-tetel/carnot_ts_diagram.jpg, id=3057, 770.88pt x 491.58656pt>
 File: imgs/5-tetel/carnot_ts_diagram.jpg Graphic file (type jpg)
 <use imgs/5-tetel/carnot_ts_diagram.jpg>
 Package pdftex.def Info: imgs/5-tetel/carnot_ts_diagram.jpg  used on input line 7149.
@@ -1382,7 +1382,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 7448--7453
  []
 
 [181] [182]
-<imgs/5-tetel/osszetett_rendszer.png, id=3083, 1445.4pt x 813.0375pt>
+<imgs/5-tetel/osszetett_rendszer.png, id=3156, 1445.4pt x 813.0375pt>
 File: imgs/5-tetel/osszetett_rendszer.png Graphic file (type png)
 <use imgs/5-tetel/osszetett_rendszer.png>
 Package pdftex.def Info: imgs/5-tetel/osszetett_rendszer.png  used on input line 7537.
@@ -1408,29 +1408,29 @@ Overfull \hbox (14.80984pt too wide) in paragraph at lines 7646--7646
  []
 
 [186]
-<imgs/5-tetel/osszetett_rendszer_egykomponensu.png, id=3133, 1445.4pt x 813.0375pt>
+<imgs/5-tetel/osszetett_rendszer_egykomponensu.png, id=3205, 1445.4pt x 813.0375pt>
 File: imgs/5-tetel/osszetett_rendszer_egykomponensu.png Graphic file (type png)
 <use imgs/5-tetel/osszetett_rendszer_egykomponensu.png>
 Package pdftex.def Info: imgs/5-tetel/osszetett_rendszer_egykomponensu.png  used on input line 7663.
 (pdftex.def)             Requested size: 181.18439pt x 101.91476pt.
-<imgs/5-tetel/egykomponensu_fazisdiagram.png, id=3134, 1445.4pt x 813.0375pt>
+<imgs/5-tetel/egykomponensu_fazisdiagram.png, id=3206, 1445.4pt x 813.0375pt>
 File: imgs/5-tetel/egykomponensu_fazisdiagram.png Graphic file (type png)
 <use imgs/5-tetel/egykomponensu_fazisdiagram.png>
 Package pdftex.def Info: imgs/5-tetel/egykomponensu_fazisdiagram.png  used on input line 7669.
 (pdftex.def)             Requested size: 271.7835pt x 152.87836pt.
-<imgs/5-tetel/entropia_valtozas_egykomponens.png, id=3135, 793.96625pt x 907.39pt>
+<imgs/5-tetel/entropia_valtozas_egykomponens.png, id=3207, 793.96625pt x 907.39pt>
 File: imgs/5-tetel/entropia_valtozas_egykomponens.png Graphic file (type png)
 <use imgs/5-tetel/entropia_valtozas_egykomponens.png>
 Package pdftex.def Info: imgs/5-tetel/entropia_valtozas_egykomponens.png  used on input line 7679.
 (pdftex.def)             Requested size: 271.7835pt x 310.61305pt.
  [187 <./imgs/5-tetel/osszetett_rendszer_egykomponensu.png (PNG copy)> <./imgs/5-tetel/egykomponensu_fazisdiagram.png (PNG copy)>]
-<imgs/5-tetel/egykomponensu_fazisdiagram_egyensuly.png, id=3144, 1445.4pt x 813.0375pt>
+<imgs/5-tetel/egykomponensu_fazisdiagram_egyensuly.png, id=3216, 1445.4pt x 813.0375pt>
 File: imgs/5-tetel/egykomponensu_fazisdiagram_egyensuly.png Graphic file (type png)
 <use imgs/5-tetel/egykomponensu_fazisdiagram_egyensuly.png>
 Package pdftex.def Info: imgs/5-tetel/egykomponensu_fazisdiagram_egyensuly.png  used on input line 7692.
 (pdftex.def)             Requested size: 271.7835pt x 152.87836pt.
  [188 <./imgs/5-tetel/entropia_valtozas_egykomponens.png>]
-<imgs/5-tetel/merleg_szabaly.png, id=3152, 1445.4pt x 813.0375pt>
+<imgs/5-tetel/merleg_szabaly.png, id=3224, 1445.4pt x 813.0375pt>
 File: imgs/5-tetel/merleg_szabaly.png Graphic file (type png)
 <use imgs/5-tetel/merleg_szabaly.png>
 Package pdftex.def Info: imgs/5-tetel/merleg_szabaly.png  used on input line 7733.
@@ -1451,40 +1451,40 @@ Underfull \hbox (badness 10000) in paragraph at lines 7802--7810
  []
 
 [191]
-<imgs/5-tetel/kemia_potencial_vdw.png, id=3187, 1445.4pt x 813.0375pt>
+<imgs/5-tetel/kemia_potencial_vdw.png, id=3260, 1445.4pt x 813.0375pt>
 File: imgs/5-tetel/kemia_potencial_vdw.png Graphic file (type png)
 <use imgs/5-tetel/kemia_potencial_vdw.png>
 Package pdftex.def Info: imgs/5-tetel/kemia_potencial_vdw.png  used on input line 7859.
 (pdftex.def)             Requested size: 271.7835pt x 152.87836pt.
  [192]
-<imgs/5-tetel/kemia_potencial_vdw_vp.png, id=3203, 1445.4pt x 813.0375pt>
+<imgs/5-tetel/kemia_potencial_vdw_vp.png, id=3276, 1445.4pt x 813.0375pt>
 File: imgs/5-tetel/kemia_potencial_vdw_vp.png Graphic file (type png)
 <use imgs/5-tetel/kemia_potencial_vdw_vp.png>
 Package pdftex.def Info: imgs/5-tetel/kemia_potencial_vdw_vp.png  used on input line 7865.
 (pdftex.def)             Requested size: 271.7835pt x 152.87836pt.
-<imgs/5-tetel/azonos_kemia_potencial_vdw_pv.png, id=3204, 1445.4pt x 813.0375pt>
+<imgs/5-tetel/azonos_kemia_potencial_vdw_pv.png, id=3277, 1445.4pt x 813.0375pt>
 File: imgs/5-tetel/azonos_kemia_potencial_vdw_pv.png Graphic file (type png)
 <use imgs/5-tetel/azonos_kemia_potencial_vdw_pv.png>
 Package pdftex.def Info: imgs/5-tetel/azonos_kemia_potencial_vdw_pv.png  used on input line 7872.
 (pdftex.def)             Requested size: 271.7835pt x 152.87836pt.
  [193 <./imgs/5-tetel/kemia_potencial_vdw.png (PNG copy)> <./imgs/5-tetel/kemia_potencial_vdw_vp.png (PNG copy)> <./imgs/5-tetel/azonos_kemia_potencial_vdw_pv.png (PNG copy)>]
-<imgs/5-tetel/fazisatalakulas_vdw.png, id=3213, 1445.4pt x 813.0375pt>
+<imgs/5-tetel/fazisatalakulas_vdw.png, id=3286, 1445.4pt x 813.0375pt>
 File: imgs/5-tetel/fazisatalakulas_vdw.png Graphic file (type png)
 <use imgs/5-tetel/fazisatalakulas_vdw.png>
 Package pdftex.def Info: imgs/5-tetel/fazisatalakulas_vdw.png  used on input line 7887.
 (pdftex.def)             Requested size: 271.7835pt x 152.87836pt.
-<imgs/5-tetel/fazisatalakulas_tp.png, id=3214, 1445.4pt x 813.0375pt>
+<imgs/5-tetel/fazisatalakulas_tp.png, id=3287, 1445.4pt x 813.0375pt>
 File: imgs/5-tetel/fazisatalakulas_tp.png Graphic file (type png)
 <use imgs/5-tetel/fazisatalakulas_tp.png>
 Package pdftex.def Info: imgs/5-tetel/fazisatalakulas_tp.png  used on input line 7900.
 (pdftex.def)             Requested size: 271.7835pt x 152.87836pt.
  [194 <./imgs/5-tetel/fazisatalakulas_vdw.png (PNG copy)>]
-<imgs/5-tetel/viz_fazisdiagram.jpg, id=3221, 383.18156pt x 306.39468pt>
+<imgs/5-tetel/viz_fazisdiagram.jpg, id=3294, 383.18156pt x 306.39468pt>
 File: imgs/5-tetel/viz_fazisdiagram.jpg Graphic file (type jpg)
 <use imgs/5-tetel/viz_fazisdiagram.jpg>
 Package pdftex.def Info: imgs/5-tetel/viz_fazisdiagram.jpg  used on input line 7907.
 (pdftex.def)             Requested size: 203.83417pt x 162.98683pt.
-<imgs/5-tetel/co2_fazisdiagram.jpg, id=3222, 661.47125pt x 393.47pt>
+<imgs/5-tetel/co2_fazisdiagram.jpg, id=3295, 661.47125pt x 393.47pt>
 File: imgs/5-tetel/co2_fazisdiagram.jpg Graphic file (type jpg)
 <use imgs/5-tetel/co2_fazisdiagram.jpg>
 Package pdftex.def Info: imgs/5-tetel/co2_fazisdiagram.jpg  used on input line 7911.
@@ -1504,7 +1504,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 8066--8070
 
  []
 
-<imgs/6-tetel/script-r/BoldR.pdf, id=3270, 401.5pt x 200.75pt>
+<imgs/6-tetel/script-r/BoldR.pdf, id=3342, 401.5pt x 200.75pt>
 File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/BoldR.pdf>
 Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 8075.
@@ -1539,7 +1539,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 8134--8147
  []
 
 [202]
-<imgs/6-tetel/script-r/ScriptR.pdf, id=3315, 401.5pt x 200.75pt>
+<imgs/6-tetel/script-r/ScriptR.pdf, id=3388, 401.5pt x 200.75pt>
 File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
 Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 8164.
@@ -1628,7 +1628,7 @@ File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
 Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 8226.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
  [204]
-<imgs/6-tetel/erovonalak.png, id=3350, 696.6025pt x 209.78375pt>
+<imgs/6-tetel/erovonalak.png, id=3422, 696.6025pt x 209.78375pt>
 File: imgs/6-tetel/erovonalak.png Graphic file (type png)
 <use imgs/6-tetel/erovonalak.png>
 Package pdftex.def Info: imgs/6-tetel/erovonalak.png  used on input line 8246.
@@ -1643,7 +1643,7 @@ Overfull \hbox (0.5086pt too wide) in paragraph at lines 8267--8268
 []\T1/lmr/m/n/12 Az elek-tro-mos tér-er®sség fluxusa egy zárt felületen keresztül egye-ne-sen arányos
  []
 
-<imgs/6-tetel/fluxus.png, id=3360, 406.51875pt x 303.1325pt>
+<imgs/6-tetel/fluxus.png, id=3432, 406.51875pt x 303.1325pt>
 File: imgs/6-tetel/fluxus.png Graphic file (type png)
 <use imgs/6-tetel/fluxus.png>
 Package pdftex.def Info: imgs/6-tetel/fluxus.png  used on input line 8271.
@@ -1658,7 +1658,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 8300--8305
 
  []
 
-<imgs/6-tetel/gomb-felulet.png, id=3370, 1445.4pt x 813.0375pt>
+<imgs/6-tetel/gomb-felulet.png, id=3442, 1445.4pt x 813.0375pt>
 File: imgs/6-tetel/gomb-felulet.png Graphic file (type png)
 <use imgs/6-tetel/gomb-felulet.png>
 Package pdftex.def Info: imgs/6-tetel/gomb-felulet.png  used on input line 8315.
@@ -1711,12 +1711,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 8505--8517
  []
 
 [212] [213]
-<imgs/6-tetel/vezeto_ter.png, id=3440, 1445.4pt x 813.0375pt>
+<imgs/6-tetel/vezeto_ter.png, id=3513, 1445.4pt x 813.0375pt>
 File: imgs/6-tetel/vezeto_ter.png Graphic file (type png)
 <use imgs/6-tetel/vezeto_ter.png>
 Package pdftex.def Info: imgs/6-tetel/vezeto_ter.png  used on input line 8526.
 (pdftex.def)             Requested size: 181.18439pt x 101.91476pt.
-<imgs/6-tetel/keltett_toltes.jpeg, id=3441, 233.1912pt x 123.3408pt>
+<imgs/6-tetel/keltett_toltes.jpeg, id=3514, 233.1912pt x 123.3408pt>
 File: imgs/6-tetel/keltett_toltes.jpeg Graphic file (type jpg)
 <use imgs/6-tetel/keltett_toltes.jpeg>
 Package pdftex.def Info: imgs/6-tetel/keltett_toltes.jpeg  used on input line 8536.
@@ -1758,7 +1758,7 @@ File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
 Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 8644.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-<imgs/6-tetel/dipolus.jpg, id=3472, 1927.2pt x 1084.05pt>
+<imgs/6-tetel/dipolus.jpg, id=3544, 1927.2pt x 1084.05pt>
 File: imgs/6-tetel/dipolus.jpg Graphic file (type jpg)
 <use imgs/6-tetel/dipolus.jpg>
 Package pdftex.def Info: imgs/6-tetel/dipolus.jpg  used on input line 8647.
@@ -1849,7 +1849,7 @@ File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
 Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 8682.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-<imgs/6-tetel/polarizalt_anyag.png, id=3485, 1445.4pt x 813.0375pt>
+<imgs/6-tetel/polarizalt_anyag.png, id=3557, 1445.4pt x 813.0375pt>
 File: imgs/6-tetel/polarizalt_anyag.png Graphic file (type png)
 <use imgs/6-tetel/polarizalt_anyag.png>
 Package pdftex.def Info: imgs/6-tetel/polarizalt_anyag.png  used on input line 8689.
@@ -1975,24 +1975,24 @@ File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
 Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 8779.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-<imgs/6-tetel/polarizalt_gomb.png, id=3510, 454.69875pt x 388.45125pt>
+<imgs/6-tetel/polarizalt_gomb.png, id=3582, 454.69875pt x 388.45125pt>
 File: imgs/6-tetel/polarizalt_gomb.png Graphic file (type png)
 <use imgs/6-tetel/polarizalt_gomb.png>
 Package pdftex.def Info: imgs/6-tetel/polarizalt_gomb.png  used on input line 8786.
 (pdftex.def)             Requested size: 181.18439pt x 154.785pt.
 [220]
-<imgs/6-tetel/szigetelt_vezetek.png, id=3525, 1445.4pt x 813.0375pt>
+<imgs/6-tetel/szigetelt_vezetek.png, id=3597, 1445.4pt x 813.0375pt>
 File: imgs/6-tetel/szigetelt_vezetek.png Graphic file (type png)
 <use imgs/6-tetel/szigetelt_vezetek.png>
 Package pdftex.def Info: imgs/6-tetel/szigetelt_vezetek.png  used on input line 8825.
 (pdftex.def)             Requested size: 181.18439pt x 101.91476pt.
  [221 <./imgs/6-tetel/polarizalt_gomb.png>] [222 <./imgs/6-tetel/szigetelt_vezetek.png (PNG copy)>] [223]
-<imgs/6-tetel/jobbkez_szabaly.png, id=3562, 142.131pt x 103.587pt>
+<imgs/6-tetel/jobbkez_szabaly.png, id=3635, 142.131pt x 103.587pt>
 File: imgs/6-tetel/jobbkez_szabaly.png Graphic file (type png)
 <use imgs/6-tetel/jobbkez_szabaly.png>
 Package pdftex.def Info: imgs/6-tetel/jobbkez_szabaly.png  used on input line 8909.
 (pdftex.def)             Requested size: 181.18439pt x 132.0535pt.
-<imgs/6-tetel/pseudovektor.png, id=3563, 250.9375pt x 145.54375pt>
+<imgs/6-tetel/pseudovektor.png, id=3636, 250.9375pt x 145.54375pt>
 File: imgs/6-tetel/pseudovektor.png Graphic file (type png)
 <use imgs/6-tetel/pseudovektor.png>
 Package pdftex.def Info: imgs/6-tetel/pseudovektor.png  used on input line 8928.
@@ -2079,7 +2079,7 @@ File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
 Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 9064.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-<imgs/6-tetel/biot-savart.png, id=3610, 359.3425pt x 199.74625pt>
+<imgs/6-tetel/biot-savart.png, id=3682, 359.3425pt x 199.74625pt>
 File: imgs/6-tetel/biot-savart.png Graphic file (type png)
 <use imgs/6-tetel/biot-savart.png>
 Package pdftex.def Info: imgs/6-tetel/biot-savart.png  used on input line 9072.
@@ -2089,7 +2089,7 @@ File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
 Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 9082.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
  [228 <./imgs/6-tetel/Biot-Savart.png>]
-<imgs/6-tetel/magneses_ter_rot.png, id=3621, 256.96pt x 215.80624pt>
+<imgs/6-tetel/magneses_ter_rot.png, id=3693, 256.96pt x 215.80624pt>
 File: imgs/6-tetel/magneses_ter_rot.png Graphic file (type png)
 <use imgs/6-tetel/magneses_ter_rot.png>
 Package pdftex.def Info: imgs/6-tetel/magneses_ter_rot.png  used on input line 9089.
@@ -2494,7 +2494,7 @@ Overfull \hbox (9.58667pt too wide) in paragraph at lines 9221--9224
 \T1/lmr/m/n/12 anya-gra meghatározhatóak ezek az értékek, de ál-talában vezet®knél lehet a vezet®képességet
  []
 
-<imgs/6-tetel/two_cylinders.png, id=3665, 317.185pt x 191.71625pt>
+<imgs/6-tetel/two_cylinders.png, id=3738, 317.185pt x 191.71625pt>
 File: imgs/6-tetel/two_cylinders.png Graphic file (type png)
 <use imgs/6-tetel/two_cylinders.png>
 Package pdftex.def Info: imgs/6-tetel/two_cylinders.png  used on input line 9241.
@@ -2528,19 +2528,19 @@ LaTeX Warning: Command \" invalid in math mode on input line 9355.
 LaTeX Warning: Command \" invalid in math mode on input line 9356.
 
 [235]
-<imgs/7-tetel/mozgo_vezeto.png, id=3711, 484.81125pt x 228.855pt>
+<imgs/7-tetel/mozgo_vezeto.png, id=3783, 484.81125pt x 228.855pt>
 File: imgs/7-tetel/mozgo_vezeto.png Graphic file (type png)
 <use imgs/7-tetel/mozgo_vezeto.png>
 Package pdftex.def Info: imgs/7-tetel/mozgo_vezeto.png  used on input line 9388.
 (pdftex.def)             Requested size: 181.18439pt x 85.52707pt.
  [236 <./imgs/7-tetel/mozgo_vezeto.png>]
-<imgs/7-tetel/integral_utak.png, id=3719, 767.86874pt x 340.27126pt>
+<imgs/7-tetel/integral_utak.png, id=3791, 767.86874pt x 340.27126pt>
 File: imgs/7-tetel/integral_utak.png Graphic file (type png)
 <use imgs/7-tetel/integral_utak.png>
 Package pdftex.def Info: imgs/7-tetel/integral_utak.png  used on input line 9421.
 (pdftex.def)             Requested size: 181.18439pt x 80.28566pt.
  [237 <./imgs/7-tetel/integral_utak.png>] [238]
-<imgs/7-tetel/magnetized_cylinder.png, id=3741, 412.54124pt x 224.84pt>
+<imgs/7-tetel/magnetized_cylinder.png, id=3813, 412.54124pt x 224.84pt>
 File: imgs/7-tetel/magnetized_cylinder.png Graphic file (type png)
 <use imgs/7-tetel/magnetized_cylinder.png>
 Package pdftex.def Info: imgs/7-tetel/magnetized_cylinder.png  used on input line 9467.
@@ -2587,7 +2587,7 @@ File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 9539.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
  [240]
-<imgs/7-tetel/induktivitas.png, id=3766, 758.835pt x 288.07625pt>
+<imgs/7-tetel/induktivitas.png, id=3839, 758.835pt x 288.07625pt>
 File: imgs/7-tetel/induktivitas.png Graphic file (type png)
 <use imgs/7-tetel/induktivitas.png>
 Package pdftex.def Info: imgs/7-tetel/induktivitas.png  used on input line 9543.
@@ -2605,7 +2605,7 @@ File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 9573.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
  [241 <./imgs/7-tetel/induktivitas.png>]
-<imgs/7-tetel/ac_generator.jpg, id=3779, 642.4pt x 481.8pt>
+<imgs/7-tetel/ac_generator.jpg, id=3852, 642.4pt x 481.8pt>
 File: imgs/7-tetel/ac_generator.jpg Graphic file (type jpg)
 <use imgs/7-tetel/ac_generator.jpg>
 Package pdftex.def Info: imgs/7-tetel/ac_generator.jpg  used on input line 9591.
@@ -2616,7 +2616,7 @@ Overfull \hbox (11.08142pt too wide) in paragraph at lines 9658--9658
  []
 
 [244]
-<imgs/7-tetel/amper_torveny_rossz.png, id=3809, 397.485pt x 266.9975pt>
+<imgs/7-tetel/amper_torveny_rossz.png, id=3881, 397.485pt x 266.9975pt>
 File: imgs/7-tetel/amper_torveny_rossz.png Graphic file (type png)
 <use imgs/7-tetel/amper_torveny_rossz.png>
 Package pdftex.def Info: imgs/7-tetel/amper_torveny_rossz.png  used on input line 9703.
@@ -2626,7 +2626,7 @@ Overfull \hbox (21.60088pt too wide) in paragraph at lines 9782--9788
 \T1/lmr/m/n/12 mág-ne-ses tér di-ver-gen-ciája mindig nulla, míg az elek-tro-mos tér di-ver-gen-ciája a töltéss¶r¶ségt®l
  []
 
-<imgs/7-tetel/polarizacios_aram.png, id=3847, 270.00874pt x 153.57375pt>
+<imgs/7-tetel/polarizacios_aram.png, id=3919, 270.00874pt x 153.57375pt>
 File: imgs/7-tetel/polarizacios_aram.png Graphic file (type png)
 <use imgs/7-tetel/polarizacios_aram.png>
 Package pdftex.def Info: imgs/7-tetel/polarizacios_aram.png  used on input line 9807.
@@ -2637,13 +2637,13 @@ Overfull \hbox (10.87802pt too wide) in paragraph at lines 9894--9896
  []
 
 [250]
-<imgs/7-tetel/Gaussian_pillbox.png, id=3882, 565.11125pt x 352.31625pt>
+<imgs/7-tetel/Gaussian_pillbox.png, id=3955, 565.11125pt x 352.31625pt>
 File: imgs/7-tetel/Gaussian_pillbox.png Graphic file (type png)
 <use imgs/7-tetel/Gaussian_pillbox.png>
 Package pdftex.def Info: imgs/7-tetel/Gaussian_pillbox.png  used on input line 9907.
 (pdftex.def)             Requested size: 181.18439pt x 112.95853pt.
  [251 <./imgs/7-tetel/Gaussian_pillbox.png>]
-<imgs/7-tetel/Gaussian_loop.png, id=3896, 595.22375pt x 344.28625pt>
+<imgs/7-tetel/Gaussian_loop.png, id=3969, 595.22375pt x 344.28625pt>
 File: imgs/7-tetel/Gaussian_loop.png Graphic file (type png)
 <use imgs/7-tetel/Gaussian_loop.png>
 Package pdftex.def Info: imgs/7-tetel/Gaussian_loop.png  used on input line 9947.
@@ -2654,37 +2654,37 @@ File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 10085.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
  [255] [256] [257] [258]
-<imgs/7-tetel/mozgo_toltes_tere.png, id=3981, 591.20876pt x 237.88875pt>
+<imgs/7-tetel/mozgo_toltes_tere.png, id=4054, 591.20876pt x 237.88875pt>
 File: imgs/7-tetel/mozgo_toltes_tere.png Graphic file (type png)
 <use imgs/7-tetel/mozgo_toltes_tere.png>
 Package pdftex.def Info: imgs/7-tetel/mozgo_toltes_tere.png  used on input line 10251.
 (pdftex.def)             Requested size: 226.48395pt x 91.13188pt.
  [259]
-<imgs/7-tetel/mozgo_toltesek_utkozes.png, id=3991, 357.335pt x 283.0575pt>
+<imgs/7-tetel/mozgo_toltesek_utkozes.png, id=4064, 357.335pt x 283.0575pt>
 File: imgs/7-tetel/mozgo_toltesek_utkozes.png Graphic file (type png)
 <use imgs/7-tetel/mozgo_toltesek_utkozes.png>
 Package pdftex.def Info: imgs/7-tetel/mozgo_toltesek_utkozes.png  used on input line 10259.
 (pdftex.def)             Requested size: 226.48395pt x 179.40694pt.
  [260 <./imgs/7-tetel/mozgo_toltes_tere.png> <./imgs/7-tetel/mozgo_toltesek_utkozes.png>] [261]
-<imgs/8-tetel/kotel_hullam.png, id=4011, 348.30125pt x 248.93pt>
+<imgs/8-tetel/kotel_hullam.png, id=4084, 348.30125pt x 248.93pt>
 File: imgs/8-tetel/kotel_hullam.png Graphic file (type png)
 <use imgs/8-tetel/kotel_hullam.png>
 Package pdftex.def Info: imgs/8-tetel/kotel_hullam.png  used on input line 10323.
 (pdftex.def)             Requested size: 226.48395pt x 161.86714pt.
  [262] [263 <./imgs/8-tetel/kotel_hullam.png>] [264] [265]
-<imgs/8-tetel/hullam_polarizacio.png, id=4059, 760.8425pt x 424.58624pt>
+<imgs/8-tetel/hullam_polarizacio.png, id=4131, 760.8425pt x 424.58624pt>
 File: imgs/8-tetel/hullam_polarizacio.png Graphic file (type png)
 <use imgs/8-tetel/hullam_polarizacio.png>
 Package pdftex.def Info: imgs/8-tetel/hullam_polarizacio.png  used on input line 10494.
 (pdftex.def)             Requested size: 226.48395pt x 126.38562pt.
  [266] [267 <./imgs/8-tetel/hullam_polarizacio.png>]
-<imgs/8-tetel/planaris_hullam.png, id=4082, 537.00626pt x 291.0875pt>
+<imgs/8-tetel/planaris_hullam.png, id=4154, 537.00626pt x 291.0875pt>
 File: imgs/8-tetel/planaris_hullam.png Graphic file (type png)
 <use imgs/8-tetel/planaris_hullam.png>
 Package pdftex.def Info: imgs/8-tetel/planaris_hullam.png  used on input line 10568.
 (pdftex.def)             Requested size: 226.48395pt x 122.7667pt.
  [268]
-<imgs/8-tetel/x_polarizalt_hullam.png, id=4092, 571.13374pt x 238.8925pt>
+<imgs/8-tetel/x_polarizalt_hullam.png, id=4165, 571.13374pt x 238.8925pt>
 File: imgs/8-tetel/x_polarizalt_hullam.png Graphic file (type png)
 <use imgs/8-tetel/x_polarizalt_hullam.png>
 Package pdftex.def Info: imgs/8-tetel/x_polarizalt_hullam.png  used on input line 10603.
@@ -2700,25 +2700,25 @@ Overfull \hbox (29.22997pt too wide) in paragraph at lines 10679--10680
  []
 
 [271] [272] [273]
-<imgs/8-tetel/hullam_vezeto.png, id=4161, 688.5725pt x 408.52625pt>
+<imgs/8-tetel/hullam_vezeto.png, id=4233, 688.5725pt x 408.52625pt>
 File: imgs/8-tetel/hullam_vezeto.png Graphic file (type png)
 <use imgs/8-tetel/hullam_vezeto.png>
 Package pdftex.def Info: imgs/8-tetel/hullam_vezeto.png  used on input line 10827.
 (pdftex.def)             Requested size: 226.48395pt x 134.37149pt.
  [274]
-<imgs/8-tetel/reflekcio_normal.png, id=4176, 606.265pt x 436.63126pt>
+<imgs/8-tetel/reflekcio_normal.png, id=4248, 606.265pt x 436.63126pt>
 File: imgs/8-tetel/reflekcio_normal.png Graphic file (type png)
 <use imgs/8-tetel/reflekcio_normal.png>
 Package pdftex.def Info: imgs/8-tetel/reflekcio_normal.png  used on input line 10852.
 (pdftex.def)             Requested size: 226.48395pt x 163.1167pt.
  [275 <./imgs/8-tetel/hullam_vezeto.png> <./imgs/8-tetel/reflekcio_normal.png>] [276]
-<imgs/8-tetel/refleckio_szog.png, id=4204, 414.54875pt x 382.42876pt>
+<imgs/8-tetel/refleckio_szog.png, id=4277, 414.54875pt x 382.42876pt>
 File: imgs/8-tetel/refleckio_szog.png Graphic file (type png)
 <use imgs/8-tetel/refleckio_szog.png>
 Package pdftex.def Info: imgs/8-tetel/refleckio_szog.png  used on input line 10930.
 (pdftex.def)             Requested size: 226.48395pt x 208.93596pt.
  [277] [278 <./imgs/8-tetel/refleckio_szog.png>]
-<imgs/8-tetel/refrakcio.png, id=4229, 473.77pt x 383.4325pt>
+<imgs/8-tetel/refrakcio.png, id=4302, 473.77pt x 383.4325pt>
 File: imgs/8-tetel/refrakcio.png Graphic file (type png)
 <use imgs/8-tetel/refrakcio.png>
 Package pdftex.def Info: imgs/8-tetel/refrakcio.png  used on input line 10999.
@@ -2733,7 +2733,7 @@ Overfull \hbox (3.899pt too wide) in paragraph at lines 11124--11126
 \T1/lmr/m/n/12 A hul-lámok együttes alakja (hul-lám-c-so-mag) sebessége más lesz. Ezt \T1/lmr/bx/n/12 cso-port-sebességnek
  []
 
-<imgs/8-tetel/csoport_fazis_sebesseg.png, id=4270, 601.24625pt x 150.5625pt>
+<imgs/8-tetel/csoport_fazis_sebesseg.png, id=4342, 601.24625pt x 150.5625pt>
 File: imgs/8-tetel/csoport_fazis_sebesseg.png Graphic file (type png)
 <use imgs/8-tetel/csoport_fazis_sebesseg.png>
 Package pdftex.def Info: imgs/8-tetel/csoport_fazis_sebesseg.png  used on input line 11133.
@@ -2752,336 +2752,100 @@ Overfull \hbox (0.5969pt too wide) in paragraph at lines 11182--11184
 LaTeX Warning: Command \H invalid in math mode on input line 11191.
 
 [284]
-<imgs/8-tetel/diffrakcio.png, id=4297, 963.6pt x 826.08624pt>
+<imgs/8-tetel/kettos_nyilas.png, id=4369, 491.8375pt x 263.98625pt>
+File: imgs/8-tetel/kettos_nyilas.png Graphic file (type png)
+<use imgs/8-tetel/kettos_nyilas.png>
+Package pdftex.def Info: imgs/8-tetel/kettos_nyilas.png  used on input line 11203.
+(pdftex.def)             Requested size: 226.48395pt x 121.56001pt.
+<imgs/8-tetel/diffrakcio.png, id=4370, 963.6pt x 826.08624pt>
 File: imgs/8-tetel/diffrakcio.png Graphic file (type png)
 <use imgs/8-tetel/diffrakcio.png>
-Package pdftex.def Info: imgs/8-tetel/diffrakcio.png  used on input line 11207.
+Package pdftex.def Info: imgs/8-tetel/diffrakcio.png  used on input line 11226.
 (pdftex.def)             Requested size: 226.48395pt x 194.1555pt.
+ [285 <./imgs/8-tetel/kettos_nyilas.png>]
+<imgs/8-tetel/diffrakcio_veges_nyilason.png, id=4380, 448.67625pt x 243.91125pt>
+File: imgs/8-tetel/diffrakcio_veges_nyilason.png Graphic file (type png)
+<use imgs/8-tetel/diffrakcio_veges_nyilason.png>
+Package pdftex.def Info: imgs/8-tetel/diffrakcio_veges_nyilason.png  used on input line 11236.
+(pdftex.def)             Requested size: 226.48395pt x 123.12024pt.
+ [286 <./imgs/8-tetel/diffrakcio.png> <./imgs/8-tetel/diffrakcio_veges_nyilason.png>]
+<imgs/8-tetel/diffrakcio_intenzitas.png, id=4392, 448.67625pt x 252.945pt>
+File: imgs/8-tetel/diffrakcio_intenzitas.png Graphic file (type png)
+<use imgs/8-tetel/diffrakcio_intenzitas.png>
+Package pdftex.def Info: imgs/8-tetel/diffrakcio_intenzitas.png  used on input line 11254.
+(pdftex.def)             Requested size: 226.48395pt x 127.68025pt.
 File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11222.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11222.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
- [285 <./imgs/8-tetel/diffrakcio.png>]
-File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11224.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11227.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11229.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11231.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11231.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11241.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11241.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11241.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11241.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11241.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11241.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11243.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11243.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11246.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11246.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11250.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11252.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/BoldR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11252.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/BoldR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11252.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11252.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/BoldR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11252.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/BoldR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11252.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11252.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/BoldR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11254.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/BoldR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11254.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11254.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/BoldR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11254.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/BoldR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11254.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11254.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/BoldR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11258.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/BoldR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11258.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11258.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/BoldR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11258.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/BoldR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11258.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11258.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/BoldR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11263.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11263.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/BoldR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11263.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11263.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/BoldR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11264.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11264.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/BoldR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11264.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11264.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
- [286]
-File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/BoldR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11267.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/BoldR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11267.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11267.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/BoldR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11269.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/BoldR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11269.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/BoldR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11269.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/BoldR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11269.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11269.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11269.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/BoldR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11273.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/BoldR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11273.
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11273.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
 File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
 Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11273.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/BoldR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11273.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/BoldR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11275.
+File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/ScriptR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11275.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
 File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11277.
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11278.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/BoldR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11277.
+ [287 <./imgs/8-tetel/diffrakcio_intenzitas.png>]
+File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/ScriptR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11280.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
 File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11281.
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11282.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
 File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11281.
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11282.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
 File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11291.
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11292.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
 File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11291.
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11292.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
 File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11295.
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11292.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
 File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11297.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/BoldR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11297.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/BoldR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11297.
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11292.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
 File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11297.
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11292.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/BoldR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11297.
+File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/ScriptR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11292.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/BoldR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11297.
+File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/ScriptR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11294.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/ScriptR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11294.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
 File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
 Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11297.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/BoldR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11299.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/BoldR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11299.
+File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/ScriptR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11297.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
 File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11299.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/BoldR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11299.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/BoldR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11299.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11299.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11303.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11303.
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11301.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
 File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
@@ -3089,33 +2853,96 @@ Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 1
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
 File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/BoldR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11307.
+Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11303.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
 File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/BoldR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11307.
+Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11303.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
 File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11307.
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11303.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
 File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/BoldR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11307.
+Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11303.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
 File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/BoldR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11307.
+Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11303.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
 File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11307.
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11303.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/BoldR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11305.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/BoldR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11305.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
 File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11307.
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11305.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
- [287]
+File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/BoldR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11305.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/BoldR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11305.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/ScriptR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11305.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/BoldR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11309.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/BoldR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11309.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/ScriptR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11309.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/BoldR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11309.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/BoldR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11309.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/ScriptR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11309.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/BoldR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11314.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/ScriptR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11314.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/BoldR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11314.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/ScriptR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11314.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/BoldR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11315.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
 File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
 Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11315.
@@ -3124,271 +2951,607 @@ File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/BoldR.pdf>
 Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11315.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/BoldR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11315.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/BoldR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11315.
+File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/ScriptR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11315.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
 File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/BoldR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11315.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11319.
+Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11318.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
 File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/BoldR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11319.
+Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11318.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/ScriptR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11318.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
 File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/BoldR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11319.
+Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11320.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/BoldR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11320.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/BoldR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11320.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/BoldR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11320.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
 File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11319.
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11320.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
 File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11319.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11323.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11323.
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11320.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
  [288]
-File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11361.
+File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/BoldR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11324.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/BoldR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11324.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
 File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11361.
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11324.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/BoldR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11324.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/BoldR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11326.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
 File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11361.
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11328.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/BoldR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11328.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
 File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11361.
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11332.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
 File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11363.
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11332.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
 File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11365.
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11342.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-<imgs/8-tetel/elektromos_dipol_szogek.png, id=4343, 312.16624pt x 283.0575pt>
+File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/ScriptR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11342.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/ScriptR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11346.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/ScriptR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11348.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/BoldR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11348.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/BoldR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11348.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/ScriptR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11348.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/BoldR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11348.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/BoldR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11348.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/ScriptR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11348.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/BoldR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11350.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/BoldR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11350.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/ScriptR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11350.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/BoldR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11350.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/BoldR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11350.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/ScriptR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11350.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/ScriptR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11354.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/ScriptR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11354.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/ScriptR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11354.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/BoldR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11358.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/BoldR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11358.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/ScriptR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11358.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/BoldR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11358.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/BoldR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11358.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/ScriptR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11358.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/ScriptR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11358.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/ScriptR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11366.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/BoldR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11366.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/BoldR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11366.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/BoldR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11366.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/BoldR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11366.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/ScriptR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11370.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/BoldR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11370.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/BoldR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/BoldR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/BoldR.pdf  used on input line 11370.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/ScriptR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11370.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/ScriptR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11370.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+ [289]
+File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/ScriptR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11374.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/ScriptR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11374.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+ [290]
+File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/ScriptR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11412.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/ScriptR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11412.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/ScriptR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11412.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/ScriptR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11412.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/ScriptR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11414.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/ScriptR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11416.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+<imgs/8-tetel/elektromos_dipol_szogek.png, id=4442, 312.16624pt x 283.0575pt>
 File: imgs/8-tetel/elektromos_dipol_szogek.png Graphic file (type png)
 <use imgs/8-tetel/elektromos_dipol_szogek.png>
-Package pdftex.def Info: imgs/8-tetel/elektromos_dipol_szogek.png  used on input line 11369.
+Package pdftex.def Info: imgs/8-tetel/elektromos_dipol_szogek.png  used on input line 11420.
 (pdftex.def)             Requested size: 226.48395pt x 205.36906pt.
- [289 <./imgs/8-tetel/elektromos_dipol_szogek.png>]
 File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11379.
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11430.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
 File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11383.
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11434.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
 File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11388.
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11439.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+ [291 <./imgs/8-tetel/elektromos_dipol_szogek.png>]
 File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11399.
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11450.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
 
-Overfull \hbox (34.42352pt too wide) in paragraph at lines 11400--11402
+Overfull \hbox (34.42352pt too wide) in paragraph at lines 11451--11453
 \T1/lmr/m/n/12 Ezeket vis-sza-he-lyettesítve a po-ten-ciálba, és csak az el-s®rend¶ tagokat meg-tartva, a következ®kép-
  []
 
 File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11419.
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11470.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
 File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11419.
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11470.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
 File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11423.
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11474.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-[290]
-<imgs/8-tetel/dipol_sugarzas_intenzitas.png, id=4371, 371.3875pt x 249.93375pt>
+[292]
+<imgs/8-tetel/dipol_sugarzas_intenzitas.png, id=4470, 371.3875pt x 249.93375pt>
 File: imgs/8-tetel/dipol_sugarzas_intenzitas.png Graphic file (type png)
 <use imgs/8-tetel/dipol_sugarzas_intenzitas.png>
-Package pdftex.def Info: imgs/8-tetel/dipol_sugarzas_intenzitas.png  used on input line 11453.
+Package pdftex.def Info: imgs/8-tetel/dipol_sugarzas_intenzitas.png  used on input line 11504.
 (pdftex.def)             Requested size: 226.48395pt x 152.42122pt.
- [291]
-<imgs/8-tetel/magnetikus_dipol_szogek.png, id=4384, 385.44pt x 291.0875pt>
+ [293 <./imgs/8-tetel/dipol_sugarzas_intenzitas.png>]
+<imgs/8-tetel/magnetikus_dipol_szogek.png, id=4484, 385.44pt x 291.0875pt>
 File: imgs/8-tetel/magnetikus_dipol_szogek.png Graphic file (type png)
 <use imgs/8-tetel/magnetikus_dipol_szogek.png>
-Package pdftex.def Info: imgs/8-tetel/magnetikus_dipol_szogek.png  used on input line 11473.
+Package pdftex.def Info: imgs/8-tetel/magnetikus_dipol_szogek.png  used on input line 11524.
 (pdftex.def)             Requested size: 226.48395pt x 171.04279pt.
 File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11478.
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11529.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
 File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11478.
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11529.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
 File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11478.
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11529.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
 File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11480.
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11531.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
 File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11480.
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11531.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
 File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11483.
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11534.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
 File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11483.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
- [292 <./imgs/8-tetel/magnetikus_dipol_szogek.png> <./imgs/8-tetel/dipol_sugarzas_intenzitas.png>]
-File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11485.
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11534.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
 File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11487.
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11536.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
 File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11495.
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11538.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/ScriptR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11546.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
 
-Overfull \hbox (0.51521pt too wide) in paragraph at lines 11496--11498
+Overfull \hbox (0.51521pt too wide) in paragraph at lines 11547--11549
 \T1/lmr/m/n/12 Most megint be kell vezetnünk néhány közelítést, ah-hoz, hogy ideális dipólu-sokkal tudjunk
  []
 
 File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11503.
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11554.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
 File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11507.
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11558.
+(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+[294 <./imgs/8-tetel/magnetikus_dipol_szogek.png>]
+File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
+<use imgs/6-tetel/script-r/ScriptR.pdf>
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11563.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
 File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11512.
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11575.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
 File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11524.
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11577.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
-<use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11526.
-(pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
-[293]
-Overfull \hbox (21.87195pt too wide) in paragraph at lines 11552--11554
+ [295]
+Overfull \hbox (21.87195pt too wide) in paragraph at lines 11603--11605
 \T1/lmr/m/n/12 Tehát a $\OT1/lmr/bx/n/12 A$ \T1/lmr/m/n/12 els® tagja el-hanyagol-ható a má-sodikhoz képest, és a vek-tor-po-ten-ciál a következ®kép-
  []
 
-[294]
-<imgs/8-tetel/tetszoleges_forras.png, id=4425, 437.635pt x 334.24875pt>
+[296]
+<imgs/8-tetel/tetszoleges_forras.png, id=4528, 437.635pt x 334.24875pt>
 File: imgs/8-tetel/tetszoleges_forras.png Graphic file (type png)
 <use imgs/8-tetel/tetszoleges_forras.png>
-Package pdftex.def Info: imgs/8-tetel/tetszoleges_forras.png  used on input line 11596.
+Package pdftex.def Info: imgs/8-tetel/tetszoleges_forras.png  used on input line 11647.
 (pdftex.def)             Requested size: 226.48395pt x 172.979pt.
- [295]
 File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11601.
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11652.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
 File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11601.
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11652.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
 File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11605.
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11656.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
 File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11613.
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11664.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
 File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11617.
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11668.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
 File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11621.
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11672.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
+ [297 <./imgs/8-tetel/tetszoleges_forras.png>]
 File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11625.
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11676.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
- [296 <./imgs/8-tetel/tetszoleges_forras.png>]
-Overfull \hbox (2.14163pt too wide) in paragraph at lines 11642--11643
+
+Overfull \hbox (2.14163pt too wide) in paragraph at lines 11693--11694
 []\T1/lmr/m/n/12 A vek-tor-po-ten-ciál es-etében ha-sonló közelítéseket al-ka-lmazva, a következ®kép-pen alakul
  []
 
 File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11644.
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11695.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
 File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11644.
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11695.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
 File: imgs/6-tetel/script-r/ScriptR.pdf Graphic file (type pdf)
 <use imgs/6-tetel/script-r/ScriptR.pdf>
-Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11646.
+Package pdftex.def Info: imgs/6-tetel/script-r/ScriptR.pdf  used on input line 11697.
 (pdftex.def)             Requested size: 401.49901pt x 200.7495pt.
 
-Overfull \hbox (1.60822pt too wide) in paragraph at lines 11649--11651
+Overfull \hbox (1.60822pt too wide) in paragraph at lines 11700--11702
 \T1/lmr/m/n/12 A $\OT1/lmr/bx/n/12 J$ \T1/lmr/m/n/12 in-te-grálja pedig az áram id®deriváltját adja meg a töltés-meg-maradás törvénye alapján: 
  []
 
-[297] [298] [299] (./zarovizsga.aux)
+[298] [299] [300]
+Underfull \hbox (badness 10000) in paragraph at lines 11779--11784
+
+ []
+
+<imgs/9-tetel/siktukor.jpg, id=4580, 738.1176pt x 738.1176pt>
+File: imgs/9-tetel/siktukor.jpg Graphic file (type jpg)
+<use imgs/9-tetel/siktukor.jpg>
+Package pdftex.def Info: imgs/9-tetel/siktukor.jpg  used on input line 11799.
+(pdftex.def)             Requested size: 226.48395pt x 226.4827pt.
+[301 <./imgs/9-tetel/siktukor.jpg>]
+<imgs/9-tetel/tores.jpg, id=4588, 513.92pt x 432.61626pt>
+File: imgs/9-tetel/tores.jpg Graphic file (type jpg)
+<use imgs/9-tetel/tores.jpg>
+Package pdftex.def Info: imgs/9-tetel/tores.jpg  used on input line 11818.
+(pdftex.def)             Requested size: 226.48395pt x 190.6554pt.
+<imgs/9-tetel/fermat_visszavero.png, id=4589, 1445.4pt x 813.0375pt>
+File: imgs/9-tetel/fermat_visszavero.png Graphic file (type png)
+<use imgs/9-tetel/fermat_visszavero.png>
+Package pdftex.def Info: imgs/9-tetel/fermat_visszavero.png  used on input line 11831.
+(pdftex.def)             Requested size: 226.48395pt x 127.39656pt.
+ [302 <./imgs/9-tetel/tores.jpg>]
+<imgs/9-tetel/fermat_tores.png, id=4597, 1445.4pt x 813.0375pt>
+File: imgs/9-tetel/fermat_tores.png Graphic file (type png)
+<use imgs/9-tetel/fermat_tores.png>
+Package pdftex.def Info: imgs/9-tetel/fermat_tores.png  used on input line 11862.
+(pdftex.def)             Requested size: 226.48395pt x 127.39656pt.
+ [303 <./imgs/9-tetel/fermat_visszavero.png (PNG copy)> <./imgs/9-tetel/fermat_tores.png (PNG copy)>] [304]
+Overfull \hbox (10.00629pt too wide) in paragraph at lines 11951--11952
+[]\T1/lmr/m/n/12 Fermat-elv: A fény mindig azt az utat választja két pont között, ame-lyen a legrövidebb
+ []
+
+
+Overfull \hbox (6.12776pt too wide) in paragraph at lines 11955--11958
+\T1/lmr/m/n/12 zközöknek a hatását a fény útjára az op-tikai törvények és az es-zközök ge-ometriája határozza
+ []
+
+[305]
+<imgs/9-tetel/lekepezes.jpg, id=4631, 144.54pt x 96.36pt>
+File: imgs/9-tetel/lekepezes.jpg Graphic file (type jpg)
+<use imgs/9-tetel/lekepezes.jpg>
+Package pdftex.def Info: imgs/9-tetel/lekepezes.jpg  used on input line 11976.
+(pdftex.def)             Requested size: 226.48395pt x 150.9973pt.
+<imgs/9-tetel/gorbult_felulet.png, id=4632, 1445.4pt x 813.0375pt>
+File: imgs/9-tetel/gorbult_felulet.png Graphic file (type png)
+<use imgs/9-tetel/gorbult_felulet.png>
+Package pdftex.def Info: imgs/9-tetel/gorbult_felulet.png  used on input line 11985.
+(pdftex.def)             Requested size: 226.48395pt x 127.39656pt.
+
+Overfull \hbox (13.4373pt too wide) in paragraph at lines 11981--11987
+\T1/lmr/m/n/12 Vegyünk egy gör-bült felületet, amely két külön-böz® törés-mu-tatójú közeg határán helyezkedik
+ []
+
+[306 <./imgs/9-tetel/lekepezes.jpg> <./imgs/9-tetel/gorbult_felulet.png (PNG copy)>]
+Overfull \hbox (3.34251pt too wide) in paragraph at lines 12027--12028
+[]\T1/lmr/m/n/12 De mi-van a gömbfelület nem en-gedi át a fényt hanem vis-sza-veri? Ekkor egy gömbtükröt
+ []
+
+[307] [308]
+<imgs/9-tetel/airy-disk.png, id=4666, 250.9375pt x 186.6975pt>
+File: imgs/9-tetel/airy-disk.png Graphic file (type png)
+<use imgs/9-tetel/airy-disk.png>
+Package pdftex.def Info: imgs/9-tetel/airy-disk.png  used on input line 12104.
+(pdftex.def)             Requested size: 226.48395pt x 168.51332pt.
+ [309]
+Overfull \hbox (7.38374pt too wide) in paragraph at lines 12112--12113
+\T1/lmr/m/n/12 A távcs® távoli tár-gyak látószögének fel-nagyítására szol-gáló es-zköz. Teleszkóp és messzelátó
+ []
+
+<imgs/9-tetel/Galilei_tavcso.png, id=4677, 501.875pt x 176.66pt>
+File: imgs/9-tetel/Galilei_tavcso.png Graphic file (type png)
+<use imgs/9-tetel/Galilei_tavcso.png>
+Package pdftex.def Info: imgs/9-tetel/Galilei_tavcso.png  used on input line 12123.
+(pdftex.def)             Requested size: 452.9679pt x 159.45348pt.
+[310 <./imgs/9-tetel/airy-disk.png>]
+<imgs/9-tetel/galilei_light_path.jpg, id=4684, 542.025pt x 339.2675pt>
+File: imgs/9-tetel/galilei_light_path.jpg Graphic file (type jpg)
+<use imgs/9-tetel/galilei_light_path.jpg>
+Package pdftex.def Info: imgs/9-tetel/galilei_light_path.jpg  used on input line 12132.
+(pdftex.def)             Requested size: 226.48395pt x 141.76144pt.
+ [311 <./imgs/9-tetel/Galilei_tavcso.png> <./imgs/9-tetel/galilei_light_path.jpg>]
+<imgs/9-tetel/Keplerian_telescope.png, id=4692, 501.875pt x 224.84pt>
+File: imgs/9-tetel/Keplerian_telescope.png Graphic file (type png)
+<use imgs/9-tetel/Keplerian_telescope.png>
+Package pdftex.def Info: imgs/9-tetel/Keplerian_telescope.png  used on input line 12149.
+(pdftex.def)             Requested size: 452.9679pt x 202.94078pt.
+<imgs/9-tetel/Newtonian_telescope.png, id=4693, 250.9375pt x 114.4275pt>
+File: imgs/9-tetel/Newtonian_telescope.png Graphic file (type png)
+<use imgs/9-tetel/Newtonian_telescope.png>
+Package pdftex.def Info: imgs/9-tetel/Newtonian_telescope.png  used on input line 12162.
+(pdftex.def)             Requested size: 226.48395pt x 103.28236pt.
+ [312 <./imgs/9-tetel/Keplerian_telescope.png>]
+<imgs/9-tetel/mikroszkop.png, id=4702, 416.55624pt x 988.69376pt>
+File: imgs/9-tetel/mikroszkop.png Graphic file (type png)
+<use imgs/9-tetel/mikroszkop.png>
+Package pdftex.def Info: imgs/9-tetel/mikroszkop.png  used on input line 12172.
+(pdftex.def)             Requested size: 226.48395pt x 537.56773pt.
+
+Overfull \hbox (22.70651pt too wide) in paragraph at lines 12169--12174
+\T1/lmr/m/n/12 A mikroszkópok ha-sonló el-ven m¶köd-nek, mint a távc-sövek, de es-etük-ben nem feltételezhetünk
+ []
+
+[313 <./imgs/9-tetel/Newtonian_telescope.png>]
+Overfull \hbox (21.81815pt too wide) in paragraph at lines 12177--12179
+\T1/lmr/m/n/12 (prepará-tum) két-féle nagyítási mód-sz-er-rel vizs-gál-ható. Szorosan vett értelem-ben a mikroszkóp
+ []
+
+[314 <./imgs/9-tetel/mikroszkop.png>] [315]
+<imgs/9-tetel/delibab.jpg, id=4724, 331.2375pt x 186.6975pt>
+File: imgs/9-tetel/delibab.jpg Graphic file (type jpg)
+<use imgs/9-tetel/delibab.jpg>
+Package pdftex.def Info: imgs/9-tetel/delibab.jpg  used on input line 12228.
+(pdftex.def)             Requested size: 317.07614pt x 178.72331pt.
+<imgs/9-tetel/delibab2.png, id=4725, 385.44pt x 337.26pt>
+File: imgs/9-tetel/delibab2.png Graphic file (type png)
+<use imgs/9-tetel/delibab2.png>
+Package pdftex.def Info: imgs/9-tetel/delibab2.png  used on input line 12235.
+(pdftex.def)             Requested size: 226.48395pt x 198.17372pt.
+ [316 <./imgs/9-tetel/delibab.jpg>]
+<imgs/9-tetel/delibab3.png, id=4731, 380.42125pt x 308.15125pt>
+File: imgs/9-tetel/delibab3.png Graphic file (type png)
+<use imgs/9-tetel/delibab3.png>
+Package pdftex.def Info: imgs/9-tetel/delibab3.png  used on input line 12258.
+(pdftex.def)             Requested size: 226.48395pt x 183.46275pt.
+ [317 <./imgs/9-tetel/delibab2.png>]
+<imgs/9-tetel/rainbow.png, id=4742, 512.91624pt x 236.885pt>
+File: imgs/9-tetel/rainbow.png Graphic file (type png)
+<use imgs/9-tetel/rainbow.png>
+Package pdftex.def Info: imgs/9-tetel/rainbow.png  used on input line 12279.
+(pdftex.def)             Requested size: 226.48395pt x 104.5984pt.
+<imgs/9-tetel/rainbow_path.png, id=4743, 552.0625pt x 438.63875pt>
+File: imgs/9-tetel/rainbow_path.png Graphic file (type png)
+<use imgs/9-tetel/rainbow_path.png>
+Package pdftex.def Info: imgs/9-tetel/rainbow_path.png  used on input line 12286.
+(pdftex.def)             Requested size: 226.48395pt x 179.95013pt.
+ [318 <./imgs/9-tetel/delibab3.png> <./imgs/9-tetel/rainbow.png>] [319 <./imgs/9-tetel/rainbow_path.png>]
+<imgs/9-tetel/kausztika.png, id=4769, 258.9675pt x 339.2675pt>
+File: imgs/9-tetel/kausztika.png Graphic file (type png)
+<use imgs/9-tetel/kausztika.png>
+Package pdftex.def Info: imgs/9-tetel/kausztika.png  used on input line 12346.
+(pdftex.def)             Requested size: 226.48395pt x 296.72372pt.
+ [320] [321 <./imgs/9-tetel/kausztika.png>]
+Overfull \hbox (49.2307pt too wide) in paragraph at lines 12360--12361
+\T1/lmr/m/n/12 Fotoeffektus, Compton-effektus. a h®mérsék-leti sug-árzás spek-truma (beleértve: Stefan^^UBoltzmann-
+ []
+
+[322] (./zarovizsga.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
 Package rerunfilecheck Info: File `zarovizsga.out' has not changed.
-(rerunfilecheck)             Checksum: 2BAB61A32EB5C0403CD4D548F06757F7;34323.
+(rerunfilecheck)             Checksum: C47F765A975D9D14A95E3F9EFF0C37E3;37307.
  ) 
 Here is how much of TeX's memory you used:
- 15974 strings out of 474222
- 269910 string characters out of 5748733
- 1957975 words of memory out of 5000000
- 35254 multiletter control sequences out of 15000+600000
+ 16281 strings out of 474222
+ 277659 string characters out of 5748733
+ 1956975 words of memory out of 5000000
+ 35419 multiletter control sequences out of 15000+600000
  641789 words of font info for 98 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,17n,79p,807b,547s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,17n,79p,913b,547s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx6.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx8.pfb></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmmib10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on zarovizsga.pdf (299 pages, 7154539 bytes).
+Output written on zarovizsga.pdf (322 pages, 7902636 bytes).
 PDF statistics:
- 5175 PDF objects out of 6186 (max. 8388607)
- 4569 compressed objects within 46 object streams
- 2785 named destinations out of 2984 (max. 500000)
- 1848 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 5506 PDF objects out of 6186 (max. 8388607)
+ 4843 compressed objects within 49 object streams
+ 2927 named destinations out of 2984 (max. 500000)
+ 2097 words of extra memory for PDF output out of 10000 (max. 10000000)
 
