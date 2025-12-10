@@ -1,0 +1,114 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{ynt/global//global/global}
+    \entry{kiserleti_atomfizika}{book}{}
+      \name{author}{3}{}{%
+        {{hash=3c640c936e3220715b832f9294d606e6}{%
+           family={Dezső},
+           familyi={D\bibinitperiod},
+           given={Kiss},
+           giveni={K\bibinitperiod}}}%
+        {{hash=be3458c787542154b93adbebd94a19c6}{%
+           family={Ákos},
+           familyi={Á\bibinitperiod},
+           given={Horváth},
+           giveni={H\bibinitperiod}}}%
+        {{hash=b261802d952481244447d8a0fb762d2b}{%
+           family={Ádám},
+           familyi={Á\bibinitperiod},
+           given={Kiss},
+           giveni={K\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {ELTE Eötvös Kiadó}%
+      }
+      \strng{namehash}{e4d7e5d2be97bab8213c814d9738f26e}
+      \strng{fullhash}{e4d7e5d2be97bab8213c814d9738f26e}
+      \strng{bibnamehash}{e4d7e5d2be97bab8213c814d9738f26e}
+      \strng{authorbibnamehash}{e4d7e5d2be97bab8213c814d9738f26e}
+      \strng{authornamehash}{e4d7e5d2be97bab8213c814d9738f26e}
+      \strng{authorfullhash}{e4d7e5d2be97bab8213c814d9738f26e}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{963 463 166 5}
+      \field{title}{Kísérleti atomfizika}
+      \field{year}{1998}
+      \keyw{physics}
+    \endentry
+    \entry{electro_intro}{book}{}
+      \name{author}{1}{}{%
+        {{hash=a00328547222c4a2a201442ee59dccfd}{%
+           family={Griffiths},
+           familyi={G\bibinitperiod},
+           given={David\bibnamedelima J.},
+           giveni={D\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Pearson}%
+      }
+      \strng{namehash}{a00328547222c4a2a201442ee59dccfd}
+      \strng{fullhash}{a00328547222c4a2a201442ee59dccfd}
+      \strng{bibnamehash}{a00328547222c4a2a201442ee59dccfd}
+      \strng{authorbibnamehash}{a00328547222c4a2a201442ee59dccfd}
+      \strng{authornamehash}{a00328547222c4a2a201442ee59dccfd}
+      \strng{authorfullhash}{a00328547222c4a2a201442ee59dccfd}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{0-321-85656-2}
+      \field{title}{Introduction to Electrodynamics}
+      \field{year}{2013}
+      \keyw{physics,electrodynamics}
+    \endentry
+    \entry{susskind}{online}{}
+      \name{author}{1}{}{%
+        {{hash=80ad4d633646b74e1049ffcc607a0533}{%
+           family={Susskind},
+           familyi={S\bibinitperiod},
+           given={Dr.\bibnamedelimi Leonard},
+           giveni={D\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \strng{namehash}{80ad4d633646b74e1049ffcc607a0533}
+      \strng{fullhash}{80ad4d633646b74e1049ffcc607a0533}
+      \strng{bibnamehash}{80ad4d633646b74e1049ffcc607a0533}
+      \strng{authorbibnamehash}{80ad4d633646b74e1049ffcc607a0533}
+      \strng{authornamehash}{80ad4d633646b74e1049ffcc607a0533}
+      \strng{authorfullhash}{80ad4d633646b74e1049ffcc607a0533}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Classical Mechanics}
+      \verb{urlraw}
+      \verb https://theoreticalminimum.com/courses/classical-mechanics/2011/fall
+      \endverb
+      \verb{url}
+      \verb https://theoreticalminimum.com/courses/classical-mechanics/2011/fall
+      \endverb
+      \keyw{physics,reference}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

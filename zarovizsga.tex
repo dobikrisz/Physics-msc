@@ -13,6 +13,14 @@
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{gensymb}
+\usepackage[magyar]{babel}
+
+\usepackage[
+backend=biber,
+style=numeric,
+sorting=ynt
+]{biblatex}
+\addbibresource{vizsga.bib}
 
 \def\rcurs{{\mbox{$\resizebox{.16in}{.08in}{\includegraphics{imgs/6-tetel/script-r/ScriptR.pdf}}$}}}
 \def\brcurs{{\mbox{$\resizebox{.16in}{.08in}{\includegraphics{imgs/6-tetel/script-r/BoldR.pdf}}$}}}
@@ -1852,7 +1860,7 @@ A négyesimpulzus komponensei a következőképpen transzformálódnak a Lorentz
 ahol $\Lambda^\mu_\nu$ a Lorentz transzformáció mátrixa. Ez az invariancia biztosítja, hogy a fizikai törvények formája ugyanaz maradjon minden inerciarendszerben, és lehetővé teszi a relativisztikus dinamika alkalmazását különböző helyzetekben.
 
 \newpage
-\section{A klasszikus mechanika elvei}
+\section{A klasszikus mechanika elvei \cite{susskind}}
 
 Virtuális munka elve, Hamilton-elv. Legkisebb hatás elve. Lagrange-féle elsőfajú és másodfajú mozgásegyenletek. Hamilton-függvény, kanonikus egyenletek. Kanonikus transzformációk. Szimmetriák és megmaradási tételek.
 
@@ -3235,7 +3243,7 @@ Ez a diszperziós reláció a kétatomos lineáris lánc számára. Két külön
     \label{fig:ketatomos_linearis_lanc_diszperzio}
 \end{figure}
 
-\subsection{!Kepler-Probléma, bolygómozgás}
+\subsection{Kepler-Probléma, bolygómozgás}
 A Kepler-probléma a klasszikus mechanikában egy olyan probléma, amely a két test közötti gravitációs kölcsönhatást vizsgálja, például egy bolygó és egy csillag között. A probléma célja meghatározni a bolygó pályáját és mozgását a csillag körül,
 figyelembe véve a gravitációs erőt. A Kepler-probléma megoldása a Kepler-törvényeken alapul, amelyek Johannes Kepler német csillagász által a 17. században megfogalmazott három törvény:
 \begin{itemize}
@@ -3250,107 +3258,176 @@ A Kepler-probléma megoldása a Newton-féle gravitációs törvényen alapul, a
 Ahol $F$ a gravitációs erő, $G$ a gravitációs állandó, $M$ és $m$ a két test tömege, és $r$ a távolságuk. 
 
 \subsubsection{Kepler-probléma megoldása}
-A Kepler-problémára felirhatjuk a kinetikus és potenciális energiát:
+A kepler-probléma lényegében a kéttest probléma, ahol két test egy olyan vonzó erő hatására mozog, amely a távolságuk négyzetével fordítottan arányos. A Kepler-probléma speciális esete, amikor az egyik test tömege sokkal nagyobb, mint a másiké (például egy bolygó és egy csillag esetében),
+így a nehezebb test mozgása elhanyagolható. Ebben az esetben a könnyebb test mozgását a nehezebb test körül vizsgáljuk. A Kepler-probléma megoldását a Newtoni mechanika megalkotása tette lehetővé, amely a mozgás törvényein alapul.
+A Newton gravitációs törvénye szerint a két test közötti gravitációs erő a következőképpen írható fel:
 \begin{equation}
-    K = \frac{1}{2} m v^2 = \frac{1}{2} m (\dot{r}^2 + r^2 \dot{\theta}^2)
+    \mathbf{F} = -G \frac{M m}{r^2} \hat{\mathbf{r}}
+\end{equation}
+Ahol $\mathbf{F}$ a gravitációs erő, $G$ a gravitációs állandó, $M$ és $m$ a két test tömege, és $\hat{\mathbf{r}}$ az egységvektor a két test közötti távolság irányában. 
+A Newton második törvénye szerint a test mozgását a következőképpen írhatjuk fel:
+\begin{equation}
+    m \mathbf{a} = \mathbf{F}
 \end{equation}
 \begin{equation}
-    U = - G \frac{M m}{r}
+    \mathbf{a} = -G \frac{M}{r^2} \hat{\mathbf{r}}
 \end{equation}
-Ahol $r$ a bolygó és a csillag közötti távolság, $\theta$ a bolygó szöge a csillaghoz képest, és a pontok idő szerinti deriváltjai. A Lagrange-függvény a következő lesz:
+Mivel az erőtér centrális, ezért ezért tudjuk, hogy keringő mozgás csak akkor állhat fenn, ha a gyorsulás és a keringő tárgy sebessége minden pillanatban merőleges egymásra. Ekkor bevezethetünk egy vektort:
 \begin{equation}
-    \mathcal{L} = K - U = \frac{1}{2} m (\dot{r}^2 + r^2 \dot{\theta}^2) + G \frac{M m}{r}
+    \mathbf{K} = \mathbf{r} \times \mathbf{v}
 \end{equation}
-Nézzük meg a $\theta$ koordinátára felírt Euler-Lagrange egyenletet:
+Ami az impulzusmomentummal arányos mennyiség. Erről a mennyiségről tudjuk, hogy időben állandó, hisz:
+
 \begin{equation}
-    \frac{d}{dt} \left( \frac{\partial \mathcal{L}}{\partial \dot{\theta}} \right) - \frac{\partial \mathcal{L}}{\partial \theta} = 0
+    \frac{d}{dt} \mathbf{K} = \frac{d}{dt} (\mathbf{r} \times \mathbf{v}) = \mathbf{v} \times \mathbf{v} + \mathbf{r} \times \mathbf{a} = \vec{0} \times \vec{0} = \vec{0}
 \end{equation}
-Mivel a Lagrange-függvény nem függ $\theta$-tól, a második tag nulla lesz:
+Illetve ha áttérünk a polár koordinátákra, akkor a helyvektor és a sebességvektor a következőképpen írható fel:
 \begin{equation}
-    \frac{d}{dt} \left( m r^2 \dot{\theta} \right) = 0
-\end{equation}
-Ez azt jelenti, hogy az $m r^2 \dot{\theta}$ mennyiség állandó, amely az impulzusmomentum $L$:
-\begin{equation}
-    L = m r^2 \dot{\theta} = \text{állandó}
-\end{equation}
-A Hamilton-függvény a következő lesz:
-\begin{equation}
-    \mathcal{H} = K + U = \frac{1}{2} m (\dot{r}^2 + r^2 \dot{\theta}^2) - G \frac{M m}{r}
-\end{equation}
-Mivel a Hamilton-függvény nem függ kifejezetten az időtől, az energia $E$ is állandó:
-\begin{equation}
-    E = \mathcal{H} = \text{állandó}
-\end{equation}
-Most fejezzük ki $\dot{\theta}$-t az impulzusmomentum segítségével:
-\begin{equation}
-    \dot{\theta} = \frac{L}{m r^2}
-\end{equation}
-Nézzük meg a $r$ koordinátára felírt Euler-Lagrange egyenletet:
-\begin{equation}
-    \frac{d}{dt} \left( \frac{\partial \mathcal{L}}{\partial \dot{r}} \right) - \frac{\partial \mathcal{L}}{\partial r} = 0
+    \mathbf{r} = r \hat{\mathbf{e}}_r
 \end{equation}
 \begin{equation}
-    m \ddot{r} - m r \dot{\theta}^2 + G \frac{M m}{r^2} = 0
+    \mathbf{v} = \dot{r} \hat{\mathbf{e}}_r + r \dot{\varphi} \hat{\mathbf{e}}_{\varphi}
 \end{equation}
-Helyettesítsük be $\dot{\theta}$-t:
+Ahol $\hat{\mathbf{e}}_r$ és $\hat{\mathbf{e}}_{\varphi}$ a polár koordináták egységvektorai. Ezt behelyettesítve a $\mathbf{K}$ vektorba:
 \begin{equation}
-    m \ddot{r} - m r \left( \frac{L}{m r^2} \right)^2 + G \frac{M m}{r^2} = 0
+    \mathbf{K} = r \hat{\mathbf{e}}_r \times (\dot{r} \hat{\mathbf{e}}_r + r \dot{\varphi} \hat{\mathbf{e}}_{\varphi}) = r^2 \dot{\varphi} (\hat{\mathbf{e}}_r \times \hat{\mathbf{e}}_{\varphi}) = r^2 \dot{\varphi} \hat{\mathbf{e}}_z
+\end{equation}
+Ahol $\hat{\mathbf{e}}_z$ a síkra merőleges egységvektor. Vagyis a $\mathbf{K}$ vektor nagysága:
+\begin{equation}
+    K = r^2 \dot{\varphi}
+\end{equation}
+Mivel a $\mathbf{K}$ vektor időben állandó, ezért a $K$ nagysága is állandó, így a következő összefüggést kapjuk:
+\begin{equation}
+    r^2 \dot{\varphi} = \text{állandó}
+\end{equation}
+Ez az összefüggés a területi sebesség állandóságát fejezi ki, ami a Kepler második törvényének matematikai megfogalmazása. Ez azt jelenti, hogy a bolygó és a Nap közötti képzeletbeli vonal egyenlő területeket súrol egyenlő idő alatt.
+
+Ahhoz, hogy megkapjuk a pályaegyenletet használjuk ki a hármas skalárszorzat tulajdonságait:
+\begin{equation}
+    \mathbf{r} \times \mathbf{v} \cdot \mathbf{K} = \mathbf{v} \times \mathbf{K} \cdot \mathbf{r}
+\end{equation}
+Ekkor a baloldal:
+\begin{equation}
+    \mathbf{r} \times \mathbf{v} \cdot \mathbf{K} = \mathbf{K} \cdot \mathbf{K} = K^2
+\end{equation}
+A jobboldal kiértékeléséhez használjuk ki a $\mathbf{a} = -G \frac{M}{r^2} \hat{\mathbf{r}}$ gyorsulást, illetve azt hogy polárkoordinátákban $\frac{d}{dt}\hat{\mathbf{e}}_r = \frac{d\varphi}{dt}\hat{\mathbf{e}}_\varphi$ 
+\begin{equation}
+    \begin{aligned}
+        \frac{d}{dt} (\mathbf{v} \times \mathbf{K}) &= \mathbf{a} \times \mathbf{K} = \left(- \frac{GM}{r^2} \hat{\mathbf{e}}_r\right) \times \left(r^2 \dot{\varphi} (\hat{\mathbf{e}}_r \times \hat{\mathbf{e}}_{\varphi})\right) = \\
+        &= -GM \dot{\varphi} \left[\hat{\mathbf{e}}_r \times (\hat{\mathbf{e}}_r \times \hat{\mathbf{e}}_{\varphi})\right] = GM \dot{\varphi} \hat{\mathbf{e}}_{\varphi} = GM \frac{d}{dt} \hat{\mathbf{e}}_r
+    \end{aligned}
+\end{equation}
+Ebből következik, hogy a $\frac{d}{dt} (\mathbf{v} \times \mathbf{K} - GM \hat{\mathbf{e}}_r) = \vec{0}$ vagyis ez a $\mathbf{v} \times \mathbf{K} - GM \hat{\mathbf{e}}_r$ egy konstans vektor,
+amit nevezzünk el $GM\boldsymbol{\varepsilon}$:
+\begin{equation}
+    \mathbf{v} \times \mathbf{K} = GM (\boldsymbol{\varepsilon} + \hat{\mathbf{e}}_r)
+\end{equation}
+Tehát az eredeti hármas skalárszorzat egyenletünk jobboldala:
+\begin{equation}
+    \mathbf{v} \times \mathbf{K} \cdot \mathbf{r} = GM (\boldsymbol{\varepsilon} + \hat{\mathbf{e}}_r) \cdot \mathbf{r} = GM (|\mathbf{r}| + \boldsymbol{\varepsilon} \cdot \mathbf{r}))
+\end{equation}
+Egyenlővé téve a két oldalt:
+\begin{equation}
+    K^2 = GM (r + \boldsymbol{\varepsilon} \cdot \mathbf{r})
+\end{equation}
+Átrendezve:
+\begin{equation}
+    |\mathbf{r}| + \boldsymbol{\varepsilon} \cdot \mathbf{r} = \frac{K^2}{GM}
+\end{equation}
+Ahol $|\mathbf{r}| = r$ és $\boldsymbol{\varepsilon} \cdot \mathbf{r} = \varepsilon r cos\varphi$, így a pályaegyenlet:
+\begin{equation}
+    r (1 + \varepsilon cos\varphi) = \frac{K^2}{GM}
+\end{equation}
+Ez pedig egy kónikus metszet egyenlete, ahol $\varepsilon$ az excentricitás.
+
+A kúpmetszeteknek viszont sok tipusa van, ezért, hogy pontosan meghatározzuk a pálya alakját, vizsgálódjunk egy kicsit tovább.
+Ha az $x$ tengelyt úgy definiáljuk, hogy párhuzamos legyen a $\boldsymbol{\varepsilon} = \varepsilon \hat{\mathbf{e}}_x$ vektorral, illetve a konstansokat egy változóba foglaljuk:
+\begin{equation}
+    \gamma = \frac{K^2}{GM}
+\end{equation}
+Akkor a pályaegyenlet a következőképpen néz ki:
+\begin{equation}
+    r (1 + \varepsilon cos\varphi) = \gamma
+\end{equation}
+Ezt átírhatjuk derékszögű koordinátákba is:
+\begin{equation}
+    \sqrt{x^2 + y^2} (1 + \varepsilon \frac{x}{\sqrt{x^2 + y^2}}) = \gamma
 \end{equation}
 \begin{equation}
-    \ddot{r} = \frac{L^2}{m^2 r^3} - G \frac{M}{r^2}
-\end{equation}
-Most fejezzük ki az energiát $E$-t:
-\begin{equation}
-    E = \frac{1}{2} m \dot{r}^2 + \frac{L^2}{2 m r^2} - G \frac{M m}{r}
-\end{equation}
-Rendezzük át:
-\begin{equation}
-    \frac{1}{2} m \dot{r}^2 = E - \frac{L^2}{2 m r^2} + G \frac{M m}{r}
+    \sqrt{x^2 + y^2} + \varepsilon x = \gamma
 \end{equation}
 \begin{equation}
-    \dot{r}^2 = \frac{2E}{m} - \frac{L^2}{m^2 r^2} + 2 G \frac{M}{r}
+    \sqrt{x^2 + y^2} = \gamma - \varepsilon x
 \end{equation}
-Most fejezzük ki $\dot{r}$-t:
+Négyzetre emelve:
 \begin{equation}
-    \dot{r} = \frac{dr}{dt} = \frac{dr}{d\theta} \cdot \frac{d\theta}{dt} = \frac{dr}{d\theta} \cdot \frac{L}{m r^2}
-\end{equation}
-\begin{equation}
-    \left( \frac{dr}{d\theta} \cdot \frac{L}{m r^2} \right)^2 = \frac{2E}{m} - \frac{L^2}{m^2 r^2} + 2 G \frac{M}{r}
+    x^2 + y^2 = \gamma^2 - 2 \gamma \varepsilon x + \varepsilon^2 x^2
 \end{equation}
 \begin{equation}
-    \left( \frac{dr}{d\theta} \right)^2 = \frac{m^2 r^4}{L^2} \left( \frac{2E}{m} - \frac{L^2}{m^2 r^2} + 2 G \frac{M}{r} \right)
+    (1 - \varepsilon^2) x^2 + y^2 + 2 \gamma \varepsilon x - \gamma^2 = 0
 \end{equation}
-Most helyettesítsük be $u = \frac{1}{r}$-t, így $r = \frac{1}{u}$ és $\frac{dr}{d\theta} = -\frac{1}{u^2} \frac{du}{d\theta}$:
+Ezt az egyenletet lehet tovább rendezni, hogy a kúpmetset típusát meghatározzuk:
 \begin{equation}
-    \left( -\frac{1}{u^2} \frac{du}{d\theta} \right)^2 = \frac{m^2 \frac{1}{u^4}}{L^2} \left( \frac{2E}{m} - \frac{L^2 u^2}{m^2} + 2 G M u \right)
-\end{equation}
-\begin{equation}
-    \left( \frac{du}{d\theta} \right)^2 = \frac{m^2}{L^2} \left( \frac{2E}{m} - \frac{L^2 u^2}{m^2} + 2 G M u \right)
+    (1 - \varepsilon^2) (x^2 + \frac{2 \gamma \varepsilon}{1 - \varepsilon^2} x) + y^2 - \gamma^2 = 0
 \end{equation}
 \begin{equation}
-    \left( \frac{du}{d\theta} \right)^2 = \frac{2 m E}{L^2} - u^2 + \frac{2 G M m}{L^2} u
-\end{equation}
-Most rendezzük át:
-\begin{equation}
-    \left( \frac{du}{d\theta} \right)^2 + u^2 - \frac{2 G M m}{L^2} u - \frac{2 m E}{L^2} = 0
-\end{equation}
-Most vegyük a deriváltat $\theta$ szerint:
-\begin{equation}
-    2 \frac{du}{d\theta} \frac{d^2 u}{d\theta^2} + 2 u \frac{du}{d\theta} - \frac{2 G M m}{L^2} \frac{du}{d\theta} = 0
+    (1 - \varepsilon^2) \left(x^2 + \frac{2 \gamma \varepsilon}{1 - \varepsilon^2} x + \left(\frac{\gamma \varepsilon}{1 - \varepsilon^2}\right)^2\right) + y^2 - \gamma^2 - (1 - \varepsilon^2) \left(\frac{\gamma \varepsilon}{1 - \varepsilon^2}\right)^2 = 0
 \end{equation}
 \begin{equation}
-    \frac{d^2 u}{d\theta^2} + u - \frac{G M m}{L^2} = 0
+    (1 - \varepsilon^2) \left(x + \frac{\gamma \varepsilon}{1 - \varepsilon^2}\right)^2 + y^2 = \gamma^2 + \frac{\gamma^2 \varepsilon^2}{1 - \varepsilon^2}
 \end{equation}
-Ez egy másodrendű lineáris differenciálegyenlet, amelynek megoldása a következő:
+Ahol bevezethezünk egy új változót az egyszerűsítés érdekében:
 \begin{equation}
-    u(\theta) = \frac{G M m}{L^2} + A cos(\theta - \theta_0)
+    \alpha = \frac{\gamma \varepsilon}{1 - \varepsilon^2}
 \end{equation}
-Ahol $A$ és $\theta_0$ integrálási állandók, amelyek a kezdeti feltételektől függenek. Visszaalakítva $r$-re:
+Így az egyenlet:
 \begin{equation}
-    r(\theta) = \frac{1}{\frac{G M m}{L^2} + A cos(\theta - \theta_0)}
+    (1 - \varepsilon^2) (x + \alpha)^2 + y^2 = \gamma^2 + \alpha \gamma \varepsilon
 \end{equation}
-Ez az egyenlet egy ellipszis pályát ír le, amelynek egyik gyújtópontjában a csillag helyezkedik el. Az ellipszis paraméterei az energia és az impulzusmomentum függvényében határozhatók meg. Ez a megoldás megfelel Kepler első törvényének,
-amely szerint a bolygók ellipszis alakú pályán keringenek a Nap körül.
+A kúpmetszet egyenlete alapján a legnagyobb távolság a középponttól a következőképpen határozható meg:
+\begin{equation}
+    |\alpha| + \frac{\gamma}{1 - \varepsilon^2} = \frac{|\varepsilon| \gamma}{1 - \varepsilon^2} + \frac{\gamma}{1 - \varepsilon^2} = \frac{(1 + |\varepsilon|) \gamma}{(1 - |\varepsilon|)(1 + |\varepsilon|)} = \frac{\gamma}{1 - |\varepsilon|}
+\end{equation}
+A legkisebb távolság pedig:
+\begin{equation}
+    |\alpha| - \frac{\gamma}{1 - \varepsilon^2} = \frac{|\varepsilon| \gamma}{1 - \varepsilon^2} - \frac{\gamma}{1 - \varepsilon^2} = \frac{(|\varepsilon| - 1) \gamma}{(1 - |\varepsilon|)(1 + |\varepsilon|)} = -\frac{\gamma}{1 + |\varepsilon|}
+\end{equation}
+Az átlagos távolság lesz a féltengely:
+\begin{equation}
+    a = \frac{1}{2} \left(\frac{\gamma}{1 - |\varepsilon|} - \left(-\frac{\gamma}{1 + |\varepsilon|}\right)\right) = \frac{\gamma}{1 - \varepsilon^2}
+\end{equation}
+Most már meg tudjuk határozni a pálya típusát az excentricitás alapján:
+\begin{itemize}
+    \item Ha $0 \leq \varepsilon < 1$, akkor a pálya egy ellipszis, ami a bolygók és a Nap közötti pályára jellemző.
+    \item Ha $\varepsilon = 1$, akkor a pálya egy parabola, ami olyan testekre jellemző, amelyek elég gyorsak ahhoz, hogy elhagyják a csillag gravitációs terét.
+    \item Ha $\varepsilon > 1$, akkor a pálya egy hiperbola, ami olyan testekre jellemző, amelyek még gyorsabbak, és szintén elhagyják a csillag gravitációs terét.
+\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{imgs/3-tetel/kepler_palya.png}
+    \caption{Különböző pályatípusok a Kepler-probléma esetében excentricitás függvényében}
+    \label{fig:kepler_palya}
+\end{figure}
+
+\subsubsection*{Kepler Harmadik Törvénye}
+Ebből a megoldásból könnyen megkapható Kepler harmadik törvénye is. Az ellipszis pálya területe:
+\begin{equation}
+    \pi \frac{\gamma}{1 - \varepsilon^2} \frac{\gamma}{\sqrt{1 - \varepsilon^2}} = \frac{\pi K^4}{G^2 M^2 (1 - \varepsilon^2)^{3/2}}
+\end{equation}
+Mivel a területi sebesség állandó és egyenlő $\frac{K}{2}$-val, ezért a keringési idő:
+\begin{equation}
+    T = \frac{2 \pi K^4}{G^2 M^2 (1 - \varepsilon^2)^{3/2}} \cdot \frac{2}{K} = \frac{4 \pi K^3}{G^2 M^2 (1 - \varepsilon^2)^{3/2}}
+\end{equation}
+Ebből következik, hogy:
+\begin{equation}
+    T^2 = \frac{16 \pi^2 K^6}{G^4 M^4 (1 - \varepsilon^2)^3}
+\end{equation}
+Mivel $a = \frac{K^2}{GM(1 - \varepsilon^2)}$, ezért $K^2 = a GM (1 - \varepsilon^2)$, így:
+\begin{equation}
+    T^2 = \frac{16 \pi^2 (a GM (1 - \varepsilon^2))^3}{G^4 M^4 (1 - \varepsilon^2)^3} = \frac{16 \pi^2 a^3 G^3 M^3 (1 - \varepsilon^2)^3}{G^4 M^4 (1 - \varepsilon^2)^3} = \frac{16 \pi^2 a^3}{G M}
+\end{equation}
+Ez pedig pontosan Kepler harmadik törvénye, amely kimondja, hogy a bolygók keringési idejének négyzete arányos a pálya fél nagytengelyének köbével.
+
 
 \subsection{Kvantummechanikai problémák}
 \subsubsection{Potenciálvölgy}
@@ -8062,7 +8139,7 @@ Ennek a tételnek van pár következménye is:
 \end{itemize}
 
 \newpage
-\section{Elektro- és magnetosztatika, áramkörök}
+\section{Elektro- és magnetosztatika, áramkörök \cite{electro_intro}}
 Coulomb- és Gauss-törvény, szuperpozíció elve. Vezetők, szigetelők, dielektromos polarizáció. Kondenzátor. Magnetosztatika, Lorentz-erő. Stacionárius áram, áramköri törvények: Kirchhoff-törvények, Ohm-törvény.
 \newline
 \newline
@@ -9357,7 +9434,7 @@ A törvények alapján megadható, hogy különböző kapcsolások esetén hogya
 \end{itemize}
 
 \newpage
-\section{Elektrodinamika}
+\section{Elektrodinamika \cite{electro_intro}}
 Elektromágneses indukció, Faraday-törvény. Váltakozó áram, rezgőkör, transzformátor. Maxwell-egyenletek, anyagi összefüggések, illesztési feltételek.
 Elektromágneses potenciálok, mértékinvariancia. Elektromágneses tér energiája és impulzusa.
 
@@ -10292,7 +10369,7 @@ Ennek a teljes perdülete pedig a következőképpen írható fel:
 \end{equation}
 
 \newpage
-\section{Hullámegyenlet és hullámjelenségek}
+\section{Hullámegyenlet és hullámjelenségek \cite{electro_intro}}
 Hullámegyenletek származtatása, megoldásai, rugalmas és elektromágneses hullámok. Diszperzió, csoport- és fázissebesség, Doppler-effektus.
 Interferencia, diffrakció. Elektromágneses hullámok terjedése vákuumban, dielektrikumban és vezetőkben. Polarizáció. Retardált potenciálok. Dipólsugárzás.
 
@@ -12356,13 +12433,1505 @@ Ennek a kausztikának az egyenlete:
 Ahol a koordináta rendszer origója a gömbtükör középpontja, az x tengely a beeső fénysugarak irányába mutat, és $\alpha$ a beesési szög.
 
 \newpage
-\section{A kvantumelmélet alapvető kísérletei}
-Fotoeffektus, Compton-effektus. a hőmérsékleti sugárzás spektruma (beleértve: Stefan–Boltzmann-törvény, Wien-törvény), Rutherford-kísérlet, Millikan-kísérlet, Davisson–Germer-kísérlet, Stern–Gerlach-kísérlet, Einstein–de Haas-kísérlet, Zeeman-effektus.
+\section{A kvantumelmélet alapvető kísérletei \cite{kiserleti_atomfizika}}
+Fotoeffektus, Compton-effektus. a hőmérsékleti sugárzás spektruma (beleértve: Stefan–Boltzmann-törvény, Wien-törvény), Rutherford-kísérlet, Millikan-kísérlet,
+Davisson–Germer-kísérlet, Stern–Gerlach-kísérlet, Einstein–de Haas-kísérlet, Zeeman-effektus.
+
+\subsection{Fotoeffektus}
+H. Hertz és munkatársai a szikrakisülés tanulmányozásakor észrevették, hogy a kisülés könnyebben létrejön, ha fénnyel világítják meg a katódot.
+Ez adta a lökést a fény kvantumos szerkezetére vonatkozó egyik legfontosabb kísérleti tény felfedezéséhez. Ez a H. Hertz által 1887-ben felfedezett fényelektromos hatás, más néven fotoelektromos hatás vagy fotoeffektus.
+A fényelektromos hatást P. Lenard, majd mások is tanulmányozták.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/10-tetel/fotoeffektus.png}
+    \caption{Fotoeffektus kísérleti elrendezése}
+\end{figure}
+Egy vákuumba elhelyezett kondenzátor egyik fémfegyverzetét látható fénnyel megvilágítjuk, és a körben folyó áramot érzékeny galvanométerrel mérjük. Ezt az elrendezést - mai felhasználása alapján - nevezhetjük fotocellának is. A kísérlet eredménye, hogy
+a fény hatására a fémlapból elektronok lépnek ki, és ezek I áramot okoznak a galvanométeren. A kondenzátorra kapcsolt V feszültséggel lehet az elektronokat gyorsítani, ekkor a $V$-tól független áramot mérünk, adott megvilágításnál.
+Ha azonban lassító feszültséget kapcsolunk a kondenzátorra, akkor egy $V_0$ ellenfeszültségnél megszűnik az áram, ezt nevezzük lezáró feszültségnek.
+
+Ha nagyobb intenzitású fényt alkalmazunk, akkor a lezáró feszültség változatlan, de a kilépő elektronok intenzitása megnő, így az $I$ áramerősség $I_2 > I_1$. A lezáró feszültség magyarázata az, hogy
+$V$ lassító feszültség $e \cdot V$ energiával lassítja le az elektront, ha a kezdeti mozgási energiája ennél kisebb volt, akkor mielőtt a túlsó kondenzátor lemezre érkezik, a sebessége O-ra csökken, az elektron visszafordul, nem jut át, így
+ezen elektronok nem vesznek részt az áramvezetésben. Ha a V éppen akkora, hogy a fémlapról induló maximális sebességű elektronokat is visszafordítja, akkor az áramvezetés itt megszűnik: $\frac{1}{2}mv_{\text{max}}^2 = eV_0$. Tehát a lezáró feszültség arányos a kilépő elektronok
+mozgási energiájával, így azok sebességnégyzetéveL Ha megváltoztatjuk a fémlemez anyagát vagy a megvilágító fény színét (frekvenciáját) , akkor a lezáró feszültség is változik, viszont (ahogy láttuk) a fény intenzitásától a
+lezáró feszültség független.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/10-tetel/fotoeffektus2.png}
+    \caption{Fotoeffektus lezáró feszültség és frekvencia kapcsolata}
+\end{figure}
+
+Ha egy kísérletsorozatot hajtunk végre adott fémlappal, de különböző frekvenciájú fénnyel, és mérjük a lezáró feszültséget, akkor lineáris összefüggést kapjuk. (Ezt a kísérletet először Millikan végezte
+el 1910-ben!) Ábrázoljuk az $x$ tengelyen a fény frekvenciáját $v$-t , és az $y$ tengelyen az ezekhez a frekvenciákhoz kapott lezáró feszültséget az elemi töltéssel megszorozva 
+(így $y = eV_0 = \frac{1}{2}mv_{\text{max}}^2$)· A kísérleti tapasztalat az, hogy egy egyenest alkotnak a mérési pontok, az egyenes egy adott $v_0$ küszöbfrekvenciánál metszi az $x$ tengelyt, 
+ennél kisebb frekvenciájú fényesetén nem kelllezáró potenciált alkalmazni, a galvanométeren ilyenkor egyáltalán nem mérl1ető áram. A másik érdekes tapasztalat, hogy az egyenes meredeksége megegyezik a fekete test sugárzásakor definiált $h$ Planck-állandóval.
+
+Tehát a tapsztalatokat összefoglalva:
+\begin{enumerate}
+    \item A fénnyel megvilágított fémből a fény hatására elektronok lépnek ki.
+    \item A kilépő elektronok száma arányos a beeső fény intenzitásával.
+    \item A kilépő elektronok sebessége a fény frekvenciájától függ , és nem függ a beeső fény intenzitásától.
+    \item Adott frekvenciájú megvilágítás esetén a kilépő elektronok sebessége folytonosan változhat egy maximális sebességig, amely nagysága a megvilágító fény frekvenciájától és a fém anyagától függ.
+    \item Az elektronok áramának elindításához egy küszöbértéknél nagyobb frekvenciájú fény szükséges.
+    \item Az elektronok árama a megvilágítás után azonnal megindul.
+\end{enumerate}
+
+A fényelektromos hatás fenti törvényszerűségeit nem lehetett a klasszikus hullámelmélettel magyarázni. A hullámelmélet alapján ugyanis a következő magyarázatot lehetne elképzelni: férore beeső elektromágneses hullám a
+fém elektronjait rezgésbe hozza. Ha a beeső hu ll ám frekvenciája megegyezik az elektron sajátrezgésének frekvenciájával, az elektron rezgési amplitúdója olyan nagy lesz, hogy az kiszakad a fémből. A fémből kilépő elektronok a
+mozgási energiájukat a beeső fényhullámból veszik, ezért azt várjuk, hogy a fotoelektronok energiája a fény intenzitásától függjön. (Nagyobb intenzitású fényhullámban nagyobb az elektromos térerősség $I \sim E^2$, így nagyobb
+erő hozza rezgésbe az elektronokat.) A kísérletek eredményei szerint azonban a kilépő elektronok energiája teljesen független a beeső fény intenzitásától, és csak a fotoelektronok száma arányos ezzel. A fotoelektronok sebessége
+(energiája) a beeső fény frekvenciájától függ, mégpedig nő a frekvenciával.
+
+Felmerült az a gondolat is, hogy az elektronok a kilépéshez szükséges energiát a fényhullám energiájából fokozatosan gyűjtik össze. Ennek az elképzelésnek a helytelenségét azonnal be lehet látni: a beeső hullám energiája
+megoszlik a fém nagyszámú elektronja között , így kis fényintenzitásnál tekintélyes idő kellene ahhoz, hogy az elektronok összegyűjtsék a kilépéshez szükséges energiát. A fémfelület által elnyelt energia a fényerősséggel,
+a megvilágított felület nagyságával és a besugárzási idővel arányos. A fényelektromos hatás igen kis felület megvilágításánál is létrejön: $10^{-8} W/m^2$-es felületi megvilágítás esetén-ezt hozza létre 100 km távolságból egy 100 W-
+os égő - száz óra alatt nyel ődik el annyi fény, amennyi egy fényelektron kilépéséhez szükséges, azaz néhány $eV$. Ezzel szemben a kísérletek azt mutatják, hogy az elektronemisszió a megvilágítást követően $10^{-9} s$-on belül
+létrejön. (A holdfény intenzitása $\sim 10^{-3} W/m^2$. Ha $1 \text{\AA}$ rácsállandójú fémmel számolunk, akkor $1 m^2$-en $10^{20}$ atom foglal helyet a fém felületén, ha mindegyik egy vegyértékelektronja kapja a be es ő fény intenzitásá nak ráeső részét , akkor 104 s, azaz néhány óra alatt kap egy elektron $1 eV$, azaz
+$10^{-19} J$ energiát. De a tapasztalat szerint a holdfény is képes fotoeffektust létrehozni.) A fotoeffektus kísér le ti ténye tú lmutat a klasszikus fizikán, és magyarázatát 1905-ben találták meg, amikor a modern fizika szemlélete -
+Planck hipotézi sé ből kiindulva - kezdett elfogadottá válni.
+
+\subsubsection{A fotoeffektus kvantumos magyarázata: a fotonkép}
+A fényelektromos hatás magyarázatát A. Ei nste in adta meg 1905-ben, Planck kvantumhipotézise általánosításávaL Rámutatott, hogy a nehézségek mind megszűnnek , ha korpuszkuláris álláspontra helyezkedünk, és a fényt
+$h \nu$ energiájú kvantumok, ún. fotonok áramának fogjuk fel. Az elnyelt foton átadja energiáját az elektronnak, és ha az energia e legendő ahhoz, hogy kiszabadítsa az elektront a visszatartó erők kötelékéből , akkor az elektron
+kilép a fémből. Annak valószínűsége , hogy egy elektron két fotont nyeljen el, igen kicsi, minden kilépő elektron egy foton energiáját viszi el. (Később ézerrel előállított intenzív fénysugárral sikerült két fotonos fotoeffektust
+létrehozni.) Az így kivál tott elektronok számának az elnyelt foton ok számával, vagyis a fény intenzitásával kell arányosndk lenni, és a kísérletek is ezt mutatták. Ebben a képben a korábban említett kísérletsorozat, a különböző
+frekvenciájú fényekkel. A tapasztalati $eV_0 = h(\nu - \nu_0)$ összefüggést kicsit átírjuk , ahol $V_0$ a lezáró potenciál, és $\nu_0$ a küszöbhullámhossz.
+Felhasználva, hogy $eV_0 = \frac{1}{2} mv_{\text{max}}^2$ , az egyenletet a következő alakban írhatjuk fel:
+\begin{equation}
+    h \nu = \frac{1}{2} mv_{\text{max}}^2 + h \nu_0
+\end{equation}
+Itt bevezethetjük a munkafüggvény fogalmát: $W = h \nu_0$. Ez az a minimális energia, amely ahhoz szükséges, hogy az elektron a fémből kiszabaduljon. Ezzel az egyenlet a következő alakot ölti:
+\begin{equation}
+    h \nu = \frac{1}{2} mv_{\text{max}}^2 + W
+\end{equation}
+A fotonképben egy foton egy elektront üt ki a fémből, és a folyamat során az energia megmaradását éppen ez az egyenlet írja le (Einstein-egyenlet). Ez azt jelenti, hogy egy foton energiája:
+\begin{equation}
+    E_{\text{foton}} = h \nu
+\end{equation}
+Ebből az is látszik, hogy a fémből egy elektron kiszakításához legalább $W$ munka szükséges. Ez a kilépési munka az egyes fémekre más és más érték, de
+álta lában $eV$ nagyságrendű . Az elektronok nemcsak a maximális sebességgel lépnek ki a fémből, hanem sebességeloszlásuk folytonos , ami azt mutatja,
+hogy vannak kevésbé, ill. mélyebben kötött elektronok a szilárd testek fémes rácsában. Ezt a mai szóhasználattal elektrontengernek nevezzük, és $W$
+jelentése, hogy az elektrontenger felszínén $W$ energiával kötött elektronok helyezkednek el. (Az elektrontenger igazi jelentését a modern szilárdtestfizika adja meg a Pauli-elv segítségével)
+Megjegyzendő, hogy a fotoeffektus csak az egyik módja elektronok kiütésének egy fém lemezről, más folyamatok is ki tudják szabadítani a fémes rácsban kötött elektronokat. Ezek közül hármat sorolunk fel:
+\begin{itemize}
+    \item Termikus elektronemisszió, amikor addig melegítik a fémet, míg felületéről az elektronok a hő mozgás miatt ki tudnak lépni. Ilyenkor az elektronok $\sim kT$ termikus energiája elegendő a $W$ kilépési munka legyőzésére.
+    \item Hideg elektronemisszió, ilyenkor külső elektromos tér segít az elektronoknak, hogy kiszabaduljanak. Kisülési csövekben is ilyen folyamat zajlik le, és a kiszabaduló elektronok ionizálva a gázt létrehozzák a kisülést . Katódsugárcsőben a nagy elektromos tér hatására szabadulnak ki az elektronok a fémből a vákuumba.
+    \item Másodlagos sugárzás, ilyenkor más részecskékkel bombázzák a fém felületét, és ezek adják át mozgási energiájukat az elektronnak, amely így ki tud szabadulni a fémből.
+\end{itemize}
+
+\subsubsection{Atomi fotoeffektus}
+Történetileg a fotoeffektust először fémlemezen figyelték meg, de fizikailag ugyanaz a folyamat végbemegy különálló atomokon is. Ha fénnyel vagy még
+rövidebb hullámhosszú fotonokkal bombázunk atomokat, a fotonok kitudnak lökni egy-egy elektront az atomból, egyben a bombázó foton megsemmisül. Ilyenkor teljesen azonos egyenleteket tudunk alkalmazni, csak a $W$
+kilépési munka helyett az elektron kötési energiáját kell fogalmilag használni. Az atomi fotoeffektus nagyon fontos folyamat az elektromágneses hullámok és az anyag kölcsönhatásának leírásánál, de hozzá az atom szerkezetének
+részletesebb ismerete szükséges, melyet a következő fejezetekben tárgyalunk csak. Megjegyezzük, hogy szabad elektron nem tud elnyelni fotont, azaz fotoeffektus nem megy végbe szabad elektronon. Ennek ellenkezője áll fenn:
+minél kötöttebb egy atomi elektron, annál nagyobb a valószínűsége, hogy egy (megfelelően) adott energiájú foton fotoeffektussal ki tudja ütni az atom kötéséből.
+
+\subsection{Compton-effektus}
+A fotoeffektus so rán az elektromágneses hullámok (például fénysugarak) elektront ütnek ki a fémből vagy különálló atomokból, de ilyenkor a fotonmegsemmisül (elnyelődik). A foton-elektron kölcsönhatásnak van
+olyan formája is, amikor a beeső foton kölcsönhat az elektronnal, de nem semmisül meg, ez a Compton-effektus.
+
+\subsubsection{Compton kísérletei a röntgensugárzás rugalmatlan szóródására}
+1923-ban A. Campton mutatta ki, hogy van olyan folyamat is, amikor fotonok elektronokon szóródnak, és a szóródott fotonak frekvenciája nem egyezik
+meg a beeső fotonak frekvenciájával. Itt ismét egy olyan folyamatra bukkantunk, ami nem magyarázható meg tisztán a klasszikus elektrodinamika
+segítségéveL Az ugyanis azt mondja, hogy egy elektromágneses hullám, ha ráesik egy elektronra , akkor rezgésbe hozza azt (rugalmasan kötött elektronmodell).
+A rezgő elektron a gyorsulása miatt sugároz, de a rezgésének frekvenciája megegyezik a gerjesztő rezgés frekvenciájával, így a kisugárzott
+hullámok is azonos hullámhosszúak lesznek. Ez a fotonképben annyit jelent, hogy a beeső foton és a szóródott foton frekvenciája, így energiája is, azonos. Ez a Thomson-szórás.
+A klasszikus elektrodinamika csak rugalmas szóródást jósol.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/10-tetel/compton.png}
+    \caption{Compton-effektus kísérleti elrendezése}
+\end{figure}
+Compton kísérletében egy molibdén antikatódú ($A$) röntgencsővel ($R$) adott frekvenciájú röntgensugárzást állított elő (lásd később a karakterisztikus röntgensugárzásnál), és azt elektronban gazdag szóróközegre ($Sz$), grafitra irányította.
+Az adott szögben kollimátorokat ($K$) helyezett el, melyeken az átmenő sugárzás hu ll ámhosszát egy visszaverő kristállyal ($Kr$) és
+egy ionizációs kamra ($IK$) segítségével mérte. A hullámhossz mérése úgy történik, hogy a koBimátorokon átjövő fotonok ráesnek a kristályra ($CaCO_3$)
+és az interferenciának megfelelő szögben visszaverődnek a kristályról. A mozgatható ionizációs kamra a visszaverődés szögében fog maximális áramot jelezni, amiből a $2d\sin \phi = n\lambda$ 
+összefüggés alapján a hullámhossz kiszámolható. A röntgencső forgatásával lehet változtatui a $\vartheta$ szórási szöget. Compton kísérleteinek eredményei:
+\begin{enumerate}
+    \item A rugalmatlan szóródás felfedezése, ami mindig a hullámhossz növekedésével jár.
+    \item A hullámhossz-növekedés az eltérülési szöggel növekszik; Compton kimérte a $\Delta \lambda$ változását $\vartheta$ szög szerint.
+    \item A hullámhossz növekedése adott szögben független a szóróközeg anyagától. Ez a tapasztalat mutatta meg, hogy nem az atomok, hanem csak azok individuálisnak tekinthető elektronjai vesznek részt a folyamatban.
+\end{enumerate}
+Ezt a kísérletet azért kellett röntgensugarakkal elvégezni, mert a rugalmatlan szórás csak szabad- vagy kváziszabad-elektronok esetében lép fel,
+amikor a foton energiája sokkal nagyobb az elektronok kötési energiájánál ($h \nu \gg E_k$)·
+
+\subsubsection{A Compton-effektus értelmezése}
+Ezeket a kísérleti tapasztalatokat könnyen lehet magyarázni, ha feltételezzük, hogy a sugárzás korpuszkuláris szerkezetű, azaz diszkrét energiacsomagok - fotonok - árama. Tegyük fel, hogy egy $h \nu$ energiájú, $p = \frac{h \nu}{c}$ lendületű
+foton esik egy elektronra. Az ütközés után a foton $\vartheta$ szögben repül ki $\lambda$ megváltozott hullámhosszal, ill. $h \nu'$ lecsökkent energiával. Közben az elektron $\phi$ szögben visszalökődik, lendületre és mozgási energiára tesz szert. Ha
+felírjuk az energia és az impulzus megmaradását, a hullámhosszváltozás kiszámolható.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/10-tetel/compton2.png}
+    \caption{Compton-effektus ütközési sémája}
+\end{figure}
+Az energiamegmaradás relativisztikusan írandó:
+\begin{equation}
+    h \nu + m_0 c^2 = h \nu' + \sqrt{p_e^2 c^2 + m_0^2 c^4}
+\end{equation}
+Itt $m_0 = 511 \, \text{keV}/c^2$ az elektron nyugalmi tömege, $p_e$ pedig az elektron lendületének nagysága, $\nu$ és $\nu'$ a foton beesési és kilépési frekvenciája.
+A lend ület vektormennyiség, így két irányú megmaradását is felírhatjuk, most mégis célszerű a vektoregyenl etet felírni, és a lendületmegmaradást
+a koszinusztétellel kifejezni. A $p_{be}$ és $p_{ki}$ a foton beeső és ütközés utáni lendületét jelöli:
+\begin{equation}
+    p_{be} = p_{be}^2 + p_{ki}^2 - 2 p_{be} p_{ki} \cos \vartheta
+\end{equation}
+Ezt $c^2$-el végígszorozva és a foton lendületére fennálló $\frac{h \nu}{c}$ formulát alkalmazva:
+\begin{equation}
+    p_e^2 c^2 = h \nu^2 + h \nu'^2 - 2 h^2 \nu \nu' \cos \vartheta
+\end{equation} 
+Ha az energiamegmaradás egyenletében a $h \nu'$-t átvisszük a másik oldalra, majd négyzetre emelünk és $p_e^2 c^2$ helyére a lendületmegmaradás egyenletéből adódó értéket írjuk,
+akkor csak $\nu'$ marad ismerretlen, sőt a négyzetes tagok kiesnek, és a következő formulát kapjuk a szórt foton energiájára:
+\begin{equation}
+    h \nu' = \frac{h \nu}{1 + \frac{h \nu}{m_0 c^2} (1 - \cos \vartheta)}
+\end{equation}
+Ebből a $\Delta = \frac{c}{\nu'} - \frac{c}{\nu}$ alapján:
+\begin{equation}
+    \Delta \lambda = \lambda' - \lambda = \frac{h}{m_0 c} (1 - \cos \vartheta)
+\end{equation}
+adódik. Itt a $\frac{h}{m_0 c}$ univerzális állandók hosszúság-dimenziójú kombinációja, neve az elektron Compton-hullámhossza (értéke 2,426 pm). 
+Ilyen hullámhosszúságú foton energiája éppen az elektron nyugalmi energiájával egyezik meg. Érdemes megjegyezni, hogy a hullámhossz-eltolódás a Compton-
+hullámhosszon kívül csak a szögtő l függ, a beeső foton hullámhosszától nem, ahogy ezt Compton kísérleteiben is tapasztalta.
+A formulák pontosan leírják a Compton-kísérletben kapott eredményeket, így alátámasztják a foton szabadelektronokon történő szóródásának ezen részecskemodelljét.
+A Compton-effektus egyben megmutatja, hogy az energia- és a lendületmegmaradás elemi foton-elektron folyamatokban is megmarad, nem csak valamilyen nagy statisztikus sokaság átlaga esetén. Megjegyezzük,
+hogy ez a gondolatmenet nem zárja ki a fotonok hullámszerű viselkedését a Compton-effektus során, de a részecskekép sokkal elegánsabban magyarázza
+ezt az effektust. 1927-ben E. Schrödinger a klasszikus elektrodinamika és a későbbiekben tárgyalandó anyaghullámok segítségével adott egy - a jelen munkát meghaladó - hullámleírást a fotonok rugalmatlan szóródására.
+A Compton-effektus tulajdonságai:
+\begin{itemize}
+    \item Az elektronnak átadott energia lehet nagyon kicsiny, mikor a foton alig, térül el, és van egy maximális értéke, amikor a foton $\vartheta = 180\degree$-ban éppen visszafelé szóródik. Ilyenkor $h \nu - h \nu' = \frac{h \nu}{\frac{m_0 c^2}{2 h \nu} + 1}$ energiát visz el az elektron, s mindig marad valamennyi a fotonnak.
+    \item Kis frekvenciájú határesetben a Campton-effektus átmegy a klasszikusan jól ismert Thomson -szórásba. Az összefüggései $h \nu \ll m_0 c^2$ esetén visszaadják a Thomsan-szórás klasszikusan levezetett formuláit.
+\end{itemize}
+Compton-effektus nehezebb elemi részecskéken is végbemegy, így például protonon, vagy egy teljes atomon. A proton tömege $\sim 2000$-szer nagyobb az elektron tömegénél, ezért a Compton-hullámhossza $\sim 2000$-szer kisebb, így a fm – azaz $10^{-15}\,\mathrm{m}$ – nagyságrendbe esik. Protonon a röntgensugarak hullámhosszváltozása elhanyagolható, hiszen a röntgensugarak hullámhossza pm-es nagyságrendű.
+
+Compton eredeti kísérletében minden szórási szögnél két hullámhossz esetén kapott maximumot az ionizációs kamra áramában. Az egyik az elektronon történő rugalmatlan szóródáshoz tartozik, amiről eddig szó volt, a másik pedig a besugárzó hullámhosszhoz. Ezek a rugalmas szóródáshoz tartozó események, amikor a fotonok az egész atomon szóródnak. Az atom tömege a proton tömegének néhányszorosa, így a hullámhossz-növekedés elhanyagolható.
+Az atom keresztmetszete (az elektronéval összehasonlítva) kicsi, de a rugalmatlan szóródás valószínűsége lényegesen nagy az atomon, mint egészben történő szóródásé.
+
+\textit{Összefoglalva:} a Compton-effektussal olyan új folyamatot ismertünk meg, amelyben a foton energiája részben egy elektron mozgási energiájává alakul át, és egy kisebb energiájú foton is létrejön. A kísérletek igazolták, hogy az energia- és a lendületmegmaradás az egyes elemi folyamatokban is fennáll.
+A folyamatot a kísérleti eredményekkel összhangban jól lehet a kvantumhipotézis segítségével értelmezni. A Compton-effektus vizsgálata még inkább előtérbe helyezi az elektromágneses sugárzás részecsketermészetét. Már nemcsak annyiban kell részecskének tekinteni a fotont, hogy $h\nu$ nagyságú energiakvantumot képvisel, hanem mint ami $h/\lambda$ lendületet is hordoz, és ezzel az összefüggéssel a lendületmegmaradás tétele a kísérletekkel megegyező eredményt ad.
+
+Térjünk vissza röviden a fotoeffektushoz. Ott említettük, hogy szabad elektronon a foton nem tud elnyelődni. Ezt a tényt a foton impulzusának ismeretében, már meg is tudjuk alapozni. Ilyenkor a lendület megmaradása 
+$p_e = p_{be}$
+feltételt jelent, így az energia és a lendület egyszerre nem tud megmaradni, mert az elektron nyugalmi tömege nem 0. Ez nincs ellentmondásban, hanem éppen azt jelenti, hogy szabad elektron a foton energiáját, vagyis a lendületétől volt szó, amint azt említettük, hogy vele, vagy ha közelében egy rácspont található, amely a kristályrács, amely a felesleges impulzust elviszi. Ez jelzi, hogy milyen fontos szerepe van a harmadik résztvevő testnek a fotoeffektus során.
+
+\subsection{Hőmérsékleti sugárzás spektruma}
+\subsubsection{Az abszolút fekete test}
+A kvantumfogalom megalkotásával összefüggő kutatásokban jelentős szerepet játszott egy idealizált fogalom, az ún. „abszolút fekete test” fogalma. Mint ismeretes, ha egy testre fényt bocsátunk, egy része visszaverődik, másik része bejut a testbe. A bejutott fény részben (esetleg teljesen) elnyelődik, részben kilép a test túlsó felületén.
+A testeket számunkra az teszi láthatóvá, hogy visszavernek fényt. Az olyan test, amelyik a ráeső fényt teljesen elnyelné, abszolút fekete, azaz láthatatlan lenne. A fekete test által elnyelt sugárzás energiát visz be a testbe, megnő a test belső energiája, következésképpen magasabb lesz a hőmérséklete. A hőmérséklet korlátlanul növekedne,
+ha nem létezne olyan folyamat, amely a belső energiát csökkenti. Ennek viszont olyannak kell lennie, hogy vákuumban is érvényesülni tudjon. A test belső energiájának egyensúlya sugárzás kibocsátása útján valósul meg. Ezen egyensúlyi sugárzást nevezzük \textit{hőmérsékleti sugárzásnak}, vagy a fekete test sugárzásának. Ennek törvényeinek vizsgálata vezetett el először a kvantumfogalomhoz.
+
+Az abszolút fekete test a természetben nem létezik, de hasznos és jogos idealizációnak bizonyult. Kísérletileg előállítható olyan rendszer, amelynek segítségével meg lehet vizsgálni ezen idealizáció – az abszolút fekete test – tulajdonságait.
+
+Olyan anyag, amelynek felülete abszolút fekete volna, vagyis minden ráeső sugárzást teljesen elnyelne, nincs. Megvalósítható azonban a fekete test úgy, hogy egy a sugárzást át nem eresztő, kormozott falú, belül üreges zárt edény falán kis lyukat fúrunk, ahogy azt a 3.1. ábra szemlélteti.
+A lyukon át behatoló sugárzás ugyanis az üreg belső felületén való sokszoros, többnyire diffúz visszaverődés következtében gyakorlatilag teljesen abszorbeálódik, mielőtt a lyukból kijutna. Ha pl. egyszeri visszaverődés esetén a sugár energiájának csak $90\%$-a absorbeálódik is, a tizedik visszaverődés után a beeső energia $10^{-10}$-szerese marad már csak meg. Valóban, az ilyen lyukat sokkal feketébbnek látjuk, mint az edény bármennyire is bekormozott külső falát.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/10-tetel/fekete_test.png}
+    \caption{Az abszolút fekete test modellje}
+\end{figure}
+Megfordítva, ha vasból készült ilyen üreget izzítunk, a kísérletek szerint a lyuk a környező izzó vasnál jóval erősebben világít. A "fekete testsugárzásának" forrásául ezért állandó hőmérsékleten tartható, rendszerint
+elektromosan izzított üreg nyílását használják, és emiatt a fekete test sugárzását másképpen "üregsugárzásnak" is hívják. Más példákat is találhatunk környezetünkben, amelyek bár kívülről nem tlínnek abszolút fekete testnek, abszorpcióképességük mégis 1 (minden rájuk eső sugárzást elnyelnek),
+és sugárzásuk ugya nolyan, mint a fekete test s ugárzása. Ilyenek a csillagok, például a Nap, és az izzított fémszál, például a villanykörte izzószálja.
+Másik érdekes példa a mikrohullámú háttérsugárzás . Ez egy olyan sugárzás, melynek eredete je len könyv határain kívül esik ugyan (az Univerzum fejlődésének korai szakasza), de tulajdonságai a fekete test sugárzásának
+tulajdonságaival megegyeznek. 1964-ben Tokióból volt először távolsági élő televíziós olimpiai közvetítés az USA-ba. A nagy távolságról érkező elektromágneses jelek zajszintjének csökkentésén fáradozva A. A. Penzias és R. W.
+Wilson fed ezték fel és később azonosították ezt a mikrohullámú háttérsugárzást, ami az űrből minden irányból érkező elektromágneses sugárzás.
+Frekvenciaeloszlása alapján egy 2,7 K hőmérsékletű feketetest sugárzásásával egyenértékű. Ez a mikrohullámú háttérsugárzás a kozmológiai elméletek
+számára fontos ta pas ztalat , és az univerzum kialakulásá nak egy ik hírnöke. Felfedezésükért Penzias és W ilson később 1978- ban Nobel-díjat kaptak.
+
+\subsubsection{Kirchhoff törvények}
+Hogy a sugárzásra vonatkozólag kvantitatív összefüggéseket írhassunk fel, definiáljuk valamely test abszorpcióképességét, $a$-t. Ez a testre eső sugárzás energiájának az a törtrésze, amelyet a test elnyel, te hát nem ereszt át és nem
+ver vissza. Hasonló módon definiálható a $d$ áteresztőképesség és az $r$ reflektálóképesség. Ezekre fennáll, hogy a $a + d + r = 1$, a bejövő energia csak ezen
+három módon tud átalakulni, és az összeg megmarad. Továbbá bevezethetjük a test emisszióképességét, ez a test felületének 1 m$^2$-es darabja által
+1 s alatt a felületre merőleges egységnyi térszögben kisugárzott energiát jelenti.
+
+Mind $a$ mind pedig a $e$ a $T$ hőmérsékleten és a $\lambda$ hullámhosszon kívül nagymértékben függ a test különböző sajátságai tól, pl. a felület érdességétől, sötétségétől. Pl. már igen vékony karomréteg a látható fényt csaknem teljesen elnyeli, vagyis közelítőleg $a = 1$. Azt a testet, mely a ráeső bármely
+hullámhosszúságú sugárzást teljesen elnyeli, abszolút fekete testnek nevezzük. Ennek abszorpcióképessége tehát: $a = 1$, emisszióképességét pedig jelöljük $E$-vel.
+
+Bármennyire is mások $e$ és $a$ értékei az egyes testeknél, a tapasztalat szerint az $e/a$ viszony minden testnél ugyanaz, csak $\lambda$-nak és $T$-nek a függvénye. Ez az $E(\lambda, T)$ függvény az abszolút fekete test emisszióképessége:
+\begin{equation}
+    \frac{e}{a} = \frac{e_1}{a_1} = \frac{e_2}{a_2} = \ldots = \frac{e_{\text{feketetest}}}{1} = E(\lambda, T)
+\end{equation}
+Ez a fontos összefüggés Kirchhofi törvénye (1860), amely termodinamikai úton levezethető. Kiemeljük, hogy a törvény- mint az az $e/a= E(\lambda, T)$
+írásmódból is kitűnik - minden egyes hullámhosszra külön-külön is vonatkozik. Kirchhoff törvényének
+\begin{equation}
+    e(\lambda, T) = a(\lambda) \cdot E(\lambda, T)
+\end{equation}
+alakjából, figyelembe véve, hogy $a < 1$, az következik, hogy az abszolút fekete test emisszióképessége bármely más test emisszióképességénél nagyobb,
+ugyanazon hőmérsékleten. Ugyancsak a fenti egyenletből következik, hogy bármely test emisszióképességét megkaphatjuk, ha a fekete test emisszióképességét az illető test abszorpcióképességével megszorozzuk.
+
+\subsubsection{A feketetest sugárzás}
+Kérdés, hogy a feketetest sugárzása hogyan is függ pontosan a hullámhossztól és a hőmérséklettől. Ezt a függvényt $E(\lambda, T)$-vel jelöljük, amely megadja, hogy az abszolút fekete test 1 m$^2$ felülete
+egységnyi idő alatt a $\lambda$ és $\lambda + d\lambda$ hullámhossztartományban mennyi energiát sugároz ki. Ezt a függvényt nevezzük a fekete test sugárzásának spektrumának. A fekete test sugárzásának spektrumát 
+kísérletileg sokat vizsgálták, úgy, hogy egy korommal bekent üreges edényt izzítottak fel, és a lyukból kilépő sugárzás hullámhossz-eloszlását mérték egy termoelem segítségével, amelynek feszültsége a sugárzás intenzitásával arányos.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/10-tetel/fekete_test_spektrum.png}
+    \caption{A fekete test sugárzásának spektruma különböző hőmérsékleteken}
+\end{figure} 
+Az ordinátán lévő $E(\lambda, T)$-t úgy kell érteni, hogy $E(\lambda, T) d\lambda$ az 1 m$^2$ felületről 1 s alatt a $\lambda$ és $\lambda + d\lambda$ hullámhossztartományban kisugárzott energia. A görbékből látható, hogy adott hőmérsékleten van egy
+maximális intenzitás, amelyhez egy meghatározott hullámhossz tartozik. Ez a hullámhossz a hőmérséklet növekedésével egyre kisebb lesz, azaz a sugárzás maximuma a rövidebb hullámhosszak felé tolódik el. Ezt a jelenséget Wien eltolódási törvényének nevezzük, amely szerint a sugárzás maximumának hullámhossza és a hőmérséklet szorzata állandó:
+\begin{equation}
+    \lambda_{\text{max}} T = b
+\end{equation}
+Itt $b = 2,898 \times 10^{-3} \, \mathrm{m \cdot K}$ a Wien-féle állandó. A kísérleti görbék alapján felírható egy integrált összefüggés is, amely megadja az összes hullámhosszon kisugárzott energiát:
+\begin{equation}
+    I(T) = \int_0^{\infty} E(\lambda, T) d\lambda = \sigma T^4
+\end{equation}
+Ez a Stefan-Boltzmann törvény, ahol $\sigma = 5,67 \times 10^{-8} \, \mathrm{W/m^2 K^4}$ a Stefan-Boltzmann állandó.
+
+\subsubsection{Rayleigh-Jeans féle sugárzási törvény}
+A fekete test sugárzásának spektrumára a klasszikus fizika többféle elméletet is felállított, de ezek közül csak egyetlen volt képes a kísérleti eredmények egy részét megmagyarázni. Ez a Rayleigh-Jeans féle sugárzási törvény, amelyet Lord Rayleigh (1900) és J. H. Jeans (1905) dolgozott ki. Az elmélet a következő feltevéseken alapult:
+\begin{itemize}
+    \item Az elektromágneses sugárzás a fekete test üregében állóhullámok formájában létezik, amelyek frekvenciája és hullámhossza a szokásos módon kapcsolódik egymáshoz: $\nu = \frac{c}{\lambda}$.
+    \item Az állóhullámok energiája a klasszikus kinetikus gázelmélet szerint oszlik el, azaz minden egyes hullámrezgés átlagos energiája $kT$, ahol $k$ a Boltzmann állandó.
+\end{itemize}
+
+Egy állóhullámot a következő módon tudunk felírni az üregben:
+\begin{equation}
+    \psi(x) \sim \sin kx \quad \text{ahol} \quad \psi(0) = \psi(a) = 0 \quad \text{határfeltétel}
+\end{equation}
+Ebből a határfeltételből adódik, hogy az $k$ hullámszámra a következő feltétel adódik:
+\begin{equation}
+    ka = n\pi \quad \rightarrow \quad k = \frac{n\pi}{a} = \frac{2 \pi}{\lambda} = 2\pi \frac{\nu}{c} \qquad n = 0, 1, 2, \ldots
+\end{equation}
+Mivel a feketetest tulajdonképpen egy üregrezonázor, ezért három irányban is felírhatjuk a hullámszám feltételét, így a következő összefüggést kapjuk:
+\begin{equation}
+    k_xa = n_1 \pi, \quad k_y a = n_2 \pi, \quad k_z a = n_3 \pi
+\end{equation}
+Innen a teljes hullámszám:
+\begin{equation}
+    k^2 = \frac{\pi^2}{a^2} (n_1^2 + n_2^2 + n_3^2)^2 = \frac{4 \pi^2 \nu^2}{c^2}
+\end{equation}
+
+Ahhoz hogy meg tudjuk határozni a lehetséges módusok $Z$ számát $\nu' < \nu$ esetére, vennünk kell egy gömböt, amelynek sugara $R$ a $n_1$, $n_2$, $n_3$ koordinátarendszerben:
+\begin{equation}
+    R^2 \equiv n_1^2 + n_2^2 + n_3^2 = \left( \frac{2 \pi \nu}{c} \frac{a}{\pi} \right)^2
+\end{equation}
+A teljes térfogatban a $\nu$ frekvenciánál kisebb módusok száma $Z$ az $R$ sugarú gömb térfogatának nyolcada, szorozva a kétféle polarizációval:
+\begin{equation}
+    Z(\nu) = 2 \cdot \frac{1}{8} \cdot \frac{4}{3} \pi R^3 = \frac{4 \pi}{3} \left( \frac{a \nu}{c} \right)^3
+\end{equation}
+A $\nu$ és $\nu + d\nu$ közötti módusok száma a $ V = a^3$ térfogatban:
+\begin{equation}
+    dZ(\nu) = 8 \pi \left( \frac{a}{c} \right)^3 \nu^2 d\nu = \frac{8\pi}{c^3} V \nu^2 d\nu
+\end{equation}
+De mennyi energiát képviselnek ezek az állóhullámok? Tegyük fel, hogy egy módusra jutó átlagos energia $\bar{\epsilon}$. Ekkor a $V$ térfogatban a $\nu$ és $\nu + d\nu$ közötti hullámhosszakhoz tartozó energia egységnyi térfogatra:
+\begin{equation}
+    dW = \bar{\epsilon} \cdot \frac{dZ(\nu)}{V} = \bar{\epsilon} \cdot \frac{8\pi}{c^3} \nu^2 d\nu \equiv U(\nu, T) d\nu \equiv 
+\end{equation}
+Tehát az energia:
+\begin{equation}
+    U(\nu ,T) = \bar{\epsilon} \cdot \frac{8\pi}{c^3} \nu^2
+\end{equation}
+
+Az átlagos energiát ami egy módusra (oszcillátor) jut a klasszikus kinetikus gázelmélet alapján meg lehet határozni. Ha van $N_{\text{tot}}$ darab megkülönböztethető objektumunk, és a rendszer teljes energiája $E_{\text{tot}}$, akkor az egy objektumra jutó átlagos energia:
+\begin{equation}
+    \bar{\epsilon} = \frac{E_{\text{tot}}}{N_{\text{tot}}}
+\end{equation}
+Tegyük fel továbbá, hogy az $N_n$ objektum az $n$-edik energiaállapotban van, amelynek energiája $\epsilon_n$:
+\begin{equation}
+    \epsilon_n = n \epsilon_0 \qquad n = 1, 2, \ldots
+\end{equation}
+Ekkor az $\epsilon_0 \to 0$ határesetben a módus-csoportok között az energia folytonosan változik.
+
+A Bolztmann eloszlás szerint az $n$-edik állapotban lévő objektumok száma:
+\begin{equation}
+    \frac{N_n}{N_{\text{tot}}} = \frac{e^{-\epsilon_n / k_BT}}{ \sum_{n=0}^{\infty} e^{-\epsilon_n / k_BT}}
+\end{equation}
+Tehát az átlagos energia ($\beta = 1/k_BT$):
+\begin{equation}
+    \begin{aligned}
+    \bar{\epsilon} &= \frac{E_{\text{tot}}}{N_{\text{tot}}} = \sum_{n} \frac{N_n}{N_{\text{tot}}} \epsilon_n = \frac{\sum_{n=0}^{\infty} \epsilon_n e^{-\beta \epsilon_n}}{\sum_{n=0}^{\infty} e^{-\beta \epsilon_n}} =  \frac{\sum_{n=0}^{\infty} n \epsilon_0 e^{-\beta n \epsilon_0}}{\sum_{n=0}^{\infty} e^{-\beta n \epsilon_0}} = \\
+    &= \frac{-\frac{\partial}{\partial \beta }\sum_{n=0}^{\infty} e^{-\beta n \epsilon_0}}{1 + e^{-\beta \epsilon_0} + (e^{-\beta \epsilon_0})^2 + \ldots} = \frac{-\frac{\partial}{\partial \beta }\frac{1}{1 - e^{-\beta \epsilon_0}}}{\frac{1}{1 - e^{-\beta \epsilon_0}}} = \\
+    &= \frac{\frac{\epsilon_0 e^{-\beta \epsilon_0}}{(1 - e^{-\beta \epsilon_0})^2}}{\frac{1}{1 - e^{-\beta \epsilon_0}}} = \frac{\epsilon_0 e^{-\epsilon_0 / k_BT}}{1 - e^{-\epsilon_0 / k_BT}} = \\
+    &= \frac{\epsilon_0}{\frac{\epsilon_0}{k_BT} + \frac{1}{2} \left( \frac{\epsilon_0}{k_BT} \right)^2 + \ldots} = \frac{k_BT}{1 + \frac{1}{2} \frac{\epsilon_0}{k_BT} + \ldots} \\
+    \bar{\epsilon} &= \frac{\epsilon_0}{e^{\epsilon_0 / k_BT} - 1}
+    \end{aligned}
+\end{equation}
+Ez pedig a klasszikus határesetben, amikor $\epsilon_0 \to 0$ (ekvipartíció tétele):
+\begin{equation}
+    \bar{\epsilon} = k_BT
+\end{equation}
+Így a Rayleigh-Jeans féle sugárzási törvény:
+\begin{equation}
+    U(\nu, T) d\nu = \frac{8 \pi}{c^3} k_BT \nu^2 d\nu
+\end{equation}
+Ez az összefüggés jól leírja a kísérleti görbéket kis frekvenciákon (nagy hullámhosszakon), de nagy frekvenciákon (kis hullámhosszakon) de akad vele egy kis probléma:
+\begin{equation}
+    I(T) = \int_0^{\infty} U(\nu, T) d\nu = \int_0^{\infty} \frac{8 \pi}{c^3} k_BT \nu^2 d\nu = \infty
+\end{equation}
+Ez azt jelenti, hogy a Rayleigh-Jeans féle sugárzási törvény szerint a fekete test végtelen mennyiségű energiát sugároz ki, ami nyilvánvalóan ellentmond a kísérleti tapasztalatokkal. Ezt a problémát nevezzük a \textbf{ultraibolya katasztrófának}.
+
+\subsubsection{Wien-féle sugárzási törvény}
+Wien hasonlóan a Bolztmann eloszlásból indult ki, de ő azt feltételezte, hogy a hullámhossz függ a molekulák sebességétől. Ebből a feltevésből kiindulva a következő sugárzási törvényt kapta:
+\begin{equation}
+    U(\nu, T) \sim \nu^3 e^{\frac{- h \nu}{k_BT}}
+\end{equation}
+Ahol $h$ egy új univerzális állandó, amelyet később Planck állandónak neveztek el (ezt az állandót természetesen Wien eredeti eredménye még nem tartalmazta). Ez a sugárzási törvény jól leírta a kísérleti görbéket nagy frekvenciákon (kis hullámhosszakon), de kis frekvenciákon (nagy hullámhosszakon) nem működött jól.
+
+\subsubsection{Planck-Féle sugárzási törvény}
+A XIX. század végén a hőmérsékleti egyensúlyban lévő fekete test sugárzásának leírására két formulát használtak, de egyik sem tudta értelmezni a teljes
+hullámhossztartományt. Az egyik a Rayleigh- Jeans-törvény, amely a spektrum hosszúhullámú részében egyezik meg a tapasztalattal, a másik a Wien
+által megállapított formula, amely a rövidhull ámú határesetben érvényes.A sugárzást az egész spektrumban helyesen leíró formulát Max Plancknak sikerült felállítani 1900-ban.
+
+Ő azt gondolta, hogy a Rayleigh-Jeans-törvény azért "bukik el" magas frekvenciákon, mert az $\bar{\epsilon}(T)$ esetleg túl erősen van képviselve nagyfrekvenciás tartományokon.
+Ezért a klasszikus $\bar{\epsilon} \sim k_BT$ helyett egy $\bar{\epsilon} < k_BT$ egyenlőtlenséget feltételezett nagy $\nu$ tartományban. Ezt könnyű elérni ha feltesszük, hogy az alapállapot:
+\begin{equation}
+    \epsilon_0 = h \nu
+\end{equation}
+ahol $h$ egy új univerzális állandó, amelyet később Planck állandónak neveztek el. Ekkor az átlagos energia:
+\begin{equation}
+    \bar{\epsilon} = \frac{h \nu}{e^{h \nu / k_BT} - 1}
+\end{equation}
+Így a Planck-féle sugárzási törvény:
+\begin{equation}
+    \boxed{U(\nu, T) = \frac{8 \pi h \nu^3}{c^3} \frac{1}{e^{h \nu / k_BT} - 1}}
+\end{equation}
+Ez az eredmény pedig tökéletesen visszaadja a Rayleigh-Jeans törvényt kis $\nu$-re és a Wien törvényt nagy $\nu$-re:
+\begin{equation}
+    U(\nu, T) \approx \begin{cases}
+    \frac{8 \pi}{c^3} k_BT \nu^2 & \text{ha } h \nu \ll k_BT \quad \text{(Rayleigh-Jeans)} \\
+    \frac{8 \pi h}{c^3} \nu^3 e^{-h \nu / k_BT} & \text{ha } h \nu \gg k_BT \quad \text{(Wien)}
+    \end{cases}
+\end{equation}
+Mi több, ha kiszámoljuk a teljes energiát, pontosan a Stefan-Boltzmann törvényt kapjuk:
+\begin{equation}
+    I(T) = \int_0^{\infty} U(\nu, T) d\nu = \frac{8 \pi k_B^4}{15 c^3 h^3} T^4 \int_{0}^{\infty} \frac{x^3}{e^x - 1} dx = \sigma T^4
+\end{equation}
+ahol $\sigma = \frac{2 \pi^5 k_B^4}{15 c^2 h^3}$ a Stefan-Boltzmann állandó.
+
+Viszont ez az eredmény sokkal messzemenőbb implikációkkal rendelkezik, mint csak a fekete test sugárzásának leírása. Ugyanis, ha feltételezzük, hogy az elektromágneses sugárzásnak van egy diszkrét minimum értéke, $h \nu$, 
+És ennek csak az egész számú többszöröseinek értékét heveti fel ($\epsilon_n = n h \nu$), akkor ez azt jelenti, hogy az elektromágneses sugárzás kvantált. 
+
+Plancknak az energia kvantáltságára vonatkozó feltevését később Einstein módosította, magára a sugárzási térre is alkalmazta a fényelektromos-hatás
+kisérleti tapasztalatai alapján. Megmutatta, hogy Planck hipotézise helyett helyesebb, ha feltesszük, hogy a sugárzás emissziója és abszorpciója $h\nu$ energiájú adagokban - kvantumokban - történik,
+azaz Einstein hipotézise szerint a fény nem folytonos, hanem korpuszkuláris szerkezetű : a sugárzás $E = h\nu$ energiájú kvantumokból áll. (Érdemes
+megjegyezni, hogy Newton a fényt korpuszkuláris természetűnek tartotta, szemben Huygens-szel, aki a hullámtermészet alapján magyarázta az optikai jelenségeket. Természetesen az einsteini fénykvantum nem ugyanaz, mint
+Newton "fényrészecskéje".) A sugárzási törvény jelentősége messze túlmegy a hőmérsékleti sugárzás területén, hiszen az anyagra és az elektromos töltésre vonatkozó atomisztikus felfogást itt alkalmazták először az energiára is: az oszcillátor energiája
+csak diszkrét értékeket vehet fel, és így az csak ugrásszerűen változhat. Ennek a gondolatnak a kifejlődése egész fizikai világszemléletünket lényegesen átalakította, és a kvantumelmélethez vezetett.
+
+\subsection{Rutherford-kísérlet}
+\subsubsection{Atommodellek Rutherford Előtt}
+A kinetikus gázelmélet alapján ismert térfogatú anyagban leszámolva az atomok számát, meg lehetett határozni az egyes atomok méretét: a gömb alakúnak tekintett atom sugara $\sim 10^{-10}\,\mathrm{m}=1\,\text{\AA}$ érték adódott.
+Az atom belső szerkezetére vonatkozólag azonban nem voltak ismereteink, de a kísérletek alapján fel kellett tételezni, hogy az atomok belső szerkezete bonyolult. Felfedezték az izzított fémek termikus elektronemisszióját, a külső feszültséggel előidézett katódsugárzást, gázkisülést, megismerték a villámot, melyek során elektronok léphetnek ki az atomokból.
+A gázokban lejátszódó folyamatok is arra mutattak, hogy az atomok belsejében pozitív és negatív elektromos töltés található. Az első felfedezett radioaktív atomok $\alpha$-részecskéket bocsátanak ki. Ez adta kezünkbe az eszközt, melynek felhasználásával széleskörű munka indult az atomok szerkezetének vizsgálatára.
+
+A múlt század végén ismert volt az elektromágneses tér máig is stabilan álló négy pillére, a Maxwell-egyenletek rendszere. Ehhez képest keveset tudtunk az elektromosságot létrehozó töltések tulajdonságairól, így az első elemi részecskék viselkedéséről. Az elektront 1897-ben fedezték fel olyan értelemben, hogy tulajdonságait az akkori műszereknek megfelelő lehető legnagyobb pontossággal meghatározták.
+Az $\alpha$-részecskék kibocsátásával járó radioaktivitást 1898-ban fedezték fel, és csak később sikerült az $\alpha$-bomló preparátumból az $\alpha$-részecskéket kisülési csőbe gyűjteni, majd a színképe alapján azonosítani (1909). A hidrogénatom pozitív töltésű ionját már ismer(t)ék a századfordulón, arra azonban, hogy ez a többi atomban alkotóelemként is szerepel, még sokáig nem derült fény.
+
+Thomson az általa felfedezett elektronra alapozta első atommodelljét, a „mazsolás kalácsot” (1900). Ez egy — a kinetikus elmélet alapján — $10^{-10}\,\mathrm{m}$ átmérőjű gömb, mely kívülről semleges. Benne a pozitív töltések egyenletesen vannak elosztva a teljes térfogatban, és ebbe beágyazva pontszerű elektronok helyezkednek el.
+Az elektronok vagy nyugalomban vannak, vagy meghatározott pályákon körbe keringenek. Thomson sok számítást végzett az elektronrendszerek stabilitására, és sikerült kimutatnia, hogy a megfelelően elhelyezett elektronrendszer tagjainak sugárzása leronthatja egymást, így gyakorlatilag stabil atomot eredményez. A század elején, 1903-ban, P. Lenard a katódsugarakkal végzett méréseket.
+Az ilyenkor előállított gyors elektronok vékony fémfóliákon és gázokon való elnyelődését és szóródását vizsgálta. Azt találta, hogy az elektronok nagyon sok atomon áthaladva sem nyelődnek el, áthatolnak lényeges irányváltoztatás nélkül. Ebből arra következtetett, hogy az „áthatolhatatlan atom” nem tölti ki a rendelkezésére álló teret, az atom nagy része üres. Lenard úgy gondolta, hogy az atom kis méretű pozitív és negatív töltésekből, valamint azok erőteréből áll.
+Ez a modell nem illeszkedett az akkori elméleti számításokhoz, nevezetes ellentétben a klasszikus elektrodinamika jóslataival, így Lenard modellje nem lett olyan elfogadott, mint Thomsoné. De hogyan helyezkednek el a pozitív és negatív töltések az atomban valójában? Angliában a század első éveiben Rutherford és munkatársai, Geiger és Marsden, az akkor nem régen felfedezett $\alpha$-sugárzás részecskéivel bombáztak vékony aranyfóliákat. Meg akarták mutatni, hogy a „mazsolás kalácsban” hogyan térülnek el a kétféle pozitív $\alpha$-magok az elektrodinamika törvényeinek megfelelően.
+
+\subsubsection{Kisérleti elrendezés}
+Az Ernest Rutherford vezette kísérletekben (1906--1911) párhuzamos
+$\alpha$-részecskenyalábot bocsátottak egy céltárgyra, és regisztrálták
+a részecskék haladási irány szerinti eltérülésének eloszlását.
+A céltárgy általában a vizsgált atomokból, az első kísérletekben aranyból
+álló vékony fólia vagy gázréteg volt, melyben a többszörös szórás
+valószínűsége igen csekély, így a kísérletek értelmezése egyszerűsödött.
+A párhuzamos $\alpha$-részecske-nyaláb anyagrétegen áthaladva
+szétszóródik.
+Az $\alpha$-részecskék többsége kis szögű, $2$--$3^\circ$-os szórást szenved.
+A szórási szögek eloszlása közelítőleg Gauss-eloszlást követ a
+„mazsolás kalács”-modellben.
+Ezeken a kis szöggel történő szóródásokon kívül azonban, mint Rutherford
+munkatársai, Geiger és Marsden megmutatták, az $\alpha$-részecskék kb.
+$\tfrac{1}{8000}$-ad része $90^\circ$-ot is meghaladó nagy szögben
+szóródik vissza.
+A nagyszögű szóródások száma jelentősen meghaladja a Gauss-eloszlás
+által megengedett, azaz a véletlenből fakadó mértéket
+(statisztikusan sok kis szög felhalmozódása).
+
+A szóródásnak az eltérülés irányától való függését vizsgáló készülékük
+vázlatát az 5.1. ábra mutatja.
+A berendezés egy vastag falú hengeres edény, amely csiszoltaban
+forgatható módon volt elhelyezve.
+Az M leolvasó mikroszkóp és az ehhez rögzített S cink-szulfid ernyő a
+dobozszal együtt forgott.
+Az $\alpha$-forrás és az F szórólemez mereven össze van építve,
+maga a szórólemez a doboz forgási tengelyében van.
+A cink-szulfid ernyőn minden egyes nagy energiájú $\alpha$-részecske
+becsapódás sötétben jól felismerhető fényfelvillanást (ún. szcintillációt)
+okoz.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/10-tetel/rutherford.png}
+    \caption{Rutherford-kísérlet vázlata ($R$: $\alpha$-forrás, $F$: szórófólia, $S$: cink-szulfid ernyő, $M$: mikroszkóp)}
+\end{figure}
+Valamely irányban szóródó $\alpha$-részecskék számát úgy határozták meg,
+hogy a megfelelő szög beállítása után leszámlálták a felvillanásokat a
+szcintilláló ernyőn.
+Az $\alpha$-részecskék forrása vékony falú, radonnal töltött cső volt,
+a sugárnyalábot egy keskeny diafragma szűkítette le.
+A mérések $30^\circ$--$150^\circ$ közötti szögintervallumra terjedtek ki.
+A szög függvényében ábrázolták az észlelések számát, vizsgálva, hogy
+milyen függvény szerint változtak.
+Vizsgálták a szórás függését a $\theta$ szögtől kívül a bombázó részecskék
+sebességétől, valamint a céltárgyban levő szórócentrumok számától is.
+A szögeloszlásadatok nem követték a „mazsolás kalács” által jósolt
+Gauss-eloszlást, hanem
+$\displaystyle \frac{1}{\sin^4\frac{\vartheta}{2}}$ függvény szerint a nagy szögekben
+egyre kevesebb $\alpha$-részecske szóródott, de ez az eloszlás megengedti
+a nagy szögű visszaszórást is.
+Az $\alpha$-részecskék sebességét úgy lehetett változtatni, hogy más
+energiájú $\alpha$-sugarzó izotópot helyeztek a radon helyére (pl. polónium,
+rádium).
+A kísérleti eredmény az lett, hogy minél nagyobb az $\alpha$-részecske
+energiája, annál kisebb a szóródás valószínűsége egy adott szögben.
+
+Manapság iskolai körülmények között elérhető, hogy a Rutherford-kísérletet
+elvégezzük (és az atommag létezését megmutassuk), természetesen nem
+cink-szulfid ernyővel.
+Az $\alpha$-részecskék forrását, az ólomkollimátort és az aranyfóliát
+ugyanúgy alkalmazva, de a cink-szulfid ernyő helyett egy félkör alakban meghajlított, ún. nyomdetektort (ami egy speciális fotólemez)
+elhelyezve az a-részecskék irány szerinti eltérülése vizsgálható. A kísérlet
+legnagyobb nehézsége, hogy vákuumba kell helyezni a berendezést, mert
+a levegő atommagjai szintén eltérítik az a-részecskéket, és ez elmossa az
+aranyfólia hatását. A nyomdetektorlemezt a több órás besugárzás után erős
+$NaOH$-oldattal maratni kell, így minden egyes a-részecske becsapódása helyén egy kis lyuk keletkezik, melyek száma mikroszkóp alatt megszámolható.
+Összegezve a Rutherford-féle szóráskísérletek legfontosabb kisérleti tapasztalatait, a következőket mondhatjuk:
+\begin{enumerate}
+    \item Az $\alpha$-részecskék $\vartheta > 90^\circ$-os, nagy szögű visszaszórását lehet megfigyelni.
+    \item A beütések szögeloszlása nem Gauss-eloszlást, hanem $\frac{1}{\sin^4\frac{\vartheta}{2}}$ függvény szerinti eloszlást mutat, egy adott detektorral végignézve a $30\degree- 150\degree$ eltérülési szögtartományt
+\end{enumerate}
+
+\subsubsection{Rutherford atommodellje}
+Rutherford arra a következtetésre jutott, hogy ilyen nagy szögű eltérések
+csak abban az esetben lehetségesek, ha az atomban a tömeg igen kis
+térfogatra koncentrálódik, melynek pozitív töltése van, és amelynek
+sugara jóval kisebb az atom méreténél, ehhez képest az elektrodinamikai
+modellben pontszerűnek tekinthető.
+Ez Rutherford nagy felfedezésének lényege, hogy az atomon belül a tömeg
+nagy része (kb. $99{,}9\%$-a) egy pici pozitív töltésű térrészben
+sűrűsödik (ezek a visszaszóró centrumok az atomok „magjai”,
+melyek töltését magtöltésnek nevezik), a maradék térrész pedig csak
+lazán van kitöltve ezek szerint negatív töltésű részecskékkel
+(az atom egésze semleges), kézenfekvően elektronokkal.
+Ez a kísérlet tekinthető az atommag felfedezésének.
+A Rutherford által javasolt atommodellben az atom felépítése a
+bolygórendszerhez hasonlít.
+Középen van a kisméretű pozitív töltésű atommag, amelyben az atom
+tömegének túlnyomó része koncentrálódik, míg a mag körül zárt pályán
+negatív elektronok „keringenek” az elektromágneses kölcsönhatás ismert
+törvényszerűsége, a Coulomb-erő alapján.
+A Coulomb-erő alakilag teljesen megegyezik a tömegvonzás newtoni
+erőtörvényével, innen jön a bolygórendszer-analógia.
+
+Ha feltételezzük, hogy a besugárzott $\alpha$-részecskék nem érnek
+hozzá az atommaghoz (a következő pontban be is látjuk), ebből már egy
+becslést lehet adni az atommag méretére, centrális ütközést feltételezve.
+Az $\alpha$-részecske körülbelül $8\ \mathrm{MeV}$ mozgási energiája a
+céltárgyhoz legközelebbi pontban teljesen átalakul elektromos helyzeti
+energiává.
+Az
+\[
+E = k\,\frac{z_1 z_2 e^2}{r}
+\]
+egyenlet alapján a mag sugarának egy felső korlátja
+$\sim 100\cdot 10^{-15}\ \mathrm{m} = 100\ \mathrm{fm}$-nek adódik.
+Az atommagok méretének pontosabb mérései alapján a sugaruk
+$1$--$10\ \mathrm{fm}$ nagyságrendbe esik, tehát tíz- vagy
+százezerszer kisebbek az atom méreténél.
+
+Egy modell igazolásához természetesen elméleti számolásokat kell végezni,
+amelyek a kísérlettel megegyező eredményre vezetnek.
+Rutherford a kísérletek alapján megalkotott atommodell segítségével
+kidolgozta az $\alpha$-részecskék szórásának elméletét, mellyel a
+kísérleti adatokat sikerrel írta le, és amelynek végeredménye a
+Rutherford-féle szórási formula nevet kapta.
+
+\subsubsection{Hatáskeresztmetszet}
+Az atomfizikában a reakciók valószínűségeit a hatáskeresztmetszet
+fogalmának segítségével jellemezhetjük.
+Itt a Rutherford-formula éppen az $\alpha$-részecskék aranyatommagokon
+történő tisztán elektromágneses szóródásának hatáskeresztmetszetét adja
+meg, ezért először néhány szót ejtünk a hatáskeresztmetszet fogalmáról
+általában.
+
+\subsubsection*{A hatáskeresztmetszet fogalma}
+A hatáskeresztmetszet egy adott atom- vagy magfizikai reakció
+lejátszódásának valószínűségére jellemző fogalom.
+Megmutatja például, hogy a lassú neutronok mennyire szeretnek befogódni
+egyes atommagokba, vagy mekkora a valószínűsége annak, hogy egy
+atommagot protonokkal bombázva egy adott térszögben deutérium magok
+lépnek ki.
+Hasonló módon megmutatja, hogy egy $\alpha$-részecskenyaláb részecskéi
+milyen valószínűséggel fognak (pl.) $10^\circ$-os szögben eltérülni.
+Ezekben a példákban az a közös, hogy egy adott részecske párhuzamos
+nyalábja okozza a reakciót.
+Legyen a nyaláb keresztmetszete $F$ és tekintsük homogénnek, valamint
+először legyen csak egy darab bombázott atom vagy atommag jelen.
+Ekkor, ha adott $\Delta t$ idő alatt $N$ részecske érkezik a nyalábbal
+és ebből $N_r^{(1)}$ vesz részt a reakcióban, akkor a reakció
+valószínűsége egy elemi reakcióban
+\[
+p=\frac{N_r^{(1)}}{N}.
+\]
+Ez megadható a reakcióban részt vevő részecskéknek a nyalábban
+elfoglalt felületének ($\sigma$) és a teljes nyalábkeresztmetszetnek
+($F$) hányadosaként is:
+\[
+p=\frac{N_r^{(1)}}{N}=\frac{\sigma}{F}.
+\]
+
+Természetesen sok atommagot bombázva a reakciók átlagos száma arányos
+a bombázott magok számával is ($N_c$) (c = céltárgy).
+Az előző egyenletet átrendezve és általánosítva kapjuk:
+\[
+N_r = p\cdot N\,N_c = \frac{\sigma}{F }N\,N_c
+= \sigma\frac{N}{F \Delta t}\,N_c \Delta t = \sigma j N_c \Delta t.
+\]
+
+Itt $j$ a részecske-áramsűrűség, a nyalábban a másodpercenként és
+felületegységenként áthaladó részecskék számát adja meg.
+A bombázó részecskék közül annyi darab vesz részt a reakcióban (egy adott atommaggal történő
+reakcióban), ahány a „hatásos” $\sigma$ nagyságú keresztmetszetbe befér.
+Ez a $\sigma$ a hatáskeresztmetszet, és az alábbi egyenlet a definíciója:
+\[
+\frac{dN_r}{dt}=\dot{N}_r=\sigma j N_c.
+\]
+
+Látható, hogy a valószínűség geometriai értelmezésével jutunk a
+hatáskeresztmetszet szemléletes értelméhez, a nyalábnak ezen felületű
+része fog részt venni a reakcióban, vagy adott irányba szóródni.
+(Nem kell mindig összefüggő tartományt képzelni a hatásos keresztmetszethez.)
+Az érdekes csak az, hogy nem a $p$ valószínűség, hanem a „hatásos
+keresztmetszet” a céltárgy magra általánosan jellemző állandó.
+
+Ha egységnyi térfogatban a bombázott részecskék $N_c/V=n_c$ darab
+hatásos keresztmetszeteit összeadjuk (az átfedés valószínűsége
+elhanyagolható), akkor a céltárgy teljes, ún. makroszkopikus
+hatáskeresztmetszetét kapjuk.
+Ennek jele a görög nagy szigma ($\Sigma$).
+$\Sigma=\sigma\cdot n_c$, ezzel:
+\[
+\dot{n}_r=\Sigma j.
+\]
+
+A makroszkopikus hatáskeresztmetszet egy adott kísérleti elrendezésre
+jellemző fogalom.
+A bombázott magok száma ugyan fogy az időben (ha a reakciókban
+átalakulnak), és így a $\Sigma$ is csökken, de ez az esetek döntő részében
+nem észlelhető egy kísérletben.
+
+További formulák a magreakciók számának meghatározására
+
+a) A $j$ itt részecske-áramsűrűség, nem az elektromos áramsűrűség.
+Átalakíthatjuk a formulát a részecske-áramerősségre is, $j=I/F$ alapján,
+ilyenkor az $N_c=n_c V=n_c F x$ helyettesítéssel az
+$N_r=\sigma j N_c \Delta t$ adódik, amiben a besugárzott anyagdarab
+vastagságát $x$ játszik szerepet.
+Az $n_c$ a céltárgy részecskesűrűségét jelenti.
+Így jutunk az összefoglaló egyenletekhez, $N_r/\Delta t=\dot{N}_r$:
+
+(5.1)
+\[
+\dot{N}_r=\sigma j N_c=\sigma I n_c x.
+\]
+
+Az eddig tárgyalt formulák olyan esetben hasznosak, amikor egy
+irányított nyaláb érkezik egy anyagdarabra, általában vékony vagy vastag
+fóliára.
+Ez az eset a mag- és részecskefizikai kísérletekben általános.
+
+b) Előfordul azonban, hogy a reakciót kiváltó részecskék nem irányítottan
+érkeznek, hanem sebességvektoruk a tér minden irányában mutathat.
+Ilyenkor a $j$ áram­sűrűség nem egyértelmű, helyette a $\Phi$ fluxus
+használandó, ami megadja az egységnyi felületen időegység alatt
+bármilyen irányban átmenő részecskék számát.
+Tipikus példa erre egy atomreaktor aktív zónája, ahol pl. a neutronok
+összevissza mozoghatnak.
+Ekkor:
+\[
+\dot{N}_r=\sigma \Phi N_c.
+\]
+Ebben az esetben az az előfordulhat, hogy a bombázó részecskék nem
+monoenergetikusak, és a hatáskeresztmetszet általában függ a bombázó
+részecske energiájától.
+Ilyenkor az adott sebességű neutronok (bombázó részecskék) fluxusát az
+energia függvényében kell ismerni:
+\[
+\phi(E)=\frac{d\Phi(E)}{dE},
+\]
+ez azt jelenti, hogy $\phi(E)$ a $[E,dE]$ energiaintervallumba eső része
+a teljes $\Phi$ fluxusnak.
+Ilyenkor a keletkező részecskék számát külön-külön a bombázó energiákra
+összegezni kell:
+\[
+\dot{N}_r=\int \sigma(E)\,\phi(E)\,dE\cdot N_c.
+\]
+
+c) Geometriáját tekintve még bonyolultabb a modell, ha a céltárgyak
+is mozognak.
+(Reaktorban az urán és a moderátor atommagok csak szobahőmérsékletű
+hőmozgást végeznek, vagyis a bombázó magokhoz képest alig mozognak!)
+Ez valósul meg például egy csillag belsejében, amikor a hidrogén- és
+héliummagok is több millió fokos gázként viselkednek.
+Ilyenkor a részecskesűrűségekkel kell dolgoznunk.
+Adott $V$ térfogatban $N_c=n_c\cdot V$ és $N=n\cdot V$.
+A bombázónak tekintett magok áramsűrűsége $j=n\cdot v$ alapján számolható
+(lásd klasszikus fizika).
+Ezekkel
+\[
+\dot{N}_r=\sigma j N_c=\sigma n v\, n_c V,
+\]
+ha $V$-vel mindkét oldalt elosztjuk, a térfogategységenkénti reakciók
+számát kapjuk meg:
+\[
+\dot{n}_r=\sigma v\; n_c n.
+\]
+
+\subsubsection*{Differenciális hatáskeresztmetszet}
+
+Ha a reakcióban keletkező vagy szóródó részecskék reakció utáni
+tulajdonságaiból megkötünk néhányat, például irányát vagy energiáját
+külön meghatározzuk, akkor differenciális hatáskeresztmetszetről
+beszélünk.
+A Rutherford-szórás esetében a szög (térszög) szerinti differenciális
+hatáskeresztmetszetről van szó.
+Ilyenkor $N_r$ az adott irány körüli egységnyi térszögbe szóródott
+részecskék számát adja meg, és $\sigma$ helyett
+$\dfrac{d\sigma}{d\Omega}$ jelölést használunk.
+$\dfrac{d\sigma}{d\Omega}(\vartheta)$ szemléletesen megadja, hogy
+egységnyi idő alatt egy darab céltárgy-atom (mag) a bejövő részecskenyaláb
+felületének mekkora részén érkező részecskéket irányítja az adott
+irányban lévő egységnyi térszögű detektorba.
+A kérdés az, hogy ez a valószínűség hogyan függ az eltérülés szögétől.
+
+\subsubsection{A Rutherford-féle szórási formula}
+Rutherford elméletében levezette, hogy az $\alpha$-részecskék egy fix
+töltött szórócentrumon történő szóródásának differenciális
+hatáskeresztmetszete hogyan függ az eltérülés $\vartheta$ szögétől
+\[
+\left(\frac{\partial\sigma}{\partial\Omega}(\vartheta)\sim\frac{1}{\sin^4\!\tfrac{\vartheta}{2}}\right).
+\]
+A kísérleteiben ugyanezt szögfüggést tapasztalta, ez adja modelljének
+meggyőző kísérleti alapját.
+
+A modell alapvető feltétele, hogy a pontszerűnek tekintett atommag és az
+$\alpha$-részecske közötti kölcsönhatás a Coulomb-törvényt követi, ahogy az
+töltött részecskék viselkedése során megszoktuk, de most minden eddiginél
+kisebb távolságokra alkalmazzuk.
+A centrális $1/r^2$ alakú erők leírásával a mechanikában már találkoztunk
+az égitestek mozgása kapcsán.
+Az egyenletek teljesen azonos alakúak a két esetben.
+A perdület megmaradása miatt síkbeli problémát polárkoordinátákkal
+felírva, az energia megmaradását figyelembe véve, a mozgásegyenleteket
+megoldva, azt az eredményt kapjuk, hogy a testek pályája egy kúpszelet
+\[
+r=\frac{p}{1-e\cos\vartheta}.
+\]
+Ez negatív összenergiánál ellipszis, pozitív összenergiánál (nem kötött
+rendszer esetén) hiperbola.
+[Budo: Mechanika, 95. oldal.]
+A belőtt $\alpha$-részecske aszimptotikusan egy adott irányban eltérül,
+ilyenkor a hiperbola esete valósul meg, és az eltérülés szöget a két
+aszimptota (bemenő és kifutó) bezárt szöge adja meg.
+Ha a céltárgy-mag tömegéhez képest az $\alpha$-részecske tömegét
+elhanyagoljuk (vagy a redukált tömeggel
+$\mu=\dfrac{m_1 m_2}{m_1+m_2}$ számolunk), akkor a mozgásegyenletek
+megoldása után a pályagörbe alakját ismerve a következő formula adódik
+az eltérülés szögére:
+\[
+\tan\frac{\vartheta}{2}
+= k\,\frac{Z_1 Z_2 e^2}{m_\alpha v_\alpha^2\, b}.
+\]
+Itt $m_\alpha$, $Z_\alpha$ és $v_\alpha$ az $\alpha$-részecske tömege,
+rendszáma ($Z_\alpha=2$) és kezdeti sebessége, $e$ az elemi töltés,
+$b$ az ütközési paraméter;
+ebben a távolságban haladna el az $\alpha$-részecske, ha nem lenne
+elektromos taszítás a céltárgy-mag és közt(e),
+$Z_1$ a bombázott atom rendszáma, $k=\dfrac{1}{4\pi\varepsilon_0}$.
+(Ha az $\alpha$-részecske tömegének a helyére a rendszer redukált
+tömegét írjuk, akkor figyelembe vettük a szórócentrum véges tömegét is.)
+
+A formulában szereplő $b$ értékét nem tudjuk mérni, ez minden ütközésnél
+más és más értéket felvevő valószínűségi változó.
+A kísérletekben az eltérülés $\vartheta$ szögét tudjuk csak
+meghatározni.
+Annak érdekében, hogy ennek eloszlását leíró formulához jussunk,
+statisztikus megfontolásokat kell tennünk.
+
+A $\vartheta$ szóródási szög és a $b$ ütközési paraméter egymással az
+egyenletben meghatározott kapcsolatban vannak, ezért azok a részecskék
+szóródnak $(\vartheta,\vartheta+d\vartheta)$ szögben, melyeknek az
+ütközési paramétere $(b-d b,b)$ intervallumba esett,
+azaz a beeső nyaláb köré írt $b$ sugarú, $db$ vastagságú körgyűrűn
+haladtak át beeséskor.
+A bejövő részecskék közül csak azok térülnek el $\vartheta$ szögben,
+melyek ezen „hatásos” gyűrűn mentek keresztül.
+Avagy: az $F$ teljes keresztmetszet csak azon hányada szóródik
+$\vartheta$ szögben, amely ezen a gyűrűn átmegy:
+\[
+\Delta\sigma=2\pi b\,db.
+\]
+Ezen hatásos keresztmetszet azonban nem egységnyi térszögbe irányuló
+szórásokat vesz csak számba, hanem hengerszimmetrikusan mindet.
+El kell osztani még a
+\[
+\Delta\Omega=2\pi\sin\vartheta\,d\vartheta
+\]
+térszöggel, ami a térszög $A/r^2$ definíciója alapján adódik:
+a gyűrű területe $2\pi r\sin\vartheta\,dr$,
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/10-tetel/rutherford2.png}
+    \caption{Rutherford-szórás ütközési paramétere és eltérülési szöge}
+\end{figure}
+A szélessége $dr=r\,d\vartheta$, minden pontja a szórócentrumtól $r$
+távolságban van ($r\gg b$).
+Így a következő formula adódik:
+\[
+\frac{d\sigma}{d\Omega}=\frac{b}{\sin\vartheta}\frac{db}{d\vartheta}.
+\]
+
+Az $\tan \frac{\vartheta}{2}$ képlet alapján, ha $b$-nek a $\vartheta$-függését kifejezzük,
+majd deriváljuk, akkor minden szükséges függvény rendelkezésre áll:
+\[
+\frac{\partial\sigma}{\partial\Omega}_{\text{Rutherford}}(\vartheta)
+=\left(\frac{k e^2 Z_1 Z_\alpha}{2 m_\alpha v_\alpha^2}\right)^2
+\frac{1}{\sin^4\!\tfrac{\vartheta}{2}}.
+\]
+
+Ez Rutherford formulája az $\alpha$-részecskék szóródására.
+A kísérleti eredményekkel való összehasonlítás érdekében a hatáskeresztmetszetből
+ki kell számolni, mennyi beütést várunk egy adott kísérlet geometriai
+viszonyai között.
+A makroszkopikus hatáskeresztmetszet ilyenkor:
+\[
+\frac{d\Sigma}{d\Omega}=n\frac{d\sigma}{d\Omega},
+\]
+ahol $n$ a szóró magok koncentrációja.
+Jelöljük a céltárgyra másodpercenként és felületegységenként beeső
+részecskék teljes számát $j$-vel (részecske-áramsűrűség),
+és tételezzük fel, hogy a céltárgy vékony, azaz a kétszeres és többszörös
+szórás valószínűsége elhanyagolható.
+Ekkor a $\vartheta$ körüli $\Delta\Omega$ térszögbe szóródó részecskék
+száma másodpercenként:
+\[
+\frac{\Delta N_r}{\Delta t}=j\,N\,\frac{d\sigma}{d\Omega_{\text{Rutherford}}}(\vartheta)\,\Delta\Omega.
+\]
+
+A Rutherford-formulát azóta az újabb és újabb technikai eszközökkel
+gondos kísérleti vizsgálatnak vetették alá, a mérési eredmények minden
+esetben jól egyeztek a számítottakkal, amíg a bombázó részecske nem
+érintkezik a szórócentrummal.
+
+\subsubsection{A Rutherford-kísérlet következményei}
+A Rutherford-formula alapján meg lehet határozni az atommag töltését is,
+hiszen a szóródás hatáskeresztmetszete függ $Z^2$-től.
+A visszaszórási kísérletben adott aktivitású forrással és geometriai
+elrendezés mellett, adott szögben, de a céltárgyat cserélve Chadwick
+és munkatársai azt az eredményt kapták (1920), hogy az adott térszögbe
+visszaszórt $\alpha$-részecskék számából meghatározott magtöltés
+$1$--$2\%$-ra (a kísérlet pontossága is ennyi volt) megegyezik
+az elemi töltésnek és az atom rendszámának szorzatával.
+(Az eltérített és a beeső $\alpha$-k számát egyidejűen kellett mérni a
+magtöltés számértékének meghatározásához.)
+A rendszámot akkoriban a Mengyelejev-féle periódusos rendszerben elfoglalt
+helyével adták meg.
+Miután kiderült, hogy a magtöltés éppen a rendszámnak és az elemi
+töltésnek a szorzata, ebből következik, hogy $Z$ darab elektron kering
+a mag körül (az atom semlegessége miatt).
+A rendszám ezen hármas jelentése (periódusos rendszeri sorszám,
+magtöltés és elektronok száma) csak az atommag felfedezése után vált
+kézenfekvővé (Van Den Broek, 1913), majd néhány évvel később vált
+kísérlettel megerősített ténnyé.
+
+Természetesnek hangzik, de nem egyértelmű, hogy a Coulomb-törvény atomi
+méretű töltött részecskék között is érvényes.
+Coulomb makroszkopikus ionizált anyagdarabok között tudta mérni a
+fellépő elektromos erőt!
+A szórási kísérletek erre is felvilágosítást adtak.
+Ezek szerint a szórás a Coulomb-féle erőtörvénynek megfelelően megy végbe
+mindaddig, amíg a szórt részecskék nem közelítik meg
+$10^{-14}\ \mathrm{m}$-nél (azaz $10\ \mathrm{fm}$-nél) jobban az atommagot.
+Ez éppen a magok méretének nagyságrendje.
+Egyértelműnek tűnik, hogy ennél kisebb távolságon belül azért nem
+érvényes a Coulomb-erőtörvény, mert az $\alpha$-részecske hozzáér az
+atommaghoz, és más erők is beleszólnak a szórásba.
+Még kisebb távolságokon már az elektromos töltés értelmezésével is
+gondosan kell bánni, mert kvantumos folyamatok miatt virtuális
+elektron-pozitron párok keletkezhetnek a töltések körül, befolyásolva
+az elektromos folyamatokat.
+
+A Rutherford-szórás ma már anyagtudományi célú alkalmazott magfizikai
+technika, segítségével kristályok felületén lévő szennyező atomok igen
+kis koncentrációja is meghatározható.
+Azért csak a felületen, mert a néhány megaelektronvolt energiájú
+$\alpha$-részecskék nem tudnak néhány mikrométernél jobban behatolni
+a szilárd testekbe, ugyanis lelassulnak és megállnak.
+
+Érdemes megjegyezni, hogy Rutherford klasszikus kísérlete óta minden
+tisztán elektromágneses atommagon történő szórást Rutherford-szórásnak
+hívunk.
+Az így felgyorsított elektronok szóródása is a fenti formulát követi,
+egészen addig, amíg az elektronok relativisztikussá válnak, amikor is
+a Rutherford-formulához korrekciós tagok szükségesek (Mott-szórás).
+Másfajta korrekciót jelent az, hogy az atommagok csak egy bizonyos
+távolságból tűnnek pontszerűnek.
+Az említett gyors elektronok képesek az atommag belsejét is feltérképezni
+és az atommagon belüli töltéseloszlásról informálni.
+Ha a szórócentrum nem pontszerű, akkor a Rutherford-formulát egy
+alakfaktorral megszorozva kapjuk a kísérletekkel egyező és az elméletbe
+jól beleillő formulát.
+
+Rutherford atommodelljét gyorsan elfogadta a fizikus közvélemény,
+de volt egy gyenge pontja, nem tudta megmagyarázni, hogy miért nem
+sugároznak az atommag körül mozgó elektronok.
+A periodikus pályákon mindenképpen kell sugárirányú gyorsulásnak lenni,
+akkor pedig a klasszikus elektrodinamika szerint energiát kell sugározniuk,
+így az elektronok idővel beleesnek a magba.
+Ilyet azonban a kísérletekben nem tapasztaltak, ez a század eleji fizika
+nyitott kérdése maradt még egy ideig.
+
+\subsection{Millikan-kísérlet}
+Az elemi töltést először J. J. Thomson próbálta meg kimérni 1900-ban, amikor az H. A. WIlson által 1895-ben feltalált cseppekondenzációs kamrát használta fel arra, hogy a katódsugárcsőből kilépő elektronok által ionizált levegőben apró vízcseppeket hozzon létre.
+Ez a ködkamra jelensége, am i annyit je lent, hogy túltelített gőzben mozgó elektromos töltéseken vízgőz csapódik le, és vízcseppecskék ala.kulnak ki.
+Thomson egy gó'zzel telt tartályban röntgensugarakkal keltett ionokat, és a tartály térfogatának hirtelen megnövelésénél bekövetkező lehűléssel tette
+a gőzt túltelítetté. A keletkező vícseppecskék egy lemezkére kicsapódtak és azt töltötték fel. Thomsan az elemi töltés nagyságát, $e$-t, a cseppek száma
+és az össztöltés hányadosából határozta meg. Ebből az elektron tömegére is megkapta az első eredményeket, és az a hidrogénatom tömegénél három nagyságrenddel kisebbnek adódott.
+
+Thomson módszerét először H. A Wilson javította tovább 1906-ban, majd R. A. Millikan 1911-ben. Millikan amerikai fizikus annyira tökéletesítette a módszert, hogy sikerült ezzel
+a mérésével a ma más módszerekkel elérhető pontosságot megközelítenie.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/10-tetel/millikan.png}
+    \caption{Millikan cseppkísérlete}
+\end{figure}
+A kísérlet elve a következő: vízszintes helyzetű síkkondenzátor lernezei közé elektromosan töltött olajcseppecskéket juttatott be. (Más folyadék
+cseppjeit vagy szilárd részecskék porát is lehet alkalmazni.) Feszültséget kapcsolva a lemezekre, egy kiszemelt, elektromosan töltött csepp a tér hatására
+gyorsulni kezd, s ahogy gyorsul, a levegőmolekulákkal való ütközések miatt bekövetkező belső súrlódás egyre nagyobb fékezőerőt ($F_f$) hoz létre. Végül
+Vizsgáljuk meg, milyen erők hathatnak a töltött cseppre, ha be van
+kapcsolva az elektrosos tér a kondenzátor lemezei között!
+A nehézségi erőn és a felhajtóerőn kívül hat az elektrostatikus erő és a
+közegellenállás.
+Ha a molekulák szabad úthossza kisebb a cseppek méreténél, akkor a
+közeg fékezőereje folyamatosnak (időben állandónak) tekinthető, és
+Stokes törvénye értelmében az erő a v sebességgel arányos:
+
+\begin{equation}
+F_f = 6\pi\eta r v,
+\end{equation}
+
+ahol $\eta$ a belső súrlódási együttható, $r$ az olajcsepp sugara.
+Mivel a cseppre állandó gyorsítóerő hat, de a sebességgel arányos
+fékezőerő lassítja, ezért egy bizonyos $v_0$ sebességnél az erők
+kiegyenlítik egymást, és a sebesség állandó marad.
+Legyen a felfelé mutató irány a pozitív, a kondenzátor polaritása olyan,
+amely felfelé gyorsítja az elektront.
+Ekkor felírva az elektron mozgásegyenletét elektromos térben kapjuk:
+\begin{equation}
+qE - \frac{4\pi}{3}r^3\sigma g + \frac{4\pi}{3}r^3\varrho g - 6\pi\eta r v_0 = 0
+\end{equation}
+Itt $q$ a csepp töltése, $E$ az elektromos térerősség, $\varrho$ a levegő
+sűrűsége, $\sigma$ az olaj sűrűsége.
+Az egyenlet bal oldalának első tagja az elektrostatikus erő, második
+tagja a nehézségi erő, harmadik a felhajtóerő és a negyedik a
+közegellenállás.
+$v_0$-t a mikroszkóp látóterében való megfigyeléssel lehet megmérni.
+A csepp sugarát, $r$-t, nem lehet így megmérni, a mikroszkópban
+az ilyen kis csepp csak fénylő pontnak látszik.
+
+A sugár meghatározására lehetőséget ad az, ha a sebességet egy másik
+E térsség mellett is megmérjük, hiszen az egyenletekben két ismeretlenünk
+van, így két egyenlet szükséges.
+A számolás szempontjából előnyös, ha az egyik térerősség értékét a 0,
+azaz kikapcsolt feszültség mellett is meghatározhatjuk az egyensúlyi
+sebességet, ezt nevezzük most $v_1$-nek.
+Az előző helyzethez képest a mozgásegyenlet csak annyiban változik,
+hogy $E = 0$ és az $F_f$ előjele megfordul, mert így a csepp már lefelé esik.
+Ekkor szerencsére a másik ismeretlen ($q$) az $E$-vel együtt eltűnik.
+Ilyenkor csak $r$ az ismeretlen, ebből az egy mérésből meghatározható.
+Az elektron mozgásegyenlete elektromos tér nélkül:
+\begin{equation}
+-\frac{4\pi}{3}r^3\sigma g + \frac{4\pi}{3}r^3\varrho g + 6\pi\eta r v_1 = 0
+\end{equation}
+Ebből a csepp sugara:
+\begin{equation}
+r = \sqrt{\frac{3\eta v_1}{2(\sigma-\varrho)g}}
+\end{equation}
+A q kiszámolásához ezt beírhatnánk az elektron térerősség melletti
+mozgásegyenletébe, de ehelyett vonjuk ki a két mozgásegyenletet
+egymásból.
+Ekkor az $r^3$-os tagok kiesnek:
+\begin{equation}
+qE = 6\pi\eta r\,(v_1+v_0)
+\end{equation}
+ide egyszerűbb helyettesítéssel $r$ fenti értékét.
+
+A kondenzátor lemezei közötti térerősséget az $E=U/d$ formulából
+számoljuk ki, ahol $U$ a kondenzátorra kapcsolt feszültség, $d$ a lemezek
+közötti távolság.
+Így kapjuk:
+\begin{equation}
+q = 9\sqrt{2}\,\pi\,\eta^{3/2}\,(\sigma-\varrho)^{-1/2}\,g^{-1/2}\,
+d\,U^{-1}\,v_1^{1/2}(v_1+v_0).
+\end{equation}
+
+Ezen összefüggésből a mért esési idők (így az esési sebességek)
+alapján Millikan meghatározta az olajcseppek töltéseit.
+Eredményül azt kapta, hogy a csepp töltése mindig előállítható egy
+egység egész számú többszörösének gondolatával.
+Ez az egységet hívjuk elemi töltésnek.
+A csepp töltése általában $15$--$20$-szorosa volt az elemi töltésnek,
+így az egység hibája nagynak adódott.
+Az olaj porlasztásánál nem sikerült kisebb töltésű cseppeket előállítani,
+de könnyűnek bizonyult ezt a töltést utóbb egy-két egységgel
+megváltoztatni nagy áthatoló képességű radioaktív sugárzás segítségével.
+A radioaktív sugárzás ér a levegőt, ionok keletkeznek.
+Amikor egy ion a kiszemelt cseppel találkozik, melynek sebességét már
+megmértük, az egyensúly hirtelen átalakul és a sebesség megváltozik.
+
+A megváltozott cseppel a fentebb leírt két mérést újra végre kell hajtani.
+Az új feszültség $U'$, az új sebességek $u_0$ és $u_1$.
+Ekkor a töltésváltozás:
+\begin{equation}
+\Delta q = K\!\left[ u_1^{1/2}(u_1+u_0){U'}^{-1}
+- v_1^{1/2}(v_1+v_0)U^{-1}\right],
+\end{equation}
+ahol $K$ a fenti egyenletekből adódó állandó:
+\begin{equation}
+K = 9\sqrt{2}\,\pi\,\eta^{3/2}\,(\sigma-\varrho)^{-1/2}\,g^{-1/2}\,d.
+\end{equation}
+
+Ez a képlet csak akkor érvényes, ha egy cseppen sikerül négy mérést
+végrehajtani, kettőt besugárzás előtt, kettőt azután.
+Millikan megmérte a $\Delta q$ töltésváltozásokat is, és az eredeti
+kísérletében kapott elemi érték egy-, két-, háromszorosát mérte a
+cseppeken.
+Ezzel a töltés egységét — az elemi töltést — pontosabban meghatározta,
+és az eredmény egybeesett a Faraday-állandóból az Avogadro-szám
+segítségével számolt értékkel, $e$-vel.
+
+Külön probléma, hogy az elektronnak mekkora a töltése. Ezt a következtetést Millikan kísérletéből közvetlenül nem vonhatjuk le, mert ott makroszkopikus cseppek töltését vizsgáltuk.
+Az elektronok töltését közvetlenül a sörétzaj vizsgálatával lehetett meghatározni.
+Az eredmény, mint ismeretes, az volt, hogy az elektronok töltése
+egyenlő az ionokra meghatározott elemi töltéssel.
+Az elemi töltés ma elfogadott értéke:
+
+\begin{equation}
+e = (1.60217733 \pm 0.00000048)\times 10^{-19}\ \mathrm{C}
+\end{equation}
+
+\subsubsection{Sörétzaj}
+A sörétzaj, vagy Schottky-zaj, az anódáram először izzókátodos
+diódákban megfigyelt ingadozási jelensége.
+Az izzókátodos dióda felépítése nagyon hasonlít a katódsugárcsőhöz,
+benne a felfűtött katódról az elektronok a termikus energiájukat
+felhasználva lépnek ki, és a csövön átrepülve felgyorsulva jutnak
+az anódra, így biztosítva az áramvezetést a csövön.
+Felerősítés után a hangszóróban pattogó zaj hallatszik, mely a
+sörétszemek koppanására emlékeztet.
+Oka az, hogy a katódból kilépő elektronos töltést elektronok hordozzák,
+és azok véges töltéssel bírnak.
+Adott időegység alatt kilépő elektronok száma nem mindig ugyanakkora,
+statisztikusan ingadozik.
+Ezért az anódáram pontos mérése esetén annak ingadozását is lehet mérni.
+Ebből határozta meg W. Schottky az elektron töltését (és így az elemi
+töltést), a Millikan-kísérletnél nagyobb pontossággal.
+
+\subsection{Davisson–Germer-kísérlet}
+\subsubsection{De Broglie-féle hullámok}
+Louis de Broglie 1924-ben vetette fel azt a gondolatot, hogy az anyag ha a fény, ami egy elektromágneses hullám, képes észecske tulajdonságokat mutatni, akkor mivan ha az alapvetően részecskéknek gondolt
+anyagok is képesek hullámként viselkedni? Ebből az ötletből vezette le, hogy ha a egy foton energiája $E=h\nu$ és impulzusa $p=E/c=h\nu/c$ akkor a foton hullámhossza:
+\begin{equation}
+\lambda \nu = c \quad \rightarrow \quad \lambda = \frac{c}{\nu} = \frac{h}{p}
+\end{equation}
+Ezt az összefüggést pedig alkalmazhatjuk a fénynél lassabban mozgó részecskékre is:
+\begin{equation}
+\lambda = \frac{h}{p} = \frac{h}{mv}
+\end{equation}
+Ezt az összefüggést de Broglie hullámhosszának nevezzük. Ez a hullámhossz normális körülmények között mérhetetlenül kicsi. Például egy 1 tonnás autónak, mely 100 km/h-val halad, a de Broglie hullámhossza:
+\begin{equation}
+\lambda = \frac{6.63 \times 10^{-34} \mathrm{Js}}{(1000 \mathrm{kg})(27.8 \mathrm{m/s})} = 2.38 \times 10^{-37} \mathrm{m}
+\end{equation}
+Ez a hullámhossz olyan kicsi, hogy semmilyen kísérleti módszerrel nem lehet kimutatni. Azonban a mikroszkópilus világban el lehet érni olyan sebességeket ahol ez a hullámtermészet elvileg
+kimutatható kell hogy legyen.
+
+Például ha egy elektront gyorsítunk $U$ feszültséggel, akkor az elektronok $\frac{1}{2}mv^2 = eU$ energiát kapnak (ahol $e$ az elektron töltése), amiből az impulzus:
+\begin{equation}
+p = mv = \sqrt{2meU}
+\end{equation}
+Így az elektron de Broglie hullámhossza:
+\begin{equation}
+\lambda = \frac{h}{\sqrt{2meU}} = \frac{h}{\sqrt{2me}} \cdot \frac{1}{\sqrt{U}} = \frac{1.227}{\sqrt{U}} \; \mathrm{nm}
+\end{equation}
+Ahol $m = 9.11 \times 10^{-31} \mathrm{kg}$ és $e = 1.602 \times 10^{-19} \mathrm{C}$. Tehát például egy 54 V feszültséggel gyorsított elektron hullámhossza:
+\begin{equation}
+\lambda = \frac{1.227}{\sqrt{54}} = 0.167 \; \mathrm{nm}
+\end{equation}
+Ez a hullámhossz már összehasonlítható a kristályok rácsállandójával, így a kristályok rácsai képesek lesznek diffrakciót létrehozni az elektronokon.
+
+\subsubsection{Davisson-Germer kísérlete}
+Azt, hogy ez a sejtés akkurrátus-e, először Davisson és Germer mutatta ki 1927-ben, elektronnyalábot vetve egy nikkel egykristályra. Az elektron feltételezett hullámhosszát
+a De Broglie sejtés alapján $U$-val szabályozták.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/10-tetel/davisson_germer.png}
+    \caption{Davisson-Germer kísérlet elrendezése}
+\end{figure}
+
+A feltételezés az, hogy a detektoron egy diffrakciós mintázatot kellene látni, ami igazolná az elektron hullámtermészetét. Ahhoz, hogy a várt diffrakciós képet megértsük,
+írjuk fel a szabad elektronhoz rendelhető feltételezett hullámegyenletet. Az elektron az elmélet szerint $\lambda$ hullámhosszal és $\nu = \frac{1}{\tau}$ frekvenciával rendelkezik,
+ahol $\tau$ az elektronhoz tartozó periódusidő. Ekkor a hullámegyenlet:
+\begin{equation}
+\Psi(x,t) = A e^{2i\pi(\frac{x}{\lambda} - \frac{t}{\tau})} = \Psi(x + \lambda, t + \tau) 
+\end{equation}
+De a hullámot ki lehet fejezni az anyagi részecskére jellemző energiával és impulzussal is, ha felhasználjuk a De Broglie összefüggést ($\lambda = \frac{h}{p}$) és a Planck és Einstein által megadott
+energia-frekvencia összefüggést ($E = h\nu = \frac{h}{\tau}$):
+\begin{equation}
+\Psi(x,t) = A e^{2\pi i (x-Et)/h} = A e^{\frac{i}{\hbar}(px - Et)}
+\end{equation}
+Ahol $\hbar$ a Dirac által bevezetett jelölés:
+\begin{equation}
+\hbar = \frac{h}{2\pi} = 1.0545718 \times 10^{-34} \mathrm{Js} = 6.582119569 \times 10^{-16} \mathrm{eVs}
+\end{equation}
+A koherens forrásból származó elektronok hulláma a szóródás után:
+\begin{equation}
+\Psi_{s}(r,t) = A e^{\frac{i}{\hbar}(px - Et)} + A e^{\frac{i}{\hbar}(p\left[x + d\right] - Et)}
+\end{equation}
+Mivel egyes hullámok a kristályrács más-más síkjairól verődnek vissza és mivel $d = d_1 + d_2$ utat tesz meg, így a visszavert hullámok között fáziskülönbség lesz.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/10-tetel/davisson_germer2.png}
+    \caption{Koherens elektronnyaláb szóródása vékony fólián. A rétegek távolsága d.}
+\end{figure}
+
+Azt már egy ideje tudták, hogy egy kristály rácsra beeső hullám akkor szenved szabályos visszaverődést, ha a Bragg-feltétel teljesül:
+\begin{equation}
+2d \sin \theta = n \lambda \quad n = 1, 2, 3, ...
+\end{equation}
+Mivel az intenzitás a hullám amplitúdójának négyzetével arányos, így a visszavert hullám intenzitása:
+\begin{equation}
+I \propto |\Psi_{s}(r,t)|^2 = 2A^2 \left[1 + \cos\left(\frac{pd}{\hbar}\right)\right]
+\end{equation}
+A kísérlet során Davisson és Germer a $d$ távolságot nem tudta variálni illetve a beesési szöget is fixen tartották, ezért az egyetlen dolog amit változtatni tudtak az az elektron impulzusa volt a feszültség által.
+Ez alapján, és a Bragg-feltétel alapján az intenzitás változásában azt várjuk, hogy:
+\begin{equation}
+    \cos \frac{pd}{\hbar} = \cos 2\pi \frac{p}{h} d = \cos 2\pi \frac{d}{\lambda} = \begin{cases}
+1, & \text{ha } 2\pi \frac{d}{\lambda} = 2\pi n \rightarrow \lambda = \frac{d}{n} \rightarrow I = 4A^2 \\
+0, & \text{ha } 2\pi \frac{d}{\lambda} = \frac{\pi}{2} (2n + 1) \rightarrow \lambda = \frac{4d}{2n + 1} \rightarrow I = 2A^2 \\
+-1, & \text{ha } 2\pi \frac{d}{\lambda} = \pi (2n + 1) \rightarrow \lambda = \frac{2d}{2n + 1} \rightarrow I = 0 (!)
+    \end{cases}
+\end{equation}
+Tehát a kísérletben azt várjuk, hogy az intenzitás maximumokat akkor kapjuk, amikor a De Broglie hullámhossz kielégíti a Bragg-feltételt. Davisson és Germer a kísérletben
+pontosan ezt az eredményt kapta, ezzel igazolva De Broglie sejtését az anyag hullámtermészetéről.
+
+\subsection{Stern–Gerlach-kísérlet}
+Az 1920-as évek elejéig a Bohr-féle atommodell volt az, amelyik a legjobban magyarázta a kisérleti eredményeket. Ebben az az atommag egy nagy tömegű, pozitív töltésű pontszerű részecske volt, amely körül az elektronok meghatározott pályákon keringtek.
+A Klasszikus elektrodinamika alapján ezeknek a keringő elektronoknak van egy mágneses momentumuk is, melynek a nagysága az áramerősség és a körpálya területének szorzata:
+\begin{equation}
+\mu = I \cdot A = \frac{e v}{2\pi r} \cdot \pi r^2 = \frac{e}{2m} mvr = \frac{e}{2m} L, \qquad \boldsymbol{\mu} = \frac{e}{2m} \mathbf{L}
+\end{equation}
+Tehát a keringő elektron mágneses momentumának nagysága arányos a perdületével. A Bohr-féle atommodell szerint az elektronok csak meghatározott értékű perdülettel rendelkezhetnek, így a mágneses momentumuk is kvantált lesz:
+\begin{equation}
+    \mu = \frac{e}{2m} n\hbar = n \mu_B, \qquad \text{ahol,} \quad \mu_B = \frac{e\hbar}{2m} = 9.27 \times 10^{-24} \; \mathrm{J/T}
+\end{equation}
+Ez a mennyiség az úgynevezett Bohr-magneton. Mivel ez és a perdület is vektormennyiség, ezért a klasszikus értelmezés szerint a tér bármelyik irányába álhatnak.
+
+\subsubsection{Iránykvantáltság mérése}
+Ahhoz, hogy ezt a mágneses momentumot kimutassuk, Stern és Gerlach 1922-ben egy kísérletet tervezett, amelyben több féle atomot egy inhomogén mágneses térbe lőtt be.
+A kísérlet lényege, hogy a tér egyik irányát kijelölve (ez tradicionálisan a $z$ irány lesz), mágneses teret hozunk létre egy elektromágnessel
+és az ezen átrepülő részecskének az $v_x$ komponense nem változik mivel ebben az irányban nincs erő, azonban a $v_z$ komponensre hat egy erő amit a mágneses momentum és a külső mágneses tér interakciója okoz. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/10-tetel/stern_gerlach.png}
+    \caption{Stern-Gerlach kísérlet elrendezése}
+\end{figure}
+
+A mágneses térbe helyezett mágneses momentum helyzeti energiája:
+\begin{equation}
+    E_{m} = -\boldsymbol{\mu} \cdot \mathbf{B}
+\end{equation}
+Ebből az erő:
+\begin{equation}
+    \mathbf{F} = -\nabla E_{m} = \nabla (\boldsymbol{\mu} \cdot \mathbf{B}) = \mu_z \frac{\partial B_z}{\partial z} \hat{z} \quad \rightarrow \quad \mathbf{F} = (0, 0, \mu_z \frac{\partial B_z}{\partial z})
+\end{equation}
+Ez az erő időben állandó, vagyis egyenletesen gyorsítja a részecskét a $z$ irányban. A szögeltérülés a következőképpen számolható ki:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{imgs/10-tetel/stern_gerlach2.png}
+    \caption{Szögeltérülés}
+\end{figure}
+\begin{equation}
+    \tan \phi = \frac{v_z}{v_x} \quad \rightarrow \quad \phi = arctan \frac{v_z}{v_x}
+\end{equation}
+Ahol $v_x$ a részecske kezdeti sebessége a mágneses térbe lépéskor, $v_z$ pedig a mágneses térben szerzett sebesség komponens a $z$ irányban. A kísérlet során Stern és Gerlach
+egy speciális ernyőn tette a beérkező részecskéket láthatóvá, és azt nézték, hogy a nulla ponttól mérve (ahová a részecskéknek érkezniük kellene mágneses tér nélkül) mekkora eltérést szenvednek el a részecskék.
+Ezt, hogy ha az ernyő $s$ távolságra van és a kitérés $d$ akkor a következőképpen számolhatjuk ki:
+\begin{equation}
+    \frac{d}{s} = \tan \phi = \frac{v_z}{v_x} = \frac{F_z}{m}\frac{t}{v_x} = \frac{\mu_z \frac{\partial B_z}{\partial z}}{m} \cdot \frac{l}{v_x^2}
+\end{equation}
+Ahol $l$ a mágneses tér hossza, $m$ a részecske tömege és $t = \frac{l}{v_x}$ a mágneses térben töltött idő. Tehát, ha a $v_x$-et állandónak tartjuk, akkor a kitérés arányos lesz a mágneses momentum $z$ komponensével:
+\begin{equation}
+    d = \frac{l s}{m v_x^2} \cdot \mu_z \frac{\partial B_z}{\partial z}
+\end{equation}
+A $\frac{\partial B_z}{\partial z}$-t kísérletileg meg tudták határozni, így a kitérésből a mágneses momentum $z$ komponensét ki tudták számolni.
+
+A kísérletet több részeckével is elvégezték és összefoglalva a következő eredményeket kapták: 
+\begin{itemize}
+    \item A monoenergiás nyaláb vagy nem tértül el, vagy kevés szám ú komponensre bomlik.
+    \item A komponensek távolsága ($\Delta$) egyenlő és szimmetrikus a középvonalra nézve.
+    \item Az egyes komponensek intenzitása egyenlő.
+\end{itemize}
+
+Az eredményeket úgy lehet értelmezni, hogy a mágneses momentum
+nem állhat a tér minden irányában, ahogy azt eddig gondoltuk, hanem
+z komponense csak meghatározott értékeket vehet fel az eltérüléssel összahangban.
+Ezt hívjuk iránykvantálásnak.
+Például a $He$-atomok nyalábja nem bomlott fel, mert a hélium két
+elektronjának összesen $0$ eredő mágneses momentuma van.
+A $H$ és az $Ag$ két komponensre bomlik, az egyik komponens $\Delta/2$-vel
+az el nem térülő pozíció felett, a másik ugyanennyivel alatta helyezkedik el.
+Ekkor a mágneses momentum a külső térhez képest két irányban állhat.
+A nitrogénatomok nyalábja öt részre bomlott fel, egy komponens középen,
+kettő-kettő alul és felül, azonos távolságokra.
+Az egyes komponensekben a $\mu_z$ értéke determinált és komponensenként
+változik, az eltérülésszerkezet által mutatott kép alapján az egyes
+komponensek eltérüléseinek nagysága $\delta_m=m\Delta$ formulával
+foglalható össze, ahol $m$ egy egész vagy félegész szám (pozitív vagy
+negatív annak megfelelően, hogy felfelé vagy lefelé történt az eltérülés),
+$\Delta$ a komponensek távolsága.
+Az eltérülés arányos a $\mu_z$-vel, ezért ugyanez a mágneses
+momentum $z$ komponenséről is elmondható.
+A $\mu_z$ értékei csak diszkrét értékeket vehetnek fel a következő módon:
+\[
+\mu_z = m\cdot\mu_0,
+\]
+ahol $\mu_0$ a $\Delta$ távolság és egy az $\alpha$-eltérülési szög és a
+mágneses momentum viszonyát megadó (6.2) egyenletből kiszámolható
+konstans szorzata.
+Az eltérülésszerkezetek mindig szimmetrikusan, egymástól egyenlő
+távolságra helyezkedtek el az eltérülés nélküli foltra nézve, ezért azt is
+állíthatjuk, hogy az $\mu_z$ értékei az $m_{\min}$ és az $m_{\max}$
+és az $-m_{\max}$ között egész lépésekben változhatnak csak.
+Például egy 4 komponensre bomló sugárnál az egyes komponensekhez tartozó $m$ értéke alulról felfelé a következő
+módon változik: $-\tfrac{3}{2}, -\tfrac{1}{2}, \tfrac{1}{2}, \tfrac{3}{2}$,
+az eltérülés kvantitatív értéke ezek $\Delta$-szorosa.
+
+A mágneses momentum „nagysága” ($\mu$) megállapodás szerint a legnagyobb
+$\mu_z$ érték, azaz a legjobban eltérült komponenshez tartozó $\mu_z$.
+Ebből és a felhasadt komponensek számából a többi $\mu_z$ is kiszámítható,
+amelyek nem a legszélső irányba térülnek el.
+Az eltérések kvantitatív vizsgálatából a Stern–Gerlach-kísérletben az
+derült ki, hogy hidrogénatom-nyaláb és ezüstatom-nyaláb esetén:
+
+\begin{equation}
+\mu_z^{\max} = \mu = -\frac{e\hbar}{2m} = \mu_B.
+\end{equation}
+
+A hidrogén esetén csak egy elektron van az atomi héjakon, ezért ez az
+elektron felelős az atom mágneses momentumáért.
+(Az atommag mágneses momentuma nagyságrendekkel kisebb.)
+A Bohr-modellben, az $n=1$-es főkvantumszámú pályán kört pályán keringő
+(alapállapotú) elektron klasszikusan értelmezett mágneses momentuma
+éppen ennyinek adódott.
+Azt viszont már nem tudjuk a Bohr-modell keretein belül értelmezni,
+hogy miért két részre hasad fel a hidrogénatom-nyaláb.
+
+\subsubsection{Több mágneses tér használata}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/10-tetel/stern_gerlach3.png}
+    \caption{Több Stern-Gerlach mágnes egymás után}
+\end{figure}
+Egy kiválasztott komponens ugyanolyan irányú újraanalizálásakor már nem
+bomlik fel még egyszer.
+Ha azonban a második mágnes $90^\circ$-kal el van forgatva úgy, hogy az
+inhomogenitás y irányú, és megfelelően gyorsan továbbítjuk a nyalábot
+ezen második mágnesbe, akkor a kiválasztott komponens tovább bomlik
+nem azonos intenzitású, de az előzővel megegyező eltérülésszerkezetre.
+Ebből azt a következtetést vonhatjuk le, hogy a $\mu_z$ nem lehet
+akkora, mint a mágneses momentumvektor hossza, ugyanis a legnagyobb z
+irányú eltérüléshez tartozó z komponens is fel tudott még bomlani y
+irányban, így van $\mu_y$ komponense is.
+Ezért a mágneses momentumvektor abszolút értéke nagyobb, mint $\mu_z$!
+A Bohr-modell jól adta meg a mágneses momentum harmadik komponensének
+maximális értékét, de ez nem a mágneses momentumvektor nagysága!
+A Bohr-modell érvényességi köre itt már véget ér.
+
+Ha három Stern–Gerlach-mágnest alkalmazunk egymás után, akkor érdekes
+jelenséget tapasztalunk.
+Válasszuk ki az első mágnessel a z irányú egyik komponenst.
+Ezután analizáljuk ezt egy y irányba elforgatott mágnessel, ilyenkor,
+mint említettük, ismét komponensekre bomlik az adott $\mu_z$ értékű nyaláb.
+Ha ezután ismét egy z irányú mágnessel analizáljuk a már két mágneses
+téren áthaladt nyalábot, akkor azt várnánk, hogy az csak egy komponenst
+mutat, hiszen a z szerint már megtörtént az egy komponens kiválasztása.
+A kísérlet azt mutatja, hogy ilyenkor a harmadik mágnes után is több
+csoportot lehet tapasztalni!
+Ez a kvantummechanikai méréselmélet fogalomkörében magyarázható.
+A mérés beavatkozás a rendszerbe, néha egy mennyiség mérése más mennyiségek
+értékeit megváltoztatja.
+
+Fontos megjegyeznünk, hogy a Bohr-féle kvantumfeltétel a perdület, és így
+a mágneses momentum nagyságát kvantálja, az alapállapotú atomokra egy jól
+meghatározott perdületet és mágneses momentumot eredményez.
+Ennek megfelelően a Stern–Gerlach-kísérletben a mágneses momentum abszolút
+értéke, és így annak négyzete, minden komponensben megegyezik.
+Az újdonság itt egy külső tér által kijelölt irányra vett vetület értékeinek
+kvantumos viselkedése, ezt neveztük iránykvantálásnak.
+Megállapodás szerint a külső tér által kijelölt irányban vesszük fel a
+koordináta-rendszer z tengelyét.
+(Gyakran egy vektor z komponensét a vektor harmadik komponensének is
+nevezzük.)
+
+A Stern–Gerlach-kísérlet alkalmas molekulák eltérítésére is.
+Zárt elektronszerkezetű molekuláknál az eltérülést az atommag mágneses
+momentuma okozza.
+Ezzel a módszerrel mérték meg először a proton mágneses momentumát,
+ami az elmélettől (Dirac-egyenlet) eltérő értéknek adódott.
 
 
 
+\subsection{Einstein–de Haas-kísérlet}
+A Stern–Gerlach-kísérlet a mágneses momentum külső tér irányú komponensét mérte meg.
+Mint láttuk, a mágneses momentum összefüggésben van a perdülettel.
+Felmerülhet a kérdés, hogy a perdület és a mágneses momentum kapcsolatát
+klasszikusan megadó arányosságot a mérések igazolják-e.
 
+Az Einstein–de Haas-kísérlet (1915) az elektronok mágneses momentumának
+átfordításával járó perdületváltozást méri.
+A kísérletben egy ferromágneses hengert áramjárta tekercsel felmágneseznek,
+az áram irányát hirtelen megváltoztatják.
+Ilyenkor a mágnesben az elektronok, mint kis iránytűk, először beállnak
+párhuzamosan, jó nagy eredő mágneses momentummot kialakítva, majd az
+áramirány-változásra az összes átfordul, magával fordítva a perdületeket is.
+A perdületváltozás/Idő azonban forgatónyomatékot jelent, ezért a vékony
+torziós szálon függő henger elfordul.
+A szálon egy tükröt vékony fénynyalábbal megvilágítva a tükörkép helyzete
+jelzi, hogy a henger mennyit fordult el.
+Az átmágnesezést periodikusan a torziós ingának lengésidejének megfelelően
+beállítva, rezonanciaszerűen végezték.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/10-tetel/einstein_de_haas.png}
+    \caption{Einstein–de Haas-kísérlet elrendezése}
+\end{figure}
+A kísérlet eredménye, ahogy E. Back gondos mérései is mutatták (1919),
+hogy a mágneses momentum és a perdület aránya
+\[
+\frac{e}{m},
+\]
+a várt érték helyett
+\[
+\frac{e}{2m}.
+\]
+A \(\dfrac{e}{m}\) egy körpályán mozgó töltésre volt igaz.
+Az a kísérleti tény, hogy az elektronok az Einstein–de Haas-kísérlet
+ferromágnesében kétszer akkora mágneses momentumot mutattak, mint a
+körpálya miatt kellene, sokáig megoldatlan probléma maradt.
 
+A giromágneses faktor az arányossági tényező a mikrorészecskék perdülete
+($\vec{I}$) és mágneses momentuma között:
+\begin{equation}
+\vec{\mu} = \gamma \vec{I}.
+\end{equation}
 
+A keringő elektron esetén ez $\gamma=\dfrac{e}{2m}$, de ebben a
+kísérletben $\gamma=\dfrac{e}{m}$, amely a helyes mágneses momentumot adja.
+A giromágneses faktornak van dimenziózása, ezért vezessünk be egy
+dimenzió nélküli mennyiséget, ami lényegében megfelel a giromágneses faktornak.
+Ez a g-faktor, vagy dimenziótlan giromágneses faktor, jele $g$.
+A g-faktor használatával a fenti arányosság a következő módon írható:
+
+\begin{equation}
+\vec{\mu} = g\,\frac{e}{2m}\,\vec{I}.
+\tag{6.3}
+\end{equation}
+
+Szemléletesen ez azt jelenti, hogy ha a mágneses momentumot az ő
+természetes egységében, $\mu_B=\dfrac{e\hbar}{2m}$-ban, a perdületet
+pedig $\hbar$-ban mérjük, akkor az arányossági tényező a g-faktor:
+\begin{equation}
+\frac{\vec{\mu}}{\mu_B} = g\,\frac{\vec{I}}{\hbar}.
+\end{equation}
+
+1921-ben A. Compton vetette fel, és 1925-ben Goudsmit és Uhlenbeck
+mutattak rá (az eddig elmondott kísérleteken kívül még az anomális
+Zeeman-effektus tapasztalatai alapján), hogy az elektronoknak saját
+forgásából adódó mágneses momentuma is lehet, méghozzá kétszeres
+giromágneses faktorral.
+A kvantummechanika relativisztikus egyenletének, a Dirac-egyenletnek a
+felállítása után pedig egyszerűen az egyenletből adódik az elektron ezen
+tulajdonsága, hogy van egy perdülete, és ebből adódóan mágneses momentuma
+mindenféle mozgás nélkül.
+Ezt sajátperdületnek hívjuk, vagy más néven spinnel.
+A Dirac-egyenlet megoldásából éppen az $e/m$ arány adódik a mágneses
+momentum és a sajátperdület arányára, avagy a g-faktorra, 2.
+Így az Einstein–de Haas-kísérletben a ferromágnességet az elektronok
+saját mágneses momentumainak tulajdonítjuk.
+Ez a kísérlet az elektronspin kétszeres mágnesességének első egyértelmű
+bizonyítéka.
+
+Felmerül a kérdés, hogy az alapállapotú hidrogénatom elektronja milyen
+perdülettel rendelkezik.
+A két lehetséges válasz: a klasszikusan is ismert pályaperdület, vagy az
+Einstein–de Haas-kísérletben is tapasztalt sajátperdület.
+Ha nincs sajátperdülete, csak pályaperdülete, akkor a pályaperdület
+$1 \cdot \hbar$ értéke mellett (Bohr-modell) megkapjuk a Stern–Gerlach-kísérlet
+eredményét, a $\mu=\mu_B\cdot 1$-et.
+Ha csak sajátperdülete van, akkor kétszeres mágnesessége is van hozzá,
+és $\mu=2\mu_B\cdot\frac{1}{2}$ szerint kapjuk vissza a Stem- Gerlach-kísérlet eredményét, tehát ilyenkor a perdületre a Bohr-modellel ellentétben csak $\hbar/2$ marad. A két lehetséges válasz között egy
+újabb mérés dönt. A pereltilet nagysága a kvantummechanika szerint összefügg azzal, hogy hány részre bomlik fel az atomnyaláb mágneses térben
+(Stern-Gerlach-kísérlet) vagy egy színképvonal mágneses tér ben (Zeeman-effektus). A felhasadások száma dönti el, hogy a hidrogénatom elek tronjának milyen fajta perdülete van.
+
+\subsection{Zeeman-effektus}
+A XIX. század végén nagyszámú kísérleti tapasztalat halmozódott fel az
+atomok színképeiről.
+A színképek nagyon hasznos eszköznek bizonyultak, mert az elemek
+meghatározását tették lehetővé.
+A vonalak szerkezetének értelmezése nehéz feladatnak bizonyult, és a
+klasszikus fizikával nem magyarázható kvantumhipotézis kellett hozzá
+(Bohr-féle kvantumfeltétel).
+A színképvonalak mágneses térben történő viselkedése is alapvetően új
+gondolatokat hozott.
+Ezt kísérletben először P. Zeeman vizsgálta 1897-ben.
+Ő megmutatta, hogy a színképvonalak mágneses térben felhasadnak: ez a
+Zeeman-effektus.
+A felhasadás sokszor nagyon bonyolult színképstruktúrákat szolgáltat,
+de az esetek egy részét sikerült a klasszikus elektronelmélettel az
+atomok Thomson-modelljében megmagyarázni.
+A klasszikusan is magyarázható szerkezetet normális Zeeman-effektusnak
+hívjuk.
+A normális felhasadást Lorentz előre meg is jósolta 1896-ban
+(1902-ben közösen kaptak érte Nobel-díjat).
+A többi típusú felhasadást anomális Zeeman-effektusnak hívjuk, ennek
+magyarázatához a spin fogalma alapvetően hozzátartozik.
+
+A spektroszkópia technikai fejlődésével az egyes vonalak finomabb
+szerkezete is megfigyelhetővé vált: Voltak ún. szingulett vonalak,
+melyeknek mágneses tér nélkül nem volt finomszerkezete.
+Más vonalak két, egymáshoz nagyon közel álló vonal együtteséi voltak,
+ezeket hívjuk dublettnek, értelmezésükről a következő fejezetekben lesz szó.
+A színképvonalak ezekbe nem sorolható részét hívjuk multipletnek.
+A normális Zeeman-effektust a szingulet vonalak mutatják, anomális
+Zeeman-effektust a dublett és multiplet vonalaknál tapasztaltak.
+
+A Zeeman-effektus mérésére szolgáló kísérletben a gerjesztett atomokat (legegyszerűbben gázt) két mágneses
+E–D pólusai között kialakított, jó közelítéssel homogén mágneses térbe
+helyezzük.
+A $\mathbf{B}$ mágneses tér irányát hívjuk z iránynak.
+Ilyenkor a z irányra merőlegesen kilépő fénysugarakat egy
+kollimátorral kiválasztjuk, és prizmára vagy optikai rácsra (R) ejtve a
+színkép tanulmányozható.
+Normális esetben a mágneses tér nélkül $\nu_0$ frekvenciánál található
+szingulett vonal felhasad három részre.
+A $\nu_0$ mellé nála $\pm \Delta \nu$ frekvenciával magasabb és alcsonyabb frekvenciájú vonalak kerülnek (Lorentz-féle triplett). Mindhárom
+komponens síkban polarizált fénysugár. Az eredeti frekvenciánál tapasztalt
+vonal a mágneses tér irányában polarizált ún. $\pi$-komponens, a másik kettő
+az x és y irányban polarizált $\sigma$-komponensek. A tapasztalat és az elmélet
+szerint is a felhasadáskor a $\Delta \nu$ eltolódás arányos a mágneses tér nagyságával.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/10-tetel/zeeman.png}
+    \caption{A Zeeman-féle kísérlet sematikus elrendezése és eredményeinek szemléltetése. Az a) esetben mágneses tér nélkül $\nu_0$ frekvenciájú fényt detektálunk. A b)
+esetben a mágneses térre merőlegesen megfigyelve három vonaira hasad a színkép. A c) esetben a mágneses térrel párhuzamosan kilépő fénysugarak csak két frekvenciájú részre bomlanak (ezek cirkulárisan polarizált komponensek lesznek)}
+\end{figure}
+A normális Zeeman-effektus klasszikus magyarázatának alapja az, hogy az
+atom \(\vec{\mu}\) mágneses momentumára homogén mágneses térben
+\(\vec{M}\) forgatónyomaték hat, emiatt az atom egész elektronrendszere
+forgásba jön, így a mágneses momentum is.
+A forgásra felírt perdülettétel most így alakul:
+\begin{equation}
+\frac{1}{\gamma} \frac{d\vec{\mu}}{dt} = \frac{d\vec{I}}{dt}=\vec{M}=\vec{\mu}\times\vec{B}.
+\end{equation}
+Vagy átalakítva:
+\begin{equation}
+\frac{d\vec{\mu}}{dt}=\gamma\,\vec{\mu}\times\vec{B}.
+\end{equation}
+Ennek megoldása az, hogy a \(\vec{\mu}\) az atom mágneses momentuma és
+a vele párhuzamos \(\vec{I}\) perdület a \(\vec{B}\) mágneses indukció
+iránya körül
+\begin{equation}
+\omega_L=\gamma B
+\end{equation}
+szögsebességgel precessziót végez, azaz az atomban nyugvó elektronok
+\(x,y\) síkban forognak ezzel a frekvenciával.
+A
+\begin{equation}
+\nu_L=\omega_L/2\pi
+\end{equation}
+frekvenciát Larmor-frekvenciának nevezzük.
+Amikor az atom fényt bocsát ki, azt most úgy értelmezzük, hogy az atomi
+elektron \(\nu\) frekvenciájú oszcillációt végez, \(\vec r'\) helyvektora
+időben \(\vec r'=\vec a\cos\omega t\) szerint rezeg, ezért sugároz.
+
+Ha belül az elektron \(\nu\) frekvenciával rezeg, valamint az atom
+\(\omega_L\) szögsebességgel forog, akkor a rezgés és a forgás
+\(x\) és \(y\) irányú harmonikus rezgésekre bonthatók.
+Mindkét irányban a két rezgés összegzésekor egy \(\nu+\Delta\nu\) és
+egy \(\nu-\Delta\nu\) frekvenciájú rezgés összegét kapjuk.
+Végezzük ezt el az \(x\) irányra.
+Az atomon belül \(\mathbf{r}'\) helyvektor mutat az elektron helyére.
+Ennek \(x\) komponense a térbeli polárkoordináták felhasználásával
+\(x = r'\sin\vartheta\cos\varphi\).
+A forgás és a rezgés miatt
+\(r' = a\cos\omega t\) és \(\varphi=\omega_L t\), ezért trigonometrikus
+azonosságokkal átalakítva kapjuk:
+
+\begin{equation}
+x = \frac{a}{2}\sin\vartheta\big(\cos(\omega+\omega_L)t + \cos(\omega-\omega_L)t\big).
+\end{equation}
+
+Az \(y\) irányból észlelve a fényt \(x\) és \(z\) irányban polarizált
+módusokra bonthatjuk. (Részletesen lásd a következő alfejezetben.)
+Az \(x\) irányban polarizált módus (\(\sigma\)) azonban az atom
+precessziója miatt két eltolt frekvenciájú rezgés összege lesz.
+A \(z\) irányban polarizált \(\pi\)-módus eltolás nélkül észlelhető,
+azt a mágneses tér nem módosítja.
+Ez a modell a pályaperdületből számolt mágneses momentumokkal dolgozik
+(1896-ban Lorentz dolgozta ki), és kizárólag akkor használható, ha az
+atomban az elektronok sajátperdületei kompenzálják egymást,
+csak pályaperdületből származó mágneses momentum van
+(ezek a szingulett vonalak).
+
+Amikor magános elektron okozza az atom mágneses momentumát, akkor
+anomális felhasadást tapasztalunk.
+Erre példa a nátrium D-vonal-dublettjének kisebb frekvenciájú tagja,
+ami négy vonalra hasad, két vonalpárosra.
+Az anomális Zeeman-felhasadást a klasszikus fizika nem tudta megmagyarázni.
+Ez volt az egyik alapvető tapasztalat, amely az elektron sajátperdületének,
+vagy spinjének gondolatához vezetett.
+A Zeeman-effektus teljes magyarázatához a kvantummechanika segítségével
+lehetőségessé vált.
+
+Ezt a vonalfelhasadást akkor nevezzük Zeeman-effektusnak, ha a külső
+mágneses tér nagysága kisebb az atomon belüli mágneses tereknél.
+Ilyenkor a Zeeman-felhasadás a multiplet vonalak távolságánál kisebb marad.
+Ha a külső mágneses tér miatti vonalfelhasadás a multipletek vonalainak
+távolságát is eléri vagy meghaladja, akkor nagy mágneses térről beszélünk.
+
+Az ilyen nagy külső tér esetén a vonalak felhasadásának szerkezete
+megváltozik, nagy mágneses térben a pálya- és a sajátperdületekből
+származó mágneses momentumok belső terekből adódó szoros kapcsolata
+felbomlik.
+A Zeeman-effektusnál a pálya- és a sajátperdület mint egység vett fel
+különböző irányítottságú állapotokat.
+Nagy mágneses térben azonban a kétféle mágneses momentum közötti kapcsolat
+energianyere­ségét — amit az atomon belüli mágneses terek okoznak — legyőzi
+a külső tér hatása, energetikailag nyereséges lesz a spinnek a pályaperdülettől
+elfordulnia (szétcsatolódnak).
+A gerjesztett atom ilyen esetben úgy is adhat le egy fotont, hogy csak a
+pályaperdületből származó mágneses momentuma változik, vagy forditva.
+A pályaperdület z komponense és a sajátperdület z komponense egymástól
+függetlenül vehetik fel értékeiket.
+Így az anomális felhasadásból is normális felhasadás lesz.
+Ez a Paschen–Back-effektus (1912).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/10-tetel/zeeman2.png}
+    \caption{A Zeeman effektus szemléletetése}
+\end{figure}
+
+\newpage
+\section{A kvantummechanika alapjai}
+A kvantummechanika matematikai háttere, kvantummechanikai reprezentációk. Határozatlansági reláció, szabad részecske hullámfüggvénye, szuperpozíció.
+Anyaghullámok, valószínűségi értelmezés, a fizikai állapot leírása. Fizikai mennyiségek operátorai, sajátfüggvények, sajátértékek. Schrödinger-egyenlet és szeparálása.
+Impulzusmomentum-operátor, sajátértékei, sajátfüggvényei. Spin. Korrespondanciaelv. Ehrenfest-tétel.
+
+\newpage
+\printbibliography[heading=bibintoc,title={Irodalomjegyzék}]
 
 \end{document}
