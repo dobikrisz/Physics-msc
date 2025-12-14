@@ -1,0 +1,584 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{{\subfix{../}}}
+\begin{document}
+
+Fermat-elv. Paraxiális közelítés. Optikai, leképezési törvények, felbontóképesség. Optikai eszközök. Optikai jelenségek a természetben, kausztikák.
+\newline
+\newline
+A geometriai optika tárgya a fény terjedésének vizsgálata olyan esetekben, amikor a fény hullámtermészetét elhanyagolhatjuk. Ekkor a fényt egyenes vonalú sugarak formájában ábrázoljuk,
+és a fény terjedését a fény útjának geometriája határozza meg. A geometriai optika alapelvei közé tartozik a visszaverődés és a törés törvénye, amelyek leírják, hogyan változik a fény iránya különböző felületeken való áthaladáskor.
+
+\subsection{Fermat-elv}
+\subsubsection{törés és visszaverődés}
+Ahhoz hogy a fény pályáját le tudjuk írni, szükségünk van két alapvető törvényre: a visszaverődés és a törés törvényére. Ezek a törvények leírják, hogyan változik a fény iránya, amikor egy felületen visszaverődik vagy áthalad egy másik közegbe.
+Az már régóta ismert megfigyelési tény, hogy a fény, amennyiben nem ütközik akadályba, egyenes vonalban terjed. De amikor egy olyan felülettel találkozik, melynek eltérnek az optikai tulajdonsságai az 
+eddigi közeghez képest, akkor a pályája megváltozik. A megváltozásoknak klasszikus esetben két fajtája van: visszaverődés és törés. A visszaverődés során a fény "visszapattan" a felületről, míg a törés során a fény áthalad a felületen, de iránya megváltozik.
+
+A törés során azt az általános észrevételt tehetjük, hogy a felület optikai tulajdonságaitól függetlenül a fény mindig úgy verődik vissza, hogy a felületre vett merőlegeshez mért, úgynevezett
+\textbf{beesési szög} ($\theta_i$) megegyezik a \textbf{visszaverődési szöggel} ($\theta_r$):
+\begin{equation}
+    \theta_i = \theta_r
+\end{equation}
+Ez a visszaverődés törvénye.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/9-tetel/siktukor.jpg}
+    \caption{Visszaverődés síktükrökről}
+\end{figure}
+Természetesen ha a felület geometriája komplexebb egy síknál akkor a látszólagos visszaverődés eltérhet ettől az egyszerű szabálytól. Például ha a felületen vannak szemmel nem látható
+egyenetlenségek, akkor a fény beesési szögének kis megváltozási is okozhat nagy változásokat a visszavert fény irányában ami így a szórt fény jelenségét okozza. Ha lemegyünk abba a tartományba
+amiben az egyenetlenségek vannak, akkor látni fogjuk, hogy a visszaverődési törvény továbbra is érvényes, csak a felület normálisának iránya változik meg helyenként.
+
+A tört fény esetében is megvizsgálhatjuk a be- és kimenő szögeket, de itt azt tapasztaljuk, hogy a szögek bizony már függnek az anyagi tulajdonságoktól, ugyanis más anyagokban más lesz az úgynevezett
+\textbf{törési szög} ($\theta_t$). A törési szögek és a beesési szögek közötti kapcsolatot a \textbf{Snellius-Descartes törvény} írja le:
+\begin{equation}
+    n_1 \sin \theta_i = n_2 \sin \theta_t
+\end{equation}
+Ahol $n_1$ és $n_2$ az első és második közeg \textbf{törésmutatói}. A törésmutató megadja, hogy az adott közegben milyen sebességgel terjed a fény:
+\begin{equation}
+    n = \frac{c}{v}
+\end{equation}
+Ahol $c$ a fény vákuumbeli sebessége, és $v$ a fény sebessége az adott közegben. Minél nagyobb egy közeg törésmutatója, annál lassabban terjed benne a fény.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/9-tetel/tores.jpg}
+    \caption{Törés két különböző közeg között}
+\end{figure}
+
+\subsubsection{Fermat-elv}
+Honnan tudja a fény, hogy hogyan kell terjednie? Mi határozza meg a pályáját? Természetesen a fény hullámtermészetével meg lehet válaszolni ezeket a kérdéseket,
+de a geometriai optikának pont az a lényege, hogy ezt a hullámtermészetet elhanyagoljuk. Így egy másik megközelítést kell alkalmaznunk, amit a 17. században Pierre de Fermat
+fogalmazott meg. Ez a \textbf{Fermat-elv}, ami kimondja, hogy a fény mindig azt az utat választja két pont között, amelyen a \textbf{legrövidebb idő alatt} jut el egyik pontból a másikba.
+Ez az elv magyarázatot ad a visszaverődés és a törés törvényeire is. 
+
+Vegyünk például egy síktükröt, amin egy pontból ($A$) egy másik pontba ($B$) juttatja el a fényt a visszaverődés. A fény a $MM'$ síkon verődik vissza, egy tetszőleges $O$ pontban.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/9-tetel/fermat_visszavero.png}
+    \caption{Fermat-elv visszaverődés esetén}
+\end{figure}
+Ekkor az idő amennyi alatt megteszi a fény a teljes utat:
+\begin{equation}
+    t = \frac{AO + OB}{v}
+\end{equation}
+Ahol $v$ a fény sebessége. Vagyis:
+\begin{equation}
+    t = \frac{\sqrt{b^2 + x^2} + \sqrt{a^2 + (c^2 - x^2)}}{v}
+\end{equation}
+Ennek az időnek kell a minimumát megtalálnunk a Fermat-elv teljesítéséhez:
+\begin{equation}
+    \frac{dt}{dx} = 0 \Rightarrow \frac{1}{v} \left[\frac{x}{\sqrt{b^2 + x^2}} - \frac{c - x}{\sqrt{a^2 + (c - x)^2}}\right] = 0
+\end{equation}
+\begin{equation}
+    \Rightarrow \frac{x}{\sqrt{b^2 + x^2}} = \frac{c - x}{\sqrt{a^2 + (c - x)^2}}
+\end{equation}
+Ez pedig pont a beesési és a visszaverődési szög szinuszával egyezik meg:
+\begin{equation}
+    \sin i = \sin r
+\end{equation}
+Tehát a Fermat-elv alapján megkaptuk a visszaverődés törvényét. A második derivált pedig:
+\begin{equation}
+    \frac{d^2 t}{dx^2} = \frac{1}{v} \left[\frac{b^2}{(b^2 + x^2)^{3/2}} + \frac{a^2}{(a^2 + (c - x)^2)^{3/2}}\right] > 0
+\end{equation}
+Ez pedig csak pozitív lehet a négyzetek miatt, tehát valóban minimumról van szó.
+
+A törésnél hasonlóképp járhatunk el:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/9-tetel/fermat_tores.png}
+    \caption{Fermat-elv törés esetén}
+\end{figure}
+Ezek alapján az idő ami alatt megteszi a fény a $POP'$ utat:
+\begin{equation}
+    t = \frac{PO}{v_a} + \frac{OP'}{v_b}
+\end{equation}
+Az $a$ közegben a fény sebessége $v_a$, míg a $b$ közegben $v_b$. Vagyis:
+\begin{equation}
+    t = \frac{\sqrt{a^2 + (c-x)^2}}{v_a} + \frac{\sqrt{b^2 + x^2}}{v_b}
+\end{equation}
+A Fermat-elv alapján ezt az időt minimalizáljuk:
+\begin{equation}
+    \frac{dt}{dx} = 0 \Rightarrow - \frac{c-x}{v_a \sqrt{a^2 + (c - x)^2}} + \frac{x}{v_b \sqrt{b^2 + x^2}} = 0
+\end{equation}
+Innen megint visszakaptuk a szögek szinuszait:
+\begin{equation}
+    \frac{\sin \varphi}{v_b} - \frac{\sin \phi}{v_a} = 0
+\end{equation} 
+Tehát:
+\begin{equation}
+    \frac{\sin \varphi}{\sin \phi} = \frac{v_b}{v_a} = \text{állandó} = n_{ab}
+\end{equation}
+Ami pontosan a Snellius-Descartes törvény. A második derivált pedig:
+\begin{equation}
+    \frac{d^2 t}{dx^2} = \frac{1}{v_a} \frac{a^2}{(a^2 + (c - x))^{3/2}} + \frac{1}{v_b} \frac{b^2}{(b^2 + x^2)^{3/2}} > 0
+\end{equation}
+Tehát itt is minimumról van szó.
+
+\subsection{Paraxiális közelítés}
+A geometriai  optikában gyakran dolgozunk trigonometrikus fügvényekkel a beesési és törési szögek fontossága miatt. Ezek viszont gyakran bonyolult problémákra vezetnek, ezért megfelelő
+körülmények esetén gyakran alkalmazunk közelítéseket. Az egyik leggyakrabban alkalmazott közelítés a \textbf{paraxiális közelítés}, amit akkor alkalmazhatunk, ha
+egy hengerszimmetrikus rendszerben a fénysugarak közel párhuzamosak a főtengellyel, és kis szöget zárnak be vele. Ilyen esetben a trigonometrikus függvényeket a következőképpen közelíthetjük:
+\begin{equation}
+    \sin \theta \approx \theta \qquad \tan \theta \approx \theta \qquad \cos \theta \approx 1
+\end{equation}
+Ekkor a rendszer viselkedése lineárissá válik, és ezért kezelhetjük a rrendszert mint egy sima mátrix transzformáció a fény pályájára nézve. Ezeket a mátrixokat
+\textbf{leképezési mátrixnak} nevezik, és segítségükkel könnyedén meghatározhatjuk a fény útját bonyolult optikai rendszerekben is.
+
+Néhány leképezési mátrix amit gyakran használunk:
+\begin{itemize}
+    \item Szabad térben való terjedés $d$ távolságra:
+    \begin{equation}
+        \begin{pmatrix}
+            1 & d \\
+            0 & 1
+        \end{pmatrix}
+    \end{equation}
+    \item Vékony lencse fókusztávolsága $f$:
+    \begin{equation}
+        \begin{pmatrix}
+            1 & 0 \\
+            -\frac{1}{f} & 1
+        \end{pmatrix}
+    \end{equation}
+    \item Gömbtükör fókusztávolsága $f$:
+    \begin{equation}
+        \begin{pmatrix}
+            1 & 0 \\
+            -\frac{2}{R} & 1
+        \end{pmatrix}
+    \end{equation}
+    \item fénytörés két közeg között $n_1$ és $n_2$ törésmutatóval:
+    \begin{equation}
+        \begin{pmatrix}
+            1 & 0 \\
+            \frac{n_1 - n_2}{R} & 1
+        \end{pmatrix}
+    \end{equation}
+    \item tükrözés:
+    \begin{equation}
+        \begin{pmatrix}
+            1 & 0 \\
+            -\frac{2n}{R} & -1
+        \end{pmatrix}
+    \end{equation}
+\end{itemize}
+Ahol $R$ a gömbtükör görbületi sugara, $f$ a fókusztávolsága, és $d$ a szabad térben való terjedés távolsága. Ezeket a mátrixokat összeszorozva megkaphatjuk egy bonyolult optikai rendszer
+leképezési mátrixát, és így meghatározhatjuk a fény útját a rendszerben.
+
+A paraxiális rendszerek egyik fontos tulajdonsága, hogy a mátrixok determinánsa mindig $\pm 1$ lesz, ami a fény intenzitásának megmaradását jelenti a rendszerben.
+
+
+\subsection{Optikai, leképezési törvények, felbontóképesség}
+\subsubsection{Optikai törvények}
+Az eddig látottak alapján tehát az optikai alaptörvények összefoglalva:
+\begin{itemize}
+    \item Visszaverődés törvénye: A beesési szög egyenlő a visszaverődési szöggel.
+    \item Törés törvénye (Snellius-Descartes törvény): $n_1 \sin \theta_i = n_2 \sin \theta_t$
+    \item Fermat-elv: A fény mindig azt az utat választja két pont között, amelyen a legrövidebb idő alatt jut el egyik pontból a másikba.
+\end{itemize}
+
+\subsubsection{Leképezési törvények}
+Az optikai rendszerben használt leggyakoribb eszközök a lencsék és a tükrök. Ezek segítségével a fényt fókuszálhatjuk, nagyíthatjuk vagy kicsinyíthetjük.
+Ezeknek az eszközöknek a hatását a fény útjára az optikai törvények és az eszközök geometriája határozza meg. A leggyakrabban használt lencsék és tükrök gömbszimmetrikusak,
+mert bár nem mindig ezek a legmefelelőbb formák egyes feladatok ellátására, matematikailag is ezek a legegyszerűbben kezelhető formák, és praktikusan is ezeket a legegyszerűbb előállítani.
+
+A leképezések során több különböző távolságot definiálunk:
+\begin{itemize}
+    \item Objektum távolság ($s$): Az objektumtól a lencse vagy tükör főtengelyéig mért távolság.
+    \item Kép távolság ($s'$): A képtől a lencse vagy tükör főtengelyéig mért távolság.
+    \item Fókusztávolság ($f$): A lencse vagy tükör fókuszpontjától a főtengelyig mért távolság.
+    \item Lencse vagy tükör görbületi sugara ($R$)
+    \item Objektum magassága ($h$): Az objektum magassága a főtengelyhez képest.
+    \item Kép magassága ($h'$): A kép magassága a főtengelyhez képest.
+\end{itemize}
+Emellett van pár alapfogalom amit a leképezések során használunk:
+\begin{itemize}
+    \item \textbf{Fókuszpont}: Az a pont a főtengelyen, ahol a párhuzamosan érkező fénysugarak találkoznak egy lencse vagy tükör után.
+    \item \textbf{Főtengely}: Az a vonal, amely áthalad a lencse vagy tükör középpontján és a fókuszpontokon.
+    \item \textbf{Pont leképezése}: Az objektum egy pontjából kiinduló fénysugarak leképezése a kép egy pontjába.
+\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/9-tetel/lekepezes.jpg}
+    \caption{A leképezés egy vékony lencse esetén}
+\end{figure}
+
+\subsubsection*{Görbült felület leképezése}
+Vegyünk egy görbült felületet, amely két különböző törésmutatójú közeg határán helyezkedik el. Az egyik közeg törésmutatója $n_1$, a másiké pedig $n_2$. A felület görbületi sugara legyen $R$. 
+Váasszunk ki egy pontot a felületen ($P$), ahol az objektumból ($O$) érkező fény megtörik  és $O'$ pontba jut el a másik közegben. Ekkor az $OP$ távolság legyen $s$, az $O'P$ távolság pedig $s'$:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/9-tetel/gorbult_felulet.png}
+    \caption{Görbült felület leképezése}
+\end{figure}
+Ekkor bevezethetünk egy közelítést: Ha a $OPQ$ háromszöget nézzük, akkor természetesen az $s$ átmérő hosszabb mint az $OQ$ távolság. Ezt a különbséget felírhatjuk a Pithagoras tétel segítségével:
+\begin{equation}
+    \bar{OQ}^2 = s^2 - \bar{PQ}^2 \quad \text{vagy} \quad (s - \bar{OQ})(s + \bar{OQ}) = h^2
+\end{equation}
+Viszont ha a szög kellően kicsi (tehát $O$ kellően messze van), akkor $\bar{OQ} + s \approx 2s$, így a következő közelítést alkalmazhatjuk:
+\begin{equation}
+    s - \bar{OQ} \approx \frac{h^2}{2s}
+\end{equation}
+Hasonlóan a másik háromszögre is:
+\begin{equation}
+    s' - \bar{O'Q} \approx \frac{h'^2}{2s'}
+\end{equation}
+Ezekkel felvértezve nézzük meg, hogyan alakul a fény pályája a Fermat-elv alapján. Először vegyünk egy egyenest a $PQ$ pontok között és legyen ez a szakasz $h$. Most tegyük fel egy pillanatra,
+hogy az ezzel párhuzamos felület a felületünk. Ekkor az $OP$ szakasz megtétele hosszabb lenne mint az $OQ$ szakaszé, méghozzá $s - \bar{OQ}$-val. Hasonlóan az $O'P$ szakasz is hosszabb lenne mint az $O'Q$ szakasz, méghozzá $s' - \bar{O'Q}$-val. Tehát ez az út nem valósulhatna meg. De pont ezért kell a görbült felület! Ugyanis ekkor a $V-Q$ szakaszon átmenő fellépő időveszteség pont kiegyenlíti ezt a különbséget. Mivel az $OP$ szakaszon $\frac{h^2}{2s}$ az extra út, ezért itt $\frac{n_1 h^2}{2s c}$ időveszteség lép fel. Hasonlóan az $O'P$ szakaszon $\frac{n_2 h'^2}{2s' c}$ időveszteség lép fel. Ezeknek az összegének kell egyelőnek lennie tehát a $VQ$ szakaszon felmerülő időnyereséggel. De milyen hosszú ez a $VQ$ szakasz? A görbületi sugár $R$, tehát a $VQ$ szakasz hoszza pont annyi
+mint amennyivel $R$ hosszabb mint a $PQ$ szakasz, vagyis $R - \sqrt{R^2 - h^2}$. Ezt is közelíthetjük a korábbi módszerrel:
+\begin{equation}
+    R - \sqrt{R^2 - h^2} \approx \frac{h^2}{2R}
+\end{equation}
+Tehát a $VQ$ szakaszon a fény időnyeresége:
+\begin{equation}
+    \frac{n_1 h^2}{2R c}
+\end{equation}
+Most már felírhatjuk a Fermat-elv alapján a következő egyenlőséget:
+\begin{equation}
+    \frac{n_1 h^2}{2s c} + \frac{n_2 h'^2}{2s' c} = \frac{n_1 h^2}{2R c}
+\end{equation}
+Ebből egyszerűen kifejezhetjük a leképezési törvényt:
+\begin{equation}
+    \boxed{\frac{n_1}{s} + \frac{n_2}{s'} = \frac{n_2 - n_1}{R}}
+\end{equation}
+Ez a leképezési törvény görbült felületek esetén. 
+
+Ebből az eredményből két fontos tulajdonság is kiesik: Egyrészt, ez a $\frac{n_1}{s} + \frac{n_2}{s'}$ kifejezés egy állandó, tehát ha változtatjuk az $s$ hosszúságát, akkor $s'$ is változik.
+Tehát ha távolabb viszem az $O$ objektumot, akkor az $O'$ kép közelebb kerül a felülethez. Ha pedig $s \to \infty$, akkor $s' \to f$ ahol $f$ a fókusztávolság:
+\begin{equation}
+    \boxed{f = \frac{n_2 R}{n_2 - n_1}}
+\end{equation}
+A Fókuszpont tehát az a pont ahova egy görbült felület a végtelenből érkező párhuzamos fénysugarakat összegyűjti.
+
+De mivan a gömbfelület nem engedi át a fényt hanem visszaveri? Ekkor egy gömbtükröt kapunk ami a felület leképezési törvényét a következőképpen módosítja:
+\begin{equation}
+    \boxed{\frac{1}{s} + \frac{1}{s'} = - \frac{2}{R} = \frac{1}{f}}
+\end{equation}
+És a fókusztávolság pedig:
+\begin{equation}
+    \boxed{f = - \frac{R}{2}}
+\end{equation}
+Itt látható, hogy az anyagi minőségtől függetlenül a gömbtükrök fókusztávolsága mindig a görbületi sugár felének negatív értéke.
+
+\subsubsection*{Lencsék}
+A lencsék két görbült felületből állnak, amelyek között egy adott anyag található. A lencsék lehetnek domborúak vagy homorúak, attól függően, hogy a görbült felületek hogyan helyezkednek el egymáshoz képest. A lencsék leképezési törvénye a következőképpen alakul:
+\begin{equation}
+    \boxed{\frac{1}{s} + \frac{1}{s'} = (n - 1) \left(\frac{1}{R_1} - \frac{1}{R_2}\right) = \frac{1}{f}}
+\end{equation}
+Ahol $R_1$ és $R_2$ a lencse két görbült felületének görbületi sugara, és $n$ a lencse anyagának törésmutatója. A fókusztávolság pedig:
+\begin{equation}
+    \boxed{f = \frac{1}{(n - 1) \left(\frac{1}{R_1} - \frac{1}{R_2}\right)}}
+\end{equation}
+Ezek a törvények lehetővé teszik számunkra, hogy meghatározzuk a lencsék és tükrök által létrehozott képek helyét és méretét.
+
+Vékony lencse esetén a leképezési törvény egyszerűsödik, és a következő formában írható fel:
+\begin{equation}
+    \frac{1}{s} + \frac{1}{s'} = \frac{1}{f}
+\end{equation}
+Ez a vékony lencse egyenlete, amelyet gyakran használnak a geometriai optikában. Mivel itt párhuzamosan érkező fénysugarak fókuszálódnak a fókuszpontban, ezért $s$ és $s'$
+megegyezik az objektum és a kép távolságával a lencse középpontjától mérve. Ezért ebben az alakban gyakoribb:
+\begin{equation}
+    \frac{1}{k} + \frac{1}{t} = \frac{1}{f}
+\end{equation}
+Ahol $k$ az objektum távolsága a lencse középpontjától, és $t$ a kép távolsága a lencse középpontjától.
+
+\subsubsection*{Nagyítás}
+A nagyítás ($M$) megmutatja, hogy a kép milyen mértékben nagyobb vagy kisebb az objektumnál. A nagyítás a következőképpen definiálható:
+\begin{equation}
+    M = \frac{h'}{h} = - \frac{s'}{s}
+\end{equation}
+Ahol $h$ az objektum magassága, $h'$ pedig a kép magassága. A negatív előjel azt jelenti, hogy ha a kép fordított, akkor a nagyítás negatív lesz. A nagyítás a fókuszpont függvényében:
+\begin{equation}
+    M = \frac{f}{f - s}
+\end{equation}
+Ez az egyenlet megmutatja, hogy a nagyítás hogyan változik az objektum távolságával.
+
+\subsubsection*{Lencserendszerek}
+Több lencse kombinációja esetén a teljes rendszer leképezési törvénye a következőképpen alakul:
+\begin{equation}
+    \frac{1}{s} + \frac{1}{s'} = \frac{1}{f_{eq}}
+\end{equation}
+Ahol $f_{eq}$ a rendszer egyenértékű fókusztávolsága, amely a következőképpen számítható ki:
+\begin{equation}
+    \frac{1}{f_{eq}} = \frac{1}{f_1} + \frac{1}{f_2} - \frac{d}{f_1 f_2}
+\end{equation}
+Ahol $f_1$ és $f_2$ az egyes lencsék fókusztávolságai, és $d$ a lencsék közötti távolság. Ez az egyenlet lehetővé teszi számunkra, hogy meghatározzuk a komplex lencserendszerek viselkedését.
+
+Mátrixos alakban még könnyebb a lencserendszerek vizsgálata, hiszen csak össze kell szoroznunk a lencsék és a köztük lévő szabad terek leképezési mátrixait.
+Például két vékony lencse esetén a teljes leképezési mátrix:
+\begin{equation}
+    M_{total} = M_{lens2} \cdot M_{space} \cdot M_{lens1}
+\end{equation}
+Ahol $M_{lens1}$ és $M_{lens2}$ a két lencse leképezési mátrixai, és $M_{space}$ a köztük lévő szabad tér leképezési mátrixa.
+
+\subsubsection{Felbontóképesség}
+A felbontóképesség a geometriai optika korlátait jelzi, ugyanis bár a geometriai optika elvei szerint semmilyen teoretikus akadálya nincs annak, hogy megfelelő lencserendszerekkel (és ezek hibáinak kiküszöbölésével)
+ne tudjunk tetszőleges mértékű nagyítást elérni. Viszont a fény hullámtermészete itt már beleszól a dologba. Ugyanis ha két olyan pontot vizsgálunk egy nagyító segítségével,
+melyek távolsága a hullámhossz nagyságrendjébe esik, akkor a két pont között már diffrakciós jelenségek lépnek fel, és a két pont képe összemosódik. Ezért van egy határ a felbontóképességben amit nem tudunk átlépni. Ezt a határt a \textbf{Rayleigh-kritérium} határozza meg:
+\begin{equation}
+    \theta_{min} = 1.22 \frac{\lambda}{D}
+\end{equation}
+Ahol $\theta_{min}$ a legkisebb szög, amelynél még két pontot különállónak tudunk látni, $\lambda$ a fény hullámhossza, és $D$ a lencse vagy tükör átmérője. Ez az egyenlet megmutatja, hogy a felbontóképesség
+javítható nagyobb átmérőjű lencsékkel vagy tükrökkel, illetve rövidebb hullámhosszú fénnyel.
+
+A Rayleigh-kritérium onnan ered, hogy a fényforrások a hullámhossz tartományában diffrakciós mintázatot hoznak létre a lencse apertúrájában (az apertúra olyan berendezés amivel lehet kontrollálni mennyi fény jut be a lencsébe. Ez egy változtatható átmérőjű nyílás,
+ami, ha tágabbra van hagyva, több fényt enged be de kevésbé fókuszáltan, ha szűkre akkor pedig kevesebbet de azt jobban egy pontra fókuszálva) és ezt a diffrakciós mintát amit látunk \textbf{Airy mintázatnak} nevezik.
+Ennek az Airy mintának a nyílásszöge a Rayleigh-kritérium (tehát $D$ egy valós optikai rendszerben az apertúra átmérője). Ha tehát két pont olyan közel van egymáshoz, hogy az egyik pont Airy mintázatának első minimuma egybeesik a másik pont közepével,
+akkor ezeket a pontokat már nem tudjuk különállónak látni.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/9-tetel/airy-disk.png}
+    \caption{Airy mintázat}
+\end{figure}
+
+
+\subsection{Optikai eszközök}
+
+\subsubsection{Távcsövek}
+A távcső távoli tárgyak látószögének felnagyítására szolgáló eszköz. Teleszkóp és messzelátó néven is ismert, ezen elnevezései a görög tele = „messze", „távol” és szkopein = „látni”, „nézni” szavakból (teleszkoposz = messzelátó) származnak.
+
+A távcső kifejezés a szélesebb néprétegek számára az optikai távcsöveket jelenti. Ezek a látható fény tartományába eső elektromágneses sugárzást gyűjtik össze lencsékkel vagy tükrökkel.
+A lencsés távcsövek összefoglaló neve refraktor, mivel ezek a fénytöréssel (refrakcióval) állítják elő a képet, a tükrös távcsövek pedig a reflektorok (reflexió = fényvisszaverődés).
+Távcsöveket nemcsak a látható, hanem az emberi szem számára láthatatlan (infravörös, rádió-, röntgen-, gamma-) sugárzások megfigyelésére is kifejlesztettek.
+A rádióhullámú tartományokban működő eszközöket rádiótávcsöveknek nevezik. 
+
+
+\subsubsection*{Galilei távcső}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{imgs/9-tetel/Galilei_tavcso.png}
+    \caption{Galilei távcső felépítése: \textbf{y} - távoli objektum magassága, \textbf{y'} - valós kép magassága az objektívből, \textbf{y''} nagyított kép magassága az okulárból, \textbf{D} - belépő pupilla magasága, \textbf{d} - virtuális kilépő pupilla, \textbf{L1} - objektív lencse, \textbf{L2} - okulár lencse, \textbf{e} - virtuális kilépő pupilla }
+\end{figure}
+
+Bár nem Galilei volt az első, aki távcsövet készített, mégis az ő nevéhez fűződik a legismertebb korai változat, amelyet 1609-ben alkotott meg. A Galilei távcső egy egyszerű optikai eszköz, amely két lencsét használ a távoli tárgyak nagyítására.
+Mivel a távcső nem használ tükröket ezért lencsés, vagyis refraktor távcsőnek nevezzük. A Galilei távcső egy domború (konvex) lencsét használ az objektívként, amely a távoli tárgyak képét hozza létre, és egy homorú (konkáv) lencsét használ az okulárként, amely a kép nagyítására szolgál. A homorú lencse miatt a Galilei távcső képe egyenes marad, ellentétben a későbbi távcsövekkel, amelyek fordított képet adnak.
+A távcső lényege, hogy a gyüjtőlencse (objektív) összegyűjti a távoli tárgyról érkező párhuzamos fénysugarakat, és egy fókuszpontban egy valódi képet hoz létre. Az okulár lencse pedig ezt a képet "beletöri" a szemünkbe, nagyítva azt.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/9-tetel/galilei_light_path.jpg}
+    \caption{Galilei távcső fényútja}
+\end{figure}
+A Galilei távcső működésének lényege, hogy a távoli \textbf{y} objektumból érkező párhuzamos fénysugarak az objektív lencsén (\textbf{L1}) áthaladva egy valódi, fordított \textbf{y'} képet hoznak létre a fókuszpontban (\textbf{F'}). Ezt a képet viszont az okulár lencse (\textbf{L2}), amely egy homorú lencse, úgy "töri be" a szemünkbe, hogy újra párhuzamossá teszi a sugarakat, de már nagyított formában (\textbf{y''}). Így a szemünkbe érkező sugarak úgy tűnnek, mintha egy nagyított, egyenes képet látnánk a távoli tárgyról.
+A rendszerben a lencsék távolsága pont úgy van beállítva, hogy az objektív fókuszpontja pont ott legyen, ahol az okulár lencse fókusza van (mivel az okulár fókusza negatív, ezért ez a pont a két lencse között van). Tehát a távcsőbel tudjuk a fókuszt állítani úgy, hogy a két lencse távolságát változtatjuk.
+A távcső nagyítását a lencsék fókusztávolságai határozzák meg. A szögnagyítás ($M$) a következőképpen számítható ki:
+
+\begin{equation}
+    M = \frac{tg\alpha'}{tg \alpha} = \frac{f_{\text{objektív}}}{f_{\text{okulár}}} = \frac{D}{d}
+\end{equation}
+A Galilei távcsőnek előnye, hogy a kép egyenes marad, és mivel nem használ tükröket, ezért könnyebb és kisebb mint a reflektoros távcső. Ezért sok egyszerűbb távcsőben ezt a kialakítást alkalmazzák.
+Hátránya, hogy a homorú lencse miatt a látómező korlátozott, és sok optikai aberráció lép fel, például a gömbi aberráció és a kromatikus aberráció, amelyek rontják a kép minőségét. Emellett a nagyítás is korlátozott a lencsék fókusztávolságai miatt, nagyobb nagyítás eléréséhez hosszabb távcsőre van szükség.
+
+\subsubsection*{Kepler távcső}
+A kepler távcső egy kis módosítása a Galilei távcsőnek, amelyet Johannes Kepler fejlesztett ki 1611-ben. A Kepler távcső is két lencsét használ, de mindkét lencse domború (konvex) lencse. Ez a kialakítás lehetővé teszi nagyobb nagyítást és szélesebb látómezőt, de a kép fordított marad. A Kepler távcső működése hasonló a Galilei távcsőhöz, de az objektív lencse egy valódi, fordított képet hoz létre, amelyet az okulár lencse nagyít fel.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{imgs/9-tetel/Keplerian_telescope.png}
+    \caption{Kepler távcső felépítése}
+\end{figure}
+A Kepler távcső működésének lényege, hogy a távoli \textbf{y} objektumból érkező párhuzamos fénysugarak az objektív lencsén (\textbf{L1}) áthaladva egy valódi, fordított \textbf{y'} képet hoznak létre a fókuszpontban (\textbf{F'}). Ezt a képet az okulár lencse (\textbf{L2}), amely egy domború lencse, nagyítja fel, és újra párhuzamossá teszi a sugarakat, de már nagyított formában (\textbf{y''}). Így a szemünkbe érkező sugarak úgy tűnnek, mintha egy nagyított, fordított képet látnánk a távoli tárgyról.
+A nagyítás:
+\begin{equation}
+    M = \frac{f_{\text{objektív}}}{f_{\text{okulár}}}
+\end{equation}
+
+
+\subsubsection*{Newton Távcső}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/9-tetel/Newtonian_telescope.png}
+    \caption{Newton távcső felépítése}
+\end{figure}
+A Newton távcső egy reflektoros távcső, amelyet Isaac Newton fejlesztett ki 1668-ban. A Newton távcső egy konkáv (homorú) tükröt használ az objektívként, amely a távoli tárgyak képét hozza létre, és egy síktükröt használ az okulárként, amely a kép nagyítására szolgál. A Newton távcső előnye, hogy mivel tükröket használ, ezért nem szenved kromatikus aberrációtól, amely a lencsés távcsöveknél jelentkezik.
+
+
+\subsubsection{Fénymikroszkóp}
+A mikroszkópok hasonló elven működnek, mint a távcsövek, de esetükben nem feltételezhetünk párhuzamos fénysugarakat, hiszen a mikroszkópok közelről vizsgálnak tárgyakat. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/9-tetel/mikroszkop.png}
+    \caption{Fénymikroszkóp skematikus felépítése}
+\end{figure}
+A mikroszkóp optikai elemei: az objektívek (tárgylencsék), az okulárok (szemlencsék) és a megvilágító berendezések (tükrök, kondenzorok). Az objektív lencsék közel helyezkednek el a vizsgált tárgyhoz, és nagy nagyítást biztosítanak. Az okulár lencsék pedig a szemünkbe juttatják a nagyított képet.
+
+A mikroszkóp olyan összetett optikai nagyító rendszer, amellyel a vizsgált tárgy (preparátum) kétféle nagyítási módszerrel vizsgálható.
+Szorosan vett értelemben a mikroszkóp két képalkotó gyűjtőrendszerből tevődik össze:
+
+    a tubusnak a tárgy felé forduló részén elhelyezkedő tárgylencse, ismertebb nevén az objektív,
+    valamint a szem felé forduló részén elhelyezkedő szemlencse, az úgynevezett okulár.
+
+A mellékelt ábrán láthatóan az objektív az \textbf{y} tárgyról \textbf{y'} nagyított reális fordított képet alkot az okulár tárgyoldali gyújtósíkjában. Az okulár ezt a már felnagyított képet újra felnagyítja, és az \textbf{y''} virtuális képet hozza létre - a szem alkalmazkodási fokától függően a végtelenbe vagy a tisztalátás távolságába vetítve. 
+A mikroszkóp teljes nagyítása tehát az objektív és az okulár nagyításának szorzata:
+\begin{equation}
+    M_{total} = M_{\text{objektív}} \times M_{\text{okulár}}
+\end{equation}
+Ahol az objektív nagyítása:
+\begin{equation}
+    M_{\text{objektív}} = \frac{L}{f_{\text{objektív}}}
+\end{equation}
+és az okulár nagyítása:
+\begin{equation}
+    M_{\text{okulár}} = \frac{250 \text{ mm}}{f_{\text{okulár}}}
+\end{equation}
+Itt $L$ a mikroszkóp tubusának hossza, amely általában 160 mm körül van, a 250 mm a tisztalátás távolsága, és $f_{\text{objektív}}$ és $f_{\text{okulár}}$ az objektív és az okulár fókusztávolságai.
+Tehát például, ha az objektív önnagyítása 10x és az okulár nagyítása 10x, akkor a mikroszkóp teljes nagyítása 100x lesz.
+
+\subsubsection{Szemüveg}
+A szemüveg egy optikai eszköz, amelyet a látás javítására használnak. A szemüveg lencséi különböző görbületűek lehetnek, attól függően, hogy milyen látási problémát kell korrigálni. A szemüveg lencséi lehetnek domborúak (konvex) vagy homorúak (konkáv), attól függően, hogy a távoli vagy közeli látást kell javítani.
+A szemüveg lencséinek fókusztávolsága a következőképpen számítható ki:
+\begin{equation}
+    D = \frac{1}{f} = (n - 1) \left(\frac{1}{R_1} - \frac{1}{R_2}\right)
+\end{equation}
+Ahol $R_1$ és $R_2$ a lencse két görbületi sugara, $D$ a diopria és $n$ a lencse anyagának törésmutatója. A szemüveg lencséinek fókusztávolsága általában néhány centimétertől néhány tíz centiméterig terjed.
+
+A jól látó szem törőereje távolra tekintéskor mintegy 60 dpt (gyújtótávolság $16 \frac{2}{3}$ mm). A törőerő két harmada a szaruhártya, harmada a szemlencse törőerejéből adódik. A szemnek vannak negatív törőerejű részei is.[3] A szem törőereje közelre nézéskor megnő. Ezt a változást alkalmazkodásnak, akkommodációnak nevezzük. Az alkalmazkodás az életkor növekedésével csökken. Gyerekeknél 15-20, 25 évesen 10, 50 éven túl 1 dioptria az alkalmazkodási tartomány.
+A távollátás gyűjtőlencsével, a rövidlátás szórólencsével korrigálható. Minél nagyobb a lencse törőereje, annál nagyobb látáshibát tud javítani. A lencsék törőerejét a szemész negyed dioptria pontossággal tudja megállapítani.
+
+Ökölszabály az olvasószemüveg erősségének becslésére: A kényelmes olvasótávolság reciproka mínusz a legközelebbi, még élesen látott pont távolságának reciproka.
+Például: kényelmes olvasótávolság 1/3 m = 3,0 dpt; minimális látótávolság: 1/2 m = 2,0 dpt; tehát az olvasószemüveg erőssége 3,0 dpt - 2,0 dpt = 1,0 dpt (gyűjtőlencse). 
+\subsection{Optikai jelenségek a természetben, Kausztikák}
+
+\subsubsection{Délibáb}
+A délibáb egy olyan légköroptikai jelenség, amelynek során a távoli tárgyakról nem a valódi helyükön és/vagy helyzetükben látunk képet.
+A leggyakrabban a horizont közelében megfigyelhető jelenség során, a látóhatár szélén lévő tárgyak a földfelszín felett lebegni látszanak, esetleg fordított állásúnak tűnnek, vagy megkettőződnek.
+A délibáb a több helyen felbukkanó téves magyarázattal ellentétben - miszerint a jelenség a teljes visszaverődés eredménye - a különböző törésmutatójú levegőrétegeken áthaladó fény törésével magyarázható.
+A keletkezés okait illetve a tárgyak képének elhelyezkedése szerint a következőket lehet megkülönböztetni:
+\begin{itemize}
+    \item Alsó állású délibáb, amikor a kép a tárgy valódi helye alatt jelenik meg.
+    \item Felső állású délibáb, amikor a kép a tárgy valódi helye felett alakul ki.
+\end{itemize}
+De előfordulhat délibáb úgy is, hogy a kép a tárgy valódi helye mellett keletkezik. Meg lehet különböztetni a jelenségeket aszerint is, hogy egyszerre látjuk-e a tárgyat magát és a délibáb formájában keletkező képét, vagy nincs megkettőződés, csak a légköri fénytörés miatt máshol látjuk a tárgyat, mint ahol valójában van.
+Az alsó állású délibáb kialakulásához nagy kiterjedésű, gyors felmelegedésre alkalmas és egységes földfelszín szükséges, ilyenek a sivatagi, félsivatagi területek, vagy nyári hőségben az aszfalt- és betonfelszínek. A teljesen száraz felületek egy része, vagy akár a teljes felület nedvesnek, vagy vízzel borítottnak látszik. Az állandóan változó, pocsolyaszerűnek tűnő kép tulajdonképpen a kék égről származik.
+Hasonló jelenség tapasztalható, amikor a hideg levegő van alul és a meleg felül. Az így kialakuló felső állású délibáb a valós tárgy felett jelenik meg. A közeli dolgok távolinak látszanak, a tengeren a horizont megemelkedik. Ez sötétben - és főleg, ha nem tudjuk, mit is látunk valójában - igencsak zavaró tud lenni. Nagyon valószínű, hogy emiatt nem látták - nem láthatták - a jéghegyet a Titanic előtt.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{imgs/9-tetel/delibab.jpg}
+    \caption{Alsó állású délibáb}
+\end{figure}
+
+A délibábot matematikailag úgy kezelhetjük mint vékony levegőrétegek sokaságát, amelyek mindegyike kissé eltérő törésmutatóval rendelkezik.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/9-tetel/delibab2.png}
+    \caption{Délibáb kialakulása réteges levegőben}
+\end{figure}
+A fény útját ezek a rétegek folyamatosan megtörik, így a fény görbült pályán halad.
+A Snellius-Descartes törvény alapján:
+\begin{equation}
+    \frac{\sin\alpha_2}{\sin\alpha_1} = \frac{n_1}{n_2}, \quad \frac{\sin\alpha_3}{\sin\alpha_2} = \frac{n_2}{n_3}, \quad \dots
+\end{equation}
+Ebből következik, hogy:
+\begin{equation} 
+    n_1 \sin\alpha_1 = n_2 \sin\alpha_2 = n_3 \sin\alpha_3 = \dots = \text{állandó}
+\end{equation}
+Ez az egyenlet azt mutatja, hogy a fény útja során a törésmutató és a beesési szög szinuszának szorzata állandó marad. Ha a törésmutató változik a magassággal, akkor a beesési szög is változik, ami a fény görbült pályáját eredményezi.
+Tegyük fel, hogy az első réteg törésmutatója $n_0$, és itt a beesési szög $90\deg$. Ekkor a fény útja során a következő összefüggés érvényes:
+\begin{equation}
+    n(z) \sin\alpha(z) = n_0
+\end{equation}
+Most tegyük fel, hogy a fénysugár egy $R$ sugarú körív mentén halad. Ekkor a beesési szög és a magasság közötti kapcsolatot a következőképpen írhatjuk fel:
+\begin{equation}
+    \sin\alpha(z) = \frac{R - z}{R}
+\end{equation}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/9-tetel/delibab3.png}
+    \caption{Délibáb kialakulása görbült fényút esetén}
+\end{figure}
+Ezt behelyettesítve az előző egyenletbe:
+\begin{equation}
+    n(z) \frac{R - z}{R} = n_0
+\end{equation}
+Ebből kifejezve a törésmutatót:
+\begin{equation}
+    n(z) = n_0 \frac{R}{R - z}
+\end{equation}
+Ez az egyenlet megmutatja, hogy a törésmutató hogyan változik a magassággal a délibáb kialakulásához szükséges körülmények között.
+
+
+\subsubsection{Naplemente}
+A naplemente során a délibábhoz nagyon hasonló jelenséget figyelhetünk meg, amikor az atmoszféra rétegeinek eltérő hőmérséklete és sűrűsége miatt a fény görbült pályán halad. Ekkor előfordul, hogy a nap a horizont bukása után is látszódik,
+mivel a fény a légkör görbült rétegein keresztül megtörik és elhajlik, így a nap képe a valódi helye alatt jelenik meg.
+
+\subsubsection{Szivárvány}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/9-tetel/rainbow.png}
+    \caption{Szivárvány kialakulása esőcseppeken keresztül}
+\end{figure}
+A szivárvány egy optikai jelenség, amely akkor keletkezik, amikor a napfény esőcseppeken halad át. A fény a cseppekben megtörik, visszaverődik és újra megtörik, mielőtt kilépne a cseppből. Ez a folyamat színekké bontja a fehér fényt,
+mivel a különböző hullámhosszú fények eltérő mértékben törnek meg. A fény útja egy esőcseppben a következőképpen néz ki:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/9-tetel/rainbow_path.png}
+    \caption{Fény útja egy esőcseppben}
+\end{figure}
+Ahol $\theta$ a beesési szög, $\theta'$ a törési szög és $b$ a beesés távolsága a csepp középponti tengelyétől. Vegyük most a csepp sugarát egységnek ($R = 1$). Ekkor a kimenő irányának fény eltérése a bejövő fénynyalábtól:
+\begin{equation}
+    D = (\theta - \theta') + (p-1)(\pi - 2 \theta') + (\theta - \theta')
+\end{equation} 
+Ahol $p$ a cseppben történt visszaverődések száma. A szivárvány esetén $p = 2$, mivel a fény kétszer verődik vissza a csepp belsejében mielőtt kilépne.
+De számunkra érdekesebb az $r = \pi - D$ szög, mivel egy $D$-vel eltérült sugár a megfigyelőt úgy éri el, hogy az $r$ szöget zár be a szivárvány közepével, ami pont a naptól ellentétes irányban van.
+A $D$ paramétert szeretnénk a $B$ impakt paraméter függvényeként kifejezni:
+\begin{equation}
+    B = \frac{b}{R_{\text{csepp}}} = \sin \theta
+\end{equation}
+\begin{equation}
+    \cos \theta = \sqrt{1 - B^2}
+\end{equation}
+\begin{equation}
+    \sin \theta' = \frac{B}{n}
+\end{equation}
+És:
+\begin{equation}
+    \cos \theta' = \sqrt{1 - \frac{B^2}{n^2}}
+\end{equation}
+Most már kifejezhetjük $D$-t $B$ függvényében:
+\begin{equation}
+    D(B) = \pi + 2 \arcsin B - 4 \arcsin \left(\frac{B}{n}\right)
+\end{equation}
+Tehát a szögtávolság a szivárvány középpontja és a megfigyelő között a következőképpen alakul:
+\begin{equation}
+    r(B) = -2 \arcsin B + 4 \arcsin \left(\frac{B}{n}\right)
+\end{equation}
+Ez pedig a törésmutató miatt hullámhossz függő, a piros fény esetén $n \approx 1.331$ míg a kék fény esetén $n \approx 1.343$. 
+Ennek a maximumát megkeresve:
+\begin{equation}
+    \frac{dr}{dB} = -\frac{2}{\sqrt{1 - B^2}} + \frac{4}{n \sqrt{1 - \frac{B^2}{n^2}}} = 0
+\end{equation}
+Ebből kifejezve $b$-t:
+\begin{equation}
+    b = \sqrt{\frac{4 - n^2}{3}}
+\end{equation}
+Ezt visszahelyettesítve $r(b)$-be megkapjuk a szivárvány szögét a különböző hullámhosszakra:
+\begin{equation}
+    r_{max} = 4 \arcsin \left(\sqrt{\frac{4 - n^2}{3 n^2}}\right) - 2 \arcsin \left(\sqrt{\frac{4 - n^2}{3}}\right)
+\end{equation}
+Ez a szivárvány jellegzetes szögét adja meg a megfigyelő és a nap között. A piros fény esetén ez körülbelül $42\degree$, míg a kék fény esetén körülbelül $40\degree$. Ezért látjuk a szivárványt egy ívként az égen, ahol a különböző színek kissé eltérő szögekben jelennek meg.
+
+
+\subsubsection{Kausztikák}
+Tekintsünk egy görbét, ami egy paramétertől függ. A paraméter változtatásával egy görbesereget kapunk. Bizonyos
+esetekben ennek a görbeseregnek létezik burkolója. Ezt a burkolót nevezik kausztikának. Nem minden görbeseregnek
+van kausztikája. Például a párhuzamos fénysugaraknak nincs kausztikája.
+Az egyik legismertebb kausztika a jól megfigyelhető fényes, „csúcsos” alakú görbe, amely egy pohár alján látható,
+amikor a felülről beeső fény a pohár belső, tükröző faláról visszaverődik. Az 1. ábrán megszerkesztettük a gömbtükörre
+párhuzamosan beeső fénysugarak útját a visszaverődés után. Ezeknek a fénysugaraknak a burkolója eredményezi a
+kausztikát. Az R sugarú gömbtükörben kialakuló kausztika paraméteres egyenlete a következő:
+\begin{equation}
+    \bold{r}_k (\alpha) = x_k(\alpha) \hat{i} + y_k(\alpha) \hat{j}
+\end{equation}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/9-tetel/kausztika.png}
+    \caption{ jobbról párhuzamosan bejövő fénysugarak a pohár belső faláról visszaverődnek és burkolójuk kausztikát eredményez.}
+\end{figure}
+Ennek a kausztikának az egyenlete:
+\begin{equation}
+    \bold{r}_k (\alpha) = R \begin{bmatrix}
+        \cos \alpha \left(1 - \frac{1}{2} \cos 2\alpha \right) \\
+        \sin^3 \alpha
+    \end{bmatrix}
+\end{equation}
+Ahol a koordináta rendszer origója a gömbtükör középpontja, az x tengely a beeső fénysugarak irányába mutat, és $\alpha$ a beesési szög.
+
+\end{document}

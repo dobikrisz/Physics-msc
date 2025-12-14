@@ -1,0 +1,2308 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{{\subfix{../}}}
+\begin{document}
+
+Termodinamikai állapotjelzők, hőtágulás, ideális gáz, kinetikus modell., Nyílt és zárt folyamatok, Carnot-folyamat. Főtételek.
+Termodinamikai potenciálok, fundamentális egyenlet. Van der Waals- gázok. Fázisátalakulások jellemzői, típusai, Gibbs-féle fázisszabály, fázisdiagramok.
+Kémiai potenciál, fázisegyensúlyok.
+\newline
+\newline
+A termodinamika a fizika egyik ága, de sok szempontból eltér a klasszikus mechanikától vagy az elektromágnesességtől. A termodinamika során nem felállított axiómák alapján
+vezetjük le a törvényeket, hanem kísérleti megfigyelések alapján fogalmazzuk meg azokat és általában nem adunk teljes magyarázatot a jelenségekre. Ezért is nevezzük fenomenologikus termodinamikának. A termodinamika alapvetően makroszkopikus jelenségekkel foglalkozik, tehát nem az egyes részecskék mozgását vizsgálja,
+hanem a rendszer egészének viselkedését. Ezért a termodinamikai mennyiségek is makroszkopikus mennyiségek, mint például a hőmérséklet, nyomás, térfogat, energia stb.
+A termodinamika alapvetően négy fő törvényt foglal magában, amelyeket főtételeknek nevezünk. Ezek a következők:
+\begin{itemize}
+    \item \textbf{Nulladik főtétel:} Ha két rendszer egyensúlyban van egy harmadik rendszerrel, akkor azok is egyensúlyban vannak egymással. Ez a főtétel alapozza meg a hőmérséklet fogalmát.
+    \item \textbf{Első főtétel:} Az energia megmaradásának törvénye. Egy zárt rendszerben az energia nem keletkezik és nem vész el, csak átalakul egyik formából a másikba. Matematikailag kifejezve: $dU = \delta Q - \delta W$, ahol $dU$ a belső energia változása, $\delta Q$ a rendszerbe bevitt hő, és $\delta W$ a rendszer által végzett munka.
+    \item \textbf{Második főtétel:} A hő nem áramlik spontán módon hidegebb testből melegebb testbe. Ez a főtétel bevezeti a entrópia fogalmát, amely a rendezetlenség mértéke egy rendszerben. Matematikailag kifejezve: $dS \geq \frac{\delta Q}{T}$, ahol $dS$ az entrópia változása, $\delta Q$ a rendszerbe bevitt hő, és $T$ a hőmérséklet.
+    \item \textbf{Harmadik főtétel:} Ahogy a hőmérséklet közelít a nullához, az entrópia egy rendszerben közelít a minimum értékhez. Ez a főtétel kimondja, hogy abszolút nulla hőmérsékleten egy tökéletes kristály entrópiája nulla.
+\end{itemize}
+A termodinamika ezen főtételei alapvetőek a fizika és a kémia számos területén, és fontos szerepet játszanak a mérnöki tudományokban is. A termodinamika kiterjesztése a statisztikus fizika, ami már inkább próbál magyarázatot adni a termodinamikai jelenségekre mikroszkopikus szinten.
+A termodinamika legfontosabb mértékegységei a következők:
+\begin{itemize}
+    \item Hőmérséklet: Kelvin (K)
+    \item Nyomás: Pascal (Pa = N/m²)
+    \item Térfogat: Köbméter (m³)
+    \item Energia: Joule (J)
+    \item Entrópia: Joule per Kelvin (J/K)
+\end{itemize}
+
+\subsection{Termodinamikai állapotjelzők, hőtágulás, ideális gáz, kinetikus modell}
+A termodinamika egyik alapja a termodinamikai állapotjelzők fogalma. Ezek olyan mennyiségek, amelyek egy rendszer állapotát jellemzik, és csak a rendszer jelenlegi állapotától függenek,
+nem pedig attól, hogy hogyan jutott el oda. Intuitív módon meghatáorzhatunk néhány ilyen állapotjelzőt, hisz fetételezhetjük, hogy a rendszer függ attól, hogy mennyi 
+részecske van egy adott térfogategységben (sűrűség), milyen gyorsan mozognak ezek a részecskék (hőmérséklet), mekkora teret foglalnak el (térfogat) és milyen erővel nyomják egymást (nyomás).
+Ezen állaptojelzők közötti összefüggésekkel pedig felépíthetjük a termodinamika alapjait. 
+
+Nézzük meg először, hogy hogyan függ a nyomás és a térfogat egy ideális gáz esetén. Az ideális gáz olyan gáz, amelyben a részecskék közötti kölcsönhatások elhanyagolhatóak,
+és a részecskék mérete is elhanyagolható a gáz térfogatáshoz képest. A legtöbb gázt (pl.: levegő) első közelítésben ideális gáznak tekinthetjük normál körülmények között.
+Vegyünk tehát egy keskeny kis csövet amiben egy ideális gáz van, és a végén van egy dugattyú és egy nyomásmérő. Ha a dugattyút elkezdjük nyomni, akkor a gáz részecskéi egyre közelebb kerülnek egymáshoz,
+így a sűrűségük megnő. Mivel a részecskék egyre közelebb kerülnek egymáshoz, ezért egyre gyakrabban ütköznek a dugattyúval, így a dugattyúra ható erő is megnő. Ez pedig azt jelenti, hogy a nyomás is megnő.
+Tehát a dugattyú lenyomásával a térfogat csökken, míg a nyomás nő. Ebből az összefüggésből felírhatjuk az ideális gáz állapotegyenletét:    
+\begin{equation}
+    pV = \text{állandó}
+\end{equation}
+Ezt az összefüggést Boyle-Mariotte törvényének nevezzük, és azt mondja ki, hogy egy adott mennyiségű ideális gáz esetén a nyomás és a térfogat szorzata állandó marad,
+ha a hőmérséklet állandó. Ez az összefüggés csak akkor érvényes, ha a hőmérséklet nem változik, tehát izoterm folyamat esetén (izo - "egyenlő", term - "hő", görög szavakból ).
+kísérleti úton meg is lehet határozni a pontos értékét ennek az állandónak, és ez azt a következő alakot ölti:
+\begin{equation}
+    pV = nRT
+\end{equation}
+Ahol $n$ a gáz anyagmennyisége mol-ban, $R$ az egyetemes gázállandó ($R \approx 8.314 \frac{J}{mol \cdot K}$), és $T$ a hőmérséklet Kelvin-ben. Ez pedig az ideális gáz állapotegyenlete.
+Ebből látható, hogy ha a hőmérséklet növekszik, akkor a nyomás is növekszik, ha a térfogat állandó marad. Ezért van az, hogy ha egy autó gumiabroncsát felfújjuk, akkor a nyomás is növekszik,
+mivel a levegő részecskéi gyorsabban mozognak és így nagyobb erővel ütköznek az abroncs falával.
+
+Másodiknak nézzük meg mi történik ha a nyomást állandónak tartjuk, vagyis egy izobár folyamatot vizsgálunk ("nyomás"). Tegyük fel, hogy van egy hengerünk amiben egy ideális gáz van, 
+és a henger tetején van egy dugattyú ami szabadon mozoghat fel és le. Ha a gázt elkezdjük melegíteni, akkor a részecskék gyorsabban kezdenek mozogni, így nagyobb erővel ütköznek a dugattyúval.
+Ez pedig azt eredményezi, hogy a dugattyú elkezd felfelé mozdulni, így a térfogat is növekszik. Tehát izobár folyamat esetén a hőmérséklet növekedésével a térfogat is növekszik, mégpedig úgy, hogy a hőmérséklet és a térfogat egyenesen arányosak egymással:
+\begin{equation}
+    \frac{V}{T} = \text{állandó}
+\end{equation}
+Ezt az összefüggést Charles vagy Gay-Lussac első törvényének nevezzük. Mivel a téfogat egyenesen nő a hőmérséklettel, ezért térfogatváltozást a következő alakban is felírhatjuk:
+\begin{equation}
+    V = V_0 (1 + \beta \Delta T)
+\end{equation}
+Ahol $V_0$ a kezdeti térfogat, $\Delta T$ a hőmérsékletváltozás, és $\beta$ a tágulási együttható ($\beta = \frac{1}{273.15\degree C}$). Ez az együttható megadja, hogy egy adott anyag térfogata mennyivel változik meg egy egységnyi hőmérséklet változás hatására.
+
+Harmadiknak meg nézzük meg mi történik ha a térfogatot tartjuk állandónak, vagyis egy izochor folyamatot vizsgálunk ("térfogat"). Tegyük fel, hogy van egy zárt edényünk amiben egy ideális gáz van, és ezt az edényt elkezdjük melegíteni. Mivel a térfogat
+állandó marad, a részecskék egyre gyorsabban kezdenek mozogni, így egyre nagyobb erővel ütköznek az edény falával. Ez pedig azt eredményezi, hogy a nyomás is növekszik. Tehát izochor folyamat esetén a hőmérséklet növekedésével a nyomás is növekszik, mégpedig úgy, hogy a hőmérséklet és a nyomás egyenesen arányosak egymással:
+\begin{equation}
+    \frac{p}{T} = \text{állandó}
+\end{equation}
+Ezt az összefüggést Gay-Lussac második törvényének nevezzük. Mivel itt is a nyomás egyenesen nő a hőmérséklettel, ezért a nyomásváltozást a következő alakban is felírhatjuk:
+\begin{equation}
+    p = p_0 (1 + \beta \Delta T)
+\end{equation}
+Ahol $p_0$ a kezdeti nyomás, $\Delta T$ a hőmérsékletváltozás, és $\beta$ itt is a tágulási együttható.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{imgs/5-tetel/idealisgaz.png}
+    \caption{Ideális gáz állapotváltozásai izobár és izochor folyamatok esetén}
+\end{figure}
+definíció szerint amelyik gáz ezeket az összefüggéseket követi, azt ideális gáznak nevezzük. Ehhez a Hélium és a Hidrogén áll a legközelebb, de a legtöbb gáz normál körülmények között ideális gáznak tekinthető.
+
+Ezt a három törvényt összegezve vegyünk egy $V_0$, $p_0$, $T_0$ kezdeti állapotú ideális gázt, és nézzük meg, hogyan változik ha növelem a hőmérsékletét izochor rendszerben. 
+Ekkor felírhatjuk, hogy a nyomás a következőképpen változik, Gay-Lussac második törvénye alapján:
+\begin{equation}
+    p_1 = p_0 (1 + \beta \Delta T)
+\end{equation}
+Ezt beírva a Boyle-Mariotte törvényébe:
+\begin{equation}
+    pV = p_1 V_0 = p_0 V_0(1 + \beta \Delta T)
+\end{equation}
+Definiáljunk ehhez egy új hőmérsékleti skálát, amit abszolút hőmérsékletnek nevezünk, és jelölése $T$. Ekkor a kezdeti hőmérsékletet a következőképpen írhatjuk fel:
+\begin{equation}
+    T := \Delta T + \frac{1}{\beta}
+\end{equation}
+Tehát a hőmérséklet változás:
+\begin{equation}
+    \Delta T = T - \frac{1}{\beta}
+\end{equation}
+Ezt beírva a nyomás kifejezésébe:
+\begin{equation}
+    pV = p_0 V_0 \beta T
+\end{equation}
+Ez pedig egy mérhető mennyiség, hisz a $p_0$, $V_0$ és $\beta$ ismertek. Most definiáljuk az egyetemes gázállandót:
+\begin{equation}
+    n \cdot R := p_0 V_0 \beta
+\end{equation}
+Ahol $R$ az egyetemes gázállandó és $n$ a gáz anyagmennyiségét jelöli. Így az ideális gáz állapotegyenlete a következő alakot ölti:
+\begin{equation}
+    pV = nRT
+\end{equation}
+Itt a $T$ pedig a Kelvin skála aminek a 0 pontja az abszolút nulla hőmérséklet ($-273.15\degree C$). Ez a skála azért hasznos, mert a termodinamika törvényei csak ezen a skálán érvényesek.
+Az $n$-t pedig úgy tudjuk kiszámolni, hogy elosztjuk a gáz tömegét a moláris tömegével:
+\begin{equation}
+    n = \frac{m}{M} = \frac{N}{N_A}
+\end{equation}
+Ahol $m$ a gáz tömege kilogrammban, és $M$ a moláris tömege kilogramm per mol-ban, $N$ a részecskék száma és $N_A$ az Avogadro-szám ($N_A \approx 6.022 \times 10^{23} \frac{1}{mol}$).
+
+Ezzel a levezetéssel csak két probléma van. Egyrészt nincsen ideális gáz, másrészt egy bizonyos hőmérséklet alatt minden gáz kondenzálódik, ahol ez már nem érvényes.
+Ezért ezt a közelítést csak normál körülmények között és alacsony nyomáson lehet alkalmazni.
+
+\subsubsection{Termodinamikai állapotjelzők}
+A termodinamikában rendszereket vizsgálunk amiket különböző dolgoktól függnek, de a legegyszerűbb eset az "egyszerű rendszer", ami izotróp, homogén és egyfázisú. Emellett a belső folyamatai is elhanyagolhatóak és nincsen mágnesezettsége, töltöttsége stb.
+Ezeket a rendszereket két fajta független állapotjelzővel lehet jellemezni. Az állapotjelző nem egy axiomatikus fogalom, hanem kísérleti úton meghatározott.
+Az állapotjelző egy olyan fizikai mennyiség ami egy adott rendszer makroszkopikusállapotát jellemzi, és csak a rendszer jelenlegi állapotától függ, nem pedig attól, hogy hogyan jutott el oda. 
+Emelett egy állapotban egyértelműen meghatározottak. Emellett végtelen sok állapotjelző van, hisz minden állapotjelző tetszőleges függvénye is állapotjelző. Például egy ideális gáz esetén a nyomás, térfogat és hőmérséklet is állapotjelzők,
+de ezek tetszőleges kombinációja is állapotjelző lesz (pl.: $pV$, $\frac{p}{T}$, stb.). Az állapotjelzők két fajtája a következő:
+\begin{itemize}
+    \item \textbf{Intenzív állapotjelzők:} Ezek az állapotjelzők függetlenek a rendszer méretétől vagy tömegétől. Például a hőmérséklet, nyomás és sűrűség intenzív állapotjelzők.
+    \item \textbf{Extenzív állapotjelzők:} Ezek az állapotjelzők arányosak a rendszer méretével vagy tömegével. Például a térfogat, tömeg és anyagmennyiség extenzív állapotjelzők.
+\end{itemize}
+Másik fontos fogalom az \textbf{egyensúly}. Egy rendszer akkor van termodinamikai egyensúlyban, ha az állapotjelzői időben nem változnak, és a rendszer makroszkopikus tulajdonságai állandóak maradnak. Ez azt jelenti, hogy a rendszer belső folyamatai kiegyenlítődnek, és nincs nettó energia- vagy anyagáramlás a rendszer és a környezete között.
+Egy rendszer akkor van termodinamikai egyensúlyban, ha a következő feltételek teljesülnek:
+\begin{itemize}
+    \item \textbf{Mechanikai egyensúly:} A rendszerben nincs nettó erőhatás, így a nyomás minden pontban egyenlő.
+    \item \textbf{Termikus egyensúly:} A rendszer minden részén a hőmérséklet egyenlő, így nincs nettó hőáramlás.
+    \item \textbf{Kémiai egyensúly:} A rendszerben a kémiai reakciók sebességei egyenlőek, így a reakciók termékeinek és kiindulási anyagainak koncentrációi állandóak.
+\end{itemize}
+Az egyensúlyi állapotra ki lehet mondani a \textbf{termodinamika nulladik főtételét}, ami kimondja, hogy ha két rendszer egyensúlyban van egy harmadik rendszerrel, akkor azok is egyensúlyban vannak egymással. Ez a főtétel alapozza meg a hőmérséklet fogalmát, hisz ha két rendszer egyensúlyban van egy harmadik rendszerrel, akkor azok hőmérséklete is egyenlő lesz.
+\begin{equation}
+    A \Leftrightarrow B \quad \text{és} \quad A \Leftrightarrow C \quad \rightarrow \quad B \Leftrightarrow C
+\end{equation}
+Az állapotjelzők alapján lehet felírni az \textbf{állapotegyenleteket} ($f(p, V, T)$) ami kapcsolatot teremt az állapotjelzők között. Az állapotegyenletek kísérleti úton meghatározott összefüggések, amelyek leírják, hogyan változnak az állapotjelzők egymáshoz képest egy adott rendszerben. Például az ideális gáz állapotegyenlete a következő:
+\begin{equation}
+    pV = nRT \quad \quad T = \frac{pV}{nR} \quad \quad V = \frac{nRT}{p} \quad \quad \dots
+\end{equation}
+Ezeket az állapotjelzőket egy egyenletbe foglalva felírhatjuk azt az állapotfüggvényt, ami egy megkötést ad a lehetséges állapotok között:
+\begin{equation}
+    f(p, V, T) = 0
+\end{equation}
+\begin{equation}
+    pV - nRT = 0
+\end{equation}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/5-tetel/idealisgaz_felulet.png}
+    \caption{Ideális gáz állapotfelülete a $pVT$ térben}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/5-tetel/idealisgaz_felulet_2D.png}
+    \caption{Ideális gáz állapotfelülete a $pV$ térben}
+\end{figure}
+
+\subsubsection{Hőtágulás, Kompresszibilitás, Feszültség}
+A termodinamikai állapotjelzőknél láttuk, hogy a térfogat és a hőmérsékélet között van valamiféle kapcsolat. Ez ideális gázoknál egy sima egyenes arányosság,
+de a jelenség valójában minden anyagnál megfigyelhető, a szilárd anyagoknál is. Ezt a jelenséget hőtágulásnak nevezzük, és azt jelenti,
+hogy egy anyag térfogata növekszik, amikor a hőmérséklete emelkedik. Ez a jelenség a részecskék közötti kölcsönhatások miatt következik be, hisz a hőmérséklet növekedésével a részecskék gyorsabban kezdenek mozogni,
+így nagyobb távolságra kerülnek egymástól, ami a térfogat növekedéséhez vezet. A legegyszerűbb ilyen hőtágulás a \textbf{lineáris hőtágulás}, ahol az anyag mérete csak egyik irányban változik meg (fontos, hogy a "lineáris" itt nem azt jelenti, hogy a hőtágulás egyenes arányos a hőmérséklettel, hanem hogy csak egy dimenzióban történik a tágulás).
+Ez jó közelítés olyan testeknél mint egy drót vagy vasúti sín, ahol a hosszúság sokkal nagyobb mint a keresztmetszete. A lineáris hőtágulás kifejezhető a következő egyenlettel:
+\begin{equation}
+    \Delta L = \alpha L_0 \Delta T
+\end{equation}
+Ha $L_0$ kezdeti hosszúságot a $T = 0\degree K$-nél veszem, akkor $\Delta T$-t vehetem $T$-nek is, így a hosszúság a következőképpen változik meg:
+\begin{equation}
+    L = L_0 (1 + \alpha' T)
+\end{equation}
+Ahol $L$ a megváltozott hosszúság, $L_0$ a kezdeti hosszúság, $\Delta T$ a hőmérséklet változása, $\alpha$ a lineáris hőtágulási együttható ($\left[\alpha\right] = \frac{1}{K}$), ami anyagfüggő és $\alpha'$ pedig a lineáris hőtágulási együttható a $T = 0\degree K$-nél. Például az acél esetében $\alpha \approx 12 \times 10^{-6} \frac{1}{K}$, míg
+az alumínium esetében $\alpha \approx 23 \times 10^{-6} \frac{1}{K}$. Vannak anyagok amiknél bizonyos határok között a hőtágulás negatív, tehát a hőmérséklet növekedésével a térfogat csökken (pl.: víz 0 és 4 Celsius fok között).
+A $\alpha$ együtthatót általában úgy definiálják, hogy egy adott anyag hosszának relatív változását adja meg egy egységnyi hőmérséklet változásra (izobár folyamat esetén):
+\begin{equation}
+    \alpha := \frac{1}{L} \frac{\partial L}{\partial T}\bigg|_{p=\text{állandó}}
+\end{equation}
+Ekkor hosszváltozást behelyettesítve:
+\begin{equation}
+    \alpha = \frac{1}{L} L_0 \alpha = \frac{L_0 \alpha '}{L_0(1 + \alpha' T)} = \frac{\alpha'}{1 + \alpha' T} 
+\end{equation}
+Mivel $\alpha$ általában kicsi, ezért a nevező közelítőleg 1 lesz, így $\alpha \approx \alpha'$.
+
+\subsubsection*{Térfogati hőtágulás}
+A a test minden irányába kiterjesztjük a tágulást akkor lineáris hőtágulás helyett \textbf{térfogati hőtágulásról} beszélünk. Ebben az esetben a hőtágulási együtthatót a következő módon tudom definiálni:
+\begin{equation}
+    \beta := \frac{1}{V} \frac{\partial V}{\partial T}\bigg|_{p=\text{állandó}} \quad \quad \left[\beta\right] = \frac{1}{K}
+\end{equation}
+Ekkor a térfogatváltozást a következőképpen tudom kifejezni:
+\begin{equation}
+    V = V_0 (1 + \beta T)
+\end{equation}
+Ahol $V_0$ a kezdeti térfogat, $V$ a megváltozott térfogat, és $\Delta T$ a hőmérséklet változása. Ha a test izotróp, akkor a lineáris hőtágulással is felírhatjuk a térfogatváltozást:
+\begin{equation}
+    \begin{aligned}
+        V &= L^3 = L_0^3 (1 + \alpha' \Delta T)^3 = V_0 (1 + \alpha' \Delta T)^3 = \\
+        &= V_0 (1 + 3\alpha' \Delta T + \alpha'^2 \dots)  \\
+        &\approx V_0 (1 + 3\alpha' \Delta T) = V_0 (1 + \beta \Delta T) \\
+        &\rightarrow \beta = 3 \alpha'
+    \end{aligned}
+\end{equation}
+
+Ha ezt az ereményt megnézzük ideális gázok esetén, akkor a térfogatváltozást a következőképpen tudjuk kifejezni:
+\begin{equation}
+    V = \frac{nR}{p} T
+\end{equation}
+Ebből a térfogati hőtágulási együttható:
+\begin{equation}
+    \beta = \frac{1}{V} \frac{\partial V}{\partial T}\bigg|_{p} = \frac{1}{V} \frac{nR}{p} = \frac{p}{nRT} \cdot \frac{nR}{p} = \frac{1}{T}
+\end{equation}
+Tehát ideális gázok esetén a térfogati hőtágulási együttható fordítottan arányos a hőmérséklettel, vagyis minél magasabb a hőmérséklet, annál kisebb a térfogati hőtágulás mértéke.
+
+\subsubsection*{Kompresszibilitás}
+A kompresszibilitás egy anyag azon tulajdonsága, hogy mennyire képes csökkenteni a térfogatát egy adott nyomásnövekedés hatására. A kompresszibilitást a következőképpen definiáljuk:
+\begin{equation}
+    \kappa := -\frac{1}{V} \frac{\partial V}{\partial p}\bigg|_{T=} \quad \quad \left[\kappa\right] = \frac{1}{Pa} = \frac{m^2}{N}
+\end{equation}
+Ahol $V$ a térfogat, $p$ a nyomás, és a negatív előjel biztosítja, hogy a kompresszibilitás pozitív legyen, mivel a térfogat csökken a nyomás növekedésével. Például a víz kompresszibilitása körülbelül $\kappa \approx 4.6 \times 10^{-10} \frac{1}{Pa}$, míg a levegő kompresszibilitása sokkal nagyobb, körülbelül $\kappa \approx 1.0 \times 10^{-5} \frac{1}{Pa}$.
+Az ideális gázok esetén a kompresszibilitás a következőképpen számítható ki az ideális gáz állapotegyenletéből:
+\begin{equation}
+    pV = nRT \quad \rightarrow \quad V = \frac{nRT}{p}
+\end{equation}
+Ebből a kompresszibilitás:
+\begin{equation}
+    \kappa = -\frac{1}{V} \frac{\partial V}{\partial p}\bigg|_{T} = -\frac{1}{V} \left(-\frac{nRT}{p^2}\right) = \frac{1}{p}
+\end{equation}
+Tehát ideális gázok esetén a kompresszibilitás fordítottan arányos a nyomással, vagyis minél magasabb a nyomás, annál kisebb a kompresszibilitás mértéke.
+
+\subsubsection*{Feszültségi együttható}
+A feszültségi együttható egy anyag azon tulajdonsága, mennyire változik meg a nyomás benne ha fixen tartjuk a térfogatát és változtatjuk a hőmérsékletét.
+Ilyen lehet például egy üvegedény aminek hirtelen felmelegítünk, de a kristályos szerkezete miatt a térfogata nem tud változni. Ilyenkor az üveg falában megnő a feszültség, ami idővel eltöri az edényt.
+Hasonló probléma tud fellépni a vonatsíneknél is, ha a sín hőmérséklete nagyon megemelkedik, de a sín nem tud tágulni a rögzítések miatt. Ekkor a sínben nagy feszültség keletkezik, ami akár a sín deformálódásához vagy eltöréséhez is vezethet.
+Továbbá a hosszú villanyvezetékeket is ezért "lógatják" le, hogy legyen hely a hőtágulásra, különben a nyári melegben a vezetékek elszakadhatnának a nagy feszültség miatt. 
+A feszültségi együtthatót a következőképpen definiáljuk:
+\begin{equation}
+    \gamma := \frac{1}{p} \frac{\partial p}{\partial T}\bigg|_{V} \quad \quad \left[\gamma\right] = \frac{1}{K}
+\end{equation}
+Ahol $p$ a nyomás, $T$ a hőmérséklet, és $V$ a térfogat. Például a víz feszültségi együtthatója körülbelül $\gamma \approx 0.2 \frac{N}{m^2}$, míg a levegő feszültségi együtthatója sokkal kisebb, körülbelül $\gamma \approx 0.0001 \frac{N}{m^2}$.
+Az ideális gázok esetén a feszültségi együttható a következőképpen számítható ki az ideális gáz állapotegyenletéből:
+\begin{equation}
+    pV = nRT \quad \rightarrow \quad p = \frac{nRT}{V}
+\end{equation}
+Ebből a feszültségi együttható:
+\begin{equation}
+    \gamma = \frac{1}{p} \frac{\partial p}{\partial T}\bigg|_{V} = \frac{1}{p} \left(\frac{nR}{V}\right) = \frac{1}{\frac{nRT}{V}} \cdot \frac{nR}{V} = \frac{1}{T}
+\end{equation}
+Tehát ideális gázok esetén a feszültségi együttható fordítottan arányos a hőmérséklettel, vagyis minél magasabb a hőmérséklet, annál kisebb a feszültségi együttható mértéke.
+
+\subsubsection*{Összefüggés az együtthatók között}
+Láttuk, hogy ezek az együtthatók mind a gázok pár alapvető állapotjelzőjével definiálható egységek. És mivel ezek az állapotjelzők függnek egymástól, ezért az együtthatók között is van összefüggés. Ezt az összefüggést a következőképpen tudjuk levezetni:
+Vegyük egy tetszőleges gáz állapotegyenletét:
+\begin{equation}
+    f(p, V, T) = 0
+\end{equation}
+Ezt fel tudjuk rajzolni egy háromdimenziós felületként a $PVT$ térben. Ebből a felületből ki tudunk választani egy görbét, ami egy adott állapotváltozást ír le.
+Ezt a görbét paraméterezhetjük egy paraméterrel, például $t$-vel:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/5-tetel/termodinamika_felulet.png}
+    \caption{Állapotegyenlet felülete és egy állapotváltozást leíró görbe}
+\end{figure}
+
+Ekkor a paraméterekre a következő összefüggéseket lehet felírni:
+\begin{equation}
+    \begin{aligned}
+        p &= P(t, v) \\
+        v &= V(p, t) \\
+        t &= T(p, v)
+    \end{aligned}
+\end{equation}
+Itt nagy $P$-vel jelöljük a nyomást, és kis $p$-vel a a paramétert amit kiválasztunk. Ez olyan mint ha különböző irányokból néznénk a felületet, és minden irányból más-más függvényt kapunk. Ezekből a függvényekből ki tudjuk számolni hogy hogyan változik egy adott állapotjelző, ha a másik kettőt fixen tartjuk.
+Felírhatjuk azt is, hogy egy adott $t-v$ helyen mekkora a $p$ értéke:
+\begin{equation}
+    p = P(t, v)
+\end{equation}
+Ha pedig megnézem, hogy $v-t$ helyen mekkora a $V$ értéke:
+\begin{equation}
+    v = V(p, t)
+\end{equation}
+Viszont az előző egyenletből tudom, hogy $p = P(t, v)$, így a $V$ értékét is ki tudom számolni:
+\begin{equation}
+    v = V(P(t, v), t)
+\end{equation}
+Ez pedig egy azonosság, ami minden $t$-re igaz. Ebben benne van a két állapotjelző függvénye, és $t$ és $v$ a paraméterek. Nézzük meg, hogy mi történik, ha a $v$-t változtatjuk, miközben $t$-t fixen tartjuk:
+\begin{equation}
+    \frac{\partial}{\partial v} \left[V(P(t, v), t)\right] = \frac{\partial v}{\partial v}
+\end{equation}
+Láncszabály szerint kifejtve:
+\begin{equation}
+    \frac{\partial V}{\partial p}\bigg|_{t} \cdot \frac{\partial P}{\partial v}\bigg|_{t} + \frac{\partial V}{\partial t}\bigg|_{p} \cdot \frac{\partial t}{\partial v}\bigg|_{t} = 1
+\end{equation}
+Mivel $t$-t fixen tartjuk, ezért a második tag nullává válik, így marad:
+\begin{equation}
+    \frac{\partial V}{\partial p}\bigg|_{t} \cdot \frac{\partial P}{\partial v}\bigg|_{t} = 1
+\end{equation}
+\begin{equation}
+    \frac{\partial V}{\partial p}\bigg|_{t} = \frac{1}{\frac{\partial P}{\partial v}\big|_{t}}
+\end{equation}
+Ha visszahelyettesítjük az eredeti összefüggéseket:
+\begin{equation}
+    \frac{\partial V}{\partial P}\bigg|_{T} = \frac{1}{\frac{\partial p}{\partial V}\big|_{T}}
+\end{equation}
+Ezt hívják inverz-függvény tételnek. Ugyanezt meg tudjuk csinálni a többi állapotjelzővel is, tehát összességében három ilyen összefüggést kapunk:
+\begin{equation}
+    \begin{aligned}
+        \frac{\partial V}{\partial P}\bigg|_{T} &= \frac{1}{\frac{\partial p}{\partial V}\big|_{T}} \\
+        \frac{\partial T}{\partial P}\bigg|_{V} &= \frac{1}{\frac{\partial p}{\partial T}\big|_{V}} \\
+        \frac{\partial T}{\partial V}\bigg|_{P} &= \frac{1}{\frac{\partial V}{\partial T}\big|_{P}} 
+    \end{aligned}
+\end{equation}
+\begin{equation}
+    \frac{\partial}{\partial t} \left[V(P(t, v), t)\right] = \frac{\partial v}{\partial t}
+\end{equation}
+Láncszabály szerint kifejtve:
+\begin{equation}
+    \frac{\partial V}{\partial p}\bigg|_{t} \cdot \frac{\partial P}{\partial t}\bigg|_{v} + \frac{\partial V}{\partial t}\bigg|_{p} \cdot \frac{\partial t}{\partial t}\bigg|_{v} = 0
+\end{equation}
+A $\frac{\partial t}{\partial t}\big|_{v} = 1$, így marad:
+\begin{equation}
+    \frac{\partial V}{\partial p}\bigg|_{t} \cdot \frac{\partial P}{\partial t}\bigg|_{v} + \frac{\partial V}{\partial t}\bigg|_{p} = 0
+\end{equation}
+Tehát a megoldás:
+\begin{equation}
+     \frac{\partial V}{\partial p}\bigg|_{t} \cdot \frac{\partial P}{\partial t}\bigg|_{v} = - \frac{\partial V}{\partial t}\bigg|_{p}
+\end{equation}
+Itt az inverz-függvény tételt is alkalmazva és a paramétereket visszahelyettesítve kapjuk:
+\begin{equation}
+     \frac{\partial V}{\partial P}\bigg|_{T} \cdot \frac{\partial P}{\partial T}\bigg|_{V} = - \frac{1}{\frac{\partial T}{\partial V}\big|_{P}}
+\end{equation}
+Ezt átrendezve a következőt kapjuk:
+\begin{equation}
+     \frac{\partial V}{\partial P}\bigg|_{T} \cdot \frac{\partial P}{\partial T}\bigg|_{V} \cdot \frac{\partial T}{\partial V}\bigg|_{P} = -1
+\end{equation}
+Ebből az egyenletből ki tudjuk fejezni az együtthatókat:
+\begin{equation}
+    \begin{aligned}
+        \kappa &= -\frac{1}{V} \frac{\partial V}{\partial P}\bigg|_{T} \\
+        \gamma &= \frac{1}{P} \frac{\partial P}{\partial T}\bigg|_{V} \\
+        \beta &= \frac{1}{V} \frac{\partial V}{\partial T}\bigg|_{P}
+    \end{aligned}
+\end{equation}
+Ezeket beírva az előző egyenletbe:
+\begin{equation}
+    -V\kappa \cdot p\gamma \cdot \frac{1}{V\beta} = -1
+\end{equation}
+Ebből pedig az együtthatók közötti összefüggést kapjuk:
+\begin{equation}
+   \beta = \kappa \gamma p
+\end{equation}
+
+\subsubsection{Kinetikus Gázelmélet - Kinetikus modell}
+Az ideális gáz esetben feltételeztük, hogy a gáz részecskéi kis kitejedésűek és a köztük lévő külcsünhatások nagyon rövidtávúak. Tehát a gáz részecskéi csak akkor tudnak interaktálni, ha ütköznek egymással.
+Emiatt az ideális gázt elképzelhetjük úgy, mint egy nagy számú kis golyó, amelyek folyamatosan mozognak és ütköznek egymással. Ezt a modellt hívjuk kinetikus gázelméletnek vagy kinetikus modellnek.
+Ebben a modellben a gáz részecskéi véletlenszerűen mozognak, és az ütközések során energiát és lendületet cserélnek egymással. A gáz nyomása a részecskék ütközéseinek eredménye az edény falával, míg a hőmérséklet a részecskék átlagos kinetikus energiájával van összefüggésben.
+Ennek a modellnek adhatunk egy valószínűségi értelmezést is. Például a nyomást értelmezhetjük úgy is mint annak a valószínűségét, hogy egy adott részecske ütközik az edény falával egy adott időintervallumban.
+A hőmérséklet pedig annak a valószínűségét jelenti, hogy egy adott részecske rendelkezik egy bizonyos kinetikus energiával:
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7\textwidth]{imgs/5-tetel/kinetikus_model_eloszlas.png}
+    \caption{Kinetikus gázelmélet részecske sebesség eloszlása}
+\end{figure}
+Ezt az eloszlást Maxwell-Boltzmann eloszlásnak nevezzük, és azt mutatja meg, hogy a gáz részecskéi milyen sebességgel rendelkeznek egy adott hőmérsékleten. Az eloszlás csúcsa a legvalószínűbb sebességet jelöli, míg a szélessége azt mutatja meg, hogy mennyire változatosak a részecskék sebességei.
+Ezek alapján a kinetikus gázelméletre 6 darab feltételezést lehet felírni:
+\begin{itemize}
+    \item A gáz részecskéi pontszerűek, tömegük $\nu$
+    \item Nincs kölcsönhatás a részecskék között, kivéve az ütközéseket
+    \item Minden részecske $v$ sebességgel mozog (mint ha a Boltzmann eloszlás egy Dirac-delta lenne) - nem szükséges de egyszerűség kedvéért feltesszük (másképpen megfogalmazva, a részecskék átlagos sebessége $v$)
+    \item Az ütközések rugalmasak
+    \item $V$ térfogatban $N$ darab részecske van
+    \item A részeckék helyzete és sebessége között nincs korreláció
+\end{itemize}
+Ezek alapján vegyünk egy dobozt, amiben egy ideális gáz van:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/5-tetel/kinetikus_model_doboz.png}
+    \caption{Kinetikus gázelmélet doboz modell}
+\end{figure}
+Próbáljuk meg kiszámolni, hogy a gáz részecskéi milyen nyomást gyakorolnak a doboz falára. Azt tudjuk, hogy amikor as részecske $v$ sebességgel $x$ irányba nekiütközik a falnak, akkor a falra ható erő:
+\begin{equation}
+    F_x = \frac{\Delta I_x}{\Delta t}
+\end{equation}
+Itt $I$-vel jelüljük az impulzust, hogy a nyomás jelölésével ne keverjük össze. Bontsuk fel a dobozt is egységekre, úgyhogy egy kis doboz-szelet szélessége pont $v\delta t$m vagyis 
+pont akkora, amekkorát a részecske egy időegység alatt megtesz. A részecske impulzusváltozása az ütközés során:
+\begin{equation}
+    |\Delta I_x| = |I_{x, \text{ütközés után}} - I_{x, \text{ütközés előtt}}| = |-\nu v - (\nu v)| = 2\nu v
+\end{equation}
+Ahol $\nu$ a részecske tömege. Már csak az a kérdés, hogy egy időegység alatt hányszor ütközik a részecske a fallal. Mivel időegység alatt csak az a részecske ütközik a fallal, ami a kis doboz-szeletben van, 
+és azok közül is csak az, amelyiknek $x$ irányú sebessége van. Tehát az ütközések száma időegység alatt:
+\begin{equation}
+    \Delta n = v \Delta t \cdot A \cdot \varrho \cdot \frac{1}{6}
+\end{equation}
+Ahol $A$ a doboz fala, $\varrho$ a részecskék sűrűsége ($\varrho = \frac{N}{V}$), és az $\frac{1}{6}$ azért van, mert a részecskék hat irányba mozgáshatnak egyenlő valószínűséggel (mivel függetlenek egymástól és véletlenszerűen mozognak), de csak a pozitív $x$ irányú sebességgel rendelkező részecskék ütköznek a fallal.
+Tehát az impulzusváltozás időegység alatt:
+\begin{equation}
+    \Delta I_x = \Delta n \cdot 2\nu v = -2\nu v \cdot v \Delta t \cdot A \cdot \varrho \cdot \frac{1}{6}
+\end{equation}
+Innen a nyomás:
+\begin{equation}
+        P = \frac{F_x}{A} = \frac{1}{3} \nu \varrho v^2 = \frac{2}{3} \frac{1}{2} \frac{N}{V} \nu v^2
+\end{equation}
+\begin{equation}
+    P V = \frac{2}{3} N \cdot \underbrace{\frac{1}{2} \nu v^2}_{E_{kin}}
+\end{equation}
+Ahol $E_{kin}$ a részecskék átlagos kinetikus energiája. Ebből látható, hogy a nyomás és a térfogat szorzata arányos a részecskék összes kinetikus energiájával. Ebből az összefüggésből ki tudjuk fejezni a részecskék átlagos kinetikus energiáját is:
+\begin{equation}
+    E_{kin} = \frac{3}{2} \frac{P V}{N}
+\end{equation}
+Ha az ideális gáz állapotegyenletét is felhasználjuk, akkor:
+\begin{equation}
+    E_{kin} = \frac{3}{2} \frac{n R T}{N} = \frac{3}{2} k_B T
+\end{equation}
+Ahol $k_B$ a Boltzmann állandó ($k_B = \frac{R}{N_A}$). Ebből látható, hogy a részecskék átlagos kinetikus energiája csak a hőmérséklettől függ, és független a nyomástól és a térfogattól. Ez azt is jelenti, hogy a hőmérséklet egy mértéke a részecskék átlagos kinetikus energiájának.
+Ebből pedig a rendszer teljes energiája:
+\begin{equation}
+    E = N \cdot E_{kin} = \frac{3}{2} N k_B T = \frac{3}{2} pV
+\end{equation}
+Ez viszont nem teljesen igaz, mert lehetnének további energia komponensek is, például egy két atomos molekulánál a belső energia tartalmazhatna forgási és rezgési energiákat is, viszont a nyomás továbbra is csak a kinetikus energiától függ.
+Ezt az ekvipartíció-tétellel tudjuk figyelembe venni, ami kimondja, hogy minden szabadsági fokra egyenlő mértékben oszlik el az energia. Tehát ha egy részecskének $f$ szabadsági foka van, akkor az átlagos energiája:
+\begin{equation}
+    E = \frac{f}{2} k_B T
+\end{equation}
+Így a teljes energia pedig:
+\begin{equation}
+    E = N \cdot E_{kin} = \frac{f}{2} N k_B T = \frac{f}{2} pV
+\end{equation}
+A szabadsági fokok a részecskék összetételétől és köztük lévő kölcsönhatásoktól függenek. Például egy egyatomos gáz esetén csak a három transzlációs szabadsági fok van jelen, így $f = 3$. Egy kétatomos molekulánál viszont már vannak forgási és rezgési szabadsági fokok is, így $f$ értéke nagyobb lehet (például $f = 5$ vagy $f = 7$). 
+Szilárd anyagoknál általában $f = 6$ (három transzlációs és három rezgési szabadsági fok).
+
+Ez a kinetikus kázelmélet alapján le lehet vonni a konklúziót, hogy a hőmérséklet tulajdonképpen rendezetlen mozgás.
+
+\subsubsection*{Van Der Waals állapotegyenlet}
+Az ideális gáz állapotegyenletét úgy kaptuk meg, hogy feltételeztük, hogy a gáz részecskéi pontszerűek és nincs kölcsönhatás közöttük. Viszont a valóságban a gáz részecskéi rendelkeznek véges térfogattal és kölcsönhatásban állnak
+egymással, például vonzó erők hatnak rájuk. Ekkor azt tudjuk csinálni, hogy vesszük a $pV$ állapotegyenlet által meghatározott görbét, és elkezdem csökkenteni a térfogatot, miközben a részecskék száma és a hőmérséklet fix.
+Ha a részecskéknek van kiterjedése (és feltesszük, hogy összenyomhatatlanok), akkor van egy minimum térfogat, ami alá nem lehet csökkenteni, mert a részecskét az összes rendelkezésre álló teret kitöltik.
+Ekkor módosíthatjuk az állapotegyenletet úgy, hogy a térfogatból kivonjuk a részecskék által elfoglalt térfogatot:
+\begin{equation}
+    p (V - b n) = n R T
+\end{equation}
+Ahol $b$ egy anyagfüggő állandó, ami a részecskék kiterjedését veszi figyelembe. Például a hidrogén esetében $b \approx 0.0265 \frac{L}{mol}$, míg a nitrogén esetében $b \approx 0.0391 \frac{L}{mol}$.
+Ezen felül feltételezhetjük hogy a részecskék között kölcsönhatás is van. Ez általában vonzó erő, ami csökkenti a részecskék közötti távolságot, így a nyomást is csökkenti.
+Ezt úgy tudjuk figyelembe venni, hogy a nyomásból levonunk egy olyan tagot, ami a részecskék közötti kölcsönhatást veszi figyelembe. De hogyan becsüljük meg, hogy mekkora ez a tag?
+Gondoljunk arra, hogy a részecskék közötti kölcsönhatás erőssége arányos a részecskék sűrűségének négyzetével, hisz minél több részecske van egy adott térfogatban, annál nagyobb az esélye annak, hogy két részecske kölcsönhatásba lépjen egymással.
+Tehát ennek a korrekciós tagnak arányosnak kell lennie a részecskék sűrűségével:
+\begin{equation}
+    f_1 \sim \varrho = \frac{n}{V}
+\end{equation}
+Mivel a nyomás egy erő per egység terület, ezért az erő is arányos kell legyen a részecskék sűrűségével, viszont ha veszek egy kis felületet a dobozban és megnézem, hogy mennyi erő hat rá a részecskék közötti kölcsönhatás miatt, akkor az erőnek arányosnak kell lennie a felület mögötti részecskék számával is. Tehát az erőnek arányosnak kell lennie a részecskék sűrűségének négyzetével:
+\begin{equation}
+    f_2 \sim \varrho^2 = \left(\frac{n}{V}\right)^2
+\end{equation}
+Tehát a "nyomása" a részecskék közötti kölcsönhatásnak arányosnak kell lennie a részecskék sűrűségének négyzetével:
+\begin{equation}
+    \frac{F}{A} = a \varrho^2 = a \left(\frac{n}{V}\right)^2
+\end{equation}
+Ahol $a$ egy arányossági tényező. Innen tehát a nyomás:
+\begin{equation}
+    p_{\text{mért}} = p_{\text{valós}} - a \left(\frac{n}{V}\right)^2
+\end{equation}
+Tehát amikor a nyomást megmérem, akkor ezt fogom kapni, ezért a tényleges nyomást úgy tudom kifejezni, hogy hozzáadom ezt a korrekciós tagot:
+\begin{equation}
+    p_{\text{valós}} = p_{\text{mért}} + a \left(\frac{n}{V}\right)^2
+\end{equation}
+Ezt a két korrekciós tagot be tudom helyettesíteni az ideális gáz állapotegyenletébe, így megkapom a Van Der Waals állapotegyenletét:
+\begin{equation}
+    \left(p + a \frac{n^2}{V^2}\right) (V - b n) = n R T
+\end{equation}
+Ahol $a$ és $b$ anyagfüggő állandók, amelyek a részecskék közötti kölcsönhatást és kiterjedést veszik figyelembe. Például a hidrogén esetében $a \approx 0.244 \frac{L^2 \cdot atm}{mol^2}$ és $b \approx 0.0265 \frac{L}{mol}$, míg a
+nitrogén esetében $a \approx 1.370 \frac{L^2 \cdot atm}{mol^2}$ és $b \approx 0.0391 \frac{L}{mol}$. Ezeket a konstansokat úgy tudjuk meghatározni,
+hogy ha felrajzoljuk a Van Der Waals izotermákat, akkor van egy kritikus pont, ahol a görbe inflexiós ponttá válik. Ebből a kritikus pontból ki tudjuk számolni az $a$ és $b$ értékét:
+\begin{equation}
+    \begin{aligned}
+        a &= 3\frac{p_c V_c^2}{n^2} \\
+        b &= \frac{V_c}{3n} \\
+        R &= \frac{8}{3} \frac{p_c V_c}{T_c n}
+    \end{aligned}
+\end{equation}
+Ahol $T_c$, $V_c$ és $p_c$ a kritikus hőmérséklet, térfogat és nyomás. Ez a kritikus pont az a pont, ahol a gáz és folyadék fázisok közötti határvonal eltűnik, és a gáz és folyadék fázisok egyetlen fázisba olvadnak össze, amit szuperkritikus fluidumnak nevezünk.
+Ezt visszahelyettesítve a Van Der Waals állapotegyenletébe kapjuk:
+\begin{equation}
+    \left(p + 3\frac{p_c V_c^2}{n^2} \frac{n^2}{V^2}\right) \left(V - \frac{V_c}{3n} n\right) = n R T
+\end{equation}
+Ahol bevezethetjük a redukált változókat is:
+\begin{equation}
+    \begin{aligned}
+       p_r &= \frac{p}{p_c} \\
+       V_r &= \frac{V}{V_c} \\
+       T_r &= \frac{T}{T_c}
+    \end{aligned}
+\end{equation}
+Így a Van Der Waals állapotegyenlet redukált formája:
+\begin{equation}
+    \left(p_r + \frac{3}{V_r^2}\right) \left(3 V_r - 1\right) = 8 T_r
+\end{equation}
+Ezzel a relatív skálával az összes gáz állapotegyenletét azonos alakra tudjuk hozni, így könnyebben összehasonlíthatók egymással.
+
+Ez a kritikus pont a fázisátalakulások vizsgálata során lesz rendkívül fontos, hiszen ez a pont alatt kezd el a gáz folyadékká kondenzálódni.
+
+\subsection{Nyílt és zárt folyamatok, Carnot-folyamat, Főtételek}
+Most, hogy megértettük a hőmérséklet fizikai értelmezését, nézzük meg, hogy hogyan viselkednek a termodinamikai rendszerek különböző folyamatok során.
+Azt tudjuk, hogy a hő egy intenzív állapotjelző, ami azt jelenti, hogy ha két rendszert összakapcsolunk, amelyeknek különböző a hpmérséklete, akkor a hő megpróbál kiegyenlítődni.
+Ez azt jelenti, hogy a hő valamilyen formán képes áramolni és ennek a jellemzésére vezette be a "kalória" mértékegységet Nicolas Clément 1824-ben. A kalóriát ő 
+úgy definiálta, hogy az 1 gramm víz hőmérsékletét 1 Celsius fokkal emeli meg. Ebből adódóan a kalória egy energia mértékegység is, hiszen a hőenergia mértékegysége.
+Később aztán James Prescott Joule-nak sikerült kimutatnia, hogy súrlódás segítségével mechanikai munkát is át lehet alakítani hővé, ebből pedig kiderült,
+hogy a hőmérsékletet át lehet váltani energiává és fordítva. A kettő közötti pontos relációt a Joule-féle kísérlet alapján határozták meg, ahol azt mérték, hogy
+egy edényben lévő vizet mennyire tudnak felmelegíteni egy súly segítségével, ami leesik és a vízben lévő lapátokat forgatja. Ebben a kísérletben a súly által végzett
+$mgh$ munka átalakult rotációs munkává ($\tau \theta$, ahol $\tau$ a forgatónyomaték, $\theta$ pedig a szögelfordulás), ami pedig hővé alakult át a vízben. Ebből pedig pontosan meg tudták határozni a mechanikai munka és a hő közötti átváltási tényezőt, amit Joule-féle állandónak neveznek:
+\begin{equation}
+    1 \text{ cal} = 4.186 \text{ J}
+\end{equation}
+Ez azt jelenti, hogy 1 kalória hőenergia 4.186 Joule mechanikai munkának felel meg. Ebből adódóan a hőmennyiség mértékegysége a Joule is lehet, és a hőmennyiség jele $Q$.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/5-tetel/joule_kiserlet.jpeg}
+    \caption{Joule-féle kísérlet a mechanikai munka és hő közötti átváltás kimutatására}
+\end{figure}
+
+\subsubsection{Temodinamika I. főtétele}
+Most, hogy láttuk, hogy a hőmennyiség és a munka között van kapcsolat, nézzük meg, hogy hogyan viselkedik egy termodinamikai rendszer, amikor hőt vesz fel vagy ad le, illetve amikor munkát végez vagy végeztetnek vele.
+Nézzünk meg egy abiatikusan zárt rendszert, ami azt jelenti, hogy a rendszer nem tud hőt cserélni a környezetével, de munkát tud végezni vagy végeztetnek vele:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/5-tetel/adiabatikus_zart_rendszer.png}
+    \caption{Adiabatikus zárt rendszer}
+\end{figure}
+Ebben az esetben a rendszer belső energiája csak a munkavégzés miatt változik meg. Viszont többféle munkavégzés is lehetséges, például lehet egy propeller bent ami kavarja a folyadékot,
+vagy egy réz drót amin áramot keringetek, de lehet egy dugattyú is, amivel a térfogatot tudom változtatni. Nézzük meg, hogy hogyan tudjuk kifejezni a dugattyúval végzett munkát.
+Tegyük fel, hogy a dugattyú egy kis elmozdulást végez $\Delta s$-szel, miközben a dugattyú keresztmetszete $A$. Ekkor a dugattyú által végzett munka:
+\begin{equation}
+    W = F \cdot \Delta s
+\end{equation}
+Ahol $F$ a dugattyúra ható erő. Ezt az erőt pedig ki tudjuk fejezni a nyomás segítségével:
+\begin{equation}
+    F = p \cdot A
+\end{equation}
+Ezt visszahelyettesítve a munkára:
+\begin{equation}
+    W = p \cdot A \cdot \Delta s
+\end{equation}
+Az $A \cdot \Delta s$ pedig a dugattyú által elmozdított térfogat, vagyis $\Delta V$:
+\begin{equation}
+    W = p \cdot \Delta V
+\end{equation}
+Ha a dugattyút összenyomjuk, akkor a térfogat csökken, így a dugattyú által végzett munka negatív lesz:
+\begin{equation}
+    W = - p \cdot \Delta V
+\end{equation}
+Ez akkor igaz, ha lassan nyomom be a dugattyút, mert akkor a folyamat kvázi-statikus lesz. Ha gyorsan nyomom be, akkor turbulens áramlás alakulhat ki, és a munka nem csak a térfogatváltozás miatt fog megváltozni.
+Most vegyük fel a $pV$ grafikont, és jelöljünk ki rajta két pontot ($A$, $B$):
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/5-tetel/pV_diagram_1.png}
+    \caption{$pV$ diagram két állapot között}
+\end{figure}
+Mivel nem tudjuk pontosan milyen anyag van a rendszerben ezért nem tudjuk, pontosan hogyan változik a nyomás a térfogat függvényében. A kezdő és a végpontját viszont ismerjük.
+Viszont fel tudok venni olyan $B$ pontot, ahová kvázisztatikusan nem tudom eljuttatni a rendszert, csak mondjuk egy $C$ pontba. Ekkor jönnek be az extra
+munkát végezni képes dolgok mint a propeller vagy a fűtőszál, amikkel "fel tudom tolni" a rendszert a $B$ pontba:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/5-tetel/pV_diagram_2.png}
+    \caption{$pV$ diagram két állapot között, extra munkavégzéssel}
+\end{figure}
+A kvázisztatikus munkavégzést a $A \to C$ úton tudom kiszámolni, hogy a $pV$ függvény alatti területet meghatározom:
+\begin{equation}
+    \delta W = - p dV
+\end{equation}
+\begin{equation}
+    W_{A \to C} = \int_{V_A}^{V_C} - p dV
+\end{equation}
+Azt meg hogy mennyi extra munkát végeztem a $C \to B$ úton, azt külön meg tudom mérni, például Joule módszerével. Így a teljes munka:
+\begin{equation}
+    W_{A \to B} = W_{A \to C} + W_{C \to B}
+\end{equation}
+De ebbe a $B$ állapotba nem csak úgy tudok eljutni, hogy összenyomom a dugattyút majd melegítek, hanem úgy is, hogy először melegítek, majd összenyomom a dugattyút,
+vagy nyomok egy kicsit, melegítek egy kicsit majd megint nyomok stb. Tehát a $B$ állapotba végtelen úton el tudok jutni, és az, hogy melyik úton teszem,
+nem befolyásolja a teljes munkavégzés értékét. Ez a termodinamika I. főtétele, ami kimondja, hogy:
+ \begin{center}
+    \textbf{Termodinamika I. főtétele:} \\
+    \emph{Egy abiatikusan zárt rendszer esetén, ha a rendszer A-ból B állapotba jut, akkor a munkavégzés csak a végállapotoktól függ.}
+ \end{center}
+ Vagy matematikailag kifejezve:
+ \begin{equation}
+    W_{A \to B} = U(B) - U(A)
+ \end{equation}
+Ahol $U$ a rendszer belső energiája, ami csak a rendszer állapotától függ. Ebből az következik, hogy a belső energia egy extenzív állapotjelző.
+A belső energiát is ki kell tudnom fejezni a rendszer állapotjelzőivel, pl.:
+\begin{equation}
+    U(p, V) \qquad U(p, T) \qquad U(V, T)
+\end{equation}
+Tehát felírható a belső energia változása a rendszer állapotjelzőinek változásával:
+\begin{equation}
+    dU = \frac{\partial U}{\partial p}\bigg|_{V} dp + \frac{\partial U}{\partial V}\bigg|_{p} dV
+\end{equation}
+Két pont között tehát a belső energia változása:
+\begin{equation}
+    \oint dU = \oint \frac{\partial U}{\partial p}\bigg|_{V} dp + \frac{\partial U}{\partial V}\bigg|_{p} dV = \oint \left(\frac{\partial U}{\partial p}\bigg|_{V}, \frac{\partial U}{\partial V}\bigg|_{p}\right)
+    \begin{pmatrix}
+        dp \\
+        dV
+    \end{pmatrix}
+\end{equation}
+Ha ezt egy zárt görbén veszem, akkor a belső energia változása nulla kell legyen, hiszen ugyanabba az állapotba térek vissza:
+\begin{equation}
+    \oint dU = \oint \boldsymbol{\nabla} E d \bold{r} = 0
+\end{equation}
+Ez pedig azt jelenti, hogy a belső energia egy jól definiált állapotjelző, hiszen a belső energia változása csak a kezdő és végponttól függ, és nem az úttól.
+
+Nézzük meg most azt az esetet, amikor a rendszer nem abiatikusan zárt, hanem képes hőt cserélni a környezetével is:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/5-tetel/nem_adiabatikus_zart_rendszer.png}
+    \caption{Abiatikus és Nem abiadatikus zárt rendszer pV grafikonja}
+\end{figure}
+Ha nincs szigetelve a rendszer, akkor kívülről hő áramolhat be vagy ki a rendszerből, ami módosíthatja a pályát a $pV$ grafikonon $A$ és $B$ állapot között. 
+Továbbra is kvázistatikus folyamatokat vizsgálunk, ezért lehet sima görbékkel jellemezni a problémát. Ekkor a munkavégzés egyenletét kiegészítjük egy hőmennyiség taggal:
+\begin{equation}
+    U(B) - U(A) = W_1 + Q_1 = W_2 + Q_2
+\end{equation}
+Ahol $Q$ a rendszer által felvett hőmennyiség, melynek a mértékegysége szintén Joule. Ha $A$ és $B$ között a távolságot csökkentem, akko felírható a belső energia változása differenciális formában is:
+\begin{equation}
+    dU = \delta W + \delta Q
+\end{equation}
+Azt tudjuk, hogy zát görbén továbbra is igaz, hogy a belső energia változása nulla:
+\begin{equation}
+    \oint dU = 0
+\end{equation}
+Viszont a munkavégzés és a hőmennyiség tagjai már nem lehetnek külön-külön nullák, hiszen a környezet is végez munkát:
+\begin{equation}
+    \oint DU = 0 = \oint \delta W + \oint \delta Q = \underbrace{\oint - p dV}_{\neq 0} + \underbrace{\oint \delta Q}_{\neq 0}
+\end{equation}
+Itt azért van $\delta$ jel a $W$ és $Q$ tagok előtt, mert ezzel jelöljük, hogy ezek nem biztosan nullák zárt görbén.
+Ebből következik az is, hogy $Q$ és $W$ sem lehetnek állapotjelzők, hiszen külön-külön nem csak a kezdő és végponttól függenek, hanem az úttól is.
+Ezek alapján az első főtételt úgy is lehet értelmezni, hogy nem lehet elsőfajú örökmozgót készíteni, ami azt jelenti, hogy nem lehet olyan gépet készíteni,
+ami több munkát képes végezni, mint amennyi energiát vesz fel a környezetéből. Ez az energia megmaradás törvénye termodinamikai rendszerekre is kiterjesztve.
+
+\subsubsection{Termodinamikai folyamatok}
+A termodinamikában a "folyamat" kifejezést olyan változások leírására használjuk, amelyek során egy rendszer egyik állapotból a másikba kerül. Ezt a megváltozást
+egy tetszőleges állapotjelzők által leírható görbével tudjuk jellemezni, leggyakrabban a $pV$ diagramot használva. A folyamatok lehetnek kvázisztatikusak, ahol a rendszer egyensúlyi állapotban van minden pillanatban, vagy irreverzibilisek, ahol a rendszer nem éri el az egyensúlyt.
+Az egyszerűség kedvéért mi eddig csak kvázisztatikus folyamatokat vizsgáltunk. Egy folyamatot jellemezhetünk a nyíltáságval is, nyílt rendszernek azt a rendszert nevezzük, amely képes anyagot vagy energiát is cserélni a környezetével, míg adiabatikusan zárt rendszerben a környezet semmilyen munkát nem tud végezni a rendszeren, és anyagot sem tud kicserélni vele.
+Lehet még csak zárt rendszerről is beszélni ahol anyagot nem tud kicserélni a környezettel, de hőt igen.
+Ezen felül a folyamatokat jellemezhetjük azzal is, hogy milyen állapotjelzők maradnak állandóak a folyamat során. Néhány fontosabb folyamat típus:
+\begin{itemize}
+    \item \textbf{Izoterm folyamat:} A hőmérséklet állandó marad a folyamat során ($dT = 0$). Ilyen folyamat például egy gáz lassú összenyomása, miközben hőt ad le a környezetének.
+    \item \textbf{Izobár folyamat:} A nyomás állandó marad a folyamat során ($dp = 0$). Ilyen folyamat például egy gáz fűtése egy nyitott edényben, ahol a gáz térfogata növekszik.
+    \item \textbf{Izokor folyamat:} A térfogat állandó marad a folyamat során ($dV = 0$). Ilyen folyamat például egy gáz fűtése egy zárt edényben, ahol a nyomás növekszik.
+    \item \textbf{Adiabatikus folyamat:} Nincs hőcsere a rendszer és a környezet között ($Q = 0$). Ilyen folyamat például egy gáz gyors összenyomása vagy tágulása, ahol a hőmérséklet változik.
+\end{itemize}
+A folyamatok jellemzéséhez szükség van a belső energiák ismeretére:
+\begin{itemize}
+    \item \textbf{ideális gáz}: $U = \frac{f}{2} n R T$
+    \item \textbf{Van Der Waals gáz}: $U = \frac{f}{2} n R T - a \frac{n^2}{V}$
+\end{itemize}
+
+Emellett bezethetünk pár extra fogalmat is:
+\begin{itemize}
+    \item \textbf{Hőkapacitás}: A hőkapacitás azt mutatja meg, hogy mennyi hő szükséges egy rendszer hőmérsékletének egy egységnyi mértékben történő megváltoztatásához.
+    \begin{equation}
+        \hat{C} = \frac{\delta Q}{dT} \qquad \left[\hat{C}\right] = \frac{J}{K}
+    \end{equation}
+    \item \textbf{Fajhő}: A fajhő azt mutatja meg, hogy mennyi hő szükséges egy egységnyi tömegű anyag hőmérsékletének egy egységnyi mértékben történő megváltoztatásához.
+    \begin{equation}
+        c = \frac{1}{m} \frac{\delta Q}{dT} \qquad \left[c\right] = \frac{J}{kg \cdot K}
+    \end{equation}
+    \item \textbf{Moláris hőkapacitás}: A moláris hőkapacitás azt mutatja meg, hogy mennyi hő szükséges egy mól anyag hőmérsékletének egy egységnyi mértékben történő megváltoztatásához.
+    \begin{equation}
+        C = M \cdot c = \frac{M}{n} \frac{\delta Q}{dT} = \frac{1}{n} \frac{\delta Q}{dT} \qquad \left[C\right] = \frac{J}{mol \cdot K}
+    \end{equation}
+\end{itemize}
+Nézzük meg ezeket a fogalmakat egy ideális gáz példáján keresztül. Vegyünk egy ideális gázt, ami egy zárt edényben van, és melegítsük fel izokor folyamat során.
+Ekkor a belső energia változása:
+\begin{equation}
+    dU = \frac{\partial U}{\partial V}\bigg|_{T} dV + \frac{\partial U}{\partial T}\bigg|_{V} dT
+\end{equation}
+Ez még minden folyamatra igaz. Viszont $V = áll$ , így az első tag eltűnik: 
+\begin{equation}
+    dU = \frac{\partial U}{\partial T}\bigg|_{V} dT
+\end{equation}
+A termodinamika I. főtétele szerint pedig:
+\begin{equation}
+    dU = \delta W + \delta Q
+\end{equation}
+Viszont mivel izokor folyamatot vizsgálunk, így $dV = 0 \to W = pdV = 0$, tehát a munkavégzés is nulla lesz:
+\begin{equation}
+    dU = \delta Q
+\end{equation}
+Ebből következik, hogy:
+\begin{equation}
+    \delta Q = \frac{\partial U}{\partial T}\bigg|_{V} dT
+\end{equation}
+Tehát a moláris hőkapacitás izokor folyamat során:
+\begin{equation}
+    C_V = \frac{1}{n} \frac{\delta Q}{dT} = \frac{1}{n} \frac{\partial U}{\partial T}\bigg|_{V}
+\end{equation}
+Ez eddig bármilyen gázra igaz, de egy ideális gáz esetén a belső energia csak a hőmérséklet függvénye, így:
+\begin{equation}
+    U(V, T) = \frac{f}{2} n R T
+\end{equation}
+Ahol $f$ a részecskék szabadsági fokainak száma. Itt megjegyezzük, hogy a belső energia lehetne más állapotjelzők függvényeként is felírva, de itt a parciális
+deriváltnál jelezzük, hogy melyik függvényére vagyunk épp kíváncsiak. Ebből következik, hogy:
+\begin{equation}
+    \frac{\partial U}{\partial T}\bigg|_{V} = \frac{f}{2} n R
+\end{equation}
+Így a moláris hőkapacitás izokor folyamat során:
+\begin{equation}
+    C^{\text{id.}}_V = \frac{f}{2} R
+\end{equation}
+Ez szilárd testek esetén például tipikusan $f = 6 \to C_V = 3R$. Ezt a Dulong-Petit törvénynek nevezzük.
+
+Hasonlóan ki lehet számolni az izobár folyamatra is a molhőt, ahol a térfogat változik, így a munkavégzés nem lesz nulla:
+\begin{equation}
+    dU = \frac{\partial U}{\partial p}\bigg|_{T} dp + \frac{\partial U}{\partial T}\bigg|_{p} dT
+\end{equation}
+De mivel a nyomást tartjuk állandóan, így az első tag eltűnik:
+\begin{equation}
+    dU = \frac{\partial U}{\partial T}\bigg|_{p} dT
+\end{equation}
+A termodinamika I. főtétele szerint pedig:
+\begin{equation}
+    dU = \delta W + \delta Q = \delta Q - p dV
+\end{equation}
+Ha a téfogat változását akarjuk kifejezni a nyomás és hőmérséklet változásával, felírhatjuk, hogy:
+\begin{equation}
+    dV = \frac{\partial V}{\partial p}\bigg|_{T} dp + \frac{\partial V}{\partial T}\bigg|_{p} dT
+\end{equation}
+De mivel izobár folyamatot vizsgálunk, így $dp = 0$, tehát:
+\begin{equation}
+    dV = \frac{\partial V}{\partial T}\bigg|_{p} dT
+\end{equation}
+Ennek segítségével fel tudjuk írni a belső energia változását, mint a hőmérséklet és nyomás függvényét:
+\begin{equation}
+    dU = \delta Q - p \frac{\partial V}{\partial T}\bigg|_{p} dT
+\end{equation}
+Azért jó, hogy ezekre az állapotjelzőkre írtuk fel a belső energiát, mert a $p$ állandó és ideális gáznál a belső energia csak $T$-től függ.
+Innen a moláris hőkapacitás izobár folyamat során:
+\begin{equation}
+    C_p = \frac{1}{n} \frac{\delta Q}{dT} = \frac{1}{n} \left(\frac{\partial U}{\partial T}\bigg|_{p} + p \frac{\partial V}{\partial T}\big|_{p}\right)
+\end{equation}
+Itt észrevehetjük, hogy a zárójelben lévő deriváltakat össze lehet vonni, hisz ugyanazon változó szerint deriválunk, és az állandó tag is ugyan az:
+\begin{equation}
+    C_p = \frac{1}{n} \frac{\partial \left(U + pV\right)}{\partial T}\bigg|_{p}
+\end{equation}
+Az $U + pV$ kifejezést entalpiának nevezzük, és $H$-val jelöljük:
+\begin{equation}
+    H = U + pV
+\end{equation}
+Így a moláris hőkapacitás izobár folyamat során:
+\begin{equation}
+    C_p = \frac{1}{n} \frac{\partial H}{\partial T}\bigg|_{p}
+\end{equation}
+Ideális gáz esetén a belső energia és a térfogat kifejezése:
+\begin{equation}
+    U = \frac{f}{2} n R T \qquad V = \frac{n R T}{p}
+\end{equation}
+Ebből következik, hogy az entalpia:
+\begin{equation}
+    H = \frac{f}{2} n R T + p \cdot \frac{n R T}{p} = \left(\frac{f}{2} + 1\right) n R T
+\end{equation}
+Ezt $T$ szerint deriválva és $\frac{1}{n}$-nel szorozva kapjuk a moláris hőkapacitást izobár folyamat során:
+\begin{equation}
+    C^{\text{id.}}_p = \left(\frac{f}{2} + 1\right) R
+\end{equation}
+Ebből következik, hogy az izobár és izokor moláris hőkapacitások közötti különbség:
+\begin{equation}
+    C^{\text{id.}}_p - C^{\text{id.}}_V = R
+\end{equation}
+Ha pedig ezt leosztjuk a Moláris tömeggel, akkor megkapjuk a fajhőkre vonatkozó összefüggést is:
+\begin{equation}
+    c^{\text{id.}}_p - c^{\text{id.}}_V = \frac{R}{M}
+\end{equation}
+Ezt az összefüggést Robert-Mayer-relációként ismerjük.
+
+Fontos, hogy a molárris hő definíciójában szereplő $U$ nem ugyanaz a függvény, hisz más állapotjelzők szerint van definiálva a parciális deriváltban:
+\begin{equation}
+    \begin{aligned}
+        U_{V, T} = U(V, T) \\
+        U_{p, T} = U(p, T)
+    \end{aligned}
+\end{equation}
+A kettő közötti kapcsolatot a következő összefüggés adja meg:
+\begin{equation}
+U_{p, T} (p, T)= U_{V, T} (V(p, T), T)
+\end{equation}
+Ami egy állapotegyenlet, mivel két független állapotjelző van benne, amik között kapcsolatot teremt egy egyenlet:
+\begin{equation}
+    \frac{\partial U}{\partial T}\bigg|_{p} = \frac{\partial E}{\partial V}\bigg|_{T} \frac{\partial V}{\partial T}\bigg|_{p} + \frac{\partial U}{\partial T}\bigg|_{V}
+\end{equation} 
+Ebből következik, hogy a moláris hőkapacitások közötti különbség általános esetben:
+\begin{equation}
+    C_p - C_V = \frac{1}{n} \left[\frac{\partial U}{\partial T}\bigg|_{p} - \frac{\partial U}{\partial T}\bigg|_{V} + \frac{\partial V}{\partial T}\bigg|_{p}\right] = \frac{1}{n} \left[\frac{\partial U}{\partial V}\bigg|_{T} + p \right] \underbrace{\frac{\partial V}{\partial T}\bigg|_{p}}_{v \beta}
+\end{equation}
+Ezeket hívják Maxwell relációknak. Ebből pedig következik:
+\begin{equation}
+    C_p - C_V = \frac{v T \beta^2}{\kappa} = \frac{T \cdot \frac{RT}{T} \cdot (\frac{1}{T})^2}{\frac{1}{p}} = R
+\end{equation}
+Ahol $\beta = \frac{1}{T}$ a térfogati hőtágulási együttható, és $\kappa = \frac{1}{p}$ a izotermikus összenyomhatósági együttható és $v$ a moláris térfogat ($v = \frac{V}{n}$).
+Ez pedig a Robert-Mayer reláció általános esete.
+
+\subsubsection{Adiabatikus folyamatok}
+Egy adiabatikus folyamat során nincs hőcsere a rendszer és a környezet között, így $Q = 0$. Ebből következik, hogy a termodinamika I. főtétele szerint:
+\begin{equation}
+    dU = \delta W = - p dV
+\end{equation}
+A belső energiát pedig kifejezhetjük a nyomás és térfogat függvényében is:
+\begin{equation}
+    dU = \frac{\partial U}{\partial p}\bigg|_{V} dp + \frac{\partial U}{\partial V}\bigg|_{p} dV = - p dV
+\end{equation}
+Ebből következik, hogy:
+\begin{equation}
+   \frac{\partial U}{\partial p}\bigg|_{V} dp = - \left(p + \frac{\partial U}{\partial V}\bigg|_{p}\right) dV
+\end{equation}
+Ami egy differenciálegyenlet a $p$ és $V$ között. Ezt meg tudjuk oldani, ha kifejezzük a belső energia parciális deriváltját a nyomás és térfogat függvényében:
+\begin{equation}
+    \frac{dp}{dV} = p'(V) = f(p, V)
+\end{equation}
+Ahol $f(p, V)$ egy ismeretlen függvény. Ezt a differenciálegyenletet meg tudjuk oldani, ha felírjuk a belső energiát ideális gáz esetén:
+\begin{equation}
+    U = \frac{f}{2} n R T = \frac{f}{2} p V
+\end{equation}
+Ebből következik, hogy:
+\begin{equation}
+    \frac{\partial U}{\partial V}\bigg|_{p} = \frac{f}{2} p \qquad \text{és} \qquad \frac{\partial U}{\partial p}\bigg|_{V} = \frac{f}{2} V
+\end{equation}
+Ezt visszahelyettesítve a differenciálegyenletbe:
+\begin{equation}
+    \frac{f}{2} V dp = - \left(p + \frac{f}{2} p\right) dV
+\end{equation}
+Ahol az egyenletet átrendezve:
+\begin{equation}
+    \frac{dp}{p} = - \left(\frac{f}{2} + 1\right) \frac{dV}{V}
+\end{equation}
+Ezt az egyenletet most integráljuk ki:
+\begin{equation}
+    \int_{p_1}^{p_2} \frac{dp}{p} = - \left(\frac{f}{2} + 1\right) \int_{V_1}^{V_2} \frac{dV}{V}
+\end{equation}
+Ahol az integrálás után:
+\begin{equation}
+    \ln{\frac{p_2}{p_1}} = - \left(\frac{f}{2} + 1\right) \ln{\frac{V_2}{V_1}}
+\end{equation}
+Ezt exponenciálva:
+\begin{equation}
+    \frac{p_2}{p_1} = \left(\frac{V_1}{V_2}\right)^{\frac{f}{2} + 1}
+\end{equation}
+Ahol bevezethetjük a $\kappa$ kitevőt, ami a moláris hőkapacitások aránya:
+\begin{equation}
+    \kappa = \frac{C_p}{C_V} = \frac{\frac{f}{2} + 1}{\frac{f}{2}} = \frac{f + 2}{f}
+\end{equation}
+Így az adiabatikus folyamatokra a következő összefüggést kapjuk:
+\begin{equation}
+    p V^{\kappa} = \text{állandó}
+\end{equation}
+Ez az adiabatikus folyamatok egyenlete ideális gázokra.
+
+\subsubsection{Politrop folyamatok}
+A politrop folyamatok olyan termodinamikai folyamatok, amelyek során a rendszer állapotjelzői között egy adott hatványkapcsolat áll fenn. Ezek a folyamatok általánosítják az izoterm, izobár, izokor és adiabatikus folyamatokat.
+A politrop folyamatokat a következő egyenlettel jellemezhetjük:
+\begin{equation}
+    p V^n = \text{állandó}
+\end{equation}
+Ahol $n$ a politrop index, amely meghatározza a folyamat típusát. Néhány speciális eset:
+\begin{itemize}
+    \item Ha $n = 0$, akkor az izobár folyamatot kapjuk ($p = \text{állandó}$).
+    \item Ha $n = 1$, akkor az izoterm folyamatot kapjuk ($p V = \text{állandó}$).
+    \item Ha $n = \kappa$, akkor az adiabatikus folyamatot kapjuk ($p V^{\kappa} = \text{állandó}$).
+    \item Ha $n \to \infty$, akkor az izokor folyamatot kapjuk ($V = \text{állandó}$).
+\end{itemize}
+A politrop folyamatok során a rendszer hőmérséklete, nyomása és térfogata is változhat, és a politrop index értéke befolyásolja, hogy milyen mértékben történik ez a változás. A politrop folyamatok hasznosak lehetnek különböző termodinamikai rendszerek modellezésében és elemzésében, mivel lehetővé teszik a különböző folyamatok közötti átmenetek vizsgálatát.
+Ideális gázokra a politrop folyamat a következőképpen írható fel:
+\begin{equation}
+    C = \text{állandó}
+\end{equation}
+Ahol $C$ a politrop hőkapacitás, a hőmennyiség változása:
+\begin{equation}
+    \delta Q = n C dT
+\end{equation}
+A belső energia változása pedig:
+\begin{equation}
+    dU = \delta Q - pdV = n C dT - p dV
+\end{equation}
+A belső energiát fejezzük ki a hőmérséklet és a térfogat függvényében ($U(V, T)$):
+\begin{equation}
+    dU = \frac{\partial U}{\partial V}\bigg|_{T} dV + \frac{\partial U}{\partial T}\bigg|_{V} dT = n C_V dT
+\end{equation}
+Ebből következik, hogy:
+\begin{equation}
+    n C_V dT = n C dT - p dV
+\end{equation}
+Ahol átrendezve:
+\begin{equation}
+    n (C_V - C) dT = - p dV
+\end{equation}
+Most fejezzük ki a hőmérséklet változását az ideális gáz állapotegyenletének segítségével:
+\begin{equation}
+    p = \frac{nR T}{V} \qquad \to \qquad
+    n (C_V - C) dT = - \frac{nR T}{V} dV
+\end{equation}
+Ahol átrendezve:
+\begin{equation}
+    \frac{dT}{T} = - \frac{R}{C_V - C} \frac{dV}{V}
+\end{equation}
+Ezt az egyenletet most integráljuk ki:
+\begin{equation}
+    \int_{T_1}^{T_2} \frac{dT}{T} = - \frac{R}{C_V - C} \int_{V_1}^{V_2} \frac{dV}{V}
+\end{equation}
+Ahol az integrálás után:
+\begin{equation}
+    \ln{\frac{T_2}{T_1}} = - \frac{R}{C_V - C} \ln{\frac{V_2}{V_1}}
+\end{equation}
+Ezt exponenciálva:
+\begin{equation}
+    \frac{T_2}{T_1} = \left(\frac{V_1}{V_2}\right)^{\frac{R}{C_V - C}}
+\end{equation}
+Ebből következik, hogy a politrop folyamatokra az alábbi összefüggés érvényes ideális gázokra:
+\begin{equation}
+    p V^{\frac{C_P - C}{C_V - C}} = \text{állandó}
+\end{equation}
+Ahol a politrop index:
+\begin{equation}
+    k = \frac{C_P - C}{C_V - C}
+\end{equation}
+\begin{equation}
+    \boxed{p V^{k} = \text{állandó}}
+\end{equation}
+Ezek alapján a politrop index segítségével különböző termodinamikai folyamatokat tudunk jellemezni, és az ideális gázokra vonatkozó összefüggések segítségével elemezni a rendszerek viselkedését:
+\begin{itemize}
+    \item Izobár folyamat: $C = C_p \to k = 0 \to pV^0 = \text{állandó}$
+    \item Izoterm folyamat: $C_T = \infty \to k = 1 \to pV^1 = \text{állandó}$
+    \item Izokor folyamat: $C = C_V \to k \to \infty \to pV^{\infty} = \text{állandó}$
+\end{itemize}
+
+\subsubsection*{Folyamatok összefoglás}
+Összefoglalva a termodinamikai folyamatokat ideális gázokra amikor $(p_1, V_1, T_1) \to (p_2, V_2, T_2)$ állapotváltozás történik:
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        Folyamat típusa & Belső energia: $\Delta U_{12}$ & Rendszer munkavégzése: $W_{12}$ & Hő változása $Q_{12}$ \\
+        \hline
+        Izoterm $T = \text{áll}$ & $0$ & $nRT \ln{\frac{V_1}{V_2}}$ & $- nRT \ln{\frac{V_2}{V_1}}$ \\
+        \hline
+        Izobár $p = \text{áll}$ & $nC_V (T_2 - T_1)$ & $- p (V_2 - V_1)$ & $n C_p (T_2 - T_1)$ \\
+        \hline
+        Izokor $V = \text{áll}$ & $nC_V (T_2 - T_1)$ & $0$ & $n C_V (T_2 - T_1)$ \\
+        \hline
+        Adiabatikus $Q = 0$ & $nC_V (T_2 - T_1)$ & $- \frac{p_1V_1}{\kappa-1}\left[1- (\frac{V_1}{V_2})^\kappa\right]$ & $0$ \\
+        \hline
+        Politrop $C = \text{áll}$ & $nC_V (T_2 - T_1)$ & $- \frac{p_1V_1}{k-1}\left[1- (\frac{V_1}{V_2})^k\right]$ & $n C (T_2 - T_1)$ \\
+        \hline
+    \end{tabular}
+    \caption{Termodinamikai folyamatok összefoglalása ideális gázokra}
+\end{table}
+
+\subsubsection{Körfolyamatok, irreverzibilitás}
+Eddig olyan rendszereket vizsgáltunk, amikor a rendszer kvázistatikus folyamatokon keresztül egyik állapotból a másikba jutott. Ezeknek a folyamatoknak van egy 
+speciális tulajdonsága, mégpedig, hogy reverzibilisek, tehát vissza is tudnak jutni az eredeti állapotba ugyanazon úton. A kvázistatikus folyamatoknál a rendszer egyensúlyi állapotokon halad keresztül, és ezen egyensúlyi állapotok között lehet "mozogni".
+Nem kvázisztatikus folyamatok esetén viszont csak a kezdő és a végpontot ismerem, a kettő közötti utat nem, ezért ezek a folyamatok irreverzibilisek. Ez azt jelenti, hogy
+a végállapotból a kezdő állapotba nem tudom ugyanazon az úton visszajutni, ha beáll a végállapotba, akkor csak extra munkavégzéssel tudok visszajutni a kezdő állapotba.
+Ilyen például az amikor két eltérő hőmérsékletű testet összekötöm, és a hő a melegebb testből a hidegebb testbe áramlik. Ekkor a két test hőmérséklete kiegyenlítődik, és magától sose fog visszaállni az eredeti állapotba.
+Ilyen lehet még ha veszek két gázt amiknek más a nyomása, és közéjük teszek egy dugattyút. Ha elengedem a dugattyút, akkor a két oldalán a nyomás ki fog egyenlítődni, a dugattyú elmozdulásával.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/5-tetel/irreverzibilis_folyamatok.png}
+    \caption{Néhány irreverzibilis folyamat schematikus ábrázolása}
+\end{figure}
+kvázistatikus folyamatok is lehetnek irreverzibilisek, például ha két eltérő hőmérsékletű testet egy vékony rézdróttal kötök össze, akkor a hőcsere lassan és egyensúlyi állapotokon keresztül történik,
+de a folyamat akkor is irreverzibilis, hiszen a hő nem fog magától visszafolyni a hidegebb testből a melegebbe. Tehát az irreverzibilitást nem lehet csak a kvázistatikussággal definiálni.
+
+Nézzük meg, hogy akkor mi is egészen pontosan az irreverzibilitás. Vegyünk egy gázzal töltött dugattyús hengert, ami egy hőtartályban van. Nézzük meg mi történik, ha lassan (kvázisztatikusan) összenyomom:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/5-tetel/reverzibilis_folyamat.png}
+    \caption{Reverzibilis folyamat egy dugattyús hengerben}
+\end{figure}
+Látható, hogy a gáz nyomása mindig megegyezik a dugattyúra ható külső nyomással, így a rendszer egyensúlyi állapotokon halad keresztül. A rendszer belső energiája nem változik, 
+Ezért a teljes munka a gázon hővé alakul ami a tartályba távozik. Ha pedig lassan kitolom a dugattyút, akkor a gáz hőt vesz fel a tartályból, és a gáz végzi el a munkát a dugattyún. Így vissza tudok jutni az eredeti állapotba ugyanazon az úton.
+Fontos megjegyezni, hogy izotermán mozgunk, tehát a hőmérséklet nem változik, de hőcsere történik a gáz és a tartály között.
+
+Most nézzük meg, hogy mi van ha "kicsit gyorsan" nyomom össze a dugattyút: Ha gyorsan nyomom a dugattyút, akkor egy adiabatán menne végig a folyamat, de ha a "kettő között" nyomom valahol, akkor ott fog a folyamat 
+végbe menni:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/5-tetel/irreverzibilis_folyamat_dugattyu.png}
+    \caption{Irreverzibilis folyamat egy dugattyús hengerben}
+\end{figure}
+Ekkor látható, hogy valamennyi munkát be kellett fektetni a gázba, hogy összenyomjam, de a gáz nem tudta az összes munkát hővé alakítani, hiszen a folyamat nem izoterm volt. Így a gáz belső energiája megnőtt, és a gáz hőt adott le a tartálynak.
+Ezt a munkát már nem tudom visszanyerni, hiszen a gáz magasabb belső energiájú állapotban van, így ha ki akarom tolni a dugattyút, akkor csak annyi munkát tudok kivenni a gázból, amennyi a belső energia növekedésének megfelelő. Tehát a folyamat nem reverzibilis, hiszen nem tudok visszajutni az eredeti állapotba ugyanazon az úton.
+Ebből levonhatjuk a következtetést, hogy nem az a folyamat irreverzibilis ahol hőáramlás történik, hanem az, ahol hőcsere két különböző hőmérsékletű test között történik.
+Ez igaz a többi állapotra is, tehát egy folyamat akkor is irreverzibilis, ha két különböző nyomású gáz között történik térfogatcsere.
+
+\subsubsection*{Termodinamika II. főtétele}
+Eddig olyan folyamatokat vizsgáltunk, ahol a rendszer egyik állapotból a másikba jutott. De mi van akkor, ha egy rendszer vissza tud jutni a kezdeti állapotába?
+Ezt a fajta folyamatot körfolyamatnak nevezzük és az a speciális tulajdonságuk, hogy a kezdeti és végállapot megegyezik. De kérdés lehet, hogy ezek a folyamatok reverzibilisek vagy irreverzibilisek?
+A válasz az, hogy ez a folyamattól függ, hiszen bár a körfolyamat során végzünk munkát a rendszeren (amit a körfolyamat által kijelölt terület jelez), de a reverzibilitás nem csak ettől függ, hanem a környezettől is.
+uUgyanis a reverzibilitás feltétele, hogy az állapotcsere (legyen az hő vagy térfogatcsere) ne történjen meg különböző hőmérsékletű vagy nyomású testek között. Tehát egy körfolyamat lehet reverzibilis, ha minden állapotcsere egyensúlyi állapotokon keresztül történik, és a környezet is ugyanazon állapotban van.
+Ez alapján kimondhatjuk a \textbf{termodinamika II. főtételét}, amit Clausius tételnek is nevezünk:
+\begin{quote}
+    "Hő nem mehet alacsonyabb hőmérsékletű helyről magasabb hőmérsékletű helyre anélkül, hogy közben a környezetben valamilyen változás vissza ne maradjon."
+\end{quote}
+Ezt a tételt Kelvin és Planck is finomította a következőképpen:
+\begin{quote}
+    "Nem konstruálható olyan periodikusan működő gép, mely csupán egyetlen hőtartállyal áll kapcsolatban és munkát végez."
+\end{quote}
+Ez azt jelenti, hogy egy körfolyamat során nem lehet csak hőt felvenni egy hőtartályból és azt teljes egészében munkává alakítani, hiszen a környezetben valamilyen változásnak kell történnie.
+A harmadik és legegyszerűbb megfogalmazása a termodinamika II. főtételének a következő:
+\begin{quote}
+    "Nem konstruálható másodfajú örökmozgó"
+\end{quote}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/5-tetel/II_fotetel.png}
+    \caption{Lehetetlen gépek a termodinamika II. főtételének értelmében}
+\end{figure}
+Felmerülhet az a kérdés, hogy hogyan lehetséges az, hogy vannak irreverzibilis folyamatok a termodinamikában, amikor a fizika alapvető törvényei mind szimmetrikusak az idővel szemben?
+A választ a termodinamika statisztikus jellegében kell keresni, ugyanis ez az irreverzibilitás nem egy törvény, hanem egy következménye annak, hogy a makroszkopikus rendszerekben rengeteg részecske van.
+Ha elképzelünk például egy tartályt, aminek az egyik felén gáz van, a másik felén pedig vákuum, akkor a gáz egy idő után ki fogja tölteni az egész tartályt és az az állapot nem fog spontán beállni, hogy a gázrészecskék megint csak a tartály egyik felébe mennek.
+Ennek az az oka, hogy az az állapot amikor a gáz csak az egyik oldalon van jelen, egy specifikus állapot a több milliárd, azonosan valószínű állapot közül. Azokból az állapotokból amikor a gázrészecskék egyenletesen eloszlanak a tartályban,
+rengeteg van, míg az az állapot amikor a gáz csak az egyik felében van, csak egyetlen egy van. Így a statisztikus valószínűsége annak, hogy a gáz visszakerüljön az eredeti állapotba, gyakorlatilag nulla.
+
+\subsubsection*{Carnot-körfolyamat}
+A Carnot-körfolyamatot először Nicolas Léonard Sadi Carnot írta le 1824-ben, és ez a körfolyamat egy ideális hőerőgép modellje, amely két hőtartály között működik. A Carnot-körfolyamat lényege, hogy
+hogy két izoterma között mozgatjuk a rendszert, úgy, hogy köztük adiabatákon kereszül mozgunk. A folyamat végére pedig ugyanabba az állapotba jutunk vissza, ahonnan elindultunk és
+a folyamat során képes munkát végezni a környezetén, vagy ha megfordítjuk a folyamatot, akkor hőt vesz fel a környezetből és hőszivattyúként működik. A Carnot-körfolyamat reverzibilis és kvázistatikus folyamat.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/5-tetel/carnot_korfolyamat.png}
+    \caption{Carnot-körfolyamat $p-V$ diagramon ábrázolva}
+\end{figure}
+A Carnot-körfolyamat négy lépésből áll:
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        Folyamat & Munka & Belső energia változás & Hő \\
+        \hline
+        $1 \to 2$ Izoterm tágulás & $- nRT_H \ln{\frac{V_2}{V_1}}$ & $0$ & $nRT_1 \ln{\frac{V_2}{V_1}} = Q_1$ \\
+        \hline
+        $2 \to 3$ Adiabatikus tágulás & $\Delta U_{23}$ & $- n C_V (T_1 - T_2) =\Delta U_{23}$ & $0$ \\
+        \hline
+        $3 \to 4$ Izoterm összenyomás & $n R T_C \ln{\frac{V_3}{V_4}}$ & $0$ & $- n R T_C \ln{\frac{V_3}{V_4}} = Q_2$ \\
+        \hline
+        $4 \to 1$ Adiabatikus összenyomás & $\Delta U_{41}$ & $n C_V (T_1 - T_2) = \Delta U_{41}$ & $0$ \\
+        \hline
+    \end{tabular}
+    \caption{A Carnot-körfolyamat lépései}
+\end{table}
+A Carnot körfolyamatot egy schematikus Carnot-géppel is ábrázolhatjuk, ahol a hőerőgép két hőtartály között működik:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/5-tetel/carnot_gep.png}
+    \caption{Carnot-gép schematikus ábrázolása}
+\end{figure}
+
+Ezek alapján felírhatjuk a Carnot-körfolyamat belső energiájának változását:
+\begin{equation}
+    \Delta U = W + Q = 0
+\end{equation}
+Mivel a körfolyamat visszatér a kiindulási állapotba, így a belső energia változása nulla. Ebből következik, hogy a körfolyamat során végzett munka egyenlő a felvett hővel:
+\begin{equation}
+    W = - Q
+\end{equation}
+A munkát viszont fel lehet írni az egyes lépések munkáinak összegzésével:
+\begin{equation}
+    W = W_{12} + W_{23} + W_{34} + W_{41}
+\end{equation}
+Ahol az egyes lépések munkái a következők:
+\begin{equation}
+    \begin{aligned}
+        W_{12} = - n R T_H \ln{\frac{V_2}{V_1}} \\
+        W_{23} = \Delta U_{23} = - n C_V (T_1 - T_2) \\
+        W_{34} = n R T_C \ln{\frac{V_3}{V_4}} \\
+        W_{41} = \Delta U_{41} = n C_V (T_1 - T_2)
+    \end{aligned}
+\end{equation}
+Ezeket összeadva a munkát a következőképpen kapjuk meg:
+\begin{equation}
+    W = - n R T_H \ln{\frac{V_2}{V_1}} + n R T_C \ln{\frac{V_3}{V_4}} = - Q = - (Q_1 + Q_2)
+\end{equation}
+Látható, hogy az adiabatikus lépések munkái kiesnek egymással, hiszen azok a belső energia változását adják, ami a körfolyamat során nulla.
+Számoljuk ki a Carnot-körfolyamat hatásfokát, ami megmutatja, hogy a felvett hő mekkora részét tudja munkává alakítani a gép. A hatásfokot úgy definiáljuk, hogy a mennyi munkát végez a gép ($-W$) a felvett hő arányában ($Q_1$):
+\begin{equation}
+    \eta = \frac{- W}{Q_1} = \frac{n R T_H \ln{\frac{V_2}{V_1}} - n R T_C \ln{\frac{V_3}{V_4}}}{n R T_H \ln{\frac{V_2}{V_1}}}
+\end{equation}
+Értelemszerűenn ha $\eta = 1$, akkor a gép az összes felvett hőt munkává tudja alakítani, tehát veszteség nélkül működik.
+Most tegyük fel, hogy ideális gázról van szó, vagyis fel lehet írni:
+\begin{equation}
+    p V^{\kappa} = \text{állandó} \qquad pV = n R T
+\end{equation}
+Vagy átrendezve:
+\begin{equation}
+    \frac{nRT}{V} V^{\kappa} = \text{állandó}
+\end{equation}
+Ebből következik, hogy:
+\begin{equation}
+    T V^{\kappa - 1} = \text{állandó}
+\end{equation}
+Ez igaz a Carnot-körfolyamat egyes lépéseire is, így felírhatjuk az adiabatikus lépésekre:
+\begin{equation}
+    T_1 V_2^{\kappa - 1} = T_2 V_3^{\kappa - 1} \qquad T_1 V_1^{\kappa - 1} = T_2 V_4^{\kappa - 1}
+\end{equation}
+Ebből következik, hogy:
+\begin{equation}
+    \frac{V_2^{\kappa - 1}}{V_1^{\kappa - 1}} = \frac{V_3^{\kappa - 1}}{V_4^{\kappa - 1}} \qquad \Rightarrow \qquad \frac{V_2}{V_1} = \frac{V_3}{V_4}
+\end{equation}
+Ezt visszahelyettesítve a hatásfok kifejezésébe:
+\begin{equation}
+    \eta = \frac{T_1 - T_2}{T_1} = 1 - \frac{T_2}{T_1}
+\end{equation}
+Ez pedig a Carnot-körfolyamat hatásfoka ideális gázokra. Látható, hogy a hatásfok csak a két hőtartály hőmérsékletétől függ, és minél nagyobb a hőmérsékletkülönbség, annál nagyobb a hatásfok.
+Ha visszahelyettesítjük a hőt a hatásfok kifejezésébe:
+\begin{equation}
+    \frac{Q_1 + Q_2}{Q_1} = 1 - \frac{T_2}{T_1} \qquad \Rightarrow \qquad \boxed{\frac{Q_1}{T_1} + \frac{Q_2}{T_2} = 0}
+\end{equation}
+Ez pedig a Carnot-körfolyamat hőmérlege ideális gázokra.
+A reverzibilitás következménye, hogy mindkét irányba le tud folyni a folyamat, vagyis ha munkát fektetek be a gépbe, akkor hőt tudok kivenni a hidegebb tartályból és át tudom adni a melegebb tartálynak.
+Ez a folyamat a hőszivattyú, és a hatásfoka a következőképpen írható fel:
+\begin{equation}
+    \eta_{\text{szivattyú}} = \frac{|Q_1|}{W} = \frac{|Q_1|}{Q_1 + Q_2} = \frac{T_1}{T_1 - T_2}
+\end{equation}
+Fontos még megjegyezni, hogy a termodinamika II. főtételéből következik, hogy a hatásfok mindig kisebb mint 1, vagyis egy hőerőgép sosem tudja az összes felvett hőt munkává alakítani, hiszen mindig van valamilyen veszteség a folyamat során.
+Ebből következik, hogy a hőszivattyú hatásfoka mindig nagyobb mint 1, hiszen a felvett hő mindig nagyobb mint a befektetett munka:
+\begin{equation}
+    \eta_{\text{szivattyú}} = \frac{|Q_1|}{W} > 1
+\end{equation}
+Fel lehet még írni a hűtőgépek hatásfokát is, ami megmutatja, hogy a hidegebb tartályból mennyi hőt tudunk kivenni a befektetett munka arányában:
+\begin{equation}
+    \eta_{\text{hűtőgép}} = \frac{|Q_2|}{W} = \frac{|Q_2|}{Q_1 + Q_2} = \frac{T_2}{T_1 - T_2} = \eta_{\text{szivattyú}} - 1
+\end{equation}
+A Carnot-körfolyamat ezáltal egy ideális hőerőgép, mivel a hatásfoka csakis a két hőtartály hőmérsékletétől függ, és nem függ a gép anyagától vagy kialakításától, emiatt egy körfolyamat hatásfoka sose lesz nagyobb mint a Carnot-körfolyamaté.
+A Carnot-körfolyamat lehet irreverzibilis is, ha gyorsan hajtjuk végre a folyamatot, vagy ha a hőcsere nem egyensúlyi állapotokon keresztül történik. Ilyenkor a hatásfok kisebb lesz mint a reverzibilis esetben, és a hőmérleg sem lesz pontosan azonos a reverzibilis esettel.
+
+De mi van akkor, ha a körfolyamat nem ideális gázokra történik? Meglepő módon ugyan az marad a hatásfok, ugyanis a hatásfok csak a két hőtartály hőmérsékletétől függ, és nem függ a rendszer anyagától vagy kialakításától.
+Ezt egy gondolatkísérlettel is be lehet látni: Tegyük fel, hogy van egy nem ideális gázból készült hőerőgépünk, ami nagyobb hatásfokkal működik mint a Carnot-körfolyamat. Ekkor ezt a gépet összekapcsolhatjuk egy reverzibilis Carnot-géppel,
+ami ugyanolyan hőtartályok között működik. Ekkor a két gép összességében egy olyan gépet alkot, ami csak egy hőtartállyal van kapcsolatban, és munkát végez, ami ellentmond a termodinamika II. főtételének.
+Ezért a nem ideális gázokra is ugyan az a hatásfok érvényes mint az ideális gázokra. Ha pedig egy olyan gázt néznénk aminek kisebb a hatásfoka mint az ideális gázoké, akkor a folyamat visszafelé sértené a termodinamika II. főtételét, hiszen a körfolyamat során kevesebb hőt adnánk le a hidegebb tartálynak mint amennyit felvettünk a melegebb tartályból.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/5-tetel/carnot_id_gaz_hatasfok.png}
+    \caption{A Carnot-körfolyamat hatásfoka ideális és nem ideális gázokra}
+\end{figure}
+
+Most nézzük meg, hogy mi van akkor, ha több hőtartályt használunk a Carnot-körfolyamat során. Tegyük fel, hogy van 3 darab hőtartályunk, amik különböző hőmérsékletűek: $T_1 > T_2 > T_3$. Ekkor a körfolyamat során először a legmelegebb tartályból
+veszünk fel hőt, majd a középső tartálynak adunk le hőt, végül pedig a leghidegebb tartálynak adunk le hőt.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/5-tetel/carnot_tobb_hotartaly.png}
+    \caption{Carnot-körfolyamat $pV$ grafikonja több hőtartállyal}
+\end{figure}
+Ekkor a Carnot-gép schematikus ábrázolása a következő lesz:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/5-tetel/carnot_tobb_hotartaly_gep.png}
+    \caption{Carnot-gép schematikus ábrázolása több hőtartállyal}
+\end{figure}
+Ekkor a hatásfokot a következőképpen számolhatjuk ki:
+\begin{equation}
+    \eta = \frac{- W}{Q_1 + \Delta Q} = \frac{-W_1 - W_2}{Q_1 + \Delta Q} = \frac{Q_1 + \Delta Q - \frac{T_2}{T_3}(\frac{T_2}{T_1}Q_1 + \Delta Q)}{Q_1 + \Delta Q}
+\end{equation}
+Ahol $\Delta Q$ a középső tartálynak átadott hőmennyiség. Vezessünk be egy segédváltozót:
+\begin{equation}
+    x = \frac{\Delta Q}{Q_1}
+\end{equation}
+Ekkor a hatásfok kifejezése a következő lesz:
+\begin{equation}
+    \eta = \frac{1 + x - \frac{T_2}{T_1} - \frac{T_2}{T_3}x}{1 + x} = \frac{\eta_{12}^c + \eta_{32}x}{1 + x} = \eta_{12}^c \frac{1 + \frac{\eta_{32}}{\eta_{12}^c} x}{1 + x}
+\end{equation}
+Ahol $\eta_{12}^c$ a Carnot-körfolyamat hatásfoka a $T_1$ és $T_2$ hőtartályok között, míg $\eta_{32}$ a $T_3$ és $T_2$ hőtartályok között. Látható, hogy mivel $\eta_{32} < \eta_{12}^c$, így a hatásfok mindig kisebb lesz mint a két legextrémebb hőtartály közötti hatásfok:
+\begin{equation}
+    \eta < \eta_{12}^c
+\end{equation}
+Ez azt jelenti, hogy ha több hőtartályt használunk a Carnot-körfolyamat során, akkor a hatásfok mindig kisebb lesz mint ha csak a két hőtartályt használnánk.
+
+\subsubsection*{Példa: Stirling Motor hatásfoka}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/5-tetel/stirling_motor_schematikus.png}
+    \caption{Stirling motor schematikus ábrázolása}
+\end{figure}
+A Stirling motor egy olyan hőerőgép, amely külső égésű motor, és a Carnot-körfolyamat egy speciális esete. A Stirling motor négy lépésből áll:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/5-tetel/stirling_motor.png}
+    \caption{Stirling motor $pV$ diagramon ábrázolva}
+\end{figure}
+A Stirling motor négy lépése a következő:
+\begin{itemize}
+    \item Izoterm tágulás: A gáz felveszi a hőt a meleg tartályból, miközben a térfogata növekszik.
+    \item Izokor hűtés: A gáz térfogata állandó marad, miközben a hőmérséklete csökken.
+    \item Izoterm összenyomás: A gáz leadja a hőt a hideg tartálynak, miközben a térfogata csökken.
+    \item Izokor fűtés: A gáz térfogata állandó marad, miközben a hőmérséklete növekszik.
+\end{itemize}
+A Stirling motor hatásfokát a következőképpen számolhatjuk ki:
+\begin{equation}
+    \eta_{\text{Stirling}} = \frac{-W_{12} - W_{14}}{Q_{12} + Q_{41}} = \frac{n R (T_H - T_C) \ln{\frac{V_2}{V_1}}}{n R T_H \ln{\frac{V_2}{V_1}} + n C_V (T_H - T_C)}
+\end{equation}
+Ahol $W_{12}$ az izoterm tágulás munkája, $W_{14}$ az izokor fűtés munkája, $Q_{12}$ a meleg tartályból felvett hő, és $Q_{41}$ a hideg tartálynak leadott hő.
+Egyszerűsítve a hatásfok kifejezést:
+\begin{equation}
+    \eta_{\text{Stirling}} = \frac{(T_H - T_C) \ln{\frac{V_2}{V_1}}}{T_H \ln{\frac{V_2}{V_1}} + \frac{C_V}{R} (T_H - T_C)}
+\end{equation}
+Ha ebbe belehelyettesítjük a gyakran használt értékeket:
+\begin{equation}
+    \begin{aligned}
+        T_H &= 600 \, K \\
+        T_C &= 300 \, K \\
+        \frac{V_2}{V_1} &= 2 \\
+        C_V &= \frac{3}{2} R \quad \text{(monatomikus gáz esetén)}
+    \end{aligned}
+\end{equation}
+Akkor a Stirling motor hatásfoka a következő lesz:
+\begin{equation}
+    \eta_{\text{Stirling}} = \frac{(600 - 300) \ln{2}}{600 \ln{2} + \frac{3}{2} (600 - 300)} \approx 0.24
+\end{equation}
+Ez azt jelenti, hogy a Stirling motor a felvett hő 24\%-át tudja munkává alakítani ezekkel a paraméterekkel.
+
+\subsubsection{Entrópia, Főtételek egyesített alakja}
+Láttuk, hogy a Carnot-körfolyamat során a hőmérleg a következőképpen írható fel ideális gázokra:
+\begin{equation}
+    \frac{Q_1}{T_1} + \frac{Q_2}{T_2} = 0
+\end{equation}
+Ezt a kifejezést fel lehet írni egy körintegrál segítségével is, ahol a körintegrál a körfolyamat során felvett és leadott hőmennyiségeket jelenti:
+\begin{equation}
+    \oint \frac{\delta Q}{T} = 0
+\end{equation}
+De mi van, ha egy komplexebb körfoyamatot nézek? Nézzük meg hogy néz ki, ha három hőtartály között megy végbe a körfolyamat:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/5-tetel/ket_lepes_korfolyamat.png}
+    \caption{Két lépéses körfolyamat $pV$ diagramon ábrázolva}
+\end{figure}
+Látható, hogy mivel a körintegál 0 azon a szakaszon ahol a folyamat mintkét irányba megy, így a teljes folyamat olyan mint két különálló Carnot-körfolyamat összege, tehát a teljes körintegrál továbbra is 0 lesz:
+\begin{equation}
+    \oint \frac{\delta Q}{T} = \oint_{1} \frac{\delta Q}{T} + \oint_{2} \frac{\delta Q}{T} = 0 + 0 = 0
+\end{equation}
+Most nézzük meg egy teljesen tetszőleges körfolyamatot:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/5-tetel/tetszoleges_korfolyamat.png}
+    \caption{Tetszőleges körfolyamat $pV$ diagramon ábrázolva}
+\end{figure}
+Ekkor a körfolyamatot fel lehet bontani több kisebb Carnot-körfolyamatra, amik mindegyike egyensúlyi állapotokon keresztül megy végbe. Mivel mindegyik kis körfolyamatra igaz, hogy a körintegrálja 0, így a teljes körfolyamat körintegrálja is 0 lesz:
+\begin{equation}
+    \oint \frac{dQ}{T} = \sum_{i} \oint_{i} \frac{\delta Q}{T} = 0
+\end{equation}
+Ebből következik, hogy bármilyen körfolyamatra igaz, hogy:
+\begin{equation}
+    \oint \frac{dQ}{T} = 0
+\end{equation}
+Az állapotjelzőt pedig pont úgy definiáltuk, hogy egy olyan mennyiség ami csak a folyamat végpontjaitól függ, vagyis ha ugyan abba az állapotba jutunk vissza, akkor az állapotjelző változása nulla lesz.
+Ebből következik, hogy ez a mennyiség amit itt kaptunk is egy állapotjelző lesz:
+\begin{equation}
+    S(A) := \int_{0}^{A} \frac{\delta Q}{T}
+\end{equation}
+Ennek az állapotjelzőnem a megváltozása:
+\begin{equation}
+    \Delta S = S(B) - S(A) = \int_{A}^{B} \frac{\delta Q}{T} = \int_{A}^{B} dS
+\end{equation}
+Tehát a hő változását fel lehet írni az állapotjelző változásaként is:
+\begin{equation}
+   dS = \frac{\delta Q}{T} \qquad \delta Q = T dS
+\end{equation}
+Ezt az állapotjelzőt entrópiának nevezzük, és valamilyen módon a hőmérséklet áramlásával kapcsolatos rendszertulajdonságot fejez ki.
+\newline
+\newline
+Fontos, hogy ez eddig csak kvázistatikus és reverzibilis folyamatokra volt igaz, de mi van akkor, ha irreverzibilis folyamatot nézünk?
+Nézzük meg egy egyszerű példát: Két különböző hőmérsékletű gázt összeengedünk egy tartályban:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/5-tetel/irreverzibilis_entrópia.png}
+    \caption{Irreverzibilis folyamat két gáz között}
+\end{figure}
+Ekkor az entrópia változása a következő lesz:
+\begin{equation}
+    \delta Q = m c dT
+\end{equation}
+\begin{equation}
+    \Delta S = \Delta S_1 + \Delta S_2 = \int_{T_1}^{T^*} \frac{m c dT}{T} + \int_{T_2}^{T^*} \frac{m c dT}{T} = m c \ln{\frac{T^*}{T_1}} + m c \ln{\frac{T^*}{T_2}}
+\end{equation}
+\begin{equation} 
+    \Delta S = m c \ln{\frac{T^{*2}}{T_1 T_2}} = m c \ln{\frac{(T_1 + T_2)^{2}}{4T_1 T_2}} > 0
+\end{equation}
+Tehát a hőmérséklet kiegyenlítődésével zárt rendszerben az Entrópia nő. Ebből az is látszik, hogy az entrópia egy extenzív állapotjelző, mert függ a rendszer méretétől.
+Fontos azt is megjegyezni, hogy az entrópia csak az egész rendszert nézve nő, hiszen ha csak az egyik gázra nézzük, akkor annak az entrópiája csökkenhet is a hőmérséklet csökkenésével.
+\newline
+\newline
+Meg lehet nézni az entrópiaváltozást a Gay-Lussac folyamat során is, ahol egy gázt összenyomunk, majd kiengedünk.
+Ekkor a gáz entrópiaváltozása az összenyomás során:
+\begin{equation}
+    \Delta S_{21} = \int_{1}^{2} \frac{\delta Q}{T} = \int_{2V_0}^{V_0} \frac{pdV}{T} = \int_{2V_0}^{V_0} \frac{nR dV}{V} = n R \ln{\frac{V_0}{2V_0}} = - n R \ln{2} < 0
+\end{equation}
+Tehát a gáz entrópiája csökken, amikor összenyomom a gázt. Viszont amikor kitágul a gáz, akkor pont ugyan abba az állapotba kell visszajutnom mint az összenyomás előtt, így az entrópia változása a gáznak nulla lesz.
+\begin{equation}
+    \Delta S_{12} = - \Delta S_{21} = n R \ln{2} > 0
+\end{equation}
+Így a teljes entrópiaváltozás a gáz és a tartály között:
+\begin{equation}
+    \Delta S_{\text{teljes}} = \Delta S_{\text{gáz}} + \Delta S_{\text{tartály}} = - n R \ln{2} + n R \ln{2} = 0
+\end{equation}
+Tehát a teljes entrópiaváltozás nulla. Az entrópia a Boltzmann-féle megfogalmazásban a következőképpen néz ki:
+\begin{equation}
+    \Delta S_{12} = N k_B ln2 = k_B ln2^{N} 
+\end{equation}
+Ahol $N$ a részecskék száma, és $k_B$ a Boltzmann állandó ($\left[k_B\right] = \frac{J}{K}$). Ez azt jelenti, hogy amikor a gáz kitágul, akkor a részecskék eloszlása a tartályban megduplázódik, így az entrópia növekszik.
+\newline
+\newline
+Ezek alapján felírhatjuk a termodinamika II. főtételének egyesített alakját:
+\begin{equation}
+     dS \geq \frac{\delta Q}{T} \qquad dS T \geq \delta Q
+\end{equation}
+\begin{equation}
+    \boxed{\Delta S \geq \int \frac{\delta Q}{T}}
+\end{equation}
+Ahol az egyenlőség csak kvázistatikus és reverzibilis folyamatokra igaz, míg az egyenlőtlenség irreverzibilis folyamatokra érvényes.
+Ez azt jelenti, hogy egy zárt rendszer entrópiája sosem csökken, vagyis az entrópia mindig nő vagy állandó marad. Ebből az következik,
+hogy az univerzum entrópiája folyamatosan növekszik, hiszen az univerzum egy zárt rendszer. Ez az entrópianövekedés irányát is meghatározza, vagyis megmondja, hogy egy folyamat milyen irányban mehet végbe spontán módon.
+Ebből a felismerésből született meg a hőhalál elmélete, ami azt mondja ki, hogy az univerzum egyre nagyobb entrópiájú állapotok felé halad, és végül eléri a maximális entrópiájú állapotot, ahol már nem lesz többé energiaátadás vagy munka végzésére alkalmas folyamat.
+
+Az entrópia értelmezésénél meg kell jegyezni, hogy egy lokális rendszer entrópiája csökkenhet is, de csak úgy, hogy közben a környezete entrópiája nagyobb mértékben növekszik. Például
+a földön végbe mehetnek olyan folyamatok, ahol az entrópia csökken, mint a szél kialakulása, amit eltérő légnyomású zónák kialakulása okoz, de ezt a folyamatot a nap energiája hajtja, ami növeli a föld környezetének entrópiáját.
+
+\subsubsection*{Entrópia statisztikus értelmezése}
+Az entrópiát nem csak termodinamikai értelemben lehet értelmezni, hanem statisztikus mechanikai értelemben is. Ezt először Ludwig Boltzmann fogalmazta meg a következő képlettel:
+\begin{equation}
+    S = k_B \ln{\Omega}
+\end{equation}
+Ahol $S$ az entrópia, $k_B$ a Boltzmann állandó, és $\Omega$ az adott makroszkopikus állapothoz tartozó mikroszkopikus állapotok száma.
+Ez azt jelenti, hogy minél több mikroszkopikus állapot felel meg egy adott makroszkopikus állapotnak, annál nagyobb az entrópia értéke.
+Például egy gáz esetén, ha a gáz részecskéi egyenletesen eloszlanak a tartályban, akkor rengeteg mikroszkopikus állapot felel meg ennek a makroszkopikus állapotnak, míg ha a gáz csak az egyik felében van jelen, akkor csak egyetlen mikroszkopikus állapot felel meg ennek a makroszkopikus állapotnak.
+Ezért az egyenletes eloszlású állapotnak nagyobb az entrópiája, mint a gáz csak az egyik felében lévő állapotnak.
+\newline
+\newline
+Ez a statisztikus értelmezés összhangban van a termodinamikai entrópia fogalmával, hiszen a termodinamikai entrópia is azt fejezi ki, hogy egy rendszer mennyire rendezetlen vagy mennyire valószínű egy adott állapot.
+Minél több mikroszkopikus állapot felel meg egy makroszkopikus állapotnak, annál valószínűbb az adott állapot, és annál nagyobb az entrópia értéke.
+\newline
+\newline
+Ez a statisztikus értelmezés segít megérteni, hogy miért növekszik az entrópia egy zárt rendszerben. Mivel a rendszerek hajlamosak olyan állapotok felé haladni, amelyek több mikroszkopikus állapotnak felelnek meg,
+ezért az entrópia növekedése természetes következmény. Például egy gáz esetén, ha a gáz részecskéi kezdetben egy kis térfogatban vannak összegyűjtve, akkor idővel a részecskék szétterjednek a rendelkezésre álló térfogatban,
+mivel ez az állapot több mikroszkopikus állapotnak felel meg, és így az entrópia növekszik.
+\newline
+\newline
+Ebből az is következik, hogy az entrópia spontán csökkenése nem teoretikus lehetetlenség egy adott időpillanatban, de elég hosszú időskálán nézve a valószínűsége effektíve nulla.
+
+Az entrópia statisztikus értelmezését szemléltetve nézzünk meg egy egyszerű példát: Képzeljünk el egy dobozt, amiben pár részecske van, és a dobozt két részre osztjuk egy elválasztó fallal. Kezdetben az összes részecske az egyik oldalon van,
+majd az elválasztó falat eltávolítjuk, és a részecskék szabadon mozoghatnak a doboz mindkét felében. Ekkor az entrópia növekedését a következőképpen értelmezhetjük statisztikus mechanikai szempontból:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/5-tetel/entropia_statisztikus.png}
+    \caption{Az entrópia statisztikus értelmezése}
+\end{figure}
+Kezdetben, amikor az összes részecske az egyik oldalon van, csak egyetlen mikroszkopikus állapot felel meg ennek a makroszkopikus állapotnak, hiszen minden részecske ugyanazon az oldalon van. Ezért az entrópia értéke alacsony.
+A várható értéke a bal oldalon lévő részecskék számának:
+\begin{equation}
+    \langle N_b \rangle = N \cdot \frac{1}{2} = \frac{N}{2}
+\end{equation}
+Ahol $N$ a részecskék teljes száma. Ez alapján azt is fel lehet írni, hogy:
+\begin{equation}
+    N_b = \frac{N}{2} \pm \sqrt{N}
+\end{equation}
+Ez azt jelenti, hogy a részecskék száma a bal oldalon az idő előrehaladtával ingadozni fog a várható érték körül, de a teljes részecskeszám feléhez fog közelíteni.
+Ha mondjuk feltesszük, hogy $N = 10^{24} $ részecske van a dobozban, akkor a várható érték $5 \times 10^{23}$ lesz, és az ingadozás mértéke körülbelül $10^{12}$ lesz:
+\begin{equation}
+    N_b = 5 \times 10^{23} \pm 10^{12}
+\end{equation}
+\begin{equation}
+    \frac{\Delta p}{p} = \frac{\Delta N}{N} = \frac{10^{12}}{5 \times 10^{23}} = 2 \times 10^{-12}
+\end{equation}
+Az errntrópiára visszavetítve kimondhatjuk, hogy az entrópia a mikroállapotok számától függ:
+\begin{equation}
+    S = S(\Omega)
+\end{equation}
+Ahol $\Omega$ a mikroszkopikus állapotok száma. Erre Boltzmann a következő képletet adta meg:
+\begin{equation}
+    S = k_B \ln{\Omega} \qquad \left[S\right] = \frac{J}{K}
+\end{equation}
+Ahol $k_B$ a Boltzmann állandó. Ez alapján az entrópia változása:
+\begin{equation}
+    \Delta S = k_B \ln{\frac{\Omega_2}{\Omega_1}}
+\end{equation}
+Vagyis a mi példánkra:
+\begin{equation}
+    \Delta S = k_B \ln{\frac{2^{N}\Omega_0}{\Omega_0}} = k_B \ln{2^{N} \Omega_0} - k_B \ln{\Omega_0} = N k_B \ln{2}
+\end{equation}
+Ami pontosan az mint amit a Carnot-körfolyamatnál is kaptunk. Ezt úgy is értelmezhetjük, hogy az az állapot ami több mikroszkopikus állapotnak felel meg, az entrópiában is nagyobb értéket képvisel.
+A legtöbb mikroszkopikus állapottal rendelkező állapot pedig a legrendezetlenebb, vagyis az entrópiát lehet a rendezetlenség mérőszámaként is értelmezni.
+\newline
+\newline
+Végezetül pedig nézzük meg a Carnot-körfolyamat TS diagramon való ábrázolását:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/5-tetel/carnot_ts_diagram.jpg}
+    \caption{Carnot-körfolyamat TS diagramon ábrázolva}
+\end{figure}
+Ezen a grafikonon a körfolyamat által kijelölt terület a felvett hőmennyiséget jelenti:
+\begin{equation}
+    -W = Q = \oint T dS
+\end{equation}
+A hatásfok pedig a görbe által közrefogott terület osztva a görbe alatti területtel:
+\begin{equation}
+    \eta = \frac{-W}{Q_1} = \frac{\oint T dS}{\int_{S_1}^{S_2} T_1 dS} = \frac{T_1 (S_2 - S_1) - T_2 (S_2 - S_1)}{T_1 (S_2 - S_1)} = \frac{T_1 - T_2}{T_1}
+\end{equation}
+
+\subsubsection*{Összefoglalás}
+Mindent összegezve a következő fontos eredményeket kaptuk a Carnot-körfolyamatról és az entrópiáról:
+\begin{itemize}
+    \item A Carnot-körfolyamat hatásfoka csak a két hőtartály hőmérsékletétől függ, és nem függ a rendszer anyagától vagy kialakításától:
+    \begin{equation}
+        \eta = 1 - \frac{T_2}{T_1}
+    \end{equation}
+    \item A Carnot-körfolyamat hőmérlege ideális gázokra:
+    \begin{equation}
+        \frac{Q_1}{T_1} + \frac{Q_2}{T_2} = 0
+    \end{equation}
+    \item Az entrópia egy állapotjelző, ami a hőmérséklet áramlásával kapcsolatos rendszertulajdonságot fejez ki:
+    \begin{equation}
+        dS = \frac{\delta Q}{T}
+    \end{equation}
+    \item A termodinamika II. főtétele egyesített alakja:
+    \begin{equation}
+        \Delta S \geq \int \frac{\delta Q}{T}
+    \end{equation}
+    \item Az entrópia statisztikus értelmezése Boltzmann szerint:
+    \begin{equation}
+        S = k_B \ln{\Omega}
+    \end{equation}
+\end{itemize}
+
+Ezek alapján az állapotegyenletet a következő általános formában írhatjuk fel:
+\begin{equation}
+    \boxed{dU = T dS - p dV}
+\end{equation}
+
+\subsection{Kémiai Potenciál}
+A termodinamika két főtétele alapján fel tudtuk írni az állapotegyenletet reverzibilis folyamatokra:
+\begin{equation}
+    dU = T dS - p dV
+\end{equation}
+Ez alapján az állapotjelzőkre fel tudjuk írni a következő kifejezéseket:
+\begin{equation}
+    T = \frac{\partial U}{\partial S}\bigg|_V \qquad p = - \frac{\partial U}{\partial V}\bigg|_S
+\end{equation}
+De eddig csak olyan rendszereket néztünk, amikben az anyagmennyiség állandó volt. Mi van akkor, ha egy olyan rendszert nézünk, ahol az anyagmennyiség is változhat?
+Ekkor az állapotegyenletet ki kell egészíteni egy új taggal, ami az anyagmennyiség változását veszi figyelembe:
+\begin{equation}
+    U = U(S, V, n)
+\end{equation}
+\begin{equation}
+    dU = \frac{\partial U}{\partial S}\bigg|_{V,n} dS + \frac{\partial U}{\partial V}\bigg|_{S,n} dV + \frac{\partial U}{\partial n}\bigg|_{S,V} dn
+\end{equation}
+Az új tagot pedig a következőképpen definiáljuk:
+\begin{equation}
+    \mu := \frac{\partial U}{\partial n}\bigg|_{S,V} - TR \cdot ln{\left(\frac{V \cdot T^{\frac{f}{2}}}{n \psi}\right)} \qquad \text{kémiai potenciál}
+\end{equation}
+Ez a mennyiség a kémiai potenciál, ezt visszahelyettesítve az állapotegyenletbe:
+\begin{equation}
+    dU = T dS - p dV + \mu dn \qquad \mu: \text{kémiai potenciál} \qquad \left[\mu\right] = \frac{J}{mol}
+\end{equation}
+A kémiai potenciál azt fejezi ki, hogy mennyi belső energia változás történik egy rendszerben, amikor az anyagmennyiségét egy molal egységgel megváltoztatjuk,
+miközben a rendszer entrópiája és térfogata állandó marad.
+\newline
+\newline
+A kémiai potenciált fel lehet írni olyan rendszerekre is, ahol több komponens van jelen. Ekkor az állapotegyenlet a következőképpen néz ki:
+\begin{equation}
+    U = U(S, V, n_1, n_2, \dots, n_k)
+\end{equation}
+\begin{equation}
+    dU = T dS - p dV + \sum_{i=1}^{k} \mu_i dn_i \qquad \mu_i := \frac{\partial U}{\partial n_i}\bigg|_{S,V,n_{j \neq i}}
+\end{equation}
+Ahol $k$ a komponensek száma, és $\mu_i$ az $i$-edik komponens kémiai potenciálja.
+\newline
+\newline
+Kérdés, hogy a kémiai potenciál hogyan illeszkedik az állapotegyenletekbe? Fel tudunk írni állapotegyenleteket bármilyen állapotjelzőkre?
+A válasz nem, mert az állapotegyenleteknek mindig teljesíteniük kell a főtételeket. Emiatt vannak kitüntetett állapotjelzők, amik szerepelnek a
+belső energia megváltozásának egyenletében. Azt is észrevehetjük, hogy ezek az állapotjelzők párban vannak, úgy, hogy tipikusan az egyik extenzív, míg a másik intenzív állapotjelző.
+Ezeket \textbf{Konjugált állapotjelzőknek} nevezzük. Ilyen konjugált állapotjelző párok például:
+\begin{itemize}
+    \item Entrópia ($S$) - Hőmérséklet ($T$)
+    \item Térfogat ($V$) - Nyomás ($p$)
+    \item Anyagmennyiség ($n$) - Kémiai potenciál ($\mu$)
+\end{itemize}
+Ezeket az állapotjelzőket ki tudjuk egymásból fejezni állapotegyenletek segítségével:
+\begin{equation}
+    U(S, V, n) \quad \to \quad T = \frac{\partial U}{\partial S}\bigg|_{V,n} \qquad p = - \frac{\partial U}{\partial V}\bigg|_{S,n} \qquad \mu = \frac{\partial U}{\partial n}\bigg|_{S,V}
+\end{equation}
+Nézzük meg például, hogy mit kapunk ha a belső energia a következő alakban van megadva:
+\begin{equation}
+    U(S, V, n) = \phi \cdot e^{\frac{2S}{fnR}} \cdot V^{-\frac{2}{f}} \cdot n^{\frac{f + 2}{f}} \qquad \phi: \text{állandó}
+\end{equation}
+Ekkor a különböző állapotjelzők a következőképpen néznek ki:
+\begin{equation}
+    \begin{aligned}
+        T &= \frac{\partial U}{\partial S}\bigg|_{V,n} = \frac{2}{f n R} \cdot U(S, V, n) \quad \Rightarrow \quad U(S, V, n) = \frac{f}{2} n R T \\
+        p &= - \frac{\partial U}{\partial V}\bigg|_{S,n} = \frac{2}{f} \cdot U(S, V, n) \cdot V^{-1} \quad \Rightarrow \quad U(S, V, n) = \frac{f}{2} p V \\
+        \mu &= \frac{\partial U}{\partial n}\bigg|_{S,V} = \left(\frac{f + 2}{f n} - \frac{2S}{f n^2 R}\right) \cdot U(S, V, n) \quad \Rightarrow \quad U(S, V, n) = \frac{f}{f + 2} \cdot RT = C_P T
+    \end{aligned}   
+\end{equation}
+Tehát ez a "random" függvény visszaadja a jól ismert állapotegyenleteket ideális gázokra. Tehát ez a függvény nem is annyira random, hanem az úgynevezett fundamentális egyenlet.
+Tehát a belső enerrgia függvényének csak olyan függvényt választhatok meg, ami visszaadja a jól ismert állapotegyenleteket. Ezeket a függvényeket termodinamikai potenciáloknak nevezzük.
+\newline
+\newline
+Ezeket az egyenleteket más változókkal is fel tudjuk írni, például az entrópiával:
+\begin{equation}
+    S(U, V, n) \quad \to \quad dS = \underbrace{\frac{\partial S}{\partial U}\bigg|_{V,n}}_{\frac{1}{T}} dU + \underbrace{\frac{\partial S}{\partial V}\bigg|_{U,n}}_{\frac{p}{T}} dV + \underbrace{\frac{\partial S}{\partial n}\bigg|_{U,V}}_{- \frac{\mu}{T}} dn
+\end{equation}
+Tehát az entrópia megváltozásának egyenlete a következő lesz:
+\begin{equation}
+    dS = \frac{1}{T} dU + \frac{p}{T} dV - \frac{\mu}{T} dn
+\end{equation}
+Tehát az Entrópia függvénye:
+\begin{equation}
+    S(U, V, n) = n R \ln{\left[\left(\frac{U}{p}\right)^{\frac{f}{2}} V \cdot n^{-\frac{f + 2}{2}} \right]} = k_B \ln{\Omega}
+\end{equation}
+Ezt úgy mondjuk, hogy $U, V, n$ az entrópia természetes változói.
+\newline
+\newline
+Fontos megjegyezni, hogy nem az $U$ maga a termodinamikai potenciál, hanem az $U(S, V, n)$ függvény, ami a belső energiát adja meg az entrópia, térfogat és anyagmennyiség függvényében,
+mert más felírásban (pl.: $U(T,V, n)$) nem adja feltétlen vissza az állapotegyenleteket. Például nézzük meg az $U(T, V, n)$ függvényt:
+\begin{equation}
+    U(T, V, n) = \frac{f}{2} n R T \quad \to \quad dU = \frac{f}{2} n R dT + \frac{f}{2} R T dn
+\end{equation}
+Ez pedig nem adja vissza az állapotegyenleteket, mert az entrópiát és a nyomást nem tudom származtatni belőle. Tehát ha ezt a függvényt ismerem csak,
+akkor nem ismerem az egész rendszert. Kérdés, hogy akkor át tudok-e térni egy másik potenciálra, ami más természetes változókkal van megadva?
+Igen, ezt meg tudom tenni a Legendre-transzformáció segítségével. Ahhoz, hogy ezt megértsük nézzünk meg egy tetszőleges $f(X)$ függvényt. Ekkor fel tudjuk írni a függvény differenciálját:
+\begin{equation}
+    u(X) = f'(X) = \frac{df}{dX} \qquad df = u(X) dX
+\end{equation}
+És ha az inverz függvényét nézzük meg $u(X)$-nek:
+\begin{equation}
+    x(U) \quad \rightarrow \quad u(x(U)) = U \quad \rightarrow \quad x = u^{(-1)}
+\end{equation}
+Kérdés, hogy létezik-e olyan $g(U)$ függvény, amire igaz, hogy:
+\begin{equation}
+    g'(U) = x(U)
+\end{equation}
+A válasz, hogy igen:
+\begin{equation}
+    g(U) = f(x(U)) - U \cdot x(U)
+\end{equation}
+Mert ha ezt deriváljuk:
+\begin{equation}
+    g'(U) = f'(x(U)) \cdot x'(U) - \left[ U \cdot x'(U) + x(U) \cdot 1 \right] = u(x(U)) \cdot x'(U) - U \cdot x'(U) - x(U) = - x(U)
+\end{equation}
+Tehát a Legendre-transzformáció segítségével át tudunk térni különböző függvények között, amik különböző természetes változókkal vannak megadva.
+Tehát, ha van egy $f(X)$ függvényünk, és át akarunk térni egy $g(U)$ függvényre, ahol az argumentumok között van egy összefüggés $X = U^{(-1)}$, akkor a következőképpen tudjuk megtenni:
+\begin{equation}
+    g(U) = f(X) - U \cdot X \qquad \left[g\right] = \left[f\right]
+\end{equation}
+Tehát ha van egy $U(S,V,n)$ függvényünk, és át akarunk térni egy $F(T,V,n)$ függvényre, akkor a következőképpen tudjuk megtenni:
+\begin{equation}
+    F(T,V,n) = U(S,V,n) - T \cdot S \qquad \left[F\right] = J
+\end{equation}
+Ezt a függvényt Helmholtz szabad energiának nevezzük (van, hog $A$-val jelölik).
+
+
+\subsection{Termodinamikai potenciálok}
+Láttuk a kémai potenciálnál, hogy a Legendre-transzformáció segítségével át tudunk térni különböző állapotegyenletek között. Azok az állapotegyenletek pedig,
+amelyekből ki tudjuk fejezni az anyag összes többi tulajdonságát (a termodinamika egyesített főtételének segítségével), azok a termodinamikai potenciálok. Tehát:
+\begin{itemize}
+    \item termodinamika egyesített főtétele:
+    \begin{equation}
+        dU = T dS - p dV + \mu dn
+    \end{equation}
+    \item termodinamikai potenciálok (fundamentális egyenletek):
+    \begin{itemize}
+        \item Belső energia: $U(S, V, n)$
+        \item Entrópia: $S(U, V, n)$
+        \item Helmholtz szabad energia: $F(T, V, n) = U - T S$
+        \item ...
+    \end{itemize}
+    \item Állapotegyenletek:
+    \begin{equation}
+        T = \frac{\partial U}{\partial S}\bigg|_{V,n} \qquad p = - \frac{\partial U}{\partial V}\bigg|_{S,n} \qquad \mu = \frac{\partial U}{\partial n}\bigg|_{S,V}
+    \end{equation}
+\end{itemize}
+Ha pedig megvan egy állapotegyenlet, akkor azt átrendezve bármilyen állapotjelzőre fel tudjuk írni a többi állapotjelzőt is. Például ha megvan a $U(T,V,n)$ függvényünk, akkor
+A $T$-t ki tudom fejezni $S$-el az állapotegyenlet segítségével:
+\begin{equation}
+    U(S(T), V n) = U'(T, V, n)
+\end{equation}
+De $U'$ és $U$ nem ugyan az a két függvény, mert a $U'(T, V, n)$ nem egy termodinamikai potenciál, hiszen nem adja vissza az állapotegyenleteket. 
+A Legrendre-transzofrmáció segítségével viszont át tudok térni egy olyan potenciálra, ami $T$-t használja természetes változóként:
+\begin{equation}
+    F(T, V, n) := U(S(T, V, n), V, n) - T S
+\end{equation}
+Ekkor pedig az állapotegyenletek a következőképpen néznek ki:
+\begin{equation}
+    dF = - S dT - p dV + \mu dn
+\end{equation}
+A parciális deriváltak pedig:
+\begin{equation}
+    \frac{\partial F}{\partial T}\bigg|_{V,n} = \underbrace{\frac{\partial U}{\partial S}\bigg|_{V,n}}_{T} \cdot \frac{\partial S}{\partial T}\bigg|_{V,n} - S - T \cdot \frac{\partial S}{\partial T}\bigg|_{V,n} = - S(T, V, n)
+\end{equation}
+\begin{equation}
+    \frac{\partial F}{\partial V}\bigg|_{T,n} = \underbrace{\frac{\partial U}{\partial S}\bigg|_{V,n}}_{T} \cdot \frac{\partial S}{\partial V}\bigg|_{T,n} + \frac{\partial U}{\partial V}\bigg|_{S,n} - T \cdot \frac{\partial S}{\partial V}\bigg|_{T,n} = - p(T, V, n)
+\end{equation}
+\begin{equation}
+    \frac{\partial F}{\partial n}\bigg|_{T,V} = \underbrace{\frac{\partial U}{\partial S}\bigg|_{V,n}}_{T} \cdot \frac{\partial S}{\partial n}\bigg|_{T,V} + \frac{\partial U}{\partial n}\bigg|_{S,V} - T \cdot \frac{\partial S}{\partial n}\bigg|_{T,V} = \mu(T, V, n)
+\end{equation}
+Tehát a Helmholtz szabad energia egy olyan termodinamikai potenciál, ami a hőmérsékletet használja természetes változóként az entrópia helyett. 
+A szabad energia pedig a következőképpen néz ki ideális gázokra:
+\begin{equation}
+    F(T, V, n) = n R T \left\{\frac{f}{2} - ln \left[\left(\frac{fk}{2\phi}T\right)^{\frac{f}{2}}\cdot \frac{V}{n} \right]\right\}
+\end{equation}
+A differenciális alakja pedig:
+\begin{equation}
+    dF = \frac{\partial F}{\partial T}\bigg|_{V,n} dT + \frac{\partial F}{\partial V}\bigg|_{T,n} dV + \frac{\partial F}{\partial n}\bigg|_{T,V} dn = - S dT - p dV + \mu dn
+\end{equation}
+\newline
+\newline
+Ezek a lapján a következő \textbf{termodinamikai potenciálokat} tudjuk definiálni:
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{2cm}|p{4cm}|p{2cm}|c|c|}
+        \hline
+        Név & Jelölés & Természetes változók & Állapotegyenletek & Differenciális alak \\
+        \hline
+        Belső energia & $U(S, V, n)$ & $S, V, n$ & $T = \frac{\partial U}{\partial S}\big|_{V,n}$ & $dU = T dS - p dV + \mu dn$ \\
+         &  &  & $p = - \frac{\partial U}{\partial V}\big|_{S,n}$ &  \\
+         &  &  & $\mu = \frac{\partial U}{\partial n}\big|_{S,V}$ &  \\
+        \hline
+        Entrópia & $S(U, V, n)$ & $U, V, n$ & $\frac{1}{T} = \frac{\partial S}{\partial U}\big|_{V,n}$ & $dS = \frac{1}{T} dU + \frac{p}{T} dV - \frac{\mu}{T} dn$ \\
+         &  &  & $\frac{p}{T} = \frac{\partial S}{\partial V}\big|_{U,n}$ &  \\
+         &  &  & $- \frac{\mu}{T} = \frac{\partial S}{\partial n}\big|_{U,V}$ &  \\
+        \hline
+        Helmholtz szabad energia & $F(T, V, n) = U - TS$ & $T, V, n$ & $- S = \frac{\partial F}{\partial T}\big|_{V,n}$ & $dF = - S dT - p dV + \mu dn$ \\
+         &  &  & $- p = \frac{\partial F}{\partial V}\big|_{T,n}$ &  \\
+         &  &  & $\mu = \frac{\partial F}{\partial n}\big|_{T,V}$ &  \\
+        \hline
+        Entalpia & $H(S, p, n) = U + pV$ & $S, p, n$ & $T = \frac{\partial H}{\partial S}\big|_{p,n}$ & $dH = T dS + V dp + \mu dn$ \\
+         &  &  & $V = \frac{\partial H}{\partial p}\big|_{S,n}$ &  \\
+         &  &  & $\mu = \frac{\partial H}{\partial n}\big|_{S,p}$ &  \\
+        \hline
+        Gibbs szabad energia & $G(T, p, n) = U - TS + pV$ & $T, p, n$ & $- S = \frac{\partial G}{\partial T}\big|_{p,n}$ & $dG = - S dT + V dp + \mu dn$ \\
+         &  &  & $V = \frac{\partial G}{\partial p}\big|_{T,n}$ &  \\
+         &  &  & $\mu = \frac{\partial G}{\partial n}\big|_{T,p}$ &  \\
+        \hline
+    \end{tabular}
+    \caption{Fontosabb termodinamikai potenciálok}
+\end{table}
+A termodinamikai főtételek alapján csak olyan anyagok létezhetnek, amelyek minden tulajdonságát ki lehet fejezni egy termodinamikai potenciál segítségével. De a termodinamikai potenciálok
+ekvivalensek egymással, tehát szabadon megválaszthatom melyiket használom egy rendszer leírására.
+\newline
+\newline
+De hogyan tudok a különböző potenciálok között átváltani? Erre lehet felhasználni a parciális deriváltak tulajdonságait.
+Először is, a parciális derviáltak definíciójából következően egy tetszőleges $f(x,y)$ függvényre igaz, hogy:
+\begin{equation}
+    \frac{\partial}{\partial y} \left(\frac{\partial f}{\partial x}\bigg|_y\right)\bigg|_x = \frac{\partial}{\partial x} \left(\frac{\partial f}{\partial y}\bigg|_x\right)\bigg|_y
+\end{equation}
+Ezt a termodinamikai potenciálokra alkalmazva, például a belső energiára:
+\begin{equation}
+    \frac{\partial}{\partial V} \underbrace{\left(\frac{\partial U}{\partial S}\bigg|_{V,n}\right)}_{T}\bigg|_{S,n} = \frac{\partial}{\partial S} \underbrace{\left(-\frac{\partial U}{\partial V}\bigg|_{S,n}\right)}_{p}\bigg|_{V,n}
+\end{equation}
+\begin{equation}
+    \frac{\partial T}{\partial V}\bigg|_{S,n} = - \frac{\partial p}{\partial S}\bigg|_{V,n}
+\end{equation}
+Hasonlóan a többi termodinamikai potenciálra is kapunk ilyen összefüggéseket. Ezeket a relációkat \textbf{Maxwell-relációknak} nevezzük, és
+a segítségükkel tetszőleges állapotjelzők parciális deriváltjait tudjuk kifejezni egymás segítségével. Tehát az állapotegyenleteket a Maxwell-relációk segítségével
+felírhatjuk a következő alakban is:
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        Term. Pot. & Maxwell-reláció \\
+        \hline
+        $U(S, V, n)$ & $\frac{\partial T}{\partial V}\big|_{S,n} = - \frac{\partial p}{\partial S}\big|_{V,n}$ \\
+        \hline
+        $S(U, V, n)$ & $\frac{\partial (1/T)}{\partial V}\big|_{U,n} = \frac{\partial (p/T)}{\partial U}\big|_{V,n}$ \\
+        \hline
+        $F(T, V, n)$ & $\frac{\partial S}{\partial V}\big|_{T,n} = \frac{\partial p}{\partial T}\big|_{V,n}$ \\
+        \hline
+        $H(S, p, n)$ & $\frac{\partial T}{\partial p}\big|_{S,n} = \frac{\partial V}{\partial S}\big|_{p,n}$ \\
+        \hline
+        $G(T, p, n)$ & $\frac{\partial S}{\partial p}\big|_{T,n} = - \frac{\partial V}{\partial T}\big|_{p,n}$ \\
+        \hline
+    \end{tabular}
+    \caption{Maxwell-relációk}
+\end{table}
+Ezekkel a Maxwell-relációkkal megkaphatjuk a például a Joules-Thompson kísérlet eredményét is, szimplán a megfelelő parciális deriváltakat kifejezve a Maxwell-relációk segítségével:
+\begin{equation}isér
+    \frac{\partial H}{\partial p}\bigg|_{T} = \frac{\partial U}{\partial p}\bigg|_{T} + V + p \frac{\partial V}{\partial p}\bigg|_{T} 
+\end{equation}
+\begin{equation}
+    \frac{\partial U}{\partial p}\bigg|_{T} = \frac{\partial U}{\partial V}\bigg|_{S} \cdot \frac{\partial V}{\partial p}\bigg|_{T} + \frac{\partial U}{\partial S}\bigg|_{V} \cdot \frac{\partial S}{\partial p}\bigg|_{T}
+\end{equation}
+\begin{equation}
+    \frac{\partial U}{\partial p}\bigg|_{T} = -p \cdot \frac{\partial V}{\partial p}\bigg|_{T} + T \cdot \left(- \frac{\partial V}{\partial T}\bigg|_{p}\right)
+\end{equation}
+\begin{equation}
+    \frac{\partial H}{\partial p}\bigg|_{T} = V - p \cdot \frac{\partial V}{\partial p}\bigg|_{T} + T \cdot \left(- \frac{\partial V}{\partial T}\big|_{p}\right) + p \frac{\partial V}{\partial p}\bigg|_{T} = V - T \cdot \frac{\partial V}{\partial T}\bigg|_{p}
+\end{equation}
+Ez pedig pontosan az a kifejezés, amit a Joules-Thompson kísérletnél használtunk.
+\newline
+\newline
+Ugyanigy megkaphatjuk a Robert-Mayer egyenletet is:
+\begin{equation}
+    dU = TdS -pdV
+\end{equation}
+\begin{equation}
+    C_P - C_V = \frac{1}{n} \left[p + \left(\frac{\partial U}{\partial V}\bigg|_{T}\right)\right] \cdot \underbrace{\frac{\partial V}{\partial T}\bigg|_{p}}_{\beta V} = \frac{1}{n} \left[T \cdot \frac{\partial S}{\partial V}\bigg|_{T}-p+p \right] \beta V
+\end{equation}
+\begin{equation}
+    C_P - C_V = \frac{1}{n} T \cdot \underbrace{\frac{\partial p}{\partial T}\bigg|_{V}}_{p \cdot \gamma = \frac{\beta}{\kappa}} \beta V \qquad p \cdot \gamma \cdot \kappa = \beta
+\end{equation}
+\begin{equation}
+    C_P - C_V = \frac{1}{n} \frac{TV\beta^2}{\kappa} = \frac{Tv\beta^2}{\kappa}
+\end{equation}
+Ez pedig pontosan a Robert-Mayer egyenlet.
+
+\subsection{Fundamentális egyenlet}
+Láttuk, hogy a fundamentális egyenletek azok az egyenletek amiknek a szabad változói szerinti parciális deriváltjaik szerint vissza tudjuk kapni az állapotegyenleteket.
+Ez a fundamentális egyenlet sokféle formában létezhet, de az ideális gázokra már felírtuk egyszer:
+\begin{equation}
+    U_{\text{id}}(S, V, n) = \phi \cdot e^{\frac{2S}{fnR}} \cdot V^{-\frac{2}{f}} \cdot n^{\frac{f + 2}{f}} \qquad \phi: \text{állandó}
+\end{equation}
+Most nézzük meg, hogy milyen egyéb tulajdonságai vannak ennek az egyenletnek. Először vegyünk egy anyagot amit $S, V, n$ állapotjelzőkkel jellemezhetünk,
+tehát az állapotegyenlete $U(S, V, n)$. Most nézzük meg mi történik ha veszek mégegyszer ennyit és összeengedném őket?:
+\begin{equation}
+    U_1(S, V, n) + U_2(S, V, n) = U(2S, 2V, 2n) = 2 U(S, V, n)
+\end{equation}
+Ez csak abban az esetben igaz, ha rövidtávúak a kölcsönhatások az anyagban, és nincs köztük potenciális energia. Ezért az ideális gázokra igaz ez a tulajdonság. (Ekkor sem teljesen igaz,
+mert a határon lévő részecskék kölcsönhatnak egymással, de elhanyagolható mértékben ha elég nagy a rendszer). Ezt a tulajdonságot \textbf{homogenitásnak} nevezzük. Ez nem Csak
+megkétszereződésnél igaz, hanem bármilyen $\lambda$ skalárral történő szorzásnál:
+\begin{equation}
+    U(\lambda S, \lambda V, \lambda n) = \lambda U(S, V, n)
+\end{equation}
+Ezt a tulajdonságot tehát az ideális gáz fundamentális egyenletének is tudnia kell. Nézzük meg hogyan változik a függvény ha $\lambda$-vel felskálázzuk a rendszert:
+\begin{equation}
+    T = \frac{\partial U}{\partial S}\bigg|_{V,n} \quad \to \quad \frac{\partial U}{\partial S}\bigg|_{V,n} (\lambda S, \lambda V, \lambda n) \cdot \underbrace{\lambda}_{\text{belső függvény deriváltja}} \stackrel{?}{=} \frac{\partial U}{\partial S}\bigg|_{V,n} (S, V, n) \cdot \lambda
+\end{equation}
+\begin{equation}
+    T(\lambda S, \lambda V, \lambda n) \cdot \lambda= \lambda \cdot T (S, V, n) \quad \Rightarrow \quad T(\lambda S, \lambda V, \lambda n) = T (S, V, n)
+\end{equation}
+Ebből pedig következik, hogy a hőmérséklet intenzív állapotjelző, hiszen nem változik a rendszer felskálázásakor, ez pedig pont az az eredmény, mint amit vártunk.
+Hasonlóan a többi intenzívállapotjelzőre is megkaphatjuk ugyanezt az eredményt:
+\begin{equation}
+    p(\lambda S, \lambda V, \lambda n) = p (S, V, n)
+\end{equation}
+\begin{equation}
+    \mu(\lambda S, \lambda V, \lambda n) = \mu (S, V, n)
+\end{equation}
+De mi van akkor, ha a $\lambda$-t deriváljuk? Ezt úgy tudjuk megtenni, hogy a teljes differenciált vesszük:
+\begin{equation}
+    \frac{\partial}{\partial \lambda}: \quad \frac{\partial U}{\partial S}\bigg|_{V,n} (\lambda S, \lambda V, \lambda n) \cdot S + \frac{\partial U}{\partial V}\bigg|_{S,n} (\lambda S, \lambda V, \lambda n) \cdot V + \frac{\partial U}{\partial n}\bigg|_{S,V} (\lambda S, \lambda V, \lambda n) \cdot n
+\end{equation}
+De ezeket pont most számoltuk ki:
+\begin{equation}
+    U(S, V, n) = T(S, V, n) \cdot S - p(S, V, n) \cdot V + \mu(S, V, n) \cdot n
+\end{equation} 
+\begin{equation}
+    \boxed{U = T S - p V + \mu n}
+\end{equation}
+Ez az egyenlet pedig az \textbf{Euler-egyenlet}, ami a fundamentális egyenlet homogenitásából következik. Ez az egyenlet bármilyen anyagra igaz,
+ami homogenitást mutat. Az Euler-egyenletből pedig le tudjuk vezetni az \textbf{Gibbs-Duhem egyenletet} is. Ehhez vegyük az Euler-egyenlet teljes differenciáltját:
+\begin{equation}
+    dU = T dS + S dT - p dV - V dp + \mu dn + n d\mu
+\end{equation}
+De a termodinamika egyesített főtétele szerint:
+\begin{equation}
+    dU = T dS - p dV + \mu dn
+\end{equation}
+Ebből következik, hogy:
+\begin{equation}
+    S dT - V dp + n d\mu = 0
+\end{equation}
+Ez pedig a Gibbs-Duhem egyenlet, ami azt mondja ki, hogy az intenzív állapotjelzők nem függetlenek egymástól, hanem egy összefüggés köti őket össze.
+Tehát ha egy rendszerben megváltoztatunk egy intenzív állapotjelzőt, akkor a többi is megváltozik ennek megfelelően.
+
+\subsubsection{Összetett rendszerek egyensúlyi állapota}
+Eddig olyan rendszerekkel foglalkoztunk amik egyensúlyban voltak. Ezeket a rendszereket lehetett jellemezni egy termodinamikai potenciálok segítségével.
+De mi történik akkor, ha van egy összetett rendszerünk, ami több alrendszerből áll, és ezek az alrendszerek nincsenek egyensúlyban egymással? Hol állnak be egyensúlyi állapotba?
+\newline
+Azt tudjuk, hogy egyensúlyi állapotban igazak a következő feltételek:
+\begin{equation}
+    U(S, V, n), S(U, V, n) \quad \to \quad \frac{1}{T} = \frac{\partial S}{\partial U}\bigg|_{V,n} \quad \frac{p}{T} = \frac{\partial S}{\partial V}\bigg|_{U,n} \quad - \frac{\mu}{T} = \frac{\partial S}{\partial n}\bigg|_{U,V}
+\end{equation}
+Most vegyünk egy rendszert amely két alrendszerből áll, amiknek külön-külön ismerem az állapotjelzőit:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{imgs/5-tetel/osszetett_rendszer.png}
+    \caption{Összetett rendszer két alrendszerrel}
+\end{figure}
+Tegyük fel, hogy a rendszerek egy szigetelt tartályban vannak és egymás között nem tudnak anyagot vagy térfogatot cserélni, de hőt tudnak cserélni egymással.
+Ekkor az állapotjelzők a következők lesznek:
+\begin{equation}
+    V_1 = \text{állandó} \qquad V_2 = \text{állandó} \qquad n_1 = \text{állandó} \qquad n_2 = \text{állandó}
+\end{equation}
+Feltesszük, hogy a hőcsere lassú, vagyis a folyamat kvázistatikus. Ekkor a teljes rendszer belső energiája pedig a két alrendszer belső energiájának összege lesz:
+\begin{equation}
+    U_{\text{össz}} = U_1 + U_2 = \text{állandó}
+\end{equation}
+Itt a két energia külön-külön nem állandó, de az összegük igen. Ekkor a teljes entrópia pedig a két alrendszer entrópiájának összege lesz:
+\begin{equation}
+    S_{\text{össz}} (U_{\text{össz}}, U_1, V_1, V_2, n_1, n_2) = S_1(U_1, V_1, n_1) + S_2(U_{\text{össz}} - U_1, V_2, n_2)
+\end{equation}
+Vegyük az össz entrópia deriváltját az $U_1$ változó szerint:
+\begin{equation}
+    \frac{\partial S_{\text{össz}}}{\partial U_1}\bigg|_{U_{\text{össz}}, V_1, V_2, n_1, n_2} = \frac{\partial S_1}{\partial U_1}\bigg|_{V_1, n_1} + \frac{\partial S_2}{\partial U_2}\bigg|_{V_2, n_2} \cdot \underbrace{\frac{\partial U_2}{\partial U_1}\bigg|_{U_{\text{össz}}}}_{-1}
+\end{equation}
+És mivel $\frac{1}{T} = \frac{\partial S}{\partial U}\bigg|_{V,n}$, ezért az egyenlet a következőképpen alakul:
+\begin{equation}
+    \frac{\partial S_{\text{össz}}}{\partial U_1}\bigg|_{U_{\text{össz}}, V_1, V_2, n_1, n_2} = \frac{1}{T_1} - \frac{1}{T_2}
+\end{equation}
+Mivel az entrópia maximumra törekszik, ezért a derivált értékének nullának kell lennie egyensúlyi állapotban:
+\begin{equation}
+    \frac{\partial S_{\text{össz}}}{\partial U_1}\bigg|_{U_{\text{össz}}, V_1, V_2, n_1, n_2} = 0 \quad \to \quad \frac{1}{T_1} - \frac{1}{T_2} = 0 \quad \to \quad T_1 = T_2
+\end{equation}
+Tehát az egyensúlyi állapotban a két alrendszer hőmérséklete megegyezik. 
+\newline
+\newline
+Hasonlóan, ha a két alrendszer között térfogatcsere is lehetséges. Például ha fal a két rendszer között mozgatható, akkor a térfogat is változhat:
+\begin{equation}
+    V_{\text{össz}} = V_1 + V_2 = \text{állandó}
+\end{equation}
+Ekkor az össz entrópia a következőképpen alakul:
+\begin{equation}
+    S_{\text{össz}} (U_{\text{össz}}, U_1, V_{\text{össz}}, V_1, n_1, n_2) = S_1(U_1, V_1, n_1) + S_2(U_{\text{össz}} - U_1, V_{\text{össz}} - V_1, n_2)
+\end{equation}
+Vegyük az össz entrópia deriváltját a $V_1$ változó szerint:
+\begin{equation}
+    \frac{\partial S_{\text{össz}}}{\partial V_1}\bigg|_{U_{\text{össz}}, U_1, V_{\text{össz}}, n_1, n_2} = \frac{\partial S_1}{\partial V_1}\bigg|_{U_1, n_1} + \frac{\partial S_2}{\partial V_2}\bigg|_{U_2, n_2} \cdot \underbrace{\frac{\partial V_2}{\partial V_1}\bigg|_{V_{\text{össz}}}}_{-1}
+\end{equation}
+És mivel $\frac{p}{T} = \frac{\partial S}{\partial V}\bigg|_{U,n}$, ezért az egyenlet a következőképpen alakul:
+\begin{equation}
+    \frac{\partial S_{\text{össz}}}{\partial V_1}\bigg|_{U_{\text{össz}}, U_1, V_{\text{össz}}, n_1, n_2} = \frac{p_1}{T_1} - \frac{p_2}{T_2}
+\end{equation}
+Mivel az entrópia maximumra törekszik, ezért a derivált értékének nullának kell lennie egyensúlyi állapotban:
+\begin{equation}
+    \frac{\partial S_{\text{össz}}}{\partial V_1}\bigg|_{U_{\text{össz}}, U_1, V_{\text{össz}}, n_1, n_2} = 0 \quad \to \quad \frac{p_1}{T_1} - \frac{p_2}{T_2} = 0 \quad \to \quad \frac{p_1}{T_1} = \frac{p_2}{T_2}
+\end{equation}
+De mivel már tudjuk, hogy egyensúlyi állapotban $T_1 = T_2$, ezért következik, hogy $p_1 = p_2$. Tehát egyensúlyi állapotban a két alrendszer nyomása is megegyezik.
+\newline
+\newline
+Összegezve azt lehet általánosan felírni, hogy egy általános belső változóra (vagy belső szabadsági-fok):
+\begin{equation}
+    \frac{\partial S_{\text{össz}}}{\partial X_i}\ = 0 \quad \quad \frac{\partial S}{\partial U} = \frac{1}{T}
+\end{equation}
+Tehát egy belső változó változásakor az entrópia egy extrémumot (maximumot) vesz fel, ha pedig ezt az entrópiát az energia parciális deriváltjával fejezzük ki, akkor az intenzív állapotjelzők egyenlőségét kapjuk egyensúlyi állapotban.
+Az entrópia maximuma miatt pedig a második deriváltaknak negatívnak kell lennie egyensúlyi állapotban:
+\begin{equation}
+    \frac{\partial^2 S_{\text{össz}}}{\partial X_i^2} < 0
+\end{equation}
+\newline
+\newline
+Most nézzük meg, hogy mivan ha az entrópia tud áramolni a két rendszer között:
+\begin{equation}
+    U_1(S, V, n), U_2(S, V, n) \quad \to \quad S_{\text{össz}} = S_1 + S_2 = \text{állandó}
+\end{equation}
+\begin{equation}
+    V_1 = \text{állandó} \qquad V_2 = \text{állandó} \qquad n_1 = \text{állandó} \qquad n_2 = \text{állandó}
+\end{equation}
+Ilyen eset nincs a valóságban, mert kell hőcsere az entrópia áramlásához, de nézzük meg elméletben. Ekkor a következő állapotegyenletek lesznek érvényesek:
+\begin{equation}
+    \frac{\partial U}{\partial S}\bigg|_{V,n} = T \qquad \qquad \frac{\partial U}{\partial V}\bigg|_{S,n} = - p \qquad \frac{\partial U}{\partial n}\bigg|_{S,V} = \mu
+\end{equation}
+Ekkor az össz entrópia a következőképpen alakul:
+\begin{equation}
+    U_{\text{össz}} (S_{\text{össz}}, S_1, V_1, V_2, n_1, n_2) = U_1(S_1, V_1, n_1) + U_2(S_{\text{össz}} - S_1, V_2, n_2)
+\end{equation}
+Vegyük az össz entrópia deriváltját az $S_1$ változó szerint:
+\begin{equation}
+    \frac{\partial U_{\text{össz}}}{\partial S_1}\bigg|_{S_{\text{össz}}, V_1, V_2, n_1, n_2} = \frac{\partial U_1}{\partial S_1}\bigg|_{V_1, n_1} + \frac{\partial U_2}{\partial S_2}\bigg|_{V_2, n_2} \cdot \underbrace{\frac{\partial S_2}{\partial S_1}\bigg|_{S_{\text{össz}}}}_{-1}
+\end{equation}
+És mivel $T = \frac{\partial U}{\partial S}\big|_{V,n}$, ezért az egyenlet a következőképpen alakul:
+\begin{equation}
+    \frac{\partial U_{\text{össz}}}{\partial S_1}\bigg|_{S_{\text{össz}}, V_1, V_2, n_1, n_2} = T_1 - T_2
+\end{equation}
+Mivel az energia minimumra törekszik, ezért a derivált értékének nullának kell lennie egyensúlyi állapotban:
+\begin{equation}
+    \frac{\partial U_{\text{össz}}}{\partial S_1}\bigg|_{S_{\text{össz}}, V_1, V_2, n_1, n_2} = 0 \quad \to \quad T_1 - T_2 = 0 \quad \to \quad T_1 = T_2
+\end{equation}
+Tehát ebben a virtuális esetben is visszakaptuk az eredményt amit a hőcsere esetén is, vagyis egyensúlyi állapotban a két alrendszer hőmérséklete megegyezik.
+Viszont ebben a rendszerben az energia minimumra törekszik, nem pedig az entrópia maximumra (ezt most nem számoljuk ki):
+\begin{equation}
+    \frac{\partial^2 U_{\text{össz}}}{\partial S_1^2} > 0
+\end{equation}
+Ezt nevezik az energia minimum elvének, ami ekvivalens az entrópia maximum elvével, de nem tartozik valós fizikai folyamat hozzá. Fontos, hogy Ezek
+a minimum és maximum elvek csak akkor érvényesek, ha a belső változók szerint nézem a változást. Ha az egész rendszerre nézem meg, akkor nem ugyan azt kapjuk:
+\begin{equation}
+    \frac{\partial U_{\text{össz}}}{\partial S_{\text{össz}}} = \frac{\partial U_1}{\partial S} (S_{\text{össz}} - S_1, V_2, n_2) = T_2 = T_1 \neq 0 \qquad \text{Egyensúlyban}
+\end{equation}
+A többi termodinamikai potenciálra is lehet ilyen minimum elveket felírni zárt rendszerek esetén:
+\begin{itemize}
+    \item Ha a rendszer egy hőfürdővel érintkezik (állandó $T$), akkor a Helmholtz szabad energia ($F$) minimumra törekszik egyensúlyi állapotban.
+    \item Ha a nyomást tartjuk állandóan (állandó $p$), akkor az entalpia ($H$) minimumra törekszik egyensúlyi állapotban.
+    \item Ha a hőmérsékletet és a nyomást tartjuk állandóan (állandó $T, p$), akkor a Gibbs szabad energia ($G$) minimumra törekszik egyensúlyi állapotban.
+\end{itemize}
+
+\subsection{Fázisátalakulások, Fázisátalakulások jellemzői, típusai, Gibbs-féle fázisszabály, fázisdiagramok, fázisegyensúlyok}
+Az anyagok eddigi vizsgálata során feltételeztük, hogy az anyag egy adott halmazállapotban van, és az állapotjelzők folyamatosan változnak.
+Azonban a valóságban minden anyagra vannak jellemző kritikus állapotjelző értékek, ahol az anyag fundamentális fizikai tulajdonságai megváltoznak és ezáltal 
+egy új halmazállapotba kerülnek. Ezt a folyamatot \textbf{fázisátalakulásnak} nevezzük. A fázisátalakulások során az anyag szerkezete, sűrűsége,
+hőkapacitása, vezetőképessége és más fizikai tulajdonságai is megváltozhatnak. A fázisátalakulások során az anyag belső energiája és entrópiája is változik, ami a termodinamikai potenciálok
+változását eredményezi.
+
+\subsubsection{Egykomponensű rendszerek egyensúlyi állapota}
+Korábban megvizsgáltuk olyan rendszerek egyensúlyi állapotát, amelyek több alrendszerből álltak, amik két különböző anyagból álltak, és csak
+bizonyos állapotjelzők cserélődhettek közöttük. Most nézzük meg egy olyan rendszert, amely egykomponensű, tehát csak egyféle anyagot tartalmaz. 
+Ha viszont feltételezek homogenitást (ahogy eddig tettük) ebben a rendszerben akkor meg is van az egyensúlyi állapot, többet ezzel már nem is kell foglalkozni.
+A valóságban azonban egy komponensű rendszerek se mindig homogének, van, hogy egyes részeinek más a belső energiája, entrópiája, stb. Ilyen esetben a rendszer
+részei között is létrejöhet anyag- és energiaáramlás, amíg el nem érik az egyensúlyi állapotot. 
+
+Most vegyünk egy olyan egykomponensű rendszert, amely két részből áll, amik között hő és ezáltal energia áramlás is lehetséges:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{imgs/5-tetel/osszetett_rendszer_egykomponensu.png}
+    \caption{Egykomponensű összetett rendszer két alrendszerrel}
+\end{figure}
+Ekkor az Entrópia-Energia grafikon a következőképpen néz ki:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/5-tetel/egykomponensu_fazisdiagram.png}
+    \caption{Egykomponensű rendszer Entrópia-Energia grafikonja}
+\end{figure}
+Tegyük fel, hogy egy kis $\Delta U$ energia átáramlik az egyik oldalról a másikra. Ekkor a teljes entrópia változása a következőképpen alakul:
+\begin{equation}
+    2S(U_0, V, n) \quad \to \quad S(U_0 - \Delta U, V, n) + S(U_0 + \Delta U, V, n)
+\end{equation}
+A kapott entrópia pedig nagyobb lesz, mint a kezdeti entrópia:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/5-tetel/entropia_valtozas_egykomponens.png}
+    \caption{Az új entrópia nagyobb, mint a kezdeti entrópia}
+\end{figure}
+Ebből következik, hogy inhomogén rendszereknél az energia áramlása növelheti az entrópiát és ezáltal egy olyan folyamat ami be tud következni.
+Egy homogén rendszernél a függvény mindig konkáv lenne, így ott az energia áramlása csökkentené az entrópiát, ami nem történhet meg:
+\begin{equation}
+    \frac{\partial^2 S}{\partial U^2}\bigg|_{V,n} < 0 \quad \to \quad \text{konkáv}
+\end{equation}
+És mivel tudjuk, hogy az a rendszer valósul meg, ami a legnagyobb entrópiával rendelkezik, ezért az inhomogén rendszereknél az energia áramlása addig fog tartani, amíg el nem éri a
+maximális entrópiát. Ez az állapot pedig olyan lesz ami két különböző "energiaszintet" tartalmaz, hiszen a görbe konkáv részeinél az entrópia növelhető energia áramlással.
+Ezért az egykomponensű rendszerek egyensúlyi állapota általában több fázisból áll, amik különböző belső energiával rendelkeznek:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/5-tetel/egykomponensu_fazisdiagram_egyensuly.png}
+    \caption{Egykomponensű rendszer két nergiacsúccsal egyensúlyi állapotban}
+\end{figure}
+Erre azt tudom felírni, hogy a két rész belső energiája:
+\begin{equation}
+    U_1 = U_0 - \Delta U_1 \qquad U_2 = U_0 + \Delta U_2
+\end{equation}
+Eddig feltételeztük, hogy a két rész azonos mennyiségű anyagot tartalmaz, de ezt semmi nem követeli meg, ezét vezessünk be $x_1$ és $x_2$ mennyiségeket, amik az anyagmennyiség arányát adják meg:
+\begin{equation}
+    0 < x_1, x_2 < 1 \qquad x_1 + x_2 = 1 \quad \rightarrow \quad x_1 = 1 - x_2
+\end{equation}
+Azt is tudom, hogy a teljes belső energia állandó, ezért a belső energia változás 0:
+\begin{equation}
+    -x_1 \Delta U_1 + x_2 \Delta U_2 = 0
+\end{equation}
+\begin{equation}
+    (x_2 - 1) \Delta U_1 + x_2 \Delta U_2 = 0 \quad \to \quad x_2 (\Delta U_1 + \Delta U_2) = \Delta U_1
+\end{equation}
+Ebből pedig ki tudjuk fejezni az arányokat:
+\begin{equation}
+    x_2 = \frac{\Delta U_1}{\Delta U_1 + \Delta U_2} \qquad x_1 = \frac{\Delta U_2}{\Delta U_1 + \Delta U_2}
+\end{equation}
+Ha az entrópia eloszlását nézzük akkor arra is felírhatjuk a következő összefüggést:
+\begin{equation}
+    S_{\text{össz}} = x_1 S(U_1, V, n) + x_2 S(U_2, V, n)
+\end{equation}
+Itt is kifejezhetem $x_1$-et:
+\begin{equation}
+    \begin{aligned}
+        S_{\text{össz}} &= (1 - x_2) S(U_1, V, n) + x_2 S(U_2, V, n) = \\
+        &= S_1 + x_2 \left(S_2 - S_1\right) = \\
+        &= S_1 + \frac{\Delta U_1}{\Delta U_1 + \Delta U_2} \left(S_2 - S_1\right)
+    \end{aligned}
+\end{equation}
+Tehát az össz entrópia $S_1$ és $S_2$ között van, mégpedig pont olyan arányban, mint ahogy a $\Delta U_1$ aránylik az össz energiaváltozáshoz:
+\begin{equation}
+    S_{\text{össz}} = S_1 + \frac{\Delta U_1}{\Delta U_1 + \Delta U_2} \left(S_2 - S_1\right)
+\end{equation}
+Ez az összefüggés pedig a \textbf{mérleg szabály}. Ha megnézzük a grafikonon akkor azt fogjuk látni, hogy az össz entrópia pont azon a vonalon helyezkedik el, ami összeköti $S_1$-et és $S_2$-t:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/5-tetel/merleg_szabaly.png}
+    \caption{Mérleg szabály grafikus ábrázolása}
+\end{figure}
+Ebből az következik, hogy egy inhomogén egykomponensű rendszer egyensúlyi állapota állhat több fázisból, ha van egy konvex inflexiós pont az entrópia-görbében.
+Ezek a fázisok saját belső energiával és entrópiával rendelkeznek, és az össz entrópia a mérleg szabály szerint alakul ki közöttük. Felmerülhet a kérdés, hogy
+ha más a belső energiájuk, akkor a komponensek hőmérsékete is más lesz-e? A válasz az, hogy nem, hiszen a hőmérséklet (reciproka) az entrópia deriváltja az energia szerint,
+az pedig a két csúcsban pont ugyanaz lesz:
+\begin{equation}
+    \frac{1}{T} = \frac{\partial S}{\partial U}\bigg|_{V,n}
+\end{equation}
+Ez megfelel a várakozásnak, hisz a hőmérséklet egy intenzív állapotjelző, tehát arra törekszik, hogy mindenhol ugyanaz legyen egyensúlyi állapotban. Ugyanigy 
+van ez a nyomással is és a kémiai potenciállal is:
+\begin{equation}
+    \frac{p}{T} = \frac{\partial S}{\partial V}\bigg|_{U,n} \qquad - \frac{\mu}{T} = \frac{\partial S}{\partial n}\bigg|_{U,V}
+\end{equation}
+\begin{equation}
+    p_1 = p_2 \qquad \mu_1 = \mu_2
+\end{equation}
+Tehát egykomponensű rendszerek egyensúlyi állapotában minden intenzív állapotjelző megegyezik a különböző fázisok között.
+Ez azt jelenti, hogy ez a belső energia eltérés valamilyen más tulajdonságot fejez ki, nem pedig állapotjelzők eltérését. 
+\newline
+\newline
+Ha felírjuk a stabilitás feltételét az entrópia második deriváltjára, akkor azt kapjuk, hogy:
+\begin{equation}
+    \frac{\partial^2 S}{\partial U^2}\bigg|_{V,n} < 0
+\end{equation}
+De mivel:
+\begin{equation}
+    \frac{\partial S}{\partial U}\bigg|_{V,n} = \frac{1}{T} \quad \to \quad \frac{\partial^2 S}{\partial U^2}\bigg|_{V,n} = \frac{\partial}{\partial U} \left(\frac{1}{T}\right)\bigg|_{V,n} = - \frac{1}{T^2} \cdot \frac{\partial T}{\partial U}\bigg|_{V,n}
+\end{equation}
+Ezért a stabilitás feltétele a következőképpen alakul:
+\begin{equation}
+    - \frac{1}{T^2} \cdot \frac{\partial T}{\partial U}\bigg|_{V,n} < 0 \quad \to \quad \frac{\partial T}{\partial U}\bigg|_{V,n} > 0
+\end{equation}
+Ez azt jelenti, hogy a hőkapacitásnak pozitívnak kell lennie egyensúlyi állapotban:
+\begin{equation}
+    C_{V,n} = \frac{\partial U}{\partial T}\bigg|_{V,n} > 0
+\end{equation}
+Ha ez nem teljesül, akkor a rendszer instabil, és az entrópia nem lesz konkáv, így a rendszer inhomogén állapotba kerülhet, ahol több fázis is jelen van.
+Ezért a pozitív hőkapacitás egy szükséges feltétel a homogenitás és stabilitás biztosításához egykomponensű rendszerek esetén. Ezt nevezik \textbf{Le Chatelier-elvnek}.
+\newline
+\newline
+Van még stabilitási feltétel, mert a térfogat is változhat egyensúlyi állapotban és a térfogatra nézve is maximumra törekszik az entrópia:
+\begin{equation}
+    \frac{\partial^2 S}{\partial V^2}\bigg|_{U} < 0
+\end{equation}
+Ez azért kell mert nem csak egy dimenzióban kell stabilnak lennie a rendszernek, hanem mind a három állapotjelző irányában.
+Tehát ha van egy $S(U, V)$ entrópia függvényünk, akkor annak mind a két irányban konkávnak kell lennie egyensúlyi állapotban. Erre felírhatunk egy mátrixot is:
+\begin{equation}
+    \begin{pmatrix}
+    \frac{\partial^2 S}{\partial U^2}\big|_{V} & \frac{\partial^2 S}{\partial U \partial V}\big|_{V} \\
+    \frac{\partial^2 S}{\partial V \partial U}\big|_{V} & \frac{\partial^2 S}{\partial V^2}\big|_{U}
+    \end{pmatrix}
+\end{equation}
+És erre az a feltételünk matematikaileg, hogy a mátrixnak negatív definitnek kell lennie egyensúlyi állapotban, ami azt jelenti, hogy a mátrix által kijelölt
+felület "lefelé hajlik". Ez pedig csak akkor igaz, ha a mátrix minden sajátértéke negatív, vagyis a determinánsa pozitív és a főátló elemei váltakozó előjelűek:
+\begin{equation}
+    \begin{vmatrix}
+    \frac{\partial^2 S}{\partial U^2}\big|_{V} & \frac{\partial^2 S}{\partial U \partial V}\big|_{V} \\
+    \frac{\partial^2 S}{\partial V \partial U}\big|_{V} & \frac{\partial^2 S}{\partial V^2}\big|_{U}
+    \end{vmatrix} > 0
+\end{equation}
+Ebből a feltételből pedig arra lehet jutni, hogy a kompresszibilitási együtthatónak is pozitívnak kell lennie egyensúlyi állapotban:
+\begin{equation}
+    \kappa = - \frac{1}{V} \cdot \frac{\partial V}{\partial p}\bigg|_{T} > 0
+\end{equation}
+Tehát egy egykomponensű rendszer stabilitásának a feltételei a következők:
+\begin{equation}
+    \boxed{\text{pozitív hőkapacitás: } C_{V} > 0 \qquad \text{pozitív kompresszibilitás: } \kappa > 0}
+\end{equation}
+Ezt nevezik \textbf{Le Chatelier-Braun-elvnek}. 
+\newline
+\newline
+Ezt az jelenséget, ahol az anyag "szétesik" két részre úgy tudjuk szemléletesen elképzelni mint például egy tartályt aminek az alján víz van és fölötte vízgőz.
+Ekkor a tartályban lévő anyag két fázisban van jelen, egy folyékony és egy gáz halmazállapotban. A két fázis között a közeghatár jelenti a falat, amin anyag nem,
+de hő és energia tud áramolni. A két rész pedig úgy áll be egyensúlyi állapotba, hogy a hőmérsékletük, nyomásuk és kémiai potenciáljuk megegyezik, 
+a hőkapacitásuk és kompresszibilitásuk pedig pozitív értékeket vesz fel. A belső energia és az entrópia különbsége pedig az eltérő halmazállapotokból adódik.
+
+\subsubsection{Fázisátalakulások, fázisdiagramok}
+Láttuk, hogy két fázis tehát akkor van egyensúlyban, ha a következő feltételek teljesülnek:
+\begin{equation}
+    T_1 = T_2 \qquad p_1 = p_2 \qquad \mu_1 = \mu_2
+\end{equation}
+\begin{equation}
+   C_{V} > 0 \qquad \kappa > 0
+\end{equation}
+Emellett a fundamentális egyenlet is igaz marad:
+\begin{equation}
+    dU = T dS - p dV + \mu dn \qquad U = TS - pV + \mu n
+\end{equation}
+De a belső energia változását teljes differenciális formában is fel tudjuk írni:
+\begin{equation}
+    dU = SdT + TdS - Vdp - pdV + \mu dn + n d\mu
+\end{equation}
+A két egyenletet kivonva egymásból kapjuk, hogy:
+\begin{equation}
+    0 = SdT - Vdp + n d\mu
+\end{equation}
+Ebből kifejezve a kémiai potenciál differenciálisát:
+\begin{equation}
+    d\mu = - \frac{S}{n} dT + \frac{V}{n} dp
+\end{equation}
+Bevezetve a moláris entrópiát és moláris térfogatot:
+\begin{equation}
+    s = \frac{S}{n} \qquad v = \frac{V}{n}
+\end{equation}
+Az egyenlet a következőképpen alakul:
+\begin{equation}
+    d\mu = - s dT + v dp
+\end{equation}
+Ez az egyenlet a \textbf{Gibbs-Duhem-egyenlet}. Ez az egyenlet azt fejezi ki, hogy egykomponensű rendszerekben a kémiai potenciál hogyan változik a hőmérséklet és
+a nyomás függvényében. Ebből az egyenletből ki tudjuk fejezni a kémiai potenciál parciális deriváltjait is:
+\begin{equation}
+    \frac{\partial \mu}{\partial T}\bigg|_{p} = - s = - \frac{S}{n} \qquad \qquad \frac{\partial \mu}{\partial p}\bigg|_{T} = v = \frac{V}{n}
+\end{equation}
+Ebből pedig látszódi, hogy ha állandó a hőmérséklet, akkor a kémiai potenciál a nyomással nő, hiszen a moláris térfogat pozitív:
+\begin{equation}
+    T = \text{áll.} \quad \Rightarrow \quad d\mu = vdp
+\end{equation}
+Tehát a kémiai potenciált meghatározhatom úgy is, hogy integrálom a nyomás függvényében:
+\begin{equation}
+    \mu (p, v) = \mu_{(1)} + \int_{p_0}^{p} v dp
+\end{equation}
+Ábrázoljuk mondjuk egy Van der Waals-gáz esetén a kémiai potenciált a $pV$ grafikonon állandó hőmérsékleten:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/5-tetel/kemia_potencial_vdw.png}
+    \caption{Kémiai potenciál ábrázolása Van der Waals-gáz esetén}
+\end{figure}
+De a kémiai potenciálban van egy integrál a nyomás szerint, ezért váltsunk át a $V-p$ grafikonra és nézzük meg az integrál értelmezését ott:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/5-tetel/kemia_potencial_vdw_vp.png}
+    \caption{Kémiai potenciál ábrázolása Van der Waals-gáz esetén $V-p$ grafikonon és a hozzátartozó $\mu-p$ grafikonja}
+\end{figure}
+Látható, hogy a kémai potenciál grafikonján van egy metszéspont, ahol a két kémiai potenciál tartozik egy nyomás értékhez.
+Ez a pont ott van, ahol a $V-p$ grafikonon a csúcsok területe pont egyenlő (ábrán kékkel jelölve). Ezt visszavezeve a $pV$ grafikonra:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/5-tetel/azonos_kemia_potencial_vdw_pv.png}
+    \caption{Egyenlő kémiai potenciálok a Van der Waals-gáz esetén $pV$ grafikonon}
+\end{figure} 
+Ez a pont pedig a két fázis egyensúlyi pontja, ahol a két fázis kémiai potenciálja megegyezik. Ezt a pontot \textbf{gőznyomásnak} nevezzük.
+Ez a nyomásérték az a pont, ahol a folyadék és a gőz fázisok egyensúlyban vannak egymással adott hőmérsékleten. 
+Ez a pont grafikus megtalálását Maxwell-szerkesztésnek nevezzük. Ha pedig a nyomás és a hőmérséklet állandó, akkor a Gibbs-potenciál fog minimalizálódni, és adja meg az egyensúlyi arányát a két fázisnak.
+amit úgy tudunk felírni, hogy:
+\begin{equation}
+    G = H - TS = U + pV - TS = \mu n
+\end{equation}
+Ebből pedig látszik, hogy ha a kémiai potenciál egyenesen arányos a Gibbs-potenciállal, Ezért ebben a rendszerben a kémiai potenciál minimuma fogja megadni az egyensúlyi állapotot.
+A Gibbs-potenciál minimalizálása miatt meg, ha csökkentem a nyomást vagy növelem a hőmérsékletet, akkor a folyadék két alrendszerre fok szétszakadni, ami a fázisátalakulásnak felel meg.
+Ez a $pV$ és a $V-p$ grafikonokon egy ugrásként jelenik meg, amit \textbf{fázisátalakulásnak} nevezünk.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/5-tetel/fazisatalakulas_vdw.png}
+    \caption{Fázisátalakulás Van der Waals-gáz esetén $pV$ és $V-p$ grafikonokon}
+\end{figure}
+Ezek alapján fel tudjuk írni a fázisátalakulás jellemzőit:
+\begin{itemize}
+    \item A Gibbs-potenciál és a kémiai potenciál minimalizálódik az egyensúlyi állapotban.
+    \item A $G$ és a $\mu$ folytonosan mennek át.
+    \item A $U$, $S$, $H$ és $F$ termodinamikai potenciáloknak ugrása van.
+    \item A $V$, $c$, $\alpha$, $\kappa$, $\gamma$ állapotjelzőknek ugrása van.
+\end{itemize}
+Megnézhetjük, hogy a fázisátalakulás hogyan is néz ki a hőmérséklet függvényében:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/5-tetel/fazisatalakulas_tp.png}
+    \caption{Fázisátalakulás hőmérséklet-nyomás grafikonon}
+\end{figure}
+Ezt a grafikont nevezik \textbf{Fázisdiagramnak}. Nézzük meg egy komplexebb anyag, például a szén-dioxid és a víz fázisdiagramját is:
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[width=\linewidth]{imgs/5-tetel/viz_fazisdiagram.jpg}
+        \caption{Víz fázisdiagramja}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[width=\linewidth]{imgs/5-tetel/co2_fazisdiagram.jpg}
+        \caption{Szén-dioxid fázisdiagramja}
+    \end{subfigure}
+\end{figure}
+Látható, hogy ezeken a diagramokon megjelenik az úgynevezett Hármas pont is, ahol az anyag egyszerre három fázisban van jelen (szilárd, folyékony, gáz).
+Ez a pont egy adott hőmérséklet és nyomás értéknél található, és az anyag ezen a ponton egyszerre létezhet mindhárom halmazállapotban. 
+Ezen kívül megjelenik a kritikus pont is, ahol a folyadék és gáz fázisok közötti különbség eltűnik, és az anyag egy szuperkritikus folyadék állapotba kerül.
+Ez a pont is egy adott hőmérséklet és nyomás értéknél található, és az anyag ezen a ponton már nem különböztethető meg folyadék és gáz fázisokra.
+
+A Fázisátalakuláskora még egy mértéket be lehet vezetni, ugyanis az átalakulás közben munkavégzés is történik, ezt pedig látens hőnek nevezzük ($L$, $\left[L\right] = J$), és azt adja meg, hogy
+mennyi hő szükséges az anyag egy adott mennyiségének átalakításához egyik fázisból a másikba anélkül, hogy a hőmérséklete megváltozna.
+Ezt a következőképpen tudjuk kiszámolni:
+\begin{equation}
+    \frac{dp}{dT} = \frac{L}{T \cdot \Delta V} \qquad : \text{Clausius-Clapeyron egyenlet}
+\end{equation}
+A látens hő pozitív érték, ha az anyag alacsonyabb energiájú fázisból magasabb energiájú fázisba megy át (pl. szilárdból folyékonyba vagy folyékonyból gázba),
+és negatív érték, ha az anyag magasabb energiájú fázisból alacsonyabb energiájú fázisba megy át (pl. gázból folyékonyba vagy folyékonyból szilárdba). A víz esetén például
+a látens hő értéke a következő:
+\begin{itemize}
+    \item Olvadáshő (szilárd $\to$ folyékony): $L_f = 334 \, \text{kJ/kg}$
+    \item Párolgáshő (folyékony $\to$ gáz): $L_v = 2260 \, \text{kJ/kg}$
+\end{itemize}
+Ezek az értékek azt jelentik, hogy 1 kg jég olvasztásához 334 kJ hő szükséges, míg 1 kg víz pároltatásához 2260 kJ hő szükséges anélkül, hogy a hőmérséklete megváltozna.
+
+\subsubsection{folytonos fázisátalakulások, Gibbs-féle fázisszabály}
+A fázisátalakulásoknak két fő típusa van: diszkrét (elsőrendű) és folytonos (másodrendű) fázisátalakulások.
+A diszkrét fázisátalakulások során az anyag hirtelen változtatja meg a halmazállapotát, például amikor a víz fagy vagy forr. Ezeknél az átalakulásoknál a termodinamikai potenciál
+ugrásokat mutat, és a fázisátalakulás során látens hő is felszabadul vagy elnyelődik.
+Ezzel szemben a folytonos fázisátalakulások során az anyag fokozatosan változtatja meg a halmazállapotát, például amikor egy mágneses anyag elveszíti a mágneses tulajdonságait a Curie-pont
+közelében. Ezeknél az átalakulásoknál a termodinamikai potenciálok folyamatosan változnak, és nincs látens hő felszabadulás vagy elnyelődés.
+\newline
+\newline
+Eddig mi elsőrendű fázisátalakulásokat vizsgáltunk, de minden anyagnál elő lehet idézni másodrendű fázisátalakulásokat is, a kritikus pont közelében.
+A kritikus pontnál az anyag tulajdonságai drasztikusan megváltoznak, és a fázisok közötti különbség eltűnik. Ilyenkor a hőkapacitás, kompresszibilitás és más állapotjelzők
+divergenssé válnak, vagyis elszállnak végtelenbe. Ez azt jelenti, hogy az anyag rendkívül érzékennyé válik a külső hatásokra, és kis változások is nagy hatással lehetnek a tulajdonságaira.
+\begin{equation}
+    \frac{\partial p}{\partial V}\bigg|_{T} = 0 \qquad \text{kritikus pontban}
+\end{equation}
+\begin{equation}
+    \kappa = - \frac{1}{V} \cdot \frac{\partial V}{\partial p}\bigg|_{T} \quad \to \quad \kappa \to \infty
+\end{equation}
+Tehát a kritikus pont közelében összenyomásra nincs "visszatartó erő", vagyis szabadon össze lehet nyomni az anyagot, ezért nagy sűrűségfluktuációk jönnek létre.
+Ezt a jelenséget \textbf{kritikus opaleszcenciának} nevezzük, mert az anyag sűrűsége befolyásolja a fényáteresztő képességét is, ami a kritikus pont közelében nagyon leesik emiatt.
+\newline
+\newline
+Láttuk, hogy fázisátalakulások során, ha a nyomás és a hőmérséklet állandó, akkor a Gibbs-potenciál minimalizálódik.
+Ez azt jelenti, hogy a rendszer egyensúlyi állapotban van, amikor a Gibbs-potenciál értéke a legalacsonyabb. Ha több fázis is jelen van,
+akkor a Gibbs-potenciál függ a különböző komponensek anyagmennyiségétől:
+\begin{equation}
+    k: \text{Komponensek száma} \qquad m: \text{Fázisok száma}
+\end{equation}
+\begin{equation}
+    G = G(T, p, n_1, n_2, \ldots, n_k)
+\end{equation}
+Itt bevezethetjük a koncentráció fogalmát ami megadja az egyes komponensek anyagmennyiségének arányát a teljes anyagmennyiséghez képest:
+\begin{equation}
+    c_i = \frac{n_i}{\sum_i n_i} \qquad n = \sum_i n_i \qquad c_i = \frac{n_i}{n} \qquad 1 \leq 1 \leq k
+\end{equation}
+Ekkor a Gibbs-potenciált fel tudjuk írni a koncentrációk függvényében is:
+\begin{equation}
+    G = G \underbrace{(T, p, c_1, c_2, \ldots, c_{k-1}, n)}_{k + 2 \text{ változó}} = n \cdot g \underbrace{(T, p, c_1, c_2, \ldots, c_{k-1})}_{k + 1 \text{ változó}}
+\end{equation}
+Ahol $g$ a moláris Gibbs-potenciál, ami az anyagmennyiségre normalizált Gibbs-potenciált jelenti:
+\begin{equation}
+    g = \frac{G}{n} \qquad \left[g\right] = \frac{J}{mol}
+\end{equation}
+A Gibbs-potenciált a kémiai potenciál alapján is ki tudjuk fejezni:
+\begin{equation}
+    G = \sum_{i=1}^{k} n_i \mu_i \qquad \mu_i = \frac{\partial G}{\partial n_i}\bigg|_{T, p, n_{j \neq i}}
+\end{equation}
+Mivel a kémiai potenciál egy intenzív állapotjelző, ezért nem függ az anyagmennyiségtől, ezért a kémiai potenciál ugyan attól függ mint moláris Gibbs-potenciál:
+\begin{equation}
+    \mu_i = \mu_i (T, p, c_1, c_2, \ldots, c_{k-1})
+\end{equation}
+Fontos még megjegyezni, hogy a koncentrációk nem feltétlenül egyeznek meg a különböző fázisokban, hiszen egyes komponensek előnyben részesíthetik az egyik fázist a másikkal szemben.
+Például desztilláció során is a víz sokkal gyorsabban alakúl gázzá mint a benne oldott sók, ezért azokat hátrahagyva, a vízgőzben sokkal kisebb lesz az oldott anyag koncentráció.
+Tehát a kémiai potenciál függését a következőképp kell módósítani:
+\begin{equation}
+    \mu_i^{(m)} = \mu_i (T, p, c_1^{(j)}, c_2^{(j)}, \ldots, c_{k-1}^{(j)}) \quad j = 1, 2, \ldots, m \quad 2 + m(k - 1) \text{ db. változó}
+\end{equation}
+Egyensúlyban pedig a kémiai potenciálnak meg kell egyeznie a különböző fázisok között:
+\begin{equation}
+    \mu_i^{(1)} = \mu_i^{(2)} = \ldots = \mu_i^{(m)} \qquad i = 1, 2, \ldots, k
+\end{equation}
+Ebből összesen $k(m - 1)$ egyenletet kapunk, amik a kémiai potenciál egyenlőségét írják le a különböző fázisok között.
+Ezek az egyenletek pedig korlátozzák a szabadsági fokok számát, amit a következőképpen tudunk kiszámolni:
+\begin{equation}
+    F = \text{változók száma} - \text{összefüggések száma}
+\end{equation}
+\begin{equation}
+    F = 2 + km - m - km + k = 2 + k - m
+\end{equation}
+Ez a \textbf{Gibbs-féle fázisszabály}. Ez az egyenlet megadja, hogy egy adott rendszerben hány szabadsági fok van jelen, figyelembe véve a komponensek és fázisok számát.
+Például egy egykomponensű rendszerben ($k=1$), ha két fázis van jelen ($m=2$), akkor a szabadsági fokok száma:
+\begin{equation}
+    F = 2 + 1 - 2 = 1
+\end{equation}
+Ez azt jelenti, hogy egy intenzív állapotjelzőt szabadon változtathatunk anélkül, hogy a rendszer fázisainak száma megváltozna. Ha viszont három fázis van jelen ($m=3$), akkor a szabadsági fokok száma:
+\begin{equation}
+    F = 2 + 1 - 3 = 0
+\end{equation}
+Ez azt jelenti, hogy nincs szabadsági fok, vagyis az intenzív állapotjelzők értékei teljesen meghatározottak a rendszer fázisainak száma alapján, tehát csak a kritikus pontban lehetek.
+
+\subsection{Termodinamika III. Főtétele}
+Ha egy rendszerben a hőmérséklet és a nyomás állandó, de valamilyen kémiai reakció megy végbe, akkor az Gibbs-potenciál fog minimalizálódni:
+\begin{equation}
+    \Delta G \leq 0 \qquad \text{áll. } T, p
+\end{equation}
+\begin{equation}
+    G = H - TS \quad \to \quad \Delta G = \Delta H - T \Delta S = Q - T \Delta S < 0
+\end{equation}
+Az entalpia változást fel tudjuk írni a következőképpen:
+\begin{equation}
+    \Delta H =  \Delta (U + pV) = \Delta U + p\Delta V = Q - p \Delta V + p \Delta V = Q
+\end{equation}
+Vannak olyan kémiai reakciók amelyek hőt termelnek (exoterm reakciók, $Q < 0$), és vannak olyanok amelyek hőt nyelnek el (endoterm reakciók, $Q > 0$). 
+Ezek alapján a következő egyenlőtlenséget kapjuk:
+\begin{equation}
+    Q - T \Delta S < 0 \quad \to \quad Q < T \Delta S
+\end{equation}
+Ez a \textbf{Thomsen-Berthelot-szabály}. Ez az egyenlőtlenség azt fejezi ki, hogy egy kémiai reakció akkor megy végbe spontán módon, ha a felszabaduló hő mennyisége kisebb, mint a hőmérséklet és az entrópia változásának szorzata.
+Ez azt jelenti, hogy egy exoterm reakció akkor lesz spontán, ha a hőmérséklet és az entrópia változásának szorzata nagyobb, mint a felszabaduló hő mennyisége.
+Ezzel szemben egy endoterm reakció akkor lesz spontán, ha a hőmérséklet és az entrópia változásának szorzata kisebb, mint a felszabaduló hő mennyisége. Ezt Nernst dolgozta tovább
+1907-ben amikor kimondta a Nernst-tételt:
+\begin{quote}
+    Egy izoterm folyamatban ha a hőmérséklet közelít a nullához, akkor az entrópia változás is közelít a nullához.
+\end{quote}
+Ez azt jelenti, hogy ha egy rendszer hőmérséklete nagyon alacsony, akkor az entrópia változása is nagyon kicsi lesz egy izoterm folyamat során. Ez a tétel a termodinamika harmadik főtételének alapja.
+Ez a tétel már olyan 100\degree C alatti hőmérsékleteknél is érvényesül, ahol az anyagok már közelítik a kristályos állapotot. További kisérleti megfigyelés, hogy
+a molhők is tartanak a nullához, ha a hőmérséklet közelít a nullához:
+\begin{equation}
+    \lim_{T \to 0} C_{V,n} = 0 \qquad \lim_{T \to 0} C_{p,n} = 0
+\end{equation}
+Ebből következik, hogy a hőkapacitás integrálja is véges lesz a nullához közelítve, így az entrópia is véges értéket fog felvenni a nullánál:
+\begin{equation}
+    S(T, p) = S(0, p) + \int_{0}^{T} \frac{C_{p,n}}{T} dT
+\end{equation}
+\begin{equation}
+    S(0, p) = \lim_{T \to 0} S(T, p) < \infty
+\end{equation}
+Ebből következik a termodinamika III. főtétele:
+\begin{quote}
+    Tetszőleges tiszta, kristályos anyag entrópiája nulla, ha a hőmérséklet abszolút nullához közelít.
+\end{quote}
+Ez azt jelenti, hogy ha egy anyag teljesen rendezett kristályos állapotban van, akkor az entrópiája nulla lesz a nullához közelítő hőmérsékleten.
+Ez a tétel fontos következményekkel jár a termodinamika és a kémia területén, például segít megérteni a kémiai reakciók irányát és a termodinamikai egyensúlyokat.
+Ennek a tételnek van pár következménye is:
+\begin{itemize}
+    \item Abszolút nulla fokon az adiabata és az izoterma egybe esik, mivel az entrópia változás nulla.
+    \item Abszolút nulla fokot csak végtelen sok lépésben lehet megközelíteni, mivel nincs egy adiabata amivel közvetlenül elérhető lenne.
+    \item Abszolút nulla fokon a lehetséges állapotok száma egy, mivel az entrópia nulla: $S = k_B \ln \Omega = 0 \quad \to \quad \Omega = 1$. (Planck-tétel)
+\end{itemize}
+
+\end{document}

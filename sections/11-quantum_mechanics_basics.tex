@@ -1,0 +1,1121 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{{\subfix{../}}}
+\begin{document}
+
+
+A kvantummechanika matematikai háttere, kvantummechanikai reprezentációk. Határozatlansági reláció, szabad részecske hullámfüggvénye, szuperpozíció.
+Anyaghullámok, valószínűségi értelmezés, a fizikai állapot leírása. Fizikai mennyiségek operátorai, sajátfüggvények, sajátértékek. Schrödinger-egyenlet és szeparálása.
+Impulzusmomentum-operátor, sajátértékei, sajátfüggvényei. Spin. Korrespondanciaelv. Ehrenfest-tétel.
+
+\subsection{A kvantummechanika matematikai háttere, kvantummechanikai reprezentációk}
+\subsubsection{Hilbert-tér Vektorok \cite{quantum_primer}}
+A kvantummechanika nem csak elméleti szinten reformálta meg a fizikát, hanem egy teljesen új matematikai apparátust is igényelt.
+A Klasszikus fizikában a vektorok általában 3 dimenzióban voltak értelmezve, és fizikai mennyiségeket reprezentáltak. A kvantummechanikában viszont teljesen más megközelítésre volt szükség.
+A kvantummechanikában a vektorok nem iránytott mennyiségeket reprezentálnak, hanem a \textbf{fizikai állapotokat}. A mérhető mennyiségeket pedig az \textbf{operátorok} adják.
+Ezért el kellett rugaszkodni a jól megszokott 3 dimenziós Euklideszi tértől ($\mathcal{E}_3$), és egy általánosabb, végtelen dimenziójú vektortérre kellett áttérni amit fizikában \textbf{Hilbert térnek} ($\mathcal{H}$) nevezünk (Matematikában ezt gyakran $L^2$ térnek hívják).
+
+A Hilbert téren belül a vektorok \textit{valós számok komplex fügvényeit} reprezentálják. Az $\mathcal{E}_3$ térben a vektor úgy van definiálva mint egy irányított vonal szegmens, aminek van iránya és nagysága.
+A nagysága egy $\mathbf{v}$ vektornak $|\mathbf{v}|$-ként van jelölve és az irányát a "farkától" a "fejéig" kijelölt irány adja meg. 
+
+Minden vektortérben gyakori operáció a \textit{skalárral való szorzás} és a \textit{vektor összeadás}. A skalár az $\mathcal{E}_3$ térben szimplán a valós számok halmaza. Ha egy vektort megszorzunk egy $r$ skalárral, akkor annyi történik, hogy az iránya megmarad, de a hossza $r|\mathbf{v}|$-vel megnő.
+A negatív skalár pedig meg is fordítja a vektor irányát. Két vektor összeadásakor pedig a két vektort "összeillesztjük" úgy, hogy az egyik vektor "farkát" a másik vektor "fejéhez" illesztjük, és az így kapott új vektor "farkától" a "fejéig" kijelölt irányt vesszük eredményül.
+Ezek a műveletek lehetővé teszik a vektorok \textit{lineáris kombinációinak} létrehozását, ami azt jelenti, hogy tetszőleges számú vektort össze lehet adni és megszorozni skalárokkal:
+\begin{equation}
+    \mathbf{v} = r_1 \mathbf{v_1} + r_2 \mathbf{v_2} + ... + r_n \mathbf{v_n}
+\end{equation}
+
+Továbbá fontos tulajdonság sok (de nem minden) vektortérben a skalárszorzat (ami NEM a skalárral való szórzást jelenti!), ami két vektor összeszorzását jelenti, úgy, hogy a végeredmény egy skalár lesz.
+Ezt az $\mathcal{E}_3$ térben a következőképpen definiáljuk:
+\begin{equation}
+    \mathbf{u} \cdot \mathbf{v} = |\mathbf{u}||\mathbf{v}|\cos\theta
+\end{equation}
+ahol $\theta$ a két vektor közötti szög. Ha egy vektort megszorzunk saját magával skalárisan, akkor a vektor úgynevezett \textit{normálisát} kapjuk meg eredményül:
+\begin{equation}
+    \text{norm}(\mathbf{v}) \equiv \mathbf{v} \cdot \mathbf{v} = |\mathbf{v}|^2 \geq 0
+\end{equation}
+Továbbá kimutatható, hogy a skalárszorzatra igazak a következő tulajdonságok:
+\begin{equation}
+    \begin{aligned}
+        &\mathbf{u} \cdot \mathbf{v} = \mathbf{v} \cdot \mathbf{u} \quad &\text{(kommutatív)}\\
+        &(\mathbf{u} + \mathbf{v}) \cdot \mathbf{w} = \mathbf{u} \cdot \mathbf{w} + \mathbf{v} \cdot \mathbf{w} \quad &\text{(disztributív)}\\
+        &|\mathbf{v} \cdot \mathbf{u}| \leq \sqrt{(\mathbf{v} \cdot \mathbf{v})(\mathbf{u} \cdot \mathbf{u})} \quad &\text{(Cauchy-Schwarz egyenlőtlenség)} \\
+        &r_1 \mathbf{u} \cdot r_2 \mathbf{v} = r_1 r_2 (\mathbf{u} \cdot \mathbf{v}) \quad &\text{(homogén)} \\
+        &(\mathbf{v}_1 + \mathbf{v}_2) \cdot (\mathbf{u}_1 + \mathbf{u}_2) = \mathbf{v}_1 \cdot \mathbf{u}_1 + \mathbf{v}_1 \cdot \mathbf{u}_2 + \mathbf{v}_2 \cdot \mathbf{u}_1 + \mathbf{v}_2 \cdot \mathbf{u}_2 \quad &\text{(bilineáris)}
+    \end{aligned}
+\end{equation}
+
+Két vektort \textbf{ortogonálisnak} nevezünk, ha a skalárszorzatuk nulla, azaz $\mathbf{u} \cdot \mathbf{v} = 0$. Ez az $\mathcal{E}_3$ térben azt jelenti, hogy a két vektor merőleges egymásra (tehát $\cos 90\degree = 0$).
+Konvenció szerint a null-vektor ($\mathbf{0}$) ortogonális minden vektorhoz.
+
+Több vektor esetén definiálhatjuk az \textbf{ortogonalitást}, ami azt jelenti, hogy az adott vektor halmaz minden eleme ortogonális minden másik vektorral szemben.
+Ha egy vektor halmaz minden eleme egységnyi normálissal rendelkezik, akkor az \textbf{ortonormált} vektor halmazról beszélünk.
+Egy vektor halmaz akkor és csak akkor ortonormált, ha a következő feltétel teljesül:
+\begin{equation}
+    \mathbf{v_i} \cdot \mathbf{v_j} = \delta_{ij} =
+    \begin{cases}
+        1, & \text{ha } i = j\\
+        0, & \text{ha } i \neq j
+    \end{cases}
+\end{equation}
+ahol $\delta_{ij}$ a Kronecker-delta. Tehát:
+\begin{itemize}
+    \item $\{\mathbf{v}_i\}$ akkor egy ortonormált vektor halmaz, csak ha $\mathbf{v}_i \cdot \mathbf{v}_j = \delta_{ij}$.
+    \item A $\{\mathbf{v}_i\}$ halmazt \textit{teljesnek} nevezünk, ha bármely $\mathbf{u}$ vektor felírható a $\{\mathbf{v}_i\}$ vektorok lineáris kombinációjaként. Más szavakkal, a halmas akkor és csak akkor teljes, ha bármelyik $\mathbf{v}$ vektorra igaz, hogy létezik olyan $r$ skalár, hogy $\mathbf{v} = \sum_i r_i \mathbf{v}_i$. Az $\mathcal{E}_3$ térben három vagy több nem azonos síkban lévő vektor teljes halmazt alkot.
+\end{itemize}
+
+Különösen érdekesek számunkra azok a vektor halmazok melyek ortonormáltak és teljesek is egyben. Ezekből végtelen sok lehet (egy forgatásnyival térnek el egymástól), de egy halmazban csak maximum annyi vektor lehet, mint a tér dimenziója.
+Ez a $\mathcal{E}_3$ térben három vektort jelent. Ezeket a vektorokat \textbf{bázisvektoroknak} nevezzük (jelöljük $\mathcal{E}_3$ esetén $\mathbf{e_1}, \mathbf{e_2}, \mathbf{e_3}$-al őket), és ezek lineáris kombinációjával bármely vektor előállítható a térben:
+\begin{equation}
+    \mathbf{v} = \sum_{i=1}^{3} r_i \mathbf{e}_i
+\end{equation}
+Ezalapján minden vektorra igaz, hogy:
+\begin{equation}
+    \mathbf{e}_j \cdot \mathbf{v} = \mathbf{e}_j \cdot \sum_{i=1}^{3} r_i \mathbf{e}_i = \sum_{i=1}^{3} r_i (\mathbf{e}_j \cdot \mathbf{e}_i) = \sum_{i=1}^{3} r_i \delta_{ji} = r_j
+\end{equation}
+Vagyis a bázisvektorok skalárszorzata egy vektorral megadja a vektor adott komponensét a bázis irányában. Ezek alapján:
+\begin{equation}
+    \mathbf{v} = \sum_{i=1}^{3} (\mathbf{e}_i \cdot \mathbf{v}) \mathbf{e}_i
+\end{equation}
+Ez a vektor identitása az $\mathcal{E}_3$ térben.
+
+Most, hogy megnéztük a vektorok tulajdonságait az $\mathcal{E}_3$ térben, nézzük meg hogyan lehet ezeket a fogalmakat általánosítani a Hilbert térre ($\mathcal{H}$). Mint már említettük,
+egy vektor a $\mathcal{H}$ térben egy egy $\Psi$ komplex függvénye egy $x$ valós változónak. Tehát egy vektor a $\mathcal{H}$ térben egy valós számhoz rendel egy $\Psi(x)$ komplex számot.
+Fontos megjegyezni, hogy nem minden függvény egy vektor a Hilbert-térben, ennek a feltételeit mindjárt megvizsgáljuk.
+
+A \textit{skalár} a $\mathcal{H}$ térben a komplex számok halmaza, míg az $\mathcal{E}_3$ térben a valós számok halmaza volt. Ezáltal a skalárral való szorzás és a vektorösszeadás szabályait
+a komplex operációk szabályai határozzák meg. Tehát ha két $\Psi_1(x)$ és $\Psi_2(x)$ vektorunk van a $\mathcal{H}$ térben, és veszünk két $c_1$ és $c_2$ komplex számot (tehát skalárt a $\mathcal{H}$ térben),
+Akkor ezek lineáris kombinációja is a Hilbert téren lesz:
+\begin{equation}
+    \Psi(x) = c_1 \Psi_1(x) + c_2 \Psi_2(x) \quad \rightarrow \quad \Psi(x) \in \mathcal{H}
+\end{equation}
+A skalárszorzat kicsit bonyolultabb a Hilbert térben, mint az $\mathcal{E}_3$ térben. Mivel itt komplex függvényekről beszélünk, ezért a skalárszorzatot úgy kell definiálni, hogy az eredmény egy komplex szám legyen. Ezt a következőképpen tesszük meg:
+\begin{equation}
+    \langle \Psi_1 | \Psi_2 \rangle = \int_{-\infty}^{\infty} \Psi_1^*(x) \Psi_2(x) dx
+\end{equation}
+ahol az integrálás a teljes $x$ tartományon történik (általában $-\infty$-től $\infty$-ig). Itt az $^*$ jel a komplex konjugálást jelenti ami egyszerű komplex számoknál annyit jelent, hogy:
+\begin{equation}
+    (a + ib)^* = a - ib
+\end{equation}
+ahol $a$ és $b$ valós számok. A skalárszorzat definíciója biztosítja, hogy a következő tulajdonságok teljesüljenek:
+\begin{equation}
+    \begin{aligned}
+        &\langle \Psi_1 | \Psi_2 \rangle = \langle \Psi_2 | \Psi_1 \rangle^* \quad &\text{(Hermitikus)}\\
+        &\langle \Psi_1 + \Psi_2 | \Psi_3 \rangle = \langle \Psi_1 | \Psi_3 \rangle + \langle \Psi_2 | \Psi_3 \rangle \quad &\text{(disztributív)}\\
+        &|\langle \Psi_1 | \Psi_2 \rangle| \leq \sqrt{\langle \Psi_1 | \Psi_1 \rangle \langle \Psi_2 | \Psi_2 \rangle} \quad &\text{(Cauchy-Schwarz egyenlőtlenség)} \\
+        &\langle c_1 \Psi_1 | c_2 \Psi_2 \rangle = c_1^* c_2 \langle \Psi_1 | \Psi_2 \rangle \quad &\text{(konjugált homogén)} \\
+        &\langle \Psi_1 + \Psi_2 | \Psi_3 + \Psi_4 \rangle = \langle \Psi_1 | \Psi_3 \rangle + \langle \Psi_1 | \Psi_4 \rangle + \langle \Psi_2 | \Psi_3 \rangle + \langle \Psi_2 | \Psi_4 \rangle \quad &\text{(bilineáris)}
+    \end{aligned}
+\end{equation}
+Fontos észrevenni, hogy a Hilbert térben a skalárszorzat nem kommutatív, hanem Hermitikus, ami azt jelenti, hogy a sorrend megváltoztatásakor komplex konjugálást kell alkalmazni!
+Ebből látható, hogy miért is kezeljük ezeket a komplex függvényeket vektorokként a kvantummechanikában. Ugyanazokkal (majdnem) a műveletekkel dolgozhatunk, mint az $\mathcal{E}_3$ térben.
+
+De kérdés, hogy mikor is tekinthetünk egy komplex függvényt a Hilbert tér vektorának? A válasz, hogy akkor és csak akkor, ha a függvény normálisa véges!:
+\begin{equation}
+    \Psi(x) \text{ a $\mathcal{H}$ egy vektora, akkor és csak akkor ha, } \langle \Psi | \Psi \rangle = \int_{-\infty}^{\infty} |\Psi(x)|^2 dx < \infty
+\end{equation}
+Hasonló megkötés volt az $\mathcal{E}_3$ térben is, ahol a vektoroknak véges hosszúsággal kellett rendelkezniük. Ennek viszont van két nagyon fontos implikációja:
+\begin{itemize}
+    \item Ha $\Psi_1(x)$ és $\Psi_2(x)$ a $\mathcal{H}$ vektorai, akkor a skalárszorzatuk "létezik", vagyis egy komplex szám véges modulussal. Ez azért van, mert a Cauchy-Schwarz egyenlőtlenség miatt:
+    \begin{equation}
+        |\langle \Psi_1 | \Psi_2 \rangle| \leq \sqrt{\langle \Psi_1 | \Psi_1 \rangle \langle \Psi_2 | \Psi_2 \rangle} < \infty
+    \end{equation}
+    \item Ha $\Psi_1(x)$ és $\Psi_2(x)$ a $\mathcal{H}$ vektorai, akkor a lineáris kombinációjuk is a $\mathcal{H}$ vektora lesz. Ez azért van, mert:
+    \begin{equation}
+        \langle c_1 \Psi_1 + c_2 \Psi_2 | c_1 \Psi_1 + c_2 \Psi_2 \rangle \leqq 2(|c_1|^2 \langle \Psi_1 | \Psi_1 \rangle + |c_2|^2 \langle \Psi_2 | \Psi_2 \rangle) < \infty
+    \end{equation}
+\end{itemize}
+Ezzel megbizonyosodhatunk, hogy a skalárszozatban megjelenő integrálok valóban léteznek, és a vektorok lineáris kombinációi is a Hilbert tér vektorai maradnak.
+
+A Hilbert térben is definiálhatjuk az ortogonalitást és az ortonormált vektor halmazokat. Két vektort ortogonálisnak nevezünk, ha a skalárszorzatuk nulla:
+\begin{equation}
+    \langle \Psi_1 | \Psi_2 \rangle = 0
+\end{equation}
+Egy vektor halmaz akkor és csak akkor ortonormált, ha a következő feltétel teljesül:
+\begin{equation}
+    \langle \Psi_i | \Psi_j \rangle = \delta_{ij} =
+    \begin{cases}
+        1, & \text{ha } i = j\\
+        0, & \text{ha } i \neq j
+    \end{cases}
+\end{equation}
+Egy vektor halmaz akkor és csak akkor teljes, ha bármely $\Phi$ vektor felírható a halmaz vektorainak lineáris kombinációjaként:
+\begin{equation}
+    \Phi = \sum_i c_i \epsilon_i
+\end{equation}
+ahol $c_i$ komplex skalárok. Az ortonormált és teljes vektor halmazokat bázisvektoroknak nevezzük a Hilbert térben. Ezekből a bázisvektorokból bármely $\Phi$ vektor előállítható:
+\begin{equation}
+    \Psi(x) = \sum_i \langle \epsilon_i | \Psi \rangle \epsilon_i
+\end{equation}
+Ez a vektor identitása a Hilbert térben.
+
+Még egy fontos megjegyzés a kvantummechanikában megjelenő vektorokkal kapcsolatban. A vektorteret elméletileg az $x$-hez tartozó összes függvény alkotja, de ez túl nagy tér lenne, ezért kvantummechanikában a valós fizikai állapotokat
+csak olyan vektorokkal reprezentáljuk, amelyek normáltak:
+\begin{equation}
+    \langle \Psi | \Psi \rangle = \int_{-\infty}^{\infty} |\Psi(x)|^2 dx = 1
+\end{equation}
+Ez azt jelenti, hogy a vektorok hossza egységnyi. Ennek az az oka, hogy a kvantummechanikában a vektorok normálisa a valószínűségi értelmezés miatt fontos. A normálás biztosítja, hogy a teljes valószínűség 1 legyen.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{imgs/11-tetel/hilbert_vectors.png}
+    \caption{A Hilbert tér vektorainak tulajdonsságai összefoglalva.}
+\end{figure}
+
+\subsubsection{Hilbert tér operátorai}
+Az elementáris kalkulusesetében a "függvényt" úgy definiálhatjuk, mint egy hozzárendelési szabályt, ami egy bemenő számhoz egy másik számot rendel hozzá $y = f(x)$. 
+Ezt a koncepciót kiterjezthetjük a vektorokra is, de ekkor függvény helyett \textbf{operátornak} szokás a hozzárendelési szabályt nevezni. 
+Tehát egy $\hat{O}$ akkor egy \textit{operátor} a $\mathcal{H}$ téren, ha, és csak akkor ha, az $\hat{O}$ egy olyan hozzárendelési szabályt definiál, ami egy $\Psi(x)$ vektort egy másik Hilbert téren lévő $\Phi(x)$ vektorhoz rendel hozzá:
+\begin{equation}
+    \hat{O} : \Psi(x) \rightarrow \Phi(x) = \hat{O} \Psi(x) \qquad \text{ahol } \Psi(x), \Phi(x) \in \mathcal{H}
+\end{equation}
+Ekkor azt mondjuk, hogy az $\hat{O}$ operátor \textit{leképezi} a $\Psi(x)$ vektort a $\Phi(x)$ vektorra.
+
+A vektorokhoz hasonlóan az operátorokra is definiálhatunk műveleteket. Két operátort összeadhatunk, és egy operátort megszorozhatunk egy skalárral (komplex számmal a $\mathcal{H}$ térben). Ezekre a műveletekre is igazak a vektoroknál már ismertetett tulajdonságok:
+\begin{equation}
+    \begin{aligned}
+        (\hat{O}_1 + \hat{O}_2) \Psi &= \hat{O}_1 \Psi + \hat{O}_2 \Psi \\
+        (c \hat{O}) \Psi &= c (\hat{O} \Psi) \\
+        (\hat{O}_1 \hat{O}_2) \Psi &= \hat{O}_1 (\hat{O}_2 \Psi)
+    \end{aligned}
+\end{equation}
+
+Fontos megjegyezni, hogy az operátorokra a $\mathcal{H}$ térben NEM feltétlenül igaz, hogy $\hat{O}_1 \hat{O}_2 = \hat{O}_2 \hat{O}_1$. Ha két operátorra igaz, hogy felcserélhetők, akkor azt mondjuk, hogy az operátorok \textit{kommutálnak} egymással:
+\begin{equation}
+    \text{Kommutálás: }[\hat{O}_1, \hat{O}_2] = \hat{O}_1 \hat{O}_2 - \hat{O}_2 \hat{O}_1 = 0
+\end{equation}
+
+Bár általánosan nem igaz, a kvantummechanikában szinte minden operátorra igaz, hogy \textbf{lineárisak}. Ez azt jelenti, hogy az operátorok kielégítik a következő feltételt:
+\begin{equation}
+    \hat{O}(c_1 \Psi_1 + c_2 \Psi_2) = c_1 \hat{O} \Psi_1 + c_2 \hat{O} \Psi_2
+\end{equation}
+ahol $c_1$ és $c_2$ komplex skalárok, és $\Psi_1$ és $\Psi_2$ a $\mathcal{H}$ vektorai.
+
+Egy másik tulajdonság amit sok kvantummechanikában előforduló operátor mutat, a \textbf{hermitikusság}. Ez akkor és csak akkor igaz egy operátorra, ha $\Psi_1$ és $\Psi_2$ bármely $\mathcal{H}$ vektorokra igaz, hogy:
+\begin{equation}
+    \langle \Psi_1 | \hat{O} \Psi_2 \rangle = \langle \hat{O} \Psi_1 | \Psi_2 \rangle
+\end{equation}
+Például nézzük meg, hogy a $c$ operrátor hermitikus-e:
+\begin{equation}
+    \langle \Psi_1 | c \Psi_2 \rangle = c\langle \Psi_1 | \Psi_2 \rangle = \langle c^*\Psi_1 | \Psi_2 \rangle
+\end{equation}
+Ahol $c$ a $\langle c_1 \Psi_1 | c_2 \Psi_2 \rangle = c_1^* c_2 \langle \Psi_1 | \Psi_2 \rangle$ feltétel miatt lesz konjugált. Tehát a $c$ operátor akkor és csak akkor hermitikus, ha $c = c^*$, vagyis ha $c$ valós szám.
+
+Korábban szó volt arról, hogy az operátorok a kvantummechanikában a mérhető mennyiségeket reprezentálják. Nézzük meg, hogy ez igaz-e. Vegyük például az impulzus operátort:
+\begin{equation}
+    \hat{p} = -i\hbar \frac{d}{dx}
+\end{equation}
+Ez az operátor egy $\Psi(x)$ vektort leképez egy másik $\Phi(x)$ vektorra a következőképpen:
+\begin{equation}
+    \hat{p} \Psi(x) = -i\hbar \frac{d\Psi(x)}{dx} = \Phi(x)
+\end{equation}
+Most nézzük meg, hogy az impulzus operátor hermitikus-e:
+\begin{equation}
+    \langle \Psi_1 | \hat{p} \Psi_2 \rangle = \int_{-\infty}^{\infty} \Psi_1^*(x) \left(-i\hbar \frac{d\Psi_2(x)}{dx}\right) dx
+\end{equation}
+Integrálás per partes-szel:
+\begin{equation}
+    \langle \Psi_1 | \hat{p} \Psi_2 \rangle = \left[-i\hbar \Psi_1^*(x) \Psi_2(x)\right]_{-\infty}^{\infty} + i\hbar \int_{-\infty}^{\infty} \frac{d\Psi_1^*(x)}{dx} \Psi_2(x) dx
+\end{equation}
+Ha $\Psi_1(x)$ és $\Psi_2(x)$ négyzetesen integrálhatóak, akkor a határértékek zérusok lesznek, így az első tag eltűnik:
+\begin{equation}
+    \langle \Psi_1 | \hat{p} \Psi_2 \rangle = i\hbar \int_{-\infty}^{\infty} \frac{d\Psi_1^*(x)}{dx} \Psi_2(x) dx = \langle \hat{p} \Psi_1 | \Psi_2 \rangle
+\end{equation}
+Tehát az impulzus operátor hermitikus.
+
+A hermitikus operátoroknak van egy nagyon fontos tulajdonságuk: \textbf{sajátértékei valós számok}. Ez azt jelenti, hogy ha egy hermitikus operátornak van egy sajátvektora $\Psi$ és a hozzá tartozó sajátértéke $\lambda$, akkor:
+\begin{equation}
+    \hat{O} \Psi = \lambda \Psi
+\end{equation}
+akkor $\lambda$ valós szám lesz. Ez a tulajdonság nagyon fontos a kvantummechanikában, mert a mérhető mennyiségeknek valós számoknak kell lenniük. Ezért:
+\begin{equation}
+    \boxed{\text{\textbf{A mérhető mennyiségek mind hermitikus Operátorok}}}
+\end{equation}
+
+Bevezethetünk még egy fogalmat: a \textbf{hermitikus konjugáltat}. Egy operátor hermitikus konjugáltja az a másik operátor, ami kielégíti a következő feltételt:
+\begin{equation}
+    \langle \Psi_1 | \hat{O} \Psi_2 \rangle = \langle \hat{O}^\dagger \Psi_1 | \Psi_2 \rangle
+\end{equation}
+Ebből látható, hogy egy operátor akkor és csak akkor hermitikus, ha megegyezik a hermitikus konjugáltjával:
+\begin{equation}
+    \hat{O} = \hat{O}^\dagger
+\end{equation}
+
+\subsubsection{Determinisztikus állapotok}
+A kvantummechanikában látni fogjuk, hogy jelen van egy határozatlanság, ami általánosságban azt jelenti, hogy egy konkrét rendszer egy $\Psi$ állapotát többször megmérem, akkor nem ugyan azt az eredményt kapom minden mérésnél.
+Kérdés, hogy lehet-e akkor olyan állapotot előállítani, amiben egy adott mennyiség mérési eredménye mindig ugyan az lesz? A válasz igen, például a stacionárius állapotok ilyenek. Ott, ha megmérem az energiát a részecskén ami $\Psi_n$ állapotban van,
+akkor mindig az $E_n$ megengedett energiát fogok kapni. 
+
+A determinisztikus állapotot definiálhatjuk úgy, mint aminek a szórása pont 0:
+\begin{equation}
+    \sigma^2 = \langle (Q - \langle Q \rangle)^2 \rangle = \langle \Psi | (\hat{Q} - q )^2 \Psi \rangle = \langle (\hat{Q} - q ) \psi | (\hat{Q} - q ) \psi \rangle = 0
+\end{equation}
+Ahol $q = \langle Q \rangle$ az adott mennyiség várható értéke. Mivel a skalárszorzat csak akkor lesz 0, ha a jobb oldali vektor nullvektor, ezért:
+\begin{equation}
+    (\hat{Q} - q ) \Psi = 0 \quad \rightarrow \quad \hat{Q} \Psi = q \Psi
+\end{equation}
+Tehát egy állapot akkor és csak akkor determinisztikus egy adott mennyiségre nézve, ha a $\hat{Q}$ operátor \textbf{sajátvektora} $\Psi$, és a hozzá tartozó sajátérték $q$ a mérési eredmény.
+Ekkor ha megmérem $Q$ állapotot, akkor biztosan $q$ eredményt kapom. A sajátérték ezért mindig egy valós szám lesz. Fontos azt is megjegyezni, hogy ha a sajátvektort egy konstansal megszorzom,
+a sajátértéke nem fog megváltozni (kivéve ha 0-val szorzok, ezért ezt defínició szerint kizárjuk, de a sajátérték lehet 0!). Egy operátorhoz tartozó összes lehetséges sajátértékek halmazát \textbf{spektrumnak} hívjuk,
+és előfordul, hogy két lineárisan független sajátvektorhoz ugyan az a sajátérték tartozik, ekkor az állapotot \textbf{degeneáltnak} nevezzük.
+
+\subsubsection{A hermitikus operátor sajátfüggvényei}
+Mint láttuk, az egyes kvantummechanikai operátorrokhoz hozzárendelhetünk sajátértékeket és sajátfüggvényeket. Ezek a sajátfüggvények olyan állapotokat jelölnek, melyek determinisztikusak az adott mennyiségre nézve.
+A sajátértékek pedig a mérési eredmények lesznek, amit kvantitatív módon meg tudunk határozni. A spektrum pedig azon sajátértékek halmaza, amiket az adott operátor felvehet. Ezeknek a spektrumoknak két típusa van:
+\begin{itemize}
+    \item \textbf{Diszkrét spektrum}: Ebben az esetben a sajátértékek különálló értékek, például az energia kvantált szintei egy kötött rendszerben.
+    \item \textbf{Folytonos spektrum}: Ebben az esetben a sajátértékek folytonos tartományt alkotnak, például a szabad részecske impulzusának értékei.
+\end{itemize}
+A diszkrét spektrumhoz tartozó sajátfüggvények általában négyzetesen integrálhatóak, míg a folytonos spektrumhoz tartozóak nem. Ezért csak a diszkrét spektrumhoz tartozó sajátvektorok vannak benne a $\mathcal{H}$ térben,
+a folytonosak tehát nem reprezentálnak valós fizikai állapotokat (de ezek lineárkombinációja lehet normálható, ebben az esetben az tartozhat fizikai állapothoz). Vannak operátorok, melyeknek csak diszkrét spektruma van,
+ilyen például a harmonikus oszcillátor Hamilton operátora. Másoknak csak folytonos, mint a szabad részecske Hamilton operátora. Olyan is előfordul amelyhez mindkét féle tartozhat, ilyen a véges potenciálvölgy Hamilton operátora.
+
+\subsubsection*{Diszkrét Spektrum}
+A diszkrét spektrumhoz normálható sajátfüggvények tartoznak, ezért ez egy valós fizikai állapotot jelöl. Ezeknek a a hermitikus operátorhoz tartozó, normálható sajátfüggvényeknek két fontos tulajdonsága van:
+\begin{theorem}
+    A sajátértékei valós számok.
+\end{theorem}
+\begin{proof}
+    Tegyük fel, hogy:
+    \begin{equation}
+        \hat{Q} \Psi = q \Psi
+    \end{equation}
+    Vagyis, hogy $\Psi$ a $\hat{Q}$ operátor sajátvektora, és $q$ a hozzá tartozó sajátérték. És:
+    \begin{equation}
+        \langle \Psi | \hat{Q} \Psi \rangle = \langle \hat{Q} \Psi | \Psi \rangle
+    \end{equation}
+    Vagyis hogy a $\hat{Q}$ operátor hermitikus. Ebből következik, hogy:
+    \begin{equation}
+       q \langle \Psi | \Psi \rangle = q^* \langle \Psi | \Psi \rangle
+    \end{equation}
+    Mivel $q$ egy komplex szám, ezért kihozható az integrálból és mivel az első függvény a skalárszorzatban komplex konjugáltja a másodiknak, ezért $q$ is az lesz. De mivel $\langle \Psi | \Psi \rangle \neq 0$ (hiszen $\Psi$ nem a nullvektor defínició szerint), ezért $q = q^*$, azaz $q$ valós szám. QED.
+\end{proof}
+Ez megerősíti, hogy a mérhető mennyiségekhez tartozó hermitikus operátorok sajátértékei valós számok, ami szükséges a fizikai értelmezéshez.
+\begin{theorem}
+    Azok a sajátfüggvények, melyek különböző sajátértékekhez tartoznak, ortogonálisak egymással.
+\end{theorem}
+\begin{proof}
+    Tegyük fel, hogy két sajátfüggvényünk van, $\Psi_1$ és $\Psi_2$, melyek a $\hat{Q}$ operátorhoz tartoznak, és a hozzájuk tartozó sajátértékek $q_1$ és $q_2$, ahol $q_1 \neq q_2$.
+    Vagyis:
+    \begin{equation}
+        \hat{Q} \Psi_1 = q_1 \Psi_1 \qquad \hat{Q} \Psi_2 = q_2 \Psi_2
+    \end{equation}
+    Ahol $\hat{Q}$ hermitikus. Ekkor:
+    \begin{equation}
+        \langle \Psi_1 | \hat{Q} \Psi_2 \rangle = \langle \hat{Q} \Psi_1 | \Psi_2 \rangle \quad \rightarrow \quad \langle \Psi_1 | q_2 \Psi_2 \rangle = \langle q_1 \Psi_1 | \Psi_2 \rangle
+    \end{equation}
+    Vagyis:
+    \begin{equation}
+        q_2 \langle \Psi_1 | \Psi_2 \rangle = q^*_1 \langle \Psi_1 | \Psi_2 \rangle
+    \end{equation}
+    Azt tudjuk, hogy a skalárszorzat létezik, mert a sajátfüggvények rajta vannak a Hilbert téren. Mivel $q_1$ és $q_2$ valós számok (az előző tétel miatt), ezért:
+    \begin{equation}
+        (q_2 - q_1) \langle \Psi_1 | \Psi_2 \rangle = 0
+    \end{equation}
+    Mivel $q_1 \neq q_2$, ezért az első tényező nem nulla, így a skalárszorzatnak kell nullának lennie:
+    \begin{equation}
+        \langle \Psi_1 | \Psi_2 \rangle = 0
+    \end{equation}
+    Tehát a két sajátfüggvény ortogonális egymással. QED
+\end{proof}
+Ez a tétel nagyon fontos, mert lehetővé teszi, hogy egy hermitikus operátor sajátfüggvényeit ortonormált bázisvektorokként használjuk a Hilbert térben. Ezért alkotnak a véges potenciálvölgy vagy a harmonikus oszcillátor
+Hamilton operátorának sajátfüggvényei egy ortonormált bázis a Hilbert térben. Viszont ez a tétel sajnos nem mond semmit a degenerált állapotokról (ahol lehetséges $q_1 = q_2$), viszont ha van két sajátvektorunk,
+ami egy sajátértékhez tartozik, akkor ezek bármilyen lineárkombinációja is egy sajátvektor lesz ugyan ahhoz a sajátértékhez, ezekkel pedig a \textbf{Gram-Schmidt ortogonalizációs eljárással} előállíthatunk ortogonális vektorokat az összes degenerált altéren.
+Tehát még degeneráció esetén is tudunk úgy sajátvektorokat választani, hogy azok egy ortonormált bázist alkossanak.
+
+Véges terek esetén van a hermitikus operátorok sajátvektorainak van még egy fontos tulajdonsága, mégpedig, hogy teljesek, vagyis bármelyik vektor előállítható a sajátvektorok lineáris kombinációjaként.
+Ez sajnos nem általánosítható végtelen dimenziós terekre, de a kvantummechanikában előforduló legtöbb operátorra igaz ez a tulajdonság. Ezért a kvantummechanikában a hermitikus operátorok sajátvektorai
+egy ortonormált és teljes bázist alkotnak a Hilbert térben. Ezt a tulajdonságot egy axiómának vesszük:
+\begin{axiom}
+    A sajátfüggvényei a megfigyelhető operátoroknak teljesek: Bármelyik függvény (a Hilbert térben) felírható a sajátfüggvények lineáris kombinációjaként.
+\end{axiom}
+
+\subsubsection*{Folytonos spektrum}
+A folytonos spektrumhoz tartozó sajátfüggvények nem négyzetesen integrálhatóak, ezért nem tartoznak a Hilbert térhez. Emiatt a $I.$ és $II.$ tételek nem érvényesek , mivel a skalárszorzat nem feltétlenül létezik közöttük.
+Ennek ellenére három tulajdonság (valóság, ortogonalitás, teljesesség) bizonyos szempontból mégis érvényesek rájuk. Nézzünk meg pár példát:
+\newline
+\newline
+\textit{Példa 1. Az impulzus operátor sajátfüggvényei és sajátértékei $-\infty < x < \infty$ tartományban}:
+\newline
+\newline
+Legyen $f_p(x)$ függvény a sajátfüggvény és $p$ a sajátérték. Ekkor az impulzus operátor sajátérték egyenlete:
+\begin{equation}
+    \hat{p} f_p(x) = p f_p(x)
+\end{equation}
+Ahol az impulzus operátor:
+\begin{equation}
+    \hat{p} = -i\hbar \frac{d}{dx}
+\end{equation}
+Ebből a sajátérték egyenletből kapjuk a következő differenciál egyenletet:
+\begin{equation}
+    -i\hbar \frac{d f_p(x)}{dx} = p f_p(x)
+\end{equation}
+Ennek az általános megoldása:
+\begin{equation}
+    f_p(x) = A e^{\frac{i p x}{\hbar}}
+\end{equation}
+Ez jól láthatóan nem négyzetesen normálható, hisz:
+\begin{equation}
+    \int_{-\infty}^{\infty} |f_p(x)|^2 dx = |A|^2 \int_{-\infty}^{\infty} dx = \infty
+\end{equation}
+Tehát az impulzus operátornak nincs sajátfüggvénye a Hilbert téren. 
+
+Ennek ellenére, ha a valós sajátértékek halmazára limitáljuk a megoldásokat, akkor visszakapunk valamiféle ortonormalitást:
+\begin{equation}
+    \int_{-\infty}^{\infty} f_{p'}^*(x) f_p(x) dx = |A|^2 \int_{-\infty}^{\infty} e^{\frac{i (p - p') x}{\hbar}} dx = |A|^2 2\pi \hbar \delta(p - p')
+\end{equation}
+Ha az $A = \frac{1}{\sqrt{2\pi \hbar}}$-nak választjuk, akkor:
+\begin{equation}
+    f_p (x) = \frac{1}{\sqrt{2\pi \hbar}} e^{\frac{i p x}{\hbar}}
+\end{equation}
+Tehát:
+\begin{equation}
+    \int_{-\infty}^{\infty} f_{p'}^*(x) f_p(x) dx = \langle f_{p'} | f_p \rangle = \delta(p - p')
+\end{equation}
+Ami rendkívül hasonlít a valódi ortonormáltságra. Az indexek most folytonos változók és a Kronecker delta helyett Dirac delta jelenik meg. Ezt a fajta ortonormáltságot \textbf{Dirac-féle ortonormáltságnak} nevezzük.
+
+A legfontosabb az, hogy a sajátfüggvények (valós sajátértékekkel) teljesek, a summa helyett integrállal: Minden (négyzetesen integrálható) $f(x)$ függvény felírható az impulzus operátor sajátfüggvényeinek lineáris kombinációjaként:
+\begin{equation}
+    f(x) = \int_{-\infty}^{\infty} C(p) f_p(x) dp = \frac{1}{\sqrt{2\pi \hbar}} \int_{-\infty}^{\infty} C(p) e^{\frac{i p x}{\hbar}} dp
+\end{equation}
+Ahol $C(p)$ egy komplex függvény, amit a Fourier trükkel határozunk meg:
+\begin{equation}
+    \langle f_{p'} | f_p \rangle = \int_{-\infty}^{\infty} C(p) \langle f_{p'} | f_p \rangle dp = \int_{-\infty}^{\infty} C(p) \delta(p - p') dp = C(p')
+\end{equation}
+Ez az úgynevezett \textbf{impulzus térbeli reprezentációja}. Látható, hogy a megoldás gyakorlatilag a Fourier transzformáció.
+
+A sajátfüggvényei az impulzus operátornak szinuszosak a következő hullámhosszal:
+\begin{equation}
+    \lambda = \frac{2 \pi \hbar}{p}
+\end{equation}
+Ez megegyezik a de Broglie hullámhosszal, amit korábban már bemutattunk. Tehát De Broglie nem állt messze a valóságtól, még ha nem is értette azt teljesen. Ugyanis bár nincsen egy 
+normalizálható hullámcsomag aminek determinisztikus impulzusa lenne, de tudunk egy olyan normalizálható hullámcsomagot előállítani, aminek az impulzusának szórása kellően kicsi, és erre az objektumra érvényes a De Broglie összefüggés.
+
+De mit jelent az impulzusra kapott megoldás? Bár maga az impulzus operátor sajátfüggvényei "nem élnek" a Hilbert térben, azok a sajátfüggvények, melyeknek történetesen valósak a sajátértékei, 
+a "közelben vannak", egyfajta "kvázi-normálhatósággal". Ezek nem reprezentálnak valós fizikai állapotokat, de így is hasznosak tudnak lenni bizonyos esetekben.
+\newline
+\newline
+\textit{Példa 2. A hely operátor sajátfüggvényei és sajátértékei $-\infty < x < \infty$ tartományban}:
+\newline
+\newline
+Legyen $g_{y}(x)$ függvény a sajátfüggvény és $y$ a sajátérték. Ekkor a hely operátor sajátérték egyenlete:
+\begin{equation}
+    \hat{x} g_{y}(x) = x g_{y}(x) = y g_{y}(x)
+\end{equation}
+Itt $y$ egy fixált szám egy adott sajátfüggvény esetén, de $x$ egy folytonos változó. Kérdés, hogy melyik függvényre igaz, hogy ha a folytonos $x$-el szorozzuk, akkor az olyan mintha egy fix $y$ számmal szoroznánk? 
+A válasz egy olyan függvény ami mindenhol 0, kivéve $x = y$ helyen. Ez a Dirac delta függvény:
+\begin{equation}
+    g_{y}(x) = \delta(x - y)
+\end{equation}
+Ez a függvény szintén nem négyzetesen integrálható, hiszen:
+\begin{equation}
+    \int_{-\infty}^{\infty} |\delta(x - y)|^2 dx = \int_{-\infty}^{\infty} \delta(x - y)^2 dx = \infty
+\end{equation}
+Tehát a hely operátornak sincs sajátfüggvénye a Hilbert téren. De itt is vehetjük azokat a sajátfüggvényeket, melyek valós sajátértékekhez tartoznak, és ezek is kielégítik a Dirac-féle ortonormáltságot:
+\begin{equation}
+    \int_{-\infty}^{\infty} g_{y'}^*(x) g_{y}(x) dx = \int_{-\infty}^{\infty} \delta(x - y') \delta(x - y) dx = |A|^2 \delta(y - y')
+\end{equation}
+Ha az $A = 1$-nek választjuk, akkor:
+\begin{equation}
+    g_{y} (x) = \delta(x - y)
+\end{equation}
+Tehát:
+\begin{equation}
+    \int_{-\infty}^{\infty} g_{y'}^*(x) g_{y}(x) dx = \langle g_{y'} | g_{y} \rangle = \delta(y - y')
+\end{equation}
+Ami ismét rendkívül hasonlít a valódi ortonormáltságra. A sajátfüggvények itt is teljesek:
+\begin{equation}
+    f(x) = \int_{-\infty}^{\infty} D(y) g_{y}(x) dy = \int_{-\infty}^{\infty} D(y) \delta(x - y) dy
+\end{equation}
+Ahol $D(y)$ most triviálisan:
+\begin{equation}
+    D(y) = f(y)
+\end{equation}
+
+\subsubsection{Bázisok a Hilbert téren}
+Klasszikus vektorterekben egy vektort bármely ortonormált bázis segítségével fel tudunk írni. A bázisok ekvivalensek egymással, csak a referenciapont térnek el. Tezáh egy tetszőleges 
+$\bold{A}$ vektort 2D-ben fel tudunk írni a szokásos $\hat{i}, \hat{j}$ bázis segítségével:
+\begin{equation}
+    A_x = \bold{A} \cdot \hat{i} \quad , \quad A_y = \bold{A} \cdot \hat{j}
+\end{equation}
+vagy fel tudjuk írni egy másik bázis segítségével is, például a $\hat{i}', \hat{j}'$ bázis segítségével:
+\begin{equation}
+    A_{x'} = \bold{A} \cdot \hat{i}' \quad , \quad A_{y'} = \bold{A} \cdot \hat{j}'
+\end{equation}
+
+Ugyanez igaz egy adott $\Psi$ állapotra a Hilbert téren. A kvantummechanikában definiálhatunk egy $| S(t) \rangle$ vektort, ami egy Hilbert téren lévő vektor. Ekkor ezt a vektort bármelyik 
+bázissal ami definiálva van a Hilbert téren kifejezhetjük. Ez a bázis akár egy operátor sajátfüggvényeinek halmaza is lehet. Például a pozíció operátor segítségével definiálhatunk egy bázist:
+\begin{equation}
+    | x \rangle \quad , \quad \hat{x} | x \rangle = x | x \rangle
+\end{equation}
+Ekkor a $| S(t) \rangle$ vektort fel tudjuk írni a pozíció bázis segítségével:
+\begin{equation}
+    | S(t) \rangle = \int_{-\infty}^{\infty} \Psi(x, t) | x \rangle dx
+\end{equation}
+Ahol $\Psi(x, t)$ a $| S(t) \rangle$ vektor pozíció $x$ "komponensének" reprezentációja:
+\begin{equation}
+    \Psi(x, t) = \langle x | S(t) \rangle
+\end{equation}
+Ez analóg a $\hat{i} \cdot \bold{A}$ művelettel a klasszikus vektortérben. $|x\rangle$ itt a $\hat{x}$ pozíció bázis sajátvektora amelyik az $x$ sajátértékhez tartozik. Hasonlóan definiálhatunk egy impulzus bázist is:
+\begin{equation}
+    | p \rangle \quad , \quad \hat{p} | p \rangle = p | p \rangle
+\end{equation}
+Ekkor az $| S(t) \rangle$ vektor kifejtése az impulzus bázisra:
+\begin{equation}
+    \Phi (p,t) = \langle p | S(t) \rangle
+\end{equation}
+Itt $\Phi(p,t)$ az $| S(t) \rangle$ vektor impulzus $p$ komponensének reprezentációja. Vagy az energia bázisra is (itt most felteszük, hogy az energia spektruma diszkrét):
+\begin{equation}
+    c_n (t) = \langle n | S(t) \rangle
+\end{equation}
+Itt $| n \rangle$ az n.-ik  sajátfüggvénye a $\hat{H}$ Hamilton operátornak, és $c_n(t)$ az $| S(t) \rangle$ vektor energia komponensének reprezentációja. De ezek mind ugyan azt az állapotot jelölik.
+$\Psi(x,t)$, $\Phi(p,t)$ és $c_n(t)$ ugyan azt az információt tartalmazzák, csak különböző módon idenfikálják a vektort:
+\begin{equation}
+    | S(t) \rangle \quad \rightarrow \quad \int \Psi(x, t)\delta(x-y) dy = \int \Psi(p, t) \frac{1}{\sqrt{2 \pi \hbar}} e^{\frac{i p x}{\hbar}} dp = \sum_n c_n e^{-i E_n t / \hbar} \Psi_n(x)
+\end{equation}
+
+Az operátorok, amik mérhető mennyiségeket reprezentálnak, lineáris transzformációt hajtanak végre a Hilbert téren. Ez azt jelenti, hogy a Vektorokat "transzformálnak" másik vektorokká a térben:
+\begin{equation}
+    | B \rangle = \hat{O} | A \rangle
+\end{equation}
+Ahogy a vektorok reprezentálva vannak a komponenseik segítségével, az ortonormált bázisok ($\{|e_n\rangle\}$) alapján:
+\begin{equation}
+    | \alpha \rangle = \sum_n a_n | e_n \rangle, \quad |\beta \rangle = \sum_n b_n | e_n \rangle, \quad a_n = \langle e_n | \alpha \rangle, \quad b_n = \langle e_n | \beta \rangle
+\end{equation}
+Itt a summa integrállá válik, ha a bázis nem diszkrét.
+
+Ugyanígy lehet az operátorokat is reprezentálni a mátrix elemeivel:
+\begin{equation}
+    Q_{mn} = \langle e_m | \hat{Q} | e_n \rangle
+\end{equation}
+Ekkor az operátor hatása a vektorra a következőképpen írható fel:
+\begin{equation}
+    \sum_n b_n |e_n\rangle = \sum_n a_n \hat{Q} | e_n \rangle
+\end{equation}
+Ha ezután balról megszorozzuk $\langle e_m |$-vel, akkor:
+\begin{equation}
+    \sum_n b_n \langle e_m | e_n \rangle = \sum_n a_n \langle e_m | \hat{Q} | e_n \rangle
+\end{equation}
+És mivel $\langle e_m | e_n \rangle = \delta_{mn}$, ezért:
+\begin{equation}
+    b_m = \sum_n Q_{mn} a_n
+\end{equation}
+Ez az alak megmutatja, hogy az $|\alpha \rangle$ vektor komponenseit hogyan transzformálja az $\hat{Q}$ operátor a $|\beta \rangle$ vektor komponenseivé a mátrix elemek segítségével.
+
+Ahogy vektorokat is ki lehet fejteni eltérő bázisokon, úgy operátorokat is (vagy diszkrét esetben az azt reprezentáló mátrixokat is). Például:
+\begin{equation}
+    \hat{x} (\text{Pozíció operátor}) \quad \rightarrow \quad 
+    \begin{cases}
+        x & \text{Pozíció térben} \\
+        i\hbar \frac{\partial}{\partial p0} & \text{Impulzus térben} \\
+    \end{cases}
+\end{equation}
+\begin{equation}
+    \hat{p} (\text{Impulzus operátor}) \quad \rightarrow \quad 
+    \begin{cases}
+        -i\hbar \frac{\partial}{\partial x} & \text{Pozíció térben} \\
+        p & \text{Impulzus térben} \\
+    \end{cases}
+\end{equation}
+Itt a "pozíció" és "impulzus" tér annyit jelent, hogy a pozíció és a momentum bázison reprezentáljuk az állapotokat.
+\newline
+\newline
+\textit{Példa:}
+\newline
+\newline
+Vegyünk egy rendszert aminek két független állapota van:
+\begin{equation}
+    |1\rangle = 
+    \begin{pmatrix}
+        1 \\
+        0
+    \end{pmatrix}
+    \quad , \quad
+    |2\rangle = 
+    \begin{pmatrix}
+        0 \\
+        1
+    \end{pmatrix}
+\end{equation}
+A legáltalánosabb állapot a két állapot lineárkombinációja lesz, normálva:
+\begin{equation}
+    |\Psi \rangle = a |1\rangle +  b |2\rangle = 
+    \begin{pmatrix}
+        a \\
+        b
+    \end{pmatrix}
+    \quad , \quad |a|^2 + |b|^2 = 1
+\end{equation}
+A Hamilton operátort lehet egy hermitikus mátrixként is definiálni, legyen most az alakja:
+\begin{equation}
+    \hat{H} =
+    \begin{pmatrix}
+        h & g \\
+        g & h
+    \end{pmatrix}
+    \quad , \quad h, g \in \mathbb{R}
+\end{equation}
+Ha a rendszer $t = 0$ időpontban a $|1\rangle$ állapotból indul ki, akkor mi lesz az állapota $t$-ben?
+
+Az időfüggő Schrödinger egyenlet szerint:
+\begin{equation}
+    i \hbar \frac{d}{dt} |S(t)\rangle = \hat{H} |S(t)\rangle
+\end{equation}
+Az időfüggetlen Schrödinger egyenlet megoldása:
+\begin{equation}
+    \hat{H} |s \rangle = E |s \rangle
+\end{equation}
+Most meg kell találnuk a Hamilton operátor sajátértékeit és sajátvektorait. Az egyenlet megoldásához felírjuk a karakterisztikus egyenletet:
+\begin{equation}
+    \text{det}(\hat{H} - E \hat{I}) = 0
+\end{equation}
+Ahol $\hat{I}$ az egységmátrix. Ez a következő alakra egyszerűsödik:
+\begin{equation}
+    \text{det}
+    \begin{pmatrix}
+        h - E & g \\
+        g & h - E
+    \end{pmatrix} = (h - E)^2 - g^2 = 0 \rightarrow h - E = \mp g \rightarrow E = h \pm g 
+\end{equation}
+Ezek alapján a megengedett energiák $E_1 = h + g$ és $E_2 = h - g$. Most megkeressük a sajátvektorokat ezekhez az értékekhez:
+\begin{equation}
+    \begin{pmatrix}
+        h & g \\
+        g & h
+    \end{pmatrix}
+    \begin{pmatrix}
+        c_1 \\
+        c_2
+    \end{pmatrix} = 
+    (h \pm g)
+    \begin{pmatrix}
+        \alpha \\
+        \beta
+    \end{pmatrix} \Rightarrow
+    h\alpha + g \beta = (h \pm g) \alpha \Rightarrow \beta = \pm \alpha
+\end{equation}
+Tehát a normált sajátvektorok:
+\begin{equation}
+    |s_+ \rangle = \frac{1}{\sqrt{2}}
+    \begin{pmatrix}
+        1 \\
+        1
+    \end{pmatrix}
+    \quad , \quad
+    |s_- \rangle = \frac{1}{\sqrt{2}}
+    \begin{pmatrix}
+        1 \\
+        -1
+    \end{pmatrix}
+\end{equation}
+Most kifejtjük a kezdeti állapotot a Hamilton-operátor sajátvektorai lineárkombinációjaként:
+\begin{equation}
+    |S(0)\rangle = |1\rangle =
+    \begin{pmatrix}
+        1 \\
+        0
+    \end{pmatrix} =
+    \frac{1}{\sqrt{2}} (|s_+ \rangle + |s_- \rangle)
+\end{equation}
+Végül alkalmazzuk az időfejlődést az időfüggetlen Schrödinger egyenlet megoldásával:
+\begin{equation}
+    |S(t)\rangle = \frac{1}{\sqrt{2}} (e^{-i E_+ t / \hbar} |s_+ \rangle + e^{-i E_- t / \hbar} |s_- \rangle)
+\end{equation}
+Ez az állapot visszaírható a kezdeti bázisba is:
+\begin{equation}
+    |S(t)\rangle = \frac{1}{2}
+    \begin{pmatrix}
+        e^{-i (h + g) t / \hbar} + e^{-i (h - g) t / \hbar} \\
+        e^{-i (h + g) t / \hbar} - e^{-i (h - g) t / \hbar}
+    \end{pmatrix}
+\end{equation}
+Ez az állapot leírja a rendszer időfejlődését a kezdeti $|1\rangle$ állapotból indulva.
+
+\subsubsection{Dirac Jelölés}
+A Dirac jelölés egy kényelmes és hatékony módja a kvantummechanikai állapotok és operátorok ábrázolásának. Ebben a jelölésben az állapotokat "bra" és "kett" formában írjuk le:
+\begin{equation}
+    |\psi\rangle \quad \text{(kett)} \quad , \quad \langle \phi| \quad \text{(bra)}
+\end{equation}
+A "kett" jelölés az állapot vektorát jelöli a Hilbert téren, míg a "bra" jelölés a vektor konjugált transzponáltját jelöli. A skalárszorzat két állapot között a következőképpen írható fel:
+\begin{equation}
+    \langle \phi | \psi \rangle
+\end{equation}
+Az operátoroknál láttuk, hogy egy operátort hattatva egy vektorra, akkor egy másik vektort kapunk. Amikor viszont egy "bra"-t hattatunk egy függvényvre akkor egy számot kapunk:
+\begin{equation}
+    \langle f | = \int f^*\left[\ldots\right]dx
+\end{equation}
+Ahol a $\left[\ldots\right]$ helyére a függvény a "kett" hatása alatt kerül.  
+Az operátorok hatása az állapotokra a következőképpen írható fel:
+\begin{equation}
+    \hat{O} |\psi\rangle = |\phi\rangle
+\end{equation}
+Ahol $\hat{O}$ egy kvantummechanikai operátor, amely egy állapot egy másik állapotra transzformál. Az operátorok mátrix elemei a következőképpen definiálhatók:
+\begin{equation}
+    O_{mn} = \langle e_m | \hat{O} | e_n \rangle
+\end{equation}
+Ahol $\{|e_n\rangle\}$ egy ortonormált bázis a Hilbert téren. Ez a jelölés rendkívül hasznos a kvantummechanikai számítások során, mivel leegyszerűsíti az állapotok és operátorok kezelését.
+
+A "bra"-k halmaza egy másik vektorteret alkotnak, amit \textbf{duális térnek} neveznek. Mivel a "bra"-kat egy külön entitásként kezeljük ezért lehet vele egy-két hasznos trükköt elvégezni. 
+Például ha $|\alpha \rangle$ egy normalizált vektor, akkor bevezethetünk egy operátort:
+\begin{equation}
+    \hat{P} \equiv |\alpha \rangle \langle \alpha |
+\end{equation}
+Kiválasztja, azt a részét a vektornak amelyik $|\alpha \rangle$ mentén "fekszik":
+\begin{equation}
+    \hat{P} |\beta \rangle = (\langle \alpha | \beta \rangle) |\alpha \rangle
+\end{equation}
+Ezt az operátort \textbf{projektor operátornak} nevezzük. Hasznos lehet például egy adott állapot komponensének kinyerésére egy másik állapotból. Ha egy ortonormált bázisunk van, akkor az összes projektor összege:
+\begin{equation}
+    \langle e_m | e_n \rangle = \delta_{mn} \quad \rightarrow \quad \boxed{\sum_n |e_n \rangle \langle e_n | = \hat{I}}
+\end{equation}
+Ha ezt hattatjuk egy tetszőleges $|\psi \rangle$ vektorra, akkor visszakapjuk magát a vektort:
+\begin{equation}
+    \hat{I} |\psi \rangle = \sum_n |e_n \rangle \langle e_n | \psi \rangle = \sum_n c_n |e_n \rangle = |\psi \rangle
+\end{equation}
+Ezért ezt az \textbf{Identitás operátornak} nevezzük. Ez a trükk nagyon hasznos lehet, ha egy vektort ki akarunk fejteni egy adott bázisban.
+
+Hasonlóan, ha $\{|e_z \rangle\}$ egy Dirac ortonormalizált folytonos bázis:
+\begin{equation}
+    \langle e_{z} | e_{z'} \rangle = \delta(z - z')
+\end{equation}
+Ekkor:
+\begin{equation}
+    \boxed{\int |e_{z} \rangle \langle e_{z} | dz = \hat{I}}
+\end{equation}
+Ami a legövidebb módja, hogy a teljességet fel tudjuk írni.
+
+\subsection{Schrödinger-egyenlet}
+A Newtoni fizika alapja, hogy egy részecske pozícióját $t$ időben meg tudjuk határozni. Abból meg tudjuk határozni a sebességét és gyorsulását vagy bármelyik dinamikus változóját.
+De hogy határozzuk meg $x(t)$-t? Ehhez szükségünk van egy dinamikai egyenletre, ami megadja a részecske mozgását. A klasszikus mechanikában ez a Newton második törvénye:
+\begin{equation}
+    \bold{F} = m \bold{a}
+\end{equation}
+Erre (feltéve, hogy konzervatív erőtérről beszélünk - ez kvantummechanikában általában szerencsére teljesül, kivéve a mágneses teret) fel tudjuk írni a potenciál függvényt:
+\begin{equation}
+    \bold{F} = - \frac{\partial}{\partial x} V(\bold{r})
+\end{equation}
+És így a mozgásegyenlet:
+\begin{equation}
+    m \frac{d^2 \bold{r}}{dt^2} = - \frac{\partial}{\partial x} V(\bold{r})
+\end{equation}
+Ez egy másodrendű differenciál egyenlet, aminek a megoldása megadja a részecske pályáját $t$ időben.
+
+A kvantummechanikában eléggé máshogy közelíti meg a problémát. Ekkor egy részecskének nem a pozícióját határozzuk meg, hanem a hullámfüggvényét $\Psi(x,t)$, ami megadja a részecske helyzetének valószínűség eloszlását $t$ időben.
+Ahhoz, hogy ezt maghatározzuk a \textbf{Schrödinger-egyenletet} kell megoldanunk:
+\begin{equation}
+    \boxed{i \hbar \frac{\partial}{\partial t} \Psi(x,t) = -\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} \Psi(x,t) + V(x) \Psi(x,t)}
+\end{equation}
+Ahol $\hat{H}$ a Hamilton operátor, ami a rendszer teljes energiáját reprezentálja. $\hbar$ a redukált Planck állandó:
+\begin{equation}
+    \hbar = \frac{h}{2 \pi} \approx 1.0545718 \times 10^{-34} \, \text{J·s}
+\end{equation}
+A Schrödinger-egyenlet logikusan analóg a Newton második törvényével a klasszikus mechanikában. Míg a Newton törvény megadja a részecske mozgását $t$ időben, addig a Schrödinger-egyenlet megadja a hullámfüggvény időfejlődését.
+
+\subsubsection{Schrödinger Egyenlet Szeparálása}
+De hogyan kaphatjuk meg a $\Psi$ állapotot a Schrödinger egyenletből? A legegyszerűbb eset az, ha a potenciál $V(x)$ időfüggetlen, vagyis csak a helytől függ. Ilyen esetben szétválaszthatjuk a változókat két függvényre:
+\begin{equation}
+    \Psi(x,t) = \psi(x) \varphi(t)
+\end{equation}
+Ezzel látszólag nem kerültünk sokkal közelebb a megoldáshoz, a megoldások csak egy kis résézt fogja ez elősegíteni. De ahogy ki fog derülni, az a "kis rész" nagyon is fontos lesz a kvantummechanikában.
+Illetve, ahogy ezt általában a differenciálegyenleteknél lehet, a kapott megoldások lineárkombinációjából talán képesek leszünk rekreálni egy általánosabb megoldást.
+A szétválasztott változók alapján a deriváltak:
+\begin{equation}
+    \frac{\partial \Psi(x,t)}{\partial t} = \psi(x) \frac{d \varphi(t)}{dt}, \quad \frac{\partial^2 \Psi(x,t)}{\partial x^2} = \varphi(t) \frac{d^2 \psi(x)}{dx^2}
+\end{equation}
+Ezeket behelyettesítve a Schrödinger-egyenletbe:
+\begin{equation}
+    i \hbar \psi(x) \frac{d \varphi(t)}{dt} = -\frac{\hbar^2}{2m} \frac{d^2 \psi(x)}{dx^2} \varphi(t) + V(x) \psi(x) \varphi(t)
+\end{equation}
+Ha mindkét oldalt elosztjuk $\psi(x) \varphi(t)$-vel, akkor:
+\begin{equation}
+    i \hbar \frac{1}{\varphi(t)} \frac{d \varphi(t)}{dt} = -\frac{\hbar^2}{2m} \frac{1}{\psi(x)} \frac{d^2 \psi(x)}{dx^2} + V(x)
+\end{equation}
+Most a bal oldalon csak $t$-tól függő kifejezés van, míg a jobb oldalon csak $x$-tól függő kifejezés. Ez csak úgy lehetséges, ha mindkét oldal egy konstans értéket vesz fel. Ha nem így lenne,
+akkor megváltoztathatnám a $t$ értékét anélkül, hogy a másik oldalon bármi változna és ekkor a kettő nem lesz egyenlő. Ezt a konstans értéket nevezzük $E$-nek:
+\begin{equation}
+    i \hbar \frac{1}{\varphi(t)} \frac{d \varphi(t)}{dt} = E \quad
+\end{equation}
+Vagy átrendezve:
+\begin{equation}
+    \frac{d \varphi(t)}{dt} = -\frac{i E}{\hbar} \varphi(t)
+\end{equation}
+Illetve a másik oldal:
+\begin{equation}
+    -\frac{\hbar^2}{2m} \frac{1}{\psi(x)} \frac{d^2 \psi(x)}{dx^2} + V(x) = E
+\end{equation}
+Vagy átrendezve:
+\begin{equation}
+    \boxed{-\frac{\hbar^2}{2m} \frac{d^2 \psi(x)}{dx^2} + V(x) \psi(x) = E \psi(x)}
+\end{equation}
+Mivel ez a második egyenlet teljesen független az idő paramétertől, ezért ezt az \textbf{időfüggetlen Schrödinger egyenletnek} hívják. Ennek a szétválasztásnak köszönhetően, amennyiben a potenciál nem függ időtől,
+a Schrödinger egyenletet két, csak egy változótól függő differenciálegyenletté bontani. Az időfüggő tagot könnyű megoldani:
+\begin{equation}
+    \begin{aligned}
+        \frac{d \varphi}{dt} &= -\frac{i E}{\hbar} \varphi(t) \\
+        d \varphi \frac{1}{\varphi(t)} &= -\frac{i E}{\hbar} dt \\
+        \int \frac{d \varphi}{\varphi(t)} &= -\frac{i E}{\hbar} \int dt \\
+        \ln \varphi(t) &= -\frac{i E}{\hbar} t + C \\
+        \varphi(t) &= e^{C} e^{-\frac{i E}{\hbar} t} = A e^{-\frac{i E}{\hbar} t}
+    \end{aligned}
+\end{equation}
+Ahol $A = e^C$ egy tetszőleges komplex konstans, de mivel minket amúgy is a $\psi(x)\varphi(t)$ szorzat érdekel, ezért akár bele is olvaszthatjuk ezt a konstansot a $\psi(x)$-be. Ekkor a megoldás:
+\begin{equation}
+    \varphi(t) = e^{-\frac{i E}{\hbar} t}
+\end{equation}
+Vagy az Euler formulát használva:
+\begin{equation}
+    \varphi(t) = \cos\left(\frac{E t}{\hbar}\right) - i \sin\left(\frac{E t}{\hbar}\right)
+\end{equation}
+Amiből jól látszik, hogy mind a valós, mind a képzetes rész szinusoid alakban oszcillál az időben.
+
+Kérdés, hogy miért jó ez a szeparált megoldás? A legtöbb megoldása az időfüggő Schrödinger egyenletnek nem $\psi \varphi$ alakja lesz. De három okból mégis érdekes ez az eredmény:
+
+\textbf{1.} Ezek az \textbf{Állapotok stacionáriusak}. Bár a hullámfüggvény maga függ az időtől:
+\begin{equation}
+    \Psi(x,t) = \psi(x) e^{-\frac{i E}{\hbar} t}
+\end{equation}
+Az abszolút érték négyzete, ami a valószínűség sűrűséget adja meg, nem függ az időtől, ugyanis az időfüggő tag pont kiesik:
+\begin{equation}
+    |\Psi(x,t)|^2 = \Psi^* \Psi = \psi^*(x) e^{\frac{i E}{\hbar} t} \psi(x) e^{-\frac{i E}{\hbar} t} = |\psi(x)|^2
+\end{equation}
+Ez általánosan igaz bármelyik dinamikus változóra is. Egy tetszőleges $\hat{Q}$ operátor esetén a várható érték:
+\begin{equation}
+    \langle Q(x, p) \rangle = \int \psi^* \left[Q(x, -i\hbar \frac{d}{dx})\right] \psi dx
+\end{equation}
+Tehát \textit{minden várható érték állandó az időben} (normálható megoldásoknál. $E$-nek valósnak kell lennie!). Ezért ha szeparálható megoldásokkal dolgozunk, akkor akár el is hagyhatjuk $\varphi(t)$-t és a $\Psi$-t $\psi$-vel helyettesíthetjük (sokszor a 
+$\psi$-re ezért úgy is referálnak mint a hullámfüggvény, de ez egy veszélyes megfogalmazás, és mindig emlékezni kell, hogy a valós hullámfügvény oszcillál az időben). Különösképp fontos,
+hogy a $\langle x \rangle$ állandó időben, ezért $\langle p \rangle = 0$. Stacionárius állapotban "nem történik semmi".
+
+\textbf{2.} Ezeknek a megoldásoknak mindig határozott a teljes energiájuk. Klasszikus fizikában a teljes energiát a \textbf{Hamilton függvénynek} nevezzük:
+\begin{equation}
+    H = K + V = \frac{p^2}{2m} + V(x)
+\end{equation}
+A kvantummechanikában ennek az analógja a Hamilton operátor:
+\begin{equation}
+    \hat{H} = -\frac{\hbar^2}{2m} \frac{\partial^2}{\partial x^2} + V(x)
+\end{equation}
+Ezért az időfüggetlen Schrödinger egyenletet fel lehet írni a következőképpen:
+\begin{equation}
+    \hat{H} \psi(x) = E \psi(x)
+\end{equation}
+És a várható értéke az energiának:
+\begin{equation}
+    \langle H \rangle = \int \psi^* \hat{H} \psi dx = E \int |\psi|^2 dx = E \int | \Psi |^2 dx = E
+\end{equation}
+Továbbá:
+\begin{equation}
+    \hat{H}^2 \psi = \hat{H} (\hat{H} \psi) = \hat{H} (E \psi) = E (\hat{H} \psi) = E^2 \psi
+\end{equation}
+Ezért:
+\begin{equation}
+    \langle H^2 \rangle = \int \psi^* \hat{H}^2 \psi dx = E^2 \int |\psi|^2 dx = E^2
+\end{equation}
+Ezért az energia szórása:
+\begin{equation}
+    \sigma_H = \sqrt{\langle H^2 \rangle - \langle H \rangle^2} = \sqrt{E^2 - E^2} = 0
+\end{equation}
+Tehát az energia szórása nulla, vagyis minden mérésnél ugyan azt az energiát kapjuk. Ezért az energia határozott mennyiség a szétválasztott megoldásoknál.
+
+\textbf{3.} Az általános megoldás a szétválasztott megoldások \textbf{lineárkombinációja} lesz. Az időfüggetlen Schrödinger egyenlet végtelen megoldást ad $\psi_1 (x), \psi_2 (x), \psi_3 (x), \ldots$ formában, amit $\{\psi_n(x)\}$ alakban jelölünk.
+Ezekhez a megoldásokhoz tartozik egy-egy szeparációs konstans $E_1, E_2, E_3, \ldots = \{E_n\}$, ezért minden \textbf{megengedett energiaszinthez} egy külön hullámfüggvény tartozik:
+\begin{equation}
+    \psi_1(x, t) = \psi_1(x) e^{-\frac{i E_1}{\hbar} t}, \quad \psi_2(x, t) = \psi_2(x) e^{-\frac{i E_2}{\hbar} t}, \quad \ldots
+\end{equation}
+Namost, az időfüggő Schrödinger egyenletnek van egy olyan tulajdonsága, hogy a megoldások lineáris kombinációja is megoldás lesz. Tehát az általános megoldás felírható a megengedett állapotok lineárkombinációjaként:
+\begin{equation}
+    \Psi(x,t) = \sum_n c_n \psi_n(x) e^{-\frac{i E_n}{\hbar} t}
+\end{equation}
+Ahol $c_n$ tetszőleges komplex konstansok, amiket a kezdeti feltételek határoznak meg. Ez a tulajdonság lehetővé teszi, hogy bármely kezdeti állapotot kifejezzünk a megengedett állapotok bázisában, és így meghatározzuk a rendszer időfejlődését.
+Látható tehát, hogy a Schrödinger egyenlet megoldásakor elég az időfüggetlen egyenletet megoldani, ezután, legalábbis elméletben, az általános megoldás megkonstruálása már egyszerű feladat.
+
+\subsubsection{Schrödinger egyenlet megoldása}
+Ezek alapján nézzük meg, hogy általánosan hogyan oldjuk meg a Schrödinger egyenletet egy adott potenciál esetén. Tegyük fel, hogy kapunk egy időfüggetlen potenciált $V(x)$, és egy kezdeti állapotot $\Psi(x,0)$.
+Ekkor az általános megoldás, ami egy végtelen halmaz aminek az elemei mind egy adott megengedett energiaszintel rendelkeznek, $t=0$ időpontban:
+\begin{equation}
+    \Psi(x, 0) = \sum_{n=1}^{\infty} c_n \psi_n(x)
+\end{equation}
+Az egészben az a nagyszerű, hogy a $\left\{c_n\right\}$ megfelelő megválasztásával \textit{mindig} meg tudod oldani a kezdeti feltételt. Ez azért van, mert a $\left\{\psi_n(x)\right\}$ egy ortonormált bázist alkot a Hilbert téren, ezért bármelyik normálható függvény kifejezhető ezen bázis elemeinek lineárkombinációjaként.
+Ezután az időfejlődést meg lehet kapni azzal, hogy csak simán ráagatjuk az időfüggetlen megoldásra a karakterisztikus időfüggést ($e^{-\frac{i E_n}{\hbar} t}$):
+\begin{equation}
+    \boxed{\Psi(x, t) = \sum_{n=1}^{\infty} c_n \psi_n(x) e^{-\frac{i E_n}{\hbar} t} = \sum_{n=1}^{\infty} c_n \Psi_n(x, t)}
+\end{equation}
+A szeparálható megoldások maguk stacionárius állapotok:
+\begin{equation}
+    \Psi_n(x, t) = \psi_n(x) e^{-\frac{i E_n}{\hbar} t}
+\end{equation}
+Már abban az értelemben, hogy a valószínűségük és a várható értékeik nem függnek az időtől. De ez NEM igaz az általános megoldásra, mivel az energiák eltérnek a különböző stacionárrius állapotokra, és az exponenciális függvény nem esik ki amikor megkonstruáljuk $|\Psi(x,t)|^2$-t.
+
+De mit jelent $\{c_n\}$ fizikailag? Ezek az állandók azt határozzák meg, hogy:
+\begin{equation}
+    \boxed{|c_n|^2 = \text{valószínűsége annak, hogy egy mérésnél az } E_n \text{ energiát kapjuk.}}
+\end{equation}
+Egy jól megkonstruált mérés mindig egy megengedett értéket fog mérni. A $|c_n|^2$ értéke pedig megadja, hogy az összes megengedett energia közül, egy konkrét $E_n$ értéket mekkora eséllyel kapunk meg.
+Emiatt természetesen az összes $|c_n|^2$ értéket összeadva 1-nek kell kijönnie:
+\begin{equation}
+    \boxed{\sum_{n=1}^{\infty} |c_n|^2 = 1}
+\end{equation}
+És a teljes energia várható értéke pedig:
+\begin{equation}
+    \boxed{\langle H \rangle = \sum_{n=1}^{\infty} |c_n|^2 E_n}
+\end{equation}
+Látható, hogy $\{c_n\}$ maga nem függ az időtől, tehát az energiák valószínűsége sem változik az időben. Vagyis a teljes energia várható értéke $\langle H \rangle$ is állandó időben. Ez az 
+\textbf{energiamegmaradás} elve a kvantummechanikában.
+
+\subsection{Statisztikus interpretáció}
+Mit jelent a hullámfüggvény fizikailag? Mit tudok kezdeni vele, ha "megvan"? A klasszikus fizikában a részecskék egy pontban vannak lokalizálva a térben, míg a kvantummechanikában úgy tűnik,
+mint ha szét lenne "folyva" a hullámfüggvény mentén (a hullámfüggvény egy adott főggvényt jelöl $x$-re egy adott $t$ időpontban). A választ Born interpretációja adta meg, 
+amit \textbf{statisztikus interpretációnak} nevezünk és a lényege, hogy a hullámfüggvény abszolút érték négyzete azt adja meg, hogy egy részecskét mekkora eséllyel találunk meg $x$ pontban, $t$ időpillanatban:
+\begin{equation}
+    \boxed{\int_{a}^{b}|\Psi(x,t)|^2 dx = \left\{\!\begin{aligned}
+    &\text{Annak a valószínűsége, hogy a részecskét }\\
+    &\text{az } a \text{ és } b \text{ pontok között találjuk meg } t \text{ időpillanatban.}
+\end{aligned}\right\}}
+\end{equation}
+Tehát a valószínűség a terület a $|\Psi|^2$ görbe alatt az $a$ és $b$ pontok között. Ha a $|\Psi(x,t)|^2$ értéke nagy $A$ pontban, akkor ott jó eséllyel fogjuk a részecskét meglelni, ha megkíséreljük megmérni a helyzetét.
+Hasonlóan, ha egy $B$ pontban nullához közeli az érték, akkor ott jó eséllyel NEM fogjuk a részecskét megtalálni. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/11-tetel/statisztikus_interp.png}
+    \caption{A hullámfüggvény abszolútértékének négyzetének ábrázolása}
+\end{figure}
+Természetesen, bár maga a hullámfüggvény komplex értékű, az abszolút érték négyzete mindig valós és nem negatív lesz, ezért alkalmas arra, hogy valószínűséget definiáljunk vele.
+
+Ez az értelmezés viszont egy érdekes következménnyel jár: A kvantummechanikának van egy fundamentális \textbf{határozatlansága}. Még ha mindent is tudunk az elméletről,
+és az egész világegyetemet tökéletesen tudom szimulálni, a kvantummechanika szerint akkor se tudom pontosan megmondani a részecske helyét. A kvantummechanika csak statisztikus információt képes szolgáltatni.
+Ez a felismerés komoly fejtörést okozott mind a fizika mind a természetfilozófia berkein belül, és felveti a kérdést, hogy ez a határozatlanság a természet egy velejárója, vagy a kvantummechanika elméletének egy defektje.
+
+Tegyük fel, hogy megmérem egy kvantummechanikai rendszerben lévő részecske helyét $t$ időpillanatban, ami $C$-nek adódik. Hol volt a részecske a mérés előtt? Erre három (+1) népszerű választ dolgoztak ki a kvantummechanika úttörői, amik
+plauzabilisek:
+\begin{enumerate}
+    \item A \textbf{realista} álláspont: A részecske mindig is $C$ pontban volt, csak mi nem tudtuk pontosan megmérni a helyét a mérés előtt.
+    Ez volt Einstein nézete is, aki a karrierje nagy részében ezt a problémát próbálta sikertelenül megoldani.
+    Ez az értelmezés szerint a Kvantummechanika hiányos, az ok amiért csak statisztikus eredményeket tudunk generálni az az, hogy vannak \textbf{rejtett változók} amiket még nem ismerünk.
+    Ahogy d'Espagnat írta: "A részecske helye sosem volt határozatlan, csupán a kisérletező számára volt ismeretlen.". Tehát a $\Psi$ ezen értelmezés szerint nem a teljes történet.
+    Kell lennie még valaminek amit most nem látunk.
+    \item A \textbf{Koppenhágai értelmezés}: Ezt az értelmezést Bohr és Heisenberg dolgozta ki, és ez a legelterjedtebb nézet a kvantummechanika értelmezésére. Ebben a képben a részecske nem volt igazán \textit{sehol se}.
+    A mérés ténye maga kényszerítette bele, hogy "kiválasszon" egy pozíciót (bár, hogy miért pont azt válaszotta amit, nem firtatjuk). Ahogy Pascual Jordan német fizikus mondta:
+    "A mérések nem csak megzavatják azt amit nérni kívánunk, de létre is hozzák... Mi \textit{késztetjük} [a részecskét], hogy hogy felvegyen egy konkrét pozíciót."
+    Ennek az értelmezésnek is vannak "nehezen megemészthető" következményei, ugyanis ha igaz, az azt jelenené, hogy a mérésnek magának vannak nagyon furcsa tulajdonságai, amit eddig nem igazán sikerült megfogalmazni.
+    \item Az \textbf{Agnosztikus álláspont}: \textit{Megtagadjuk a választ}. Ez a (nem)álláspont szerint teljesen felesleges erről beszélni. Mi értelme van azon morfondírozni, hogy hol volt a mérés előtt?
+    Mivel nem tudom ott megmérni (hisz az is egy mérés lenne, és akkor mi volt azelőtt?), ezért úgy se fogom tudni megmondani. Ez az egész csak metafizika, és egy fizikusnak nem dolga ezzel foglalkozni. Ahogy 
+    Pauli mondta: "Senkinek nem szabad többet azon járatnia az agyát egy problémán arról, hogy valami amiről nem tudhatunk semmit létezik-e, mint azon, hogy hány angyal tud ráülni egy tű hegyére." Vagy ahogy David Mermin fogalmazott (gyakran tévesen Feynmannek tulajdonítva): "Fogd be és számolj".
+    \item \textbf{Sokvilág értelmezés}: Manapság egyre népszerűbb egy újabb álláspont ami főként a Húrelmélet eredményeinek köszönhetően, de attól függetlenül is egyre több szót kap a diskurzusban: a "sokvilág" értelmezés.
+    Ez az értelmezés szerint a részecske mindegyik megengedett pozícióban létezik, csupán amikor megmérjük, akkor a világegyetem "több világra" szakad, és mindegyik részben az egyik lehetséges megoldást kapja az éppen abban
+    a világban üldögélő fizikus. Ez a megfontolás már tényleg rettentően elrugaszkodik az általunk jelenleg megismerhető világtól ezért ezt egyelőre inkább csak kurrriózumként kezelik. 
+\end{enumerate}
+Természetesen léteznek további értelmezések is, de az 1960-as évek közepéig ezek voltak a leggyakoribb válaszok. Viszont 1964-ben John Bell kidolgozott egy kísérletet, ami sok mindent megváltoztatott.
+Bell-nek azt sikerült bebizonyítania, hogy van megfigyelhető különbség aközött, hogy a részecskének volt-e (egy ismeretlen) konkrét helye a mérés előtt, vagy sem.
+Bell eredménye az Agnosztikus álláspontot lesöpörte az asztalról, hiszen bizonyította, hogy lehet valamit mondani a részecske helyéről a mérés előtt. Mi több, a realista álláspontot is megkérdőjelezte,
+ hiszen Bell eredménye alapján a részecskének nem lehetett konkrét pozíciója a mérés előtt. A pozíciót a mérés ténye kényszerítette rá a részeckére.
+Ezáltal a Koppenhágai értelmezés lett a legnépszerűbb, hiszen ez az értelmezés szerint a részecske nem volt sehol a mérés előtt, és a mérés maga kényszerítette bele egy adott pozícióba.
+
+De mivan ha megmérem a részecske helyét mégegyszer? Minden alkalommal egy új értéket kapok? Nem, az ismételt mérései egy adott részecskének már ugyan azt az eredményt fogják adni.
+Problémás is lenne ha nem így lenne, hisz akkor képtelenek lennénk egy mérést validálni. De hogyan magyarázza ezt a Koppenhágai értelmezés? Eszerint a mérés magát a hullámfüggvényt változtatja meg,
+egy kiterjedt függvényről egy Dirac-delta függvényhez hasonló, a mért pont körül élesen csúcsosodó függvénnyé alakítva.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/11-tetel/statisztikus_interp2.png}
+    \caption{A hullámfüggvény mérése utáni állapota}
+    \label{fig:statisztikus_interp2}
+\end{figure}
+Ezután a Schrödinger egyenlet időfejlődése újra elkezdi "szétteríteni" a hullámfüggvényt, de ha azonnal megismételjük a mérést, akkor még nem volt ideje jelentősen megváltozni, ezért ugyan azt az eredményt kapjuk.
+
+\subsubsection{Normalizálás}
+Mivel a hullámfüggvény abszolút érték négyzete valószínűséget ad meg, ezért normalizáltnak kell lennie, vagyis az egész térre integrálva 1-nek kell kijönnie:
+\begin{equation}
+    \boxed{\int_{-\infty}^{\infty} |\Psi(x,t)|^2 dx = 1}
+\end{equation}
+Viszont a hullámfüggvény a Schrödinger egyenletből jönnek, ahol nincs ilyen megkötés. Honnan tudjuk tehát, hogy a meglodás jó lesz valószínűségi értelemben? A válasz az, hogy szerencsére a Schrödinger egyenlet megoldása szerint,
+ha $\Psi(x,t)$ egy megoldása a differenciál egyenletnek, akkor egy konstansal szorzott $A \Psi(x,t)$ is az lesz, ahol $A$ egy tetszőleges komplex konstans (Ez ugye a hullámfüggvény fázisát nem befolyásolja, csak a nagyságát, de annak nincs külön fizikai jelentősége). Ezt a konstanst pedig általában meg tudjuk úgy választani,
+hogy a hullámfüggvény normalizált legyen -- ezt nevezik \textbf{normalizációnak}. A Schrödinger egyenletnek lehetnek olyan megoldásai is, melyeknek az integrálja végtelen (vagy lehet $\Psi = 0$ triviális megoldás is),
+ezeket nem tudjuk normalizálni, ezért \textbf{Nem normálható függvényeknek} nevezzük őket. Ezek nem reprezentálhatnak valós, fizikai megoldásokat, tehát el kell vetni őket. Minden fizikailag értelmes megoldás
+egy négyzetesen integrálható függvényhez tartozik. 
+
+De várjunk csak! Ha van egy normalizálható megoldásom $t = 0$-ban, honnan tudom, hogy a Schrödinger egyenlet időfejlődése után is normalizálható lesz? Az nem jó megoldás ha folyton újranormalizálom
+a függvényt, mert akkor $A$ folyton változna, vagyis a $t$-től függene, és így $A(t)\Psi(x,t)$ már nem lenne megoldása a Schrödinger egyenletnek.
+Szerencsére a Schrödinger egyenlet pont olyan, hogy az időfejlődés megőrzi a normalizáltságot. Ezt úgy lehet belátni, hogy kiszámoljuk az idő szerinti deriváltját az integrálnak:
+\begin{equation}
+    \frac{d}{dt} \int_{-\infty}^{\infty} |\Psi(x,t)|^2 dx = \int_{-\infty}^{\infty} \frac{\partial}{\partial t} |\Psi(x,t)|^2 dx
+\end{equation}
+Itt az integrál maga csak az időtől függ, ezért kívülről a teljes deriváltat vehetjük. a Függvény maga függ $x$-től is, ezért a parciális deriváltat kell használnunk. A szorzási szabály szerint:
+\begin{equation}
+    \frac{\partial}{\partial t} |\Psi|^2 = \frac{\partial}{\partial t} (\Psi^* \Psi) = \Psi^* \frac{\partial \Psi}{\partial t} + \frac{\partial \Psi^*}{\partial t} \Psi
+\end{equation}
+A Schrödinger egyenlet pedig:
+\begin{equation}
+    \frac{\partial \Psi}{\partial t} = \frac{i \hbar^2}{2m} \frac{\partial^2 \Psi}{\partial x^2} - \frac{i}{\hbar} V(x) \Psi
+\end{equation}
+A komplex konjugáltja pedig:
+\begin{equation}
+    \frac{\partial \Psi^*}{\partial t} = -\frac{i \hbar^2}{2m} \frac{\partial^2 \Psi^*}{\partial x^2} + \frac{i}{\hbar} V(x) \Psi^*
+\end{equation}
+Ezeket behelyettesítve a deriváltba:
+\begin{equation}
+    \frac{\partial}{\partial t} |\Psi|^2 = \frac{i\hbar}{2m} \left( \Psi^* \frac{\partial^2 \Psi}{\partial x^2} - \frac{\partial^2 \Psi^*}{\partial x^2} \Psi \right) = \frac{\partial}{\partial t} \left[\frac{i \hbar}{2m} \left(\Psi^* \frac{\partial \Psi}{\partial x} - \frac{\partial \Psi^*}{\partial x}\Psi \right)\right]
+\end{equation}
+Ezalapján az integrált már ki tudjuk értékelni:
+\begin{equation}
+    \frac{d}{dt} \int_{-\infty}^{\infty} |\Psi|^2 dx = \left. \frac{i \hbar}{2m} \left( \Psi^* \frac{\partial \Psi}{\partial x} - \frac{\partial \Psi^*}{\partial x} \Psi \right) \right|_{-\infty}^{\infty}
+\end{equation}
+De $\Psi(x, t)$-nek nullába kell mennie $x \to \pm \infty$ esetén, különben nem lenne normálható, tehát ebből következik, hogy:
+\begin{equation}
+    \frac{d}{dt} \int_{-\infty}^{\infty} |\Psi|^2 dx = 0
+\end{equation}
+Vagyis az integrálja egy normálható megoldásnak konstans időben, tehát a normálhatóság se változik. Ezért elég csak a kezdeti állapotot normalizálni. QED 
+
+\subsubsection{általánosított statisztikus interpretáció}
+A statisztikus interpretációt megfogalmazhatjuk egy általánosabb formában is, ha alkalmazzuk az operátor formalizmust. 
+Tegyük fel, hogy megmértük a $Q(x,t)$ mennyiséget egy $\Psi(x,t)$ állapotban lévő részecskén. Ekkor biztosan meg tudjuk kapni a sajátértékeit a $\hat{Q}(x, -i \hbar \frac{\partial}{\partial x})$ Hermitikus operátornak.
+Ha a $\hat{Q}$ spektruma diszkrét, akkor a valószínűsége, hogy egy konkrét $q_n$ sajátérték egy $f_n(x)$ ortonormált sajátfüggvényhez tartozik:
+\begin{equation}
+    |c_n|^2, \quad \text{ahol} \quad c_n = \langle f_n | \Psi \rangle
+\end{equation}
+Ha a spektrum folytonos, akkor a valószínűsége, hogy, akkor ha a valós $q(z)$ sajátértékek a Dirac-ortonormált $f_z(x)$ sajátfüggvényekhez tartoznak, akkor a valószínűsége, hogy a $dz$ szakaszban van a mérés eredménye:
+\begin{equation}
+    |c(z)|^2 dz, \quad \text{ahol} \quad c(z) = \langle f_z | \Psi \rangle
+\end{equation}
+A mérés után a hullámfüggvény "összeomlik" az eredményhez tartozó sajátállapotba.
+
+Ez a statisztikus interpretáció teljesen más mint bármi amivel a klasszikus fizikában találkozunk. Ahhoz, hogy megérjük, nézzük meg egy kicsit más perspektívából.
+A sajátfüggvényei egy mérhető mennyiség operátorának teljes, ezért fel lehet a hullámfüggvényét írni a sajátfüggvények lineáris kombinációjaként:
+\begin{equation}
+    \Psi(x,t) = \sum_n c_n(t) f_n(x) \quad \text{(diszkrét spektrum esetén)}
+\end{equation}
+Az egyszerűség kedvéért most tekintsük a spektrumot diszkrétnek. Mivel a sajátfüggvények ortonormáltak, ezért az együtthatók meghatározhatóak a Fourier trükkel:
+\begin{equation}
+    c_n(t) = \langle f_n | \Psi(t) \rangle = \int f_n^*(x) \Psi(x,t) dx
+\end{equation}
+Itt vegyük észre, hogy az együttható is viszi tovább az időfüggőséget! A $c_n(t)$ tehát azt adja meg, hogy az adott időpillanatban mekkora súllyal járul hozzá a $\Psi$-hez az $f_n$ sajátfüggvény.
+Mivel egy adott mérésnek a $\hat{Q}$ operátor sajátértékeit kell visszaadnia, ezért logikus azt gondolni, hogy egy adott sajátértéket $q_n$, az határozza meg, hogy "mennyi $f_n$ van $\Psi$-ben".
+De mivel a valószínűséget az abszolútérték négyzete adja meg, ezért a pontos mérés $|c_n|^2$ lesz. Itt fontos kiemelni, hogy sokszor ezt úgy fogalmazzák meg, hogy "$|c_n|^2$ azt adja meg,
+hogy a részecske mekkora eséllyel van $f_n$ állapotban". Ez NEM HELYES. A részecske mindig $\Psi$ állapotban van. A $|c_n|^2$ azt adja meg, hogy a $Q$ mérése mekkora eséllyel lesz $q_n$.
+Az igaz, hogy a mérés után a hullámfüggvény $f_n$ állapotba "omlik össze", tehát azt lehet mondani, hogy "$|c_n|^2$ annak a valószínűsége, hogy a $\Psi$ állapotban lévő részecske $f_n$ állapotba kerül a $Q$
+mennyiség megmérése után.", de ez egy másik kijelentés. 
+
+Természetesen, mivel $|c_n|^2$ egy valószínűség, ezért az összes $|c_n|^2$ összege 1-nek kell kijönnie:
+\begin{equation}
+    \sum_n |c_n|^2 = 1
+\end{equation}
+Ez pedig egyértelműen következik a normalizálásból:
+\begin{equation}
+    \begin{aligned}
+    1 &= \langle \Psi | \Psi \rangle = \left\langle \sum_m c_m f_m \middle| \sum_n c_n f_n \right\rangle = \sum_{m,n} c_m^* c_n \langle f_m | f_n \rangle = \\
+    &= \sum_{m,n} c_m^* c_n \delta_{mn} = \sum_n |c_n|^2
+    \end{aligned}
+\end{equation}
+A várható értéke a $Q$ mennyiségnek pedig:
+\begin{equation}
+    \langle Q \rangle = \langle \Psi | \hat{Q} | \Psi \rangle = \left\langle \sum_m c_m f_m \middle| \hat{Q} \middle| \sum_n c_n f_n \right\rangle = \sum_{m,n} c_m^* c_n \langle f_m | \hat{Q} | f_n \rangle
+\end{equation}
+De mivel $f_n$ sajátfüggvényei $\hat{Q}$-nek, ezért:
+\begin{equation}
+    \hat{Q} f_n = q_n f_n \quad \Rightarrow \quad \langle f_m | \hat{Q} | f_n \rangle = q_n \langle f_m | f_n \rangle = q_n \delta_{mn}
+\end{equation}
+Ezt behelyettesítve a várható értékbe:
+\begin{equation}
+    \langle Q \rangle = \sum_{m,n} c_m^* c_n q_n \delta_{mn} = \sum_n |c_n|^2 q_n
+\end{equation}
+Ez pedig pontosan azt jelenti, hogy a várható érték a lehetséges értékek súlyozott átlaga, ahol a súlyok a valószínűségek.
+
+Kérdés, hogy vissza tudjuk-e kapni ezzel a nyelvezettel a pozíció és impulzus operátorokat és azok várható értékeit? 
+Az $x$ megmérésekor a $\Psi$ állapotban lévő részecskén, a pozíció operátor sajátértékeit kell visszakapnunk. Minden $y$ valós szám egy sajátértéke $x$-nek, a hozzá tartozó Dirac-ortonormált sajátfüggvény pedig a Dirac-delta függvény:
+\begin{equation}
+    g_y (x) = \delta(x - y)
+\end{equation}
+Ezek alapján a pozíció várható értéke:
+\begin{equation}
+    c(y) = \langle g_y | \Psi \rangle = \int \delta(x - y) \Psi(x,t) dx = \Psi(y,t)
+\end{equation}
+Tehát a valószínűsége, hogy a részecskét az $y$ és a $y + dy$ között találjuk meg:
+\begin{equation}
+    |c(y)|^2 dy = |\Psi(y,t)|^2 dy
+\end{equation}
+Ez pontosan megegyezik a statisztikus interpretációval. A pozíció várható értéke pedig:
+\begin{equation}
+    \langle x \rangle = \int_{-\infty}^{\infty} |\Psi(x,t)|^2 x dx
+\end{equation}
+Ugyanez igaz az impulzusra is. Az impulzus operátor sajátértékei a valós számok, a hozzájuk tartozó sajátfüggvények pedig a komplex exponenciálisok:
+\begin{equation}
+    h_p (x) = \frac{1}{\sqrt{2 \pi \hbar}} e^{\frac{i p x}{\hbar}}
+\end{equation}
+Ezek alapján az impulzus várható értéke:
+\begin{equation}
+    c(p) = \langle h_p | \Psi \rangle = \int \frac{1}{\sqrt{2 \pi \hbar}} e^{-\frac{i p x}{\hbar}} \Psi(x,t) dx
+\end{equation}
+Tehát a valószínűsége, hogy a részecskét az $p$ és a $p + dp$ között találjuk meg:
+\begin{equation}
+    |c(p)|^2 dp = \left| \int \frac{1}{\sqrt{2 \pi \hbar}} e^{-\frac{i p x}{\hbar}} \Psi(x,t) dx \right|^2 dp
+\end{equation}
+Ez pedig pontosan megegyezik a statisztikus interpretációval. Az impulzus várható értéke pedig:
+\begin{equation}
+    \langle p \rangle = \int_{-\infty}^{\infty} \Psi^*(x,t) \left(-i \hbar \frac{\partial}{\partial x}\right) \Psi(x,t) dx
+\end{equation}
+A momentum várható értéke egy nagyon fontos eredmény, ezért egy saját nevet és szimbólumot is kapott: Ezt nevezzük \textbf{Momentum tér hullám függvénynek} és $\Phi(p,t)$-vel jelöljük.
+Ez tulajdonképpenm a Fourier transzformáltja a (\textbf{pozíció térbeli}) hullámfüggvénynek $\Psi(x,t)$ - Ami tehát a Plancherel elv szerint az inverz Fourier transzformáltja $\Phi(p,t)$-nek:
+\begin{equation}
+    \begin{aligned}
+    \Phi(p,t) &= \frac{1}{\sqrt{2 \pi \hbar}} \int_{-\infty}^{\infty} e^{-\frac{i p x}{\hbar}} \Psi(x,t) dx \\
+    \Psi(x,t) &= \frac{1}{\sqrt{2 \pi \hbar}} \int_{-\infty}^{\infty} e^{\frac{i p x}{\hbar}} \Phi(p,t) dp
+    \end{aligned}
+\end{equation}
+Tehát az általános statisztikus értelmezés szerint annak a valószínűsége, hogy a momentum megmérése a $dp$ szakaszban lesz:
+\begin{equation}
+    |\Phi(p,t)|^2 dp
+\end{equation}
+
+\subsubsection*{Példa: Potenciálvölgy valószínűség}
+Egy részecske $m$ tömeggel egy delta potenciálvölgyben van, aminek $V(x) = -\alpha \delta(x)$ a potenciálfüggvénye. Mi a valószínűsége, hogy a momentum megmérése egy nagyonn értéket ad mint $p_0 = \frac{m \alpha}{\hbar}$?
+
+\textbf{Megoldás:} A pozíció térben a hullámfüggvény:
+\begin{equation}
+    \Psi(x) = \frac{\sqrt{m\alpha}}{\hbar} e^{-\frac{m \alpha}{\hbar^2} |x|} e^{-\frac{i E t}{\hbar}}
+\end{equation}
+Ahol $E = -\frac{m \alpha^2}{2 \hbar^2}$. A momentum térbeli hullámfüggvény pedig a Fourier transzformáltja:
+\begin{equation}
+   \Phi(p, t) = \frac{1}{\sqrt{2 \pi \hbar}} \frac{\sqrt{m \alpha}}{\hbar} e^{-\frac{i E t}{\hbar}} \int_{-\infty}^{\infty} e^{-\frac{i p x}{\hbar}} e^{-\frac{m \alpha}{\hbar^2} |x|} dx = \sqrt{\frac{2}{\pi}} \frac{p^{3/2}_0 e^{-iEt/\hbar}}{p^2 + p^2_0}
+\end{equation}
+(az integál megoldását egy kézikönyvből kinézzük). A valószínűsége, hogy a momentum megmérése $|p| > p_0$ lesz:
+\begin{equation}
+    \begin{aligned}
+    P(|p| > p_0) &= \int_{p_0}^{\infty} |\Phi(p,t)|^2 dp = \int_{p_0}^{\infty} \frac{2}{\pi} \frac{p^3_0}{(p^2 + p^2_0)^2} dp = \\
+    &= \frac{1}{\pi} \left[ \frac{p p_0}{p^2 + p_0^2} + \tan^{-1}\left(\frac{p}{p_0}\right) \right]_{p_0}^{\infty} = \\
+    &= \frac{1}{4} - \frac{1}{2\pi} \approx 0.0908
+    \end{aligned}
+\end{equation}
+(Az integrált megint kilopjuk valahonnan)
+
+\subsection{Határozatlansági reláció}
+Egy részeckének, ami $\Psi(x,t)$ állapotban van, a várható értéke $x$-re:
+\begin{equation}
+    \boxed{\langle x \rangle = \int_{-\infty}^{\infty} x |\Psi(x,t)|^2 dx}
+\end{equation}
+Ez mit jelent? Ez NEM azt mondja, hogy ha megmérem a részecske helyét, akkor $\int_{-\infty}^{ \infty} |\Psi(x,t)|^2 x dx$ az átlaga lesz a mérési eredményeknek!
+Ne feledjük, hogy a mérés után a hullámfüggvény összeomlik, ezért a következő mérések (feltéve, hogy elég gyorsan végezzük el őket), már ugyanazt az eredményt fogják adni.
+Ezért ezt inkább érdemes úgy elképzelni, hogy minden mérés után valamilyen módon visszaállítjuk a részecskét az eredeti $\Psi(x,t)$ állapotba,
+vagy még jobb példa hogy, több, azonos $\Psi(x, t)$ állapotban lévő részeckét preparálunk, majd egyenként megmérjük a pozíciójukat. Na ezeknek a méréseknek az átlaga már a kapott várható érték lesz
+(Pontosabban, mivel véges számú mérést tudunk csak elvégezni, megközelíti azt)!
+
+Mivel a $\langle x \rangle$ változik időben (a $\Psi(x, t)$ időfüggése miatt), ezért feltehetjük a kérdést, hogy $\langle x \rangle$ hogyan is változik az időben:
+\begin{equation}
+    \begin{aligned}
+        \frac{d}{dt} \langle x \rangle &= \frac{d}{dt} \int_{-\infty}^{\infty} x |\Psi(x,t)|^2 dx = \int_{-\infty}^{\infty} x \frac{\partial}{\partial t} |\Psi(x,t)|^2 dx = \\
+        &= \frac{i \hbar}{2m} \int_{-\infty}^{\infty} x \frac{\partial}{\partial x} \left( \Psi^* \frac{\partial \Psi}{\partial x} - \frac{\partial \Psi^*}{\partial x} \Psi \right) dx
+    \end{aligned}
+\end{equation}
+
+
+\subsubsection{Momentum operátor}
+
+\subsubsection{Határozatlansági reláció elve}
+
+\subsubsection{általánosított határozatlansági reláció}
+
+\subsection{Szabad részecske hullámfüggvénye, szuperpozíció}
+
+\subsection{Impulzusmomentum operátor, sajátértékei, sajátfüggvényei}
+
+\subsection{Spin}
+
+\subsection{Korrespondanciaelv}
+
+\subsection{Ehrnest-tétel}
+
+\end{document}

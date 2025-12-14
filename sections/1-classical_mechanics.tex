@@ -1,0 +1,1829 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{{\subfix{../}}}
+\begin{document}
+
+Kinematikai alapfogalmak, mozgás leírása különböző koordináta-rendszerekben.
+Newton-törvények, mozgásegyenlet, tehetetlen és súlyos tömeg. Gyorsuló koordináta-rendszerek (jelenségek a forgó Földön).
+Munkatétel. Pontrendszerek. Merev testek: egyensúly feltétele, tehetetlenségi tenzor, pörgettyűk. Energia-, impulzus- és 
+impulzusmomentum-megmaradási tételek tömegpontra és pontrendszerre. Galilei-, Lorentz-transzformáció, relativisztikus kinematika,
+relativisztikus dinamika. Négyesimpulzus.
+\subsection{Kinematikai alapfogalmak}
+A kinematika a mozgások leírásával foglalkozó ága a fizikának. A szó maga Ampière francia fizikustól származik, aki a görög $\kappa \acute{\iota} \eta \varepsilon \mu \alpha$ (kinéma - mozgás) szóból alkotta meg a kinematika kifejezést.
+A kinematika a mozgások "geometriájával" foglalkozik, azaz a mozgások leírására szolgáló matematikai eszközöket dolgozza ki. A kinematika nem foglalkozik a mozgás okával, azaz a dinamikával,
+amely a mozgásokat előidéző erőkkel foglalkozik és a rendszer időfeejlődését írja le.
+
+A kinematika alapvető egysége a pont, amelynek helyzetét egy adott időpillanatban egy koordináta-rendszerben megadott koordinátákkal jellemezhetjük.
+\begin{equation}
+    \bold{r}(t) = x(t)\hat{i} + y(t)\hat{j} + z(t)\hat{k}\\
+\end{equation}
+\begin{equation}
+    | \bold{r}(t) | = \sqrt{x(t)^2 + y(t)^2 + z(t)^2}
+\end{equation}
+
+A pont helyzetének időbeli változását a sebesség és gyorsulás vektoraival adhatjuk meg:
+\begin{equation}
+    \bold{v}(t) = \lim_{\Delta t \rightarrow 0} \frac{\bold{r}(t + \Delta t) - \bold{r}(t)}{\Delta t} = \frac{d\bold{r}(t)}{dt} = \dot{\bold{r}}(t)
+\end{equation}
+\newline
+\begin{equation}
+    \bold{a}(t) = \lim_{\Delta t \rightarrow 0} \frac{\bold{v}(t + \Delta t) - \bold{v}(t)}{\Delta t} = \frac{d\bold{v}(t)}{dt} = \frac{d^2\bold{r}(t)}{dt^2} = \ddot{\bold{r}}(t)
+\end{equation}
+\newline
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/1-tetel/kinematika-pont.png}
+    \caption{Pont mozgásának kinematikai jellemzői}
+    \label{fig:kinematika}
+\end{figure}
+Ezek alapján látható, hogy a sebesség a pont helyzetének változása $t$ és $\Delta t$ között. Ha ezt a $\Delta t$ időintervallumot végtelenül kicsire csökkentjük, akkor megkapjuk a pont pillanatnyi sebességét.
+Hasonlóképpen járhatunk el a sebességgel, hogy megkapjuk a gyorsulást, amely a sebesség időbeli változását jellemzi. Érdekesség, hogy a jelenlegi tudásunk szerint, a magasabb rendű időbeli deriváltaknak (pl. gyorsulás időbeli változása) nincs fizikai jelentése.
+\newline
+Mi van akkor, ha a gyorsulást ismerem? Például ha leejtek egy testet akkor empirikusan meg tudom határozni a gravitációs gyorsulást, ami a Föld felszínén nagyjából $g = 9.81 \frac{m}{s^2}$.
+Ekkor a gyorsulás időbeli integrálásával megkaphatom a sebességet, majd a sebesség időbeli integrálásával a helyzetet.
+\begin{equation}
+    \bold{a}(t) = (0, 0, -g)
+\end{equation}
+\begin{equation}
+    \int \bold{a}(t) dt = \bold{v}(t) = \bold{a}t + \bold{v_0} = (v_{x0}, v_{y0}, v_{z0}-gt)
+\end{equation}
+\begin{equation}
+    \bold{r}(t) = \int \bold{v}(t) dt = \frac{1}{2}\bold{a}t^2 + \bold{v_0}t + \bold{r_0} = (v_{x0}t + x_0, v_{y0}t + y_0, -\frac{1}{2}gt^2 + v_{z0}t + z_0)
+\end{equation}
+Ahol $\bold{v_0}$ és $\bold{r_0}$ a kezdeti sebesség és helyzet vektora, vagyis a kezdőfeltételek. 
+\subsubsection*{Példa: Harmonikus oszcillátor}
+Vegyünk egy olyan rendszert, ahol egy testet egy ideális rugóval kötünk egy falhoz. Empirikusan megfigyelhető, hogy a rugó visszatérítő erőt fejt ki a testre, amely arányos a kitéréssel és ellentétes irányú vele. 
+Ez alapján fel tudjuk írni a mozgásegyenletet:
+\begin{equation}
+    m\ddot{z} = -\omega_0^2 z
+\end{equation}
+Ahol $m$ a test tömege, $z$ a kitérés a nyugalmi helyzettől és $\omega_0$ a körfrekvencia, amely a rugóállandótól és a test tömegétől függ. A mozgásegyenlet egy másodrendű lineáris homogén differenciálegyenlet, amelynek megoldása: 
+\begin{equation}
+    z(t) = A \sin(\omega_0 t + \varphi) = Z_0\cos(\omega_0 t) + \frac{v_0}{\omega_0}\sin(\omega_0 t)
+\end{equation}
+Ahol $A$ a amplitúdó, $\varphi$ a kezdeti fázis, $Z_0$ a kezdeti kitérés és $v_0$ a kezdeti sebesség. A megoldás egy harmonikus oszcillációt ír le, amelynek frekvenciája $\omega_0$. Ez a megoldás egy "sejtésen" alapul, 
+és a megoldást még validálni kell:
+\begin{equation}
+    \dot{z}(t) = A\omega_0 \cos(\omega_0 t + \varphi)
+\end{equation}
+\begin{equation}
+    \ddot{z}(t) = -A\omega_0^2 \sin(\omega_0 t + \varphi)
+\end{equation}
+Látható, hogy a sejtés helyes, hiszen a második derivált megegyezik a mozgásegyenlet jobb oldalával. A megoldásban szereplő $\omega_0$-t a rugó határozza meg, míg $A$ és $\varphi$ a kezdeti feltételektől függ, amelyeket a következőképpen határozhatunk meg:
+\begin{equation}
+    z(0) = A \sin(\varphi) = Z_0
+\end{equation}
+\begin{equation}
+    \dot{z}(0) = A\omega_0 \cos(\varphi) = v_0
+\end{equation}
+Ebből az $A$ és $\varphi$ kifejezhető a kezdeti feltételek segítségével:
+\begin{equation}
+    A = \sqrt{Z_0^2 + \frac{v_0^2}{\omega_0^2}}
+\end{equation}
+\begin{equation}
+    \varphi = \arctan\left(\frac{Z_0 \omega_0}{v_0}\right)
+\end{equation}
+Ha pedig kicsit átalakítjuk a megoldásokat, akkor a következő alakot kapjuk:
+\begin{equation}
+    (\frac{z}{A})^2 = \sin^2(\omega_0 t + \varphi)
+\end{equation}
+\begin{equation}
+    (\frac{\dot{z}}{A\omega_0})^2 = \cos^2(\omega_0 t + \varphi)
+\end{equation}
+Amiket ha összeadunk (ugyanis a differenciálegyenlet megoldásainak bármely lineárkombinációja is megoldás), akkor a következőt kapjuk és alkalmazzuk a trigonometrikus azonosságot ($\sin^2(x) + \cos^2(x) = 1$):
+\begin{equation}
+    (\frac{z}{A})^2 + (\frac{\dot{z}}{A\omega_0})^2 = 1
+\end{equation}
+Ez egy ellipszis egyenlete a $z$ és $\dot{z}$ koordinátákban, amely azt jelenti, hogy a harmonikus oszcillátor mozgása egy ellipszis pályán történik a fázistérben.
+
+\subsection{mozgás leírása különböző koordináta-rendszerekben}
+A mozgások leírására használt koordináta-rendszer mindig egy választás kérdése, amely a probléma természetétől és a kényelmi szempontoktól függ. A különböző koordináta-rendszerek feltétele, hogy egymással ekvivalensek legyenek,
+azaz ugyanazt a fizikai helyzetet írják le. A különbséget a koordináták módjának megadása jelenti, hogy mely tulajdonságaival jellemzünk egy kijelölt pontot a térben. Mindig annyi koordinátára van szükség, ahány szabadságfoka van a rendszernek.
+Például egy pont a háromdimenziós térben három szabadságfokkal rendelkezik, így három koordinátára van szükség a helyzetének meghatározásához. Egy merev testnek hat szabadságfoka van (három transzlációs és három rotációs),
+így hat koordinátára van szükség a helyzetének meghatározásához. A leggyakrabban használt koordináta-rendszerek a következők:
+\begin{itemize}
+    \item Descartes-féle (kartéziánus) koordinátarendszer: A leggyakrabban használt koordináta-rendszer, amely három egymásra merőleges tengelyből áll (x, y, z). A pont helyzetét a három tengely mentén mért távolságokkal jellemezzük.
+    \item Hengerkoordináta-rendszer: Egy olyan koordináta-rendszer, amely egy henger felületén helyezkedik el. A pont helyzetét egy sugárral (r), egy szöggel ($\varphi$) és egy magassággal (z) jellemezzük.
+    \item Gömbkoordináta-rendszer: Egy olyan koordináta-rendszer, amely egy gömb felületén helyezkedik el. A pont helyzetét egy sugárral (r), egy polárisszöggel ($\theta$) és egy azimutszöggel ($\varphi$) jellemezzük.
+\end{itemize}
+A koordináta-rendszerek közötti átváltásokat a következő képletek segítségével végezhetjük el:
+\begin{itemize}
+    \item Descartes-féle és hengerkoordináta-rendszer közötti átváltás:
+    \begin{equation}
+        x = r \cos(\varphi)
+    \end{equation}
+    \begin{equation}
+        y = r \sin(\varphi)
+    \end{equation}
+    \begin{equation}
+        z = z
+    \end{equation}
+    \noindent\hfil\rule{0.5\textwidth}{.4pt}\hfil
+    \begin{equation}
+        r = \sqrt{x^2 + y^2}
+    \end{equation}
+    \begin{equation}
+        \varphi = \arctan\left(\frac{y}{x}\right)
+    \end{equation}
+    \begin{equation}
+        z = z
+    \end{equation}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/1-tetel/descartes-henger.png}
+    \caption{Descartes-féle és hengerkoordináta-rendszer átváltás}
+    \label{fig:descartes-henger}
+\end{figure}
+    \item Descartes-féle és gömbkoordináta-rendszer közötti átváltás:
+    \begin{equation}
+        x = r \sin(\theta) \cos(\varphi)
+    \end{equation}
+    \begin{equation}
+        y = r \sin(\theta) \sin(\varphi)
+    \end{equation}
+    \begin{equation}
+        z = r \cos(\theta)
+    \end{equation}
+    \noindent\hfil\rule{0.5\textwidth}{.4pt}\hfil
+    \begin{equation}
+        r = \sqrt{x^2 + y^2 + z^2}
+    \end{equation}
+    \begin{equation}
+        \theta = \arccos\left(\frac{z}{r}\right)
+    \end{equation}
+    \begin{equation}
+        \varphi = \arctan\left(\frac{y}{x}\right)
+    \end{equation}
+\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/1-tetel/coord-systems.png}
+    \caption{különböző koordináta-rendszerek}
+    \label{fig:koordinata-rendszerek}
+\end{figure}
+A megfelelő koordinátarendszer kiválasztása a probléma geometriájától és a szimmetriáitól függ. Például transzlációs mozgás esetén a Descartes-féle koordinátarendszer a lehet az alkalmasabb,
+míg forgó mozgás esetén a henger- vagy gömbkoordináta-rendszer lehet előnyösebb. A koordináta-rendszerek közötti átváltások során ügyelni kell arra, hogy a vektorok komponensei is megváltoznak,
+és a deriváltak is másképp néznek ki az adott koordináta-rendszerben. Például a sebesség és gyorsulás vektorok hengerkoordináta-rendszerben a következőképpen néznek ki: 
+\begin{equation}
+    \bold{r} = r\hat{e_r} + z\hat{e_z}
+\end{equation}
+\begin{equation}
+     \hat{e_r} = \cos(\varphi)\hat{i} + \sin(\varphi)\hat{j}, \quad \hat{e_\varphi} = -\sin(\varphi)\hat{i} + \cos(\varphi)\hat{j}, \quad \hat{e_z} = \hat{k}
+\end{equation}
+\noindent\hfil\rule{0.5\textwidth}{.4pt}\hfil
+\begin{equation}
+    \bold{v} = \frac{d\bold{r}}{dt} = \dot{r}\hat{e_r} - r \cdot \dot{\varphi}sin(\varphi)\hat{i} + r \cdot \dot{\varphi}\cos(\varphi)\hat{j} + \dot{z}\hat{k} 
+\end{equation}
+\begin{equation}
+    \bold{v} = \dot{r}\hat{e_r} + r\dot{\varphi}(- sin(\varphi)\hat{i} + \cos(\varphi)\hat{j}) + \dot{z}\hat{e_z}
+\end{equation}
+\begin{equation}
+    \bold{v} = \dot{r}\hat{e_r} + r\dot{\varphi}\hat{e_\varphi} + \dot{z}\hat{e_z}
+\end{equation}
+Hasonlóan a gyorsulás vektora: 
+\begin{equation}
+    \bold{a} = (\ddot{r} - r\dot{\varphi}^2)\hat{e_r} + (r\ddot{\varphi} + 2\dot{r}\dot{\varphi})\hat{e_\varphi} + \ddot{z}\hat{e_z}
+\end{equation}
+Ahol $\hat{e_r}$, $\hat{e_\varphi}$ és $\hat{e_z}$ a hengerkoordináta-rendszer egységvektorai. A $\hat{e_\varphi}$ úgy van definiálva, hogy merőleges legyen a $\hat{e_r}$-re és a $\hat{e_z}$-re, és a jobbkéz-szabályt követi. 
+A gömbkoordináta-rendszerben a sebesség és gyorsulás vektorok a következőképpen néznek ki:
+\begin{equation}
+    \bold{r} = r\hat{e_r}
+\end{equation}
+\begin{equation}
+     \hat{e_r} = \sin(\theta)\cos(\varphi)\hat{i} + \sin(\theta)\sin(\varphi)\hat{j} + \cos(\theta)\hat{k}
+\end{equation}
+\begin{equation}
+     \hat{e_\theta} = \cos(\theta)\cos(\varphi)\hat{i} + \cos(\theta)\sin(\varphi)\hat{j} - \sin(\theta)\hat{k}
+\end{equation}
+\begin{equation}
+    \hat{e_\varphi} = -\sin(\varphi)\hat{i} + \cos(\varphi)\hat{j}
+\end{equation}
+\noindent\hfil\rule{0.5\textwidth}{.4pt}\hfil
+\begin{equation}
+    \bold{v} = \dot{r}\hat{e_r} + r\dot{\theta}\hat{e_\theta} + r\sin(\theta)\dot{\varphi}\hat{e_\varphi}
+\end{equation}
+\begin{equation}
+    \bold{a} = (\ddot{r} - r\dot{\theta}^2 - r\sin^2(\theta)\dot{\varphi}^2)\hat{e_r} + (r\ddot{\theta} + 2\dot{r}\dot{\theta} - r\sin(\theta)\cos(\theta)\dot{\varphi}^2)\hat{e_\theta} + (r\sin(\theta)\ddot{\varphi} + 2\dot{r}\sin(\theta)\dot{\varphi} + 2r\cos(\theta)\dot{\theta}\dot{\varphi})\hat{e_\varphi}
+\end{equation}
+Ahol $\hat{e_r}$, $\hat{e_\theta}$ és $\hat{e_\varphi}$ a gömbkoordináta-rendszer egységvektorai. Ezek a kifejezések bonyolultabbak, mint a Descartes-féle koordináta-rendszerben, de bizonyos problémák esetén egyszerűbbé teszik a számításokat.
+\subsubsection{természetes koordináta-rendszer}
+A természetes koordináta-rendszer egy olyan koordináta-rendszer, amely a mozgó test pillanatnyi helyzetéhez és mozgásához igazodik. A természetes koordináta-rendszerben a mozgó test helyzetét a következő három koordinátával jellemezzük:
+\begin{itemize}
+    \item $s$: a pálya mentén mért távolság, amely a test helyzetét a pálya mentén határozza meg.
+    \item $n$: a pályára merőleges irányú távolság, amely a test helyzetét a pályára merőlegesen határozza meg.
+    \item $b$: a pályára merőleges irányú távolság, amely a test helyzetét a pályára merőlegesen határozza meg.
+\end{itemize}
+A természetes koordináta-rendszer előnye, hogy a mozgó test helyzetét és mozgását a pálya mentén és a pályára merőlegesen is jellemezhetjük, ami bizonyos problémák esetén egyszerűbbé teszi a számításokat.
+A természetes koordináta-rendszerben a sebesség és gyorsulás vektorok a következőképpen néznek ki:
+\begin{equation}
+    \bold{v} = \dot{s}\hat{e_s} + \dot{n}\hat{e_n} + \dot{b}\hat{e_b}
+\end{equation}
+\begin{equation}
+    \bold{a} = (\ddot{s} - \kappa \dot{s}^2)\hat{e_s} + (\ddot{n} + \kappa \dot{s}\dot{n})\hat{e_n} + (\ddot{b} + \kappa \dot{s}\dot{b})\hat{e_b}
+\end{equation}
+Ahol $\hat{e_s}$, $\hat{e_n}$ és $\hat{e_b}$ a természetes koordináta-rendszer egységvektorai, és $\kappa$ a pálya görbületi sugara. A természetes koordináta-rendszerben a sebesség és gyorsulás vektorok kifejezése bonyolultabb, mint a Descartes-féle koordináta-rendszerben, de bizonyos problémák esetén egyszerűbbé teszik a számításokat.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/1-tetel/natural-coord.jpg}
+    \caption{természetes koordináta-rendszer}
+    \label{fig:natural-coord}
+\end{figure}
+
+\subsection{Newton-törvények, mozgásegyenlet, tehetetlen és súlyos tömeg}
+A Mechanika alapjait Sir Isaac Newton fektette le a 17. században, amikor megalkotta a klasszikus mechanika három alapvető törvényét, amelyek a mozgások és erők közötti kapcsolatot írják le. Ezeket a tövényeket Newton a bolygók mozgásának megfigyelései alapján fogalmazta meg,
+és azóta is a fizika egyik legfontosabb alapkövei. Newton a megfigyelései alapján négy axiómát fogalmazott meg, amelyek a következők:
+\begin{itemize}
+    \item Newton első törvénye (tehetetlenség törvénye): Létezik inerciarendszer. Az inerciarendszer egy olyan vonatkoztatási rendszer, amelyben egy test nyugalomban marad vagy egyenes vonalú egyenletes mozgást végez, ha nem hat rá külső erő. Ez azt jelenti, hogy egy test csak akkor változtatja meg mozgását, ha külső erő hat rá.
+    \item Newton második törvénye (mozgásegyenlet): A testre ható erő egyenlő a test tömegének és gyorsulásának szorzatával. Matematikailag ez a következőképpen írható fel: $\bold{F} = m\bold{a}$, ahol $\bold{F}$ az erő, $m$ a tömeg és $\bold{a}$ a gyorsulás.
+    \item Newton harmadik törvénye (hatás-ellenhatás törvénye): Minden hatásra van egy egyenlő és ellentétes ellenhatás. Ez azt jelenti, hogy ha egy test erőt fejt ki egy másik testre, akkor a másik test is erőt fejt ki az első testre, amely egyenlő nagyságú és ellentétes irányú. Tehát minden erőre létezik: $\bold{F_{12}} = - \bold{F_{21}}$
+    \item Newton negyedik törvénye (a hatások függetlenségének elve): A testekre ható erők függetlenek és összeadódnak. Ez azt jelenti, hogy ha egy testre több erő hat, akkor a test mozgását a rá ható erők vektori összege határozza meg. Matematikailag ez a következőképpen írható fel: $\bold{F_{net}} = \sum \bold{F_i}$, ahol $\bold{F_{net}}$ a testre ható erők eredője, és $\bold{F_i}$ az egyes erők.
+\end{itemize}
+
+\subsubsection{mozgásegyenlet}
+A mozgásegyenlet a Newton második törvényéből származtató egyenlet, amely a test mozgását írja le a rá ható erők alapján. Minden dinamikai problémára fel lehet írni a mozgásegyenletet, és bár $\bold{F} = m\bold{a}$ egy általános alak, mely inerciarendszerben érvényes,
+a mozgásegyenletet különböző koordináta-rendszerekben is fel lehet írni és különböző kényszererők is megjelenhetnek benne. A mozgásegyenlet felírásának lépései a következők:
+\begin{itemize}
+    \item Válasszuk ki a vizsgálandó testet vagy rendszert, és határozzuk meg a tömegét ($m$).
+    \item Válasszuk ki a megfelelő koordináta-rendszert, amelyben a mozgást leírjuk (pl. Descartes-féle, henger, gömb, természetes).
+    \item Határozzuk meg a testre ható összes erőt ($\bold{F_i}$), beleértve a külső erőket (pl. gravitáció, súrlódás, rugóerő) és a kényszererőket (pl. kötél, felület).
+    \item Írjuk fel a mozgásegyenletet a Newton második törvénye alapján: $\bold{F_{net}} = m\bold{a}$, ahol $\bold{F_{net}} = \sum \bold{F_i}$ az összes erő vektori összege.
+    \item Oldjuk meg a mozgásegyenletet a gyorsulás ($\bold{a}$) kifejezésére, majd integráljuk idő szerint, hogy megkapjuk a sebességet ($\bold{v}$) és helyzetet ($\bold{r}$).
+\end{itemize}
+A néhány példa a mozgásegyenletre:
+\begin{itemize}
+    \item Lineáris mozgásegyenlet: $\bold{F} = m\bold{a}$, ahol $\bold{F}$ az erő, $m$ a tömeg és $\bold{a}$ a gyorsulás.
+    \item Forgó mozgásegyenlet: $\bold{\tau} = \Theta\bold{\alpha}$, ahol $\bold{\tau}$ a nyomaték, $\Theta$ a tehetetlenségi nyomaték és $\bold{\alpha}$ a szöggyorsulás.
+    \item Rugó mozgásegyenlet: $m\ddot{x} = -kx$, ahol $m$ a tömeg, $k$ a rugóállandó és $x$ a kitérés a nyugalmi helyzettől.
+\end{itemize}
+\subsubsection*{Példa: Test esése közegben}
+Vegyünk egy olyan rendszert, ahol egy test esik szabadon a Föld felszínén, és közegellenállás is hat rá. A testre ható erők a következők:
+\begin{itemize}
+    \item Gravitációs erő: $\bold{F_g} = m\cdot \bold{g}$, ahol $\bold{g} = (0, 0, -9.81 \frac{m}{s^2})$ a gravitációs gyorsulás.
+    \item Közegellenállási erő: $\bold{F_d} = -\lambda\bold{v}$, ahol $\lambda$ a közegellenállási együttható és $\bold{v}$ a test sebessége.
+\end{itemize}
+A mozgásegyenlet felírása:
+\begin{equation}
+    \bold{F_{net}} = \bold{F_g} + \bold{F_d} = m\bold{a}
+\end{equation}
+\begin{equation}
+    m\cdot \bold{g} - \lambda\bold{v} = m\bold{a} = m\bold{\dot{v}}
+\end{equation}
+\begin{equation}
+    \bold{\dot{v}} = \bold{g} - \frac{\lambda}{m}\bold{v}
+\end{equation}
+Ez egy elsőrendű lineáris differenciálegyenlet a sebességre, amelyet megoldhatunk a következőképpen:
+\begin{equation}
+    \frac{\lambda}{m} = \beta
+\end{equation}
+\begin{equation}
+    \bold{\dot{v}} = \bold{g} - \beta\bold{v}
+\end{equation}
+Ahol $\beta$ a Boltzmann-állandó. A megoldáshoz először találjuk meg az integrálási faktort ami az ODE általános alakjából következik:
+\begin{equation}
+    \bold{\dot{v}} + P(t)\bold{v} = Q(t)
+\end{equation}
+Az integrrálási faktor pedig a következőképpen van definiálva:
+\begin{equation}
+    \mu(t) = e^{\int P(t) dt}
+\end{equation}
+Tehát ha átrendezzük az eredeti egyenletet, akkor a következőt kapjuk:
+\begin{equation}
+    \bold{\dot{v}} + \beta\bold{v} = \bold{g}
+\end{equation}
+Ahol az $P(t) = \beta$ és $Q(t) = \bold{g}$. Innen az integrálási faktor:
+\begin{equation}
+    \mu(t) = e^{\int \beta dt} = e^{\beta t}
+\end{equation}
+Most szorozzuk meg az eredeti egyenletet az integrálási faktorral:
+\begin{equation}
+    e^{\beta t}\bold{\dot{v}} + \beta e^{\beta t}\bold{v} = \bold{g}e^{\beta t}
+\end{equation}
+A bal oldalon alkalmazzuk a szorzat derivált szabályt:
+\begin{equation}
+    \frac{d}{dt}(e^{\beta t}\bold{v}) = \bold{g}e^{\beta t}
+\end{equation}
+Most integráljuk mindkét oldalt idő szerint:
+\begin{equation}
+    \int \frac{d}{dt}(e^{\beta t}\bold{v}) dt = \int \bold{g}e^{\beta t} dt
+\end{equation}
+\begin{equation}
+    e^{\beta t}\bold{v} = \frac{\bold{g}}{\beta}e^{\beta t} + \bold{C}
+\end{equation}
+Ahol $\bold{C}$ az integrálási állandó, amelyet a kezdeti feltételekből határozhatunk meg. Most szorozzuk meg mindkét oldalt $e^{-\beta t}$-tel, hogy kifejezzük a sebességet:
+\begin{equation}
+    \bold{v} = \frac{\bold{g}}{\beta} + \bold{C}e^{-\beta t}
+\end{equation}
+Most alkalmazzuk a kezdeti feltételt, hogy meghatározzuk az integrálási állandót. Tegyük fel, hogy a test kezdeti sebessége $\bold{v_0}$, amikor $t = 0$:
+\begin{equation}
+    \bold{v_0} = \frac{\bold{g}}{\beta} + \bold{C}e^{0}
+\end{equation}
+\begin{equation}
+    \bold{C} = \bold{v_0} - \frac{\bold{g}}{\beta}
+\end{equation}
+Most helyettesítsük vissza az integrálási állandót a sebesség egyenletbe:
+\begin{equation}
+    \bold{v} = \frac{\bold{g}}{\beta} + \left(\bold{v_0} - \frac{\bold{g}}{\beta}\right)e^{-\beta t}
+\end{equation}
+\begin{equation}
+    \bold{v} = \frac{\bold{g}}{\beta}(1 - e^{-\beta t}) + \bold{v_0}e^{-\beta t}
+\end{equation}
+Ez a sebesség időbeli változását írja le egy test esése közegben, figyelembe véve a gravitációs erőt és a közegellenállást. Ebben az egyenletben a $\frac{\bold{g}}{\beta}$ a test végsebességét határozza meg.
+A helyzetet úgy kaphatjuk meg, hogy integráljuk a sebességet idő szerint:
+\begin{equation}
+    \bold{r}(t) = \int \bold{v}(t) dt
+\end{equation}
+\begin{equation}
+    \bold{r}(t) = \int \left[\frac{\bold{g}}{\beta}(1 - e^{-\beta t}) + \bold{v_0}e^{-\beta t}\right] dt
+\end{equation}
+\begin{equation}
+    \bold{r}(t) = \frac{\bold{g}}{\beta}\left(t + \frac{1}{\beta}e^{-\beta t}\right) - \frac{\bold{g}}{\beta^2} + \frac{\bold{v_0}}{\beta}e^{-\beta t} + \bold{r_0} 
+\end{equation}
+Ahol $\bold{r_0}$ a kezdeti helyzet, amikor $t = 0$. Ez a helyzet időbeli változását írja le egy test esése közegben, figyelembe véve a gravitációs erőt és a közegellenállást.
+
+\subsubsection{tehetetlen és súlyos tömeg}
+A tehetetlen tömeg és a súlyos tömeg két különböző fogalom a fizikában, amelyek azonban meglepő módon numerikusan egyenlők egymással.
+\begin{itemize}
+    \item Tehetetlen tömeg ($m_i$): A tehetetlen tömeg Newton második törvényéből származik ($\bold{F} = m_i\bold{a}$), és azt méri, hogy egy test mennyire ellenáll a mozgásállapotának megváltoztatására irányuló erőnek. Minél nagyobb a tehetetlen tömeg, annál nehezebb megváltoztatni a test mozgását.
+    \item Súlyos tömeg ($m_g$): A súlyos tömeg Newton gravitációs törvényéből származik ($\bold{F_g} = \gamma \frac{m_{g1}m_{g2}}{r^2}$), és azt méri, hogy egy testet mennyire vonzza a gravitációs mező. A súlyos tömeg határozza meg a test súlyát, amely a gravitációs erő és a test tömegének szorzata ($\bold{F_g} = m_g\cdot \bold{g}$).
+\end{itemize}
+Jelenlegi ismereteink szerint, és a legmodernebb mérések alapján a két tömeg megegyezik egymással. Ez az egyezés vezette rá Albert Einsteint az általános relativitáselmélet megalkotására,
+amelyben a gravitációt a téridő görbületeként értelmezte. Az általános relativitáselmélet szerint a tehetetlen és súlyos tömeg közötti egyezés nem véletlen, hanem egy mélyebb kapcsolatot jelez a gravitáció és a mozgás között.
+Ez az egyezés lehetővé teszi számunkra, hogy a gravitációt és a mozgást egyetlen elméleti keretben kezeljük, és megértsük a világegyetem működését.
+
+\subsection{Gyorsuló koordináta-rendszerek, jelenségek a forgó földön}
+\subsubsection{gyorsuló koordináta-rendszerek}
+Az alapvető Newtoni mechanika inerciarendszerekben érvényes, ahol a Newton-törvények közvetlenül alkalmazhatók. Azonban a valóságban sok helyzetben praktikusabb egy olyan rendszerhez igazítani a koordináta-rendszerünket,
+amely maga is gyorsul, például egy járműhöz vagy a Földhöz kötött rendszerhez. Ezeket a rendszereket gyorsuló koordináta-rendszereknek nevezzük. Ezekben a rendszerekben a rendszerre ható külső erők miatt a rendszeren belül
+megjelennek úgynevezett virtuális erők vagy tehetetlenségi erők, amelyek nem valódi erők, hanem a gyorsuló rendszer hatásai. Ezeket a virutális erőket ugyanúgy figyelembe kell venni a mozgásegyenlet felírásakor, mint a valódi erőket.
+A gyorsuló koordináta-rendszerek között megkülönböztetünk lineárisan gyorsuló vagy transzlációs rendszereket és forgó rendszereket. E két rendszer segítéségvel tetszőlegesen mozgó rendszert leírhatunk. Egy lineárisan gyorsuló rendszerben
+a gyorsulás $\bold{a_0}$, és a testre ható virtuális erő a következőképpen írható fel:
+\begin{equation}
+    \bold{F_{in}} = -m\bold{a_0}
+\end{equation}
+Ahol $m$ a test tömege. Ez az erő ellentétes irányú a gyorsulással, és a test tehetetlenségét jelzi a gyorsuló rendszerhez képest. Ezek alapján a mozgásegyenlet a gyorsuló rendszerben a következőképpen írható fel:
+\begin{equation}
+    \bold{F_{net}} + \bold{F_{in}} = m\bold{a}
+\end{equation}
+\begin{equation}
+    \bold{F_{net}} - m\bold{a_0} = m\bold{a}
+\end{equation}
+\begin{equation}
+    \bold{F_{net}} = m(\bold{a} + \bold{a_0})
+\end{equation}
+A forgó koordináta-rendszerek esetén a helyzet bonyolultabb, mivel a forgás miatt további virtuális erők is megjelennek. A forgás leírásához vegyünk egy forgási operátort, amely az inerciarendszerből a forgó rendszerbe visz át:
+\begin{equation}
+    \bold{r} = \hat{O}\bold{r'}(t)
+\end{equation}
+Ahol $\bold{r}$ a test helyvektora az inerciarendszerben, $\bold{r'}$ a test helyvektora a forgó rendszerben, és $\hat{O}$ a forgási operátor. A sebesség vektor a következőképpen kapható meg:
+\begin{equation}
+    \bold{\dot{r}}(t) = \frac{d}{dt}(\hat{O}\bold{r'}(t)) = \hat{O}\dot{\bold{r'}(t)} + \dot{\hat{O}}\bold{r'}(t)
+\end{equation}
+Szorozzuk meg mindkét oldalt $\hat{O}^T$-vel (a transzponált operátorral), hogy a sebességet a forgó rendszerben kifejezzük:
+\begin{equation}
+    \hat{O}^T\bold{\dot{r}}(t) = \hat{O}^T\hat{O}\dot{\bold{r'}(t)} + \hat{O}^T\dot{\hat{O}}\bold{r'}(t)
+\end{equation}
+Itt a következőket használjuk ki:
+\begin{itemize}
+    \item $\hat{O}^T\bold{\dot{r}}(t) = \bold{\dot{r'}}(t)$, Mivel az operátor nem függ az időtől, így bevihető a derivált alá.
+    \item $\hat{O}^T\hat{O} = \hat{I}$, ahol $\hat{I}$ az egységmátrix. Tehát a jobboldal első tagja egyszerűsödik $\dot{\bold{r'}(t)}$-re.
+    \item $\hat{O}^T\dot{\hat{O}} = \hat{\Omega}$, ahol $\hat{\Omega}$ egy antiszimmetrikus mátrix, amely a forgás szögsebességét jellemzi.
+\end{itemize}
+$\hat{\Omega}$-nak fontos tulajdonsága, hogy antiszimmetrikus, azaz $\hat{\Omega}^T = -\hat{\Omega}$. Ez azt jelenti, hogy a mátrix főátlójában minden elem nulla, és a mátrix elemei a főátló alatt és felett ellentétes előjelűek.
+Tehát $\hat{\Omega}$ a következő alakú:
+\begin{equation}
+    \hat{\Omega} = \begin{pmatrix}
+    0 & -\omega_z & \omega_y \\
+    \omega_z & 0 & -\omega_x \\
+    -\omega_y & \omega_x & 0
+    \end{pmatrix}
+\end{equation}
+Ahol $\omega_x$, $\omega_y$ és $\omega_z$ a forgás szögsebességének komponensei az x, y és z tengelyek mentén.
+Most helyettesítsük vissza ezeket az eredményeket a sebesség egyenletbe:
+\begin{equation}
+    \bold{\dot{r'}}(t) = \dot{\bold{r'}(t)} + \hat{\Omega}\bold{r'}(t)
+\end{equation}
+Ezt a mátrix tulajdonságai miatt felírhatjuk vektoriális szorzatként is:
+\begin{equation}
+    \bold{\dot{r'}}(t) = \dot{\bold{r'}(t)} + \bold{\omega} \times \bold{r'}(t)
+\end{equation}
+Ahol $\bold{\omega} = (\omega_x, \omega_y, \omega_z)$ a forgás szögsebesség vektora. Ezt az alakot átalakíthatjuk egy operátorrá:
+\begin{equation}
+    \bold{\dot{r'}}(t) = \left(\frac{d}{dt} + \bold{\omega} \times \right)\bold{r'}(t) \rightarrow \frac{d}{dt} = \frac{d'}{dt} + \bold{\omega} \times
+\end{equation}
+Itt a $\frac{d'}{dt}$ a forgó rendszerben vett időderiváltat jelöli. Most alkalmazzuk ezt a sebességre, hogy megkapjuk a gyorsulást:
+\begin{equation}
+    \bold{\ddot{r}}(t) = \frac{d}{dt}(\bold{\dot{r}}(t)) = \frac{d}{dt}\left(\left(\frac{d'}{dt} + \bold{\omega} \times \right)\bold{r'}(t)\right)
+\end{equation}
+\begin{equation}
+    \bold{a}(t) = \left(\frac{d'}{dt} + \bold{\omega} \times \right)\left(\frac{d'\bold{r'}}{dt} + \bold{\omega} \times \bold{r'} \right)
+\end{equation}
+\begin{equation}
+    \bold{a}(t) = \frac{d'^2\bold{r'}}{dt^2} + 2\bold{\omega} \times \frac{d'\bold{r'}}{dt} + \bold{\omega} \times (\bold{\omega} \times \bold{r'}) + \dot{\bold{\omega}} \times \bold{r'}
+\end{equation}
+\begin{equation}
+    \bold{a}(t) = \bold{a'} + 2\bold{\omega} \times \bold{v'} + \bold{\omega} \times (\bold{\omega} \times \bold{r'}) + \bold{\beta} \times \bold{r'}
+\end{equation}
+Ahol $\bold{a'} = \frac{d'^2\bold{r'}}{dt^2}$ a gyorsulás a forgó rendszerben, $\bold{v'} = \frac{d'\bold{r'}}{dt}$ a sebesség a forgó rendszerben, és $\bold{\beta} = \dot{\bold{\omega}}$ a szöggyorsulás. Most helyettesítsük be ezt a gyorsulást a Newton második törvényébe:
+\begin{equation}
+    \bold{F_{net}} = m\bold{a} = m\left(\bold{a'} + 2\bold{\omega} \times \bold{v'} + \bold{\omega} \times (\bold{\omega} \times \bold{r'}) + \bold{\beta} \times \bold{r'}\right)
+\end{equation}
+Most rendezzük át az egyenletet, hogy a gyorsulást a forgó rendszerben kifejezzük:
+\begin{equation}
+    m\bold{a'} = \bold{F_{net}} - m\left(2\bold{\omega} \times \bold{v'} + \bold{\omega} \times (\bold{\omega} \times \bold{r'}) + \bold{\beta} \times \bold{r'}\right)
+\end{equation}
+Ahol a következő virtuális erők jelennek meg:
+\begin{itemize}
+    \item Coriolis-erő: $\bold{F_{C}} = -2m(\bold{\omega} \times \bold{v'})$, amely a mozgó test sebességéből ered a forgó rendszerben.
+    \item Centrifugális erő: $\bold{F_{cf}} = -m(\bold{\omega} \times (\bold{\omega} \times \bold{r'}))$, amely a test helyzetéből ered a forgó rendszerben.
+    \item Euler-erő: $\bold{F_{E}} = -m(\bold{\beta} \times \bold{r'})$, amely a forgás szöggyorsulásából ered a forgó rendszerben.
+\end{itemize}
+Így a mozgásegyenlet a forgó rendszerben a következőképpen írható fel:
+\begin{equation}
+    m\bold{a'} = \bold{F_{net}} + \bold{F_{C}} + \bold{F_{cf}} + \bold{F_{E}}
+\end{equation}
+A centrifugális erő kifejezhető a következőképpen is:
+\begin{equation}
+    \bold{F_{cf}} = \bold{\omega} \times (\bold{\omega} \times \bold{r'}) = \left(\bold{\omega} \cdot \bold{r'}\right)\bold{\omega} - \omega^2\bold{r'}
+\end{equation}
+\begin{equation}
+    \bold{r_{\omega}} = \frac{\bold{\omega} \cdot \bold{r'}}{|\omega|^2}\bold{\omega} \rightarrow \left(\bold{\omega} \cdot \bold{r'}\right)\bold{\omega} = \omega^2\bold{r_{\omega}}
+\end{equation}
+\begin{equation}
+    \left(\bold{\omega} \cdot \bold{r'}\right)\bold{\omega} - \omega^2\bold{r'} = \omega^2\bold{r_{\omega}} - \omega^2\bold{r'} = -\omega^2(\bold{r'} - \bold{r_{\omega}})
+\end{equation}
+\begin{equation}
+    \quad \bold{r'} - \bold{r_{\omega}} = \bold{s} \quad \rightarrow \quad \bold{F_{cf}} = -m\omega^2\bold{s}
+\end{equation}
+Ahol $\bold{s}$ a forgás tengelyétől mért távolságvektor. Ez az erő mindig kifelé mutat a forgás tengelyétől, és a forgás sebességének négyzetével arányos.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/1-tetel/Centrifugal.png}
+    \caption{centrifugális erő}
+\end{figure}
+\subsubsection{jelenségek a forgó földön}
+A Föld egy forgó koordináta-rendszer, amelynek következtében a Föld felszínén számos jelenség figyelhető meg, amelyek a Coriolis-erő és a centrifugális erő hatására alakulnak ki. Ezek a jelenségek jelentős hatással vannak a légkör és az óceánok mozgására, valamint a földi élet számos aspektusára. Néhány példa ezekre a jelenségekre:
+\begin{itemize}
+    \item Coriolis-erő hatása a légkörben: A Coriolis-erő miatt a légáramlatok és a szelek eltérülnek az egyenes vonalú mozgástól. Az északi féltekén a szelek jobbra, míg a déli féltekén balra térülnek el. Ez a jelenség hozzájárul a ciklonok és anticiklonok kialakulásához, valamint a globális légkörzési mintákhoz.
+    \item Coriolis-erő hatása az óceánokban: Az óceáni áramlatok is eltérülnek a Coriolis-erő hatására. Az északi féltekén az óceáni áramlatok jobbra, míg a déli féltekén balra térülnek el. Ez a jelenség hozzájárul a nagy óceáni áramlási rendszerek, például a Golf-áramlat kialakulásához.
+    \item Földi forgás és a nap mozgása: A Föld forgása miatt a Nap látszólagos mozgása az égen is változik. A Nap reggel keleten kel fel, délben a legmagasabban van, és este nyugaton nyugszik le. Ez a jelenség a Föld forgásának következménye.
+    \item Földi forgás és a gravitációs: A Föld forgása miatt a gravitációs erő nem pontosan függőleges a Föld felszínén. A centrifugális erő miatt a gravitációs erő kissé eltérül a függőlegestől, ami a Föld alakját is befolyásolja, amely geoid formájú.
+    \item Földi forgás és a Coriolis-erő hatása a repülőgépek és rakéták mozgására: A repülőgépek és rakéták útvonala is eltérül a Coriolis-erő hatására. Ezért a pilóták és a rakétakilövő központok figyelembe veszik ezt a hatást a navigáció során.
+\end{itemize}
+Ezek a jelenségek mind a Föld forgásának következményei, és jelentős hatással vannak a földi életre és a környezetre. A Föld forgása és a hozzá kapcsolódó erők megértése kulcsfontosságú a meteorológia, az óceánográfia és a földtudományok területén.
+
+\subsubsection*{Példa: Szabadesés a forgó Földön}
+Vegyünk egy olyan rendszert, ahol egy test szabadon esik a Föld felszínén, figyelembe véve a Föld forgását. A testre ható erők a következők:
+\begin{itemize}
+    \item Gravitációs erő: $\bold{F_g} = m\cdot \bold{g}$, ahol $\bold{g} = (0, 0, -9.81 \frac{m}{s^2})$ a gravitációs gyorsulás.
+    \item Coriolis-erő: $\bold{F_{C}} = -2m(\bold{\omega} \times \bold{v'})$, ahol $\bold{v'}$ a test sebessége a Földhöz kötött rendszerben.
+\end{itemize}
+Az Euler-erő és a centrifugális erő hatását most elhanyagoljuk, mivel a szabad esés során ezek az erők kisebbek, mint a gravitációs és Coriolis-erő. A mozgásegyenlet felírása:
+\begin{equation}
+    \bold{F_{net}} = \bold{F_g} + \bold{F_{C}} = m\bold{a}
+\end{equation}
+\begin{equation}
+    m\cdot \bold{g} - 2m(\bold{\omega} \times \bold{v'}) = m\bold{a}
+\end{equation}
+A vektokat a következőképpen definiáljuk:
+\begin{itemize}
+    \item $\bold{r'} = (x, y, z)$ a test helyzete a Földhöz kötött rendszerben.
+    \item $\bold{v'} = \dot{\bold{r'}} = (\dot{x}, \dot{y}, \dot{z})$ a test sebessége a Földhöz kötött rendszerben.
+    \item $\bold{a'} = \ddot{\bold{r'}} = (\ddot{x}, \ddot{y}, \ddot{z})$ a test gyorsulása a Földhöz kötött rendszerben.
+    \item $\bold{\omega} = (-\omega\cos\varphi, 0, \omega\sin\varphi)$ a Föld forgásának szögsebesség vektora, ahol $\phi$ a földrajzi szélesség és $\omega \approx 7.2921 \times 10^{-5} \frac{rad}{s}$ a Föld forgásának szögsebessége.
+    \item $\bold{g} = (0, 0, -9.81 \frac{m}{s^2})$ a gravitációs gyorsulás vektora.
+\end{itemize}
+Ekkor a Coriolis-erő kifejezhető a következőképpen:
+\begin{equation}
+    \bold{F_{C}} = -2m(\bold{\omega} \times \bold{v'}) = -2m \begin{vmatrix}
+    \hat{i} & \hat{j} & \hat{k} \\
+    -\omega\cos\varphi & 0 & \omega\sin\varphi \\
+    \dot{x} & \dot{y} & \dot{z}
+    \end{vmatrix}
+\end{equation}
+\begin{equation}
+    \bold{F_{C}} = -2m\left((\dot{y}\omega\sin\varphi)\hat{i} + (\dot{z}\omega\cos\varphi + \dot{x}\omega\sin\varphi)\hat{j} - (\dot{y}\omega\cos\varphi)\hat{k}\right)
+\end{equation}
+Most helyettesítsük be ezt a Coriolis-erőt a mozgásegyenletbe:
+\begin{equation}
+    m\cdot \bold{g} - 2m\left((\dot{y}\omega\sin\varphi)\hat{i} + (\dot{z}\omega\cos\varphi + \dot{x}\omega\sin\varphi)\hat{j} - (\dot{y}\omega\cos\varphi)\hat{k}\right) = m\bold{a'}
+\end{equation}
+Ez csak úgy lehet egyenlő minden komponensében, ha a következő három egyenlet teljesül:
+\begin{equation}
+    \ddot{x} = -2\dot{y}\omega\sin\varphi
+\end{equation}
+\begin{equation}
+    \ddot{y} = -2\dot{z}\omega\cos\varphi + 2\dot{x}\omega\sin\varphi
+\end{equation}
+\begin{equation}
+    \ddot{z} = -g + 2\dot{y}\omega\cos\varphi
+\end{equation}
+Most oldjuk meg ezeket az egyenleteket a kezdeti feltételekkel. Tegyük fel, hogy a test kezdeti helyzete $\bold{r'}(0) = (0, 0, h)$ és kezdeti sebessége $\bold{v'}(0) = (0, 0, 0)$, ahol $h$ a kezdeti magasság.
+A Coriolis-erő hatása csak y irányban lesz jelentős, így vizsgáljuk meg azt. Észrevehetjük, hogy, ha $\ddot{y}$ egyenletet még egyszer deriváljuk, akkor a következőt kapjuk:
+\begin{equation}
+    \dddot{y} = -2\ddot{z}\omega\cos\varphi + 2\ddot{x}\omega\sin\varphi
+\end{equation}
+behelyettesítve $\ddot{z}$ és $\ddot{x}$ értékét a korábbi egyenletekből:
+\begin{equation}
+    \dddot{y} = -2(-g + 2\dot{y}\omega\cos\varphi)\omega\cos\varphi - 2\omega\sin\varphi(-2\dot{y}\omega\sin\varphi)
+\end{equation}
+\begin{equation}
+    \dddot{y} = 2g\omega\cos\varphi + 4\dot{y}\omega^2\cos^2\varphi + 4\dot{y}\omega^2\sin^2\varphi
+\end{equation}
+Mivel $\cos^2\varphi + \sin^2\varphi = 1$, így a végső egyenlet a következő lesz:
+\begin{equation}
+    \dddot{y} = 2g\omega\cos\varphi + 4\dot{y}\omega^2
+\end{equation}
+Ha ezt megoldjuk az Y irányú sebességre, akkor a következőt kapjuk:
+\begin{equation}
+    \ddot{v_y} = 2g\omega\cos\varphi + 4\dot{y}\omega^2
+\end{equation}
+A megoldást ebben az alakban keresem:
+\begin{equation}
+    v_y = A\cos(2\omega t + \varphi) + B
+\end{equation}
+Ahol $A$ és $B$ integrálási állandók, amelyeket a kezdeti feltételekből határozhatunk meg. A kezdeti feltételek alapján:
+\begin{equation}
+    v_y(0) = 0 \quad \text{és} \quad \dot{v_y}(0) = 0
+\end{equation}
+Ezek alapján az integrálási állandók a következők lesznek:
+\begin{equation}
+    A = -\frac{g\cos\varphi}{2\omega} \quad \text{és} \quad B = \frac{g\cos\varphi}{2\omega}
+\end{equation}
+Így a y irányú sebesség időbeli változása a következő lesz:
+\begin{equation}
+    v_y = \frac{g\cos\varphi}{2\omega}(1 - \cos(2\omega t))
+\end{equation}
+$\omega$ nagyon kicsi érték, így a $\cos(2\omega t)$ közelíthető $1 - 2\omega^2 t^2$-re Taylor-sorral, ha $t$ nem túl nagy. Így a y irányú sebesség közelítése:
+\begin{equation}
+    v_y \approx \frac{g\cos\varphi}{2\omega}(1 - (1 - 2\omega^2 t^2)) = g\cos\varphi \cdot \omega t^2
+\end{equation}
+Most integráljuk ezt a sebességet, hogy megkapjuk a y irányú elmozdulást:
+\begin{equation}
+    y(t) = \int v_y dt = \int g\cos\varphi \cdot \omega t^2 dt = \frac{1}{3}g\cos\varphi \cdot \omega t^3
+\end{equation}
+Innen megkaptuk a test y irányú elmozdulását a szabad esés során a Föld forgásának hatására. Ez az elmozdulás a földrajzi szélességtől ($\varphi$) és az esési időtől ($t$) függ.
+
+\subsubsection*{Példa: Inga mozgása a forgó Földön (Foucault-inga)}
+A Foucault-inga egy híres kísérlet, amely bemutatja a Föld forgásának hatását egy ingára. Az inga mozgása a Földhöz kötött rendszerben történik, így a mozgásegyenlet felírásához figyelembe kell venni a Coriolis-erőt és a centrifugális
+erőt is. Tegyük fel, hogy az inga hossza $L$, és a lengés síkja a földrajzi szélesség $\varphi$-vel bezárt szöget zár be. Az inga helyzetét a következőképpen definiáljuk:
+\begin{itemize}
+    \item $\theta(t)$: az inga kitérése a függőleges helyzettől.
+    \item $\phi(t)$: az inga lengés síkjának elfordulása a földrajzi északi iránytól.
+\end{itemize}
+Az inga mozgásegyenlete a következőképpen írható fel a Földhöz kötött rendszerben:
+\begin{equation}
+    m\bold{a'} = \bold{F_g} + \bold{F_C} + \bold{F_{cf}}
+\end{equation}
+Ahol:
+\begin{itemize}
+    \item $\bold{F_g} = m\cdot \bold{g}$ a gravitációs erő.
+    \item $\bold{F_C} = -2m(\bold{\omega} \times \bold{v'})$ a Coriolis-erő.
+\end{itemize}
+Az inga gyorsulása a következőképpen kapható meg:
+\begin{equation}
+    \ddot{x} = 2\dot{y}\omega\sin\varphi + \lambda x
+\end{equation}
+\begin{equation}
+    \ddot{y} = -2\dot{z}\omega\cos\varphi -2\dot{x}\omega\sin\varphi + \lambda y
+\end{equation}
+\begin{equation}
+    \ddot{z} = -g + 2 \dot{y}\omega\cos\varphi + \lambda z
+\end{equation}
+Ahol $\lambda$ a feszítőerő per tömeg, amely az inga feszítéséből származik. Az inga mozgását a következő kezdeti feltételekkel vizsgáljuk:
+\begin{equation}
+    x^2 + y^2 + z^2 = L^2
+\end{equation}
+\begin{equation}
+    Z = \pm \sqrt{L^2 - x^2 - y^2}
+\end{equation}
+\begin{equation}
+    Z = \pm l \sqrt{1 - \frac{x^2 + y^2}{L^2}} \rightarrow \frac{x^2 + y^2}{L^2} \approx 0, \quad \text{Mivel L-hez képest kicsi a kitérés}
+\end{equation}
+\begin{equation}
+    Z \approx -L
+\end{equation}
+Innen a következő közelítést kapjuk:
+\begin{equation}
+    \ddot{Z} = -g + 2\dot{y}\omega\cos\varphi + \lambda l
+\end{equation}
+Mivel $Z \approx -L$ így $\ddot{Z} \approx 0$ és $2\dot{y}\omega\cos\varphi \approx 0$, mivel $\dot{y}$ kicsi a kis kimozdítás miatt, így a feszítőerő per tömeg kifejezhető a következőképpen:
+\begin{equation}
+    \lambda = \frac{g}{L}
+\end{equation}
+Most helyettesítsük be ezt a feszítőerő per tömeget az x és y irányú gyorsulás egyenletekbe:
+\begin{equation}
+    \ddot{x} = 2\dot{y}\omega\sin\varphi - \frac{g}{L}x
+\end{equation}
+\begin{equation}
+    \ddot{y} = \cancel{-2\dot{z}\omega\cos\varphi} - 2\dot{x}\omega\sin\varphi - \frac{g}{L}y
+\end{equation}
+Mivel $\dot{z} \approx 0$, így elhanyagolható. Most oldjuk meg ezeket az egyenleteket. 
+\begin{equation}
+    \omega_1 = \omega \sin \varphi
+\end{equation}
+\begin{equation}
+    \ddot{x} - 2 \omega_1 \dot{y} + \frac{g}{l} x = 0
+\end{equation}
+\begin{equation}
+    \ddot{y} - 2 \omega_1 \dot{x} + \frac{g}{l} y = 0
+\end{equation}
+Szorrozzuk meg i-vel a két egyenletet:
+\begin{equation}
+   i \ddot{x} - 2i \omega_1 \dot{y} + \frac{g}{l} ix = 0
+\end{equation}
+\begin{equation}
+   i \ddot{y} - 2i \omega_1 \dot{x} + \frac{g}{l} iy = 0
+\end{equation}
+És vezessük be a $z = x + iy$ jelölést és adjuk össze a két egyenletet:
+\begin{equation}
+    \ddot{z} + 2 \omega_1 \dot{z} + \frac{g}{l} z = 0
+\end{equation}
+Keressük a megoldást a következő alakban:
+\begin{equation}
+    z = z_0 e^{i  \alpha t}
+\end{equation}
+Ezt visszahelyettesítve:
+\begin{equation}
+    - \alpha^2 z - 2 \omega_1 \alpha z + \frac{g}{l} z = 0
+\end{equation}
+Megoldva a másodfokú egyenletet:
+ \begin{equation}
+    \alpha_{1,2} = \omega_1 \pm \sqrt{\cancel{\omega_1^2} + \frac{g}{l}}
+ \end{equation}
+A $\omega_1^2$ elhanyagolható a $\frac{g}{l}$ mellett. Az egészet összetéve megkaphatjuk a két megoldást, de mivel a két megoldás lineárkombinációja is megoldás, így a megoldást a következő alakban is felírhatjuk:
+\begin{equation}
+    z = z_1 e^{-i\omega_1 t} e^{i\sqrt{\frac{g}{l}}t} + z_2 e^{-i\omega_1 t} e^{-i\sqrt{\frac{g}{l}}t} 
+\end{equation}
+\begin{equation}
+    z = e^{-i\omega_1 t} \left(z_1 e^{i\sqrt{\frac{g}{l}}t} + z_2 e^{-i\sqrt{\frac{g}{l}}t}\right)
+\end{equation}
+A kezdőfeltételekkel meghatározhatóak az együtthatók:
+\begin{equation}
+    z(0) = a \leftarrow \text{valós szám}
+\end{equation}
+\begin{equation}
+    \dot{z}(0) = 0
+\end{equation}
+\begin{equation}
+    z_1 + z_2 = a
+\end{equation}
+\begin{equation}
+    \dot{z} = z_1 \left(i\sqrt{\frac{g}{l}} - i\omega_1\right) e^{-i\omega_1t + i\sqrt{\frac{g}{l}}t} + z_2 \left(-i\sqrt{\frac{g}{l}} - i\omega_1\right) e^{-i\omega_1t - i\sqrt{\frac{g}{l}}t}
+\end{equation}
+Itt az egyenlet t=0-ban csak akkor lesz nulla, ha:
+\begin{equation}
+    z_1 \left(\sqrt{\frac{g}{l}} - \omega_1\right) + z_2 \left(-\sqrt{\frac{g}{l}} - \omega_1\right) = 0
+\end{equation}
+\begin{equation}
+    z_1 \left(-\sqrt{\frac{g}{l}} + \omega_1\right) + z_2 \left(\sqrt{\frac{g}{l}} + \omega_1\right) = 0
+\end{equation}
+Ha ebbe behelyettesítjük a $z_1 + z_2 = a$ egyenletet, akkor:
+\begin{equation}
+    \omega_1 a + \sqrt{\frac{g}{l}}(z_2 - z_1) = 0
+\end{equation}
+\begin{equation}
+    z_1 - z_2 = \frac{\omega_1 a}{\sqrt{\frac{g}{l}}}
+\end{equation}
+Tehát ezt a két egyenletet kell megoldanunk:
+\begin{gather}
+    z_1 + z_2 = a \\
+    z_1 - z_2 = \frac{\omega_1 a}{\sqrt{\frac{g}{l}}}
+\end{gather}
+$z_1$ és $z_2$ pedig a következőképpen néz ki:
+\begin{equation}
+    z_1 = \frac{a}{2}\left(1 + \frac{\omega_1}{\sqrt{\frac{g}{l}}}\right)
+\end{equation}
+\begin{equation}
+    z_2 = \frac{a}{2}\left(1 - \frac{\omega_1}{\sqrt{\frac{g}{l}}}\right)
+\end{equation}
+Így a megoldás a következő lesz:
+\begin{equation}
+    z = e^{-i\omega_1 t} \left[\frac{a}{2}\left(1 + \frac{\omega_1}{\sqrt{\frac{g}{l}}}\right) e^{i\sqrt{\frac{g}{l}}t} + \frac{a}{2}\left(1 - \frac{\omega_1}{\sqrt{\frac{g}{l}}}\right) e^{-i\sqrt{\frac{g}{l}}t}\right]
+\end{equation}
+\begin{equation}
+    z = \frac{a}{2} e^{-i\omega_1 t} \left[\left(1 + \frac{\omega_1}{\sqrt{\frac{g}{l}}}\right) e^{i\sqrt{\frac{g}{l}}t} + \left(1 - \frac{\omega_1}{\sqrt{\frac{g}{l}}}\right) e^{-i\sqrt{\frac{g}{l}}t}\right]
+\end{equation}
+\begin{equation}
+    z = \frac{a}{2} e^{-i\omega_1 t} \left[2\cos\left(\sqrt{\frac{g}{l}}t\right) + 2i\frac{\omega_1}{\sqrt{\frac{g}{l}}}\sin\left(\sqrt{\frac{g}{l}}t\right)\right]
+\end{equation}
+\begin{equation}
+    z = a e^{-i\omega_1 t} \left[\cos\left(\sqrt{\frac{g}{l}}t\right) + i\frac{\omega_1}{\sqrt{\frac{g}{l}}}\sin\left(\sqrt{\frac{g}{l}}t\right)\right]
+\end{equation}
+Most szedjük szét a valós és képzetes részre:
+\begin{equation}
+    x = a \cos(\omega_1 t) \cos\left(\sqrt{\frac{g}{l}}t\right) + a \frac{\omega_1}{\sqrt{\frac{g}{l}}} \sin(\omega_1 t) \sin\left(\sqrt{\frac{g}{l}}t\right)
+\end{equation}
+\begin{equation}
+    y = -a \sin(\omega_1 t) \cos\left(\sqrt{\frac{g}{l}}t\right) + a \frac{\omega_1}{\sqrt{\frac{g}{l}}} \cos(\omega_1 t) \sin\left(\sqrt{\frac{g}{l}}t\right)
+\end{equation}
+Ez a megoldás azt mutatja, hogy az inga lengés síkja idővel elfordul a földrajzi északi iránytól, ami a Foucault-inga jelenségét magyarázza. Az inga lengésének frekvenciája közelítőleg $\sqrt{\frac{g}{l}}$, míg a lengés síkjának elfordulási sebessége $\omega \sin \varphi$, ahol $\varphi$ a földrajzi szélesség. 
+
+\subsection{Munkatétel, Energia-, impulzus- és impulzusmomentum megmaradás tömegpontra}
+
+Ha a Newton második törvényét vizsgáljuk, akkor megkisérelhetjük megnézni, hogy mi történik, ha különböző vektorokkal megszorozzuk az egyenletet. Például, ha a sebességvektoral szozunk be,
+akkor a következőt kapjuk:
+\begin{equation}
+    \bold{F_{net}} \cdot \bold{v} = m\bold{a} \cdot \bold{v}
+\end{equation}
+A sebesség és az erő szorzatát elnevezhetük egy új egységnek, amit teljesítménynek hívunk:
+\begin{equation}
+    P = \bold{F_{net}} \cdot \bold{v}
+\end{equation}
+Az egyenlet másik oldalát megvizsgálva Észrevehetjük hogy a gyorsulás és a sebesség szorzata kifejezhető az idő szerinti deriváltként:
+\begin{equation}
+    \frac{d}{dt}\left(\bold{v} \cdot \bold{v}\right) = 2 \bold{v}\bold{a}
+\end{equation}
+\begin{equation}
+    \bold{v}\bold{a} = \frac{1}{2} \frac{d}{dt}\left(\bold{v} \cdot \bold{v}\right) = \frac{d}{dt}\left(\frac{1}{2} m \bold{v}^2\right)
+\end{equation}
+Így a teljesítmény kifejezhető a következőképpen:
+\begin{equation}
+    P = \bold{F_{net}} \cdot \bold{v} = \frac{d}{dt}\left(\frac{1}{2} m \bold{v}^2\right)
+\end{equation}
+Ahol $\frac{1}{2} m \bold{v}^2$ az ún. kinetikus energia, amit $K$-val jelölünk:
+\begin{equation}
+    K = \frac{1}{2} m \bold{v}^2
+\end{equation}
+Így a teljesítmény a kinetikus energia idő szerinti változásaként értelmezhető:
+\begin{equation}
+    P = \frac{dK}{dt}
+\end{equation}
+Most integráljuk ezt az egyenletet egy időintervallumon:
+\begin{equation}
+    \int_{t_1}^{t_2} P dt = \int_{t_1}^{t_2} \frac{dK}{dt} dt = K(t_2) - K(t_1)
+\end{equation}
+A teljesítmény idő szerinti integrálja a kinetikus energia változását adja meg az adott időintervallumban. Ezt az integrált munkának nevezzük, amit $W$-vel jelölünk:
+\begin{equation}
+    W = \int_{t_1}^{t_2} P dt = K(t_2) - K(t_1)
+\end{equation}
+A munka tehát a kinetikus energia változását méri egy adott időintervallumban. Ez az összefüggés a munka-energia tétel, amely kimondja, hogy a testre ható erők által végzett munka megegyezik a test kinetikus energiájának változásával.
+Most nézzük meg a munka kifejezést egy kis időintervallumra:
+\begin{equation}
+    W = \int_{t_1}^{t_2} P dt = \int_{t_1}^{t_2} \bold{F_{net}} \cdot \bold{v} dt
+\end{equation}
+\begin{equation}
+    W = \int_{t_1}^{t_2} \bold{F_{net}} \cdot \frac{d\bold{r}}{dt} dt = \int_{\bold{r_1}}^{\bold{r_2}} \bold{F_{net}} \cdot d\bold{r}
+\end{equation}
+Ahol $\bold{r_1}$ és $\bold{r_2}$ a test helyzete az időintervallum elején és végén. Ez az integrál a testre ható erők által végzett munkát méri a test útja mentén. Ez a munka definíciója:
+\begin{equation}
+    W = \int_{\bold{r_1}}^{\bold{r_2}} \bold{F_{net}} \cdot d\bold{r}
+\end{equation}
+Ez az egyenlet azt mutatja, hogy a munka a testre ható erők és a test elmozdulása közötti skaláris szorzat integrálja az út mentén. Ez az összefüggés a munka-energia tétel egyik formája,
+amely kimondja, hogy a testre ható erők által végzett munka megegyezik a test kinetikus energiájának változásával. Tehát a munka legegyszerűbb alakjában a következő:
+\begin{equation}
+    W = \bold{F} \cdot \bold{s} = F s \cos \alpha
+\end{equation}
+Ahol $\bold{F}$ az erő, $\bold{s}$ az elmozdulás, és $\alpha$ az erő és az elmozdulás közötti szög.
+\subsubsection{Erőterek}
+Elképzelhetünk egy olyan környezetet, ahol a testre ható erő függ a helyzetétől, de nem függ az időtől. Ilyen esetben az erőt erőtérnek nevezzük, és az erő a helyzet függvényeként írható fel:
+\begin{equation}
+    \bold{F} = \bold{F}(\bold{r})
+\end{equation}
+Vizsgáljuk meg egy ilyen rendszerben, hogy mi történik egy kis kimozdulás esetén. Ekkor az munka így változik:
+\begin{equation}
+    W = \bold{F}(\bold{r}) \cdot \bold{s}
+\end{equation}
+\begin{equation}
+    \bold{s} = \bold{r_{i+1}} - \bold{r_i}
+\end{equation}
+\begin{equation}
+    \sum_{i=0}^{N-1} \bold{F}(\bold{r_i}) \cdot (\bold{r_{i+1}} - \bold{r_i}) = \sum_{i=0}^{N-1} \bold{F}(\bold{r_i}) \cdot \Delta \bold{r_i}
+\end{equation}
+Ha a kimozdulás elég kicsi, akkor a következő határértéket vehetjük:
+\begin{equation}
+    W = \lim_{N \to \infty} \sum_{i=0}^{N-1} \bold{F}(\bold{r_i}) \cdot \Delta \bold{r_i} = \int_{G}^{} \bold{F}(\bold{r}) \cdot d\bold{r}
+\end{equation}
+Ez az integrál egy görbe menti integrál és a testre ható erők által végzett munkát méri a test útja mentén egy erőtérben. Ez az összefüggés a munka-energia tétel egyik formája, amely kimondja, hogy a testre ható erők által végzett munka megegyezik a test kinetikus energiájának
+változásával.
+\subsubsection{Konzervatív erőtér}
+Egy erőtér akkor konzervatív, ha a testre ható erők által végzett munka csak a kezdő és végpont helyzetétől függ, és nem függ az útvonal alakjától. Matematikailag ez azt jelenti, 
+hogy két különböző útvonal esetén, amelyek ugyanazon a kezdő és végponton haladnak át, a munka ugyanaz lesz:
+\begin{equation}
+    \int_{G_1}^{} \bold{F}(\bold{r}) \cdot d\bold{r} = \int_{G_2}^{} \bold{F}(\bold{r}) \cdot d\bold{r}
+\end{equation}
+\begin{equation}
+    W_{A \to B}^{(1)} = W_{A \to B}^{(2)}
+\end{equation}
+Ez azt is jelenti, hogy egy zárt görbe mentén végzett munka nulla:
+\begin{equation}
+    \oint \bold{F}(\bold{r}) \cdot d\bold{r} = 0
+\end{equation}
+Ilyen erőtér esetén a test munkavégző képessége csak a helyzetétől függ, és nem függ az útvonal alakjától. Ezért bevezethetünk egy skaláris mennyiséget, amit potenciális energiának nevezünk, és $U(\bold{r})$-vel jelölünk. A potenciális energia a következőképpen definiálható:
+\begin{equation}
+    U(\bold{r}) = - \int_{r_0}^{\bold{r}} \bold{F}(\bold{r'}) \cdot d\bold{r'}
+\end{equation}
+Ahol $r_0$ egy tetszőleges referencia pont, ahol a potenciális energia nulla. A negatív előjel konvenció által lett meghatozva és azt jelenti, hogy a potenciális energia csökken, amikor a test a potenciális energia minimuma felé mozog.
+A potenciális energia tehát a test helyzetétől függ, és a következő kapcsolat áll fenn az erő és a potenciális energia között:
+\begin{equation}
+    \bold{F}(\bold{r}) = - \boldsymbol{\nabla} U(\bold{r})
+\end{equation}
+Ahol $\boldsymbol{\nabla} U(\bold{r})$ a potenciális energia gradiensét jelenti. Ez az összefüggés azt mutatja, hogy a konzervatív erőtérben az erő a potenciális energia csökkenésének irányába mutat. A munka-energia tétel konzervatív erőtér esetén a következőképpen írható fel:
+\begin{equation}
+    W = K(t_2) - K(t_1) = U(\bold{r_1}) - U(\bold{r_2})
+\end{equation}
+\begin{equation}
+    K(t_1) + U(\bold{r_1}) = K(t_2) + U(\bold{r_2})
+\end{equation}
+Ez azt jelenti, hogy a test teljes mechanikai energiája (kinetikus + potenciális) állandó marad egy konzervatív erőtérben:
+\begin{equation}
+    E = K + U = \text{állandó}
+\end{equation}
+
+\subsubsection*{Példa: Inga mozgása konzervatív erőtérben}
+Vizsgáljuk meg egy inga mozgását egy konzervatív erőtérben, például a gravitációs erőtérben. Tegyük fel, hogy az inga hossza $L$, és a lengés síkja a függőlegeshez képest egy szöget zár be, amit $\varphi$-val jelölünk.
+Az inga potenciális energiája a következőképpen írható fel:
+\begin{equation}
+    U(\varphi) = mgh
+\end{equation}
+\begin{equation}
+    h = L(1 - \cos\varphi)
+\end{equation}
+Ahol $h$ az inga tömegközéppontjának magassága a referencia szinthez képest. A h-t úgy kapjuk meg, hogy a teljes hosszából kivonjuk a kitérés függőleges komponensét.
+Az inga sebessége a következőképpen kapható meg:
+\begin{equation}
+    \bold{v} = \bold{\dot{r}} \bold{e_r} + r\dot{\varphi} \bold{e_\varphi}
+\end{equation}
+Ahol $\bold{\dot{r}} \bold{e_r} = 0$ mivel az inga hossza állandó, így csak a szögsebesség komponens marad:
+\begin{equation}
+    \bold{v} = L\dot{\varphi} \bold{e_\varphi}
+\end{equation}
+Így a kinetikus energia a következőképpen írható fel:
+\begin{equation}
+    K = \frac{1}{2} m (L\dot{\varphi})^2 = \frac{1}{2} m L^2 \dot{\varphi}^2
+\end{equation}
+Most alkalmazzuk a munka-energia tételt az inga mozgására:
+\begin{equation}
+    E = K + U = \text{állandó}
+\end{equation}
+\begin{equation}
+    \frac{1}{2} m L^2 \dot{\varphi}^2 + mgL(1 - \cos\varphi) = \text{állandó}
+\end{equation}
+Ez az egyenlet leírja az inga mozgását egy konzervatív erőtérben. Az inga lengésének frekvenciája és amplitúdója a kezdeti feltételektől függ, de a teljes mechanikai energia állandó marad a mozgás során.
+Ha az energia változását vizsgáljuk, akkor a következő egyenletet kapjuk:
+\begin{equation}
+    \frac{dE}{dt} = \frac{1}{2} m L^2 \cdot 2\dot{\varphi}\ddot{\varphi} + mgL \sin\varphi \cdot \dot{\varphi} = 0
+\end{equation}
+\begin{equation}
+    L \ddot{\varphi} + g \sin\varphi = 0
+\end{equation}
+Ha kis kitéréssel dolgozunk, akkor a $\sin\varphi \approx \varphi$ közelítést alkalmazhatjuk, így a következő egyszerűsített egyenletet kapjuk:
+\begin{equation}
+    \ddot{\varphi} \approx -\frac{g}{L} \varphi
+\end{equation}
+Ez egy harmonikus oszcillátor egyenlete, ahol a freqvencia:
+\begin{equation}
+    \omega = \sqrt{\frac{g}{L}}
+\end{equation}
+Így az inga mozgása kis kitérés esetén harmonikus rezgésként viselkedik, és a teljes mechanikai energia állandó marad a mozgás során.
+
+\subsubsection{Impulzus}
+Ha visszatérünk a Newton második törvényére, akkor átírhatjuk az egyenletet a következőképpen:
+\begin{equation}
+    \bold{F_{net}} = m\bold{a} = m\frac{d\bold{v}}{dt} = \frac{d}{dt}(m\bold{v}) = \frac{d\bold{p}}{dt}
+\end{equation}
+Ahol $\bold{p} = m\bold{v}$ az impulzusvektor, amit a tömeg és a sebesség szorzataként definiálunk. Így a Newton második törvénye az impulzus idő szerinti változását írja le:
+\begin{equation}
+    \bold{F_{net}} = \frac{d\bold{p}}{dt}
+\end{equation}
+Ha integráljuk ezt az egyenletet egy időintervallumon, akkor a következőt kapjuk:
+\begin{equation}
+    \int_{t_1}^{t_2} \bold{F_{net}} dt = \int_{t_1}^{t_2} \frac{d\bold{p}}{dt} dt
+\end{equation}
+\begin{equation}
+    \bold{J} = \bold{p}(t_2) - \bold{p}(t_1)
+\end{equation}
+Ahol $\bold{J}$ az impulzusváltozás, amit az erő idő szerinti integráljaként definiálunk:
+\begin{equation}
+    \bold{J} = \int_{t_1}^{t_2} \bold{F_{net}} dt
+\end{equation}
+Ez az összefüggés az impulzus-momentum tétel, amely kimondja, hogy a test impulzusának változása megegyezik a testre ható erők idő szerinti integráljával. Ha a testre ható erők eredője nulla, akkor az impulzus állandó marad:
+\begin{equation}
+    \bold{F_{net}} = 0 \Rightarrow \frac{d\bold{p}}{dt} = 0 \Rightarrow \bold{p} = \text{állandó}
+\end{equation}
+Ez az impulzus megmaradás törvénye, amely kimondja, hogy zárt rendszerben az impulzus állandó marad, ha nincsenek külső erők.
+
+Az impulzus fogalma bár triviálisan következik Newton második törvényéből, mégis hasznos bevezni a mennyiséget, ugyanis a segítségével sokkal egyszerűbben lehet kezelni bizonyos problémákat, mint a Newton törvényeivel.
+Például ütközések esetén, ahol az erők nagyon nagyok és rövid ideig hatnak, az impulzus megmaradás törvénye sokkal egyszerűbbé teszi a számításokat.
+
+\subsubsection{Impulzusmomentum}
+Nem csak a transzlációs mozgásra, hanem a forgó mozgásra is létezik egy hasonló mennyiség, amit impulzusmomentumnak nevezünk. Az impulzusmomentumot a következőképpen definiáljuk:
+\begin{equation}
+    \bold{N} = \bold{r} \times \bold{p}
+\end{equation}
+Ahol $\bold{r}$ a test helyvektora egy adott ponttól mérve, és $\bold{p}$ az impulzusvektor. Az impulzusmomentum tehát a helyvektor és az impulzusvektor vektoriális szorzataként definiálható.
+Most vizsgáljuk meg az impulzusmomentum idő szerinti változását. A Newton második törvényét felhasználva:
+\begin{equation}
+    \frac{d\bold{N}}{dt} = \frac{d}{dt}(\bold{r} \times \bold{p}) = \frac{d\bold{r}}{dt} \times \bold{p} + \bold{r} \times \frac{d\bold{p}}{dt}
+\end{equation}
+\begin{equation}
+    \frac{d\bold{N}}{dt} = \bold{v} \times m\bold{v} + \bold{r} \times \bold{F_{net}}
+\end{equation}
+Az első tag nulla, mivel a sebességvektor és az impulzusvektor párhuzamosak. Így az impulzusmomentum idő szerinti változása a következőképpen írható fel:
+\begin{equation}
+    \frac{d\bold{N}}{dt} = \bold{r} \times \bold{F_{net}} = \bold{M}
+\end{equation}
+Ahol $\bold{M}$ a forgatónyomaték, amit a helyvektor és a nettó erő vektoriális szorzataként definiálunk. Ez az összefüggés az impulzusmomentum tétel, amely kimondja, hogy a test impulzusmomentumának változása megegyezik a testre ható forgatónyomatékkal.
+Ha a testre ható erők eredője nulla, akkor az impulzusmomentum állandó marad:
+\begin{equation}
+    \bold{F_{net}} = 0 \Rightarrow \bold{M} = 0 \Rightarrow \frac{d\bold{N}}{dt} = 0 \Rightarrow \bold{N} = \text{állandó}
+\end{equation}
+Ez az impulzusmomentum megmaradás törvénye, amely kimondja, hogy zárt rendszerben az impulzusmomentum állandó marad, ha nincsenek külső erők.
+
+\subsection{Pontrendszerek}
+Eddig pontszerű testekkel foglalkoztunk, de a Newton törvények általánosíthatók pontrencekekre is. Azokat a pontrencereket melyeknél a pontok távolsága jó közelítéssel állandó, merev testeknek nevezzük.
+Egy pontrendszer pontjait a következőképpen jellemezhetjük:
+\begin{itemize}
+    \item $m_i$: az i-edik pont tömege.
+    \item $\bold{r_i}$: az i-edik pont helyvektora.
+    \item $\bold{v_i}$: az i-edik pont sebességvektora.
+    \item $\bold{a_i}$: az i-edik pont gyorsulásvektora.
+\end{itemize}
+A pontrendszer teljes tömege a pontok tömegének összege:
+\begin{equation}
+    M = \sum_{i} m_i
+\end{equation}
+A pontrendszer tömegközéppontja a következőképpen definilható:
+\begin{equation}
+    \bold{R} = \frac{1}{M} \sum_{i} m_i \bold{r_i}
+\end{equation}
+Ezek alapján a Newton második törvénye egy pontra a pontrendszerben:
+\begin{equation}
+    m_i \bold{a_i} = \bold{F_i^{ext}} + \sum_{j=1}^{N} \bold{F_{ij}}
+\end{equation}
+Ahol $\bold{F_i^{ext}}$ az i-edik pontra ható külső erő, és $\bold{F_{ij}}$ az i-edik pontra ható j-edik pont által kifejtett belső erő. Ha összeadjuk az összes pontra vonatkozó egyenletet, akkor a következőt kapjuk:
+\begin{equation}
+    \sum_{i} m_i \bold{a_i} = \sum_{i} \bold{F_i^{ext}} + \sum_{i,j}^{N} \bold{F_{ij}}
+\end{equation}
+A belső erők összege nulla, mivel a Newton harmadik törvénye szerint az i-edik pontra ható j-edik pont erője és a j-edik pontra ható i-edik pont erője ellentétes irányúk és egyenlő nagyságúak:
+\begin{equation}
+    \sum_{i,j}^{N} \bold{F_{ij}} = \sum_{j,i}^{N} \bold{F_{ji}} = -\sum_{i,j}^{N} \bold{F_{ij}} \Rightarrow \sum_{i,j}^{N} \bold{F_{ij}} = 0
+\end{equation}
+Így a pontrendszer mozgásegyenlete a következőképpen írható fel:
+\begin{equation}
+    \sum_{i=1}^{N} m_i \bold{\ddot{r_i}} = \sum_{i=1}^{N} \bold{F_i^{ext}}
+\end{equation}
+Ezek alapján a rendszer impulzusának időbeli változása a külső erők eredőjével egyenlő:
+\begin{equation}
+    \frac{d\bold{P}}{dt} = \sum_{i=1}^{N} \bold{F_i^{ext}}
+\end{equation}
+Ahol az impulzus a következőképpen definiálható:
+\begin{equation}
+    \bold{P} = \sum_{i=1}^{N} m_i \bold{v_i} = M \bold{V}
+\end{equation}
+Ahol $\bold{V}$ a pontrendszer tömegközéppontjének sebessége:
+\begin{equation}
+    \bold{V} = \frac{1}{M} \sum_{i=1}^{N} m_i \bold{v_i}
+\end{equation}
+Tehát a rendszer össz-impulzusát csak a külső erők változtatják meg, a belső erők nem befolyásolják azt. A rendszer tehát jellemezhető a tömegközéppontjának mozgásával, amelyre a következő egyenlet érvényes:
+\begin{equation}
+    M \bold{\ddot{R}} = \sum_{i=1}^{N} \bold{F_i^{ext}}
+\end{equation}
+Ez az egyenlet azt mutatja, hogy a pontrendszer tömegközéppontjának gyorsulása a külső erők eredőjével arányos. Így a pontrendszer mozgása a tömegközéppont mozgásával jellemezhető, amelyre a Newton második törvénye érvényes.
+
+\subsubsection{forgás}
+forgassuk meg a pontrendszert egy $\bold{r}$ vektorral:
+\begin{equation}
+    m_i \bold{\ddot{r_i}} = \bold{F_i}^{ext} + \sum_{j=1}^{N} \bold{F_{ij}} \quad  \setminus \bold{r_i} \times
+\end{equation}
+\begin{equation}
+    m_i (\bold{r_i} \times \bold{\ddot{r_i}}) = \bold{r_i} \times \bold{F_i}^{ext} + \sum_{j=1}^{N} (\bold{r_i} \times \bold{F_{ij}})
+\end{equation}
+\begin{equation}
+    \frac{d}{dt} \bold{N_i} = \bold{M_i} + \sum_{j=1}^{N} (\bold{r_i} \times \bold{F_{ij}})
+\end{equation}
+Összegessük az összes pontra:
+\begin{equation}
+    \sum_{i=1}^{N} \frac{d}{dt} \bold{N_i} = \sum_{i=1}^{N} \bold{M_i} + \sum_{i,j}^{N} (\bold{r_i} \times \bold{F_{ij}})
+\end{equation}
+A belső erők összege nulla, mivel a Newton harmadik törvénye szerint az i-edik pontra ható j-edik pont erője és a j-edik pontra ható i-edik pont erője ellentétes irányúk és egyenlő nagyságúak:
+\begin{equation}
+    \sum_{i,j}^{N} (\bold{r_i} \times \bold{F_{ij}}) = \sum_{j,i}^{N} (\bold{r_j} \times \bold{F_{ji}}) = -\sum_{i,j}^{N} (\bold{r_i} \times \bold{F_{ij}}) \Rightarrow \sum_{i,j}^{N} (\bold{r_i} \times \bold{F_{ij}}) = 0
+\end{equation}
+Itt fontos megjegyezni, hogy ez csak centrális erőtér esetén igaz, ahol az erő iránya a két pontot összekötő egyenes mentén hat. Ha ez nem így van, akkor a belső erők összege nem feltétlenül nulla,
+és a pontrendszer forgása befolyásolható a belső erők által is. 
+\begin{equation}
+    2 \cdot \sum_{i,j}^{N} (\bold{r_i} \times \bold{F_{ij}}) = \sum_{i,j}^{N} (\bold{r_i} \times \bold{F_{ij}}) + \sum_{j,i}^{N} (\bold{r_j} \times \bold{F_{ji}}) = \sum_{i,j}^{N} (\bold{r_i} - \bold{r_j}) \times \bold{F_{ij}} = 0
+\end{equation}
+\begin{equation}
+    \text{Csak ha } \bold{F_{ij}} \parallel (\bold{r_i} - \bold{r_j}) \Rightarrow \sum_{i,j}^{N} (\bold{r_i} \times \bold{F_{ij}}) = 0
+\end{equation}
+Így a pontrendszer forgásának mozgásegyenlete a következőképpen írható fel:
+\begin{equation}
+    \frac{d\bold{N}}{dt} = \sum_{i=1}^{N} \bold{M_i}
+\end{equation}
+Ahol az össz-impulzusmomentum a következőképpen definiálható centrális erőtér esetén:
+\begin{equation}
+    \bold{N} = \sum_{i=1}^{N} \bold{N_i} = \sum_{i=1}^{N} (\bold{r_i} \times m_i \bold{v_i})
+\end{equation}
+Ahol az össz-nyomaték a következőképpen definiálható:
+\begin{equation}
+    \bold{M} = \sum_{i=1}^{N} \bold{M_i} = \sum_{i=1}^{N} (\bold{r_i} \times \bold{F_i}^{ext})
+\end{equation}
+Ez az egyenlet azt mutatja, hogy a pontrendszer impulzusmomentumának időbeli változása a külső nyomaték eredőjével egyenlő. Így a pontrendszer forgása a külső nyomaték hatására változik,
+a belső erők nem befolyásolják azt centrális erőtér esetén. Viszont van egy probléma ezzel a megoldással, mégpedig, hogy függ a koordinátarendszertől. Ha más vonatkoztatási rendszert választunk,
+akkor a helyvektorok is megváltoznak. Ezért érdemes a pontrendszer helyzetét a tömegközéppontjához képest vizsgálni. Ekkor a helyvektorokat a következőképpen definiálhatjuk:
+\begin{equation}
+    \bold{r_i} = \bold{R} + \bold{\varrho_i}
+\end{equation}
+\begin{equation}
+    \bold{v} = \bold{V} + \bold{\dot{\varrho_i}}
+\end{equation}
+Ahol $\bold{R}$ a pontrendszer tömegközéppontjának helyvektora, $\bold{V}$ a tömegközéppont sebességvektora, és $\bold{\varrho_i}$ az i-edik pont helyvektora a tömegközépponthoz képest.
+Most helyettesítsük be ezeket az egyenleteket az impulzusmomentum definíciójába:
+\begin{equation}
+    \bold{N} = \sum_{i=1}^{N} (\bold{R} + \bold{\varrho_i}) \times m_i (\bold{V} + \bold{\dot{\varrho_i}})
+\end{equation}
+\begin{equation}
+    \bold{N} = \sum_{i=1}^{N} \left[\bold{R} \times m_i \bold{V} + \bold{R} \times m_i \bold{\dot{\varrho_i}} + \bold{\varrho_i} \times m_i \bold{V} + \bold{\varrho_i} \times m_i \bold{\dot{\varrho_i}}\right]
+\end{equation}
+\begin{equation}
+    \bold{N} = \bold{R} \times M \bold{V} + \bold{R} \times \sum_{i=1}^{N} m_i \bold{\dot{\varrho_i}} + \sum_{i=1}^{N} \bold{\varrho_i} \times m_i \bold{V} + \sum_{i=1}^{N} \bold{\varrho_i} \times m_i \bold{\dot{\varrho_i}}
+\end{equation}
+Ahol $M$ a pontrendszer teljes tömege. A második és harmadik tagok nullák, mivel a tömegközéppont definíciója szerint:
+\begin{equation}
+    \sum_{i=1}^{N} m_i \bold{\varrho_i} = 0 \quad \Rightarrow \quad \sum_{i=1}^{N} m_i \bold{\dot{\varrho_i}} = 0
+\end{equation}
+\begin{equation}
+    \sum_{i=1}^{N} \bold{\varrho_i} \times m_i \bold{V} = \left(\sum_{i=1}^{N} m_i \bold{\varrho_i}\right) \times \bold{V} = 0
+\end{equation}
+Így az impulzusmomentum a következőképpen egyszerűsödik:
+\begin{equation}
+    \bold{N} = \bold{R} \times M \bold{V} + \sum_{i=1}^{N} \bold{\varrho_i} \times m_i \bold{\dot{\varrho_i}}
+\end{equation}
+Ez az egyenlet azt mutatja, hogy a pontrendszer impulzusmomentuma két részből áll: az egyik a tömegközéppont mozgásásából származik, a másik pedig a pontrendszer belső mozgásából a tömegközépponthoz képest.
+Most nézzük meg a nyomaték definícióját:
+\begin{equation}
+    \bold{M} = \sum_{i=1}^{N} (\bold{R} + \bold{\varrho_i}) \times \bold{F_i}^{ext}
+\end{equation}
+\begin{equation}
+    \bold{M} = \bold{R} \times \sum_{i=1}^{N} \bold{F_i}^{ext} + \sum_{i=1}^{N} \bold{\varrho_i} \times \bold{F_i}^{ext}
+\end{equation}
+Ez az egyenlet azt mutatja, hogy a pontrendszer nyomatéka két részből áll: az egyik a tömegközéppont helyzetéből származik, a másik pedig a pontrendszer belső elrendeződéséből a tömegközépponthoz képest.
+Most helyettesítsük be ezeket az egyenleteket a pontrendszer forgásának mozgásegyenletébe:
+\begin{equation}
+    \frac{d}{dt} \left(\bold{R} \times M \bold{V} + \sum_{i=1}^{N} \bold{\varrho_i} \times m_i \bold{\dot{\varrho_i}}\right) = \bold{R} \times \sum_{i=1}^{N} \bold{F_i}^{ext} + \sum_{i=1}^{N} \bold{\varrho_i} \times \bold{F_i}^{ext}
+\end{equation}
+\begin{equation}
+    \frac{d}{dt} (\bold{R} \times M \bold{V}) + \frac{d}{dt} \left(\sum_{i=1}^{N} \bold{\varrho_i} \times m_i \bold{\dot{\varrho_i}}\right) = \bold{R} \times \sum_{i=1}^{N} \bold{F_i}^{ext} + \sum_{i=1}^{N} \bold{\varrho_i} \times \bold{F_i}^{ext}
+\end{equation}
+Ahol az első tag a tömegközéppont mozgásából származó impulzusmomentum időbeli változását jelenti, a második tag pedig a pontrendszer belső mozgásából származó impulzusmomentum időbeli változását jelenti.
+Ez az egyenlet tehát a pontrendszer forgásának mozgásegyenlete a tömegközéppont helyzetéhez képest. Az egyenlet két részre bontható: az egyik a tömegközéppont mozgására vonatkozik, a másik pedig a pontrendszer belső mozgására a tömegközépponthoz képest.
+
+\subsection{Merev testek egyensúlyfeltétele, tehetetlenségi tenzor, pörgettyűk}
+A merev testet úgy definiáljuk, hogy a test pontjai közötti távolságok állandóak maradnak a test mozgása során. Ez azt jelenti, hogy a test alakja és mérete nem változik meg, függetlenül attól, hogy a test hogyan mozog.
+Ennek alapján egy merev test pontos pozícióját három koordinátával és három forgási szöggel lehet meghatározni. A test mozgását tehát hat paraméter írja le: három transzlációs és három rotációs.
+A pontrendszerek egyenleteit peddig a következőképpen írhatjuk fel:
+\begin{equation}
+    M \bold{\ddot{R}} = \sum_{i=1}^{N} \bold{F_i}^{ext}
+\end{equation}
+\begin{equation}
+    \frac{d\bold{N}}{dt} = \sum_{i=1}^{N} \bold{M_i}^{ext}
+\end{equation}
+Ahol $M$ a merev test tömege, $\bold{R}$ a tömegközéppont helyvektora, $\bold{N}$ a merev test impulzusmomentuma, $\bold{F_i}^{ext}$ az i-edik pontra ható külső erő, és $\bold{M_i}^{ext}$ az i-edik pontra ható külső nyomaték.
+Ez pontosan hat daab egyenletet jelent (3 transzlációs és 3 rotációs), ami megegyezik a merev test mozgását leíró paraméterek számával. Ezért a merev test mozgása teljesen meghatározható ezekkel az egyenletekkel.
+Tehát a merev test mozgását a következő egyenlettel lehet leírni:
+\begin{equation}
+    \varDelta \bold{r} = \varDelta \bold{R} + \varDelta \bold{\varphi} \times \bold{\bold{r} - \bold{R}}
+\end{equation}
+Ahol $\varDelta \bold{r}$ a test egy pontjának elmozdulása, $\varDelta \bold{R}$ a tömegközéppont elmozdulása, $\bold{\varphi}$ a test szögelfordulása, és $\bold{r} - \bold{R}$ a pont helyvektora a tömegközépponthoz képest.
+Az a pont, amelyiket a $\bold{r}$ vektorral jelölünk, a test bármely pontja lehet. Ez az egyenlet tehát azt mutatja, hogy a test bármely pontjának elmozdulása a tömegközéppont elmozdulásából és a test forgásából származik. 
+Innen a test sebessége a következőképpen kapható meg:
+\begin{equation}
+    \frac{d}{dt}\bold{r} = \frac{d}{dt}\bold{R} + \frac{d}{dt}\bold{\varphi} \times (\bold{r} - \bold{R})
+\end{equation}
+\begin{equation}
+    \bold{v} = \bold{V} + \bold{\omega} \times (\bold{r} - \bold{R})
+\end{equation}
+Ahol $\bold{v}$ a test egy pontjának sebességvektora, $\bold{V}$ a tömegközéppont sebességvektora, és a többi jelölés megegyezik az előző egyenletben. Itt $\bold{V}$ és $\bold{\omega}$ 3-3 komponensű vektorok, vagyis összesen 6 komponenssel rendelkeznek, ami megegyezik a merev test mozgását leíró paraméterek számával. 
+
+Mi történik, ha meg akarom változtatni a kitüntetett pontot?
+\begin{equation}
+    \varDelta \bold{r} = \varDelta \bold{R} + \varDelta \bold{\varphi} \times (\bold{r} - \bold{R})
+\end{equation}
+\begin{equation}
+    \varDelta \bold{r} = \varDelta (\bold{R} + \bold{a}) + \varDelta \bold{\varphi'} \times (\bold{r} - \bold{R} + \bold{a})
+\end{equation}
+ahol $\bold{a}$ a kitüntetett pont a kitüntetett pont eltolásvektora.
+\begin{equation}
+    \varDelta \bold{r} = \varDelta \bold{R} + \varDelta \bold{a} + \varDelta \bold{\varphi'} \times (\bold{r} - \bold{R} + \bold{a})
+\end{equation}
+$\varDelta \bold{a} = 0$, mert a kitüntetett pont nem változik.
+\begin{equation}
+    \varDelta \bold{r} = \varDelta \bold{R} + \varDelta \bold{\varphi'} \times (\bold{r} - \bold{R}) + \varDelta \bold{\varphi'} \times \bold{a}
+\end{equation}
+Itt tetszőleges $\varDelta \bold{r}$ csak akkor lehet egyenlő az eredetivel, ha $\varDelta \bold{\varphi'} = \varDelta \bold{\varphi}$. Az egyenletbe bejön egy plusz tag ami a koordinátarendszer eltolásából származik,
+de a szögselfordulásnak meg kell egyeznie, bármelyik kitüntetett pontot is választjuk. Ezért a szögelfordulás vektora független a kitüntetett pont helyzetétől.
+
+\subsubsection{Merev test egyensúlyfeltétele}
+Egy merev test akkor van egyensúlyban, ha a testre ható erők és nyomatékok eredője nulla. Matematikailag ez a következőképpen írható fel:
+\begin{equation}
+    \sum_{i=1}^{N} \bold{F_i}^{ext} = 0
+\end{equation}
+\begin{equation}
+    \sum_{i=1}^{N} \bold{M_i}^{ext} = 0
+\end{equation}
+Ahol $\bold{F_i}^{ext}$ az i-edik pontra ható külső erő, és $\bold{M_i}^{ext}$ az i-edik pontra ható külső nyomaték. Ezek az egyenletek azt jelentik, hogy a test nem gyorsul és nem forog.
+Ezek az egyenletek hat független feltételt jelentenek (3 erő és 3 nyomaték komponens), ami megegyezik a merev test mozgását leíró paraméterek számával. Ezért a merev test egyensúlyi állapota teljesen meghatározható ezekkel az egyenletekkel.
+
+\subsubsection{Tehetetlenségi tenzor}
+A fogatónyomatékot egy merev testre a következőképpen definiálhatjuk:
+\begin{equation}
+    \bold{N} = \bold{R} \times M \bold{V} + \bold{N_s}
+\end{equation}
+Ahol $\bold{N_s}$ a test belső impulzusmomentuma a tömegközépponthoz képest:
+\begin{equation}
+    \bold{N_s} = \sum_{i=1}^{N} \bold{\varrho_i} \times m_i \bold{\dot{\varrho_i}}
+\end{equation}
+Ahol $\bold{\varrho_i}$ az i-edik pont helyvektora a tömegközépponthoz képest, és $\bold{\dot{\varrho_i}}$ az i-edik pont sebességvektora a tömegközépponthoz képest.
+$\bold{\dot{\varrho_i}}$ a következőképpen adható meg:
+\begin{equation}
+    \bold{\dot{\varrho_i}} = \bold{\omega} \times \bold{\varrho_i}
+\end{equation}
+Ezt behelyettesítve az impulzusmomentum definíciójába:
+\begin{equation}
+    \bold{N_s} = \sum_{i=1}^{N} \bold{\varrho_i} \times m_i (\bold{\omega} \times \bold{\varrho_i})
+\end{equation}
+Ezt a vektoriális szorzat azonosság segítségével tovább egyszerűsíthetjük:
+\begin{equation}
+    \bold{N_s} = \sum_{i=1}^{N} m_i \left[\bold{\varrho_i} (\bold{\varrho_i} \cdot \bold{\omega}) - \bold{\omega} (\bold{\varrho_i} \cdot \bold{\varrho_i})\right]
+\end{equation}
+\begin{equation}
+    \bold{N_s} = \sum_{i=1}^{N} m_i \left[(\bold{\varrho_i} \bold{\varrho_i}) \cdot \bold{\omega} - (\bold{\varrho_i} \circ \bold{\varrho_i}) \cdot \bold{\omega}\right]
+\end{equation}
+ahol a $(\bold{\varrho_i} \circ \bold{\varrho_i})_{j} = (\bold{\varrho_i})_{j} (\bold{\varrho_i})_{j}$ a hadamard szorzatot jelenti.
+\begin{equation}
+    \bold{N_s} = \left[\sum_{i=1}^{N} m_i (\bold{\varrho_i} \bold{\varrho_i}) - \sum_{i=1}^{N} m_i (\bold{\varrho_i} \circ \bold{\varrho_i})\right] \cdot \bold{\omega}
+\end{equation}
+Ezt a kifejezést a tehetetlenségi tenzor segítségével is felírhatjuk:
+\begin{equation}
+    \bold{N_s} = \bold{\hat{I}} \cdot \bold{\omega}
+\end{equation}
+Ahol a tehetetlenségi tenzor a következőképpen definiálható:
+\begin{equation}
+    \bold{\hat{I}} = \sum_{i=1}^{N} m_i \left[(\bold{\varrho_i} \circ \bold{\varrho_i}) - (\bold{\varrho_i} \bold{\varrho_i})\right]
+\end{equation}
+A tehetetlenségi tenzor egy szimmetrikus mátrix, amely a merev test tömegének eloszlását jellemzi a tömegközéppont körül. A tehetetlenségi tenzor komponensei a következőképpen számíthatók ki:
+\begin{equation}
+\begin{bmatrix}
+\sum_{i=1}^{N} m_i (y_i^2 + z_i^2) & -\sum_{i=1}^{N} m_i x_i y_i & -\sum_{i=1}^{N} m_i x_i z_i \\
+-\sum_{i=1}^{N} m_i y_i x_i & \sum_{i=1}^{N} m_i (x_i^2 + z_i^2) & -\sum_{i=1}^{N} m_i y_i z_i \\
+-\sum_{i=1}^{N} m_i z_i x_i & -\sum_{i=1}^{N} m_i z_i y_i & \sum_{i=1}^{N} m_i (x_i^2 + y_i^2)
+\end{bmatrix}
+\end{equation}
+Ahol $x_i$, $y_i$, és $z_i$ az i-edik pont koordinátái a tömegközépponti koordinátarendszerben. A szimmetria miatt ennek a mátrixnak mindig valós a sajátértéke, és a sajátvektorai ortogonálisak.
+Végül tehát a merev test impulzusmomentuma a következőképpen írható fel:
+\begin{equation}
+    \bold{N_s} = \bold{\hat{I}} \cdot \bold{\omega}
+\end{equation}
+Ez az egyenlet azt mutatja, hogy a merev test impulzusmomentuma a tehetetlenségi tenzor és a szögsebesség vektor szorzataként kapható meg. A tehetetlenségi tenzor tehát a merev test forgási tulajdonságait jellemzi a tömegközéppont körül.
+
+\subsubsection{pörgettyűk}
+A pörgettyűk olyan merev, kiterjedt testek, amelyek egy adott tengely körül forognak. Két fajtájukat különböztetjük meg: a súlytalan pörgettyűt és a súlyos pörgettyűt.
+
+\subsubsection*{súlytalan pörgettyű}
+A súlytalan pörgettyű egy olyan ideális test, amelynek nincs tömege, és csak a forgási mozgását vizsgáljuk. A súlytalan pörgettyűre ható erők és nyomatékok a következőképpen írhatók fel:
+\begin{equation}
+\frac{d\bold{N}}{dt} = \sum_{i=1}^{N} \bold{M_i}^{ext}
+\end{equation}
+\begin{equation}
+\bold{N} = \bold{\hat{I}^{**}} \cdot \bold{\omega}
+\end{equation}
+Ahol $\bold{\hat{I}^{**}}$ a súlytalan pörgettyű tehetetlenségi tenzora nem súlyponti koordinátarendszerben, amely a pörgettyű tömegének eloszlását jellemzi a forgástengely körül.
+Innen ha felhasználjuk a gyorsuló kordináta rendszerre vonatkozó összefüggést, akkor a következőt kapjuk:
+\begin{equation}
+    \frac{d\bold{A}}{dt} = \frac{d'\bold{A}}{dt} + \bold{\omega} \times \bold{A} \quad \text{ bármely vektorra } \bold{A}
+\end{equation}
+Tehát az impulzusmomentum időbeli változása a következőképpen írható fel:
+\begin{equation}
+    \frac{d\bold{N}}{dt} = \frac{d'\bold{N}}{dt} + \bold{\omega} \times \bold{N} = \bold{M}
+\end{equation}
+Innen komponenseire bontva felírhatjuk az impulzusmomentum deriváljtainak értékét:
+\begin{equation}
+    \frac{d'N_x}{dt} + \omega_y N_z - \omega_z N_y = M_x
+\end{equation}
+\begin{equation}
+    \frac{d'N_y}{dt} + \omega_z N_x - \omega_x N_z = M_y
+\end{equation}
+\begin{equation}
+    \frac{d'N_z}{dt} + \omega_x N_y - \omega_y N_x = M_z
+\end{equation}
+Ahol $N_x$, $N_y$, és $N_z$ az impulzusmomentum komponensei, $M_x$, $M_y$, és $M_z$ a nyomaték komponensei, és $\omega_x$, $\omega_y$, és $\omega_z$ a szögsebesség komponensei.
+Ezek az egyenleteket Euler egyenleteknek nevezzük, amelyek a súlytalan pörgettyű forgási mozgását írják le. Ezek az egyenletek hat független egyenletet jelentenek (3 impulzusmomentum és 3 nyomaték komponens), ami megegyezik a pörgettyű mozgását leíró paraméterek számával.
+Ha ide behelyettesítjük a tehetetlenségi tenzor és az impulzusmomentum közötti összefüggést ($\bold{N} = \bold{\hat{I}} \cdot \bold{\omega}$), akkor a következőt kapjuk:
+\begin{equation}
+    \hat{I}_x \frac{d'\omega_x}{dt} + (\hat{I}_z - \hat{I}_y) \omega_y \omega_z = M_x
+\end{equation}
+\begin{equation}
+    \hat{I}_y \frac{d'\omega_y}{dt} + (\hat{I}_x - \hat{I}_z) \omega_z \omega_x = M_y
+\end{equation}
+\begin{equation}
+    \hat{I}_z \frac{d'\omega_z}{dt} + (\hat{I}_y - \hat{I}_x) \omega_x \omega_y = M_z
+\end{equation}
+Ahol $\hat{I}_x$, $\hat{I}_y$, és $\hat{I}_z$ a tehetetlenségi tenzor főtengelyei. Ezek az egyenletek a súlytalan pörgettyű forgási mozgását írják le a főtengelyek mentén, gyorsuló koordináta rendszerben ami a forgási tengelyhez van rögzítve.
+
+Ha egy súlytalan pörgettyűről van szó, akkor a forgatónyomaték nulla ($M_x = M_y = M_z = 0$), így az egyenletek a következőképpen egyszerűsödnek:
+\begin{equation}
+    \hat{I}_x \frac{d'\omega_x}{dt} + (\hat{I}_z - \hat{I}_y) \omega_y \omega_z = 0
+\end{equation}
+\begin{equation}
+    \hat{I}_y \frac{d'\omega_y}{dt} + (\hat{I}_x - \hat{I}_z) \omega_z \omega_x = 0
+\end{equation}
+\begin{equation}
+    \hat{I}_z \frac{d'\omega_z}{dt} + (\hat{I}_y - \hat{I}_x) \omega_x \omega_y = 0
+\end{equation}
+Továbbá ha szimmetrikus pörgettyűről van szó, ahol két tehetetlenségi tenzor főtengely megegyezik ($\hat{I}_x = \hat{I}_y$), akkor az egyenletek a következőképpen egyszerűsödnek:
+\begin{equation}
+    \hat{I}_x \frac{d'\omega_x}{dt} + (\hat{I}_z - \hat{I}_x) \omega_y \omega_z = 0
+\end{equation}
+\begin{equation}
+    \hat{I}_x \frac{d'\omega_y}{dt} + (\hat{I}_x - \hat{I}_z) \omega_z \omega_x = 0
+\end{equation}
+\begin{equation}
+    \hat{I}_z \frac{d'\omega_z}{dt} = 0
+\end{equation}
+Ebből egyből látszik, hogy a $\omega_z$ szögsebesség komponens állandó, mivel a harmadik egyenlet szerint a $\frac{d'\omega_z}{dt} = 0$. 
+Ha az $\omega_x$ és $\omega_y$ egyenleteketmegszorrozzuk $\omega_y$ illetve $\omega_x$-szel:
+\begin{equation}
+    \hat{I}_x \frac{d'\omega_x}{dt} + (\hat{I}_z - \hat{I}_x) \omega_y \omega_z = 0 \quad \cdot \omega_x
+\end{equation}
+\begin{equation}
+    \hat{I}_x \frac{d'\omega_y}{dt} + (\hat{I}_x - \hat{I}_z) \omega_z \omega_x = 0 \quad \cdot \omega_y
+\end{equation}
+Akkor a következőt kapjuk:
+\begin{equation}
+    \hat{I}_x \omega_x \frac{d'\omega_x}{dt} + (\hat{I}_z - \hat{I}_x) \omega_x \omega_y \omega_z = 0
+\end{equation}
+\begin{equation}
+    \hat{I}_x \omega_y \frac{d'\omega_y}{dt} + (\hat{I}_x - \hat{I}_z) \omega_y \omega_z \omega_x = 0
+\end{equation}
+Most adjuk össze ezeket az egyenleteket:
+\begin{equation}
+    \hat{I}_x \left(\omega_x \frac{d'\omega_x}{dt} + \omega_y \frac{d'\omega_y}{dt}\right) + (\hat{I}_z - \hat{I}_x) \omega_x \omega_y \omega_z + (\hat{I}_x - \hat{I}_z) \omega_y \omega_z \omega_x = 0
+\end{equation}
+\begin{equation}
+    \hat{I}_x \left(\omega_x \frac{d'\omega_x}{dt} + \omega_y \frac{d'\omega_y}{dt}\right) = 0
+\end{equation}
+\begin{equation}
+    \frac{d'}{dt} \left(\frac{1}{2} \hat{I}_x (\omega_x^2 + \omega_y^2)\right) = 0
+\end{equation}
+Ebből látszik, hogy a $\frac{1}{2} \hat{I}_x (\omega_x^2 + \omega_y^2)$ mennyiség állandó, és mivel azt már előbb beláttuk, hogy a $\omega_z$ is állandó, ezért a teljes szögsebesség vektor nagysága is állandó:
+\begin{equation}
+    \omega^2 = \omega_x^2 + \omega_y^2 + \omega_z^2 = \text{állandó}
+\end{equation}
+Ez azt jelenti, hogy a súlytalan szimmetrikus pörgettyű szögsebesség vektora állandó nagyságú. Mivel $\bold{M}$ nulla, ezért az impulzusmomentum is állandó:
+\begin{equation}
+    \frac{d}{dt} \bold{N} = \bold{M} = 0
+\end{equation}
+\begin{equation}
+    \bold{N} = \text{állandó}
+\end{equation}
+Ebből következik, hogy az egyetlen dolog ami meg tud változni az a szögsebesség iránya, mivel a nagysága állandó. Ez azt jelenti, hogy a szögsebesség vektor a az impulzusmomentum vektor körül körbeforog, ezt nevezik nutációnak.
+
+\subsubsection*{súlyos pörgettyű}
+A súlyos pörgettyű egy olyan merev test, amelynek van tömege, és a gravitációs erő hat rá. A súlyos pörgettyűre ható erők és nyomatékok a következőképpen írhatók fel:
+\begin{equation}
+    \frac{d\bold{N}}{dt} = \sum_{i=1}^{N} \bold{M_i}^{ext}
+\end{equation}
+\begin{equation}
+    \bold{N} = \bold{\hat{I}^{**}} \cdot \bold{\omega}
+\end{equation}
+Ahol $\bold{\hat{I}^{**}}$ a súlyos pörgettyű tehetetlenségi tenzora nem súlyponti koordinátarendszerben, amely a pörgettyű tömegének eloszlását jellemzi a forgástengely körül.
+A súlyos pörgettyűre ható külső nyomaték a következőképpen írható fel:
+\begin{equation}
+    \bold{M} = \bold{r_c} \times M \bold{g}
+\end{equation}
+Ahol $\bold{r_c}$ a tömegközéppont helyvektora a forgástengelyhez képest, $M$ a pörgettyű tömege, és $\bold{g}$ a gravitációs gyorsulás vektora.
+Ez az egyenlet azt mutatja, hogy a súlyos pörgettyű forgási mozgását a tehetetlenségi tenzor, a szögsebesség vektor, és a gravitációs erő határozza meg. A súlyos pörgettyű mozgása tehát bonyolultabb, mint a súlytalan pörgettyűé, mivel a gravitációs erő hat rá.
+Ezek alapján az Euler egyenletek a súlyos pörgettyűre a következőképpen írhatók fel:
+\begin{equation}
+    \hat{I}_x \frac{d'\omega_x}{dt} + (\hat{I}_z - \hat{I}_y) \omega_y \omega_z = M_x
+\end{equation}
+\begin{equation}
+    \hat{I}_y \frac{d'\omega_y}{dt} + (\hat{I}_x - \hat{I}_z) \omega_z \omega_x = M_y
+\end{equation}
+\begin{equation}
+    \hat{I}_z \frac{d'\omega_z}{dt} + (\hat{I}_y - \hat{I}_x) \omega_x \omega_y = M_z
+\end{equation}
+Ahol $M_x$, $M_y$, és $M_z$ a külső nyomaték komponensei, amelyeket a gravitációs erő határoz meg.
+
+\subsubsection{Energia, impulzus és impulzusmomentum megmaradás merev testek esetén}
+Egy merev test esetén ugyan úgy igaz, hogy a teljes energia a kinematikai és potenciális energia összege:
+\begin{equation}
+    E = E_{kin} + E_{pot}
+\end{equation}
+A kinematikai energia esetében figyelembe kell venni, hogy a test nem pontszrű, tehát a tömegét összegezni kell a test minden pontján:
+\begin{equation}
+    E_{kin} = \frac{1}{2} m v^2 \quad \rightarrow \quad E_{kin} = \int_{V} \frac{1}{2} \bold{v}^2 \varrho dV
+\end{equation}
+\begin{equation}
+    \bold{v} = \bold{v_0} + \bold{\omega} \times \bold{r}
+\end{equation}
+\begin{equation}
+    E_{kin} = \int_{V} \frac{1}{2} \bold{v}^2 \varrho dV = \frac{1}{2} \int_{V} \bold{v_0}^2 \varrho dV + \frac{1}{2} \int_{V} (\bold{\omega} \times \bold{r})^2 \varrho dV + \int_{V} \bold{v_0} \cdot (\bold{\omega} \times \bold{r}) \varrho dV
+\end{equation}
+Ahol $\bold{v_0}$ a test tömegközéppontjának sebességvektora, $\bold{\omega}$ a test szögsebesség vektora, $\bold{r}$ a test egy pontjának helyvektora a tömegközépponthoz képest, és $\varrho$ a test sűrűsége.
+Itt a kinematikai energia három részre bontható: az első tag a test tömegközéppontjának transzlációs mozgásából származik, a második tag a test forgási mozgásából származik a tömegközépponthoz képest, és a harmadik tag a két mozgás közötti kölcsönhatásból származik.
+A harmadik tag nullává válik tömegközépponti rendszerben, mivel a tömegközéppont definíciója szerint:
+\begin{equation}
+    \int_{V} \bold{r} \varrho dV = 0
+\end{equation}
+Ha a kapott eredménybe behelyettesítjük a tehetetlenségi tenzor definícióját, akkor a kinematikai energia a következőképpen írható fel:
+\begin{equation}
+    \bold{\hat{I}} = \int_{V} [(\bold{r} \cdot \bold{r}) - \bold{r} \circ \bold{r}] \varrho dV
+\end{equation}
+A forgási energia képletét átalakíthatjuk a következő alakra:
+\begin{equation}
+    \frac{1}{2} \int_{V} (\bold{\omega} \times \bold{r})^2 \varrho dV = \frac{1}{2} \int_{V} \omega^2 \bold{r}^2 - (\bold{\omega} \cdot \bold{r})^2 \varrho dV
+\end{equation}
+A $(\bold{\omega} \cdot \bold{r})^2$-t komponenseire bontjuk:
+\begin{equation}
+    (\bold{\omega} \cdot \bold{r})^2 = (\omega_x r_x + \omega_y r_y + \omega_z r_z)^2 = \omega_x^2 r_x^2 + \omega_y^2 r_y^2 + \omega_z^2 r_z^2 + 2 \omega_x \omega_y r_x r_y + 2 \omega_y \omega_z r_y r_z + 2 \omega_z \omega_x r_z r_x
+\end{equation}
+Itt a keresztszorzatok nullává válnak, mivel a tömegközépponti rendszerben a következő feltétel teljesül:
+\begin{equation}
+    \int_{V} r_i r_j \varrho dV = 0 \quad \text{ ha } i \neq j
+\end{equation}
+Így a képlet a következőképpen egyszerűsödik:
+\begin{equation}
+    \int_{V} (\bold{\omega} \cdot \bold{r})^2 \varrho dV = \int_{V}\omega_x^2 r_x^2 + \omega_y^2 r_y^2 + \omega_z^2 r_z^2 \varrho dV
+\end{equation}
+Ez pedig pontosan ugyanaz mint, ha a hadamard szorzatot alkalmazzuk:
+\begin{equation}
+    (\bold{\omega} \cdot \bold{r})^2 = \omega^T \cdot (\bold{r} \circ \bold{r}) \cdot \omega
+\end{equation}
+Az egészet összetéve és az $\omega$-kat kiemelve pedig:
+\begin{equation}
+    \frac{1}{2} \int_{V} (\bold{\omega} \times \bold{r})^2 \varrho dV = \frac{1}{2} \omega^T \cdot \left(\int_{V} [(\bold{r} \cdot \bold{r}) - (\bold{r} \circ \bold{r})] \varrho dV\right) \cdot \omega = \frac{1}{2} \omega^T \cdot \bold{\hat{I}} \cdot \omega
+\end{equation}
+Tehát a teljes kinematikai energia a következőképpen írható fel:
+\begin{equation}    
+    E_{kin} = \frac{1}{2} M \bold{v_0}^2 + \frac{1}{2} \bold{\omega}^T \cdot \bold{\hat{I}} \cdot \bold{\omega}
+\end{equation}
+Ha az energiamegmaradás törvényét alkalmazzuk Konzervatív erőtérre, akkor a következőt kapjuk:
+\begin{equation}
+    \frac{dE}{dt} = \frac{dE_{kin}}{dt} + \frac{dE_{pot}}{dt} = 0
+\end{equation}
+\begin{equation}
+    \frac{dE_{kin}}{dt} = \frac{d}{dt} \left(\frac{1}{2} M \bold{v_0}^2 + \frac{1}{2} \bold{\omega}^T \cdot \bold{\hat{I}} \cdot \bold{\omega}\right) = M \bold{v_0} \cdot \frac{d\bold{v_0}}{dt} + \bold{\omega}^T \cdot \bold{\hat{I}} \cdot \frac{d\bold{\omega}}{dt}
+\end{equation}
+Tehát látszódik, hogy az energiamegmaradás feltétele úgy módosul, hogy a merev test transzlációs, rotációs és potenciális enegiájának összege állandó marad:
+\begin{equation}
+    \frac{d}{dt} \left(\frac{1}{2} M \bold{v_0}^2 + \frac{1}{2} \bold{\omega}^T \cdot \bold{\hat{I}} \cdot \bold{\omega} + E_{pot}\right) = 0
+\end{equation}
+
+\subsubsection*{Impulzus és impulzusmomentum megmaradás}
+Egy merev testre az impulzus a következőképpen írható fel:
+\begin{equation}
+    \bold{p} = M \bold{v_0} + \sum_{i=1}^{N} m_i \bold{\dot{\varrho_i}} = M \bold{v_0} + \sum_{i=1}^{N} m_i (\bold{\omega} \times \bold{\varrho_i}) = M \bold{v_0} + \bold{\omega} \times M \bold{\varrho_i}
+\end{equation}
+Az impulzusmomentum pedig hasonlóképpen:
+\begin{equation}
+    \bold{N} = \bold{R} \times M \bold{v_0} + \int_{V} \bold{r} \times \varrho (\bold{\omega} \times \bold{r}) dV = \bold{R} \times M \bold{v_0} + \bold{\hat{I}} \cdot \bold{\omega}
+\end{equation}
+Ha a testre ható külső erők eredője nulla, akkor az impulzus megmarad:
+\begin{equation}
+    \frac{d\bold{p}}{dt} = \sum_{i=1}^{N} \bold{F_i}^{ext} = 0
+\end{equation}
+\begin{equation}
+    \bold{p} = \text{állandó}
+\end{equation}
+Ha a testre ható külső nyomatékok eredője nulla, akkor az impulzusmomentum megmarad:
+\begin{equation}
+    \frac{d\bold{N}}{dt} = \sum_{i=1}^{N} \bold{M_i}^{ext} = 0
+\end{equation}
+\begin{equation}
+    \frac{d\bold{N}}{dt} = \frac{d}{dt} \left(\bold{R} \times M \bold{v_0} + \bold{\hat{I}} \cdot \bold{\omega}\right) = 0
+\end{equation}
+\begin{equation}
+    \bold{N} = \text{állandó}
+\end{equation}  
+
+\subsection{Galilei-, Lorentz-transzformáció, relativisztikus kinematika, relativisztikus dinamika. Négyesimpulzus.}
+
+\subsubsection{Relativitás elve}
+ A relativitás elve az inerciarendszerek közötti kapcsolatot vizsgálja. Newton törvényei alapján kijelentettük, hogy léteznek inercia rendszerek, és ezek a rendszerek amikben a 
+ Newton törvények érvényesek. Ezek alapján, a fizika tövényei két tetszőleges inerciarendszerben ugyan azok. Emellett Einstein speciális relativitáselmélete szerint, a fénysebeség ($c$)
+ vákuumbeli nagysága is megegyezik minden inerciarendszerben. Ez két stacionárius rendsze között tiviális, ha azt a posztulátumot is elfogadjuk, hogy nincs kitüntetett pont a világegyetemben.
+ De mi van akkor, ha a két inerciarendszer egymáshoz képest $\bold{v}$ sebességgel mozog? Ekkor nincs gyorsulás, ergo továbbra is inerciarendszerekről beszélünk, de a koordináták átváltásánál figyelembe kell venni a relatív mozgást is.
+ Ennek a módszerét a Galilei transzformációval írhatjuk le.
+
+\subsubsection{Galilei transzformáció}
+    A Galilei transzformáció egy olyan matematikai eszköz, amely lehetővé teszi a koordináták és idő átváltását két inerciarendszer között, amelyek egymáshoz képest állandó sebességgel mozognak.
+    Legyen két inerciarendszer: az egyik a $S$ rendszer, amelyben egy esemény helyét és idejét $(x, y, z, t)$-vel jelöljük, és a másik a $S'$ rendszer, amely a $S$ rendszerhez képest $\bold{v}$ sebességgel mozog.
+    A Galilei transzformáció a következőképpen írható fel:
+    \begin{equation}
+        x' = x - vt
+    \end{equation}
+    \begin{equation}
+        y' = y
+    \end{equation}
+    \begin{equation}
+        z' = z
+    \end{equation}
+    \begin{equation}
+        t' = t
+    \end{equation}
+    Itt az $x'$ koordináta a $S'$ rendszerben az $x$ koordinátából származik úgy, hogy levonjuk a $vt$ értéket, ami a $S'$ rendszer elmozdulását jelenti az idő $t$ alatt. Az $y$ és $z$ koordináták nem változnak,
+    mivel a mozgás csak az $x$ tengely mentén történik. Az idő pedig mindkét rendszerben ugyanaz. Viszont van egy probléma a Galilei transzformációval, mégpedig az, hogy nem veszi figyelembe a fénysebesség állandóságát.
+    Ha a Galilei transzformációt alkalmazzuk egy fényimpulzusra, amely a $S$ rendszerben $c$ sebességgel mozog, akkor a $S'$ rendszerben a fénysebesség $c - v$ lesz, ami ellentmond Einstein posztulátumának.
+    Emiatt a Galilei transzformációt nem lehet alkalmazni relativisztikus sebességek esetén, ahol a fénysebességhez közeli sebességekről van szó. Ilyen esetekben a Lorentz transzformációt kell használni.
+\subsubsection{Lorentz transzformáció}
+Tegyük fel, hogy az álló inerciarendszerben, egy esemény történik (pl. egy villanás), amely a tér minden irányába terjed $c$ fénysebességgel. Az esemény helyét és idejét az álló rendszerben $(x, y, z, t)$-vel jelöljük.
+Ekkor a következő feltétel teljesül:
+\begin{equation}
+    |\bold{r}| = ct
+\end{equation}
+\begin{equation}
+    \sqrt{x^2 + y^2 + z^2} = ct
+\end{equation}
+\begin{equation}
+    x^2 + y^2 + z^2 = c^2 t^2
+\end{equation}
+\begin{equation}
+    x^2 + y^2 + z^2 - c^2 t^2 = 0
+\end{equation}
+Ugyanezt felírhatjuk a $\bold{v}$ sebességgel mozgó rendszerben is, ahol az esemény helyét és idejét $(x', y', z', t')$-vel jelöljük:
+\begin{equation}
+    x'^2 + y'^2 + z'^2 - c^2 t'^2 = 0
+\end{equation}
+Mivel mind a két egyenlet nulla, ezért egyenlőek egymással:
+\begin{equation}
+    x^2 + y^2 + z^2 - c^2 t^2 = x'^2 + y'^2 + z'^2 - c^2 t'^2
+\end{equation}
+Mivel a két rendszer között csak az $x$ tengely mentén van relatív mozgás, ezért $y = y'$ és $z = z'$:
+\begin{equation}
+    x^2 - c^2 t^2 = x'^2 - c^2 t'^2
+\end{equation}
+Ezt az egyenletet nem lehet úgy kielégíteni, hogy $x' = x - vt$ és $t' = t$, mert akkor a fénysebesség nem lenne állandó. Ezért nézzük meg, hogy mi történik, ha az esemény, a mozgás síkjában történik, tehát $y = z = 0$,
+akkor amikor a két koordináta redszer középpontja pont egybeesik.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/1-tetel/lorentz.png}
+    \caption{Lorentz transzformáció}
+    \label{fig:lorentz}
+\end{figure}
+Ekkor $t$ időpillanatban $S'$ koordináta-rendszer középpontja a $S$ koordináta-rendszer $x = vt$ helyén van. A mozgó rendszer középpontja és az esemény közötti távolság a $S$ rendszerben $x - vt$,
+míg a $S'$ rendszerben $x'$. Tehát van egy problémánk ami szerint:
+\begin{equation}
+    x' \neq x - vt
+\end{equation}
+A fénynek mind a két rendszerben ugyan olyan gyorsan kell terjednie, tehát ez nem lehet igaz, ha a távolságokat és az időt állandnak vesszük. Ezért feltételezzük, hogy a távolságok megváltozik a két rendszer között.
+Tehát legyen:
+\begin{equation}
+    x' = \gamma (x - vt)
+\end{equation}
+az idő pedig:
+\begin{equation}
+    t' = \beta x + \alpha t
+\end{equation}
+ahol $\gamma$, $\beta$ és $\alpha$ olyan állandók, amelyeket meg kell határozni. Ezeket az állandókat úgy határozhatjuk meg, hogy a fénysebesség állandóságának feltételét alkalmazzuk:
+\begin{equation}
+    x^2 - c^2 t^2 = x'^2 - c^2 t'^2
+\end{equation}
+Behelyettesítve az $x'$ és $t'$ kifejezéseket:
+\begin{equation}
+    x^2 - c^2 t^2 = \gamma^2 (x - vt)^2 - c^2 (\beta x + \alpha t)^2
+\end{equation}
+Kibontva és összegyűjtve a tagokat:
+\begin{equation}
+    x^2 - c^2 t^2 = \gamma^2 (x^2 - 2vxt + v^2 t^2) - c^2 (\beta^2 x^2 + 2 \alpha \beta xt + \alpha^2 t^2)
+\end{equation}
+\begin{equation}
+    x^2 - c^2 t^2 = (\gamma^2 - c^2 \beta^2) x^2 + (-2 \gamma^2 v - 2 c^2 \alpha \beta) xt + (\gamma^2 v^2 - c^2 \alpha^2) t^2
+\end{equation}
+Most összehasonlítva a két oldalt, három egyenletet kapunk:
+\begin{equation}
+    1 = \gamma^2 - c^2 \beta^2
+\end{equation}
+\begin{equation}
+    0 = -2 \gamma^2 v - 2 c^2 \alpha \beta
+\end{equation}
+\begin{equation}
+    -c^2 = \gamma^2 v^2 - c^2 \alpha^2
+\end{equation}
+Ebből a második egyenletből kifejezhetjük az $\alpha$-t:
+\begin{equation}
+    \alpha = -\frac{\gamma^2 v}{c^2 \beta}
+\end{equation}
+Ezt behelyettesítve a harmadik egyenletbe:
+\begin{equation}
+    -c^2 = \gamma^2 v^2 - c^2 \left(-\frac{\gamma^2 v}{c^2 \beta}\right)^2
+\end{equation}
+\begin{equation}
+    -c^2 = \gamma^2 v^2 - \frac{\gamma^4 v^2}{\beta^2 c^2}
+\end{equation}
+\begin{equation}
+    -c^4 \beta^2 = \gamma^2 v^2 \beta^2 - \gamma^4 v^2
+\end{equation}
+\begin{equation}
+    \beta^2 (c^4 + \gamma^2 v^2) = \gamma^4 v^2
+\end{equation}
+\begin{equation}
+    \beta^2 = \frac{\gamma^4 v^2}{c^4 + \gamma^2 v^2}
+\end{equation}
+Ezt behelyettesítve az első egyenletbe:
+\begin{equation}
+    1 = \gamma^2 - c^2 \frac{\gamma^4 v^2}{c^4 + \gamma^2 v^2}
+\end{equation}
+\begin{equation}
+    1 = \gamma^2 - \frac{\gamma^4 v^2}{c^2 + \frac{\gamma^2 v^2}{c^2}}
+\end{equation}
+\begin{equation}
+    1 = \gamma^2 - \frac{\gamma^4 v^2}{c^2 + \frac{\gamma^2 v^2}{c^2}} = \gamma^2 - \frac{\gamma^4 v^2 c^2}{c^4 + \gamma^2 v^2}
+\end{equation}
+\begin{equation}
+    (c^4 + \gamma^2 v^2) = \gamma^2 (c^4 + v^2) - \gamma^4 v^2 c^2
+\end{equation}
+\begin{equation}
+    c^4 + \gamma^2 v^2 = \gamma^2 c^4 + \gamma^2 v^2 - \gamma^4 v^2 c^2
+\end{equation}
+\begin{equation}
+    c^4 = \gamma^2 c^4 - \gamma^4 v^2 c^2
+\end{equation}
+\begin{equation}
+    c^4 = \gamma^2 c^2 (c^2 - \gamma^2 v^2)
+\end{equation}
+\begin{equation}
+    \gamma^2 = \frac{c^2}{c^2 - v^2}
+\end{equation}
+\begin{equation}
+    \gamma = \frac{1}{\sqrt{1 - \frac{v^2}{c^2}}}
+\end{equation}
+Ezt visszahelyettesítve a $\beta$ és $\alpha$ kifejezésekbe:
+\begin{equation}
+    \beta = -\frac{\gamma^2 v}{c^2} = -\frac{v}{c^2 (1 - \frac{v^2}{c^2})} = -\frac{v}{c^2 - v^2}
+\end{equation}
+\begin{equation}
+    \alpha = -\frac{\gamma^2 v}{c^2 \beta} = -\frac{\frac{c^2}{c^2 - v^2} v}{c^2 \left(-\frac{v}{c^2 - v^2}\right)} = -\frac{c^2}{c^2 - v^2}
+\end{equation}
+Így a Lorentz transzformáció végső alakja a következő:
+\begin{equation}
+    x' = \frac{x - vt}{\sqrt{1 - \frac{v^2}{c^2}}}
+\end{equation}
+\begin{equation}
+    y' = y
+\end{equation}
+\begin{equation}
+    z' = z
+\end{equation}
+\begin{equation}
+    t' = \frac{t - \frac{vx}{c^2}}{\sqrt{1 - \frac{v^2}{c^2}}}
+\end{equation}
+A Lorentz transzformáció tehát figyelembe veszi a fénysebesség állandóságát, és lehetővé teszi a koordináták és idő átváltását két inerciarendszer között, amelyek egymáshoz képest állandó sebességgel mozognak.
+A másik irányú transzformáció pedig a következő:
+\begin{equation}
+    x = \frac{x' + vt'}{\sqrt{1 - \frac{v^2}{c^2}}}
+\end{equation}
+\begin{equation}
+    y = y'
+\end{equation}
+\begin{equation}
+    z = z'
+\end{equation}
+\begin{equation}
+    t = \frac{t' + \frac{vx'}{c^2}}{\sqrt{1 - \frac{v^2}{c^2}}}
+\end{equation}
+
+\subsection{Relativisztikus kinematika}
+A relativizmus hatásai nem csak a koordinátákra és időre korlátozódnak, hanem a sebességekre is. A Galilei transzformáció szerint a sebességek egyszerűen összeadódnak, de a Lorentz transzformáció szerint a sebességek összeadásának módja megváltozik.
+tegyük fel, hogy egy test a $\bold{w}$ sebességgel mozog a $S$ rendszerben:
+\begin{equation}
+    \bold{w} = \frac{\bold{dr}}{dt} = \left(\frac{dx}{dt}, \frac{dy}{dt}, \frac{dz}{dt}\right) = (w_x, w_y, w_z)
+\end{equation}
+Ha megnézzzük az x komponensét a mozgó rendszerben:
+\begin{equation}
+    w'_x = \frac{dx'}{dt}
+\end{equation}
+Ebbe behelyettesítve a Lorentz transzformációt:
+\begin{equation}
+    w'_x = \frac{d}{dt} \left(\frac{x - vt}{\sqrt{1 - \frac{v^2}{c^2}}}\right)
+\end{equation}
+\begin{equation}
+    w'_x = \frac{1}{\sqrt{1 - \frac{v^2}{c^2}}} \left(\frac{dx}{dt} - v\frac{dt}{dt}\right)
+\end{equation}
+\begin{equation}
+    w'_x = \frac{w_x - v}{\sqrt{1 - \frac{v^2}{c^2}}}
+\end{equation}
+Ez a relativisztikus sebességösszeadás x komponense. Hasonlóan kiszámítható a y és z komponens is:
+\begin{equation}
+    w'_y = \frac{dy'}{dt} = \frac{d}{dt} (y) = w_y
+\end{equation}
+\begin{equation}
+    w'_z = \frac{dz'}{dt} = \frac{d}{dt} (z) = w_z
+\end{equation}
+De itt figyelembe kell venni, hogy az idő is megváltozik a két rendszer között, tehát a teljes kifejezés a következő lesz:
+\begin{equation}
+    w'_y = \frac{dy'}{dt'} = \frac{dy}{dt'} = \frac{dy}{dt} \cdot \frac{dt}{dt'} = w_y \cdot \frac{dt}{dt'}
+\end{equation}
+\begin{equation}
+    w'_z = \frac{dz'}{dt'} = \frac{dz}{dt'} = \frac{dz}{dt} \cdot \frac{dt}{dt'} = w_z \cdot \frac{dt}{dt'}
+\end{equation}
+Most kiszámíthatjuk a $\frac{dt}{dt'}$ kifejezést a Lorentz transzformációból:
+\begin{equation}
+    t' = \frac{t - \frac{vx}{c^2}}{\sqrt{1 - \frac{v^2}{c^2}}}
+\end{equation}
+\begin{equation}
+    \frac{dt'}{dt} = \frac{1 - \frac{v}{c^2} \frac{dx}{dt}}{\sqrt{1 - \frac{v^2}{c^2}}} = \frac{1 - \frac{v w_x}{c^2}}{\sqrt{1 - \frac{v^2}{c^2}}}
+\end{equation}
+\begin{equation}
+    \frac{dt}{dt'} = \frac{\sqrt{1 - \frac{v^2}{c^2}}}{1 - \frac{v w_x}{c^2}}
+\end{equation}
+Ezt visszahelyettesítve a $w'_y$ és $w'_z$ kifejezésekbe:
+\begin{equation}
+    w'_y = w_y \cdot \frac{\sqrt{1 - \frac{v^2}{c^2}}}{1 - \frac{v w_x}{c^2}}
+\end{equation}
+\begin{equation}
+    w'_z = w_z \cdot \frac{\sqrt{1 - \frac{v^2}{c^2}}}{1 - \frac{v w_x}{c^2}}
+\end{equation}
+Tehát a relativisztikus sebességösszeadás végső képletei a következők:
+\begin{equation}
+    w'_x = \frac{w_x - v}{1 - \frac{v w_x}{c^2}}
+\end{equation}
+\begin{equation}
+    w'_y = \frac{w_y \sqrt{1 - \frac{v^2}{c^2}}}{1 - \frac{v w_x}{c^2}}
+\end{equation}
+\begin{equation}
+    w'_z = \frac{w_z \sqrt{1 - \frac{v^2}{c^2}}}{1 - \frac{v w_x}{c^2}}
+\end{equation}
+Ezek a képletek biztosítják, hogy a fénysebesség minden inerciarendszerben állandó maradjon, és hogy a sebességek ne haladják meg a fénysebességet. Ebből látszódik, hogy
+Relativisztikus kinematika esetén hiába csak egy irányba mozog a két rendszer egymáshoz képest, a másik két irány komponensei is megváltoznak, ami fontos különbség a klasszikus kinematikához képest.
+
+A gyorsulással hasonlóan lehet eljárni és a következő képleteket kapjuk:
+\begin{equation}
+    a'_x = \frac{a_x (1 - \frac{v w_x}{c^2})^3}{(1 - \frac{v^2}{c^2})(1 - \frac{w^2}{c^2})^{3/2}} 
+\end{equation}
+\begin{equation}
+    a'_y = \frac{a_y \sqrt{1 - \frac{v^2}{c^2}} (1 - \frac{v w_x}{c^2})^2}{(1 - \frac{w^2}{c^2})^{3/2}}
+\end{equation}
+\begin{equation}
+    a'_z = \frac{a_z \sqrt{1 - \frac{v^2}{c^2}} (1 - \frac{v w_x}{c^2})^2}{(1 - \frac{w^2}{c^2})^{3/2}}
+\end{equation}
+
+\subsubsection*{Forgások téridőben. Minkowski téridő.}
+Láthattuk tehát, hogy a Relativizmus esetén 4D téridővel kell dolgoznunk, ahol az időt is koordinátaként kezeljük.  
+A transzlációs mozgást egy 4D-s mátrixal írhatjuk le, amely a következőképpen néz ki:
+\begin{equation}
+    \begin{pmatrix}
+        ct' \\
+        x' \\
+        y' \\
+        z'
+    \end{pmatrix} =
+    \begin{pmatrix}
+        \gamma & -\gamma \frac{v}{c} & 0 & 0 \\
+        -\gamma \frac{v}{c} & \gamma & 0 & 0 \\
+        0 & 0 & 1 & 0 \\
+        0 & 0 & 0 & 1
+    \end{pmatrix}
+    \begin{pmatrix}
+        ct \\
+        x \\
+        y \\
+        z
+    \end{pmatrix}
+\end{equation}
+Ahol a mátrix első sora az idő transzformációját, a második sora az x koordináta transzformációját, a harmadik és negyedik sora pedig az y és z koordináták transzformációját írja le.
+Ezt a formalizmust Hermann Minkowski vezette be, aki rájött, hogy a speciális relativitáselméletet egy négy dimenziós téridőben lehet legjobban leírni. Ha megnézzük ezt a mátrixot,
+akor feltűnhet, hogy rettentően hasonlít a forgatási mátrixokra, amelyeket a klasszikus mechanikában használtunk:
+\begin{equation}
+    \begin{pmatrix}
+        x' \\
+        y' \\
+        z'
+    \end{pmatrix} =
+    \begin{pmatrix}
+        \cos \alpha & -\sin \alpha & 0 \\
+        \sin \alpha & \cos \alpha & 0 \\
+        0 & 0 & 1
+    \end{pmatrix}
+    \begin{pmatrix}
+        x \\
+        y \\
+        z
+    \end{pmatrix}
+\end{equation}
+Ahol $\alpha$ a forgatási szög. A különbség annyi, hogy a mi mátrixunk 4D-s, míg a klasszikus forgatási mátrix 3D-s.
+Módosítsuk egy kicsit a jelöléseinket az alábbi módon:
+\begin{equation}
+    x_0 = ct, \quad x_1 = x, \quad x_2 = y, \quad x_3 = z
+\end{equation}
+\begin{equation}
+    x'_0 = ct', \quad x'_1 = x', \quad x'_2 = y', \quad x'_3 = z'
+\end{equation}
+\begin{equation}
+    \beta = \frac{v}{c}, \quad \gamma = \frac{1}{\sqrt{1 - \beta^2}}
+\end{equation}
+\begin{equation}
+    \Lambda =
+    \begin{pmatrix}
+        \gamma & -\gamma \beta & 0 & 0 \\
+        -\gamma \beta & \gamma & 0 & 0 \\
+        0 & 0 & 1 & 0 \\
+        0 & 0 & 0 & 1
+    \end{pmatrix}
+\end{equation}
+
+Ekkor az egész műveletet felírhatjuk a következőképpen:
+\begin{equation}
+    x' = \Lambda x
+\end{equation}
+A 4 komponenst négyesvektornak nevezzük, és ezt a teret ami a 3 tér és 1 idő dimenzióból áll, Minkowski térnek nevezzük.
+
+A Lorentz transzformációkat tehát tekinthetjük úgy, mint a Minkowski térben végzett forgatásokat, ahol a forgatási szög a relatív sebességtől függ. Ez a megközelítés segít megérteni a relativisztikus jelenségeket, mint például az idődilatációt és a hosszuskontrakciót
+Ennek az analógiának a még egyértelműbbé tételéhez bevezethetjük a következő jelölést:
+\begin{equation}
+    \cosh \phi = \gamma, \quad \sinh \phi = \gamma \beta
+\end{equation}
+ahol $\phi$ a rapiditás, amely a relativisztikus sebesség egy alternatív mértéke, $cosh$ és $sinh$ pedig a hiperbolikus koszinusz és szinusz függvények. Ekkor a Lorentz transzformáció mátrixa a következőképpen néz ki:
+\begin{equation}
+    \Lambda =
+    \begin{pmatrix}
+        \cosh \phi & -\sinh \phi & 0 & 0 \\
+        -\sinh \phi & \cosh \phi & 0 & 0 \\
+        0 & 0 & 1 & 0 \\
+        0 & 0 & 0 & 1
+    \end{pmatrix}
+\end{equation}
+Ez a mátrix hasonló a klasszikus forgatási mátrixhoz, de itt a trigonometrikus függvények helyett hiperbolikus függvényeket használunk. Ez a hasonlóság még inkább alátámasztja,
+hogy a Lorentz transzformációk a Minkowski térben végzett forgatások reprezentálják.
+
+\subsubsection*{Invariáns skaláris szorzat}
+A minkowski formalizmus segítségével könnyedén bevezethetjük a forgásokat 3D térben is:
+\begin{equation}
+    \Lambda =
+    \begin{pmatrix}
+        1 & 0 & 0 & 0 \\
+        0 & R_{11} & R_{12} & R_{13} \\
+        0 & R_{21} & R_{22} & R_{23} \\
+        0 & R_{31} & R_{32} & R_{33} \\
+    \end{pmatrix}
+    = 
+    \begin{pmatrix}
+        1 & 0 & 0 & 0 \\
+        0 &  &  &  \\
+        0 &  & \hat{R} &  \\
+        0 &  &  & 
+    \end{pmatrix}
+\end{equation}
+Innen látható, hogy a 3D forgatások a Lorentz transzformációk speciális esetei, ahol az idő komponens változatlan marad. Ez azt jelenti, hogy a térbeli forgatások nem befolyásolják az időt, Ezt gyakran tiszta térbeli forgatásnak nevezzük.
+Ez a megállapítás nem igaz általánosan, és ez sebességváltozással jár, amit Lorentz boostnak nevezünk. 
+
+Ez a matematikai hasonlóság viszont motiválhat minket arra, hogy bevezessünk egy új skaláris szorzatot a minkowski térben, amely hasonló a klasszikus euklideszi skaláris szorzathoz, de figyelembe veszi az idő dimenzió különleges szerepét.
+Ezt a skaláris szorzatot minkowski skaláris szorzatnak nevezzük, és a következőképpen definiáljuk két négyesvektor, $a$ és $b$ között:
+\begin{equation}
+    x \cdot y = -x_0 y_0 + x_1 y_1 + x_2 y_2 + x_3 y_3 = -x_0 y_0 + \bold{x} \cdot \bold{y} 
+\end{equation}
+ahol $x_0 = ct_a$, $x_1 = x_a$, $x_2 = y_a$, $x_3 = z_a$ és hasonlóan $y$-re is. Ez a skaláris szorzat különbözik a klasszikus euklideszi skaláris szorzattól, mivel szerepel egy korrekciós tag is, amely az idő komponensek szorzatát tartalmazza negatív előjellel.
+Ez a korrekciós tag biztosítja, hogy a minkowski skaláris szorzat invariáns maradjon a Lorentz transzformációk alatt, ami azt jelenti, hogy a skaláris szorzat értéke nem változik meg, ha a négyesvektorokat egy másik inerciarendszerbe transzformáljuk.
+Ez az invariancia fontos szerepet játszik a relativisztikus fizika alapelveiben, mivel lehetővé teszi, hogy a fizikai törvények formája ugyanaz maradjon minden inerciarendszerben.
+
+\subsubsection*{Fénykúp}
+Az invariánsa skaláris szorzat egyik tulajdonsága, hogy a vektorok sazorzata lehet negatív, akkor is, ha a vektorok maguk nem azok. Ahhoz, hogy ennek az implikációit láthassuk, rajzoljunk fel egy téidő diagramot, ahol az  $x_1$ és  $x_2$ tengely a térbeli dimenziót, az  $x_4$ tengely pedig az idő dimenziót jelöli.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/1-tetel/lorentz2.png}
+    \caption{Fénykúp}
+    \label{fig:lorentz2}
+\end{figure}
+
+ekkor definiálhatjuk a téridő távolságot két esemény között a következőképpen:
+\begin{equation}
+    s^2 = -(c \Delta t)^2 + (\Delta x)^2 + (\Delta y)^2 + (\Delta z)^2
+\end{equation}
+ahol $\Delta t$, $\Delta x$, $\Delta y$ és $\Delta z$ a két esemény közötti idő és térbeli különbségek. Ez a téridő távolság invariáns a Lorentz transzformációk alatt, ami azt jelenti, hogy minden inerciarendszerben ugyanazt az értéket kapjuk. Ez a téridő távolság három különböző esetet különböztet meg:
+\begin{itemize}
+    \item Ha $s^2 > 0$, akkor a két esemény között időszerű kapcsolat van, és az események között létezhet ok-okozati kapcsolat. Ezt időszerű távolságnak nevezzük.
+    \item Ha $s^2 < 0$, akkor a két esemény között térbeli kapcsolat van, és az események között nem létezhet ok-okozati kapcsolat. Ezt térbeli távolságnak nevezzük.
+    \item Ha $s^2 = 0$, akkor a két esemény között fénysebességű kapcsolat van, és az események között létezhet ok-okozati kapcsolat, de csak fénysebességgel. Ezt null távolságnak nevezzük.
+\end{itemize}
+Ezek a különbségek fontosak a relativisztikus fizika megértéséhez, mivel meghatározzák, hogy mely események között létezhet ok-okozati kapcsolat, és hogyan viselkednek a fizikai törvények a különböző inerciarendszerekben.
+
+\subsection{Relativisztikus dinamika. Négyesimpulzus.}
+A relativisztikus dinamika a klasszikus mechanika kiterjesztése, amely figyelembe veszi a fénysebesség korlátait és a relativisztikus hatásokat. A klasszikus mechanikában az impulzust a tömeg és a sebesség szorzataként definiáljuk:
+\begin{equation}
+    \bold{p} = m \bold{v}
+\end{equation}
+ahol $\bold{p}$ az impulzus, $m$ a tömeg és $\bold{v}$ a sebesség. A relativisztikus mechanikában azonban a tömeg nem állandó, hanem a sebességtől függ, és a következőképpen definiáljuk:
+\begin{equation}
+    m = \frac{m_0}{\sqrt{1 - \frac{v^2}{c^2}}}
+\end{equation}
+ahol $m_0$ a nyugalmi tömeg, $v$ a sebesség és $c$ a fénysebesség. Ebből következik, hogy az impulzus a következőképpen alakul:
+\begin{equation}
+    \bold{p} = \frac{m_0 \bold{v}}{\sqrt{1 - \frac{v^2}{c^2}}}
+\end{equation}
+Ez az impulzus definíciója azonban nem elégséges a relativisztikus dinamika teljes leírásához, mivel az idő is fontos szerepet játszik. Ezért bevezetjük a négyesimpulzus fogalmát, amely a következőképpen definiáljuk:
+\begin{equation}
+    P^\mu = \left(\frac{E}{c}, \bold{p}\right) = \left(\frac{E}{c}, p_x, p_y, p_z\right)
+\end{equation}
+ahol $E$ az energia, $\bold{p}$ az impulzus és $c$ a fénysebesség. Az energia és az impulzus közötti kapcsolatot a következőképpen írhatjuk fel:
+\begin{equation}
+    E^2 = (pc)^2 + (m_0 c^2)^2
+\end{equation}
+Ez az egyenlet azt mutatja, hogy az energia nem csak az impulzustól, hanem a nyugalmi tömegtől is függ. Ez az egyenlet a relativisztikus energiamegmaradás alapja, és fontos szerepet játszik a részecskefizikában és a kozmológiában.
+A négyesimpulzus komponensei a következőképpen transzformálódnak a Lorentz transzformációk alatt:
+\begin{equation}
+    P'^\mu = \Lambda^\mu_\nu P^\nu
+\end{equation}
+ahol $\Lambda^\mu_\nu$ a Lorentz transzformáció mátrixa. Ez az invariancia biztosítja, hogy a fizikai törvények formája ugyanaz maradjon minden inerciarendszerben, és lehetővé teszi a relativisztikus dinamika alkalmazását különböző helyzetekben.
+
+
+\end{document}

@@ -1,0 +1,1112 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{{\subfix{../}}}
+\begin{document}
+
+Rugalmas és képlékeny alakváltozások, Hooke-törvény, speciális deformációk. A deformáció jellemzése, feszültség- és deformációs tenzor.
+Folyadékok tulajdonságai, hidrosztatika, felületi feszültség, görbületi nyomás, felhajtóerő. Áramlások jellemzése, Bernoulli-egyenlet,
+tökéletes folyadék áramlása, Euler-egyenletek, viszkózus folyadék áramlása, örvények, turbulencia, Reynolds-szám.
+\newline
+\newline
+A folytonos közegek mechanikája a mechanika egy olyan ága, amely a szilárd anyagok és folyadékok viselkedését vizsgálja,
+amikor külső erők hatnak rájuk. Ez a terület magában foglalja a rugalmas és képlékeny alakváltozásokat,
+a folyadékok tulajdonságait, valamint az áramlások jellemzését. A "folytonos közeg" arra a határesetre utal,
+amikor már nem csak 1-2 tömegpont viselkedését vizsgálom, hanem egy olyan rendszert, ahol a részecskék száma olyan nagy,
+hogy az anyagot folytonosnak közelíthetjük. Ez lehetővé teszi számunkra, hogy makroszkopikus mennyiségekkel dolgozzunk,
+mint például a sűrűség, nyomás és sebességmezők, ahelyett, hogy minden egyes részecskét külön-külön vizsgálnánk. A folytonos közegek mechanikája
+elválaszthatatlan a statisztikus fizikától és a termodinamikától, mivel ezek a területek segítenek megérteni, hogyan viselkednek a nagy számú részecskékből álló rendszerek.
+
+A folytonos közegek mechanikájának legfontosabb mértékegységei a következők:
+\begin{itemize}
+    \item Nyomás (Pascal, Pa): A nyomás az erő egységnyi felületre vetített értéke. 1 Pascal az az erő, amely 1 négyzetméter felületre 1 Newton erőt fejt ki.
+    \item Sűrűség (kilogramm per köbméter, kg/m³): A sűrűség az anyag tömegének és térfogatának aránya. Ez megmutatja, hogy mennyi anyag van egy adott térfogatban.
+    \item Sebesség (méter per másodperc, m/s): A sebesség a folyadék vagy gáz részecskéinek mozgási sebességét jelenti.
+    \item Viskozitás (Pascal-másodperc, Pa·s): A viszkozitás a folyadék vagy gáz belső súrlódását jelenti, amely ellenáll az áramlásnak.
+    \item Felületi feszültség (Newton per méter, N/m): A felületi feszültség a folyadék felületén lévő molekulák közötti kohéziós erőt jelenti.
+\end{itemize}
+
+\subsection{Rugalmas és képlékeny alakváltozások, Hooke-törvény, speciális deformációk}
+Eddig a pontig főként részecskék és merev testek mozgását vizsgáltuk. Azonban a valóságban sok anyag képes alakváltozásra,
+amikor külső erők hatnak rájuk. Tehát egy kiterjedt test esetén nem csak a test egészének mozgását kell figyelembe venni,
+hanem azt is, hogy a test pontjainak relatív távolsága megváltozásra képes. Az alakváltozások két fő típusa a rugalmas és a képlékeny alakváltozás.
+A rugalmas alakváltozás során az anyag visszatér eredeti alakjához, amikor a külső erő megszűnik.
+Ezzel szemben a képlékeny alakváltozás során az anyag maradandó alakváltozást szenved, és nem tér vissza eredeti formájához.
+
+A deformáció jellemzéséhez bevezethetjük a feszültség és deformáció fogalmát. A feszültség az anyagra ható erő egységnyi felületre vetített értéke ($Pa = \frac{N}{m^2}$ - Pascal),
+a deformáció pedig az anyag alakjának megváltozását jelenti. Nézzük meg először a lineáris deformációt, ahol egy rúdra ható F erőre deformálódik:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{imgs/4-tetel/linearis_deformacio.png}
+    \caption{lineáris deformáció egy rúd esetén}
+\end{figure}
+Ahol a rúd $F$ erő hatására $\Delta L$ hosszváltozást szenved el. Ha rugalmas a deformáció (az erő nem elég erős,
+hogy az atomok helyzetét permanensen megváltoztassa), akkor a következő grafikont rajzolhatjuk fel:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/4-tetel/linearis_deformacio_grafikon.png}
+    \caption{lineáris deformáció grafikon}
+\end{figure}
+Ahol a feszültség ($\sigma$) és a deformáció ($\varepsilon$) között lineáris összefüggés áll fenn:
+\begin{equation}
+    \sigma = E \varepsilon
+\end{equation}
+Ahol $E$ az anyagra jellemző Young modulus ($E \sim 100 \text{GPa}$), ami a rugalmasság mértékét jellemzi. Ezt nevezik Hooke-törvénynek.
+A deformáció a lineáris deformáció esetében a relatív hosszváltozás, a feszültség pedig az erő és a keresztmetszeti terület hányadosa:
+\begin{equation}
+    \varepsilon = \frac{\Delta L}{L} \quad \text{és} \quad \sigma = \frac{F}{A}
+\end{equation}
+Ezt a jelenséget egyszerű nyújtásnak nevezik. Ilyen nyúlás esetében megfigyelhető, hogy a rúd átmérője is csökken a hossz növekedésével.
+Ezt harántösszehúzásnak is nevezzük, és előszőr Poisson jellemezte matematikailag:
+\begin{equation}
+   \frac{\Delta d}{d} = - \nu \frac{\Delta L}{L}
+\end{equation}
+Ahol $\nu$ a Poisson arány, ami anyagra jellemző állandó ($\nu \sim 0.3$). A poisson szám lehet negatív is, speciális
+formájú anyagoknál (auxetikus anyagok), ahol a harántirányú méretnövekedés is megfigyelhető nyújtáskor.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/4-tetel/auxetikus_anyag.png}
+    \caption{Auxetikus anyag viselkedése nyújtáskor}
+\end{figure}
+Ha a Hooke-törvényt kiterjesztjük 3D-re akkor a hossz helyett a térfogatváltozást kell figyelembe venni:
+\begin{equation}
+    \frac{\Delta V}{V} = \frac{(l + \Delta l)^2 (d + \Delta d)^2 - ld^2}{ld^2} = \frac{\Delta l (d + \Delta d)^2 + l 2d \Delta d + l \Delta d^2}{ld^2}
+\end{equation}
+\begin{equation}
+    \sim \frac{\Delta l d^2 + 2 l d \Delta d}{ld^2} = \frac{\Delta l}{l} + 2 \frac{\Delta d}{d}
+\end{equation}
+Ezt a közelítést azért tehettem meg, mert tudom, hogy a $\Delta l$ és $\Delta d$ között kb. $10^{-3}$ nagyságrendű különbség van, vagyis kb. hasonlóak.
+Helyettesítsük be ide a Poisson arányt:
+\begin{equation}
+    \frac{\Delta V}{V} = \frac{\Delta l}{l} - 2 \nu \frac{\Delta l}{l} = (1 - 2 \nu) \frac{\Delta l}{l} = (1 - 2 \nu) \frac{\sigma}{E}
+\end{equation}
+És ha itt bevezetjük a $P$ nyomást ($P = - \sigma$), akkor a következő összefüggést kapjuk:
+\begin{equation}
+    \frac{\Delta V}{V} = - 3 \frac{(1 - 2 \nu)}{E} P
+\end{equation}
+Itt a 3-as azért jelent meg, mert a térfogatváltozás három irányban történik. Ebből következik a kompressziós modulus ($K$):
+\begin{equation}
+    K \equiv - P \frac{V}{\Delta V} = \frac{E}{3(1 - 2 \nu)}
+\end{equation}
+Ez a modulus azt jellemzi, hogy egy anyag mennyire ellenálló a térfogati változásokkal szemben. Minél nagyobb az értéke, annál kevésbé hajlamos az anyag a térfogati deformációra külső nyomás hatására.
+Ennek a reciprokát nevezik a kompresszibilitásnak ($\kappa$):
+\begin{equation}
+    \kappa \equiv \frac{1}{K} = - \frac{1}{V} \frac{\Delta V}{P}
+\end{equation}
+Ez a mennyiség azt jellemzi, hogy egy anyag mennyire könnyen deformálódik térfogatváltozás szempontjából külső nyomás hatására. Ebből a
+kompressziós modulusból leolvasható, hogy a stabilitás feltétele, az hogy $K > 0$.
+
+\subsubsection{Speciális deformációk}
+\subsubsection*{Nyíró deformáció}
+A Hooke-törvény és a feszültség-deformáció összefüggések csak akkor érvényesek, ha test oldalainak közepére hat az erő.
+Ha viszont mondjuk az éleket húzzuk, akkor nyíró feszültség lép fel:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{imgs/4-tetel/nyiro_deformacio.png}
+    \caption{Nyíró deformáció}
+\end{figure}
+Ilyenkor a feszültség és a deformáció között a következő összefüggés áll fenn:
+\begin{equation}
+    \tau = \frac{F}{A} = \mu \gamma
+\end{equation}
+Ahol $\tau$ a nyíró feszültség, $\gamma$ a nyírási szög (kis szögnél $\gamma \approx \tan(\gamma)$), és $\mu$ a nyírási modulus (olykor $G$-vel is jelölik).
+
+\subsubsection*{Csavarás}
+Vegyünk egy henger alakú rudat, amit az egyik végénél rögzítünk, a másik végénél pedig egy $M$ nyomatékot alkalmazunk:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/4-tetel/csavaras.png}
+    \caption{Csavarás}
+\end{figure}
+
+Ahol a rúd hossza $L$, a sugara $r$, és a nyomaték $M$. Ekkor a rúd egy $\alpha$ szöggel elfordul a nyomaték hatására. Ekkor vegyünk egy kis téglalap szeletet
+a henger oldalából és nézzük meg, hogy hogyan fordul el:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/4-tetel/csavaras_2.png}
+    \caption{Csavarás - kis szelet elmozdulása}
+\end{figure}
+
+Ekkor $\alpha$ és $\gamma$ között a következő összefüggés áll fenn:
+\begin{equation}
+    \tan(\gamma) = \frac{r \alpha}{L} \approx \gamma
+\end{equation}
+Az ezt az elmozdsulást okozó erő legyen $\Delta F$:
+\begin{equation}
+    \Delta F = \tau \Delta A = \mu \gamma \Delta r r \Delta \phi = \mu \frac{\alpha}{L} r^2 \Delta r \Delta \phi
+\end{equation}
+Ahol $\Delta A = r \Delta \phi \Delta r$ a kis felület, $\tau$ pedig a nyírási feszültség. Ebből pedig a nyomaték:
+\begin{equation}
+    \Delta M = \Delta F r = \mu \frac{\alpha}{L} r^3 \Delta r \Delta \phi
+\end{equation}
+Ezt össze kell adni minden kis felületre, tehát integrálni kell $r$ és $\phi$ szerint:
+\begin{equation}
+    M = \int_0^{2\pi} \int_0^R \mu \frac{\alpha}{L} r^3 dr d\phi = \mu \frac{\alpha}{L} 2 \pi \frac{R^4}{4} = \frac{\pi \mu R^4}{2L} \alpha
+\end{equation}
+Itt a konstans tagokra bevezethetünk egy új mennyiséget, a torziós moduluszt ($D^*$):
+\begin{equation}
+    D^* = \frac{\pi \mu R^4}{2L}
+\end{equation}
+Ekkor a nyomaték és az elfordulás között a következő összefüggés áll fenn:
+\begin{equation}
+    M = D^* \alpha
+\end{equation}
+
+\subsubsection*{Hajlítás}
+Vegyünk egy kezdetben egyenes rúd alakú testet, aminek az egyik vége rögzítve van, a másik végére pedig egy erőt alkalmazunk:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/4-tetel/hajlitas.png}
+    \caption{Hajlítás}
+\end{figure}
+Ha megnézem a neutrális zónától (A rúd középvonala, kis Hajlítás esetén nem szenved hosszváltozást) $\xi$ távolságra lévő réteget, akkor ott a hosszváltozás:
+\begin{equation}
+    \epsilon_{xx} (\xi) = \frac{\Delta L}{L} = \frac{(R + \xi) \Delta \varphi - R \Delta  \varphi}{R \Delta \varphi} = \frac{\xi}{R}
+\end{equation}
+Ahol $R$ a görbületi sugár, és $\Delta \varphi$ a kis szög, amivel elfordul a rúd. Ebből a feszültség:
+\begin{equation}
+    \sigma_{xx} (\xi) = E \epsilon_{xx} (\xi) = E \frac{\xi}{R}
+\end{equation}
+Ahol $E$ a Young modulus ($\frac{1}{E} = \frac{1}{2\mu}\left(1 - \frac{\lambda}{2\mu + 3\lambda}\right)$). Ebből pedig a nyomaték:
+\begin{equation}
+    M = \int_A \sigma_{xx} (\xi) \xi dA = \int_A E \frac{\xi}{R} \xi dA = \frac{E}{R} \int_A \xi^2 dA
+\end{equation}
+Ahol az integrál a keresztmetszetre vonatkozik. Ebből következik, hogy:
+\begin{equation}
+    M = \frac{E I}{R}
+\end{equation}
+Ahol $I = \int_A \xi^2 dA$ a keresztmetset tehetetlenségi nyomatéka. Ebből a görbületi sugár:
+\begin{equation}
+    \frac{1}{R} = \frac{M}{E I}
+\end{equation}
+Ha a rúd hossza $L$, akkor a rúd végén a hajlítási szög:
+\begin{equation}
+    \alpha = \frac{L}{R} = \frac{M L}{E I}
+\end{equation}
+
+\subsection{A deformáció jellemzése, feszültség- és deformációs tenzor}
+Deformáció esetén egy pont elmozdulását jellemezhetjük egy elmozdulási vektorral ($\bold{u}(\bold{r})$) ami az adott pont helyzetétől ($\bold{r}$) függ.
+Viszont van egy probléma ezzel a megközelítéssel: ha csak az elmozdulási vektort nézzük, akkor nem tudjuk megkülönböztetni a test elforgatását és a deformációját.
+Például egy test elforgatása nem jelent deformációt, de az elmozdulási vektor megváltozik. Ezért be kell vezetnünk egy olyan mennyiséget, ami csak a deformációt jellemzi.
+Vegyünk tehát egymáshoz közel két pontot a testben ($\bold{r}$ és $\bold{r} + d\bold{r}$). Ezeknél az elmozdulási vektorok 
+$\bold{u}(\bold{r})$ és $\bold{u}(\bold{r} + d\bold{r})$ lesznek. A kérdés pedig az, hogy az elmozdulási vektorok relatív távolsága egymáshoz képest hogyan változik.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/4-tetel/eltolas_vektor.png}
+    \caption{Az eltolás vektor változása két közeli pont között}
+\end{figure}
+Legyen a távolság $\bold{u}(\bold{r})$ és $\bold{u}(\bold{r} + d\bold{r})$ között $\Delta \bold{s}$. Ekkor a vektor:
+\begin{equation}
+    \Delta \bold{s} = |\bold{r} + \Delta \bold{r} + \bold{u}(\bold{r} + d\bold{r}) - \bold{r} - \bold{u}(\bold{r})|
+\end{equation}
+\begin{equation}
+  \Delta \bold{s}  = |d\bold{r} + \bold{u}(\bold{r} + d\bold{r}) - \bold{u}(\bold{r})|
+\end{equation}
+Használjuk ki, hogy a potenciált kis távolságok esetén fel tudom írni, hogy:
+\begin{equation}
+    \phi (\bold{r} + \Delta \bold{r}) \approx \phi (\bold{r}) + grad( \phi (\bold{r})) \cdot d\bold{r}
+\end{equation}
+Ekkor tehát az elmozdulási vektor:
+\begin{equation}
+    \bold{u}_1(\bold{r} + d\bold{r}) \approx \bold{u}_1(\bold{r}) + \frac{\partial u_1}{\partial r_i} \Delta r_i
+\end{equation}
+Tehát általános komponensre az u-nak:
+\begin{equation}
+    u_j(\bold{r} + d\bold{r}) \approx u_j(\bold{r}) + \frac{\partial u_j}{\partial r_i} \Delta r_i
+\end{equation}
+Ezzel tehát egy deriváltal tudjuk közelíteni a relatív elmozdulást. Ezt a deriváltat helyettesíthetjük egy tenzorral:
+\begin{equation}
+    \beta_{ij} \equiv \frac{\partial u_j}{\partial r_i}
+\end{equation}
+Tehát a tenzor:
+\begin{equation}
+    \hat{\beta} = \frac{d\bold{u}}{\bold{r}}
+\end{equation}
+\begin{equation}
+    \Delta \bold{u} = \hat{\beta} \Delta \bold{r}
+\end{equation}
+Tehát ezt behelyettesítve a $\Delta \bold{s}$ kifejezésbe:
+\begin{equation}
+    \Delta \bold{s} = \sqrt{(\Delta \bold{r}_i + \hat{\beta}_{ij} \Delta \bold{r}_j) \cdot (\Delta \bold{r}_i + \hat{\beta}_{ik} \Delta \bold{r}_k)}
+\end{equation}
+Itt a szorzatban a két fél másik összegzés alatt van, ezért van két külön index használva. Ezt kifejtve:
+\begin{equation}
+    \Delta \bold{s} = \sqrt{\Delta r_i \Delta r_i + \Delta r_i \beta_{ij} \Delta r_j + \Delta r_i \beta_{ik} \Delta r_k + \beta_{ij} \Delta r_j \beta_{ik} \Delta r_k}
+\end{equation}
+A gyök alatti utolsó tagot elhagyhatom, mert maximum $10^{-3}$ nagyságrendű deformációt akarok megengedni, és ezért a $\Delta r_i \cdot \Delta r_i$ taghoz képest is
+$10^{-3}$ lesz, vagyis összességben elhanyagolhatóan kicsi. A másik két $\beta$-s tagra is igaz ez, de mivel ezeket akarom kiszámolni, ezért nem szerencsés "eldobni" őket.
+Az egyenlet tehát:
+\begin{equation}
+    \Delta \bold{s} = \sqrt{\Delta r_i \Delta r_i + 2 \Delta r_i \beta_{ij} \Delta r_j}
+\end{equation}
+Itt egy másik egyszerűsítést is alkalmaztunk, mégpedig, hogy nem számít hogy milyen sorrendben összegzem és szorzom össze a tagokat, hisz skaláris mennyiségekről van szó,
+ezért akár ugyan azt az indexet is használhatom az összegzéshez. Itt észrevehetjük, hogy a $\beta_{ij}$ tenzor nem szimmetrikus, hisz a $\Delta r_i \beta_{ij} \Delta r_j$ kifejezésben a $i$ és $j$ indexek felcserélhetők. Tehát bevezethetjük a szimmetrikus és antiszimmetrikus részt:
+\begin{equation}
+    \beta_{ij} = \underbrace{\frac{1}{2} (\beta_{ij} + \beta_{ji})}_{\varepsilon_{ij} \text{ deformációs tenzor}} + \underbrace{\frac{1}{2} (\beta_{ij} - \beta_{ji})}_{\omega_{ij} \text{ forgatási tenzor}}
+\end{equation}
+Ahol az első tag a deformációs tenzor, a második pedig a forgatási tenzor. A második tag nem érdekel minket, hisz az csak a test elforgatását jellemzi, és nem fog erőt létrehozni. Tehát a deformációs tenzor:
+\begin{equation}
+    \varepsilon_{ij} = \frac{1}{2} (\beta_{ij} + \beta_{ji}) = \frac{1}{2} \left(\frac{\partial u_j}{\partial r_i} + \frac{\partial u_i}{\partial r_j}\right)
+\end{equation}
+Tehát a $\Delta \bold{s}$ kifejezésbe visszahelyettesítve:
+\begin{equation}
+    \Delta \bold{s} = \sqrt{\Delta r_i \Delta r_i + 2 \Delta r_i \varepsilon_{ij} \Delta r_j} = |\Delta \bold{r}| \sqrt{1 + 2 \frac{\Delta \bold{r} \hat{\varepsilon} \Delta \bold{r}}{|\Delta \bold{r}|^2}}
+\end{equation}
+\begin{equation}
+    \Delta \bold{s} = |\Delta \bold{r}| \sqrt{1 + 2 \bold{n} \cdot \hat{\varepsilon} \cdot \bold{n}}
+\end{equation}
+Ahol $\bold{n} = \frac{\Delta \bold{r}}{|\Delta \bold{r}|}$ az egységvektor. Mivel a második tag kicsi, ezért a gyök alatti kifejezést közelíthetjük:
+\begin{equation}
+    \Delta \bold{s} \approx |\Delta \bold{r}| \left(1 + \bold{n} \cdot \hat{\varepsilon} \cdot \bold{n}\right)
+\end{equation}
+Tehát a relatív távolságváltozás két közeli pont között:
+\begin{equation}
+    \frac{\Delta \bold{s} - \Delta \bold{r}}{|\Delta \bold{r}|} = \bold{n} \cdot \hat{\varepsilon} \cdot \bold{n}
+\end{equation}
+Ezt az $\hat{\varepsilon}$ tenzort nevezzük deformációs tenzornak, ami a test deformációját jellemzi.
+
+Most térjünk egy kicsit vissza a $\hat{\beta}$ tenzorhoz. Ebből kiindulva meg tudjuk határozni, hogy hogyan változnak a test egyes részei a deformáció során. Vegyünk egy kis elmozdulást a testben $\Delta \bold{r}$, ami a test egy pontjától egy másik pontjához vezet. A deformáció után ez az elmozdulás megváltozik, és legyen ez $\Delta \bold{r'}$. Ekkor a következő összefüggés áll fenn:
+\begin{equation}
+    \Delta \bold{r'} = \Delta \bold{r} + \hat{\beta} \Delta \bold{r}
+\end{equation}
+Vagy komponensenként:
+\begin{equation}
+    \Delta x' = \Delta x + \beta \Delta x
+\end{equation}
+\begin{equation}
+    \Delta y' = \Delta y + \beta \Delta y
+\end{equation}
+\begin{equation}
+    \Delta z' = \Delta z + \beta \Delta z
+\end{equation}
+Mivel a $\Delta x$-nek csak az $x$ komponense nem nulla, ezért fel tudom írni a következőképpen:
+\begin{equation}
+    \Delta x' = (\Delta x + \beta_{11} \Delta x, \beta_{21} \Delta x, \beta_{31} \Delta x) = (1 + \beta_{11}, \beta_{21}, \beta_{31}) \Delta x
+\end{equation}
+\begin{equation}
+    \Delta y' = (\beta_{12} \Delta y, \Delta y + \beta_{22} \Delta y, \beta_{32} \Delta y) = (\beta_{12}, 1 + \beta_{22}, \beta_{32}) \Delta y
+\end{equation}
+\begin{equation}
+    \Delta z' = (\beta_{13} \Delta z, \beta_{23} \Delta z, \Delta z + \beta_{33} \Delta z) = (\beta_{13}, \beta_{23}, 1 + \beta_{33}) \Delta z
+\end{equation}
+Tehát a térfogatváltozás a deformáció után:
+\begin{equation}
+    \Delta V' = \begin{vmatrix}
+        (1 + \beta_{11}) & \beta_{12} & \beta_{13} \\
+        \beta_{21} & (1 + \beta_{22}) & \beta_{23} \\
+        \beta_{31} & \beta_{32} & (1 + \beta_{33})
+    \end{vmatrix} \underbrace{\Delta x \Delta y \Delta z}_{\Delta V}
+\end{equation}
+Ahol a kapott mátrix determinánsának meghatórázásával tudjuk, hogy a térfogat hogyan változik a deformáció során. Itt gyakorlatilag a tenzo segítségével az $x,y,z$ koordináta rendszerrőé egy másik rendszerbe visszük át.
+Ezt kiszámolva:
+\begin{equation}
+    \Delta V' = (1 + \beta_{11}) + (1 + \beta_{22}) + (1 + \beta_{33}) + \beta^3 \dots  \Delta V
+\end{equation}
+\begin{equation}
+    \Delta V' \approx \left(1 + \beta_{11} + \beta_{22} + \beta_{33}\right) \Delta V
+\end{equation}
+Itt a $\beta^3$ jelöli a harmadfokú tagokat, amiket elhanyagolhatunk, hisz kicsik. Tehát a relatív térfogatváltozás:
+\begin{equation}
+    \frac{\Delta V' - \Delta V}{\Delta V} = \beta_{11} + \beta_{22} + \beta_{33} = Tr(\hat{\beta}) = Tr(\hat{\varepsilon})
+\end{equation}
+Ahol a $Tr$ a tenzor nyomát jelöli (magyarul $Sp$ - spur-nak is hívják). Tehát a deformációba csak a diagonális elemek számítanak a térfogatváltozás szempontjából.
+A vegyes tagok a tiszta nyírást jellemzik, ami nem változtatja meg a térfogatot. Tehát a deformáció felfogható egy koordináta-rendszerváltásként is, ahol a deformációs tenzor visz át a régi koordinátarendszerből az újba.
+
+\subsubsection*{Feszültség tenzor}
+A deformációs tenzornál a rendszerben keletkező errőkkel nem foglalkoztunk, csakis az alakváltozásra koncentáltunk. De ahoz, hogy a Newtoni formalizmusnak meg
+tudjunk felelni (tehát, hogy "megtaláljuk" a deformáció $F = ma$ egyenletét) szükségünk van egy olyan mennyiségre, ami az erőket jellemzi. 
+Amikor felveszünk egy pontrendszert, akkor mondhatjuk a tömegközépont gyorsulásának meg kell egyeznie a rá ható erők külső erők összegével.
+Viszont ha felveszünk egy pontrendszert a pontrenceren belül akkor arra is igaznak kell lennie, viszont erre a kisebb testre hatnak belső erők is,
+melyek a test szempontjából külső erők. Viszont szerencsére ezek a belső erők nagyon kis távon ($\sim \frac{1}{r^6}$) hatnak csak általában (Pl. Plazmában már nem lesz igaz ez).
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/4-tetel/felulet_integral.png}
+    \caption{Belső erők számolása egy test szelete körül}
+\end{figure}
+Ezért elég lesz egy kis felületdarabkán összeadni az erőket a test körül:
+\begin{equation}
+    \Delta \bold{A}: \text{ felületdarab} \quad \quad \Delta \bold{F}: \text{erő a felületen}
+\end{equation}
+Ha kicsit kisebb felületdarabot veszek akkor kevesebb, ha nagyobb felületdarabot veszek akkor több erő lesz rajta, ezért az erő és a felületdarab között arányosságot várhatunk:
+\begin{equation}
+    \Delta \bold{F} \sim \Delta \bold{A}
+\end{equation}
+Viszont $\Delta \bold{A}$ és $\Delta \bold{F}$ vektorok nem biztos hogy páhuzamosak, ezért az arrányossági tényező nem biztos hogy skaláris lesz, hanem egy tenzor:
+\begin{equation}
+    \Delta \bold{F} = \hat{\sigma} \Delta \bold{A}
+\end{equation}
+Ezt a tenzort feszültség tenzornak nevezzük, és a testben keletkező erőket jellemzi. De erre a felüledarabra is hat a külső erő, ezért azt is figyelembe kell venni:
+\begin{equation}
+    \bold{f}: \text{Erősűrűség - egységnyi térfogatra ható külső erő}
+\end{equation}
+Ekkor a test egy kis térfogatára ható erő:
+\begin{equation}
+    \Delta \bold{F}_{\text{külső}} = \bold{f} \Delta V
+\end{equation}
+Mostmár feltudjuk írni a teljes erőt ami a kis térfogatra hat, és azt összeadva megkapom a teljes erőt a kis testdarabra:
+\begin{equation}
+    \bold{F}' = \int_{V'} \bold{f} dV + \oint_{F'} \hat{\sigma} \cdot d\bold{A}
+\end{equation}
+Ennek pedig a newtoni mozgásegyenlet szerint meg kell egyeznie az összimpulzus deriváltjával:
+\begin{equation}
+    \bold{F}' = \int_{V'} \bold{f} dV + \oint_{F'} \hat{\sigma} \cdot d\bold{A} = \frac{d}{dt} \int \varrho \bold{\dot{u}} dV
+\end{equation}
+Ezzel van egy kis probléma, mégpedig, hogy ahogy a észecskék elmozdulnak az impulzus miatt, már nem ugyanabban a felületben lesznek mint amire számolok.
+Ezt a problémát most úgy hidaljuk át, hogy azt mondjuk, hogy kis deformációkat nézünk csak, így a felület nem változik jelentősen. Ekkor a következő egyenletet kapjuk:
+\begin{equation}
+     \int_{V'} \bold{f} dV + \oint_{F'} \hat{\sigma} \cdot d\bold{A} =\frac{d}{dt} \int \varrho \bold{\dot{u}} dV \approx \int_{V'} \varrho \bold{\ddot{u}} dV
+\end{equation}
+Ez az egyenlet pedig a folytonos közegek mozgásegyenlete, ami a test egy kis térfogatára vonatkozik:
+\begin{equation}
+    \int_{V'} \bold{f} dV + \oint_{F'} \hat{\sigma} \cdot d\bold{A} = \int_{V'} \varrho \bold{\ddot{u}} dV \quad \Longleftrightarrow \quad \bold{F} = m \bold{a}
+\end{equation}
+Ezt általánosan nem lehet megoldani, de speciális esetekben igen. Ebben az egyenletben a $\varrho$ sűrűség "játsza" a tömeget, a $\bold{\ddot{u}}$ a gyorsulást, 
+a $\bold{f}$ a külső erőt, és a feszültség tenzor pedig a belső erőket jellemzi.
+
+Még egy érdekességet felfedezhetünk, hogy ha megvizsgáljuk az elektromágnesességből ismert Gauss törvényt:
+\begin{equation}
+    \oint_{F'} \bold{E} \cdot d\bold{A} = \frac{Q}{\varepsilon_0} = \frac{1}{\varepsilon_0} \int_{V'} \varrho dV
+\end{equation}
+Vagy máshogy megfogalmazva:
+\begin{equation}
+    \int (div \bold{E}) dV = \frac{1}{\varepsilon_0} \int \varrho dV \quad \rightarrow \quad div \bold{E} = \frac{\varrho}{\varepsilon_0}
+\end{equation}
+Ugyanis ebben az egyenletben is erősűség és felületi integrál szerepel, mint a feszültség tenzor esetén. És bár ezt elektromágneses terekre
+értelmezték eredetileg, de minden felületi térerősségre lehet alkalmazni. Vegyük a mozgásegyenletet komponensenként:
+\begin{equation}
+    \int_{V'} f_i dV + \oint_{F'} \sigma_{ij} dA_j = \int_{V'} \varrho \ddot{u}_i dV
+\end{equation}
+És alkalmazzuk erre a Gauss-tételt:
+\begin{equation}
+    \int_{V'} f_i dV + \int_{V'} \frac{\partial \sigma_{ij}}{\partial r_j} dV = \int_{V'} \varrho \ddot{u}_i dV
+\end{equation}
+Mivel ez az egyenlet tetszőleges térfogatra igaz, ezért a következő lokális egyenletet kapjuk:
+\begin{equation}
+    f_i + \frac{\partial \sigma_{ij}}{\partial r_j} = \varrho \ddot{u}_i
+\end{equation}
+Ez az egyenlet a folytonos közegek mozgásegyenlete komponensenként. 
+A teljes egyenlet tehát:
+\begin{equation}
+    \bold{f} + div \hat{\sigma} = \varrho \bold{\ddot{u}}
+\end{equation}
+Azt is meg lehet mutatni, hogy ha a feszültségtenzor szimmetrikus ($\sigma_{ij} = \sigma_{ji}$), akkor az impulzusmomentum megmaradása automatikusan teljesül.
+A feszültség tenzor a Newton axiómák miatt csak a deformációs tenzor első deriváltjáig függhet, tehát: 
+\begin{equation}
+    \hat{\sigma}(\hat{\varepsilon}, \dot{\hat{\varepsilon}}, t)
+\end{equation}
+De szilárd anyagok eseetében a feszültség tenzor csak a deformációs tenzor függvénye lesz:
+\begin{equation}
+    \hat{\sigma}(\hat{\varepsilon}) \quad \rightarrow \quad \text{szilárd anyag}
+\end{equation}
+Ebben az esetben a feszültség és deformációs tenzor között lineáris összefüggés áll fenn, amit általánosított Hooke-törvénynek neveznek:
+\begin{equation}
+    \sigma_{ij} = c_{ijkl} \varepsilon_{kl}
+\end{equation}
+Ahol $c_{ijkl}$ azért négyindexes tenzor, mert a feszültség és deformációs tenzor is másodrendű tenzor. Ennek alapesetben 81 független komponense lenne (mindegyik index 1-3-ig mehet és $3^4 = 81$) Azt tudjuk, hogy az $i$ és $j$ indexek felcserélhetők a feszültség tenzor szimmetriája miatt, és a $k$ és $l$ indexek is felcserélhetők
+a deformációs tenzor szimmetriája miatt. Ezért 81 helyett csak 36 független komponense lesz a $c_{ijkl}$ tenzornak. De van egy további szimmetria is, mégpedig az energia megmaradás miatt:
+\newline
+Ha veszek egy $l$ hosszúságú $A$ keresztmetszetű rúdat amit $F$ erővel $\Delta l$-el megnyújtok, akkor a rúdban az elvégzett munka:
+\begin{equation}
+    W = \int_0^{\Delta l} F dl = \frac{1}{2} F \Delta l
+\end{equation}
+Az erő pedig:
+\begin{equation}
+    F = \sigma A
+\end{equation}
+A deformáció:
+\begin{equation}
+    \Delta l = \varepsilon l
+\end{equation}
+Ezeket behelyettesítve a munkába:
+\begin{equation}
+    W = \frac{1}{2} \sigma A \varepsilon l
+\end{equation}
+Itt pedig bevezethetem az energia sűrűséget ($w$), ami egy egységnyi térfogatra eső energia:
+\begin{equation}
+    w = \frac{W}{V} = \frac{W}{Al} = \frac{1}{2} \sigma \varepsilon
+\end{equation}
+Ezt a kifejezést általánosíthatom három dimenzióra is:
+\begin{equation}
+    w = \frac{1}{2} \sigma_{ij} \varepsilon_{ij}
+\end{equation}
+Ha most behelyettesítem ide az általánosított Hooke-törvényt:
+\begin{equation}
+    w = \frac{1}{2} c_{ijkl} \varepsilon_{ij} \varepsilon_{kl}
+\end{equation}
+Itt $c_{ijkl}$ a "rugalmatlansági" (stiffness) tenzor ($Pa$ nyomás dimenziójú, mivel feszültségtenzor is nyomás dimenziójú, az alakváltozás tenzor pedig dimenzió nélküli). Ebből pedig következik, hogy a $c_{ijkl}$ tenzornak teljesen szimmetrikusnak kell lennie az indexek felcserélésére nézve, mert ez az indexcsere az energia sűrűség
+értékét nem változtathatja meg, vagyis az energiát se módosítja. A Newtoni fizika szerint pedig az energiából minden mennyiség kiszámolható, ezért az indexek felcserélésének nem szabad
+megváltoztatnia a rendszert. Tehát a $c_{ijkl}$ tenzor minden indexre szimmetrikus, így már csak 21 független komponense van (Mivel $c_{ijkl} = c_{klij}$ ezért felirhatom a rugalmatlansági tenzort mint egy 6x6 mátrix $c_{IJ}$ és egy szimmetrikus 6x6 mátrix független komponensei: $\frac{6(6 + 1)}{2} = 21$).
+Ez a szám még tovább csökkenhet, ha olyan anyagokat veszünk amik makroszkópikus szempontból forgatásra invariánsak (izotróp anyagok). Nem izotróp anyagok pl. a kristályos anyagok melyek kristályszerkezetük miatt lehetnek irányfüggőek.
+Az izotóp anyagok energiasűsége tehát csak a következő formában írható fel:
+\begin{equation}
+    w = \frac{1}{2} \lambda (\hat{\varepsilon}_{lk})^2 + \mu \hat{\varepsilon}_{ij} \hat{\varepsilon}_{ij}
+\end{equation}
+Ahol $\lambda$ és $\mu$ a Lamé állandók, melyek anyagra jellemzőek. Ebből pedig a feszültség tenzor:
+\begin{equation}
+    \sigma_{op} = \lambda \delta_{op} \varepsilon_{ll} + 2 \mu \varepsilon_{op}
+\end{equation}
+ahol $\delta_{op}$ a Kronecker-delta. Ezt kicsit átrendezve:
+\begin{equation}
+    \sigma_{op} = \lambda \delta_{op} \hat{\varepsilon}_{ll} + 2 \mu \left(\varepsilon_{op} - \frac{1}{3} \delta_{op} \hat{\varepsilon}_{ll}\right) + \frac{2}{3} \mu \delta_{op} \hat{\varepsilon}_{ll}
+\end{equation}
+\begin{equation}
+    \sigma_{op} = \left(\lambda + \frac{2}{3} \mu\right) \underbrace{\delta_{op} \hat{\varepsilon}_{ll}}_{\text{térfogati deformáció - kompresszió}} + 2 \mu \underbrace{\left(\varepsilon_{op} - \frac{1}{3} \delta_{op} \hat{\varepsilon}_{ll}\right)}_{\text{térfogati deformáció nélküli rész - Nyírás}}
+\end{equation}
+Innen látszik, hogy a $\mu$ a nyírási modulusz, a $\lambda + \frac{2}{3} \mu$ pedig a kompressziós modulusz (majdnem, mert az 3D-ben van).
+Innen a Young modulus és a Poisson arány is kifejezhető a Lamé állandók segítségével:
+\begin{equation}
+    E = \frac{\mu (3 \lambda + 2 \mu)}{\lambda + \mu}
+\end{equation}
+\begin{equation}
+    \nu = \frac{\lambda}{2(\lambda + \mu)}
+\end{equation}
+
+\subsection{Folyadékok tulajdonságai, hidrosztatika, felületi feszültség, görbületi nyomás, felhajtóerő}
+A folyadékokat és a gázokat általában külön kezeljük a folytonos szilárd anyagoktól, pedig fizikailag nagyon hasonlóan lehet őket kezelni, csak 
+más paraméterekkel. Tehát a folyadékok (és gázok) statikai feltétele hasonlóan néz ki a szilárd anyagokhoz:
+\begin{equation}
+    \bold{f} + div \hat{\sigma} = 0
+\end{equation}
+Ahol a $\bold{f}$ a külső erősűrűség (pl. gravitációs erő), és a $\hat{\sigma}$ a feszültség tenzor. Viszont a folyadékoknál a feszültség tenzor
+másképp néz ki, hisz a folyadékokban csak normális feszültségek lehetnek, nyírófeszültségek nem (kísérleti tapasztalat). Ezért a feszültség tenzor diagonális lesz:
+\begin{equation}
+    \Delta \bold{F} = \hat{\sigma} \Delta \bold{A} = \begin{bmatrix}
+        \sigma_{xx} & 0 & 0 \\
+        0 & \sigma_{yy} & 0 \\
+        0 & 0 & \sigma_{zz}
+    \end{bmatrix} \begin{bmatrix}
+        \Delta A_x \\
+        \Delta A_y \\
+        \Delta A_z
+    \end{bmatrix}
+\end{equation}
+\begin{equation}
+    \Delta \bold{F} = - p \Delta \bold{A}
+\end{equation}
+\begin{equation}
+    \sigma_{ij} = -p \delta_{ij} \quad \rightarrow \quad \hat{\sigma} = \begin{bmatrix}
+        -p & 0 & 0 \\
+        0 & -p & 0 \\
+        0 & 0 & -p
+    \end{bmatrix}
+\end{equation}
+Ahol $p$ a folyadék nyomása. Ezt visszahelyettesítve a statikai egyenletbe:
+\begin{equation}
+    div \hat{\sigma} = \sum_{j = 0}^{3}\frac{\partial \sigma_{ij}}{\partial x_j} = - \sum_{j = 0}^{3} \frac{\partial p \delta_{ij}}{\partial x_j} = - grad(p)
+\end{equation}
+\begin{equation}
+    \bold{f} - grad(p) = 0
+\end{equation}
+Ezt nevezik Pascal-törvénynek. A negatív előjel konvenció miatt van itt, hisz a nyomás a felületre merőleges befelé ható erőként van definiálva.
+Ha a külső erő a gravitáció, akkor:
+\begin{equation}
+    \bold{f} = - \varrho \bold{g}
+\end{equation}
+Ekkor a Pascal-törvény:
+\begin{equation}
+    - \varrho \bold{g} - grad(p) = 0
+\end{equation}
+A gravitációs gyorsulást fel lehet írni egy potenciál segítségével is:
+\begin{equation}
+    \bold{g} = - grad(\phi) \quad \text{ahol } \phi = gz
+\end{equation}
+Ezt visszahelyettesítve a Pascal-törvénybe:
+\begin{equation}
+    grad(p) + \varrho grad(\phi) = 0
+\end{equation}
+Itt két ismeretlen van, a $p$ és a $\varrho$ ezért szükség van egy további összefüggésre, ami a $\varrho (p)$-t határozza meg.
+Ehhez vehetjük a termodinamikából ismert állapotegyenleteket:
+\begin{equation}
+    pV = \frac{m}{M}RT \quad \quad \frac{p}{\varrho} = \frac{RT}{M} \quad \quad -V \frac{dp}{dV} = K
+\end{equation}
+Ahol $K$ a kompresszibilitás, ami egy anyagra jellemző állandó. Itt viszont van egy probléma, mégpedig, hogy ha nagy a kompresszió modulusz,
+akkor a sűrűség nem fog jelentősen változni a nyomás hatására. Ezért a folyadékoknál és szilárd anyagoknál a sűrűség állandónak vehető,
+így a Pascal-törvényből a következő egyenletet kapjuk:
+\begin{equation}
+    grad(p + \varrho \phi) = 0 \quad \rightarrow \quad p + \varrho \phi = \text{állandó}
+\end{equation}
+Ez azt jelenti, hogy a folyadékban a nyomás és a potenciál összege állandó, vagyis a folyadékok felszíne a potenciáltér ekvipotenciális felületét veszi fel.
+Innen ered, hogy a víz felszíne mindig vízszintes lesz. Gravitációs térben beírhatjuk a potenciált:
+\begin{equation}
+    \phi = - g h
+\end{equation}
+\begin{equation}
+    p - \varrho g h = \text{állandó} = p_0
+\end{equation}
+\begin{equation}
+    p = p_0 + \varrho g h
+\end{equation}
+Ahol $p_0$ a folyadék felszínén lévő nyomás. Ebből az egyenletből látszik, hogy a folyadékban a nyomás a mélységgel lineárisan növekszik. Ezt 
+hidrosztatikai nyomásnak nevezzük.
+
+Vegyünk egy képzeletbeli kockát a folyadékban és nézzük meg, hogy a kockára ható erők hogyan néznek ki:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{imgs/4-tetel/hidrosztatikai_nyomas.png}
+    \caption{Hidrosztatikai nyomás egy kockán}
+\end{figure}
+Ekko a felületre ható erők:
+\begin{equation}
+    F_{\text{felül}} = \varrho_{\text{víz}} g x A \quad \quad F_{\text{alul}} = - \varrho_{\text{víz}} g (x + h) A
+\end{equation}
+Tehát a kockára ható eredő erő:
+\begin{equation}
+    F_{\text{f}} = F_{\text{felül}} + F_{\text{alul}} = - \varrho_{\text{víz}} g \underbrace{A h}_{V}
+\end{equation}
+Ahol $F_f$ a felhajtóerő, ami a kockára hat. Ez az erő felfelé hat, tehát ellentétes irányú a gravitációs erővel. Ez az erő megegyezik a kocka által kiszorított folyadék súlyával.
+Ezt az eredményt Archimédész törvényének nevezzük. Ezt onnan is levezethetjük, hogy vesszük a kockára ható külső erő sűrűségét:
+\begin{equation}
+    div \hat{\sigma} = - \bold{f} = - \varrho \bold{g}
+\end{equation}
+Ezt integrálva a kocka térfogatára:
+\begin{equation}
+    \int_{V} div \hat{\sigma} dV = - \int_{V} \varrho \bold{g} dV
+\end{equation}
+Alkalmazva a Gauss-tételt a bal oldalon:
+\begin{equation}
+    \oint_{F} \hat{\sigma} \cdot d\bold{A} = - \int_{V} \varrho \bold{g} dV
+\end{equation}
+A bal oldalon a kockára ható összes erőt kapjuk, a jobb oldalon pedig a kocka térfogatára ható gravitációs erőt. Tehát:
+\begin{equation}
+    \bold{F}_f = - \varrho \bold{g} V
+\end{equation}
+Ez pedig pontosan az Archimédész törvénye. Itt figyelni kell arra, hogy bár a test térfogata szerint integrálunk, a víz sűrűségét kell venni,
+mert a víz által kifejtett erőket számoljuk, és nem "látunk bele" a testbe.
+
+Téjünk vissza a Pascal-törvényhez:
+\begin{equation}
+    \bold{f} - grad(p) = 0 \quad \quad \frac{p}{\varrho} = \frac{R}{M} T \quad \quad T = \text{állandó}
+\end{equation}
+Ebből a következő egyenletet kapjuk:
+\begin{equation}
+    grad(p) - \frac{M}{R T} p \bold{g} = 0 \quad \quad \varrho = \frac{M}{R T} p
+\end{equation}
+Itt $\bold{g}$ lefele mutat, tehát csak a $z$ irányú tagok számítanak:
+\begin{equation}
+    \frac{dp}{dz} = - \frac{M}{R T} p g
+\end{equation}
+Ebből kaptunk egy egyenletet a $p(z)$-re, állandó hőmérséklet mellett, ideális gázra. Ennek a megoldása:
+\begin{equation}
+    p(z) = p_0 e^{- \frac{M g}{R T} z}
+\end{equation}
+Ahol $p_0$ a $z = 0$ magasságban lévő nyomás. Ebből pedig a sűrűség:
+\begin{equation}
+    \varrho(z) = \frac{M}{R T} p_0 e^{- \frac{M g}{R T} z} = \varrho_0 e^{- \frac{M g}{R T} z}
+\end{equation}
+Ahol $\varrho_0$ a $z = 0$ magasságban lévő sűrűség. Tehát ideális gáz esetén a nyomás és a sűrűség exponenciálisan csökken a magassággal.
+Ezt nevezik Barometrikus magasságformulának. Ha az $M = m A$ (moláris tömeg) átírást bevezetjük (ahol $m$ az egy részecske tömege, és $A$ a Avogadro szám), akkor a következő alakot kapjuk:
+a nyomásra és sűrűségre:
+\begin{equation}
+    p(z) = p_0 e^{- \frac{m A g}{R T} z} \quad \quad \varrho(z) = \varrho_0 e^{- \frac{m A g}{R T} z}
+\end{equation}
+Ezt úgy is értelmezhetjük, mint annak a valószínűségét, hogy egy $m$ tömegű részecskét a $z$ magasságban találunk.
+
+\subsubsection*{Felületi feszültség}
+Láttuk tehát, hogy a folyadékok alakját a potenciáltér ekvipotenciális felületei határozzák meg általában. Viszont kis méretű folyadékoknál megfigyelhető
+egy extra hatás is ami képes az alakot megváltoztatni. Például ha egy kis cseppet helyezünk egy sima felületre, akkor a csepp alakja nem egy lapos korong lesz,
+ hanem egy gömbszelet, tehát valamilyen erő összehúzza a cseppet. Ezt az erőt meg is tudjuk mérni, ha veszünk egy kis keretet, aminek az egyik oldala mozgatható, és a keretet
+belemártjuk szappanos vízbe (mert a szappan lipidjei miatt ennek a folyadéknak nagy lesz ez az erő a tiszta vízhez képest), majd kihúzzuk. Ekkor a keret egyik oldalán egy vékony folyadékréteg képződik, és a mozgó oldalt megpróbálja visszahúzni a folyadék.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/4-tetel/feluleti_feszultseg.png}
+    \caption{Felületi feszültség mérésének elve}
+\end{figure}
+
+Ez az erő a kísérleti tapasztalatok szerint arányos a keret hosszával:
+\begin{equation}
+    F = 2 \alpha l
+\end{equation}
+Ahol az $\alpha$ a felületi feszültség, ami anyagra jellemző mennyiség és a mértékegysége $N/m$ (vagy $J/m^2$).
+Ha a keretnek a mozgó oldalát egy $dx$ távolsággal elmozdítjuk, akkor a folyadék felülete megnő, de a mért erő nem fog változni.
+Tehát az elmozdíás során végzett munka:
+\begin{equation}
+    dW = F dx = 2 \alpha l dx = \alpha dA
+\end{equation}
+Ahol $dA = 2 l dx$ a folyadék felületének a növekedése. Itt látszik, hogy miért kellett a 2-es az erő képletébe, hisz a folyadékrétegnek két oldala is van és mindkettő megnő.
+Innen definiálhatjuk a felületi feszültséget mint a felület növekedésre végzett munka és a felület növekedés hányadosa:
+\begin{equation}
+    \alpha = \frac{dW}{dA}
+\end{equation}
+Tehát a felületi feszültség azt méri, hogy mennyi munkát kell végezni egy adott felület növeléséhez. Ezért a folyadékok
+mindig arra törekszenek, hogy a felületüket minimalizálják, hisz így a felületi feszültség miatt kevesebb munkát kell végezniük.
+Ezért a kis cseppek gömb alakúak, hisz a gömbnek van a legkisebb felülete adott térfogat mellett. 
+
+\subsubsection*{Görbületi nyomás}
+Láttuk, hogy a felületi feszültség miatt a folyadékok a felületüket minimalizálni akarják. Ezért ha egy folyadék egy kis cseppben van,
+akkor gömb alakú lesz. Viszont minél nagyobb a csepp, annál nehezebben tartja meg a gömb alakját, és annál inkább hajlamos a deformációra.
+Tehát a cseppnek meglehet határozni egy kritikus méretét, ahol már nem tudja megtartani a gömb alakját. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{imgs/4-tetel/csepp_kritikus.png}
+    \caption{Csepp kritikus mérete}
+\end{figure}
+Ekkor felírhatjuk a következő összefüggést:
+\begin{equation}
+    \alpha_{\text{üveg-víz}} \Delta l = \alpha_{\text{üveg-levegő}} \Delta l + \alpha_{\text{víz-levegő}} \cos \phi \Delta l
+\end{equation}
+Ahol $\alpha_{\text{üveg-víz}} \Delta l$ a csepp által a felületre kifejtett erő, az $\alpha_{\text{üveg-levegő}} \Delta l$ a felület által a cseppre kifejtett erő,
+és az $\alpha_{\text{víz-levegő}} \cos \phi \Delta l$ a csepp súlya. Ebből az egyenletből kifejezve a kritikus feltételt: 
+\begin{equation}
+    \frac{\alpha_{\text{üveg-víz}} - \alpha_{\text{üveg-levegő}}}{\alpha_{\text{víz-levegő}}} = \cos \phi
+\end{equation}
+Ez az eredmény viszont nem feltétlenül létezik, hisz a jobb oldalon a $\cos \phi$ csak -1 és 1 között vehet fel értékeket. Tehát, ha nem tudjuk teljesíteni az egyenletet,
+akkor a csepp már nem tudja megtartani a gömb alakját, és elfolyik a felületen.
+
+Nézzük meg most, hogy mi szükséges ahhoz, hogy a folyadék által felvett felület alakja stabil maradjon.
+Ehhez vegyünk egy görbült felületet, amin a folyadék van, és nézzük meg, hogy a felületi feszültség hogyan hat a felületre:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/4-tetel/gorbulet.png}
+    \caption{Görbült felület és a felületi feszültség hatása}
+\end{figure}
+
+Ekkor nekem csak a lefelé ható erőkomponenst kell figyelembe vennem, hisz a vízszintes komponensek kioltják egymást. Tehát a felületi feszültségből származó erőkomponens:
+\begin{equation}
+   \Delta F_{\downarrow} = 2 \alpha \Delta s_2 \cdot sin \varphi
+\end{equation}
+Kis szög esetén a $sin \varphi \approx \varphi$ ezért:
+\begin{equation}
+    \varphi \approx \frac{\Delta s_1}{2 R_1}
+\end{equation}
+Tehát az erőkomponens:
+\begin{equation}
+    \Delta F_{\downarrow} = \frac{\Delta s_1 \Delta s_2}{R_1} \alpha + \frac{\Delta s_1 \Delta s_2}{R_2} \alpha
+\end{equation}
+Ahol $R_1$ és $R_2$ a felület két fő görbületi sugara. Ezt az erőt kell a nyomáskülönbségnek ellensúlyoznia:
+\begin{equation}
+    P_g = \left(\frac{1}{R_1} + \frac{1}{R_2}\right) \alpha
+\end{equation}
+Ahol $P_g$ a görbületi nyomás, ami a folyadék belsejében és a külsejében lévő nyomás különbségét adja meg. Ebből látszik, hogy minél kisebb a görbületi sugár,
+annál nagyobb a nyomáskülönbség, amit a felületi feszültségnek ki kell egyenlítenie.
+
+Ezt az eredményt onnan is megkaphatjuk, hogy vesszük a feszültség tenzort a felület két oldalára:
+\begin{equation}
+    \Delta \bold{F_1} = \hat{\sigma_1} \Delta \bold{A} \quad \quad \Delta \bold{F_2} = - \hat{\sigma_2} \Delta \bold{A}
+\end{equation}
+Ahol a $\hat{\sigma_1}$ a folyadék belsejében lévő feszültség tenzor, a $\hat{\sigma_2}$ pedig a folyadék külsejében lévő feszültség tenzor és $\bold{A}$ a felület vektora.
+A felület két oldalán nem ugyan akkora az erő merőleges komponense, ezért görbül meg a felület. Ezt átírhatjuk a következő alakra:
+\begin{equation}
+    \Delta \bold{F}_{\bot}^1 = \bold{n} \hat{\sigma_1} \bold{n} \Delta A \quad \quad \Delta \bold{F}_{\bot}^2 = -  \bold{n} \hat{\sigma_2} \bold{n} \Delta A
+\end{equation}
+Ahol $\bold{n}$ a felület normálvektora. Itt a $\hat{\sigma} \bold{n}$ a Cauchy-elv szerint a $\bold{T}$ "húzó" vektort adja meg ami az erőt adja meg egy egységnyi felületen ($Pa$),
+ $\bold{n} \hat{\sigma} \bold{n}$ pedig az erők merőleges komponensét. Viszont ha a feszültség tenzort két oldalról beszorozzuk a normálvektorral,
+akkor egy ugrást kapunk a függvényben, és ezt az ugrást a görbületi nyomás adja meg:
+\begin{equation}
+    \left[\bold{n} \hat{\sigma} \bold{n}\right] = \alpha \left(\frac{1}{R_1} + \frac{1}{R_2}\right) \quad \rightarrow \quad \text{Ugrás mértéke}
+\end{equation}
+Ezt az egyenletet nevezik Young-Laplace egyenletnek, és a görbületi nyomást szokás Laplace-nyomásnak is nevezni.
+
+\subsubsection*{Példa: Kapilláris jelenség}
+A kapilláris jelenség során egy vékony csőbe folyadékot helyezünk, és megfigyeljük, hogy a folyadék a csőben eltér a külső folyadékszinttől.
+Ez a jelenség a felületi feszültség és a folyadék és a cső anyaga közötti tapadás miatt jön létre. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/4-tetel/kapillaritas.png}
+    \caption{Kapilláris jelenség}
+\end{figure}
+A kapilláris jelenség során a folyadék a csőben egy $h$ magasságra emelkedik vagy süllyed a külső folyadékszinthez képest. Ezt a magasságot 
+az energia függvényében felírhatjuk:
+\begin{equation}
+    E(h) = \underbrace{\varrho r^2 \pi h g \cdot \frac{h}{2}}_{\text{potenciális energia}} + \underbrace{2 \pi r h \alpha_{\text{víz-cső}} - 2 \pi r h \alpha_{\text{víz-levegő}}}_{\text{felületi energia}}
+\end{equation}
+A felületi energia két tagból áll, az egyik a cső és a víz közötti felület növekedésből származik, a másik pedig a víz és a levegő közötti felület csökkenéséből.
+A kapilláris egyensúlyi magasságot úgy kapjuk meg, hogy az energiát minimalizáljuk:
+\begin{equation}
+    \frac{dE(h)}{dh} = 0
+\end{equation}
+\begin{equation}
+    \frac{dE(h)}{dh} = \varrho r^2 \pi g h + 2 \pi r \alpha_{\text{víz-cső}} - 2 \pi r \alpha_{\text{víz-levegő}} = 0
+\end{equation}
+Ebből kifejezve az egyensúlyi magasságot:
+\begin{equation}
+    h = \frac{2 (\alpha_{\text{víz-levegő}} - \alpha_{\text{víz-cső}})}{\varrho r g}
+\end{equation}
+
+\subsection{Áramlások jellemzése, Bernoulli-egyenlet,  tökéletes folyadék áramlása, Euler-egyenletek}
+A hidrosztatika vizsgálata után már felfedesztünk néhány fontos jellemzőét a folyadékoknak, most nézzük meg, hogy dinamikában milyen tuléajdonságai lesznek fontosak:
+\begin{equation}
+    p(\bold{r}, t), \varrho(\bold{r}, t), \bold{v}(\bold{r}, t) \quad \rightarrow \quad \text{Mozgó folyadékok legfontosabb jellemzői}
+\end{equation}
+Ahol $p(\bold{r}, t)$ a nyomás, $\varrho(\bold{r}, t)$ a sűrűség, és $\bold{v}(\bold{r}, t)$ a sebességmező. Ezek az értékek mind függnek a helytől és az időtől is.
+Ezek a változók nem függetlenek egymástól, hisz a sűrűség és a nyomás között van egy összefüggés (állapotegyenlet), és a sebesség is hatással van a nyomásra
+és a sűrűségre is. Ezeket az összefüggéseket a folyadékdinamika egyenletei írják le.
+Van egy dolog amitől a folyadékok mozgása során se tudunk eltekinteni, mégpedig az anyagmegmaradás törvényétől. 
+Ez azt jelenti, hogy egy adott felületen áthaladó anyagmennyiségnek meg kell egyeznie a felület előtt és után lévő anyagmennyiséggel.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/4-tetel/anyagmegmaradas.png}
+    \caption{Felület áthaladó anyagmennyiség}
+\end{figure}
+Itt $\Delta m$ a felületen áthaladó anyagmennyiség, $\Delta A$ a felület nagysága, $\Delta t$ az időintervallum.
+Itt egy időegység alatt egy felületegységen áthaladó anyagmennyiség: $\varrho \bold{v} \cdot \bold{n} \Delta A$, ahol $\bold{v} \cdot \bold{n}$ a sebességnek a felületre merőleges komponense.
+Ebből az anyagmegmaradás egyenlete:
+\begin{equation}
+    \Delta m = - \oint \underbrace{\varrho \Delta t (\bold{v} \cdot \bold{n}) dA}_{\text{kis felületen felületen áthaladó anyagmennyiség}}
+\end{equation}
+De a tömeget át tudom írni a sűrűség és a térfogat szorzataként is:
+\begin{equation}
+    \Delta \int \varrho dV = - \oint \varrho \Delta t (\bold{v} \cdot \bold{n}) dA
+\end{equation}
+A negatív előjel azért van, mert a felületen kívülre áramló anyagmennyiséget vonjuk ki a térfogatban lévő anyagmennyiségből. Ezt az egyenletet átírhatom a Gauss-tétel segítségével:
+\begin{equation}
+    \int \frac{\partial \varrho}{\partial t} dV = - \oint \varrho \Delta t (\bold{v} \cdot \bold{n}) dA = - \int div(\varrho \bold{v}) dV
+\end{equation}
+Mivel ez az egyenlet bármely térfogatra igaz, ezért a következő differenciálegyenletet kapjuk:
+\begin{equation}
+    \frac{\partial \varrho}{\partial t} + div(\varrho \bold{v}) = 0
+\end{equation}
+Ezt az egyenletet nevezik kontinuitási egyenletnek, és ez az anyagmegmaradás differenciálegyenlete folyadékok esetén. Ez az egyenlet nagyon hasonló 
+az elektromosságtanban megismert töltésmegmaradás egyenletéhez. Itt azt is megfigyelhetjük, hogy ha a sűrűség állandó (stacionárius áramlás), akkor a divergencia
+nulla lesz:
+\begin{equation}
+    div(\bold{v}) = 0 \quad \text{(stacionárius áramlás esetén)}
+\end{equation}
+Tehát a kontinuitási egyenlet tovább egyszerűsödik:
+\begin{equation}
+    div(\varrho \bold{v}) = 0
+\end{equation}
+Ennek a következménye, hogy egy áramlási csőben a keresztmetszet, sűrűség és a sebesség szorzata állandó:
+\begin{equation}
+    A_1 v_1 \varrho_1 = A_2 v_2 \varrho_2
+\end{equation}
+\begin{equation}
+    A v \varrho = \text{állandó}
+\end{equation}
+Tehát ha a cső felülete egy részen megnő (nagyobb a keresztmetszet), akkor a sebességnek csökkennie kell, hogy az anyagmegmaradás teljesüljön.
+Erre az eredményre felírhatjuk a munkatétel definícióját is:
+\begin{equation}
+  \frac{\Delta m}{2} (v_2^2 - v_1^2) = \Delta E_{\text{kin}}
+\end{equation}
+Ennek meg kell egyeznie a külső és belső erők által végzett munkával (ami az erő és az elmozdulás szorzata):
+\begin{equation}
+   \Delta W = p_1 A_1 v_1 \Delta t - p_2 A_2 v_2 \Delta t + \Delta \delta W_b
+\end{equation}
+Ahol $\Delta \delta W_b$ a belső erők által végzett munka. Még egy összefüggést fel tudunk írni a tömeg alapján:
+\begin{equation}
+    \Delta m = \varrho_1 A_1 v_1 \Delta t = \varrho_2 A_2 v_2 \Delta t = \varrho A \Delta V \Delta t
+\end{equation}
+Tehát a kinematikai energia megváltozásának egyenlőnek kell lennie a külső és belső erők által végzett munkával. De még egy közelítéssel élhetünk,
+mégpedig, hogy a folyadékunk ideális (tehát nincs belső súrlódás, viszkozitás és összenyomhatatlan). Ekkor a belső erők által végzett munka nulla lesz,
+és a teljes egyenlet a következő alakot ölti:
+\begin{equation}
+    \frac{\varrho A \Delta V \Delta t}{2} (v_2^2 - v_1^2) = p_1 A_1 v_1 \Delta t - p_2 A_2 v_2 \Delta t
+\end{equation}
+Ebből kifejezve a következő egyenletet kapjuk:
+\begin{equation}
+    \frac{v_2^2}{2} - \frac{v_1^2}{2} = \frac{p_1 A_1 v_1 \Delta t}{\varrho_1 A_1 v_1 \Delta t} - \frac{p_2 A_2 v_2 \Delta t}{\varrho_2 A_2 v_2 \Delta t}
+\end{equation}
+\begin{equation}
+    \frac{v_2^2}{2} - \frac{v_1^2}{2} = \frac{p_1}{\varrho_1} - \frac{p_2}{\varrho_2}
+\end{equation}
+\begin{equation}
+    \frac{p_1}{\varrho_1} + \frac{v_1^2}{2} = \frac{p_2}{\varrho_2} + \frac{v_2^2}{2}
+\end{equation}
+Innen pedig következik, hogy bármely két pont között a következő összefüggés fennáll:
+\begin{equation}
+    \frac{p}{\varrho} + \frac{v^2}{2} = \text{állandó}
+\end{equation}
+Ezt az egyenletet Bernoulli-egyenletnek nevezzük, és ez az ideális folyadékok áramlásának egyik legfontosabb egyenlete. Ez az egyenlet azt mondja ki, hogy egy adott pontban a nyomás
+és a kinetikai energia összege állandó marad. Ez azt is jelenti, hogy ha egy pontban a sebesség megnő, akkor a nyomásnak csökkennie kell, és fordítva.
+Ezt az egyenletet fel tudjuk írni egy adott magasságra is, ha figyelembe vesszük a gravitációs potenciális energiát is:
+\begin{equation}
+    \frac{p}{\varrho} + \frac{v^2}{2} + \phi = \text{állandó}
+\end{equation}
+Ezt az egyenletet is Bernoulli-egyenletnek nevezzük, és ez már a magasság hatását is figyelembe veszi. Itt a $\phi = gh$ a gravitációs potenciál.
+Ez az egyenlet is azt mondja ki, hogy a nyomás, kinetikai energia és potenciális energia összege állandó marad egy adott pontban.
+\newline
+\newline
+Most nézzük meg, hogy hogyan módosul a Bernoulli-egyenlet, ha az ideális folyadék helyett egy ideális gázzal dolgozunk.
+Ehhez vegyük figyelembe a belső energia megváltozását is, hisz a gázoknál ez is fontos szerepet játszik az áramlás során.
+Felírhatjuk hőmérséklet megváltozását a belső energia és a munka segítségével:
+\begin{equation}
+    \delta Q = \delta U + \delta W_b
+\end{equation}
+Ahol $\delta Q$ a gáz által felvett hőmennyiség, $\delta U$ a belső energia megváltozása, és $\delta W_b$ a belső erők által végzett munka.
+Ezt átírhatjuk a következő alakra:
+\begin{equation}
+    \delta W_b = \delta Q - \delta U
+\end{equation}
+Itt feltételezzük, hogy a folyamat elég gyorsan megy végbe, így a hőcsere elhanyagolható, tehát $\delta Q = 0$. Ez egy axiomatikus közelítés az ideális gázokra.
+Ekkor a belső erők által végzett munka:
+\begin{equation}
+    \delta W_b = - \delta U
+\end{equation}
+A belső energia megváltozása pedig felírható a következő alakban az állapotegyenlet segítségével:
+\begin{equation}
+    dU = \Delta m C_V T 
+\end{equation}
+Ahol $C_V$ a fajhő állandó térfogaton. A $T$ hőmérséklet egy új mennyiség bevezetését igényli, de ha felhasználom az ideális gáz állapotegyenletét,
+akkor el tudom tüntetni és nem kell vele külön foglalkozni:
+\begin{equation}
+    pV = \frac{m}{M} RT \quad \rightarrow \frac{p}{\varrho} = \frac{RT}{M} \quad \rightarrow T = \frac{M p}{R \varrho}
+\end{equation}
+Tehát a belső energia megváltozása:
+\begin{equation}
+    dU = \Delta m C_V \frac{M}{R} \frac{p}{\varrho}
+\end{equation}
+A $\frac{R}{M}$ egyetemes gázállandó és a moláris tömeg hányadosától is "megszabadultunk", ha vesszük a fajhő összefüggését az ideális gázokra:
+\begin{equation}
+    C_p - C_V = \frac{R}{M} \quad \rightarrow \quad \frac{M}{R} = \frac{1}{C_p - C_V}
+\end{equation}
+Ahol $C_p$ a fajhő állandó nyomáson. Ezt beírva a belső energia megváltozásába:
+\begin{equation}
+    dU = \Delta m \frac{C_V}{C_p - C_V} \frac{p}{\varrho}
+\end{equation}
+\begin{equation}
+    dU = \Delta m \frac{1}{\frac{C_p}{C_V} -1} \frac{p}{\varrho}
+\end{equation}
+Itt bevezethetjük a $\kappa = \frac{C_p}{C_V}$ hőkapacitás hányadost, ami ideális gázokra jellemző mennyiség:
+\begin{equation}
+    dU = \Delta m \frac{1}{\kappa - 1} \frac{p}{\varrho}
+\end{equation}
+Ezt beírva a Bernoulli-egyenletbe:
+\begin{equation}
+    \frac{v_2^2}{2} - \frac{v_1^2}{2} = \frac{p_1}{\varrho_1} - \frac{p_2}{\varrho_2} - \frac{1}{\kappa - 1} \frac{p_2}{\varrho_2} + \frac{1}{\kappa - 1} \frac{p_1}{\varrho_1} = \frac{\kappa}{\kappa - 1} \left(\frac{p_1}{\varrho_1} - \frac{p_2}{\varrho_2}\right)
+\end{equation}
+Tehát fel lehet írni hogy:
+\begin{equation}
+\frac{v^2}{2} + \frac{\kappa}{\kappa - 1} \frac{p}{\varrho} \left(+ \phi\right)= \text{állandó}
+\end{equation}
+Ez az egyenlet az ideális gázok áramlásának Bernoulli-egyenlete. Ebből látszik, hogy a nyomás és a sebesség között fordított arányosság van, tehát ha a sebesség megnő,
+akkor a nyomás csökken, és fordítva.
+
+
+Az anyagmegmaradás miatt itt is felírhatjuk, hogy egy áramlási csőben a következő összefüggés fennáll:
+\begin{equation}
+    A v \varrho = \text{állandó} \quad \rightarrow \quad d(A v \varrho) = 0
+\end{equation}
+Tehát:
+\begin{equation}
+    A v d\varrho + A \varrho dv + v \varrho dA = 0
+\end{equation}
+\begin{equation}
+    \frac{d\varrho}{\varrho} + \frac{dv}{v} + \frac{dA}{A} = 0
+\end{equation}
+
+Végezetül nézzük meg, hogy hogyan illeszkedik ez az egész a folytonos közegek mozgásegyenletébe. Emlékezzünk, hogy az egyenlet a következő alakot ölti:
+\begin{equation}
+    \bold{f} + div \hat{\sigma} = \varrho \frac{d \bold{v}}{dt}
+\end{equation}
+Viszont itt a $\bold{v}$ nem egy sima vektor, hanem egy vektortér ($\bold{v} \rightarrow \bold{v}(\bold{x}, t)$), tehát az időbeli derivált egy komplexebb alakot ölt:
+\begin{equation}
+    \frac{d \bold{v}}{dt} \equiv \frac{\partial \bold{v}}{\partial t} + (\bold{v} \cdot \boldsymbol{\nabla}) \bold{v}
+\end{equation}
+Ez az úgynevezett anyagderivált, ami figyelembe veszi, hogy a folyadék részecskéi mozognak a térben. Ez a derivált láncszabály alapján jön létre és két tagból áll: az első tag a helyi időbeli változást méri,
+a második tag pedig a konvektív változást méri, ami a részecskék térbeli elmozdulásából származik. Ezt beírva a mozgásegyenletbe:
+\begin{equation}
+    \bold{f} + div \hat{\sigma} = \varrho \left(\frac{\partial \bold{v}}{\partial t} + (\bold{v} \cdot \boldsymbol{\nabla}) \bold{v}\right)
+\end{equation}
+Ez pedig a mozgásegyenlet folyadékokra. Ha ideális folyadékról beszélünk, akkor a feszültség tenzor csak a nyomásból áll:
+\begin{equation}
+    \hat{\sigma} = - p \hat{I}
+\end{equation}
+Ezt beírva a mozgásegyenletbe:
+\begin{equation}
+    \bold{f} - \boldsymbol{\nabla} p = \varrho \left(\frac{\partial \bold{v}}{\partial t} + (\bold{v} \cdot \boldsymbol{\nabla}) \bold{v}\right)
+\end{equation}
+Ez pedig az Euler-egyenlet ideális folyadékokra.
+
+\subsection{Viszkózus folyadék áramlása, örvények, turbulencia, Reynolds-szám}
+Most vizsgáljuk meg, hogy hogyan módosulnak az áramlás egyenletei, ha a folyadék nem ideális, hanem viszkózus. A viszkozitás a folyadékok belső súrlódását méri,
+ami azt jelenti, hogy a folyadék rétegei egymáshoz képest el tudnak mozdulni, de ez az elmozdulás ellenállást vált ki. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/4-tetel/viszkozitas.png}
+    \caption{Viszkozitás illusztráció}
+\end{figure}
+Az ellenállást a súrlódás okozza amely a folyadék egyes rétegei között lép fel, amikor azok egymáshoz képest elmozdulnak. Ha a folyadék egy csőben áramlik,
+akkor a cső falához közelebb lévő rétegek lassabban mozognak mivel súrlódnak a fallal, míg a cső közepén lévő rétegek gyorsabban mozognak, de ott is van súrlódás a rétegek között.
+Ezt a súrlódási hatást a viszkozitás anyagi jellemzője méri, amit $\eta$-val jelölünk, és a mértékegysége $Pa \cdot s$ (Pascal szor másodperc).
+A viszkozitás kísérleti tapasztalatok alapján a deformációs tenzor időbeli változásával arányos:
+\begin{equation}
+    \bold{\hat{\sigma}} = \underbrace{-p\bold{I}}_{\hat{\sigma} \leftarrow {\text{hidrosztatikus}}} +  \bold{\hat{\sigma}}'(\hat{\dot{\varepsilon}})
+\end{equation}
+Ez ugye eltér a szilárd anyagoktól, ahol a feszültség tenzor csak a deformációs tenzortól függött. Ha izotrópnak vesszük a folyadékot (tehát minden irányban ugyan olyan a viszkozitása),
+akkor a viszkozitás hatását a következő alakban tudjuk felírni:
+\begin{equation}
+    \sigma_{ij}' = 2 \eta \dot{\varepsilon}_{ij} + \eta' \delta_{ij} \dot{\varepsilon}_{kk}
+\end{equation}
+Ahol az első tag a nyírófeszültségeket méri, a második tag pedig a térfogati feszültségeket. Itt az $\eta$ a nyíró viszkozitás, az $\eta'$ pedig a térfogati viszkozitás.
+A deformációs tenzor időbeli változása pedig a következő alakban írható fel:
+\begin{equation}
+    \dot{\varepsilon}_{ij} = \frac{1}{2} \left(\frac{\partial v_i}{\partial x_j} + \frac{\partial v_j}{\partial x_i}\right)
+\end{equation}
+Ezt visszahelyettesítve a feszültség tenzorba:
+\begin{equation}
+    \sigma_{ij}' = \eta \left(\frac{\partial v_i}{\partial x_j} + \frac{\partial v_j}{\partial x_i}\right) + \eta' \delta_{ij} \frac{\partial v_k}{\partial x_k}
+\end{equation}
+Itt észrevehetjük, hogy $\frac{\partial v_k}{\partial x_k} = div(\bold{v})$, tehát a feszültség tenzor a következő alakot ölti:
+\begin{equation}
+    \sigma_{ij}' = \eta \left(\frac{\partial v_i}{\partial x_j} + \frac{\partial v_j}{\partial x_i}\right) + \eta' \delta_{ij} div(\bold{v})
+\end{equation}
+Mivel a folyadékok mozgásegyenletében a feszültség tenzor divergenciája szerepel, ezért vegyük mindkét oldal divergenciáját:
+\begin{equation}
+    \frac{\partial \sigma_{ij}'}{\partial x_j} = \eta \frac{\partial}{\partial x_j} \left(\frac{\partial v_i}{\partial x_j} + \frac{\partial v_j}{\partial x_i}\right) + \eta' \frac{\partial}{\partial x_j} \left(\delta_{ij} div(\bold{v})\right)
+\end{equation}
+\begin{equation}
+    \frac{\partial \sigma_{ij}'}{\partial x_j} = \eta \frac{\partial^2 v_i}{\partial x_j^2} + \eta \frac{\partial}{\partial x_i} \left(\frac{\partial v_j}{\partial x_j}\right) + \eta' \frac{\partial}{\partial x_i} \left(div(\bold{v})\right)
+\end{equation}
+\begin{equation}
+    \frac{\partial \sigma_{ij}'}{\partial x_j} = \eta \Delta v_i + (\eta + \eta') \frac{\partial}{\partial x_i} \left(div(\bold{v})\right)
+\end{equation}
+Tehát a teljes feszültség tenzor divergenciája:
+\begin{equation}
+    div \bold{\hat{\sigma}} = - \boldsymbol{\nabla} p + \eta \Delta \bold{v} + (\eta + \eta')  \boldsymbol{\nabla}\left(\boldsymbol{\nabla} \bold{v}\right)
+\end{equation}
+Ezt beírva a mozgásegyenletbe:
+\begin{equation}
+    \bold{f} - \boldsymbol{\nabla} p + \eta \Delta \bold{v} + (\eta + \eta')  \boldsymbol{\nabla}\left(\boldsymbol{\nabla} \bold{v}\right) = \varrho \left(\frac{\partial \bold{v}}{\partial t} + (\bold{v} \cdot \boldsymbol{\nabla}) \bold{v}\right)
+\end{equation}
+Ez pedig a Navier-Stokes egyenlet viszkózus folyadékokra.
+Látható, hogy ha a viszkozitás elhanyagolható, akkor visszaáll az Euler-egyenlet ideális folyadékokra. Ha pedig a folyadék összenyomhatatlan,
+akkor a divergencia nulla lesz, és a harmadik tag is eltűnik az egyenletből:
+\begin{equation}
+    \bold{f} - \boldsymbol{\nabla} p + \eta \Delta \bold{v} = \varrho \left(\frac{\partial \bold{v}}{\partial t} + (\bold{v} \cdot \boldsymbol{\nabla}) \bold{v}\right)
+\end{equation}
+A Navier-Stokes egyenlet egy nemlineáris parciális differenciálegyenlet, ami azt jelenti, hogy az egyenlet megoldása nem egyszerű feladat és sok esetben nem is lehet egzaktul megoldani.
+Van néhány "szép" megoldása, például a Couette-áromlás, ahol két párhuzamos lemez között áramlik a folyadék, de általánosságban véve numerikus módszerekkel kell megoldani az egyenletet.
+Általánosságban azt lehet mondani, hogy ha az egyenletben a viszkozitás dominál, akkor a folyadék áramlása lamináris lesz, míg ha a nemlineáris tag dominál, akkor az áramlás turbulens lesz.
+A turbulens áramlás egy olyan kaotikus áramlás amit csak statisztikai módszerekkel lehet jellemezni. 
+
+Ahhoz hogy meg tudjuk határozni, hogy egy adott áramlás lamináris vagy turbulens lesz-e,
+Bevezetünk pár közelítést a Navier-Stokes egyenletbe - a viszkozitást az $\eta$-s tag jellemzi, míg a nemlineáris tagot a $\left(\bold{v} \boldsymbol{\nabla}\right)\bold{v}$ tag.
+Itt bevezethetek egy karrakterisztikus hosszúságot $L$ ami a folyadék áramlásának jellemző méretét jelenti:
+\begin{equation}
+    \underbrace{\eta \Delta \bold{v}}_{\text{viszkozitás}} \sim \eta \frac{v}{L^2} \quad \quad \underbrace{\left(\bold{v} \boldsymbol{\nabla}\right)\bold{v}}_{\text{nemlineáris}} \sim \varrho \frac{v^2}{L}
+\end{equation}
+A karakterisztikus hosszúság és sebesség a folyadék áramlásának jellemző méreteit és sebességeit jelenti. Ezeknek az aránya pedig megmondja, hogy melyik tag dominál:
+\begin{equation}
+    Re = \frac{\eta \frac{v}{L^2}}{\varrho \frac{v^2}{L}} = \frac{\varrho}{\eta} v L
+\end{equation}
+Ezt az arányt Reynolds-számnak nevezzük, és ez egy dimenzió nélküli mennyiség, ami megmutatja, hogy egy adott áramlás lamináris vagy turbulens lesz-e.
+Általánosságban elmondható, hogy ha a Reynolds-szám kicsi (általában $Re < 2000$), akkor az áramlás lamináris lesz, míg ha a Reynolds-szám nagy (általában $Re > 4000$), akkor az áramlás turbulens lesz.
+Köztes értékeknél az áramlás átmeneti állapotban van, és mindkét típusú áramlás előfordulhat. A karakterisztikus hosszúságot általában a cső átmérőjét vagy a hidraulikus sugárát veszik alapul.
+
+Még egy fontos fogalom a viszkózus folyadékok áramlásában az örvények kialakulása. Az örvények olyan forgó mozgások a folyadékban, amelyek a viszkozitás és a sebességkülönbségek miatt jönnek létre.
+Az örvények kialakulása a Navier-Stokes egyenlet nemlineáris tagjának köszönhető, és ezek a mozgások jelentős hatással lehetnek a folyadék áramlására, különösen turbulens áramlás esetén.
+Az örvények jellemzéséhez alakítsuk át egy kicsit a Navier-Stokes egyenletet. Először nézzük meg ezt az azonosságot
+\begin{equation}
+    a \times (b \times c) = b(a \cdot c) - c(a \cdot b)
+\end{equation}
+Ezt alkalmazva a sebességvektorra:
+\begin{equation}
+    \bold{v} \times (\boldsymbol{\nabla} \times \bold{v}) = \underbrace{\boldsymbol{\nabla} \left(v^2\right)}_{\text{rossz!}} - \bold{v} (\bold{v} \boldsymbol{\nabla})
+\end{equation}
+Itt írjuk át $\bold{v} (\bold{v} \boldsymbol{\nabla})$-t $(\bold{v} \boldsymbol{\nabla})\bold{v}$-re, hogy jobban látszódjon, hogy mire hat a Nabla operátor. Illetve van egy kis probléma,
+mégpedig, hogy a $\boldsymbol{\nabla} \left(v^2\right)$ nem egészen ugyan az mint a $\boldsymbol{\nabla} \left(\bold{v} \cdot \bold{v}\right)$, ugyanis az utóbbiban csak az egyik vektor komponenseire hat a Nabla operátor,
+az előbbiben pedig a négyzetre. Ezt orvosolhatjuk egy kis trükkel:
+\begin{equation}
+    \bold{v} \times (\boldsymbol{\nabla} \times \bold{v}) = \boldsymbol{\nabla} \left(\frac{v^2}{2}\right) - (\bold{v} \boldsymbol{\nabla})\bold{v}
+\end{equation}
+Ezt átrendezve:
+\begin{equation}
+    (\bold{v} \boldsymbol{\nabla})\bold{v} = \boldsymbol{\nabla} \left(\frac{v^2}{2}\right) - \bold{v} \times (\boldsymbol{\nabla} \times \bold{v})
+\end{equation}
+Ezt beírva a Navier-Stokes egyenletbe:
+\begin{equation}
+    \bold{f} - \boldsymbol{\nabla} p + \eta \Delta \bold{v} = \varrho \left(\frac{\partial \bold{v}}{\partial t} + \boldsymbol{\nabla} \left(\frac{v^2}{2}\right) - \bold{v} \times (\boldsymbol{\nabla} \times \bold{v})\right)
+\end{equation}
+És ez miért érdekes? Mert a $\boldsymbol{\nabla} \times \bold{v} = rot(\bold{v})$ kifejezést a folyadék örvényességének nevezzük, és jelölése $\bold{\omega}$:
+\begin{equation}
+    \bold{\omega} = rot(\bold{v})
+\end{equation}
+És ez a mennyiség adja meg, hogy egy adott pontban mennyire "forog" a folyadék. Ha tudok olyan zárt görbét venni a folyadékban, ahol az örvényesség nem nulla,
+akkor ott örvénylés van jelen. Ha viszont nincsenek örvények, akkor a Navier-Stokes egyenlet a következő alakot ölti:
+\begin{equation}
+    \bold{f} - \boldsymbol{\nabla} p + \eta \Delta \bold{v} = \varrho \left(\frac{\partial \bold{v}}{\partial t} + \boldsymbol{\nabla} \left(\frac{v^2}{2}\right)\right)
+\end{equation}
+Most tegyük fel, hogy a folyadék stacionáriusan áramlik, tehát az időbeli derivált nulla lesz és a viszkozitás is elhanyagolható és külső erő sincsen:
+\begin{equation}
+    - \boldsymbol{\nabla} p = \varrho \boldsymbol{\nabla} \left(\frac{v^2}{2}\right)
+\end{equation}
+Ezt átrendezve:
+\begin{equation}
+    \boldsymbol{\nabla} \left(\frac{p}{\varrho} + \frac{v^2}{2}\right) = 0
+\end{equation}
+Tehát a következő összefüggést kapjuk:
+\begin{equation}
+    \frac{p}{\varrho} + \frac{v^2}{2} = \text{állandó}
+\end{equation}
+Ez pedig nem más mint a Bernoulli-egyenlet. Tehát a Bernoulli-egyenlet csak akkor érvényes, ha nincsenek örvények a folyadékban.
+
+\subsubsection*{Példa: Folyadék áramlása csőben}
+Nézzük meg egy egyszerű példán keresztül, hogy hogyan alkalmazhatjuk a Bernoulli-egyenletet és az anyagmegmaradást egy csőben áramló folyadék esetén.
+Tegyük fel, hogy van egy cső amiben egy ideális folyadék áramlik, és a cső keresztmetszete állandó, de a nyomás különbözik. Ekkor a következő egyenleteket tudjuk felírni:
+\begin{itemize}
+    \item $\boldsymbol{\nabla} \bold{p} = \eta \Delta \bold{v}$ Ahol a többi tagot elhagyjuk mivel lassan laminárisan áramló ideális folyadékról van szó.
+    \item $div( \bold{v}) = 0$ Az anyagmegmaradás differenciálegyenlete.
+    \item $\oint \bold{\hat{\sigma}} dA = 0$ Nincs külső erő hatás a folyadékra.
+\end{itemize}
+Ezekből a $div( \bold{v}) = 0$ automatikusan teljesül, ha a sebesség csak az áramlás irányába mutat és a keresztmetszet mentén állandó. Ekkor a probléma
+a következő alakban rajzolható fel:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/4-tetel/csoaramlas.png}
+    \caption{Folyadék áramlása csőben}
+\end{figure}
+Ekkor a felületintergálja a deformációs tenzornak a következő alakot ölti:
+\begin{equation}
+    \oint \bold{\hat{\sigma}} dA = \underbrace{\eta \frac{dv_x}{dr} 2 \pi r l}_{\text{nyírófeszültség felületi integrálja}} + \underbrace{p_1 \pi r^2 - p_2 \pi r^2}_{\text{palástokon csak nyomás számít}} = 0
+\end{equation}
+Innentől csak a $dv$ vízszintes komponensével fogunk foglalkozni ezért elhagyjuk a $x$ indexet. Átrendezve az egyenletet:
+\begin{equation}
+    \frac{dv}{dr} = \frac{p_2 - p_1}{2\eta l} \cdot r
+\end{equation}
+Ennek a differenciálegyenletnek pedig triviális megoldása van:
+\begin{equation}
+    v(r) = \frac{p_2 - p_1}{4 \eta l} \cdot r^2 + C
+\end{equation}
+Ezzel megkaptam a sebességet egy kis $r$ sugarú cső-tartományon belül, a cső belsejében. De kérdés, hogy mi lesz a $v(R)$ megoldása? Ezt a határfertelek alapján
+tudnánk megadni, de nem tudunk egzakt feltételt megadni, ugyanis a határfeltétel nagyban függ a cső anyagi tulajdonságaitól és a folyadék viszkozitásától is.
+De tegyük fel, hogy akkora a surlódás a cső és a folyadék között, hogy a falnál a sebesség nulla. Tehát:
+\begin{equation}
+    v(R) = 0 \quad \rightarrow \quad C = - \frac{p_2 - p_1}{4 \eta l} \cdot R^2
+\end{equation}
+Ezt beírva a sebesség kifejezésébe:
+\begin{equation}
+    v(r) = \frac{p_2 - p_1}{4 \eta l} \cdot (r^2 - R^2)
+\end{equation}
+Ez pedig a Poiseuille-féle áramlás egyenlete egy hengeres csőben. Ebből látható, hogy a sebesség a cső közepén a legnagyobb, és a fal felé közeledve csökken,
+végül a falnál nulla lesz. Ez a sebességprofil egy parabolikus görbét követ.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/4-tetel/poiseuille.png}
+    \caption{Poiseuille-féle áramlás egy hengeres csőben}
+\end{figure}
+Nézzük meg, hogy ezek alapján mennyi anyag áramlik át a csövön egy adott idő alatt. Ehhez a kontinuitási egyenletet használjuk:
+\begin{equation}
+    div(\varrho \bold{v}) + \frac{\partial \varrho}{\partial t} = 0
+\end{equation}
+Mivel ideális folyadékról van szó, ezért a sűrűség állandó, tehát a második tag eltűnik:
+\begin{equation}
+    div(\varrho\bold{v}) = 0
+\end{equation}
+Ebben a $div(\varrho\bold{v})$ adja meg az anyagmennyiséget egy adott felületen keresztül. Tehát ennek kell a felületi integrált vennünk a cső keresztmetszetén:
+\begin{equation}
+    \dot{\phi} = \int \varrho \bold{v} dA
+\end{equation}
+Ahol $\dot{\phi}$ az anyagmennyiség áramlási sebessége. Ennek a kiszámításához, vegyünk egy kis $\Delta r$ vastagságú gyűrűt a csőben, aminek a felülete:
+\begin{equation}
+    dA = 2 \pi r \Delta r
+\end{equation}
+Ezen a kis felületen a sebesség állandó, így a felületi integrál egyszerűen kiszámítható:
+\begin{equation}
+    \dot{\phi} = \int_0^R \varrho v(r) 2 \pi r dr
+\end{equation}
+Ezt behelyettesítve a sebesség kifejezésébe:
+\begin{equation}
+    \dot{\phi} = \int_0^R \varrho \frac{p_2 - p_1}{4 \eta l} \cdot (r^2 - R^2) 2 \pi r dr
+\end{equation}
+\begin{equation}
+    \dot{\phi} = \frac{2\pi\varrho}{4 \eta l} (p_2 - p_1) \cdot \int_0^R (r^3 - R^2 r) dr
+\end{equation}
+\begin{equation}
+    \dot{\phi} = \frac{2\pi\varrho}{4 \eta l} (p_2 - p_1) \cdot \left(\frac{R^4}{4} - \frac{R^4}{2}\right)
+\end{equation}
+\begin{equation}
+    \dot{\phi} = \frac{\pi \varrho}{8 \eta l} (p_1 - p_2) R^4
+\end{equation}
+Ez pedig a Poiseuille-törvény, ami megadja, hogy mennyi anyag áramlik át egy hengeres csövön keresztül egy adott idő alatt, ha a csőben egy ideális folyadék áramlik.
+Látható, hogy az áramlási sebesség arányos a nyomáskülönbséggel és a cső sugarának negyedik hatványával, míg fordítottan arányos a viszkozitással és a cső hosszával.
+Mivel a cső sugarának negyedik hatványával arányos az áramlás, ezért a cső átmérőjének kis változása is jelentős hatással van az áramlásra, ezért fontos, hogy
+nagy nyomású rendszereknél fokozottan figyeljünk a cső eltömődésére vagy szűkületére.
+
+\end{document}

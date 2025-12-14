@@ -41,13 +41,13 @@
   >
 ]>
 <requests version="1.0">
-  <internal package="biblatex" priority="9" active="0">
+  <internal package="biblatex" priority="9" active="1">
     <generic>latex</generic>
     <provides type="dynamic">
-      <file>zarovizsga.bcf</file>
+      <file>11-quantum_mechanics_basics.bcf</file>
     </provides>
     <requires type="dynamic">
-      <file>zarovizsga.bbl</file>
+      <file>11-quantum_mechanics_basics.bbl</file>
     </requires>
     <requires type="static">
       <file>blx-dm.def</file>
@@ -60,23 +60,23 @@
       <file>magyar.lbx</file>
     </requires>
   </internal>
-  <external package="biblatex" priority="5" active="0">
+  <external package="biblatex" priority="5" active="1">
     <generic>biber</generic>
     <cmdline>
       <binary>biber</binary>
-      <infile>zarovizsga</infile>
+      <infile>11-quantum_mechanics_basics</infile>
     </cmdline>
     <input>
-      <file>zarovizsga.bcf</file>
+      <file>11-quantum_mechanics_basics.bcf</file>
     </input>
     <output>
-      <file>zarovizsga.bbl</file>
+      <file>11-quantum_mechanics_basics.bbl</file>
     </output>
     <provides type="dynamic">
-      <file>zarovizsga.bbl</file>
+      <file>11-quantum_mechanics_basics.bbl</file>
     </provides>
     <requires type="dynamic">
-      <file>zarovizsga.bcf</file>
+      <file>11-quantum_mechanics_basics.bcf</file>
     </requires>
     <requires type="editable">
       <file>vizsga.bib</file>
