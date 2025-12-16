@@ -1525,168 +1525,99 @@ Néhány első Hermite-polinom:
     \end{aligned}    
 \end{equation*}
 
-\subsubsection{!Rotátor}
-A rotátor egy olyan kvantummechanikai rendszer, amely egy merev test forgását írja le egy adott tengely körül. A legegyszerűbb eset a diatomikus molekula, amely két atomot köt össze egy merev kötés. A rotátor modellje fontos szerepet játszik a molekuláris spektroszkópiában és a kvantummechanikai rendszerek forgási energiáinak leírásában.
-Ahhoz, hogy a rotátort értelmezni tudjuk, ki kell terjesztenünk a Schrödinger-egyenletet három dimenzióra. Ekkor az egyenlet mind a három térkoordinátától függeni fog, ezért a derivált a Laplace operátorra fog módosulni:
+\subsubsection{Rotátor}
+Képzeljünk el egy olyan kvantummechanikai rendszert, ahol két részecske ($m_1$ és $m_2$ tömeggel) egy tömeg nélküli, $a$ hosszúságú rúddal van összekötve,
+és szabadon foroghat a tér három irányába a kötött súlypontja körül. Ezt a rendszert nevezik \textbf{rotátornak}, és egyszerű molekulál modellezésére gyakran használatos.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{imgs/3-tetel/rotator.png}
+    \caption{Rotátor modell}
+\end{figure}
+
+Először nézzük meg a megengedett energia szinteket. A klasszikus rotátor kinetikus energiája a következőképpen írható fel:
 \begin{equation}
-    - \frac{\hbar^2}{2m} \Delta \psi(\vec{r}) + V(\vec{r}) \psi(\vec{r}) = E \psi(\vec{r})
+    E_K = \frac{L^2}{2I}
 \end{equation}
-Ahol a Laplace operátor a következőképpen definiált:
+Ahol $L$ a rotátor perdülete, és $I$ a tehetetlenségi nyomatéka, ami a következőképpen számítható ki:
 \begin{equation}
-    \Delta = \boldsymbol{\nabla}^2 = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2}
+    I = \mu a^2
 \end{equation}
-Ezt lehet tovább egyszerűsíteni a változók szétválasztásával:
+Ahol $\mu$ a két részecske redukált tömege:
 \begin{equation}
-    \psi(x,y,z) = X(x) Y(y) Z(z)
+    \mu = \frac{m_1 m_2}{m_1 + m_2}
 \end{equation}
-Ezzel jól lehet közelíteni egy 3D-s potenciálgödröt vagy harmonikus oszcillátort is. Viszont a rotátor esetében gömbi szimetriát látunk, 
-így célszerűbb a szétválasztást gömbi-koordinátákban végezni. Mielőtt ezt megtennénk, megállapíthatjuk, hogy ha találnuk egy operátort, ami
-kommutál a Hamilton-operátorral, akkor lehet úgy választani a hullámfüggvényeket, hogy azok az operátor sajátfüggvényei is legyenek:
+Az itt megjelenő $L^2$ operátor szerencsére eléggé ismerős a kvantummechanikában, hiszen ezt az operátort gyakran használjuk a szögmomentum
+vizsgálatakor. Ennek az operátornak az sajátértéke:
 \begin{equation}
-    [\hat{H}, \hat{A}] = 0 \quad \text{és} \quad \hat{H} \psi = E \psi \quad \Rrightarrow \quad \hat{A} \psi = a \psi
+    L^2 = \hbar^2 l (l + 1) \quad \quad l = 0, 1, 2, \ldots, n-1
 \end{equation}
-Tehát egy olyan operátorokat érdemes keresni, amelyek kommutálnak a Hamilton-operátorral és gömbi-koordinátákkal egyszerűbben felírhatók.
-Egy jó választás lehet mondjuk az impulzusmomentum operátora:
+Ahol $l$ a kvantumszám, ami az impulzusmomentumhoz tartozik. Ezt behelyettesítve a kinetikus energiára:
 \begin{equation}
-    \hat{L}_i = (\hat{r} \times \hat{p})_i = \epsilon_{ijk} \hat{r}_j \hat{p}_k = - i \hbar \epsilon_{ijk} x_j \frac{\partial}{\partial x_k}
+    E_l = \frac{\hbar^2}{2I} l (l + 1)
 \end{equation}
-Ahol az $\epsilon_{ijk}$ a Levi-Civita szimbólum. Nézzük meg, hogy ez az operátor kommutál-e a Hamilton-operátorral.
-Nézzük meg, hogy hogyan kommutál az impulzusmomentum az impulzus és a hely operátorokkal:
+Mivel az energiaszinteket általában $n$-nel jelöljük, ezért átírhatjuk az egyenletet a következő alakra:
 \begin{equation}
-    [\hat{L}_i, \hat{x}_j] = i \hbar \epsilon_{ijk} \hat{x}_k
-\end{equation}
-\begin{equation}
-    [\hat{L}_i, \frac{\partial}{\partial x_j}] = i \hbar \epsilon_{ijk} \frac{\partial}{\partial x_k}
-\end{equation}
-\begin{equation}
-    [\hat{L}_i, \hat{p}_j] = i \hbar \epsilon_{ijk} \hat{p}_k
-\end{equation}
-Tehát egy tetszőleges vektorra, ami a hely és az impulzus operátorok lineáris kombinációja, a következőképpen kommutál:
-\begin{equation}
-    [\hat{L}_i, \hat{v}_j] = i \hbar \epsilon_{ijk} \hat{v}_k
-\end{equation}
-Ahol $\hat{v}$ egy tetszőleges vektor operátor. Egy vektor négyzetére pedig:
-\begin{equation}
-    [\hat{L}_i, \hat{v}^2_j] = \hat{L}_i \hat{v}_j \hat{v}_j - \hat{v}_j \hat{v}_j \hat{L}_i = [\hat{L}_i, \hat{v}_j] \hat{v}_j + \hat{v}_j [\hat{L}_i, \hat{v}_j] = i \hbar \epsilon_{ijk} (\hat{v}_k \hat{v}_j + \hat{v}_j \hat{v}_k) = 0
-\end{equation}
-Mert a végén a Levi-Civita szimbólum antiszimmetrikus k-ra és j-re míg a zárójelben lévő elemek szimmetrikusak ezért az egész kifejezés nulla lesz. 
-Ebből következik, hogy bármely vektor/operátor négyzetére (ami x-ből és p-ből áll) 0 lesz a kommutálás eredménye → a Hamilton operátor tartalmaz
-egy négyzetes tagot, a Laplace operátort, tehát a Hamilton operátorral biztosan kommutál az impulzusmomentum operátora. És mivel önmagával
-is hasonló a kommutáció, így az $L^2$-re is ugyan ez lesz az eredmény:
-\begin{equation}
-    [\hat{H}, \hat{L}_i] = 0
-\end{equation}
-\begin{equation}
-    [\hat{L}_i, \hat{L}^2] = 0
-\end{equation}
-$\hat{L}_1$, $\hat{L}_2$ és $\hat{L}_3$ egymással mind kommutálnak, így ezek alkalmasak a sajátérték egyenlet megoldására ($\hat{L}_3$ helyett bármelyik irányt választhattuk volna, csak
-azért a harmadik komponenst választjuk, mert gömbi-koordinátákban így egyszerűbb dolgunk lesz). Azért $\hat{L}_2$-t és $\hat{L}_3$-at választjuk mert ezekről könnyen
-megbizonyosodhattunk, hogy kommutálnak $\hat{H}$-val, tehát lehet őket arra használni, hogy jellemezzünk egy fizikai állapotot ezeknek a
-sajátállapotaival. A többi komponensét $\hat{L}$-nek azért nem használhatjuk, mert azok egymással már nem kommutálnak → nincs közös sajátfüggvény rendszerük.
-Innentől a cél megtalálni $\hat{H}$, $\hat{L}_2$ és $\hat{L}_3$ közössajátfüggvény rendszerét. Ehhez először áttérünk gömbi-koordinátákra:
-\begin{equation}
-    x = r \sin(\theta) \cos(\phi)
-\end{equation}
-\begin{equation}
-    y = r \sin(\theta) \sin(\phi)
-\end{equation}
-\begin{equation}
-    z = r \cos(\theta)
-\end{equation}
-Innen az impulzusmomentum operátor komponensei a következő alakot öltik:
-\begin{equation}
-    \hat{L}_x = i \hbar \left( \sin(\phi) \frac{\partial}{\partial \theta} + \cot(\theta) \cos(\phi) \frac{\partial}{\partial \phi} \right)
-\end{equation}
-\begin{equation}
-    \hat{L}_y = i \hbar \left( - \cos(\phi) \frac{\partial}{\partial \theta} + \cot(\theta) \sin(\phi) \frac{\partial}{\partial \phi} \right)
-\end{equation}
-\begin{equation}
-    \hat{L}_z = - i \hbar \frac{\partial}{\partial \phi}
-\end{equation}
-És az impulzusmomentum négyzete pedig:
-\begin{equation}
-    \hat{L}^2 = - \hbar^2 \left[ \frac{1}{\sin(\theta)} \frac{\partial}{\partial \theta} \left( \sin(\theta) \frac{\partial}{\partial \theta} \right) + \frac{1}{\sin^2(\theta)} \frac{\partial^2}{\partial \phi^2} \right]
-\end{equation}
-$L^2$ rettentően hasonlít a Nabla operátor szögfüggő tagjaira gömbi-koordinátákban, csak egy $r^2$ osztó hiányzik.
-Ha a Nabla operátor alakját nézzük gömbi-koordináta formájában, akkor a következő alakjára jutunk a Schrödinger-egyenletnek:
-\begin{equation}
-    - \frac{\hbar^2}{2m} \left[ \frac{1}{r^2} \frac{\partial}{\partial r} \left( r^2 \frac{\partial}{\partial r} \right) - \frac{\hat{L}^2}{\hbar^2 r^2} \right] \psi + V(r) \psi = E \psi
-\end{equation}
-Ezt $L^2$-re rendezve:
-\begin{equation}
-    \hat{L}^2 \psi = \left[ - \hbar^2 r^2 \frac{\partial}{\partial r} \left( r^2 \frac{\partial}{\partial r} \right) + \frac{2m r^2}{\hbar^2} (V(r) - E) \right] \psi
-\end{equation}
-Most így akkor az $\hat{L}^2$ saját vektorai és saját értékei lettek érdekesek számunkra. Tegyük fel hogy, $V(r)$ „nem nagyon szinguláris” r→0 -ban.
-Ekkor $\psi(r, \theta, \phi)$ analitikus $r = 0$-ban. Ebben az esetben $\psi(x)$ felbontható komponenseire:
-\begin{equation}
-    \psi(r, \theta, \phi) = \sum_{ijk} C_{ijk} x_1^i x_2^j x_3^k
-\end{equation}
-Ha kis r-eket nézünk ($r = |\vec{x}| \to 0$) akkor a legelső tagok dominálnak, pl.:
-\begin{equation}
-    l = i + j + k
-\end{equation}
-\begin{equation}
-    l = 0 \quad \Rightarrow \quad \psi(\vec{x}) = \text{konstans} + ax + by + cz + \ldots
-\end{equation}
-\begin{equation}
-    l = 1 \quad \Rightarrow \quad \psi(\vec{x}) = a x + b y + c z + \ldots
-\end{equation}
-\begin{equation}
-    l = 2 \quad \Rightarrow \quad \psi(\vec{x}) = a x^2 + b y^2 + c z^2 + d xy + e xz + f yz + \ldots
-\end{equation}
-És így tovább. Ha ezeket felírjuk gömbi koordinátákban, akkor a következő alakot kapjuk:
-\begin{equation}
-    \psi(r, \theta, \phi) = r^l Y_{lm}(\theta, \phi)
-\end{equation}
-Ha tehát megnézzük a Schrödinger-egyenletet $r \to 0$ határértékben, akkor a következő alakot kapjuk:
-\begin{equation}
-    r \to 0 \quad \Rightarrow \quad \hat{L}^2 Y_{lm}(\theta, \phi) = \hbar^2 \frac{\partial}{\partial r}(r^2 \frac{\partial}{\partial r} (r^l Y_{lm}))
-\end{equation}
-Ha elvégezzük a deriválásokat akkor a következőt kapjuk:
-\begin{equation}
-    \hat{L}^2 Y_{lm}(\theta, \phi) = \hbar^2 l (l + 1) Y_{lm}(\theta, \phi)
-\end{equation}
-És ezzel meg is kaptuk az impulzusmomentum négyzetének sajátértékét (amennyiben kis távolságokat nézünk). Itt is igaz, hogy l = 0,1,2,...
-$L_3$-ra egyszerűbb a számolás mivel ott csak 1 db derivált van. Abban az esetben a sajátértékre a következő összefüggést kapjuk:
-\begin{equation}
-    \hat{L}_3 Y_{lm}(\theta, \phi) = - i \hbar \frac{\partial}{\partial \phi} Y_{lm}(\theta, \phi) = \hbar m Y_{lm}(\theta, \phi)
-\end{equation}
-Ahol m egy ismeretlen sajátérték, amit meg kell határoznunk. Ezt megoldva (egy elsőrendű inhomogén diff-egyenlet) azt kapjuk, hogy m
-bármely egész szám lehet → a sajátérték $\hbar m, \quad m = 0,1,2...$ Tehát olyan megoldásokat találtunk, amik csak 2db konstanstól függnek (l,
-m). Ha tovább akarnánk bontani a változókat, akkor a $\psi$ függést is leválaszthatnánk:
-\begin{equation}
-    \psi(r, \theta, \phi) = P_l^m (\theta) e^{i m \phi}
-\end{equation}
-Ahol $P_l^m (\theta)$ a Legrendre-polinomok asszociált változata. De nem lesz erre szükségünk, mert ha az előző alakot ($Y(r, \theta, \phi) = R(r) Y_{lm}(\theta, \phi)$) használjuk,
-akkor a Schrödinger-egyenlet szétválasztható a következőképpen:
-\begin{equation}
-    \psi(r, \theta, \phi) = R(r) Y_{lm}(\theta, \phi)
-\end{equation}
-\begin{equation}
-    - \frac{\hbar^2}{2m} \left[ \frac{1}{r^2} \frac{d}{d r} \left( r^2 \frac{d R(r)}{d r} \right) - \frac{l (l + 1)}{r^2} R(r) \right] + V(r) R(r) = E R(r)
-\end{equation}
-Itt látható, hogy a $Y(r, \theta, \phi)$ függvény kiesett a problémából, és csak a radiális rész maradt meg. Ebből következik, hogy a rotátor
-energiái csak az l kvantumszámtól függenek, mivel az m csak a sajátállapot degenerációját határozza meg. Láthatjuk, hogy
-ez nagyon hasonlít az 1D-s Schrödinger-egyenletre, csak itt van egy plusz centrális potenciál tagunk:
-\begin{equation}
-    V_{\text{eff}}(r) = V(r) + \frac{\hbar^2 l (l + 1)}{2m r^2}
+    E_n = \frac{\hbar^2}{2I} n (n + 1) \quad \quad n = 0, 1, 2, \ldots \quad \text{ahol} \quad I = \frac{m_1 + m_2}{m_1 m_2} a^2
 \end{equation}
 
-\subsubsection*{Gömbfüggvények}
-Nézzük meg közelebbről a $Y_{lm}(\theta, \phi)$ függvényeket, amik az impulzusmomentum sajátfüggvényei. Ezeket gömbfüggvényeknek hívják,
-és igaznak kell lenni rájuk, hogy:
-\begin{itemize}
-    \item $\hat{L}^2 Y_{lm}(\theta, \phi) = \hbar^2 l (l + 1) Y_{lm}(\theta, \phi)$
-    \item $\hat{L}_3 Y_{lm}(\theta, \phi) = \hbar m Y_{lm}(\theta, \phi)$
-\end{itemize}
-Ezek a függvények a következő alakot öltik:
+Most hogy a sajátértékeket ismerjük, nézzük meg a sajátfüggvényeket is. Karakterizálják az irányt a térben a $\theta$ és $\phi$ szögek.
+Itt is kihasználhatjuk, hogy a rotátor energiája csak a $L^2$ operátortól függ, így a sajátfüggvény egyenlet:
 \begin{equation}
-    Y_{lm}(\theta, \phi) = (-1)^m \sqrt{\frac{2l + 1}{4 \pi} \frac{(l - m)!}{(l + m)!}} P_l^m(\cos(\theta)) e^{i m \phi}
+    L^2 = - \hbar^2 \left[ \frac{1}{\sin \theta} \frac{\partial}{\partial \theta} \left( \sin \theta \frac{\partial}{\partial \theta} \right) + \frac{1}{\sin^2 \theta} \frac{\partial^2}{\partial \phi^2} \right]
 \end{equation}
-Ahol $P_l^m(x)$ az asszociált Legrendre-polinomok, amik a következőképpen definiáltak:
+Tehát a sajátérték egyenlet a következő alakot ölti:
 \begin{equation}
-    P_l^m(x) = (1 - x^2)^{m/2} \frac{d^m}{d x^m} P_l(x)
+    - \frac{\hbar^2}{2I} \left[ \frac{1}{\sin \theta} \frac{\partial}{\partial \theta} \left( \sin \theta \frac{\partial Y(\theta, \phi)}{\partial \theta} \right) + \frac{1}{\sin^2 \theta} \frac{\partial^2 Y(\theta, \phi)}{\partial \phi^2} \right] = E Y(\theta, \phi)
 \end{equation}
+De az energiaszinteket már ismerjük, így behelyettesítve:
+\begin{equation}
+    \left[ \frac{1}{\sin \theta} \frac{\partial}{\partial \theta} \left( \sin \theta \frac{\partial Y(\theta, \phi)}{\partial \theta} \right) + \frac{1}{\sin^2 \theta} \frac{\partial^2 Y(\theta, \phi)}{\partial \phi^2} \right] + l (l + 1) Y(\theta, \phi) = 0
+\end{equation}
+Ez az egyenlet ismerős, hiszen ez a szögfüggvényekre vonatkozó sajátérték egyenlet, aminek a megoldása a szögfüggvények:
+\begin{equation}
+    Y_{l}^{m}(\theta, \phi) = \sqrt{\frac{(2l + 1)}{4 \pi} \frac{(l - m)!}{(l + m)!}} P_{l}^{m}(\cos \theta) e^{i m \phi}
+\end{equation}
+Ahol $P_{l}^{m}(\cos \theta)$ a kapcsolt Legendre-polinom, és $m$ az impulzusmomentum mágneses kvantumszáma, ami a következő értékeket veheti fel:
+\begin{equation}
+    m = -l, -l + 1, \ldots, 0, \ldots, l - 1, l
+\end{equation}
+Összefoglalva tehát a rotátor energiái és hullámfüggvényei a következőképpen alakulnak:
+\begin{equation}
+    E_l = \frac{\hbar^2}{2I} l (l + 1) \quad \quad l = 0, 1, 2, \ldots
+\end{equation}
+\begin{equation}
+    Y_{l}^{m}(\theta, \phi) = \sqrt{\frac{(2l + 1)}{4 \pi} \frac{(l - m)!}{(l + m)!}} P_{l}^{m}(\cos \theta) e^{i m \phi} \quad \quad m = -l, -l + 1, \ldots, l
+\end{equation}
+A rendszer degenerációja pedig $2l + 1$, hiszen minden $l$ értékhez $2l + 1$ különböző $m$ érték tartozik.
+
+Mivel ismerjük az egyes energiaszinteket, ezért a rendszer spektrumát is meg tudjuk határozni. A spektrumot az adja, hogy a rendszer elnyel vagy kibocsájt egy fotont, aminek lesz egy meghatározott energiája és ezáltal hullámhossza.
+Egy foton energiája a Planck-féle reláció alapján:
+\begin{equation}
+    E = h \nu = \frac{hc}{\lambda}
+\end{equation}
+Ahol $\nu$ a foton frekvenciája, $c$ a fény sebessége, és $\lambda$ a foton hullámhossza. Ha a rotátor egyik energiaszintjéről egy másikra lép, akkor a foton energiája a két energiaszint különbsége lesz:
+\begin{equation}
+    \Delta E = E_{l + 1} - E_{l} = \frac{\hbar^2}{2I} \left[ (l+1) (l + 2) - l (l + 1) \right] = \frac{\hbar^2}{2I} (2l + 2) = \frac{\hbar^2}{I} (l + 1)
+\end{equation}
+Ebből következik a foton frekvenciája:
+\begin{equation}
+    \nu_l = \frac{\Delta E}{h} = \frac{\hbar^2}{h I} (l + 1) = \frac{\hbar}{2 \pi I} (l + 1)
+\end{equation}
+
+Például, egy $CO$ molekula esetében, az atomok tömege:
+\begin{equation}
+    ^{12}C: 12 \, u = 1.9926 \times 10^{-26} \, kg \qquad ^{16}O: 16 \, u = 2.6560 \times 10^{-26} \, kg
+\end{equation}
+És azt is tudjuk a mérések alapján, hogy a $CO$ molekulának a színképvonalak közötti távolság nagyjából $\Delta \nu = 5 \frac{1}{cm}$ vagy Hertz-re átszámolva:
+\begin{equation}
+    \Delta \nu = 5 \times 10^2 \, m^{-1} \cdot c = 1.5 \times 10^{10} \, Hz
+\end{equation}
+Ezek alapján a kötési távolság a két atom között:
+\begin{equation}
+    a = \sqrt{\frac{\hbar}{2 \pi \mu \Delta \nu}} = 2.5 \times 10^{-10} \, m
+\end{equation}
+Az irodalmi érték ennek a távolságnak $1.128$ angström, ami $1.128 \times 10^{-10} \, m$, tehát a modell elég jó közelítést ad.
+
 
 \subsubsection{A Hidrogénatom}
 A hidrogénatom a legegyszerűbb atom, amely egy protonból és egy elektronból áll. A proton sokkal nehezebb, mint az elektron, így
