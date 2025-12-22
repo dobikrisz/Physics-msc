@@ -552,7 +552,9 @@ Ezek alapján az integrálási állandók a következők lesznek:
 \begin{equation}
     v_y = \frac{g\cos\varphi}{2\omega}(1 - \cos(2\omega t))
 \end{equation}
-$\omega$ nagyon kicsi érték, így a $\cos(2\omega t)$ közelíthető $1 - 2\omega^2 t^2$-re Taylor-sorral, ha $t$ nem túl nagy. Így a y irányú sebesség közelítése:
+$\omega$ nagyon kicsi érték, így a $\cos(2\omega t)$ közelíthető $1 - 2\omega^2 t^2$-re Taylor-sorral
+\footnote{A Taylor-sor definíciója: $f(x) = f(a) + f'(a)(x-a) + \frac{f''(a)}{2!}(x-a)^2 + \frac{f'''(a)}{3!}(x-a)^3 + ...$. Ez azt jelenti, hog a $\cos(x)$ függvényt a következőképpen közelíthetjük: $\cos(x) \approx 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - ...$. Ha $x$ kicsi, akkor a magasabb rendű tagok elhanyagolhatók, így $\cos(x) \approx 1 - \frac{x^2}{2}$. Ebben az esetben $x = 2\omega t$, így $\cos(2\omega t) \approx 1 - 2\omega^2 t^2$.}
+ha $t$ nem túl nagy. Így a y irányú sebesség közelítése:
 \begin{equation}
     v_y \approx \frac{g\cos\varphi}{2\omega}(1 - (1 - 2\omega^2 t^2)) = g\cos\varphi \cdot \omega t^2
 \end{equation}

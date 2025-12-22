@@ -1,8 +1,2140 @@
 \documentclass[../main.tex]{subfiles}
-\graphicspath{{\subfix{../imgs/12-tetel}}}
+\graphicspath{{\subfix{../}}}
+
+\newcommand{\pw}{\raisebox{.15\baselineskip}{\ensuremath{\wp}}}
+
 \begin{document}
 Atomi energiaszintek, emissziós, abszorpciós spektrumok. Bohr-modell. A hidrogénatom spektruma. Felhasadások: finomfelhasadás, hiperfinom felhasadás, Lamb-eltolódás.
 Spektrumvonalak felhasadása külső térben: Stark- és Zeeman-effektusok. Kvantummechanikai közelítő módszerek. Fermi-féle aranyszabály, alagútjelenség. He-atom, Kétatomos molekulák, Pauli-elv.
 
+\subsection{Atomi energiaszintek, emissziós, abszorpciós spektrumok \cite{kiserleti_atomfizika}}
+Az atomok létezésére utaló első fizikai eredmények már a 19. század közepétől, a kinetikus gázelmélet kidolgozásakor megjelentek. Segítségével sikerült "leszámolni" a különböző gázok
+atomjainak számát, amit egységi térfogatba téve, $\approx 10^{-10}m$ sugarú részecskéket kaptak. Ezután Thomsonnak sikerült felfedeznie az elektront, mint egységnyi negatív töltéssel rendelkező részecskét,
+Később pedig Rutherford fedezte fel az atommagok létezését. Maga Rutherford nem részletezte az atom szerkezetét, de az ő munkásságának köszönhetően jelent meg először a "puding-modell", mely szerint az atom egy pozitív töltésű gömb,
+amiben az elektronok úgy helyezkednek el, mint mazsolák a pudingban.
+
+Ettől viszont már száz évvel korábban megjelentek olyan kísérleti eredmények, melyek az anyagok szerkezetének valamilyen speciális tulajdonságára utaltak. Ezek voltak a színképek.
+A fény spektrumával már Newton is sokat foglalkozott, a hírés kísérletei a prizmákkal, amik a fényt komponenseire bontották, a mai napig megmozgatját az emberek fantáziáját.
+Később, a 19. század elején sikerült ilyen fénybontó kísérletekkel felfedezni az Infravörös tartományt, amikor W. Herschel észrevette, hogy a legnagyobb hőhatást nem a látható fénynyalábok
+okozzák, hanem a vörös alatti, emberi szemnek láthatatlan fény. J. Ritter pedig az ultraibolya tartományt fedezte fel, amikor a prizmán áthaladó fény hatására a kémiai reakciók sebessége
+nőtt, még akkor is, amikor a látható fény már nem volt jelen.
+
+De a legnagyobb felfedezést J. Fraunhofer tette, amikor 1915-ben felfedezte a nap színképvonalait. Azt már több ezer éve tudják, hogy különböző anyagok különböző színű lángot adnak ki, ha tűzbe helyezik őket.
+A lángfestés sokáig csak parti trükk volt, amit alkímikusok használtak, de Fraunhofer spektroszkópját használva egy teljesen új jelenséget fedeztek fel vele. 
+
+A spektroszkóp maga egy relatíve egyszerű eszköz, ami annyit csinál, hogy a bejövő fényt egy prizmán vagy rácson átbocsátva komponenseire bontja, majd egy nagyítóval felnagyítva lehetővé teszi,
+hogy ezeket a komponenseket szabad szemmel vizsgáljuk, vagy a modernebb eszközök egy detektorral mérik a különböző hullámhosszok intenzitását. 
+\begin{figure}[H]  
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/12-tetel/spectroscope.jpg}
+    \caption{Spektroszkóp felépítése }
+\end{figure}
+Amikor egy ilyen megfestett lángot vizsgálunk spektroszkóppal, akkor azt tapasztaljuk, hogy minden anyag a saját, csak rá jellemző hullámhosszon bocsájt ki fényt. Ezt a jelenséget nevezik \textbf{emissziós spektrumnak}.
+Ezzel szemben amikor Fraunhofer a nap felé fordította a spektroszkópját, akkor egy teljesen más jelenséget figyelt meg. A napból érkező fény spektrumában sötét vonalakat látott. Ezeket a vonalakat Fraunhofer-vonalaknak nevezzük, és azóta
+tudjuk, hogy ezek az \textbf{abszorpciós spektrumok}. Ezek a vonalak akkor jönnek létre, amikor a napból érkező fény egy gázfelhőn halad át, és a gáz bizonyos hullámhosszokon elnyeli a fényt. Ezt a kettő jelenséget
+aztán sikerült összekapcsolni, amikor Kirchhoff és Bunsen 1859-ben (ugyanabban az évben amikor Charles Darwin paradigmaváltó műve, \textit{A fajok eredete} is publikálásra került) kimutatták,
+hogy ha egy adott elem emiszziós és abszorpciós spektrumát összehasonlítjuk, akkor az emissziós kép színes vonalai pontosan megegyeznek az abszorpciós kép sötét vonalaival. Tehát a két jelenséget azonos fizikai folyamat
+eredményez.
+
+Ennek a színképnek a felfedezése hatalmas jelentősége volt, hiszen lehetővé tette az anyagok összetételének elemi vizsgálatát, akár a földön kívülről is. Például ennek a segítségével sikerült 
+megállapítani a nap összetételét is, mivel a nap által produkált majdnem összes színkéképet sikerült reprodukálni földi körülmények között is, kívéve egyet, amit később a napról (görögül Helios) neveztek el Héliumnak.
+A színképvonalak elemzése során azt is megfigyelték, hogy minél nagyobb a vizsgált atom rendszáma, annál bonyolultabb a színképvonalak szerkezete. Ez arra utalt, hogy az atomok belső szerkezete is bonyolultabb lehet, mint azt korábban gondolták.
+
+\subsection{A Hidrogén atom spektruma}
+A Hidrogén atom a legegyszerűbb atom a természetben, hiszen csak egy protonból és egy elektronból áll (egy szintén gyakori alakja, a Deutérium, egy protonból és egy neutronból álló magot tartalmaz). 
+Ennek ellenére a hidrogénatom az egyik legfontosabb elem a fizikában, ugyanis egyrészt ez az egyetlen atom, amit teljesen meg tudunk oldani a kvantummechanika segítségével, másrészt a gyakorisága miatt az univerzumban, 
+az asztrofizikában is kiemelt szerepe van.
+
+A hidrogénatom színképének törvényszerűségét először J. J. Balmer, svájci középiskolai tanár fedezte fel 1885-ben amikor észrevette, hogy a hidrogén látható emissziós vonalai szabályosságot követnek:
+\begin{equation}
+    \lambda_n = c_B \frac{n^2}{n^2 - 4}, \quad n = 3,4,5,...
+\end{equation}
+ahol $c_B = 364.50682 nm$ a Balmer-állandó. Ami miatt kiemelkedő volt ez az eredmény, hogy nem csak nagyjából követték ezt a szabályt a vonalak, hanem nagyon pontosan, így felvetődött a kérdés,
+hogy vajon mi lehet ennek az oka. Később további tartományokban is felfedeztek hasonló sorozatokat, amik a nem-látható tartományba is átnyúltak.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{imgs/12-tetel/hydrogen_spectrum.png}
+    \caption{
+        A hidrogénatom színképe a hullámhossz függvényében. Aábrán három sorozat látható, az ultraibolya tartományban a Lyman-sorozat, a látható tartományban a Balmer-sorozat, az infravörös tartományban pedig a Paschen-sorozatot ábrázoltuk. A kísérletekben az egy sorozaton belüli egyre kisebb hullámhosszú vonalak intenzitása egyre csökken, ezért először a hidrogén 4 látható vonalát figyelték meg: $H_\alpha, H_\beta, H_\gamma, H_\delta$}
+\end{figure}
+A színképvonalakhoz aztán P. Zeeman 1897-ben fedezte fel a később róla elnevezett effektust, amikor egy mágneses térben vizsgálta a hidrogén színképvonalait, és azt találta, hogy a vonalak felhasadnak.
+Hasonló eredményt ért el J. Stark is 1913-ban, amikor egy elektromos térben vizsgálta a hidrogén színképvonalait, és szintén felhasadást figyelt meg. Ezek az eredmények arra utaltak, 
+hogy a színképvolanak valamilyen módon a színtén nem rég felfedezett elektronokkal kell, hogy kapcsolatban legyenek.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/12-tetel/hidrogen_atom.png}
+    \caption{
+        A hidrogénatom elektronátmeneteinek szemléltetése a Bohr-modelleretei között (A bal oldali ábrán függőlegesen az energia változik, a kis ábrán apályasugarakat szemléltetjük az egyes átmeneteknél.)}
+\end{figure}
+
+A színképek elemzéséhez aztán Rydberg adott mlg egy lökést, amikor átalakította Balmer képletét egy általánosabb formára, ami már az összes sorozatra alkalmazható volt:
+\begin{equation}
+    \frac{1}{\lambda} = \frac{R}{4} - \frac{R}{m^2}, \quad m = 3,4,5,... 
+\end{equation}
+ahol $R = 1.097373 \cdot 10^7 m^{-1}$ a Rydberg-állandó. Rydberg azt vette észre, hogy a reciprok hullámhossz két tag különbségeként adható meg, ahol az első tag
+a sorozat jellemzője ($\frac{R}{4}$ a Balmer-sorozat esetén, $R$ a Lyman-sorozat és $\frac{R}{9}$ a Paschen-sorozat esetén), a második tag pedig az adott vonal jellemzője ($\frac{R}{m^2}$, ahol $m$ a felső energiaszint száma).
+Később azt ist is megfigyelték, hogy a spektrumban a hullámhosszak összege és különbsége is egy vonalra mutat, vagyis ha egy spektrumvonal $\tau_1 - \tau_2$-nél van,
+és egy másik $\tau_2 - \tau_3$-nél, akkor van egy harmadik vonal is a spektrumban, ami $\tau_1 - \tau_3$-nél helyezkedik el. Ezt a jelenséget Rydberg-Ritz kombinációs elvnek nevezzük.
+
+\subsection{Bohr-modell}
+A Rutherford kísérletek után először a "puding-modell" jelent meg J. J. Thompson alapján, de sose sikerült egy stabil modellt felállítani erre az elképzelésre. Később a Japán fizikus, H nagaoka vetette fel,
+hogy mivel a Coulomb-erő nagyon hasonló a gravitációs erőhöz, így lehet, hogy az elektronok pont úgy keringenek a nehéz mag körül, mint a bolygók a nap körül. Ezzel a modellel is akadtak azonban gondok,
+ugyanis a Maxwell-egyenletek alapján ismert volt, hogy egy gyorsuló töltött részecske sugároz. A keringés során pedig az elektron folyamatosan gyorsul, így ez alapján minden atomnak folyamatosan sugároznia kellene,
+amí az elektron végül bele nem zuhan a magba.
+
+Ezt a problémát végül Niels Bohr oldotta meg 1913-ban, Rutherford laborjának alkalmazottjaként. Az ő felvetése az volt, hogy az elektronok csak meghatározott pályákon keringhetnek,
+amelyen stabilak és nem sugároznak. Ezek a pályák között pedig az elektronok átugorhatnak más megengedett pályákra, amennyiben megfelelő mennyiségű energiát nyernek vagy veszítnek el.
+Bohr posztumátumait a következőkben foglalhatjuk össze:
+\begin{itemize}
+    \item Az elektronok csak meghatározott, kvantált pályákon keringenek a mag körül, amelyeken nem sugároznak.
+    \item Az elektronok csak akkor sugároznak vagy nyelnek el energiát, amikor egyik megengedett pályáról a másikra ugranak. Az elnyelt vagy kibocsátott energia mennyisége megegyezik a két pálya energiakülönbségével:
+    \begin{equation}
+        \Delta E = E_i - E_f = h \nu
+    \end{equation}
+    ahol $E_i$ és $E_f$ a kezdeti és végső pálya energiája, $h$ a Planck-állandó, $\nu$ pedig a kibocsátott vagy elnyelt foton frekvenciája.
+\end{itemize}
+Ez a két feltétel nem csak a hidrogénatom stabilitását magyarázta meg, hanem a színképvonalak létezését is. Minden vonal egy adott pályák közti átmenetet jelöl, ahol az emissziós vonalak esetén az elektron egy magasabb pályáról egy alacsonyabb pályára ugrik,
+és egy fotont bocsájt ki, míg az abszorpciós vonalak esetén az elektron egy alacsonyabb pályáról egy magasabb pályára ugrik, elnyelve egy fotont.
+
+De kérdés volt, hogy hogyan legyen kvantált a pálya? Mivel a pályát az impulzusmomentum határozza meg, ezért legyen ott a kvantáltság! Az impulzusmomentumot fel tudjuk írni a következőképpen:
+\begin{equation}
+    L = mvr
+\end{equation}
+ahol $m$ az elektron tömege, $v$ a sebessége, és $r$ a pályasugár. Bohr azt feltételezte, hogy az impulzusmomentum csak meghatározott értékeket vehet fel, mégpedig
+\begin{equation}
+    L = n \hbar, \quad n = 1,2,3,...
+\end{equation}
+ahol $\hbar = \frac{h}{2 \pi}$ a redukált Planck-állandó. A keringést a centipetális erővel ekvivalens Coulomb-erő határozza meg:
+\begin{equation}
+    \begin{aligned}
+        F_{Coulomb} &= \frac{1}{4 \pi \epsilon_0} \frac{Z e^2}{r^2} \\
+        F_{centripetal} &= \frac{mv^2}{r} \\
+        \rightarrow \quad F_{Coulomb} &= F_{cp} \quad \rightarrow \quad \frac{1}{4 \pi \epsilon_0} \frac{Z e^2}{r^2} = \frac{mv^2}{r}
+    \end{aligned}
+\end{equation}
+Ebből kifejezve a sebességet és behelyettesítve az impulzusmomentum kvantáltsági feltételébe, megkapjuk a megengedett pályák sugarát:
+\begin{equation}
+    \begin{aligned}
+        L = mrv = n \hbar &\rightarrow v = \frac{n \hbar}{mr} \\
+        \frac{1}{4 \pi \epsilon_0} \frac{Z e^2}{r^2} &= \frac{m}{r} \left( \frac{n \hbar}{mr} \right)^2 \\
+        \rightarrow r_n &= \frac{4 \pi \epsilon_0 \hbar^2}{m e^2} \frac{n^2}{Z} = a_0 \frac{n^2}{Z}
+    \end{aligned}
+\end{equation}
+ahol $a_0 = 5.29 \cdot 10^{-11} m$ a Bohr-sugár (elektron távolsága a magtól Hidrogénben), a $Z$ a mag töltésszáma (Hidrogén esetén $Z=1$) és $n$ a főkvantumszám.
+Itt meghatározhatjuk az elektron sebességét is az egyes pályákon:
+\begin{equation}
+    \begin{aligned}
+        \frac{1}{4\pi \epsilon_0} \frac{Z e^2}{r_n^2} &= \frac{m v^2}{r_n} \qquad /\cdot r_n^2 \\
+        \frac{1}{4\pi \epsilon_0} Z e^2 &= r_n m v^2 \qquad /\div mrv = n\hbar \\
+        \frac{1}{4\pi \epsilon_0} \frac{Z e^2}{n \hbar} &= r_n v \qquad /\cdot \frac{1}{r_n} \\
+        v_n &= \frac{1}{4 \pi \epsilon_0} \frac{Z e^2}{\hbar} \frac{1}{n}
+    \end{aligned}
+\end{equation}
+Ebből pedig az energia is kiszámolható:
+\begin{equation}
+    \begin{aligned}
+        E_n &= K_n + U_n \\
+        K_n &= \frac{1}{2} m v^2 = \frac{1}{2} \frac{1}{4 \pi \epsilon_0} \frac{Z e^2}{r_n} \\
+        U_n &= - \frac{1}{4 \pi \epsilon_0} \frac{Z e^2}{r_n} \\
+        \rightarrow E_n &= - \frac{1}{8 \pi \epsilon_0} \frac{Z e^2}{r_n} = - \frac{m e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2} \frac{Z^2}{n^2}
+    \end{aligned}
+\end{equation}
+Ahol az energia negatív előjelű, hiszen az elektron kötött állapotban van a mag körül. Az energia különbség pedig a következőképpen adódik:
+\begin{equation}
+    \Delta E = E_i - E_f = - \frac{m e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2} Z^2 \left( \frac{1}{n_i^2} - \frac{1}{n_f^2} \right)
+\end{equation}
+Ebből pedig a kibocsátott vagy elnyelt foton hullámhossza a következőképpen adódik:
+\begin{equation}
+    \frac{1}{\lambda} = \frac{\Delta E}{hc} = \frac{m e^4}{8 \epsilon_0^2 h^3 c} Z^2 \left( \frac{1}{n_f^2} - \frac{1}{n_i^2} \right)
+\end{equation}
+Ez pontosan megegyezik a Rydberg-formulával, ahol a Rydberg-állandó a következőképpen adódik:
+\begin{equation}
+    R = \frac{m e^4}{8 \epsilon_0^2 h^3 c}
+\end{equation}
+Így a Bohr-modell sikeresen magyarázta meg a hidrogénatom színképvonalait és stabilitását. Mivel a hidrogénatom esetében $n = 1$ az alapállapot energiáját adja, ezért a Bohr modell szerint az ionizációs energia:
+\begin{equation}
+    E_{ion} = - E_1 = \frac{m e^4}{2 (4 \pi \epsilon_0)^2 \hbar^2} \approx 13.6 eV
+\end{equation}
+A Bohr-sugár pedig $r_1 = a_0 \approx 0.529 \cdot 10^{-10} m$.
+
+A Bohr-modell jó eredményeket ad a hidrogénatomra, de nem tud számot adni a Zeeman- és Stark-effektusokra, a pontosabb mérések után felfedezett finom- és hiperfinom felhasadásokra, valamint a Lamb-eltolódásra.
+A Bohr-modell továbbá nem elég több elektronnal rendelkező atomok esetén, mert az ott kölcsönható elektronokkal már nem tud mit kezdeni. 
+
+\subsubsection{Izotóp eltolódás, a többtest probléma}
+Az eddigi levezetés alapján a magot egy mozdulatlan ponttömegnek vettük, ami körül az elektron kering. Ez azonban nem teljesen igaz, hiszen a mag is mozog, így a két részecske
+együtt kering a közös tömegközéppont körül. Ezt a problémát úgy tudjuk kezelni, hogy bevezetjük a redukált tömeget:
+\begin{equation}
+    \mu = \frac{m M}{m + M}
+\end{equation}
+ahol $m$ az elektron tömege, $M$ pedig a mag tömege. Ezt a redukált tömeget kell behelyettesíteni az előző levezetések során az elektron tömegének helyére. Ez a korrekció
+nagyon kicsi a hidrogén esetén, hiszen a proton tömege $1836$-szorosa az elektron tömegének, de nehezebb magok esetén ez a korrekció már jelentősebb lehet. Ez az effektus vezet az izotóp eltolódáshoz,
+mivel az eltérő neutronszámú izotópok magtömege különböző, így a redukált tömeg is különböző lesz, ami az energiaszintek kis mértékű eltolódását eredményezi.
+
+\subsection{Kvantummechanikai közelítő módszerek}
+A korábbiakban sikerült a kvantummechanika alapvető összefüggéseivel, és egy kis algebrai trükközéssel megoldani a Hidrogénatomot egzaktul. Sajnos, az esetek nagy részében nem vagyunk ilyen szerencsések,
+és a legtöbb rendszert nem lehet ilyen szépen megoldani. Ezért közelítő módszerekkel kell élnünk, melyek, ahogy a név is sugallja, megközelítőleg pontos eredményt adnak. A közelítő módszerek keresése
+mai napig egy fontos kutatási terület, főként számítógépes modellek megalkotásához, de néhány alapvető módszert alkalmazva sok komplex rendszer kezelhetővé válik. A leggyakrabban használt közelítő módszerek a következők:
+\begin{itemize}
+    \item Időfüggetlen Perturbációs elmélet
+    \item Időfüggő Perturbációs elmélet
+    \item Variációs módszer
+    \item WKB közelítés
+\end{itemize}
+Ezek közül a megfelelő módszert a probléma jellege határozza meg.
+
+\subsubsection{Időfüggetlen Perturbációs elmélet}
+
+\subsubsection*{Nem degenerált eset}
+Tegyük fel, hogy sikeresen megoldottuk az időfüggetlen Schrödinger-egyenletet egy adott Hamilton-operátorra $H^0$:
+\begin{equation}
+    H^0 \psi_n^0 = E_n^0 \psi_n^0
+\end{equation}
+Tehát megkaptuk a teljes halmazát az ortonormált sajátfüggvényeknek $\psi_n^0$:
+\begin{equation}
+    \langle \psi_n^0 | \psi_m^0 \rangle = \delta_{nm}
+\end{equation}
+és a hozzájuk tartozó sajátértékeknek $E_n^0$. Most tegyük fel, hogy "megzavarjuk" egy kicsit ezt a rendszert (pl. egy kis "dombot" teszünk a potenciálgödörbe).
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/12-tetel/perturbacio.png}
+    \caption{Egy kis perturbáció egy potenciálgödörben}
+\end{figure}
+A célunk, hogy ekkor megtaláljuk az új sajátfüggvényeket és sajátértékeket:
+\begin{equation}
+    H \psi_n = E_n \psi_n
+\end{equation}
+De az esetek nagy részében ennek a perturbációnak a bevezetése után a Schrödinger-egyenlet már nem megoldható egzaktul erre a komplexebb potenciál függvényre. A \textbf{perturbációs elmélet} egy szisztematikus
+procedúrát ad arra, hogy egy \textit{közelítő} megoldást kapjunk a perturbált rendszerre úgy, hogy a nem perturbált, ismert egzakt megoldásokra építünk.
+
+Kezdésnek, a Hamilton operátort úgy írjuk fel, mint az összege az egzaktan megoldott Hamilton operátornak és egy kis perturbációnak:
+\begin{equation}
+    H = H^0 + \lambda H'
+\end{equation}
+ahol $H'$ a perturbációs operátor, és $\lambda$ egy kicsi szám, amit a végén 1-nek veszünk, de ez még nem fontos. Ezután a sajátértékeket és sajátfüggvényeket is kiterjesztjük egy hatvány-sorba $\lambda$ szerint:
+\begin{equation}
+    E_n = E_n^0 + \lambda E_n^1 + \lambda^2 E_n^2 + ...
+\end{equation}
+\begin{equation}
+    \psi_n = \psi_n^0 + \lambda \psi_n^1 + \lambda^2 \psi_n^2 + ...
+\end{equation}
+Itt $E_n^1$ az \textbf{elsőrendű korrekció} az $n$-edik sajátértékre, $E_n^2$ a \textbf{másodrendű korrekció}, és így tovább. Hasonlóan, $\psi_n^1$ az elsőrendű korrekció az $n$-edik sajátfüggvényre, stb.
+Visszahelyettesítve a sajátérték egyenletbe:
+\begin{equation}
+    \begin{aligned}
+        (H^0 + \lambda H') &\left[\psi_n^0 + \lambda \psi_n^1 + \lambda^2 \psi_n^2 + ...\right] = \\
+        &= (E_n^0 + \lambda E_n^1 + \lambda^2 E_n^2 + ...) \left[\psi_n^0 + \lambda \psi_n^1 + \lambda^2 \psi_n^2 + ...\right]
+    \end{aligned}
+\end{equation}
+Rendezzük a sort $\lambda$ szerint:
+\begin{equation}
+    \begin{aligned}
+        &H^0 \psi_n^0 + \lambda \left( H^0 \psi_n^1 + H' \psi_n^0 \right) + \lambda^2 \left( H^0 \psi_n^2 + H' \psi_n^1 \right) + ... = \\
+        &= E_n^0 \psi_n^0 + \lambda \left( E_n^0 \psi_n^1 + E_n^1 \psi_n^0 \right) + \lambda^2 \left( E_n^0 \psi_n^2 + E_n^1 \psi_n^1 + E_n^2 \psi_n^0 \right) + ...
+    \end{aligned}
+\end{equation}
+Tátható, hogy a nulladik rend egyszerűen visszaadja az eredeti, nem perturbált sajátérték egyenletet $H^0 \psi_n^0 = E_n^0 \psi_n^0$.
+Az első rend ($\lambda^1$) viszont a következő egyenletet adja:
+\begin{equation}
+    H^0 \psi_n^1 + H' \psi_n^0 = E_n^0 \psi_n^1 + E_n^1 \psi_n^0
+\end{equation}
+A második rend ($\lambda^2$) pedig:
+\begin{equation}
+    H^0 \psi_n^2 + H' \psi_n^1 = E_n^0 \psi_n^2 + E_n^1 \psi_n^1 + E_n^2 \psi_n^0
+\end{equation}
+És így tovább. Innentől a $\lambda$-t vehetjük 1-nek, mert nincs szerepe az egyenletben, csak a rendek elkülönítésére szolgált. 
+
+Ezek az egyenletek már könnyebben megoldhatóak, hiszen az elsőrendű egyenletben csak az ismeretlen $\psi_n^1$ és $E_n^1$ szerepel, a másodrendű egyenletben pedig csak az ismeretlen $\psi_n^2$ és $E_n^2$, és így tovább.
+Az, hogy melyik rendig megyünk el, attól függ, hogy milyen pontosságú eredményt szeretnénk kapni. Általában az első vagy másodrendű korrekciók elegendőek a legtöbb fizikai probléma esetén.
+
+Nézzük meg az elsőrendű korrekció megoldását. Nézzük meg a skalárszorzatát az elsőrendű korrekciónak a nem perturbált sajátfüggvénnyel (tehát beszorzunk balról $\psi_n^{0*}$-vel és integrálunk az egész térre):
+\begin{equation}
+    \langle \psi_n^0 | H^0 \psi_n^1 \rangle + \langle \psi_n^0 | H' \psi_n^0 \rangle = E_n^0 \langle \psi_n^0 | \psi_n^1 \rangle + E_n^1 \langle \psi_n^0 | \psi_n^0 \rangle
+\end{equation}
+Mivel $H^0$ Hermitikus operátor, ezért:
+\begin{equation}
+    \langle \psi_n^0 | H^0 \psi_n^1 \rangle = \langle H^0 \psi_n^0 | \psi_n^1 \rangle = \langle E_n^0 \psi_n^0 | \psi_n^1 \rangle = E_n^0 \langle \psi_n^0 | \psi_n^1 \rangle
+\end{equation}
+Tehát ez kiejti a jobboldal első tagját. Továbbá $\langle \psi_n^0 | \psi_n^0 \rangle = 1$ az ortonormalitás miatt. Így az egyenletünk a következőképpen egyszerűsödik\footnote{Itt mindegy, hogy $\langle \psi_n^0 | H' | \psi_n^0 \rangle$-t vagy $\langle \psi_n^0 | H' \psi_n^0 \rangle$-t írunk, hiszen a kettő ugyanazt jelenti. Az első a Dirac-jelölés szerinti mátrixelem, a második pedig a hagyományos jelölés szerinti várható érték. A különbség akkor számít ha pl. $|n\rangle$-nek jelöljük egy harm. osc. n.-ik állapotát. Ekkor $H' | n \rangle$ értelmes, de $|H'n\rangle$ nem, mert az operátorok függvényeken/vektorokon hatnak nem számokon. }:
+\begin{equation}
+    \boxed{\langle \psi_n^0 | H' | \psi_n^0 \rangle = E_n^1}
+\end{equation}
+Ez a \textbf{elsőrendű energia korrekció} a nem degenerált perturbációs elméletben. Tehát az elsőrendű korrekció az $n$-edik sajátértékre egyszerűen a perturbációs operátor várható értéke a nem perturbált $n$-edik sajátállapotban.
+Praktikus esetekben ez a leggyakrabban használt egyenlet a kvantummechanikában!
+
+Ezzel megvan az energia elsőrendű korrekciója, de mi a helyzet a sajátfüggvény elsőrendű korrekciójával? Ehhez rendezzük át az elsőrendű egyenletet:
+\begin{equation}
+    (H^0 - E_n^0) \psi_n^1 = - (H' - E_n^1) \psi_n^0
+\end{equation}
+A jobboldalon egy ismert függvény áll, ezért ez egy inhomogén egyenlet az ismeretlen $\psi_n^1$-re. Szerencsére, mivel a nem-perturbált sajátfüggvények teljes halmazt alkotnak, ezért az ismeretlen $\psi_n^1$-et fel tudjuk írni a nem-perturbált sajátfüggvények lineáris kombinációjaként:
+\begin{equation}
+    \psi_n^1 = \sum_{m \neq n} c_m \psi_m^0
+\end{equation}
+Itt a $m \neq n$ feltétel azért van, ha úgy választjuk meg $c_m^{(n)}$-t, hogy $c_n^{(n)} = 0$, akkor $\psi_n$ normalizált lesz első rendben, hisz:
+\begin{equation}
+   \langle \psi_n | \psi_n \rangle = \underbrace{\langle \psi_n^0 | \psi_n^0 \rangle}_{=1} + \underbrace{\lambda \left( \langle \psi_n^0 | \psi_n^1 \rangle + \langle \psi_n^1 | \psi_n^0 \rangle \right)}_{=0 \text{ ha } c_n^{(n)} = 0} + \lambda^2 (...) + ...
+\end{equation}
+És ekkor értelemszerűen a $m = n$ tagok kiesnek. Tehát most már csak ki kell számolnunk a $c_m$ együtthatókat. Tegyük vissza a $\psi_n^1$ kifejezést az egyenletbe:
+\begin{equation}
+     \sum_{m \neq n} (H^0 - E_n^0) c_m^{(n)} \psi_m^0 = - (H' - E_n^1) \psi_n^0
+\end{equation}
+Ismét vegyük a skalárszorzatot $\psi_l^{0}$-vel:
+\begin{equation}
+    \sum_{m \neq n} \left(E_m^0 - E_n^0\right) c_m^{(n)} \langle \psi_l^0 | \psi_m^0 \rangle = - \langle \psi_l^0 | (H') | \psi_n^0 \rangle + E_n^1 \langle \psi_l^0 | \psi_n^0 \rangle
+\end{equation}
+Ha $l = n$, akkor a baloldal nulla lesz (hisz  $\langle \psi_n^0 | \psi_m^0 \rangle = \delta_{nm}$ az ortogonalitás miatt, de a szumma $n \neq m$ mentén fut, tehát $\langle \psi_n^0 | \psi_m^0 \rangle = 0$). Ekkor visszakapjuk az előzőleg már kiszámolt elsőrendű energia korrekciót.
+Ha $l \neq n$, akkor a jobb oldalon az utolsó tag is nulla lesz, így az egyenlet a következőképpen alakul:
+\begin{equation}
+    \left(E_l^0 - E_n^0\right) c_l^{(n)} = - \langle \psi_l^0 | H' | \psi_n^0 \rangle
+\end{equation}
+Ebből kifejezve az együtthatót:
+\begin{equation}
+    c_l^{(n)} = \frac{\langle \psi_l^0 | H' | \psi_n^0 \rangle}{E_n^0 - E_l^0}, \quad l \neq n
+\end{equation}
+Tehát az elsőrendű sajátfüggvény korrekció a következőképpen adódik:
+\begin{equation}
+    \boxed{\psi_n^1 = \sum_{m \neq n} \frac{\langle \psi_m^0 | H' | \psi_n^0 \rangle}{E_n^0 - E_m^0} \psi_m^0}
+\end{equation}
+Itt vegyük észre, hogy a nevező nem lehet nulla, hisz $n \neq m$, egészen addig amíg az állapotok \textit{nem degeneráltak} (azaz nincs két különböző állapot, aminek ugyanaz az energiája). Ha degenerált állapotokkal dolgozunk,
+akkor ez a kifejezés nem értelmezhető, és egy másik megközelítést kell alkalmaznunk (degenerált perturbációs elmélet).
+
+A másodrendű korrekció nagyon hasonlóan történik, először beszorzunk balról $\psi_n^{0*}$-vel és integrálunk:
+\begin{equation}
+    \langle \psi_n^0 | H^0 \psi_n^2 \rangle + \langle \psi_n^0 | H' \psi_n^1 \rangle = E_n^0 \langle \psi_n^0 | \psi_n^2 \rangle + E_n^1 \langle \psi_n^0 | \psi_n^1 \rangle + E_n^2 \langle \psi_n^0 | \psi_n^0 \rangle
+\end{equation}
+Ismét kihasználva a Hermitikus operátor tulajdonságát:
+\begin{equation}
+    \langle \psi_n^0 | H^0 \psi_n^2 \rangle = \langle H^0 \psi_n^0 | \psi_n^2 \rangle = E_n^0 \langle \psi_n^0 | \psi_n^2 \rangle
+\end{equation}
+Így az egyenletünk a következőképpen egyszerűsödik:
+\begin{equation}
+    E_n^2 = \langle \psi_n^0 | H' | \psi_n^1 \rangle - E_n^1 \langle \psi_n^0 | \psi_n^1 \rangle
+\end{equation}
+De:
+\begin{equation}
+    \langle \psi_n^0 | \psi_n^1 \rangle = \sum_{m \neq n} c_m^{(n)} \langle \psi_n^0 | \psi_m^0 \rangle = 0
+\end{equation}
+Tehát a másodrendű energia korrekció a következőképpen adódik:
+\begin{equation}
+    E_n^2 = \langle \psi_n^0 | H' | \psi_n^1 \rangle = \sum_{m \neq n} c_m^{(n)} \langle \psi_n^0 | H' | \psi_m^0 \rangle = \sum_{m \neq n} \frac{\langle \psi_m^0 | H' | \psi_n^0 \rangle \langle \psi_m^0 | H' | \psi_n^0 \rangle}{E_n^0 - E_m^0}
+\end{equation}
+Tehát végezetül:
+\begin{equation}
+    \boxed{E_n^2 = \sum_{m \neq n} \frac{|\langle \psi_m^0 | H' | \psi_n^0 \rangle|^2}{E_n^0 - E_m^0}}
+\end{equation}
+Mehetnénk tovább a magasabb rendű korrekciók felé is, de a gyakorlatban ritkán van rá szükség, hisz az első és másodrendű korrekciók már elég pontos eredményt adnak a legtöbb fizikai probléma esetén.
+Létezik egy egyszerűbb felírás is, ha bevezetjük a $V_{mn} = \langle \psi_m^0 | H' | \psi_n^0 \rangle$ és $\Delta_{mn} = E_n^0 - E_m^0$ jelöléseket, akkor a korrekciók a következőképpen írhatóak fel:
+\begin{equation}
+    E_n^1 = V_{nn}, \quad E_n^2 = \sum_{m \neq n} \frac{|V_{mn}|^2}{\Delta_{mn}}, \quad E_n^3 = \sum_{m \neq n} \sum_{l \neq n} \frac{V_{nm} V_{ml} V_{ln}}{\Delta_{nm} \Delta_{nl}} - V_{nn} \sum_{m \neq n} \frac{|V_{mn}|^2}{\Delta_{mn}^2}, ...
+\end{equation}
+
+\subsubsection*{Példa: potenciálgödör $V_0$ minimummal}
+A potenciálgödör megoldásakor a potenciálgödör alját a nulla szintnek vesszük. De mi történik, ha a potenciálgödör alját egy kis pozitív értékre toljuk el, azaz $V_0 > 0$-ra? Ekkor a potenciálfüggvényünk:
+\begin{equation}
+    V(x) = \begin{cases}
+        V_0, & 0 < x < a \\
+        \infty, & \text{egyébként}
+    \end{cases}
+\end{equation}
+Ezt a problémát meg tudjuk oldani perturbációs elmélettel is, hiszen a perturbáció csak egy konstans eltolás a potenciálban.
+A perturbálatlan potenciálgödör sajátfüggvénye:
+\begin{equation}
+    \psi_n^0 (x) = \sqrt{\frac{2}{a}} \sin \left( \frac{n \pi x}{a} \right), \quad n = 1,2,3,...
+\end{equation}
+A perturbált Hamilton operátor pedig:
+\begin{equation}
+    H = H^0 + H', \quad H' = V_0, \quad 0 < x < a
+\end{equation}
+Az elsőrendű korrekció az $n$-edik energiaszintre:
+\begin{equation}
+    E_n^1 = \langle \psi_n^0 | H' | \psi_n^0 \rangle = \int_0^a \psi_n^{0*} (x) V_0 \psi_n^0 (x) dx = V_0 \int_0^a \frac{2}{a} \sin^2 \left(\frac{n \pi x}{a} \right) dx = V_0
+\end{equation}
+Tehát az összes energiaszintet $V_0$-val emeljük meg vagyis a korrekció $E_n \approx E_n^0 + V_0$. Ez értelemszerű is, hisz a potenciálgödör alját $V_0$-val toltuk el felfelé.
+Vagyis a perturbáció ekkor az egzakt megoldást adja vissza! Ekkor a magasabb rendű korrekciók mind nullák lesznek:
+\begin{equation}
+    E_n^2 = \sum_{m \neq n} \frac{|\langle \psi_m^0 | V_0 | \psi_n^0 \rangle|^2}{E_n^0 - E_m^0} = V_0^2 \sum_{m \neq n} \frac{|\langle \psi_m^0 | \psi_n^0 \rangle|^2}{E_n^0 - E_m^0} = 0
+\end{equation}
+Mivel az ortogonalitás miatt $\langle \psi_m^0 | \psi_n^0 \rangle = \delta_{mn}$, így minden tag nulla lesz a szummában. Hasonlóan a harmadrendű és további korrekciók is nullák lesznek.
+
+De mi van ha az "emelés", csak a gödör feléig ér? Tehát a potenciálfüggvényünk:
+\begin{equation}
+    V(x) = \begin{cases}
+        V_0, & 0 < x < \frac{a}{2} \\
+        0, & \frac{a}{2} < x < a \\
+        \infty, & \text{egyébként}
+    \end{cases}
+\end{equation}
+Ekkor a perturbációs operátor:
+\begin{equation}
+    H' = \begin{cases}
+        V_0, & 0 < x < \frac{a}{2} \\
+        0, & \frac{a}{2} < x < a
+    \end{cases}
+\end{equation}
+Az elsőrendű korrekció az $n$-edik energiaszintre:
+\begin{equation}
+    \begin{aligned}
+        E_n^1 &= \langle \psi_n^0 | H' | \psi_n^0 \rangle = \int_0^{\frac{a}{2}} \psi_n^{0*} (x) V_0 \psi_n^0 (x) dx \\
+        &= V_0 \int_0^{\frac{a}{2}} \frac{2}{a} \sin^2 \left(\frac{n \pi x}{a} \right) dx = V_0 \left[ \frac{1}{2} - \frac{\sin (n \pi)}{2 n \pi} \right] = \frac{V_0}{2}
+    \end{aligned}
+\end{equation}
+Tehát most az összes energiaszintet csak $V_0/2$-val emeljük meg. Ez is értelemszerű, hisz a potenciálgödör felének az alját toltuk el $V_0$-val, de itt ez már nem egzakt megoldás, így a magasabb rendű korrekciók nem lesznek nullák.
+
+\subsubsection*{Degenerált eset}
+Ha a nem-perturbált állapotok degeneráltak - vagyis ha kettő (vagy több) különböző állapothoz ($\psi_a^0$ és $\psi_b^0$) ugyanaz az energia ($E_a^0 = E_b^0$) tartozik - akkor a normál perturbációs elmélet elbukik:
+$c_a^{(b)}$ és $E_n^2$ felfújódnak a végtelembe (kivéve talán ha a mátrixelem $\langle \psi_a^0 | H' | \psi_b^0 \rangle = 0$). Ilyen esetben a degenerált perturbációs elméletet kell alkalmaznunk.
+
+Tegyük fel, hogy létezik két állapot, amihez ugyanaz az energia tartozik, ezt nevezik \textbf{kétszeresen degenerált} esetnek:
+\begin{equation}
+    H^0 \psi_a^0 = E^0 \psi_a^0, \quad H^0 \psi_b^0 = E^0 \psi_b^0, \quad \langle \psi_a^0 | \psi_b^0 \rangle = 0
+\end{equation}
+Ahol $\psi_a^0$ és $\psi_b^0$ normáltak. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/12-tetel/kettos_degeneracio.png}
+    \caption{Kétszeresen degenerált állapot felhasadása}
+\end{figure}
+A lineáris kombinációja ezeknek az állapotoknak is egy sajátállapot lesz ugyanazzal az energiával:
+\begin{equation}
+    \psi^0 = \alpha \psi_a^0 + \beta \psi_b^0 \qquad H^0 \psi^0 = E^0 \psi^0
+\end{equation}
+Általában a perturbáció "feloldja" a degenerációt, vagyis ahogy a $\lambda \to 1$-el közelítünk, a perturbálatlan energia két részre szakad. Amikor pedig a másik irányba megyünk,
+vagyis "kikapcsoljuk" a perturbációt, a "felső" állapot visszatér egy lineáris kombinációjába $\psi_a^0$-nek és $\psi_b^0$-nek. Az alsó állapot pedig egy ortogonális lineáris kombinációba megy vissza.
+De ezeket a "\textbf{jó}" lineáris kombinációkat előre általában nem ismerjük. Tehát nem tudjuk, hogy milyen perturbálatlan állapotokat kell kombinálnunk, hogy megkapjuk a perturbált állapotokat. Ez a degenerálatlan 
+esetben nem volt gond, hisz ott minden energiához csak egy konkrét állapot volt amit az időfüggetlen Schrödinger-egyenlet megadott. Itt viszont a degeneráció miatt több állapot is tartozik ugyanahhoz az energiához, így nem tudjuk előre, hogy melyik lineáris kombináció lesz a jó.
+
+A "jó" állapot hivatalosan úgy van definiálva mint a valódi sajátállapot $\lambda \to 0$ határértékben. De az esetek nagy részében nem tudjuk mik a valódi sajátállapotok, ha tudnánk, akkor nem lenne szükség perturbációs elméletre.
+
+Tehát először írjuk fel ezeket a "jó" perturbálatlan állapotokat egy általános alakban, és vegyük $\alpha$ és $\beta$-t olyan együtthatüknak amiket "állítgathatunk". A célunk a Schrödinger-egyenlet megoldása:
+\begin{equation}
+    H \psi = E \psi, \quad H = H^0 + \lambda H'
+\end{equation}
+Itt is bontsuk fel az energiát és a sajátfüggvényt hatványsorba $\lambda$ szerint:
+\begin{equation}
+    E = E^0 + \lambda E^1 + \lambda^2 E^2 + ... \qquad \psi = \psi^0 + \lambda \psi^1 + \lambda^2 \psi^2 + ...
+\end{equation}
+Visszahelyettesítve az egyenletbe és rendezzük $\lambda$ szerint:
+\begin{equation}
+    \begin{aligned}
+        &H^0 \psi^0 + \lambda \left( H^0 \psi^1 + H' \psi^0 \right) + \lambda^2 \left( H^0 \psi^2 + H' \psi^1 \right) + ... = \\
+        &= E^0 \psi^0 + \lambda \left( E^0 \psi^1 + E^1 \psi^0 \right) + \lambda^2 \left( E^0 \psi^2 + E^1 \psi^1 + E^2 \psi^0 \right) + ...
+    \end{aligned}
+\end{equation}
+Mivel $H^0 \psi^0 = E^0 \psi^0$, ezért a nulladik rend kiesik. Az első rend ($\lambda^1$) viszont a következő egyenletet adja:
+\begin{equation}
+    H^0 \psi^1 + H' \psi^0 = E^0 \psi^1 + E^1 \psi^0
+\end{equation}
+Ismét vesszük a skalárszorzatot balról $\psi_a^{0}$-vel:
+\begin{equation}
+    \langle \psi_a^0 | H^0 \psi^1 \rangle + \langle \psi_a^0 | H' \psi^0 \rangle = E^0 \langle \psi_a^0 | \psi^1 \rangle + E^1 \langle \psi_a^0 | \psi^0 \rangle
+\end{equation}
+A Hermitikus operátor tulajdonságát kihasználva az első tag kiejti a jobboldal első tagját, így az egyenletünk a következőképpen egyszerűsödik:
+\begin{equation}
+    \langle \psi_a^0 | H' | \psi^0 \rangle = E^1 \langle \psi_a^0 | \psi^0 \rangle
+\end{equation}
+Hasonlóan, ha balról $\psi_b^{0}$-vel szorzunk:
+\begin{equation}
+    \langle \psi_b^0 | H' | \psi^0 \rangle = E^1 \langle \psi_b^0 | \psi^0 \rangle
+\end{equation}
+Most helyettesítsük be a $\psi^0 = \alpha \psi_a^0 + \beta \psi_b^0$ kifejezést mindkét egyenletbe:
+\begin{equation}
+    \alpha \langle \psi_a^0 | H' | \psi_a^0 \rangle + \beta \langle \psi_a^0 | H' | \psi_b^0 \rangle = E^1 \alpha
+\end{equation}
+\begin{equation}
+    \alpha \langle \psi_b^0 | H' | \psi_a^0 \rangle + \beta \langle \psi_b^0 | H' | \psi_b^0 \rangle = E^1 \beta
+\end{equation}
+Vagy, ha bevezetjük a következő jelöléseket:
+\begin{equation}
+    W_{aa} = \langle \psi_a^0 | H' | \psi_a^0 \rangle, \quad W_{bb} = \langle \psi_b^0 | H' | \psi_b^0 \rangle, \quad W_{ab} = \langle \psi_a^0 | H' | \psi_b^0 \rangle, \quad W_{ba} = \langle \psi_b^0 | H' | \psi_a^0 \rangle
+\end{equation}
+Akkor az egyenleteink a következőképpen írhatóak fel:
+\begin{equation}
+    \begin{aligned}
+         \alpha W_{aa} + \beta W_{ab} &= E^1 \alpha \\
+        W_{ba} \alpha + W_{bb} \beta &= E^1 \beta
+    \end{aligned}
+\end{equation}
+Itt $W$-k elviekben ismertek, ezek csak a mátrixelemei a $H'$ perturbációs operátornak az $\psi_a^0$ és $\psi_b^0$ perturbálatlan állapotok között.
+Az egyenleteket fel tudjuk írni mátrix formában is:
+\begin{equation}
+    \underbrace{
+    \begin{pmatrix}
+        W_{aa} & W_{ab} \\
+        W_{ba} & W_{bb}
+    \end{pmatrix}}_{\mathbf{W}}
+    \begin{pmatrix}
+        \alpha \\
+        \beta
+    \end{pmatrix} = E^1
+    \begin{pmatrix}
+        \alpha \\
+        \beta
+    \end{pmatrix}
+\end{equation}
+A sajátértékei a $\mathbf{W}$ mátrixnak adják meg az elsőrendű energia korrekciókat $E^1$-re, a sajátvektorai pedig az $\alpha$ és $\beta$ együtthatókat adják meg a "jó" perturbálatlan állapotokhoz. Persze ez feltételezi,
+hogy a degenerációk "feloldódnak" az első rendben. Ha nem, akkor bármelyik $\alpha$ és $\beta$ kombináció jó lesz, és továbbra se tudjuk mik a "jó" állapotok. Ekkor a másodrendű degenerált perturbáció elmélletre van szükség.
+
+Most rendezzük az egyenletet úgy, hogy a jobb oldalra hozzuk az összes tagot:
+\begin{equation}
+    \begin{pmatrix}
+        W_{aa} - E^1 & W_{ab} \\
+        W_{ba} & W_{bb} - E^1
+    \end{pmatrix}
+    \begin{pmatrix}
+        \alpha \\
+        \beta
+    \end{pmatrix} = 0
+\end{equation}
+Ez egy homogén egyenletrendszer, aminek nem-triviális megoldása akkor létezik, ha a mátrix determinánsa nulla:
+\begin{equation}
+    \begin{vmatrix}
+        W_{aa} - E^1 & W_{ab} \\
+        W_{ba} & W_{bb} - E^1
+    \end{vmatrix} = 0
+\end{equation}
+Ennek a determinánsnak a kiszámolása után egy egyenletet kapunk $E^1$-re:
+\begin{equation}
+    (W_{aa} - E^1)(W_{bb} - E^1) - W_{ab} W_{ba} = 0
+\end{equation}
+Itt kihasználhatjuk, hogy $W_{ab} = W_{ba}^*$, hisz $H'$ Hermitikus operátor, így a mátrix is Hermitikus lesz. Ekkor az egyenlet a következőképpen alakul:
+\begin{equation}
+    (E^1)^2 - (W_{aa} + W_{bb}) E^1 + (W_{aa} W_{bb} - |W_{ab}|^2) = 0
+\end{equation}
+Ennek az egyenletnek a megoldása a másodfokú egyenlet megoldóképletével adódik:
+\begin{equation}
+    \boxed{\frac{1}{2} \left[ (W_{aa} + W_{bb}) \pm \sqrt{(W_{aa} - W_{bb})^2 + 4 |W_{ab}|^2} \right]}
+\end{equation}
+Ez az általános megoldása a kétszeresen degenerált perturbációs elmélet elsőrendű energia korrekciójának. A $+$ tag a "felső" állapot elsőrendű korrekcióját adja meg, a $-$ tag pedig az "alsó" állapot elsőrendű korrekcióját.
+
+Ha esetleg úgy alakul, hogy $W_{ab} = 0$, akkor a sajátvektorok a következőképpen adódnak:
+\begin{equation}
+    \begin{pmatrix}
+        0 \\
+        1
+    \end{pmatrix} \quad \text{és} \quad
+    \begin{pmatrix}
+        1 \\
+        0
+    \end{pmatrix}
+\end{equation}
+És az energiák:
+\begin{equation}
+    E^1 = W_{aa} = \langle \psi_a^0 | H' | \psi_a^0 \rangle \quad \text{és} \quad E^1 = W_{bb} = \langle \psi_b^0 | H' | \psi_b^0 \rangle
+\end{equation}
+Vagyis visszakeptuk a nem degenerált perturbációs elmélet eredményeit, hisz a perturbáció nem keveri össze az állapotokat. Tehát, ha tudjuk a "jó" perturbálatlan állapotokat, akkor a nem-degenerált perturbációs elméletet is alkalmazhatjuk,
+és onnan is megkaphatjuk a degenerált korrekciókat. Tehát ha egy degenerált állapottal van dolgunk, akkor próbáljunk meg találni egy $A$ hermitikus operátort, ami kommutál a $H^0$-val és $H'$-val, mert ekkor az $A$ operátor sajátállapotai lesznek a "jó" perturbálatlan állapotok.
+Ezután válaszuk a perturbálatlan állapotoknak olyan állapotokat melyek sajátfüggvényei az $A$ operátornak és $H^0$-nak, különböző sajátértékekkel, és alkalmazzuk a nem-degenerált perturbációs elméletet. Ha nem találunk ilyen operátort, akkor a degenerált perturbációs elméletet kell alkalmaznunk.
+
+\subsubsection*{Példa: 2D oszcillátor}
+Vegyünk egy 2D harmonikus oszcillátort, aminek a Hamilton operátora:
+\begin{equation}
+    H^0 = \frac{p^2}{2m} + \frac{1}{2} m \omega^2 (x^2 + y^2)
+\end{equation}
+Amihez hozzáadjuk a következő perturbációs operátort:
+\begin{equation}
+    H' = \epsilon m \omega^2 x y
+\end{equation}
+Ahol $\epsilon$ egy kis paraméter. Az első perdurbálatlan állapot ($E^0 = 2 \hbar \omega$) kétszeresen degenerált, és egy bázis ami lefedi ezt a degenerált alteret:
+\begin{equation}
+    \psi_a^0 (x,y) = \psi_0 (x) \psi_1 (y) = \sqrt{\frac{2}{\pi}} \frac{m \omega}{\hbar} y e^{-\frac{m \omega}{2 \hbar} (x^2 + y^2)}
+\end{equation}
+\begin{equation}
+    \psi_b^0 (x,y) = \psi_1 (x) \psi_0 (y) = \sqrt{\frac{2}{\pi}} \frac{m \omega}{\hbar} x e^{-\frac{m \omega}{2 \hbar} (x^2 + y^2)}
+\end{equation}
+Ahol $\psi_0(x)$ és $\psi_1(x)$ a 1D harmonikus oszcillátor első két sajátfüggvénye. Ahhoz, hogy megtaláljuk a "jó" perturbálatlan állapotokat, meg kell találni az egzakt sajátállapotokat $H = H^0 + H'$-re és venni a $\epsilon \to 0$ határértéket.
+Viszont itt észrevehetjük, hogy a "jó" állapotot meg tudjuk "tippelni", a rotációs koordinátákkal:
+\begin{equation}
+    x' = \frac{x + y}{\sqrt{2}} \quad \text{és} \quad y' = \frac{-x + y}{\sqrt{2}}
+\end{equation}
+Ekkor a Hamilton operátor a következőképpen alakul:
+\begin{equation}
+    H = \frac{1}{2m} \left(\frac{\partial^2}{\partial x'^2} + \frac{\partial^2}{\partial y'^2}\right) + \frac{1}{2}m \omega^2 (1 + \epsilon) x'^2 + \frac{1}{2} m \omega^2 (1 - \epsilon) y'^2
+\end{equation}
+Ez két független 1D harmonikus oszcillátort jelent, amiknek a frekvenciái:
+\begin{equation}
+    \omega_+ = \omega \sqrt{1 + \epsilon}, \quad \omega_- = \omega \sqrt{1 - \epsilon}
+\end{equation}
+Az egzakt megoldás:
+\begin{equation}
+    \psi_{nm} = \psi_m^+ (x') \psi_n^- (y')
+\end{equation}
+Ahol $\psi_m^+$ és $\psi_n^-$ a két 1D harmonikus oszcillátor sajátfüggvényei. Az első pár energiaszint:
+\begin{equation}
+    E_{nm} = \left(m + \frac{1}{2}\right) \hbar \omega_+ + \left(n + \frac{1}{2}\right) \hbar \omega_-
+\end{equation}
+A két állapotnak ami "kinő" a degenerált első állapotból ahogy $\epsilon$ növekszik, $m=0,n=1$ és $m=1,n=0$ lesz: Ha ezeket az állapotokat figyeljük, ahogy $\epsilon \to 0$, akkor a következő határértékeket kapjuk:
+\begin{equation}
+    \begin{aligned}
+        \lim_{\epsilon \to 0} \psi_{01} &= \lim_{\epsilon \to 0} \psi_0^+ (x') \psi_1^- (y') = \psi_0 \left(\frac{x + y}{\sqrt{2}}\right) \psi_1 \left(\frac{x - y}{\sqrt{2}}\right) = \\
+        &= \sqrt{\frac{2}{\pi}} \frac{m \omega}{\hbar} \frac{x - y}{\sqrt{2}} e^{-\frac{m \omega}{2 \hbar} (x^2 + y^2)} = \frac{\psi_b^0 - \psi_a^0}{\sqrt{2}}
+    \end{aligned}
+\end{equation}
+Hasonlóan a másik állapot:
+\begin{equation}
+    \psi_{10} = \lim_{\epsilon \to 0} \psi_1^+ (x') \psi_0^- (y') = \frac{\psi_a^0 + \psi_b^0}{\sqrt{2}}
+\end{equation}
+Tehát a "jó" perturbálatlan állapotok:
+\begin{equation}
+    \psi_\pm^0 = \frac{\psi_a^0 \pm \psi_b^0}{\sqrt{2}}
+\end{equation}
+Most már alkalmazhatjuk a nem-degenerált perturbációs elméletet ezekre az állapotokra. 
+
+Most nézzük meg, hogy mi lenne, ha nem tudtuk volna a "jó" állapotokat, és alkalmaztuk volna a degenerált perturbációs elméletet. Ehhez ki kell számolnunk a $W$ mátrix elemeit:
+\begin{equation}
+    \begin{aligned}
+        W_{aa} &= \int \int \psi_a^{0} (x,y) H' \psi_a^0 (x,y) dx dy = \\
+        &= \epsilon m \omega^2 \int |\psi_0 (x)|^2 x \, dx + \int |\psi_0 (y)|^2 y \, dy = 0
+    \end{aligned}
+\end{equation}
+Mivel mind a két integrandus függvény páratlan függvény, így az integrál értéke nulla lesz. Hasonlóan:
+\begin{equation}
+    W_{bb} = 0
+\end{equation}
+Most számoljuk ki a $W_{ab}$ mátrix elemet:
+\begin{equation}
+    \begin{aligned}
+        W_{ab} &= \int \int \psi_a^{0} (x,y) H' \psi_b^0 (x,y) dx dy = \\
+        &= \epsilon m \omega^2 \int \psi_0 (x) x \psi_1 (x) dx \int \psi_1 (y) y \psi_0 (y) dy
+    \end{aligned}
+\end{equation}
+Ez a két integrál egyenlő és ha visszaemlékezünk a 1D harmonikus oszcillátor tulajdonságaira, akkor tudjuk, hogy:
+\begin{equation}
+    x = \sqrt{\frac{\hbar}{2 m \omega}} (a_+ + a_-)
+\end{equation}
+Ahol $a_+$ és $a_-$ a létrehozó és megsemmisítő operátorok. Ezek hatása a sajátfüggvényekre:
+\begin{equation}
+    a_+ \psi_n = \sqrt{n+1} \psi_{n+1}, \quad a_- \psi_n = \sqrt{n} \psi_{n-1}
+\end{equation}
+Tehát:
+\begin{equation}
+    \begin{aligned}
+        \int \psi_0 (x) x \psi_1 (x) dx &= \sqrt{\frac{\hbar}{2 m \omega}} \int \psi_0 (x) (a_+ + a_-) \psi_1 (x) dx = \\
+        &= \sqrt{\frac{\hbar}{2 m \omega}} \int \psi_0 (x) \left( \sqrt{2} \psi_2 (x) + \sqrt{1} \psi_0 (x) \right) dx = \\
+        &= \sqrt{\frac{\hbar}{2 m \omega}} \cdot 1 = \sqrt{\frac{\hbar}{2 m \omega}}
+    \end{aligned}
+\end{equation}
+Így a $W_{ab}$ mátrix elem:
+\begin{equation}
+    W_{ab} = \epsilon m \omega^2 \cdot \frac{\hbar}{2 m \omega} = \frac{\epsilon \hbar \omega}{2}
+\end{equation}
+Mivel $W_{ba} = W_{ab}^*$, így $W_{ba} = \frac{\epsilon \hbar \omega}{2}$. Most már fel tudjuk írni a $W$ mátrixot:
+\begin{equation}
+    \mathbf{W} = \begin{pmatrix}
+        0 & \frac{\epsilon \hbar \omega}{2} \\
+        \frac{\epsilon \hbar \omega}{2} & 0
+    \end{pmatrix}
+\end{equation}
+A mátrix normalizált sajátvektorai:
+\begin{equation}
+    \frac{1}{\sqrt{2}} \begin{pmatrix}
+        1 \\
+        1
+    \end{pmatrix} \quad \text{és} \quad \frac{1}{\sqrt{2}} \begin{pmatrix}
+        -1 \\
+        1
+    \end{pmatrix}
+\end{equation}
+Ezek a sajátvektorok megadják, hogy milyen lineáris kombinációi $\psi_a^0$-nek és $\psi_b^0$-nek a "jó" perturbálatlan állapotok:
+\begin{equation}
+    \psi_+\pm^0 = \frac{\psi_a^0 \pm \psi_b^0}{\sqrt{2}}
+\end{equation}
+Pontosan azok, amiket előzőleg "kitaláltunk". Most már kisámolhatjuk az elsőrendű energia korrekciókat is:
+\begin{equation}
+    E_\pm^1 = \frac{1}{2} \left( 0 + 0 \pm \sqrt{(0 - 0)^2 + 4 \left|\frac{\epsilon \hbar \omega}{2}\right|^2} \right) = \pm \frac{\epsilon \hbar \omega}{2}
+\end{equation}
+Tehát a két elsőrendű energia korrekció:
+\begin{equation}
+    E_+^1 = \frac{\epsilon \hbar \omega}{2}, \quad E_-^1 = -\frac{\epsilon \hbar \omega}{2}
+\end{equation}
+Pontosan megegyezik azzal amit a nem-degenerált perturbációs elméletből kaptunk a "jó" állapotokra alkalmazva.
+
+\subsubsection*{Magasabb rendű degeneráció}
+Eddig feltételeztük, hogy a degeneráció csak kétszeres, de a perturbációs módszert relatíve könnyű általánosítani. Egy $n$-szeresen degenerált állapot esetln a sajátértékeit keressük egy $n \times n$-es mátrixnak:
+\begin{equation}
+    W_{ij} = \langle \psi_i^0 | H' | \psi_j^0 \rangle, \quad i,j = 1,2,...,n
+\end{equation}
+Például egy háromszorosan degenerált állapot esetén a következő mátrixot kell felírnunk:
+\begin{equation}
+    \mathbf{W} = \begin{pmatrix}
+        W_{11} & W_{12} & W_{13} \\
+        W_{21} & W_{22} & W_{23} \\
+        W_{31} & W_{32} & W_{33}
+    \end{pmatrix}
+\end{equation}
+Ahol minden elem a megfelelő perturbálatlan állapotok közötti mátrixelemet jelenti. Az elsőrendű energia korrekciók pedig a $\mathbf{W}$ mátrix sajátértékei lesznek. A sajátérték egyenlet pedig a következőképpen írható fel:
+\begin{equation}
+    \begin{pmatrix}
+        W_{11} & W_{12} & W_{13} \\
+        W_{21} & W_{22} & W_{23} \\
+        W_{31} & W_{32} & W_{33}
+    \end{pmatrix} \begin{pmatrix}
+        \alpha \\
+        \beta \\
+        \gamma
+    \end{pmatrix} = E^1 \begin{pmatrix}
+        \alpha \\
+        \beta \\
+        \gamma
+    \end{pmatrix}
+\end{equation}
+A "jó" állapotok pedig az ehhez tartozó sajátvektorok lesznek:
+\begin{equation}
+    \psi^0 = \alpha \psi_a^0 + \beta \psi_b^0 + \gamma \psi_c^0
+\end{equation}
+
+\subsubsection{Variációs elv}
+Tegyük fel, hogy ki akarjuk számolni egy kvantumrendszer alapállapotát $E_{gs}$, ahol $H$ a Hamilton operátor, de nem tudjuk megoldani az időfüggetlen Schrödinger-egyenletet pontosan.
+A \textbf{variációs elv} segítségével egy felső határt tudunk szabni az alapállapot energiájára, ami sok esetben bőven elég egy probléma kezeléséhez. Ha ügyesek vagyunk akkor elég közeli közelítést is kaphatunk az alapállapot energiájára.
+A Variációs elv lényege, hogy veszünk egy tetszőleges normált próbafüggvényt $\psi$, és erre mindig igaz lesz, hogy:
+\begin{equation}
+    \boxed{E_{gs} \leq \langle \psi | H | \psi \rangle \equiv \langle H \rangle}
+\end{equation}
+Vagyis a Hamilton operátor várható értéke a (valószínűleg helytelen) próbafüggvényen \textit{mindig} egy túlbecsülése az alapállapot energiájának (vagy specifikus esetekben egyenlő).
+Természetesen, ha a $\psi$ véletlenül pont egy izgatott állapot sajátfüggvénye, akkor ez triviálisan igaz. De az állítás az, hogy MINDEN normált próbafüggvényre igaz lesz.
+\newline
+\newline
+\textbf{Bizonyítás:} Mivel az (ismeretlen) sajátfüggvényei $H$-nak egy teljes ortonormált bázist alkotnak, fel tudjuk írni a próbafüggvényt ezek lineáris kombinációjaként:
+\begin{equation}
+    \psi = \sum_{n} c_n \psi_n, \quad H \psi_n = E_n \psi_n, \quad \langle \psi_m | \psi_n \rangle = \delta_{mn}
+\end{equation}
+Mivel a próbafüggvény normált, így a következő feltételnek is teljesülnie kell:
+\begin{equation}
+    \langle \psi | \psi \rangle = \sum_{m,n} c_m^* c_n \langle \psi_m | \psi_n \rangle = \sum_n |c_n|^2 = 1
+\end{equation}
+Most számoljuk ki a Hamilton operátor várható értékét a próbafüggvényen:
+\begin{equation}
+    \begin{aligned}
+        \langle H \rangle &= \big\langle \sum_m c_m \psi_m \big| H \big| \sum_n c_n \psi_n \big\rangle = \sum_{m,n} c_m^* c_n \langle \psi_m | H | \psi_n \rangle = \\
+        &= \sum_{m,n} c_m^* c_n E_n \langle \psi_m | \psi_n \rangle = \sum_n |c_n|^2 E_n
+    \end{aligned}
+\end{equation}
+De az alapállapot, definíció szerint a legkisebb sajátérték, $E_{gs} \leq E_n$ minden $n$-re, tehát:
+\begin{equation}
+    \langle H \rangle \geq E_{gs} \sum_n |c_n|^2 = E_{gs}
+\end{equation}
+Ami pontosan az amit bizonyítani akartunk. QED
+
+Ez nem túl meglepő, hisz $\psi$ lehet akár a tényleges hullámfüggvény is (mondjuk $t = 0$-ban), ha pedig megmérjük $H$-t, akkor biztosan az egyik sajátértékét kapjuk (amelyikből az egyik az alapállapot).
+Tehát a mérések átlaga ($\langle H \rangle$) mindig nagyobb vagy egyenlő lesz az alapállapot energiájával.
+
+A variációs elv hihetetlenűl erős, és kellemetlenűl egyszerű. Csak annyit kell tenni, hogy a próbafüggvényt úgy válasszuk meg, hogy sok paramétert lehessen "állítani benne",
+ezután kiszámítjúk a $\langle H \rangle$-t, és az így kapott kifejezést minimalizáljuk a paraméterek szerint. Ezzel nagyon jó közelítést kaphatunk az alapállapot energiájára.
+Ha meg véletlenül meg tudjuk tippelni a hullámfüggvény alakját, még közelebb kerülhetünk az egzakt megoldáshoz. Az egyetlen hátránya, hogy azt nem tudjuk, hogy \textit{milyen} közel
+kerülünk a valós megoldáshoz. Csak egy felső határt tudunk adni. Emellett csak az alapállapotra alkalmazható, izgatott állapotokra nem.
+
+\subsubsection*{Példa 1: Harmonikus Oszcillátor alapállapota}
+Vegyük a 1D harmonikus oszcillátort, aminek a Hamilton operátora:
+\begin{equation}
+    H = \frac{p^2}{2m} + \frac{1}{2} m \omega^2 x^2
+\end{equation}
+Természetesen ennek pontosan tudjuk az egzakt megoldását: $E_{gs} = \frac{1}{2} \hbar \omega$, de nézzük meg a variációs elv  mire képes. Válasszuk a próbafüggvényt egy Gauss függvénynek:
+\begin{equation}
+    \psi(x) = A e^{-b x^2}
+\end{equation}
+Ahol $A$ a normálási állandó, és $b > 0$ egy szabad paraméter amit variálni fogunk. Először normalizáljuk a próbafüggvényt:
+\begin{equation}
+    1 = \int_{-\infty}^{\infty} |\psi(x)|^2 dx = A^2 \int_{-\infty}^{\infty} e^{-2 b x^2} dx = A^2 \sqrt{\frac{\pi}{2b}} \quad \Rightarrow \quad A = \left( \frac{2b}{\pi} \right)^{1/4}
+\end{equation}
+A Hamilton operátor várható értéke:
+\begin{equation}
+    \langle H \rangle = \langle K \rangle + \langle V \rangle
+\end{equation}
+És ebben az esetben a kinetikus és potenciális energia várható értékei:
+\begin{equation}
+    \begin{aligned}
+        \langle K \rangle &= - \frac{\hbar^2}{2m} |A|^2 \int_{-\infty}^{\infty} e^{-b x^2} \frac{d^2}{dx^2} \left(e^{-b x^2}\right) dx = \frac{\hbar^2 b}{2m} \\
+        \langle U \rangle &= \frac{1}{2} m \omega^2 |A|^2 \int_{-\infty}^{\infty} x^2 e^{-2 b x^2} dx = \frac{m \omega^2}{8 b}
+    \end{aligned}
+\end{equation}
+Tehát a Hamilton operátor várható értéke:
+\begin{equation}
+    \langle H \rangle = \frac{\hbar^2 b}{2m} + \frac{m \omega^2}{8 b}
+\end{equation}
+A variációs elv alapján ez nagyobb mint $E_{gs}$ bárminek is választjuk a $b$ paramétert. Ergo minimalizálhatjuk $\langle H \rangle$-t $b$ szerint:
+\begin{equation}
+    \frac{d}{d b} \langle H \rangle = \frac{\hbar^2}{2m} - \frac{m \omega^2}{8 b^2} = 0 \quad \Rightarrow \quad b = \frac{m \omega}{2 \hbar}
+\end{equation}
+Ezt visszahelyettesítve a Hamilton operátor várható értékébe:
+\begin{equation}
+    \langle H \rangle_{min} = \frac{\hbar^2}{2m} \cdot \frac{m \omega}{2 \hbar} + \frac{m \omega^2}{8} \cdot \frac{2 \hbar}{m \omega} = \frac{1}{2} \hbar \omega
+\end{equation}
+Ez pedig pont a jó megoldás! Persze itt \textit{véletlenül} pont azt a próbafüggvényt választottuk, ami pont az egzakt megoldást adja, de a Gauss-görbe egy nagyon gyakran használt próbafüggvény,
+mivel egyszerű vele dolgozni.
+
+\subsubsection*{Példa 2: Potenciálgödör alapállapota "háromszög" próbafüggvénnyel}
+Ha a próbafüggvényünk egy folytonos függvény, akkor elég egyértelmű a megoldási menet. De ha nem folytonos próbafüggvényt választunk, akkor egy kicsit még dolgozni kell rajta, hogy a variációs elv értelmes eredményt adjon.
+Válaszunk most egy olyan próbafüggvényt, amiben vannak törések:
+\begin{equation}
+    \psi(x) = \begin{cases}
+        Ax, & 0 \leq x \leq a/2 \\
+        A(a - x), & a/2 < x \leq a \\
+        0, & \text{egyébként}
+    \end{cases}
+\end{equation}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/12-tetel/variacios_elv.png}
+    \caption{Háromszög alakú próbafüggvény}
+\end{figure}
+$A$ itt is a normalizálási faktor:
+\begin{equation}
+    \begin{aligned}
+        1 &= \int_0^a |\psi(x)|^2 dx = |A|^2 \left( \int_0^{a/2} x^2 dx + \int_{a/2}^a (a - x)^2 dx \right) = \\
+        &= |A|^2 \frac{a^3}{12} \quad \Rightarrow \quad A = \sqrt{\frac{12}{a^3}} = \frac{2}{a}\sqrt{\frac{3}{a}}
+    \end{aligned}
+\end{equation}
+Ahhoz, hogy meghatározzuk a kinetikus energiát, szükségünk lesz a próbafüggvény második deriváltjára. Egy ilyen töréssel rendelkező függvény első deriváltja:
+\begin{equation}
+    \frac{d\psi(x)}{dx} = \begin{cases}
+        A, & 0 < x < a/2 \\
+        -A, & a/2 < x < a \\
+        \text{nem definiált}, & x = 0, a/2, a
+    \end{cases}
+\end{equation}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/12-tetel/variacios_elv_derivalt.png}
+    \caption{A próbafüggvény első deriváltja}
+\end{figure}
+A lépcsőfüggvény deriváltja Dirac-delta függvényekből áll:
+\begin{equation}
+    \frac{d^2 \psi(x)}{dx^2} = A \delta(x) - 2A \delta\left(x - \frac{a}{2}\right) + A \delta(x - a)
+\end{equation}
+Tehát a Hamilton operátor várható értéke:
+\begin{equation}
+    \begin{aligned}
+        \langle H \rangle &= -\frac{\hbar^2}{2m} \int_0^a \psi(x) \frac{d^2 \psi(x)}{dx^2} dx = -\frac{\hbar^2}{2m} \left[ A \psi(0) - 2A \psi\left(\frac{a}{2}\right) + A \psi(a) \right] = \\
+        &= \frac{\hbar^2 A^2}{m} = \frac{\hbar^2}{m} \cdot \frac{12}{a^3} = \frac{12 \hbar^2}{m a^2}
+    \end{aligned}
+\end{equation}
+Tehát a variációs elv alapján az alapállapot energiája:
+\begin{equation}
+    E_{gs} \leq \frac{12 \hbar^2}{m a^2}
+\end{equation}
+Az egzakt megoldás ebben az esetben:
+\begin{equation}
+    E_{gs} = \frac{\pi^2 \hbar^2}{2 m a^2} \approx \frac{9.87 \hbar^2}{m a^2}
+\end{equation}
+Tehát a variációs elv egy elég jó felső határt adott az alapállapot energiájára, még egy ilyen "rossz" próbafüggvénnyel is.
+
+\subsubsection{A WKB közelítés}
+A \textbf{WKB} (Wentzel-Kramers-Brillouin) közelítés egy olyan módszer amivel az időfüggetlen Schrödinger-egyenletre kaphatunk közelítő megoldást 1D-ben (magát az elvet könnyen lehet általánosítani több dimenzióra is).
+A lényege, hogy ha van egy részecsként $E$ energiával, ami egy olyan régión halad át, ahol a $V(x)$ \textit{állandó}, akkor $E > V$ esetén a hullámfüggvény oszcilláló, míg $E < V$ esetén exponenciálisan csökkenő vagy növekvő lesz:
+\begin{equation}
+    \psi(x) = \begin{cases}
+        A e^{\pm i k x}, & E > V \quad \text{ahol,} \quad k = \frac{\sqrt{2m (E - V)}}{\hbar}\\
+        A e^{\pm \kappa x}, & E < V \quad \text{ahol,} \quad \kappa = \frac{\sqrt{2m (V - E)}}{\hbar}
+    \end{cases}
+\end{equation}
+Ahol a $+$ és $-$ előjelek a haladó és visszaverődő hullámokat jelentik. Az általános megoldás a kettő lineáris kombinációja lesz. Most tegyük fel, hogy a potenciál $V(x)$ nem teljesen állandó, de lassan változik úgy,
+hogy $E > V$ esetben a $\lambda(x) = \frac{2 \pi}{k(x)}$ hullámhossznál, $E < V$ esetben pedig a $\kappa(x)^{-1}$ csillapítási hosszúságnál sokkal nagyobb távolságokon változik jelentősen. Ekkor a WKB közelítés szerint a hullámfüggvényt
+szét lehet szedni két részre: egy gyorsan változó oszcilláló vagy exponenciális részre, és egy lassan változó amplitúdóra. Ezt azért tehetjük fel, mert ha a potenciál lassan változik, akkor a részecske végig szinuszos vagy exponenciális marad,
+a potenciál változása csak az amplitúdót és a hullámhosszt/csillapítást modulálja egy kicsit.
+
+Az egyetlen hely ahol a WKB közelítés nem működik, az a \textbf{forduló pontok} helye, ahol $E \approx V(x)$. Itt a hullámhossz végtelen nagy lesz ($\lambda \to \infty$ vagy $1/\kappa \to \infty$), így a WKB feltételezés megszűnik érvényes lenni.
+Ezeknek a pontoknak a kezelése a legnehezebb része a WKB közelítésnek, de szerencsére léteznek jól ismert \textbf{illesztési formulák}, amik segítségével át tudjuk hidalni a forduló pontokat.
+
+A WKB közelítés különösen hasznos az alagútjelenség vizsgálatakor, vagy a kötött állapotok energiáinak meghatározásakor.
+
+\subsubsection*{A "klasszikus" régió}
+A schrödinger egyenlet 1D-ben:
+\begin{equation}
+    -\frac{\hbar^2}{2m} \frac{d^2 \psi(x)}{dx^2} + V(x) \psi(x) = E \psi(x)
+\end{equation}
+Ezt rendezzük át úgy, hogy a második derivált kifejezve legyen:
+\begin{equation}
+    \frac{d^2 \psi(x)}{dx^2} = \frac{2m}{\hbar^2} (V(x) - E) \psi(x)
+\end{equation}
+és vezessük be a klasszikus impulzust:
+\begin{equation}
+    p(x) \equiv \sqrt{2m |E - V(x)|} \quad \Rightarrow \quad \frac{d^2 \psi(x)}{dx^2} = -\frac{p^2(x)}{\hbar^2} \psi(x)
+\end{equation}
+Mivel itt az impulzus klasszikus értelmezését használjuk, ezért ezt a közelítést fél-klasszikus közelítésnek is szokták nevezni. Egyelőre azt feltételezzük, hogy $E > V(x)$ minden $x$-re.
+Ez a régiót a "klasszikus régiónak" hívják, mivel itt valós az impulzus értéke. Klasszikusan egy részecske ebbe a régióba van "beszorítva", innen csak kvantumos jelenségek miatt tud kilépni (pl. alagútjelenség).
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/12-tetel/wkb_classical_region.png}
+    \caption{Klasszikusan a részecske ebbe a régióba van beszorítva}
+\end{figure}
+Általában a $\psi(x)$ függvény egy komplex függvény, ezért felírhatjuk az \textit{amplitúdó} $A$ és \textit{fázis} $\phi$ formájában - mind a kettő valós!:
+\begin{equation}
+    \psi(x) = A(x) e^{i \phi(x)}
+\end{equation}
+A derivált ekkor ('-t használva az $x$ szerinti derivált jelölésére):
+\begin{equation}
+    \frac{d \psi}{dx} = \left( A' + i A \phi' \right) e^{i \phi}
+\end{equation}
+És a második derivált:
+\begin{equation}
+    \frac{d^2 \psi}{dx^2} = \left( A'' + 2 i A' \phi' + i A \phi'' - A (\phi')^2 \right) e^{i \phi}
+\end{equation}
+Ezt helyettesítsük be a Schrödinger-egyenletbe:
+\begin{equation}
+    A'' + 2 i A' \phi' + i A \phi'' - A (\phi')^2 = - \frac{p^2}{\hbar^2} A
+\end{equation}
+Ez gyakorlatilag két valós egyenlet, egy a valós részre és egy a képzetes részre. A képzetes rész:
+\begin{equation}
+    A'' - A'(\phi') = - \frac{p^2}{\hbar^2} A \quad \text{vagy,} \quad A'' = A \left[(\phi')^2 - \frac{p^2}{\hbar^2}\right]
+\end{equation}
+A valós rész pedig:
+\begin{equation}
+    2 A' \phi' + A \phi'' = 0 \quad \text{vagy,} \quad \left(A^2 \phi'\right)' = 0
+\end{equation}
+Ez a két egyenlet pontosan ekvivalens a Schrödinger-egyenlettel. A második egyenletet könnyen meg tudjuk oldani:
+\begin{equation}
+    A^2 \phi' = C^2 \quad \text{vagy,} \quad A = \frac{C}{\sqrt{|\phi'|}}
+\end{equation}
+Ahol $C$ egy valós konstans. Az első egyenletet viszont nem lehet általában megoldani, tehát itt jön be a WKB közelítés. Feltételezzük, hogy az amplitúdó $A$ sokkal lassabban változik mint a fázis $\phi$,
+vagyis $A''$ elhanyagolható (pontosabban $A''/A$ sokkal lasabban változik mint $(\phi')^2$ vagy $p^2/\hbar^2$). Ekkor az első egyenletből:
+\begin{equation}
+    (\phi')^2 = \frac{p^2}{\hbar^2} \quad \text{vagy,} \quad \phi' = \pm \frac{p}{\hbar}
+\end{equation}
+Tehát a fázis:
+\begin{equation}
+    \phi(x) = \pm \frac{1}{\hbar} \int p(x) \, dx
+\end{equation}
+Itt indefinitív integrált írtunk, mert bármilyen konstans ami lejön egy definitív integrálból beleolvasztható az integrálási konstansba. A $\sqrt{\hbar}$-t szintén beleolvaszthatjuk a $C$ konstansba:
+\begin{equation}
+    \boxed{\psi(x) = \frac{C}{\sqrt{p(x)}} e^{\pm \frac{i}{\hbar} \int p(x) \, dx}}
+\end{equation}
+Ez a WKB közelítés a "klasszikus régióban", ahol $E > V(x)$. Vegyük észre, hogy:
+\begin{equation}
+    |\psi(x)|^2 \approx \frac{C^2}{p(x)}
+\end{equation}
+Tehát annak a valószínűsége, hogy a részecskét $x$-ben találjuk, a klasszikus impulzusával fordítottan arányos. Ez teljesen logikus, hisz ahol a részecske lassabban mozog (kisebb $p$), ott több időt tölt el, így nagyobb az esélye, hogy ott találjuk meg.
+A WKB közelítés néha ebből a felismerésből van levezetve ahelyett, hogy az $A''$ tagot elhanyagolnánk.
+
+
+\subsection{Felhasadások: finomfelhasadás, hiperfinom felhasadás, Lamb-eltolódás}
+A huszadik század elején sikerült pontosabb műszereket építeni, amikkel az atomok színképét lehetett vizsgálni. Ennek köszönhetően felfedezték, hogy az egyes spektrumvonalak nem egyszerű vonalak vannak,
+hanem a színképvonalak struktúrája sokkal bonyolultabb. Például a Nátrium D-vonalai két közeli vonalból állnak, amiket D1 és D2-nek neveztek el. Ezeket a jelenségeket a Bohr-modell már nem tudta megmagyarázni,
+és Kvantummechanikai korrekciókra volt szükség a megértésükhöz.
+
+Mivel egzaktul csak a Hidrogén atomot tudjuk megoldani (illetve sok esetben ez a legfontosabb példa), ezért most csak a Hidrogén atomok spektrumának finomfelhasadását fogjuk megvizsgálni. A többi atom esetén
+is érvényesek maradnak az elvek, de ott az elektronok egymással való kölcsönhatása tovább bonyolítja a helyzetet. A Hidrogén atom esetén a Bohr-Hamilton operátor a következő volt:
+\begin{equation}
+    H_0 = - \frac{\hbar^2}{2m} \nabla^2 - \frac{e^2}{4 \pi \epsilon_0} \frac{1}{r}
+\end{equation}
+(A elektromos kinetikus energia és a Coulomb-potenciál összege). De ez nem teljesen fedi a valóságot. Azt már láttuk, hogy az atommag mozgásának korrekciójához elég ha a redukált tömeggel dolgozunk,
+de ezen felül van két jelentősebb hatás is: A \textbf{Relativisztikus korrekció} és a \textbf{Spin-körpálya kölcsönhatás}. Ezek a hatások okozzák a \textbf{finomfelhasadást}.
+A Bohr energiákhoz képest ezek a pertutbációk kicsik, egy $\alpha^2$ faktornyival, ahol:
+\begin{equation}
+    \alpha = \frac{e^2}{4 \pi \epsilon_0 \hbar c} \approx \frac{1}{137.036}
+\end{equation}
+az \textbf{finomszerkezeti állandó} ami a fizika egyik legfundamentálisabb dimenzió nélküli állandója, hisz tartalmazza a redukált Planck-állandót (kvantummechanika), a fénysebességet (relativitáselmélet), elektromos permittivitást és az elektron töltését is (elektromágnesességtan)!
+Ezt az állandót 1916-ban írta fel A. Sommerfeld, amikor kiterjesztette a Bohr-modellt úgy, hogy megmagyarázza a finomfelhasadást.
+
+Ezen kívül is még vannak további korrekciók, egy további $\alpha$ faktorral kisebb a \textbf{Lamb-eltolódás}, aminek az elektromos tér kvantáltságához van köze, és nagyságrenddel kisebb a \textbf{hiperfinom felhasadás}, amit az elektron és a proton mágneses dipólusmomentumainak kölcsönhatása okoz.
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        Hatás & Méretarány \\
+        Bohr-energiák & $\alpha^2 mc^2$ \\
+        \hline
+        Finomfelhasadás & $\alpha^4 mc^2$ \\
+        \hline
+        Lamb-eltolódás & $\alpha^5 mc^2$ \\
+        \hline
+        Hiperfinom felhasadás & $(m/m_p)\alpha^4 mc^2$ \\
+        \hline
+    \end{tabular}
+    \caption{Az atomok spektrumának felhasadásai és azok forrásai}
+\end{table}
+
+\subsubsection{Finomfelhasadás}
+A finomfelhasadás két hatásból áll össze: a relativisztikus korrekcióból és a spin-körpálya kölcsönhatásból. Mindkettő perturbációként kezelhető a Bohr-Hamilton operátorhoz képest.
+
+\subsubsection*{Relativisztikus korrekció}
+A hamilton operátor első tagja a kinetikus energiát hivatott reprezentálni:
+\begin{equation}
+    K = \frac{1}{2} m v^2 = \frac{p^2}{2m}
+\end{equation}
+És a kanonikus impulzus operátor $\mathbf{p} \to -i \hbar \nabla$ becserélése után:
+\begin{equation}
+    K = - \frac{\hbar^2}{2m} \nabla^2
+\end{equation}
+De ez a klasszikus kinetikus energia kifejezése. Einstein munkássága nyomán tudjuk, hogy ez nem egészen pontos, és be kell vezetni a relativisztikus korrekciót. A relativisztikus formula:
+\begin{equation}
+    K = \frac{m c^2}{\sqrt{1 - v^2/c^2}} - m c^2
+\end{equation}
+Az első tag a teljes \textit{relativisztikus energia} (kivéve a potenciális energia, ami most nem érdekel minket), a második tag pedig az \textit{nyugalmi energia}. A különbségük adja meg az energiát ami a mozgáshoz tartozik.
+
+Az impulzus tehát relativisztikus esetben:
+\begin{equation}
+    p = \frac{m v}{\sqrt{1 - v^2/c^2}} \quad \Rightarrow \quad v = \frac{p/m}{\sqrt{1 + (p/mc)^2}}
+\end{equation}
+Ezt kell visszahelyettesíteni a kinetikus energia kifejezésébe:
+\begin{equation}
+    \begin{aligned}
+        v^2 &= \frac{(p/m)^2}{1 + (p/mc)^2} = \frac{p^2/m^2}{1 + p^2/m^2 c^2} = \frac{p^2 c^2}{m^2 c^2 + p^2} \\
+        \frac{v^2}{c^2} &= \frac{p^2}{m^2 c^2 + p^2} \\
+        1 - \frac{v^2}{c^2} &= \frac{m^2 c^2}{m^2 c^2 + p^2} \\
+        \sqrt{1 - \frac{v^2}{c^2}} &= \frac{m c}{\sqrt{m^2 c^2 + p^2}}
+    \end{aligned}
+\end{equation}
+Tehát a kinetikus energia:
+\begin{equation}
+    K = \frac{\sqrt{m^2 c^2 + p^2} mc^2}{mc} - m c^2 = \sqrt{m^2 c^4 + p^2 c^2} - m c^2
+\end{equation}
+Természetesen klasszikus határban, ahol $p \ll mc$, visszakapjuk a jól ismert $K = p^2/2m$ kifejezést. Ha átrendezzük a kinetikus energiát, akkor könnyen látható, hogy hatványsorba tudjuk fejteni ez a kicsi $p/mc$ paraméter szerint
+\footnote{A $\sqrt{1 + x} = 1 + \frac{1}{2} x - \frac{1}{8} x^2 + \ldots$ alakban fejthető hatványsorba. Ezt a konkrét sorfejtést Binomiális sornak hívják.}:
+\begin{equation}
+    \begin{aligned}
+        K &= m c^2 \left( \sqrt{1 + \left(\frac{p}{m c}\right)^2} - 1 \right) = m c^2 \left( 1 + \frac{1}{2} \left(\frac{p}{m c}\right)^2 - \frac{1}{8} \left(\frac{p}{m c}\right)^4 + \ldots - 1 \right) = \\
+        &= \frac{p^2}{2m} - \frac{p^4}{8 m^3 c^2} + \ldots
+    \end{aligned}
+\end{equation}
+Mivel a Hidrogén atom kinetikus energiája ($\sim 10 \text{eV}$) sokkal kisebb mint az elektron nyugalmi energiája ($\sim 511 \text{keV}$), ezért a hidrogénatom gyakorlatilag nem-relativisztikus, vagyis elég ha csak az első 
+korrekciós tagot vesszük figyelembe:
+\begin{equation}
+    H'_{r} = - \frac{p^4}{8 m^3 c^2}
+\end{equation}
+Innen már csak a perturbációs elméletetet kell alkalmaznunk, ami szerint az energia korrekciója a perturbációs Hamilton operátor várható értéke az eredeti (Bohr) sajátállapotokon:
+\begin{equation}
+    E'_{r} = \langle H'_{r}\rangle = - \frac{1}{8 m^3 c^2} \langle \psi | p^4 \psi \rangle = - \frac{1}{8 m^3 c^2} \langle p^2 \psi | p^2 \psi \rangle
+\end{equation}
+A Schrödinger egyenlet a perturbálatlan állapot esetén:
+\begin{equation}
+    p^2 \psi = 2m (E - V) \psi
+\end{equation}
+Ezt visszahelyettesítve az energia korrekció kifejezésébe:
+\begin{equation}
+    \begin{aligned}
+        E'_{r} &= - \frac{1}{8 m^3 c^2} \langle 2m (E - V) \psi | 2m (E - V) \psi \rangle = \\
+        &= - \frac{1}{2 m c^2} \langle (E - V)^2 \rangle = - \frac{1}{2 m c^2} \left[ E^2 - 2 E \langle V \rangle + \langle V^2 \rangle \right]
+    \end{aligned}
+\end{equation}
+Eddig ez teljesen általános. Most vezessük be a Hidrogént, aminek tudjuk, hogy a potenciálja $V(r) = - \frac{e^2}{4 \pi \epsilon_0} \frac{1}{r}$, és a Bohr-energiák:
+\begin{equation}
+    E^1_n = - \frac{1}{2mc^2} \left[E^2_n + 2E_n \left(\frac{e^2}{4 \pi \epsilon_0} \right) \left\langle \frac{1}{r} \right\rangle + \left(\frac{e^2}{4 \pi \epsilon_0}\right)^2 \left\langle \frac{1}{r^2} \right\rangle \right]
+\end{equation}
+Ahol $E_n$ a Bohr-energiája a kérdéses állapotnak. Itt már csak meg kell határoznunk a $\langle 1/r \rangle$ és $\langle 1/r^2 \rangle$ várható értékeket a Hidrogén atom sajátállapotain.
+A perturbálatlan $\psi_{n l m}$ sajátállapotokon az első várható érték egyszerű:
+\begin{equation}
+    \left\langle \frac{1}{r} \right\rangle = \frac{1}{n^2 a}
+\end{equation}
+A másodikat nem olyan egyszerű kiszámolni, de a végeredmény:
+\begin{equation}
+    \left\langle \frac{1}{r^2} \right\rangle = \frac{1}{n^3 a^2 (l + 1/2)}
+\end{equation}
+Ahol $a = \frac{4 \pi \epsilon_0 \hbar^2}{m e^2}$ a Bohr-sugár. Ezeket visszahelyettesítve az energia korrekció kifejezésébe:
+\begin{equation}
+    E^1_{r} = - \frac{1}{2 m c^2} \left[ E^2_n + 2 E_n \left(\frac{e^2}{4 \pi \epsilon_0} \right) \frac{1}{n^2 a} + \left(\frac{e^2}{4 \pi \epsilon_0}\right)^2 \frac{1}{n^3 a^2 (l + 1/2)} \right]
+\end{equation}
+Ezt tovább lehet egyszerűsíteni, ha beírjuk $a$ definícióját és mindent $E_n$-nel fejezünk ki:
+\begin{equation}
+    E^1_{r} = - \frac{(E_n)^2}{2m c^2} \left[ \frac{4n}{l + 1/2} - 3 \right]
+\end{equation}
+Látható, hogy a relativisztikus energia korrekció kicsi, kb. $E_n/mc^2 = 2 \times 10^{-5}$ nagyságrendű.
+
+Itt viszont felmerülhet egy kis probléma! A megoldás során a nem-degenerált perturbációs elméletet használtuk, annak ellenére, hogy a Hidrogénatom nagyon is degenerált!
+Ezt azért tehettük meg, mert a Hidrogén gömbszimmetrikus, ezért kommutál a $L^2$ és $L_z$ operátorokkal. Továbbá a sajátfüggvényei ezeknek az operátoroknak különböző sajátértékekkel rendelkeznek
+az $n^2$-szeresen degenerált altéren belül, egy adott $E_n$ energiához. Szerencsére tehát $\psi_{n l m}$ "jó" állapotok ehhez a problémához (vagy mondhatjuk úgy is, hogy $l, m, n$ "jó" kvantumszámok),
+így a degenerált esetet a nem degenerált perturbációs elmélettel tudtuk egyszerűsíteni.
+
+Az energia korrekcióban látható, hogy a degeneráció egy része feloldódik az $n$-edik energiaszintnek, de az $(2l +1)$ degenerációja az $m$-nek marad. De az $l$-ben lévő degeneráció feloldódik.
+
+\subsubsection*{Spin-Körpálya kapcsoltság}
+A relativisztikus hatások nem az egyetlen kiváltó okai a finomfelhasadásnak. Az elektron keringő mozgása is hatással van a vonalakra. Képzeljünk el egy elektront, ahogy egy atommag körül kering.
+Ekkor az elektron szempontjából nézve ez olyan, mintha a pozitív atommag keringene körülötte. Ez a keringő pozitív töltés pedig egy $\mathbf{B}$ mágneses teret generál az elektron szempontjából,
+ami egy forgatónyomatékot tesz a forgó elektronra, ami párhuzamos a mágneses momentummal $\boldsymbol{\mu}$, a tér irányába. A Hamilton operátora ennek a kölcsönhatásnak:
+\begin{equation}
+    H = - \boldsymbol{\mu} \cdot \mathbf{B}
+\end{equation}
+Először meg kell határoznunk a proton $\mathbf{B}$ mágneses terét az elektron dipólus momentumát $boldsymbol{\mu}$.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{imgs/12-tetel/spin-orbit.png}
+    \caption{Az elektron körül keringő proton mágneses teret generál az elektron számára}
+\end{figure}
+
+\textbf{A proton mágneses tere.} Ha a protont úgy képzeljük el az elektron szempontjából, mint egy folytonos pozitív köráramot, akkor a Biot-Savart törvény segítségével meghatározhatjuk a proton által generált mágneses teret az elektron helyén:
+\begin{equation}
+    B = \frac{\mu_0 I}{2r}
+\end{equation}
+Ahol $I = e/T$ az effektív áram és $T$ a proton keringési periódusa az elektron körül. Másrészt az impulzusmomentumja az elektronnak (az álló proton szempontjából) $L = mvr = 2 \pi mr^2 /T$, és a $\mathbf{B}$ és $\mathbf{L}$ vektormennyiségek párhuzamosak.
+Tehát:
+\begin{equation}
+    \mathbf{B} = \frac{1}{4 \pi \epsilon_0} \frac{e}{m c^2 r^3} \mathbf{L}
+\end{equation}
+Ahol használtuk, hogy $c = 1/\sqrt{\mu_0 \epsilon_0}$, hogy $\mu_0$ helyett $\epsilon_0$-t írjunk.
+
+\textbf{Az elektron mágneses dipólusmomentuma.} A mágnese dipólmomentuma az elektronnak arányos a (spin) impulzusmomentumával. Az arányossági tényező a Giromágneses arányosság.
+De határozzuk meg klasszikus elektromágnesességtan segítségével! Képzeljünk el egy $q$ töltést ami "szét van kenve" egy $r$ sugarú gyűrű mentén, ami $T$ periódussal forog. Ekkor a gyűrűn folyó áram $ I = q/T$, és a gyűrű által határolt felület $A = \pi r^2$, ekkor a mágneses dipólusmomentuma:
+\begin{equation}
+    \mu = I A = \frac{q}{T} \pi r^2
+\end{equation}
+Ahol $m$ a gyűrű tömege. Ekkor a gyűrű impulzusmomentuma a szögsebesség és a tehetetlenségi nyomaték szorzata:
+\begin{equation}
+    S = I \omega = \left( m r^2 \right) \frac{2 \pi}{T} = \frac{2 \pi m r^2}{T}
+\end{equation} 
+A giromágneses arányosság a dipólmomentum és az impulzusmomentum hányadosaként definiálható:
+\begin{equation}
+    \gamma = \frac{\mu}{S} = \frac{q}{2m}
+\end{equation}
+Tehát a dipólusmomentum és az impulzusmomentum kapcsolata:
+\begin{equation}
+    \boldsymbol{\mu} = \gamma \mathbf{S} = \frac{q}{2m} \mathbf{S}
+\end{equation}
+Ez eddig egy teljesen \textit{klasszikus} számítás volt. De a kísérleti eredmények azt mutatták, hogy a valódi eredmény ennek (majdnem) pont a kétszerese!
+Ezt az ellentomondást Dirac-nak sikerült feloldania amikor a relativisztikus
+\footnote{Bár Dirac a relativisztikus hatások okán vezette be ezt a 2-es szorzót, ez NEM a relativisztikus hatások része! Később a Schrödinger egyenlet linearizálásával is sikerült visszakapni (Lévy-Leblond, 1976). Ez tehát a kapcsoltság következménye.}
+kvantummechanikát kifejlesztette az elektron számára, ahol bevezette a $g$ \textbf{giromágneses faktort}, ami
+az ő elméletében pontosan $g = 2$ voltak
+\footnote{Később a Kvantum elektrodinamikában (QED) finom korrekciókat számoltak, amelyek kissé eltolták a g-faktor értékét $g_e = 2 + (\frac{\alpha}{\pi}) + ... = 2.002...$-re.}.
+Tehát a helyes értéke a dipólusmomentumnak az elektronnál:
+\begin{equation}
+    \boldsymbol{\mu} = g_e \frac{e}{2m} \mathbf{S} = \frac{e}{m} \mathbf{S}
+\end{equation}
+Most már minden adott a Hamilton operátor meghatározásához:
+\begin{equation}
+    H'_{so} = - \boldsymbol{\mu} \cdot \mathbf{B} = - \frac{e}{m} \mathbf{S} \cdot \left( \frac{1}{4 \pi \epsilon_0} \frac{e}{m c^2 r^3} \mathbf{L} \right) = \frac{e^2}{4 \pi \epsilon_0} \frac{1}{m^2 c^2 r^3} \mathbf{S} \cdot \mathbf{L}
+\end{equation}
+De ebben a számolásban van egy nagy csalás! Az elektron szempontjából néztük a rendszert, de az elektron folyamatosan gyorsul, tehát nincs inerciarendszerben! Ezt a problémát szerencsére könnyű áthidalni a \textbf{Thomas-precesszió} bevezetésével,
+aminek a lényege, hogy az elektron mozgását úgy veszi, mint ha az inercia rendszerek között menne át minden időpillanatban. A Thomas-precesszió pedig az ezen rendszerek közötti átmenetek kummulatív Lorentz-transzformációinak hatását veszi figyelembe.
+Ez a mi esetünkben egy egyszerű $\frac{1}{2}$ faktor bevezetését jelenti a Hamilton operátorban
+\footnote{Természetesen vehettük volna a rendszert a laboratóriumi rendszerben is, ahol a proton mozdulatlan és az elektron kering, ekkor a hatást a nukleusz elektromos terének kölcsönhatása okozza az elektronn elektromos dipólmomentumával. Ez azonban egy jóval komplikáltabb elektrodinamikai számolást igényel.}:
+\begin{equation}
+    H'_{so} = \frac{1}{2} \frac{e^2}{4 \pi \epsilon_0} \frac{1}{m^2 c^2 r^3} \mathbf{S} \cdot \mathbf{L} = \frac{e^2}{8 \pi \epsilon_0} \frac{1}{m^2 c^2 r^3} \mathbf{S} \cdot \mathbf{L}
+\end{equation}
+Ez a \textbf{Spin-körpálya kölcsönhatás}. Ez majdnem ugyanaz mint amit a klasszikus elméletből vártunk volna, csak a giromágneses faktor és a Thomas-precesszió korrekciójára van szükségünk (amik egyébként pont kiejtik egymást... de ez puszta véletlen.)
+Fizikailag ez a hatás a forgatónyomaték miatt jelenik meg, ami a keringő elektron mágneses dipólusán hat, az elektron nyugvó rendszeréből nézve.
+
+Most nézzük meg tehát a kvantummechanikát! Ha jelen van a spin-pálya kapcsoltság, akkor a Hamilton operátor már nem kommutál az $L$ és $S$ operátorokkal, tehát ezek nem függetlenül megmaradó mennyiségek.
+De a kapott Hamilton operátor korrekció már kommutál $L^2$ és $S^2$-el és a teljes impulzusmomentum:
+\begin{equation}
+    \mathbf{J} \equiv \mathbf{L} + \mathbf{S}
+\end{equation}
+Tehát ezek a mennyiségek megmaradóak. Más szavakkal $S_z$ és $L_z$ már nem megmaradó mennyiségek és ezért nem "jó" állapotok (a perturbáció elmélethez), de $S^2$, $L^2$, $J^2$ és $J_z$ azok.
+Most:
+\begin{equation}
+    J^2 = (\mathbf{L} + \mathbf{S})^2 = L^2 + S^2 + 2 \mathbf{L} \cdot \mathbf{S} \quad \Rightarrow \quad \mathbf{L} \cdot \mathbf{S} = \frac{1}{2} (J^2 - L^2 - S^2)
+\end{equation}
+Tehát $\mathbf{L} \cdot \mathbf{S}$ sajátértékei kifejezhetők $j, l, s$ kvantumszámokkal:
+\begin{equation}
+    \langle \mathbf{L} \cdot \mathbf{S} \rangle = \frac{\hbar^2}{2} \left[ j(j+1) - l(l+1) - s(s+1) \right]
+\end{equation}
+Az elektron spinjének $s = 1/2$, így $s(s+1) = 3/4$. A teljes energia korrekció tehát:
+Az $\frac{1}{r^3}$ várható értékét is ki kell számolnunk a Bohr-sajátállapotokon. Ez nem triviális, de a végeredmény:
+\begin{equation}
+    \left\langle \frac{1}{r^3} \right\rangle = \frac{1}{n^3 a^3} \frac{1}{l (l + 1/2)(l + 1)} \quad \text{ha } l \neq 0
+\end{equation}
+Így a teljes spin-körpálya energia korrekció:
+\begin{equation}
+    \begin{aligned}
+        E^1_{so} &= \langle H'_{so} \rangle = \frac{e^2}{8 \pi \epsilon_0} \frac{1}{m^2 c^2} \left\langle \frac{1}{r^3} \right\rangle \langle \mathbf{L} \cdot \mathbf{S} \rangle = \\
+        &= \frac{e^2}{8 \pi \epsilon_0} \frac{1}{m^2 c^2} \frac{(\hbar^2 / 2) \left[j (j + 1) - l(l + 1) - 3/4\right]}{l (l + 1/2)(l + 1) n^3 a^3}
+    \end{aligned}
+\end{equation}
+Vagy $E_n$-nel kifejezve:
+\begin{equation}
+    E^1_{so} = \frac{(E_n)^2}{m c^2} \left\{\frac{n [j (j + 1) - l (l + 1) - 3/4]}{2 l (l + 1/2)(l + 1)}\right\}
+\end{equation}
+Meglepő módon, bár totálisan más mechanizmusok okozzák, a két hatás azonos nagysgágrendű, mindkettő azonosan kicsi, kb. $E_n/mc^2$ nagyságrendű korrekciót okoz.
+A kettőt összeadva kapjuk meg a teljes finomfelhasadási korrekciót:
+\begin{equation}
+    E^1_{f} = E^1_{r} + E^1_{so} = \frac{(E_n)^2}{2 m c^2} \left[ 3 - \frac{4 n}{j + 1/2} \right]
+\end{equation}
+A Bohr-formulába beírva a finomfelhasadási korrekciót:
+\begin{equation}
+    \boxed{E_{n j} = E_n + E^1_{f} = - \frac{13.6 \text{eV}}{n^2} \left[ 1 + \frac{\alpha^2}{n^2} \left( \frac{n}{j + 1/2} - \frac{3}{4} \right) \right]}
+\end{equation}
+
+A finomfelhasadás tehát feloldja az $l$ kvantumszám szerinti degenerációt (tehát egy adott $n$-hez a különböző megengedett $l$ értékekhez különböző energiák tartoznak), de az $m$ szerinti degeneráció megmarad. Az energia most már csak $n$ és $j$ függvénye.
+A $z$ komponens sajátértékei, a keringési és spin impulzusmomentumokhoz ($m_l$ és $m_s$) már nem "jó" kvantumszámok, helyettük a teljes impulzusmomentum $m_j$ komponense lesz az.
+
+\subsubsection{Hiperfinom felhasadás}
+A proton maga is rendelkezik mágneses térrel, ezáltal egy mágneses dipólusnak minősül. Az ő dipólusmomentuma jóval kisebb mint az elektroné, mivel a mágneses dipólmomenutum fordítottan arányos a tömeggel:
+\begin{equation}
+    \boldsymbol{\mu}_p = g_p \frac{e}{2 m_p} \mathbf{S}_p \qquad \boldsymbol{\mu}_e = - g_e \frac{e}{2 m_e} \mathbf{S}_e
+\end{equation}
+A proton egy sokkal komplikáltabb részecske mint az elektron, mivel három kvarkból áll, emiatt a giromágneses faktora is eltér az elektronnál megszokottól: $g_p \approx 5.585$.
+A klasszikus elektrodinamika szerint a mágneses dipólus egy mágneses teret generál:
+\begin{equation}
+    \mathbf{B} = \frac{\mu_0}{4 \pi r^3} \left[ 3 (\boldsymbol{\mu}_p \cdot \hat{\mathbf{r}}) \hat{\mathbf{r}} - \boldsymbol{\mu}_p \right] + \frac{2 \mu_0}{3} \boldsymbol{\mu}_p \delta^3(\mathbf{r})
+\end{equation}
+Tehát a Hamilton operátora az elektronnak, a proton mágneses terében:
+\begin{equation}
+    H'_{hf} = - \boldsymbol{\mu}_e \cdot \mathbf{B} = \frac{\mu_0 g_p e^2}{8 \pi m_e m_p} \frac{3 (\mathbf{S}_p \cdot \hat{\mathbf{r}})(\mathbf{S}_e \cdot \hat{\mathbf{r}}) - \mathbf{S}_p \cdot \mathbf{S}_e}{r^3} + \frac{\mu_0 g_p e^2}{3 m_e m_p} \mathbf{S}_p \cdot \mathbf{S}_e \delta^3(\mathbf{r})
+\end{equation}
+A Perturbációs elmélet szerint az energia korrekció első rendben a várható értéke a perturbáló Hamilton operátornak a Bohr-sajátállapotokon:
+\begin{equation}
+    \begin{aligned}
+        E^1_{hf} = \langle H'_{hf} \rangle &= \frac{\mu_0 g_p e^2}{8 \pi m_e m_p} \left\langle \frac{3 (\mathbf{S}_p \cdot \hat{\mathbf{r}})(\mathbf{S}_e \cdot \hat{\mathbf{r}}) - \mathbf{S}_p \cdot \mathbf{S}_e}{r^3} \right\rangle + \\
+        &+ \frac{\mu_0 g_p e^2}{3 m_e m_p} \langle \mathbf{S}_p \cdot \mathbf{S}_e \rangle \langle \delta^3(\mathbf{r}) \rangle
+    \end{aligned}
+\end{equation}
+Az első tagot könnyű kiértékelni, mivel az alapállapotban (meg bárhol ahol $l = 0$) a hullámfüggvény gömbszimmetrikus, így az első tag várható értéke nulla. A második tagban a $\langle \delta^3(\mathbf{r}) \rangle$ várható értékét ki tudjuk számolni a Bohr-sajátállapotokon:
+\begin{equation}
+    \langle \delta^3(\mathbf{r}) \rangle = |\psi_{100}(0)|^2 = \frac{1}{\pi a^3}
+\end{equation}
+Ahol $a$ a Bohr-sugár. Így a hiperfinom energia korrekció:
+\begin{equation}
+    E^1_{hf} = \frac{\mu_0 g_p e^2}{3 m_e m_p} \langle \mathbf{S}_p \cdot \mathbf{S}_e \rangle \frac{1}{\pi a^3}
+\end{equation}
+Most már csak a $\langle \mathbf{S}_p \cdot \mathbf{S}_e \rangle$ várható értékét kell kiszámolnunk. Ezt nevezik egyébként \textbf{spin-spin kölcsönhatásnak}, ami mutatja, hogy itt a proton és az elektron spinje hat kölcsön
+(ahogy a spin-körpálya kölcsönhatásnál az elektron spinje és a keringési impulzusmomentuma). A spin-spin külcsünhatás jelenlétekor a spin impulzusmomentumok már nem megmaradó mennyiségek, ezért bevezethetünk egy új mennyiséget, ami a közös spin:
+\begin{equation}
+    \mathbf{S} \equiv \mathbf{S}_e + \mathbf{S}_p
+\end{equation}
+Ha pedig ezt négyzetre emeljük:
+\begin{equation}
+    S^2 = (\mathbf{S}_e + \mathbf{S}_p)^2 = S^2_e + S^2_p + 2 \mathbf{S}_e \cdot \mathbf{S}_p \quad \Rightarrow \quad \mathbf{S}_e \cdot \mathbf{S}_p = \frac{1}{2} (S^2 - S^2_e - S^2_p)
+\end{equation}
+Az elektron és a proton spinje is $s_e = s_p = 1/2$, így $s_e (s_e + 1) = s_p (s_p + 1) = 3/4$. Tehát $S_e^2 = S_p^2 = \frac{3}{4} \hbar^2$. Ha a spinek párhuzamosak, akkor a közös spin $s = 1$ (triplet állapot), ha pedig antiparalel, akkor $s = 0$ (szinglet állapot). Így az energia korrekció:
+\begin{equation}
+    E^1_{hf} = \frac{4 g_p \hbar^4}{3 m_p m^2_e c^2 a^4} \begin{cases}
+        + \frac{1}{4}, & \text{ha } s = 1 \text{ (triplet)} \\
+        - \frac{3}{4}, & \text{ha } s = 0 \text{ (szinglet)}
+    \end{cases}
+\end{equation}
+Tehát a hiperfinom felhasadás két szintre osztja az alapállapotot: egy triplet ($s = 1$) és egy szinglet ($s = 0$) szintre.
+
+A spin-spin kölcsönhatás feloldja a spin degenerációt az alapállapotban, felemelve a triplet szintet és lecsökkentve a szinglet szintet.
+A két szint közötti energia különbsség:
+\begin{equation}
+    \Delta E_{hf} = E^1_{hf} (s = 1) - E^1_{hf} (s = 0) = \frac{4 g_p \hbar^4}{3 m_p m^2_e c^2 a^4} \approx 5.9 \times 10^{-6} \text{eV}
+\end{equation}
+Ez az energia különbség megfelel egy $1420 \text{MHz}$ frekvenciájú fotonnak, ami a rádióhullám tartományába esik. Ez a híres \textbf{21 cm-es vonal}, amit a csillagászok használnak a hidrogén felderítésére az univerzumban.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{imgs/12-tetel/hyperfine.png}
+    \caption{A Hidrogén atom alapállapotának hiperfinom felhasadása. A triplet állapot magasabb energiájú mint a szinglet állapot.}
+\end{figure}
+
+\subsubsection{Lamb-eltolódás}
+A Lamb-eltolódás a legkülönösebb finomszerkezeti hatás a három közül, ugyanis ezt se klasszikusan, se relativisztikusan, se kvantumosan nem tudták megmagyarázni, még a Dirac-egyenlet sem jelezte előre.
+A jelenséget az 1930-as években fedezték fel először, amikor kis eltéréseket vettek észre a Hidrogén finomszerkezetében amikor a Balmer sorozat vonalait vizsgálták. Azt vették észre, hogy
+találtak olyan apró felhasadásokat, amiknek a távolságát semmivel nem tudták megmagyarázni. A Dirac egyenlet által prediktált értékektől 3$\%$-al tértek el. Később sikerült pontosan azonosítani, hogy
+az $^2S_{1/2}$ és $^2P_{1/2}$ állapotok között van az eltérés.
+
+Végül 1947-ben Willis Lamb és Robert Retherford végeztek egy híres kísérletet, amiben mikróhullámú sugárzással gerjesztették a Hidrogén atomokat, és pontosan megmérték az $^2S_{1/2}$ és $^2P_{1/2}$ állapotok közötti energia különbséget.
+Emiatt a jelenséget később \textbf{Lamb-eltolódásnak} nevezték el. Később Hans Bethe adott egy magyarázatot a jelenségre a Kvantum Elektrodinamika (QED) keretein belül, ami a kvantummechanika és az elektromágnesesség egyesítése.
+
+A magyarázat lényege, hogy a vákuum nem üres, hanem tele van virtuális részecskékkel, amik folyamatosan keletkeznek és eltűnnek. Ezeket azért nevezik "virtuálisnak" mert nem léteznek mint önálló szabad részecskék, hanem
+"közvetítőként" működnek a kölcsönhatásokban. Továbbá ezek a virtuális fotonok nem feltétlenül követik a klasszikus energia és impulzus megmaradási törvényeket, mivel a Heisenberg-féle határozatlansági relációk lehetővé teszik számukra, hogy rövid időre "kölcsönvegyenek" energiát a vákuumból, és olyan energiákkal rendelkezzenek, amik fizikailag lehetetlenek lennének.
+Ezek a virtuális részecskék kölcsönhatásba lépnek az elektronokkal, és ez a kölcsönhatás kis mértékben megváltoztatja az elektronok energiáját. Ez a hatás különböző mértékben érinti az $S$ és $P$ állapotokat, mivel az $S$ állapotoknál az elektron valódi valószínűsége, hogy a mag közelében van, nagyobb
+(mivel az $S$ állapot hullámfüggvénye nem nullánál van a mag helyén), míg a $P$ állapotoknál ez a valószínűség nulla (mivel a $P$ állapot hullámfüggvénye nullánál van a mag helyén). Emiatt az $S$ állapot energiája nagyobb mértékben változik meg, mint a $P$ állapoté, ami végül az energia szintek közötti különbséghez vezet.
+A Lamb-eltolódás pontos mértéke:
+\begin{equation}
+    \Delta E_{Lamb} = E(^2S_{1/2}) - E(^2P_{1/2}) \approx 4.38 \times 10^{-6} \text{eV}
+\end{equation}
+A Lamb-eltolódás felfedezése és magyarázata jelentős mérföldkő volt a modern fizika történetében, és hozzájárult a Kvantum Elektrodinamika fejlődéséhez, ami ma az egyik legpontosabb és legjobban tesztelt elmélet a fizikában.
+
+\subsection{Spektrumvonalak felhasadása külső térben: Stark- és Zeeman-effektusok}
+Az atomi színképvonalakat nem csak belső atomi hatások tudják felbontani, hanem külső terek is. Az elektron energiáját tudják külső elektromos (Stark-effektus) vagy mágneses (Zeeman-effektus) terek befolyásolni,
+amelyek így újabb eltolódásokat tudnak okozni a spektrumvonalakban.
+
+\subsubsection{A Zeeman-effektus}
+Amikor egy atom egy külső mágneses térbe kerül $\mathbf{B}_{\text{ext}}$, akkor az energia szintek eltolódnak. Ezt a jelenséget \textbf{Zeeman-effektusnak} nevezzük, amit Pieter Zeeman fedezett fel 1896-ban.
+Egy elektronra a Perturbáció
+\footnote{Ez csak az elsőrendű közelítése a perturbációs Hamilton operátornak. Emellett a mágneses impulzusmomentum a mechanikai impulzusmomentummal arányos, nem pedig a kanonikus impulzusmomentummal. Ezek a kis korrekciók mind a $B^2$ tagokban jelennének csak meg, de ezeket elhagyjuk.}:
+\begin{equation}
+    H'_{Z} = - \boldsymbol{\mu} \cdot \mathbf{B}_{\text{ext}} = (\boldsymbol{\mu}_l + \boldsymbol{\mu}_s) \cdot \mathbf{B}_{\text{ext}}
+\end{equation}
+Ahol az elektron mágneses dipólusmomentuma a keringési és spin komponensekből tevődik össze:
+\begin{equation}
+    \boldsymbol{\mu}_l = - \frac{e}{2m} \mathbf{L} \qquad \boldsymbol{\mu}_s = - g_e \frac{e}{2m} \mathbf{S}
+\end{equation}
+A teljes perturbáló Hamilton operátor tehát:
+\begin{equation}
+    H'_{Z} = \frac{e}{2m} \left( \mathbf{L} + g_e \mathbf{S} \right) \cdot \mathbf{B}_{\text{ext}}
+\end{equation}
+Itt a giromágneses arány akörpálya mozgáshoz a szokásos $q/2m$. Csak a spin esetében van szükség a $g_e \approx 2$ giromágneses faktor bevezetésére.
+
+A Zeeman effektus természete nagyban függ a külső erő térerősségétől a belső térhez képest, ami a spin-pálya kölcsönhatást eredményezi. Ha a $B_{\text{ext}} \ll B_{\text{int}}$ térerősség kicsi,
+akkor a spin-pálya kölcsönhatás dominál és $H'_{Z}$-t egy kis perturbációként kezeljük. Ezt a Zeeman effektust \textbf{gyenge Zeeman-effektusnak} nevezzük. Ha viszont $B_{\text{ext}} \gg B_{\text{int}}$, akkor a külső mágneses tér dominál,
+és a spin-pálya kölcsönhatást egy kis perturbációként kezeljük. Ezt a Zeeman effektust \textbf{erős Zeeman-effektusnak} nevezzük. A kettő között van az \textbf{átmeneti Zeeman-effektus}, amikor a két hatás hasonló nagyságrendű és ekkor a perturbáció elmélet minden trükkjére szükségünk lesz.
+
+\subsubsection*{Gyenge Zeeman-effektus}
+Ha $B_{\text{ext}} \ll B_{\text{int}}$, akkor a spin-pálya kölcsönhatás dominál és a Zeeman effektust egy kis perturbációként kezeljük. Ekkor a $H_{\text{Bohr}} + H'_{f}$ Hamilton operátor-t kezeljük úgy, mint egy "perturbálatlan" Hamilton operátor,
+és erre tesszük rá a Zeeman perturbációt $H'_{Z}$. Ebben az esetben sajátállapotok a $|n l j m_j \rangle$ állapotok, mivel ezek sajátállapotai $H_{\text{Bohr}} + H'_{f}$-nek és ennek a sajátértékei $E_{n j}$-k.
+Annak ellenére, hogy a finomfelhasadás feloldott néhány degenerációt, a Hidrogén atom továbbra is degenerált marad $m_j$ szerint egy adott $n$ és $j$ értékre. Ennek ellenére $|n l j m_j \rangle$ "jó" állapotok, ahhoz, hogy $H'_Z$-t kezeljük,
+Tehát nem kell a $\textbf{W}$ mátrixot felírnunk és diagonlizálnunk, a $H'_Z$ már diagonális ebben a bázisban. Mivel $H'_Z$ kommutál $J^2$-vel és $J_z$-vel (ha a $\mathbf{B}_{\text{ext}}$ irányát z tengely metén választjuk),
+ezért mindegyik degenerált állapot \textit{egyedileg} meg lesz jelölve $j$ és $m_j$ által.
+
+Az elsőrendű perturbáció elmélet szerint a Zeeman korrekció az energia szintekre:
+\begin{equation}
+    \begin{aligned}
+        E^1_{Z} &= \langle n l j m_j | H'_{Z} | n l j m_j \rangle = \frac{e}{2m} \langle n l j m_j | \left( \mathbf{L} + g_e \mathbf{S} \right) \cdot \mathbf{B}_{\text{ext}} | n l j m_j \rangle = \\
+        &= \frac{e}{2m} B_{\text{ext}} \hat{k} \cdot \langle \mathbf{L}_z + g_e \mathbf{S}_z \rangle
+    \end{aligned}
+\end{equation}
+Ahol $\mathbf{B}_{\text{ext}}$-nek csak $z$ irányú komponense van, hogy a $\mathbf{W}$ mátrix nem-diagonális elemeit elimináljuk. Most már csak a $\langle \mathbf{L}_z + g_e \mathbf{S}_z \rangle$ várható értékét kell kiszámolnunk a $|n l j m_j \rangle$ állapotokon.
+Sajnos viszont ezt nem tudjuk olyan könnyen megadni, mert nem tudjuk egyből $\mathbf{S}$ várható értékét. Azt tudjuk, hogy:
+\begin{enumerate}
+    \item a teljes impulzusmomentum  $\mathbf{J} = \mathbf{L} + \mathbf{S}$ állandó
+    \item $\mathbf{L}$ és $\mathbf{S}$ gyorsan precesszálnak $\mathbf{J}$ körül
+    \item Az időátlaga $\mathbf{S}$-nek csak a $\mathbf{J}$ irányú projekciója: $ \mathbf{S}_\text{avg} = \frac{(\mathbf{S} \cdot \mathbf{J})}{J^2} \mathbf{J}$
+\end{enumerate} 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{imgs/12-tetel/zeeman.png}
+    \caption{A spin-körpálya kölcsönhatás jelenléte esetén a $\mathbf{L}$ és $\mathbf{S}$ külön-külön nem megmaradó mennyiségek, a $\mathbf{J}$ körül precesszálnak. Maga a $\mathbf{J}$ viszont megmaradó mennyiség.}
+\end{figure}
+De az pálya impulzusmomentumot fel tudjuk írni úgy, hogy $\mathbf{L} = \mathbf{J} - \mathbf{S}$, vagyis $L^2 = J^2 + S^2 - 2\mathbf{J} \cdot \mathbf{S}$, így:
+\begin{equation}
+    \mathbf{S} \cdot \mathbf{J} = \frac{1}{2} (J^2 + S^2 - L^2) = \frac{\hbar^2}{2} \left[ j(j+1) + s(s+1) - l(l+1) \right]
+\end{equation}
+Ebből következik, hogy:
+\begin{equation}
+    \begin{aligned}
+        \langle \mathbf{L} + 2 \mathbf{S} \rangle &= \langle \mathbf{J} - \mathbf{S} + 2 \mathbf{S} \rangle = \langle \mathbf{J} + \mathbf{S} \rangle = \\
+        &= \left\langle \mathbf{J} + \frac{(\mathbf{S} \cdot \mathbf{J})}{J^2} \mathbf{J} \right\rangle = \left[ 1 + \frac{j(j+1) + s(s+1) - l(l+1)}{2 j (j+1)} \right] \langle \mathbf{J} \rangle
+    \end{aligned}
+\end{equation}
+Itt fontos megjegyezni, hogy az előző lépésben a $\mathbf{S}$-t az időátlagával helyettesítettük, de ez ettől nem lesz egy közelítő megoldás, hanem egzaktul helyes. Ez azért van, mert
+$\mathbf{J}$ és $\mathbf{L} + 2\mathbf{S}$ vektor operátorok és az állapotok impulzusmomentum sajátállapotai. Ezért a mátrix elemeit meg lehet kapni a Wigner-Eckart tétel segítségével
+\footnote{
+    A Wigner-Eckart tétel segítségével egy tetszőleges operátor mátrixelemeit tudjuk meghatározni úgy, hogy hogyan kommutálnak az impulzusmomentum operátorokkal.
+    Például ha veszünk $2j+1$ darab $O^m_j$ operátort, ahol $m=-j, -j+1, \ldots, j$,-ig megy, ami így egy $j$ impulzusmomentumú multiplettet alkot, akkor ennek akkor van $j$ impulzusmomentuma, ha:
+    \begin{equation}
+        [J_z, O^m_j] = m \hbar O^m_j \quad \text{és} \quad [J_\pm, O^m_j] = \hbar \sqrt{(j \mp m)(j \pm m + 1)} O^{m \pm 1}_j
+    \end{equation}
+    Emellett egy általános vektoroperátorra igaznak kell lennie, hogy:
+    \begin{equation}
+        [J_z, V_i] = i \hbar \epsilon_{z i k} V_k \quad \text{és} \quad [J_\pm, V_i] = i \hbar \epsilon_{\pm i k} V_k
+    \end{equation}
+    Ezek után a Wigner-Eckart tétel kimondja, hogy az ilyen operátor mátrix elemei felírhatók egy ún. redukált mátrix elem segítségével, ami független a mágneses kvantumszámtól:
+    \begin{equation}
+        \langle j m | O^{m}_j | j' m' \rangle = C_{j' j''} ( j m; m' m'' )\langle j || O_j || j' \rangle
+    \end{equation}
+    Ahol a $C_{j' j''}$ a Clebsch-Gordan együttható és a $\langle j || O_j || j' \rangle$ a redukált mátrixelem. Ebből látható, hogy $\mathbf{J}$ és $\mathbf{L} + 2\mathbf{S}$ mátrix elemei arányosak egymással:
+    \begin{equation}
+        \langle n l j m_j | \mathbf{L} + 2 \mathbf{S} | n l j m'_j \rangle = g_j \cdot \langle n l j m_j | \mathbf{J} | n l j m'_j \rangle
+    \end{equation}
+    Ahol az arányossági tényező a $g_j$ amit meg kell határozni.
+}.
+A szögletes zárójelben szereplő kifejezést \textbf{Landé-faktor}-nak nevezzük, és jelölése $g_j$:
+\begin{equation}
+    g_j = 1 + \frac{j(j+1) + s(s+1) - l(l+1)}{2 j (j+1)}
+\end{equation}
+Így a Zeeman energia korrekció:
+\begin{equation}
+    E^1_{Z} = \frac{e \hbar}{2m} B_{\text{ext}} m_j g_j = \mu_B B_{\text{ext}} m_j g_j
+\end{equation}
+Ahol $\mu_B = \frac{e \hbar}{2m}$ az \textbf{Bohr magneton}. Ez az eredmény azt mutatja, hogy a külső mágneses tér hatására az energia szintek felhasadnak $m_j$ szerint, és az eltolódás mértéke arányos
+a mágneses tér erősségével és a Landé-faktorral. Az $m$ degenerációja a forgatási invariancia következménye. A $H'_Z$ kiválaszt egy irányt a térben ($\mathbf{B}$ irányát), így a forgatási invariancia megszűnik ezért az $m$ degeneráció feloldódik, de az $m_j$ szerinti degeneráció megmarad.
+
+A teljes energia a finomstruktúrák tagjainak összege lesz és a Zeeman korrekció hozzájárulása. Például ha az alapállapotban vagyunk ($n=1, l=0, j=1/2$), akkor két részre szakad az állapot $m_j = \pm 1/2$ szerint:
+\begin{equation}
+    - 13.6 \text{eV} \left[ 1 + \frac{\alpha^2}{4} \left( 1 - \frac{3}{4} \right) \right] \pm \frac{1}{2} \mu_B B_{\text{ext}} g_j
+\end{equation}
+Ahol a Landé-faktor az alapállapotban $g_j = 2$
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{imgs/12-tetel/zeeman2.png}
+    \caption{A gyenge Zeeman-effektus hatása a Hidrogén atom energiáinak felhasadására. Az alapállapot két részre szakad $m_j = \pm 1/2$ szerint.}
+\end{figure}
+
+\subsubsection*{Erős Zeeman-effektus}
+Ha $B_{\text{ext}} \gg B_{\text{int}}$, akkor a külső mágneses tér dominál, és a spin-pálya kölcsönhatást egy kis perturbációként kezeljük
+\footnote{Ebben a régióban \textbf{Paschen-Back effektus}-nak is ismert}. 
+Ebben az esetben a "perturbálatlan" Hamilton operátor a $H_{\text{Bohr}} + H'_{Z}$ lesz, és erre tesszük rá a spin-pálya kölcsönhatást $H'_{so}$-t. A Zeeman Hamilton operátora:
+\begin{equation}
+    H'_{Z} = \frac{e}{2m} \left( L + g_e S \right) \cdot B_{\text{ext}}
+\end{equation}
+Tehát a perturbálatlan energiát könnyű kiszámolni, mivel $H'_{Z}$ diagonális a $|n l m_l m_s \rangle$ bázisban:
+\begin{equation}
+    E_{n m_l m_s} = - \frac{13.6 \text{eV}}{n^2} + \mu_B B_{\text{ext}} (m_l + g_e m_s)
+\end{equation}
+Ahol $m_l$ a pálya impulzusmomentum $z$ komponensének sajátértéke, $m_s$ pedig a spin $z$ komponensének sajátértéke. Az állapotok, amiket itt használunk $|n l m_l m_s \rangle$, degeneráltak,
+mivel az energia nem függ $l$-től és van egy extra degeneráció ha pl. $m_l = 3$ és $m_s = -1/2$ vagy $m_l = 2$ és $m_s = +1/2$-nak ugyanaz az energiája.
+Most megint szerencsések vagyunk, mert $| nlm_l m_s \rangle$ állapotok "jók", hogy a perturbációt kezeljük. A spin-pálya kölcsönhatás Hamilton operátora kommutál $L^2$-el és $J_z$-vel.
+Az első operátor feloldja az $l$ degenerációt, a második pedig az $m_l + 2m_s = m_j + m_s$ egybeesés miatti degenerációt.
+
+Az elsőrendű perturbáció elmélet szerint a spin-pálya kölcsönhatás korrekció az energia szintekre:
+\begin{equation}
+    E^1_{so} = \langle n l m_l m_s | (H'_r + H'_{so}) | n l m_l m_s \rangle
+\end{equation}
+Ahol $H'_r$ a relativisztikus korrekció Hamilton operátora. Ezt már korábban kiszámoltuk, így csak a spin-pálya kölcsönhatás várható értékét kell kiszámolnunk:
+\begin{equation}
+    \langle \mathbf{S} \cdot \mathbf{L} \rangle = \langle S_x \rangle \langle L_x \rangle + \langle S_y \rangle \langle L_y \rangle + \langle S_z \rangle \langle L_z \rangle = \hbar^2 m_s m_l
+\end{equation}
+Itt jegyezzük meg, hogy $\langle S_x \rangle = \langle S_y \rangle = 0$, mivel $|n l m_l m_s \rangle$ állapotok sajátállapotai $S_z$-nek, így a $x$ és $y$ komponensek várható értéke nulla.
+Ezt az egészet összevetve a spin-pálya kölcsönhatás korrekciója:
+\begin{equation}
+    E^1_{so} = \frac{13.6 \text{eV}}{n^3} \alpha^2 \left\{\frac{3}{4n} - \left[\frac{l(l + 1) - m_l m_s }{l (l + 1/2)(l + 1)}\right]\right\}
+\end{equation}
+A kapcsos zárójelben lévő tag $l = 0$-ban nem értelmezett, de a helyes értéke ebben az esetben 1 lesz. A teljes energia az erős Zeeman-effektus esetén tehát:
+\begin{equation}
+    E_{n l m_l m_s} = - \frac{13.6 \text{eV}}{n^2} + \mu_B B_{\text{ext}} (m_l + g_e m_s) + \frac{13.6 \text{eV}}{n^3} \alpha^2 \left\{\frac{3}{4n} - \left[\frac{l(l + 1) - m_l m_s }{l (l + 1/2)(l + 1)}\right]\right\}
+\end{equation}
+
+\subsubsection*{Átmeneti Zeeman-effektus}
+Ha a külső mágneses tér erőssége hasonló nagyságrendű mint a belső tér erőssége, akkor egyik hatás sem elhanyagolható, és a perturbáló Hamilton operátort teljes egészében figyelembe kell venni:
+\begin{equation}
+    H' = H'_{so} + H'_{Z}
+\end{equation}
+Ebben az esetben a $H'_{Z}$ nem diagonális a $|n l j m_j \rangle$ bázisban, és a $H'_{so}$ sem diagonális a $|n l m_l m_s \rangle$ bázisban. Ezért a teljes perturbáló Hamilton operátort fel kell írni egy megfelelő bázisban,
+majd diagonlizálni kell a mátrixot, hogy megkapjuk az új energia szinteket. Ez a folyamat bonyolultabb, és általában numerikus módszereket igényel a pontos eredmények eléréséhez.
+
+\subsubsection{Stark-effektus}
+Amikor egy atom egy külső elektromos térbe kerül $\mathbf{E}_{\text{ext}}$, akkor az energia szintek eltolódnak. Ezt a jelenséget \textbf{Stark-effektusnak} nevezzük, amit Johannes Stark fedezett fel 1913-ban.
+Nézzük meg, hogy az elektromos tér hogyan hat egy töltött részecskére. Azt tudjuk, hogy az elektromos részecske egy külső elektromos térben mozogva kap egy $-e\phi(x)$ nagyságú energiát.
+Mivel az elektron arányaiban jóval kisebb mint az elektromos tér változási skálája, ezért elég, ha a potenciál Taylor-sorának első két tagját vesszük figyelembe:
+\begin{equation}
+    \phi(\mathbf{r}) \approx \phi(0) + \mathbf{r} \cdot \nabla \phi(0) + \ldots
+\end{equation}
+Ha önkényesen $\phi(0) = 0$-t választunk (a magban), akkor a potenciál közelítése:
+\begin{equation}
+    \phi(\mathbf{r}) \approx \mathbf{r} \cdot \nabla \phi(0) = - \mathbf{r} \cdot \mathbf{E}_{\text{ext}}
+\end{equation}
+Ahol $E = - \nabla \phi$ az elektromos tér, homogén tér esetén. Így az elektronra ható perturbációs Hamilton operátor:
+\begin{equation}
+    H'_{S} = - e \phi(\mathbf{r}) = e \mathbf{r} \cdot \mathbf{E}_{\text{ext}}
+\end{equation}
+Ez a Hamilton operátor hasonló a dipólus kölcsönhatás Hamilton operátorához, ahol a dipólusmomentum $\mathbf{d} = - e \mathbf{r}$. Most már csak ki kell számolnunk a $H'_{S}$ várható értékét a megfelelő állapotokon.
+Egyszerűség kedvéért válasszuk úgy az irányokat, hogy az elektromos tér az $z$ tengely irányába mutasson: $\mathbf{E}_{\text{ext}} = E_{\text{ext}} \hat{k}$. Így a perturbációs Hamilton operátor:
+\begin{equation}
+    H'_{S} = e z E_{\text{ext}}
+\end{equation}
+Ekkor, mivel $[z, J_3] = 0$, a $H'_{S}$ kommutál $J_z$-vel, így az állapotokat egyedileg meg tudjuk jelölni $m_j$ által. Az elsőrendű perturbáció elmélet szerint a Stark korrekció az energia szintekre:
+\begin{equation}
+    E^1_{S} = \langle n' l' j' m'_j | H'_{S} | n l j m_j \rangle = e E_{\text{ext}} \delta_{mm'}\langle n' l' j' m_j | z | n l j m_j \rangle
+\end{equation}
+Ezzel megvannak a perturbáció mátrix elemei, az állapot vektorok között. De mitől nő az energia? $n$-től mindig függ az energia, ezért a degenerált altéren az $n$ fix.
+De itt észre kell venni egy fontos dolgot! A $z$ operátor páratlan a tértükrözésre nézve, mivel $P z P^{-1} = -z$. Ezért a tértükrözés behoz egy $(-1)^l$ faktort amikor az állapotok vektorokra hatnak.
+Ha tehát a z-t hattatjuk $|njl'm\rangle$ és $|njlm'\rangle$ állapotokra, akkor a mátrixelemek eltünnek, kivéve ha $(-1)^{l'}(-1)^l = -1$, vagyis ha $l'$ és $l$ különböző paritásúak.
+Tehát az egyedüli nem eltünő mátrixelemek a $l \neq l'$ esetekben vannak. $\mathbf{W}$ mátrix csak akkor nem nulla, ha írhatunk különböző $l$-ket a két oldalra.
+Tehát a degenerált altéren vannak különböző $l$-ek, akkor a Stark-effektus feloldja a degenerációt azáltal, hogy összekeveri az állapotokat különböző $l$ értékekkel.
+Ha $E$ függ $l$-től, akkor a paritás miatt nincs korrekció, ilyenek pl. az alkáli fémek, H-atom $n=1, j=1/2 \to l=0$ állapotban.
+  
+\subsubsection*{Gyenge Tér}
+Nézzük meg milyen a Stark effektus ha gyenge a külső elektromos tér, azaz $E_{\text{ext}}$ kicsi. Ilyenkor a perturbációs Hamilton operátort egy kis perturbációként kezeljük.
+Ez láthattuk, hogy nem minden esetben okoz eltolódást, csak specifikus állapotokban. Például, ha a Hidrogén atom  $n=2, j=1/2$ állapotban van, akkor az impulzusmomentum kvantumszámok lehetnek $l=0$ vagy $l=1$.
+(Hisz $j = l + s$ és $s= \pm 1/2$). Így a $|2 0 \frac{1}{2} m_j \rangle$ és $|2 1 \frac{1}{2} m_j \rangle$ állapotok között a Stark perturbációs Hamilton operátor nem nulla mátrix elemeket ad, így ezek az állapotok összekeverednek. Így a degenerált altérben a $\mathbf{W}$ mátrix:
+\begin{equation}
+    \mathbf{W} = \begin{pmatrix}
+        0 & e E_{\text{ext}} \langle 2 0 \frac{1}{2} m_j | z | 2 1 \frac{1}{2} m_j \rangle \\
+        e E_{\text{ext}} \langle 2 1 \frac{1}{2} m_j | z | 2 0 \frac{1}{2} m_j \rangle & 0
+    \end{pmatrix}
+\end{equation}
+Ahol a mátrix elemek kiszámolásához a Wigner-Eckart tételt használhatjuk. A mátrix diagonlizálásával megkapjuk az új energia szinteket:
+\begin{equation}
+    E_{\pm} = \pm e E_{\text{ext}} |\langle 2 0 \frac{1}{2} m_j | z | 2 1 \frac{1}{2} m_j \rangle|
+\end{equation}
+Így a gyenge Stark-effektus feloldja a degenerációt azáltal, hogy az $l=0$ és $l=1$ állapotokat összekeveri, és az energia szintek eltolódnak a külső elektromos tér hatására.
+
+\subsection{Fermi-féle aranyszabály, alagútjelenség}
+Amikor egy atom egy specifikus $\psi_a$ állapotban van, akkor egy perturbáció bevezetésével (pl. egy polarizált monokromatikus fénnyel megvilágítva) az atom át tud ugrani egy másik állapotba $\psi_b$.
+A legalapabb ilyen átmenet az úgynevezett \textbf{Abszorpció}, ahol az atom elnyel egy fontont és annak energiáját felhasználva egy magasabb energiájú állapotba kerül. Ennek a valószínűsége:
+\begin{equation}
+    P{a \to b} (t) = \left(\frac{|\pw| E_0}{\hbar}\right)^2 \frac{\sin^2 [(\omega_0 - \omega)t/2]}{(\omega_0 - \omega)^2}
+\end{equation}
+Ahol $\pw = \langle \psi_b | e \mathbf{r} | \psi_a \rangle$ az átmeneti dipólusmomentum, $\omega_0 = (E_b - E_a)/\hbar$ a két állapot közötti frekvencia, és $\omega$ a foton frekvenciája.
+Ekkor az atom $E_b - E_a$ energiát nyel el. 
+
+Ami érdekesebb, hogy ez a folyamat "visszafelé" is működik, tehát ha az atom egy izgatott állapotban van, akkor fénnyel megvilágítva stimulálhatjuk arra, hogy adjon le egy fotont és ugorjon vissza egy alacsonyabb energiájú állapotba.
+Ez a folyamat a \textbf{Stimulált emisszió}, ami az abszorpció "fordítottja". Ennek a valószínűsége ugyanaz, mint az abszorpcióé:
+\begin{equation}
+    P_{b \to a} (t) = \left(\frac{|\pw| E_0}{\hbar}\right)^2 \frac{\sin^2 [(\omega_0 - \omega)t/2]}{(\omega_0 - \omega)^2}
+\end{equation}
+Tehát a fény is képes energiát "kilökni" az atomból, aminek hatására két foton fog távozni az atomból, egy az eredeti foton és egy a stimulált emisszióból. A kijövő foton energiája 
+megegyezik az eredeti foton energiájával, azaz $\hbar \omega$. Ez a folyamat az alapja a lézerek működésének, ahol egy gerjesztett állapotú anyagot megvilágítva, amplifikálni tudjuk a fotonokat, amivel egy erős,
+fókuszált fényforrást hozunk létre.
+
+A harmadik ilyen mechanizmus a \textbf{Spontán emisszió}, ahol az atom egy izgatott állapotban spontán módon ad le egy fotont és ugrik vissza egy alacsonyabb energiájú állapotba. Ennek a valószínűsége nem függ külső fotonoktól,
+hanem csak az atom belső tulajdonságaitól. Ez a folyamat felel az atomok természetes sugárzásáért, amikor egy izgatott állapotban lévő atom visszaesik az alapállapotba és fotont bocsát ki.
+Felmerülhet a kérdés, hogy ez miért történhet meg? Ha nincs semmilyen perturbáció, akkor a rendszernek nem az adott állapotban kellene maradnia? A válasz az, hogy de, viszont a kvantummechanikában nincs olyan, hogy "nincs perturbáció".
+Ha minden energiaforrást kikapcsolunk és a szobát abszolút nullára hűtjük, akkor is maradni fog egy kis elektromágneses tér, ugyanis a vákkumnak, ahogy mondjuk az oszcillátornak se, nem nulla az alapállapoti energiája.
+Tehát a valóságban nincs olyan, hogy "spontán" emisszió, mindegyik sugárzást perturbáció okozza, a különbség csak annyi, hogy mi raktuk-e oda a perturbációt, vagy az a vákuumból származik.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/12-tetel/abs_stim_spont.png}
+    \caption{Különböző átmeneti folyamatok: abszorpció, stimulált emisszió és spontán emisszió.}
+\end{figure}
+
+\subsubsection{Inkoherens perturbáció}
+Az elektromágneses sugárzás energia-sűrűsége:
+\begin{equation}
+    u = \frac{\epsilon_0 E_0^2}{2}
+\end{equation}
+Ahol $E_0$ az elektromos tér amplitúdója. Az átmeneti valószínűség nem túl meglepő módon arányos az energia-sűrűséggel:
+\begin{equation}
+    P_{a \to b} (t) = \frac{2u}{\epsilon_0 \hbar^2} |\pw|^2 \frac{\sin^2 [(\omega_0 - \omega)t/2]}{(\omega_0 - \omega)^2}
+\end{equation}
+De ez egy monokromatikus, polarizált fényre igaz csak. A valóságban viszont ritkán van ilyen, általában egy sok frekvenciából álló, inkoherens fényforrással világítjuk meg az atomot.
+Ekkor az energiasűrűség helyett bevezethetjük a $u \to \rho(\omega) d\omega$ energia-sűrűség spektrumot, ahol $\rho(\omega)$ az energia-sűrűség per frekvencia egység. Így az átmeneti valószínűség:
+\begin{equation}
+    P_{a \to b} (t) = \frac{2}{\epsilon_0 \hbar^2} |\pw|^2 \int_{0}^{\infty} \rho(\omega) \left\{\frac{\sin^2 [(\omega_0 - \omega)t/2]}{(\omega_0 - \omega)^2}\right\} d\omega
+\end{equation}
+A kapcsos zárójelben lévő tag erősen csúcsos az $\omega = \omega_0$ pontban, és ha $t$ elég nagy, akkor ez a csúcs nagyon éles lesz. Ezzel szemben a $\rho(\omega)$ spektrum általában egy eléggé szétfolyt függvény.
+Emiatt közelítésként vehetjük $\rho(\omega) \approx \rho(\omega_0)$-t a csúcs környékén, és kivehetjük az integrál elé. Így az átmeneti valószínűség:
+\begin{equation}
+    P_{a \to b} (t) = \frac{2 |\pw|^2}{\epsilon_0 \hbar^2} \rho(\omega_0) \int_{0}^{\infty} \frac{\sin^2 [(\omega_0 - \omega)t/2]}{(\omega_0 - \omega)^2} d\omega
+\end{equation}
+Itt vezessünk be egy új változót: $x \equiv (\omega_0 - \omega)t/2$, így az integrál határai $x: \omega_0 t/2 \to -\infty$. Mivel $t$ elég nagy, ezért a felső határ közelíthető $+\infty$-nak:
+\begin{equation}
+    \int_{0}^{\infty} \frac{\sin^2 [(\omega_0 - \omega)t/2]}{(\omega_0 - \omega)^2} d\omega = \frac{t}{2} \int_{-\infty}^{\infty} \frac{\sin^2 (x)}{x^2} dx = \frac{t \pi}{2}
+\end{equation}
+Így az átmeneti valószínűség:
+\begin{equation}
+    P_{a \to b} (t) = \frac{\pi |\pw|^2}{\epsilon_0 \hbar^2} \rho(\omega_0) t
+\end{equation}
+
+Eddig egy olyan perturbációt feltételeztünk, ami az $y$ irányból jön, és $z$ irányba polarizált. Viszont az esetek nagy részében a fényforrás nem lesz polarizált, és minden irányból jöhet.
+A terek energiája $\rho(\omega)$ egyenlően oszlik el az összes irány és polarizáció között. Tehát $|\pw|^2$ helyett a $|\boldsymbol{\pw} \cdot \hat{n}|^2$ átlagát kell használnunk, ahol $\hat{n}$ polarizáció iránya.
+A $\boldsymbol{\pw}$ pedig:
+\begin{equation}
+    \boldsymbol{\pw} = q\langle \psi_b | \mathbf{r} | \psi_a \rangle 
+\end{equation}
+És az átlag minden irány és minden polarizáció felett van.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/12-tetel/inkoherens_per.png}
+    \caption{A tengelyek a $|\boldsymbol{\pw} \cdot \hat{n}|^2$ kiátlagolásához.}
+\end{figure}
+Az átlagolás úgy történik, hogy: Kiválasztunk gömbi koordinátákat úgy, hogy a sugárzás iránya $\hat{k}$ az $x$ irányba mutasson, a polarizáció $\hat{n}$ pedig az $z$ irányba, 
+a $\boldsymbol{\pw}$ pedig definiálja a $\phi$ és $\theta$ szögeket. (itt $\boldsymbol{\pw}$ fix, és a $\hat{n}$ és $\hat{k}$ felett átlagolunk, de $\hat{n} \bot \hat{k}$, tehát tulajdonképpen
+ugyanaz mintha a $\phi$ és a $\theta$ fölött átlagolnánk). Ekkor:
+\begin{equation}
+    \boldsymbol{\pw} \cdot \hat{n} = \pw \cos \theta
+\end{equation}
+és az átlag:
+\begin{equation}
+    |\boldsymbol{\pw} \cdot \hat{n}|_{\text{avg}}^2  = \frac{1}{4\pi} \int_{0}^{2\pi} d\phi \int_{0}^{\pi} \sin \theta d\theta |\boldsymbol{\pw}|^2 \cos^2 \theta = \frac{1}{3} |\boldsymbol{\pw}|^2
+\end{equation}
+Tehát az átmeneti ráta egy inkoherens, nem polarizált fényforrás esetén a stimulált emisszióra és abszorpcióra
+\footnote{Itt $\boldsymbol{\pw}$-t valósnak feltételeztük, de a valóságban általában komplex. De lehet a problémát úgy kezelni, hogy külön szedjük a valós és képzetes részt, külön-külön átlagoljuk, és összeadjuk az eredményeket.}:
+\begin{equation}
+    \boxed{R_{a \to b} = \frac{dP_{a \to b}}{dt} = \frac{\pi}{3 \epsilon_0 \hbar^2} |\boldsymbol{\pw}|^2 \rho(\omega_0)}
+\end{equation}
+Ahol $\boldsymbol{\pw}$ az átmeneti dipólusmomentum vektora, és $\rho(\omega_0)$ az energia-sűrűség spektrum az átmeneti frekvenciánál, $\omega_0 = (E_b - E_a)/\hbar$-nál kiértékelve.
+
+\subsubsection{Einstein féle $A$ és $B$ együtthatók}
+Képzeljünk el $N_a$ darab atomot az $a$ állapotban és $N_b$ darabot a $b$ állapotban. Legyen $A$ az átmeneti ráta (itt nem $R$-t használunk mert Einstein jelölését szokás használni).
+Tehát az atomok száma amelyek kilépnek a $b$ állapotból egy időegység alatt $A N_b$. Az átmeneti ráta stimulált emisszióra ahogy láttuk arányos az energia-sűrűséggel:
+$B_{ba} \rho(\omega_0)$ ahol $B_{ba} = \pi |\boldsymbol{\pw}|^2 / (3 \epsilon_0 \hbar^2)$. Az abszorpció hasonlóan arányos az energia-sűrűséggel, de egy másik együtthatóval:
+$B_{ab} \rho(\omega_0)$. Így a részecskék száma időegység alatt, amelyek csatlakoznak a felső állapothoz $B_{ab} \rho(\omega_0) N_a$. Így a két állapot populációjának időbeli változása:
+\begin{equation}
+    \frac{dN_b}{dt} = - A N_b - B_{ba} \rho(\omega_0) N_b + B_{ab} \rho(\omega_0) N_a
+\end{equation}
+
+Tegyük fel, hogy az atomok termodinamikai egyensúlyban vannak az ambiens térrel, és a részecskék száma mindegyik szinten \textit{állandó}. Ekkor $dN_b/dt = 0$, tehát:
+\begin{equation}
+    \rho(\omega_0) = \frac{A}{(N_a / N_b) B_{ab} - B_{ba}}
+\end{equation}
+Másrészt, tudjuk a statisztikus mechanikából, hogy a részecskék száma az egyes állapotokban a \textbf{Boltzmann eloszlás} szerint alakul:
+\begin{equation}
+    \frac{N_a}{N_b} = \frac{e^{-E_a / k_B T}}{e^{-E_b / k_B T}} = e^{(E_b - E_a) / k_B T} = e^{\hbar \omega_0 / k_B T}
+\end{equation}
+Tehát:
+\begin{equation}
+    \rho(\omega_0) = \frac{A}{e^{\hbar \omega_0 / k_B T} B_{ab} - B_{ba}}
+\end{equation}
+Viszont a Planck-féle fekete test sugárzás törvény szerint az energia-sűrűség spektrum:
+\begin{equation}
+    \rho(\omega) = \frac{\hbar}{\pi^2 c^3} \frac{\omega^3}{e^{\hbar \omega / k_B T} - 1}
+\end{equation}
+Ebből következik, hogy az előző két egyenletnek meg kell egyeznie minden hőmérsékleten és frekvencián. Ez csak akkor lehetséges, ha:
+\begin{equation}
+    B_{ab} = B_{ba} \quad \text{és} \quad A = \frac{\hbar \omega_0^3}{\pi^2 c^3} B_{ba}
+\end{equation}
+Ez megerősíti, hogy az abszorpció és a stimulált emisszió valószínűsége ugyanaz, de ez hihetetlen eredmény volt 1917-ben, amikor Einstein ezt először felvetette.
+Enstein kvázi "kényszerítve" volt, hogy "felfedezze" a stimulált emissziót, hogy megmagyarázza a fekete test sugárzás törvényét.
+De amiért most nekünk érdekes, hogy a spontán emisszió rátája ($A$), amit kerestünk, kifejezhető a stimulált emisszió rátájával ($B_{ba}$), amit már ismerünk:
+\begin{equation}
+    B_{ba} = \frac{\pi}{3 \epsilon_0 \hbar^2} |\boldsymbol{\pw}|^2
+\end{equation}
+Így a spontán emisszió rátája:
+\begin{equation}
+    \boxed{A = \frac{\omega_0^3 |\boldsymbol{\pw}|^2}{3 \pi \epsilon_0 \hbar c^3}}
+\end{equation}
+Ez az Einstein $A$ együttható, ami megadja az atom spontán emissziójának valószínűségét egy adott átmenetre.
+
+Ebből az eredményből megkaphatjuk egy izgatott állapot élettartalmát is. Tegyük fel, hogy egy atom $N$ darab részecskéje van egy izgatott állapotban, ami egy alacsonyabb energiájú állapotba tud bomlani spontán emisszióval.
+A részecskék számának időbeli változása:
+\begin{equation}
+    dN_b = - A N_b dt
+\end{equation}
+(feltéve, hogy nincs valami mechanizmus ami új részecskéket hoz létre az izgatott állapotban). Fontos, hogy itt ne keverjük össze a termodinamikai egyensúllyal, itt pont azt feltételezzük, hogy a rendszer kikerül az egyensúlyból.
+Ennek az egyenletnek a megoldása:
+\begin{equation}
+    N_b(t) = N_b(0) e^{-At}
+\end{equation}
+Tehát az izgatott állapotban lévő részecskék száma exponenciálisan csökken az idővel, ahol az $A$ együttható határozza a bomlás sebességét. Az izgatott állapot élettartama tehát:
+\begin{equation}
+    \tau = \frac{1}{A} = \frac{3 \pi \epsilon_0 \hbar c^3}{\omega_0^3 |\boldsymbol{\pw}|^2}
+\end{equation}
+Ez az élettartam megadja, hogy mennyi ideig marad egy átlagos részecske az izgatott állapotban mielőtt spontán módon visszaesne egy alacsonyabb energiájú állapotba. Technikailag az élettartam az az idő, amíg a részecskék száma az izgatott állapotban az eredeti érték $1/e \approx 0.368$-ed részére csökken.
+
+\subsubsection{Kiválasztási szabályok}
+Láttuk, hogy a spontán emisszió rátája redukálja a mátrixelemek megoldását a következő alakra:
+\begin{equation}
+    \langle \psi_b | \mathbf{r} | \psi_a \rangle
+\end{equation}
+Viszont ezek az értékek nagyon gyakran nullát adnak, vagyis érdemes lehet megvizsgálni, hogy mikor spórolhatjuk meg magunknak az integrálok kiszámolását.
+Tegyük fel, hogy van egy hidrogén atomhoz hasonló rendszerünk, ami gömbszimmetrikus Hamilton operátorral rendelkezik. Ekkor az állapotokat a $|n l m_l \rangle$ bázisban írhatjuk fel. Tehát a mátrix elem:
+\begin{equation}
+    \langle n' l' m'_l | \mathbf{r} | n l m_l \rangle
+\end{equation}
+Az $\mathbf{r}$ itt egy vektor operátor, és a Wigner-Eckart tétel szerint felírhatjuk a mátrix elemet egy szorzatként egy geometriai részből és egy dinamikai részből:
+\begin{equation}
+    \langle n' l' m'_l | \mathbf{r} | n l m_l \rangle = \langle l 1 m_l q | l' m'_l \rangle \frac{\langle n' l' || \mathbf{r} || n l \rangle}{\sqrt{2l' + 1}}
+\end{equation}
+Ahol $\langle l 1 m_l q | l' m'_l \rangle$ egy Clebsch-Gordan együttható, és $q = -1, 0, +1$ a vektor komponenseit jelöli. A Clebsch-Gordan együtthatók csak akkor nem nullák, ha a következő feltételek teljesülnek:
+\begin{itemize}
+    \item $m'_l = m_l + q$
+    \item $|l - 1| \leq l' \leq l + 1$
+\end{itemize}
+Az első feltétel azt jelenti, hogy az $m_l$ kvantumszám csak $-1, 0, +1$ értékekkel változhat az átmenet során. A második feltétel pedig azt jelenti, hogy az $l$ kvantumszám csak $l' = l - 1$ vagy $l' = l + 1$ értékekre változhat.
+Ezeket a feltételeket \textbf{kiválasztási szabályoknak} nevezzük:
+\begin{equation}
+    \boxed{\Delta l = \pm 1, \quad \Delta m_l = 0, \pm 1}
+\end{equation}
+és nagyon hasznosak, mert megmondják, hogy mely átmenetek engedélyezettek egy adott rendszerben anélkül, hogy ki kellene számolnunk a teljes
+mátrix elemet. Például egy $l=0$ állapotból csak $l'=1$ állapotba lehet átmenet, de $l=0$-ból $l'=0$ állapotba nem.
+
+Ez a szabály pusztán a szimmetria tulajdonságokból következik, és nem függ a konkrét potenciáltól vagy a részecskék közötti kölcsönhatásoktól. Ha a mátrix elem nullát ad, akkor az azt jelenti, hogy az adott átmenet tiltott, és az atom nem tud spontán módon ilyen átmenetet végrehajtani.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/12-tetel/kivalasztas.png}
+    \caption{Kiválasztási szabáylok a Hidrogén első négy Bohr-szintjén. Az engedélyezett átmeneteket a nyilak jelölik.}
+\end{figure}
+Látható tehát, hogy a legtöbb átmenet valójában tiltott, és csak néhány specifikus átmenet engedélyezett a kiválasztási szabályok alapján. Az ábrán az is látható, hogy a Hidrogén esetén
+az $n=2, l=0$ állapot "beragad", nem tud lejebb menni az alapállapotra. Ezeket az állaptokat \textbf{metastabil állapotoknak} nevezzük, mert nagyon hosszú élettartamuk van a tiltott átmenetek miatt.
+Természetesen a valóságban nincs ide örökre beragadva az atom, mert előbb-utóbb egy perturbáció (pl. ütközés más részecskékkel) segíteni fogja az átmenetet, de az élettartam így is nagyon hosszú lehet.
+
+\subsubsection{Fermi-féle aranyszabály}
+Ezidáig olyan étmneneteket vizsgáltunk ahol diszkrét állapotok voltak, például atomok kötött állapotai. De mi történik akkor, ha az átmenet egy folytonos spektrumú állapotba történik, például egy ionizált állapotba ahol az elektron szabadon mozog?
+Ilyen például a \textbf{fotoelektromos effektus}, ahol egy foton elnyelődése után az elektron kilép az atomból és szóródó állapotba kerül. Viszgáljuk meg ezen kereszül az átmenetek.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{imgs/12-tetel/fermi.png}
+    \caption{Átmenet diszkrét és folytonos állapotok között.}
+\end{figure}
+
+Folytonos állapotok esetén nem tudjuk azt mondani, hogy egy részecske \textit{egy adott állapotban} van, de a valószínűségét meg tudom mondani annak, hogy egy adott véges energiatartományban kerül ($\Delta E$ a $E_f$ körü).
+Ebben az esetben a átmeneti valószínűség:
+\begin{equation}
+    P = \int_{E_f - \Delta E/2}^{E_f + \Delta E/2} \frac{|V_{in}|^2}{\hbar^2} \left\{\frac{\sin^2[(\omega_{in} - \omega)t/2]}{(\omega_{in} - \omega)^2}\right\} \rho(E_n) dE_n
+\end{equation}
+Ahol $\omega_0 = (E_n - E_i)/\hbar$, és $\rho(E_n)$ az állapotok száma $E$ és $E + dE$ között. $\rho(E)$-t \textbf{állapotsűrűségnek} nevezzük. A $V_{in}$ pedig a perturbációs Hamilton operátor mátrix eleme az $i$ és $n$ állapotok között.
+
+Kis időkre az átmeneti valószínűség $t^2$-el arányos, ahogy a diszkrét átmeneteknél. De ha elég nagy időt nézünk, akkor a kapcsos zárójelben lévő tag nagyon éles csúcsot ad ahogy az $E_n$ függvény maximuma az $E_f = E_i + \hbar \omega$ pontban van.
+Itt a szélessége kb. $\Delta E \approx \hbar / t$. Ha $t$ elég nagy, akkor ez a szélesség nagyon kicsi lesz, és a $\rho(E_n)$ és $|V_{in}|^2$ függvényeket ki tudjuk venni az integrál elé az $E_n = E_f$ pontban kiértékelve. Így az átmeneti valószínűség:
+\begin{equation}
+    P = \frac{|V_{if}|^2}{\hbar^2} \rho(E_f) \int_{E_f - \Delta E/2}^{E_f + \Delta E/2} \frac{\sin^2[(\omega_{in} - \omega)t/2]}{(\omega_{in} - \omega)^2} dE_n
+\end{equation}
+Az megmaradó integrált már korábban kiszámoltuk, és az eredmény:
+\begin{equation}
+    P = \frac{2 \pi}{\hbar} |V_{if}|^2 \rho(E_f) t
+\end{equation}
+Így az átmeneti ráta:
+\begin{equation}
+    \boxed{R_{i \to f} = \frac{dP}{dt} = \frac{2 \pi}{\hbar} |V_{if}|^2 \rho(E_f)}
+\end{equation}
+Ezt nevezik \textbf{Fermi-féle aranyszabálynak}. Ha levesszük a $2\pi/\hbar$ faktort, akkor azt mondja ki, hogy az átmeneti ráta a mátrixelem négyzete (ami tartalmazza az összes releváns dinamikai információt az átmenetről) és az állapotsűrűség szorzata (ami megadja, hogy hány állapot érhető el az adott energián).
+Tehát minél több állapot van elérhető közeli energián, annál több átmenet történik. 
+
+\subsubsection{Alagút-effektus}
+A kvantummechanikában nem csak akkor mehetnek végbe folyamatok, ha a rendszer kap megfelelő energiát, hogy átugorjon egy potenciálgátat. A részecskék statisztikus hullámtermészete miatt előfordulhat, 
+hogy képesek olyan folyamatokat végrehajtani, amik klasszikusan tiltottak lennének. Ezt a jelenséget \textbf{alagút-effektusnak} nevezzük. Például képzeljünk el egy részecskét, ami egy potenciálgát
+előtt áll, aminek a magassága $V_0$, és a részecske energiája $E < V_0$. Klasszikusan a részecske nem tudna átjutni a gáton, de kvantummechanikailag van egy nem nulla valószínűsége annak, hogy a részecskét
+az alagút másik oldalán találjuk. Ez a valószínűség függ a gát szélességétől és magasságától, valamint a részecske tömegétől és energiájától.
+
+Az alagúteffektust legjobban a \textbf{WKB közelítéssel} tudjuk leírni. Ott is alapesetben azt feltételeztük, hogy $E > V(x)$, és hogy ezáltal $p(x)$ valós. De a nem-klasszikus esetet is könnyen leírhatjuk vele.
+
+Az eredmény a nem-klaszikus régióban ugyanaz:
+\begin{equation}
+    \boxed{\psi(x) \approx \frac{C}{\sqrt{|p(x)|}} e^{-\frac{1}{\hbar} \int |p(x)| dx} }
+\end{equation}
+De itt $p(x) = \sqrt{2m (E - V(x))}$ képzetes lesz, hisz $E < V(x)$. 
+
+Vegyünk például egy olyan visszaverődést amikor a potenciálgát téglalap alakú, de a teteje nem egyenletes:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/12-tetel/tunneling.png}
+    \caption{szóródás egy nem-egyenletes téglalap alakú potenciálgáton.}
+\end{figure}
+Ekkor a hullámfüggvényt felírhatjuk a szokásos módon:
+\begin{equation}
+    \psi(x) = A e^{i k x} + B e^{-i k x} \quad (x < 0)
+\end{equation}
+Ahol $A$ és $B$ a beeső és visszavert hullám amplitúdói, és $k = \sqrt{2m E}/\hbar$. A továbbhaladó hullám a gát jobb oldalán:
+\begin{equation}
+    \psi(x) = F e^{i k x} \quad (x > a)
+\end{equation}
+A transzmissziós együttható pedig:
+\begin{equation}
+    T = \frac{|F|^2}{|A|^2}
+\end{equation}
+A gát belsejében ($0 \leq x \leq a$) viszont a WKB közelítést használjuk:
+\begin{equation}
+    \psi(x) = \frac{C}{\sqrt{|p(x)|}} e^{\frac{1}{\hbar} \int_{0}^{x} |p(x')| dx'} + \frac{D}{\sqrt{|p(x)|}} e^{-\frac{1}{\hbar} \int_{0}^{x} |p(x')| dx'} \quad (0 < x < a)
+\end{equation}
+Ahol $C$ és $D$ a gáton belüli hullám amplitúdói. Az első tag a gátba belépő hullámot, a második pedig a gátból visszaverődő hullámot írja le. Ha a gát nagyon magas és/vagy széles (tehát az alagút-effektus kicsi eséllyel történik meg),
+akkor az együtthatói az exponenciálisan növő tagnak $C$ nagyon kicsi lesz, így elhanyagolhatjuk. Ekkor a hullámfüggvény valahogy így néz ki a gát belsejében:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/12-tetel/tunneling_wkb.png}
+    \caption{A hullámfüggvény a potenciálgát belsejében a WKB közelítéssel.}
+\end{figure}
+Ekkor a kijövő és bemenő hullám amplitúdóinak arányát gyakorlatilag a nem-klasszikus régióban lévő hullámfüggvény exponenciális csökkenése határozza meg:
+\begin{equation}
+    \frac{|F|}{|A|} \sim e^{-\frac{1}{\hbar} \int_{0}^{a} |p(x')| dx'} 
+\end{equation}
+Tehát a transzmissziós együttható:
+\begin{equation}
+    \boxed{T \approx e^{-2\gamma} \quad \text{ahol} \quad \gamma = \frac{1}{\hbar} \int_{0}^{a} |p(x)| dx = \frac{1}{\hbar} \int_{0}^{a} \sqrt{2m (V(x) - E)} dx}
+\end{equation}
+Ez az eredmény megmutatja, hogy a transzmissziós együttható exponenciálisan csökken a potenciálgát szélességével és magasságával. Minél szélesebb vagy magasabb a gát, annál kisebb az esélye annak, hogy a részecske átjut rajta.
+
+Természetesen itt azt feltételeztük, hogy a falak függőlegesek, emiatt a függvény határfeltételei triviálisak. Ez egész jó közelítés kevésbé éles falak esetén is, de ha a falak nem élesek, akkor kapocsolódási formulák segítségével
+tudjuk csak összekötni a hullámfüggvényeket a különböző régiókban. Erre az úgynevezett \textbf{Airy-függvényeket} használhatjuk, amik a lineáris potenciál esetén adnak pontos megoldást.
+
+\subsubsection*{Példa: Gamow féle $\alpha$ sugárzás}
+1928-ban George Gamow megoldotta az $\alpha$-bomlás rejtélyét az alagút-effektus segítségével. Az $\alpha$-bomlás során egy nehéz atommag egy $\alpha$-részecskét (ami egy hélium mag) bocsát ki,
+és egy új, könnyebb atommag keletkezik. Klasszikusan az $\alpha$-részskék nem tudnának kilépni az atommagból, mert a potenciálgát túl magas lenne számukra. De Gamow felismerte, hogy kvantummechanikailag van egy nem nulla valószínűsége annak,
+hogy az $\alpha$-részecske alagutazik a potenciálgáton, és így kilép az atommagból. Gamow a következő modellt használta: Az $\alpha$-részecske egy véges mélységű potenciálkútban van bezárva, ami a mag belsejében van, és egy magas potenciálgát veszi körül,
+ami a mag határánál kezdődik. A potenciálgát magassága a Coulomb taszításból származik, ami az $\alpha$-részecske és a maradék atommag között hat. Gamow kiszámolta az alagút-effektus valószínűségét, és ebből meghatározta az $\alpha$-bomlás élettartamát.
+Az eredményei nagyon jól egyeztek a kísérleti adatokkal, és ez megerősítette az alagút-effektus létezését a kvantummechanikában.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/12-tetel/gamow.png}
+    \caption{Gamow féle modell a potenciális energiára az $\alpha$-bomlás esetén.}
+\end{figure}
+
+Ha az energia $E$ az $\alpha$-részecske energiája, akkor a pont, ahol a potenciál az energia alá kerül (megfordulási pont) a következő határozza meg:
+\begin{equation}
+    \frac{1}{4\pi \epsilon_0} \frac{2Ze^2}{r_2} = E 
+\end{equation}
+Ahol $Z$ az eredeti atom rendszáma. A $\gamma$ paraméter pedig:
+\begin{equation}
+    \gamma = \frac{1}{\hbar} \int_{r_1}^{r_2} \sqrt{2m \left(\frac{1}{4\pi \epsilon_0} \frac{2Ze^2}{r} - E\right)} dr = \frac{\sqrt{2mE}}{\hbar} \int_{r_1}^{r_2} \sqrt{\frac{r_2}{r} - 1} dr
+\end{equation}
+Az integrál megoldható, ha csinálunk egy helyettesítést $r \equiv r_2 \sin^2 u$, és az eredmény:
+\begin{equation}
+    \gamma = \frac{\sqrt{2mE}}{\hbar} \left[r_2 \left(\frac{\pi}{2} - \sin^{-1} \sqrt{\frac{r_1}{r_2}}\right) - \sqrt{r_1 (r_2 - r_1)} \right]
+\end{equation}
+Általában $r_2 \gg r_1$, így a második tag elhanyagolható, és használhatjuk a kis szög közelítést is az első tagban ($\sin \epsilon \approx \epsilon$ ha $\epsilon \ll 1$). Így az eredmény:
+\begin{equation}
+    \gamma \approx \frac{\sqrt{2mE}}{\hbar} \left[\frac{\pi}{2}r_2 - 2 \sqrt{r_1 r_2}\right] = K_1 \frac{Z}{\sqrt{E}} - K_2 \sqrt{Z r_1}
+\end{equation}
+Ahol:
+\begin{equation}
+    \begin{aligned}
+        K_1 & = \frac{\sqrt{2m}}{\hbar} \frac{e^2}{4 \epsilon_0} \frac{\pi}{2} \approx 2.86 \, \text{MeV}^{1/2} \\
+        K_2 & = \frac{\sqrt{2m}}{\hbar} 2 e^2 / (4 \pi \epsilon_0) \approx 20.2 \, \text{fm}^{-1/2}
+    \end{aligned}
+\end{equation}
+
+Ha elképzeljük az $\alpha$-részecske a magban "ide-oda pattog" egy átlagos sebességgel $v$, akkor az átlagos idő két fallal való ütközés között $\Delta t = 2 r_1 / v$. Tehát a fallal való ütközés \textit{frekvenciája} $v/2r_1$.
+A valószínűsége annak, hogy az $\alpha$-részecske kilép a magból egy ütközés során $T \approx e^{-2\gamma}$. Így az élettartalma a szülő magnak:
+\begin{equation}
+    \tau = \frac{2 r_1}{v} \frac{1}{T} = \frac{2 r_1}{v} e^{2\gamma}
+\end{equation}
+Ez az eredmény megmutatja, hogy az $\alpha$-bomlás élettartama exponenciálisan függ a potenciálgát tulajdonságaitól, és nagyon érzékeny a mag belsejében lévő potenciál alakjára.
+Sajnos a $v$-t nem ismerjük, de ez nem is számít, mert az exponenciális tag nagyon eltérő lehet különböző magok esetén (25 nagyságrend!). Ezért ahogy egy radioaktív anyagtól eljutunk egy másikig,
+a $v$ variabilitása nem számottevő. Ha például egy \textit{logaritmikus skálán} ábrázoljuk az élettartamot a $1/\sqrt{E}$ függvényében, akkor egy egyenest kapunk:
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/12-tetel/gamow_exp.png}
+    \caption{A logaritmikus skálán ábrázolt felezési idő ($\tau_{1/2} = \tau \ln 2$) az $\alpha$-bomlás esetén a $1/\sqrt{E}$ függvényében (ahol $E$ az $\alpha$-részecske energiája) Az uránium és a Thorium izotópjaira.}
+\end{figure}
+
+\subsection{He-atom, Kétatomos molekulák, Pauli-elv}
+Eddig főként az atomi hidrogén, és ahhoz hasonló rendszerekkel foglalkoztunk. Ezzel azonban nem tudunk túl messze jutni, ugyanis a legtöbb atom és molekula esetében több elektron és proton,
+vagy molekulák esetén akár több atom interakcióját is figyelembe kell venni. Ezeket egzaktul már nem tudjuk megoldani, de közelítő módszerekkel elég jól meg tudjuk becsülni. Például a variációs elvet használva
+relatíve könnyen tudunk felső korlátot adni egy rendszer energiájára, ami az esetek nagy részében bőven elegek.
+
+\subsubsection{Hélium atom}
+A hélium atom két protonból és általában két elektronból áll (meg pár neutronból, de az most irreleváns). 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\textwidth]{imgs/12-tetel/Helium-atom.png}
+    \caption{Hélium atom modellje két elektronral és két protonnal.}
+\end{figure}
+A hélium atom Hamilton operátora a következő:
+\begin{equation}
+    H = -\frac{\hbar^2}{2m_e} (\nabla_1^2 + \nabla_2^2) - \frac{e^2}{4\pi \epsilon_0} \left(\frac{2}{r_1} + \frac{2}{r_2} - \frac{1}{|\mathbf{r}_1 - \mathbf{r}_2|}\right)
+\end{equation} 
+Ahol az első tag az elektronok kinetikus energiáját írja le, a második tag pedig a potenciális energiát: az elektron-proton vonzást és az elektron-elektron taszítást. A jó hír, hogy elég az alapállapot
+energiáját meghatározni (fizikailag a $E_{gs}$ azt az energiát reprezentálja, amennyit be kéne fektetni, hogy a két elektront leszakítsuk), mert ha az megvan akkor az ionizációs energiát megkaphatjuk simán egy elektron eltávolításával.
+Az eredményt kisérletileg elég pontosan kimérték már:
+\begin{equation}
+    E_{gs} = -78.975 \, \text{eV} \quad \text{Kísérleti}
+\end{equation}
+A rossz hír, hogy bár ez egy ránézésre elég egyszerű probléma, ez egy három-test probléma, aminek nincs egzakt zárt megoldása (pár speciális stabil esetet leszámítva). A problémát a:
+\begin{equation}
+    V_{ee} = \frac{e^2}{4\pi \epsilon_0} \frac{1}{|\mathbf{r}_1 - \mathbf{r}_2|}
+\end{equation}
+tag adja. Ha ezt "igonráljuk", akkor a $H$ két independens hidrogén-szerű atom Hamilton operátorra esik szét, aminek az alapállapoti hullámfüggvénye:
+\begin{equation}
+    \psi_0(\mathbf{r}_1, \mathbf{r}_2) = \psi_{100}(\mathbf{r}_1) \psi_{100}(\mathbf{r}_2) = \frac{Z^3}{\pi a_0^3} e^{-Z (r_1 + r_2) / a_0}
+\end{equation}
+Ahol $Z=2$ a hélium esetén. Az energia pedig:
+\begin{equation}
+    E_0 = 2 E_{1} = 2 \left(- \frac{Z^2}{2} \frac{e^2}{4\pi \epsilon_0 a_0}\right) = -4 \frac{e^2}{4\pi \epsilon_0 a_0} \approx -109.0 \, \text{eV}
+\end{equation}
+Ez elég messze van a $-79 \, \text{eV}$-től, de egy kezdet. 
+
+Egy jobb megközelítés a $E_{gs}$ közelítésére a variációs elv alkalmazása, a $\psi_0$ függvény használatával, mint próbafüggvény. Ez itt különösen jó választás, mert a sajátfüggvénye a \textit{legtöbb}
+Hamilton operátornak:
+\begin{equation}
+    H \psi_0 = (8E_1 + V_{ee}) \psi_0
+\end{equation}
+Tehát:
+\begin{equation}
+    \langle H \rangle = 8 E_1 + \langle V_{ee} \rangle
+\end{equation}
+Ahol
+\footnote{Itt $V_{ee}$-t akár egy perturbáló Hamilton operátorként is értelmezhetnénk, de itt a perturbáció hasonló nagyságrendű a fő Hamilton operátorhoz, ezért nem szerencsés ezt a megközelítést alkalmazni.}:
+\begin{equation}
+    \langle V_{ee} \rangle = \left(\frac{e^2}{4 \pi \epsilon_0}\right) \left(\frac{8}{\pi a^3}\right)^2 \int \frac{e^{-4(r_1 + r_2)/a}}{|\mathbf{r}_1 - \mathbf{r}_2|} d^3\mathbf{r}_1 d^3\mathbf{r}_2
+\end{equation}
+
+Nézzük meg először a $\mathbf{r}_2$ integrált. Ekkor $\mathbf{r}_1$-t egy sima konstansnak tekinthetjük és a koordináta rendszert akár meg is választhatjuk úgy, hogy $\mathbf{r}_1$ az $z$ tengelyen legyen. Ekkor a nevező:
+\begin{equation}
+    |\mathbf{r}_1 - \mathbf{r}_2| = \sqrt{r_1^2 + r_2^2 - 2 r_1 r_2 \cos \theta_2}
+\end{equation}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{imgs/12-tetel/helium2.png}
+    \caption{Koordináta rendszer választás a hélium atom elektron-elektron taszítási integráljához $\mathbf{r}_2$ integrál esetén.}
+\end{figure}
+Ekkor az integrál:
+\begin{equation}
+    I_2 = \int \frac{e^{-4 r_2 / a}}{|\mathbf{r}_1 - \mathbf{r}_2|} d^3 \mathbf{r}_2 = \int \frac{e^{-4 r_2 / a}}{\sqrt{r_1^2 + r_2^2 - 2 r_1 r_2 \cos \theta_2}} r_2^2 \sin \theta_2 d r_2 d \theta_2 d \phi_2
+\end{equation}
+A $\phi_2$ integrál egyszerűen $2\pi$, a $\theta_2$ integrál pedig:
+\begin{equation}
+    \begin{aligned}
+        \int_{0}^{\pi} \frac{\sin \theta_2}{\sqrt{r_1^2 + r_2^2 - 2 r_1 r_2 \cos \theta_2}} d\theta_2 & = \frac{\sqrt{r_1^2 + r_2^2 - 2 r_1 r_2 \cos \theta_2}}{r_1 r_2} \bigg\rvert_0^\pi = \\
+        &= \frac{1}{r_1 r_2} \left(\sqrt{(r_1 + r_2)^2} - \sqrt{(r_1 - r_2)^2}\right) = \\
+        &= \frac{1}{r_1 r_1} \left[(r_1 + r_2) - |r_1 - r_2|\right] = \begin{cases}
+            \frac{2}{r_1} & r_2 < r_1 \\
+            \frac{2}{r_2} & r_2 > r_1
+        \end{cases}
+    \end{aligned}
+\end{equation}
+Tehát az $I_2$ integrál:
+\begin{equation}
+    \begin{aligned}
+        I_2 & = 4\pi \left(\frac{1}{r_1} \int_{0}^{r_1} r_2 e^{-4 r_2 / a} d r_2 + r_1 \int_{r_1}^{\infty} e^{-4 r_2 / a} d r_2\right) = \\
+        & = \frac{\pi a^3}{8r_1} \left[1 - \left(1 + \frac{2 r_1}{a}\right) e^{-4 r_1 / a}\right]
+    \end{aligned}
+\end{equation}
+Tehát ebből következik, hogy a $\langle V_{ee} \rangle$ egyenlő:
+\begin{equation}
+    \langle V_{ee} \rangle = \left(\frac{e^2}{4 \pi \epsilon_0}\right) \left(\frac{8}{\pi a^3}\right) \int \left[1 - \left(1 + \frac{2r_1}{a}\right) e^{-4 r_1 / a}\right] e^{-4 r_1 / a} r_1 d^3 \sin \theta_1 d r_1 d \theta_1 d \phi_1
+\end{equation}
+A szögintegrálok egyszerűek ($4\pi$), és a maradék $r_1$ integrál:
+\begin{equation}
+    \int_{0}^{\infty} \left[re^{-4r/a} - \left(r + \frac{2r^2}{a}\right)e^{-8r/a}\right] dr = \frac{5 a^2}{128}
+\end{equation}
+Így a végeredmény:
+\begin{equation}
+    \langle V_{ee} \rangle = \left(\frac{e^2}{4 \pi \epsilon_0}\right) \frac{5}{4 a} = - \frac{5}{2} E_1 = 34.0 \, \text{eV}
+\end{equation}
+Tehát a teljes energia:
+\begin{equation}
+    \langle H \rangle = 8 E_1 + \langle V_{ee} \rangle = -109 \, \text{eV} + 34 \, \text{eV} = -75 \, \text{eV}
+\end{equation}
+Ez már sokkal közelebb van a kísérleti eredményhez. De tudunk ennél jobbat is! 
+
+Ki kell találnunk egy még jobb próbafüggvényt mint $\psi_0$, ami ignorál bárminemű elektron kölcsönhatást. Ahelyett, hogy csak úgy tennénk mintha nem lenne elektron-elektron taszítás,
+vegyük figyelembe őket úgy, mint ha az átlaga az egyik elektron hatása a másikra egy elektronfelhő, ami részlegesen elfedi a mag pozitív töltését. Tehát az egyik elektron csak egy \textit{effektív atomi töltést}
+látnak (Z), ami valamivel kevesebb mint 2. Ez feltételezi, hogy a próbafüggvény a következő alakot ölti:
+\begin{equation}
+    \psi(\mathbf{r}_1, \mathbf{r}_2; Z) = \left(\frac{Z^3}{\pi a_0^3}\right) e^{-Z (r_1 + r_2) / a_0}
+\end{equation}
+Most a $Z$-t tekintjük egy variációs paraméternek, és megpróbáljuk megtalálni azt a $Z$ értéket, ami minimalizálja $\langle H \rangle$-t. Itt jegyezzük meg, hogy a Hamilton operátort NEM modifikáljuk.
+A Hélium atom Hamilton operátora továbbra is az ami, ez a minimalizáció csak egy motivációt ad arra, hogy milyen próbafüggvényt használjunk.
+
+Ez a függvény a sajátállapota a "perturbálatlan" Hamilton operátornak (az elektron elektron taszítás nélkül), csak most $Z$ egy szabad paraméter a Coulomb tagban. Ekkor a Hamilton operátor:
+\begin{equation}
+    \begin{aligned}
+        H = &-\frac{\hbar^2}{2m_e} (\nabla_1^2 + \nabla_2^2) - \frac{e^2}{4\pi \epsilon_0} \left(\frac{Z}{r_1} + \frac{Z}{r_2}\right) + \\
+        &+ \frac{e^2}{4\pi \epsilon_0} \left(\frac{Z - 2}{r_1} + \frac{Z - 2}{r_2} + \frac{1}{|\mathbf{r}_1 - \mathbf{r}_2|}\right)
+    \end{aligned}
+\end{equation}
+Tehát a Hamilton operátor várható értéke:
+\begin{equation}
+    \langle H \rangle = 2 Z^2 E_1 + 2 (Z - 2) \left( \frac{e^2}{4 \pi \epsilon_0} \right) \left\langle \frac{1}{r} \right\rangle + \left\langle V_{ee} \right\rangle
+\end{equation}
+Itt $\langle 1/r \rangle$ a várható értéke a $1/r$ értékének egy (egy részecske) hidrogén-szerű atom alapállapotában ($\psi_{100}$ egy $Z$ töltéssel). Ennek az értéke:
+\begin{equation}
+    \left\langle \frac{1}{r} \right\rangle = \frac{Z}{a}
+\end{equation} 
+A $\langle V_{ee} \rangle$-t már kiszámoltuk korábban, csak most $Z$-t kell használni az $a$ helyett:
+\begin{equation}
+    \langle V_{ee} \rangle = \left(\frac{e^2}{4 \pi \epsilon_0}\right) \frac{5}{8} \frac{Z}{a} = -\frac{5}{4} Z E_1
+\end{equation}
+Az egészet összerakva:
+\begin{equation}
+    \langle H \rangle = \left[2Z^2 - 4Z(Z - 2) - (5/4)Z\right]E_1 = \left[-2Z^2 + (27/4)Z\right]E_1
+\end{equation}
+Most már csak minimalizálni kell ezt az egyenletet $Z$ szerint. A minimum ott lesz, ahol a deriváltja nulla:
+\begin{equation}
+    \frac{d \langle H \rangle}{dZ} = \left[-4Z + \frac{27}{4}\right] E_1 = 0 \implies \ Z = \frac{27}{16} = 1.69
+\end{equation}
+Ez az érték logikus, hisz kisebb mint 2, tehát az elektronok részlegesen elfedik a mag töltését. Ezzel az értékkel a várható energia:
+\begin{equation}
+    \langle H \rangle = \frac{1}{2} \left(\frac{3}{2}\right)^6 E_1 = -77.5 \, \text{eV}
+\end{equation}
+Ez már nagyon közel van a kísérleti értékhez ($-78.975 \, \text{eV}$), és ez egy elég egyszerű megközelítés volt. Természetesen még jobb eredményeket is el lehet érni bonyolultabb próbafüggvényekkel, de ezzel 
+a megoldással is $2\%$ pontosságot értünk el.
+
+\subsubsection{Kétatomos molekulák}
+\subsubsection*{Azonos-részecske rendszerek}
+Egyetlen részecske esetén $\Psi(\mathbf{r},t)$ a térbeli koordináták, $\mathbf{r}$, és az idő, $t$, függvénye (jelenleg a spin figyelmen kívül hagyható). Egy kétrészecske-rendszer állapota az első részecske koordinátáinak $\mathbf{r}_1$, a második részecske koordinátáinak $\mathbf{r}_2$ és az idő $t$ függvénye:
+\begin{equation}
+\Psi(\mathbf{r}_1,\mathbf{r}_2,t).
+\tag{5.1}
+\end{equation}
+
+Időfejlődését a Schrödinger-egyenlet határozza meg:
+\begin{equation}
+i\hbar\frac{\partial \Psi}{\partial t} = \hat{H}\Psi,
+\tag{5.2}
+\end{equation}
+ahol $\hat{H}$ a teljes rendszer Hamilton-operátora:
+\begin{equation}
+\hat{H} = -\frac{\hbar^2}{2m_1}\nabla_1^2 - \frac{\hbar^2}{2m_2}\nabla_2^2 + V(\mathbf{r}_1,\mathbf{r}_2,t).
+\tag{5.3}
+\end{equation}
+(a $\nabla$ alsó indexe azt jelzi, hogy az adott deriválás az 1. vagy a 2. részecske koordinátáira vonatkozik, attól függően, melyikről van szó). A statisztikus értelmezés nyilvánvaló módon átváltható:
+\begin{equation}
+|\Psi(\mathbf{r}_1,\mathbf{r}_2,t)|^2\, d^3r_1\, d^3r_2
+\tag{5.4}
+\end{equation}
+ez annak a valószínűsége, hogy az 1. részecskét a $d^3r_1$ térfogatban, a 2. részecskét pedig a $d^3r_2$ térfogatban találjuk; mint mindig, $\Psi$-nak normalizáltnak kell lennie:
+\begin{equation}
+\int |\Psi(\mathbf{r}_1,\mathbf{r}_2,t)|^2\, d^3r_1\, d^3r_2 = 1.
+\tag{5.5}
+\end{equation}
+
+Időfüggetlen potenciálok esetén a változók szétválasztásával teljes megoldáskészletet kapunk:
+\begin{equation}
+\Psi(\mathbf{r}_1,\mathbf{r}_2,t) = \psi(\mathbf{r}_1,\mathbf{r}_2)\, e^{-iEt/\hbar},
+\tag{5.6}
+\end{equation}
+ahol a térbeli hullámfüggvény, $\psi$, a következő időfüggetlen Schrödinger-egyenletet elégíti ki:
+\begin{equation}
+-\frac{\hbar^2}{2m_1}\nabla_1^2\psi - \frac{\hbar^2}{2m_2}\nabla_2^2\psi + V\psi = E\psi.
+\tag{5.7}
+\end{equation}
+Itt $E$ a rendszer teljes energiája. Általánosságban az (5.7) egyenlet megoldása nehéz, de két speciális eset egy részecske-problémákra vezethető vissza:
+
+\begin{enumerate}
+\item Nem kölcsönható részecskék. Tegyük fel, hogy a részecskék nem hatnak egymásra, de mindkettőre hat valamilyen külső erő. Például különböző rugókhoz is kapcsolódhatnak. Ebben az esetben a teljes potenciális energia a kettő összege:
+\begin{equation}
+V(\mathbf{r}_1,\mathbf{r}_2) = V_1(\mathbf{r}_1) + V_2(\mathbf{r}_2),
+\tag{5.8}
+\end{equation}
+és az (5.7) egyenlet szétválasztással megoldható:
+\begin{equation}
+\psi(\mathbf{r}_1,\mathbf{r}_2) = \psi_a(\mathbf{r}_1)\,\psi_b(\mathbf{r}_2).
+\tag{5.9}
+\end{equation}
+\end{enumerate}
+Behelyettesítve az (5.9) egyenletet az (5.7)-be, elosztva $\psi(\mathbf{r}_1,\mathbf{r}_2)$-vel, és a $\mathbf{r}_1$-re és $\mathbf{r}_2$-re vonatkozó tagokat külön gyűjtve, azt találjuk, hogy $\psi_a(\mathbf{r}_1)$ és $\psi_b(\mathbf{r}_2)$ külön-külön kielégítik az egyrészecske Schrödinger-egyenletet:
+\begin{equation}
+-\frac{\hbar^2}{2m_1}\nabla_1^2\psi_a(\mathbf{r}_1) + V_1(\mathbf{r}_1)\psi_a(\mathbf{r}_1) = E_a\psi_a(\mathbf{r}_1),
+\tag{5.10a}
+\end{equation}
+\begin{equation}
+-\frac{\hbar^2}{2m_2}\nabla_2^2\psi_b(\mathbf{r}_2) + V_2(\mathbf{r}_2)\psi_b(\mathbf{r}_2) = E_b\psi_b(\mathbf{r}_2),
+\tag{5.10b}
+\end{equation}
+és $E = E_a + E_b$. Ebben az esetben a kétrészecske-hullámfüggvény egyszerűen a két egyrészecske-hullámfüggvény szorzata, és az időfejlődés:
+\begin{align}
+\Psi(\mathbf{r}_1,\mathbf{r}_2,t)
+&= \psi_a(\mathbf{r}_1)\psi_b(\mathbf{r}_2)e^{-i(E_a+E_b)t/\hbar} \nonumber\\
+&= \big(\psi_a(\mathbf{r}_1)e^{-iE_a t/\hbar}\big)\,\big(\psi_b(\mathbf{r}_2)e^{-iE_b t/\hbar}\big)
+= \Psi_a(\mathbf{r}_1,t)\,\Psi_b(\mathbf{r}_2,t).
+\tag{5.11}
+\end{align}
+
+Értelmes tehát azt mondani, hogy az 1. részecske az $a$ állapotban van, míg a 2. részecske a $b$ állapotban. Az ilyen megoldások bármilyen lineáris kombinációja továbbra is kielégíti a (időfüggő) Schrödinger-egyenletet — például
+\begin{equation}
+\Psi(\mathbf{r}_1,\mathbf{r}_2,t) = \tfrac{3}{5}\,\psi_a(\mathbf{r}_1,t)\psi_b(\mathbf{r}_2,t) +
+\tfrac{4}{5}\,\psi_c(\mathbf{r}_1,t)\psi_d(\mathbf{r}_2,t).
+\tag{5.12}
+\end{equation}
+
+Ebben az esetben az 1. részecske állapota függ a 2. részecske állapotától és fordítva. Ha az 1. részecske energiáját mérnénk, előfordulhat, hogy $E_a$-t kapunk (valószínűség 9/25), ebben az esetben a 2. részecske energiája biztosan $E_b$; vagy kaphatjuk $E_c$-t (valószínűség 16/25), ekkor a 2. részecske energiája $E_d$. Azt mondjuk, hogy a két részecske összefonódott (entangled) — ez egy olyan állapot, amely nem írható fel egyetlen-részecske állapotok szorzataként.
+
+2. Központi potenciálok. Tegyük fel, hogy a részecskék csak egymással kölcsönhatnak, olyan potenciálon keresztül, amely az elválasztásuktól függ:
+\begin{equation}
+V(\mathbf{r}_1,\mathbf{r}_2) \longrightarrow V(|\mathbf{r}_1-\mathbf{r}_2|).
+\tag{5.13}
+\end{equation}
+A hidrogénatom például ilyen lenne, ha a proton mozgását is figyelembe vesszük. Ebben az esetben a kéttest-probléma egy megfelelő egytest-problémára vezethető vissza, pontosan úgy, ahogy a klasszikus mechanikában is (lásd a 5.1 feladatot).
+
+Általánosságban azonban a két részecskét egyszerre érhetik külső erők és egymás közti kölcsönhatások, ami bonyolultabbá teszi az elemzést. Például vegyük a két elektront egy héliumatom esetén: mindkettő érez a mag Coulomb-vonzását (töltés $+2e$), és ugyanakkor taszítják is egymást. A teljes potenciál ilyen esetben:
+\begin{equation}
+V(\mathbf{r}_1,\mathbf{r}_2)=\frac{1}{4\pi\varepsilon_0}\!\left(-\frac{2e^2}{|\mathbf{r}_1|}-\frac{2e^2}{|\mathbf{r}_2|}+\frac{e^2}{|\mathbf{r}_1-\mathbf{r}_2|}\right).
+\tag{5.14}
+\end{equation}
+Ezt a problémát később dolgozzuk fel részletesen.
+
+\subsubsection*{Bozonok és Fermionok}
+Tegyük fel, hogy két, nem kölcsönható részecskénk van, az 1-es részecske az (egyrészecske) állapotban $\psi_a(\mathbf{r})$, a 2-es részecske pedig a $\psi_b(\mathbf{r})$ állapotban van. Ebben az esetben
+\begin{equation}
+\psi(\mathbf{r}_1,\mathbf{r}_2)=\psi_a(\mathbf{r}_1)\psi_b(\mathbf{r}_2).
+\tag{5.16}
+\end{equation}
+
+Természetesen ez azt feltételezi, hogy meg tudjuk különböztetni a részecskéket — különben nem volna értelme azt állítani, hogy az 1-es részecske $\psi_a$ állapotban van, míg a 2-es $\psi_b$ állapotban; legfeljebb azt mondhatnánk, hogy az egyik részecske $\psi_a$-ban, a másik $\psi_b$-ben van, de azt nem tudnánk megmondani, melyik melyik. Klasszikus mechanikában ez értelmetlen kifogás lenne: elvileg mindig meg tudjuk különböztetni a részecskéket — csak fessük az egyiket pirosra, a másikat kékre, vagy tegyünk rájuk azonosító számokat, esetleg béreljünk magánnyomozókat, hogy kövessék őket. A kvantummechanikában a helyzet azonban alapvetően más: egy elektront nem lehet pirosra festeni, sem címkét tűzni rá, és egy megfigyelés elkerülhetetlenül és kiszámíthatatlanul megváltoztatja az állapotát, ami lehetővé teszi, hogy a részecskék „titokban” felcserélődjenek. A tény az, hogy az elektronok teljesen azonosak egy olyan értelemben, ahogy két klasszikus tárgy soha sem lehet azonos. Nem csupán arról van szó, hogy nem tudjuk, melyik elektron melyik; még Istennek sincs értelme megmondani, melyik „ez” elektron és melyik „az” elektron — mindössze „egy” elektronról beszélhetünk helyesen.
+
+A kvantummechanika szépen kezeli az elvileg megkülönböztethetetlen részecskék létezését: egyszerűen olyan hullámfüggvényt konstruálunk, amely nem kötelezi el magát azzal kapcsolatban, hogy melyik részecske melyik állapotban van. Tulajdonképpen két módja van ennek:
+\begin{equation}
+\psi_{\pm}(\mathbf{r}_1,\mathbf{r}_2) = A\big[\psi_a(\mathbf{r}_1)\psi_b(\mathbf{r}_2)\pm\psi_b(\mathbf{r}_1)\psi_a(\mathbf{r}_2)\big],
+\tag{5.17}
+\end{equation}
+és a elmélet kétféle azonos részecskét enged meg: a bosonokat (plusz jel), és a fermionokat (mínusz jel). A bosonállapotok szimmetrikusak a részecskék felcserélése alatt, azaz $\psi_+(\mathbf{r}_2,\mathbf{r}_1)=\psi_+(\mathbf{r}_1,\mathbf{r}_2)$, míg a fermionállapotok antiszimetriák, azaz $\psi_-(\mathbf{r}_2,\mathbf{r}_1)=-\psi_-(\mathbf{r}_1,\mathbf{r}_2)$. Továbbá igaz, hogy
+\begin{equation}
+\begin{cases}
+\text{minden egész spinű részecske boson,}\\[4pt]
+\text{minden félintegrális spinű részecske fermion.}
+\end{cases}
+\tag{5.18}
+\end{equation}
+Ez a spin és statisztika közötti kapcsolat relativisztikus kvantummechanikában bizonyítható; a nemrelativisztikus elméletben egyszerű axiómaként vesszük. Ebből különösen következik, hogy két azonos fermion nem foglalhatja el ugyanazt az állapotot. Ha $\psi_a=\psi_b$, akkor
+\[
+\psi_-(\mathbf{r}_1,\mathbf{r}_2)=A\big[\psi_a(\mathbf{r}_1)\psi_a(\mathbf{r}_2)-\psi_a(\mathbf{r}_1)\psi_a(\mathbf{r}_2)\big]=0,
+\]
+és így nem marad semmilyen hullámfüggvényünk. Ez a híres \textbf{Pauli‑kizárási elv}. Ez nem egy furcsa, önkényes feltevés, amely csak az elektronokra vonatkozik, hanem következménye a kétrészecske-hullámfüggvények felépítésének szabályainak, és az összes azonos fermionra érvényes.
+
+\subsubsection*{Hartree-közelítés}
+Olyan rendszerekben, ahol a részecskék nem hatnak „nagyon” kölcsön, élhetünk azzal a közelítéssel, hogy a Hamilton-operátor a rendszerben lévő összes részecskére külön-külön hat:
+\begin{multline}
+\hat{H}\,\psi(x_1,x_2,\dots,x_n) = 
+\int dx_1'\,\hat{H}^{\mathrm{eff}}_{x_1,x_1'}\,\psi(x_1',x_2,x_3,\dots,x_n) \\
++ \int dx_2'\,\hat{H}^{\mathrm{eff}}_{x_2,x_2'}\,\psi(x_1,x_2',x_3,\dots,x_n)
++ \dots + \int dx_n'\,\hat{H}^{\mathrm{eff}}_{x_n,x_n'}\,\psi(x_1,x_2,x_3,\dots,x_n'),
+\end{multline}
+ahol $\hat{H}^{\mathrm{eff}}$ egy részecske effektív Hamilton-operátora. Ez az effektív operátor figyelembe veszi a többi elem hatását az adott részecskére, viszont ignorálja annak a részecskének a hatását az egész rendszerre. Ez hasonló a Hartree-közelítéshez: akárcsak az egyszerűbb naprendszer-modellekben, ahol a bolygók hatását a Napra gyakran elhanyagoljuk.
+
+Ekkor egy részecskére a sajátérték-probléma a következő:
+\[
+\hat{H}^{\mathrm{eff}}\,\psi_a(x) = E_a\,\psi_a(x),
+\]
+ahol $\psi_a$ egy részecske sajátállapota. Az egész rendszer sajátállapotát gyakran a következő módon konstruáljuk:
+\[
+\psi(x_1,x_2,\dots,x_n) = \psi_{i_1}(x_1)\,\psi_{i_2}(x_2)\,\dots\,\psi_{i_n}(x_n),
+\]
+ahol $i_1,i_2,\dots,i_n$ egész számok és $\psi_{i_1},\psi_{i_2},\dots,\psi_{i_n}$ a részecskék sajátállapotai. Ha ezt visszaírjuk a sajátérték-problémába, azt kapjuk, hogy
+\[
+\hat{H}\,\psi = (E_{i_1}+E_{i_2}+\dots+E_{i_n})\,\psi.
+\]
+Így például az 1. részecske az $i_1$-hez, a 2. részecske az $i_2$-höz stb. tartozik.
+
+A fenti szorzatforma azonban önmagában nem veszi figyelembe az azonos részecskék cseréje alatti szimmetriát: nem biztosítja, hogy a hullámfüggvény szimmetrikus vagy antiszimmetrikus legyen a részecskék felcserélésekor, ahogy azt a bosonokra illetve fermionokra elvárjuk. Tudjuk azonban, hogy ha $\psi$ egy sajátállapot, akkor két részecske felcserélése után is sajátállapotnak kell lennie; ha két energiát felcserélnek, a teljes energia nem változik, és ezek lineáris kombinációja is sajátállapot, tehát lehet a megoldást szimmetrizálni vagy antiszimmetrizálni. Ennek az eljárásnak az eredménye:
+\[
+\psi_{\pm}(x_1,\dots,x_n) = A\sum_{p\in S_n} \delta_p\,\psi_{i_1}(x_{p(1)})\psi_{i_2}(x_{p(2)})\dots\psi_{i_n}(x_{p(n)}),
+\]
+ahol a szumma az összes lehetséges permutáción megy végig, és
+\[
+\delta_p =
+\begin{cases}
+1 & \text{bozonokra},\\[4pt]
+1 & \text{fermionokra, ha }p\text{ páros permutáció},\\[4pt]
+-1 & \text{fermionokra, ha }p\text{ páratlan permutáció}.
+\end{cases}
+\]
+
+Például egy kétrészecske-rendszer esetén
+\[
+\psi(x_1,x_2)=\psi_1(x_1)\psi_2(x_2)\pm\psi_1(x_2)\psi_2(x_1).
+\]
+Fermionok esetén a megoldás egy mátrix determinánsaként is felírható, ez a Slater-determináns:
+\[
+\psi = N
+\begin{vmatrix}
+\psi_{i_1}(x_1) & \psi_{i_1}(x_2) & \cdots & \psi_{i_1}(x_n) \\
+\psi_{i_2}(x_1) & \psi_{i_2}(x_2) & \cdots & \psi_{i_2}(x_n) \\
+\vdots & \vdots & \ddots & \vdots \\
+\psi_{i_n}(x_1) & \psi_{i_n}(x_2) & \cdots & \psi_{i_n}(x_n)
+\end{vmatrix}.
+\]
+Ennek a determinánsnak az értéke zérus, ha bármely két sora megegyezik (a determináns tulajdonsága). Ez akkor fordul elő, ha két részecske ugyanabban az állapotban van; következésképpen fermionokra vonatkozóan két azonos részecske nem lehet azonos állapotban. Ez a híres Pauli-kizárási elv. Boszonok esetén viszont lehetséges, hogy makroszkopikusan sok részecske legyen ugyanabban az állapotban, ami a Bose–Einstein-kondenzáció jelenségéhez vezet.
+
+\subsubsection*{Pauli-Elv}
+Nézzük meg a Pauli-elvet kicsit részletesebben. A Hartree-közelítés alapján olyan rendszerekre, ahol sok részecske van, de az egyes részecskék hatása egyenként elhanyagolható a teljes rendszerre nézve, megközelíthetjük úgy a problémát, hogy bevezetünk minden részecskére egy effektív Hamilton-operátort, amely figyelembe veszi az összes többi részecske hatását az adott részecskére, de eltekint attól, hogy az adott részecske milyen hatást gyakorol a többiekre. Ennek megfelelően a Hamilton-operátor hatása a többrészecske hullámfüggvényre felírható például az alábbi integrálösszeg formájában:
+\begin{multline*}
+\hat{H}\,\psi(x_1,x_2,\dots,x_n)
+= \int dx_1'\,\hat{H}^{\mathrm{eff}}_{x_1,x_1'}\,\psi(x_1',x_2,\dots,x_n) \\
++ \int dx_2'\,\hat{H}^{\mathrm{eff}}_{x_2,x_2'}\,\psi(x_1,x_2',x_3,\dots,x_n)
++ \cdots
++ \int dx_n'\,\hat{H}^{\mathrm{eff}}_{x_n,x_n'}\,\psi(x_1,x_2,\dots,x_n').
+\end{multline*}
+
+Ebből következik, hogy a sajátérték-egyenletben az összenergia szétbontható az egyes részecskék energiaszintjeinek összegére:
+\[
+\hat{H}\,\psi = (E_{i_1}+E_{i_2}+\cdots+E_{i_n})\,\psi.
+\]
+Ha az energia nem változik két részecske felcserélésekor, akkor ezeknek a felcserélt konfigurációknak a lineáris kombinációja is megoldás lehet. Ennek megfelelően a megoldást szimmetrizálhatjuk vagy antiszimmetrizálhatjuk az azonos részecskék felcserélése alatt, figyelembe véve a fermionokra és a bozonokra jellemző eltérő viselkedést. A teljes, (anti)szerkesztett hullámfüggvény általános alakja az összes permutáció összegeként adható meg:
+\[
+\psi_{\pm}(x_1,\dots,x_n)=N\sum_{p\in S_n}\delta_p\,
+\psi_{i_1}(x_{p(1)})\psi_{i_2}(x_{p(2)})\cdots\psi_{i_n}(x_{p(n)}),
+\]
+ahol a szumma az összes lehetséges permutációra megy, és a permutációhoz tartozó előjel $\delta_p$ a következő: bozonok esetén minden permutációhoz $\delta_p=1$, fermionok esetén $\delta_p=+1$ páros permutációra és $\delta_p=-1$ páratlan permutációra. Így a bosonállapotok szimmetrikusak a részecskék felcserélésekor, míg a fermionállapotok antiszimetriát mutatnak.
+
+Két részecske esetén ez egyszerűsödik:
+\[
+\psi(x_1,x_2)=\psi_1(x_1)\psi_2(x_2)\pm\psi_1(x_2)\psi_2(x_1),
+\]
+a negatív előjel a fermionokra jellemző. Fermionoknál a megoldás gyakran egy mátrix determinánsaként írható fel, amelyet Slater-determinánsnak nevezünk:
+\[
+\psi = N
+\begin{vmatrix}
+\psi_{i_1}(x_1) & \psi_{i_1}(x_2) & \cdots & \psi_{i_1}(x_n) \\
+\psi_{i_2}(x_1) & \psi_{i_2}(x_2) & \cdots & \psi_{i_2}(x_n) \\
+\vdots & \vdots & \ddots & \vdots \\
+\psi_{i_n}(x_1) & \psi_{i_n}(x_2) & \cdots & \psi_{i_n}(x_n)
+\end{vmatrix}.
+\]
+A determináns tulajdonságából következik, hogy ha bármely két sora megegyezik (vagyis ha két részecske ugyanabban az egyrészecske-állapotban van), akkor a determináns nulla lesz. Ennek következménye a Pauli‑kizárási elv: fermionokra nézve két azonos részecske nem foglalhatja el ugyanazt az állapotot egy rendszerben. Bozonok esetén viszont lehetséges, hogy makroszkopikusan sok részecske legyen ugyanabban az állapotban, ami a Bose–Einstein-kondenzáció jelenségéhez vezet.
+
+E következmények miatt a fermionoknál az egyes energiaszinteken általában 0 vagy néhány darab részecske helyezkedhet el, és sokrészecskés rendszerekben az állapotok „feltöltődnek” az energiarendezés szerint. Mivel a H-szerű atomok esetén az elektronok ilyen rendszerekben állnak (az elektronok keringenek a mag körül), a Pauli‑elv és az atomi spektrum együttesen adják meg a periódusos rendszer szerkezetét.
+
+\subsubsection*{Periodusos Rendszer}
+A nehezebb atomok alapállapotú elektronkonfigurációi hasonló módon összeilleszthetők. Első közelítésben (eltekintve teljesen az egymás közti taszítástól) az egyes elektronok egyrészecske hidrogénszerű állapotokat foglalnak el, amelyeket a közelítés szerint az $n,\ell,m$ kvantumszámok határoznak meg; ezeket az állapotokat orbitáloknak nevezzük, és a Coulomb-potenciálban egy $Ze$ töltésű mag körül alakulnak ki. Ha az elektronok bozonok lennének (vagy megkülönböztethetők), mind leülnének az alapállapotba $(1,0,0)$, és a kémia nagyon egyszerű lenne. Az elektronok azonban azonos fermionok, és a Pauli-kizárási elv miatt egy adott orbitálust legfeljebb két elektron foglalhat el (egy spin-felfelé és egy spin-lefelé — pontosabban a szinglet konfigurációban). Egy adott $n$-hez $n^2$ hidrogén-szerű hullámfüggvény tartozik (mindegyiknek azonos energiája $E_n$ egy adott $n$ értékhez), tehát az $n=1$ héjban két elektron fér el, az $n=2$ héj nyolcat tartalmaz, az $n=3$ héj tizennyolcat stb.; általánosan az $n$-edik héj $2n^2$ elektront képes befogadni. Minthogy a periódusos tábla vízszintes soraiként ezeket a héjakat töltjük fel, a sorok hosszai kvalitatíve 2, 8, 18, 32, 50 stb. lesznek (a taszítás finom módosításai később módosítják ezt a számlálást).
+
+A heliumnál az $n=1$ héj tele van, így a következő atom, a lítium ($Z=3$) egy elektront az $n=2$ héjba kell hogy elhelyezzen. Az $n=2$-höz tartozhat $\ell=0$ vagy $\ell=1$; melyiket választja a harmadik elektron? Elektron–elektron kölcsönhatások hiányában ezek az alhéjak ugyanannyi energiájúak (a Bohr-energiák $n$-től függenek, nem pedig $\ell$-től), de az elektronok taszítása miatt az alacsonyabb $\ell$ érték kedvezőbb: a perdület hajlamos kilökni az elektront, és minél távolabb van, annál jobban árnyékolják a belső elektronok a magot, így a külső elektron hatékonyan kisebb effektív töltést „lát”. Egy adott héjon belül ezért az $\ell=0$ (s) állapot rendelkezik a legalacsonyabb energiával; így a lítium harmadik elektronja az $(n,\ell)=(2,0)$ orbitált tölti be (azaz a 2s állapotot). A következő atom, a berillium ($Z=4$) csak az ellentétes spinnel töltheti ezt az állapotot, míg a bór ($Z=5$) már az $\ell=1$ alhéjat kezdi betölteni.
+
+E módon haladva eljutunk a neonhoz ($Z=10$), amelynél az $n=2$ héj kitöltődik, és továbblépünk az $n=3$ héj feltöltésére. Először két atom tölti meg az $n=3,\ \ell=0$ állapotokat (nátrium és magnézium), majd hat atom következik $\ell=1$-gyel (alumíniumtól argonig). Az argont követően elvileg tíz atomnak kellene lennie az $n=3,\ \ell=2$ állapotokban; azonban a képernyőző hatás oly erős lesz, hogy átlépi a következő héjat: a kálium ($Z=19$) és a kalcium ($Z=20$) inkább az $n=4,\ \ell=0$ állapotot foglalja el az $n=3,\ \ell=2$ helyett. Ezt követően visszatérünk, hogy felvegyük az $n=3,\ \ell=2$ „lemaradókat” (skandiumtól cinkig), majd az $n=4,\ \ell=1$ (galliumtól kriptong) állapotokat, és ekkor ismét ugrik a kitöltés az $n=5$-re; később az $n=4$ héjról csúsznak be az $\ell=2$ és $\ell=3$ alhéjak. Az ilyen finom részletek tárgyalásához lásd bármely atomfizikai tankönyvet.
+
+Mellesleg megemlítem az atomi állapotok archaikus elnevezését, mert a kémikusok és sok fizikus ma is használja (és az, akik a Graduate Record Exam-et összeállítják, szeretik az ilyesmit). Történelmileg az $\ell=0$-t s-nek (``sharp''), az $\ell=1$-et p-nek (``principal''), az $\ell=2$-t d-nek (``diffuse''), az $\ell=3$-at f-nek (``fundamental'') nevezték; utána az ábécé folytatódik (g, h, i, skip j; az elnevezések ma már szokásos betűk sorozatát adják). Egy adott elektron állapotát a $n\ell$ párral jelöljük, ahol $n$ a héjszám, $\ell$ pedig az orbitális szögmomentumot megadó betű; a mágneses kvantumszám $m$ itt nincs feltüntetve, és a felső indexként használt szám jelzi, hány elektron foglalja el az adott állapotot. 
+Így a konfiguráció 
+\[
+(1s)^2\,(2s)^2\,(2p)^2
+\tag{5.44}
+\]
+megmutatja, hogy az (1s) orbitálban két elektron van, az (2s) orbitálban két elektron, míg a (2p)-hez tartozó alorbitálok kombinációjában összesen két elektron helyezkedik el (a 2p alorbitálok a kvantumszámoknak megfelelően a $(2,1,1),(2,1,0)$ és $(2,1,-1)$ állapotokból állnak).
+
+Ebben a példában két elektron rendelkezik $\ell=1$ (orbitalis impulzusmomentum kvantumszám) értékkel, tehát a teljes orbitalis impulzusmomentum kvantumszáma, $L$ (a teljes, nem egy részecskére vonatkozó) lehet 2, 1 vagy 0. Ugyanakkor az (1s)-beli két elektron összezárt a szinglet állapotban, amelynek összspinje nulla, és ugyanígy a (2s)-beli két elektron is. A két (2p)-beli elektron viszont lehet szinglet vagy triplet konfigurációban; így a teljes spinkvantumszám $S$ lehet 1 vagy 0. Ebből következik, hogy a grandiózus teljes impulzusmomentum $J$ (az $L$ és $S$ összekapcsolásával) felvehet például értékeket 3, 2, 1 vagy 0 (ld. korábbi összefüggés, pl. az 4.182. egyenlet).
+
+A pontos sorrendet és azt, hogy egy adott atomnál melyek lesznek az $L,S,J$ értékek, Hund szabályai (Hund's rules) segítségével lehet meghatározni (lásd a 5.18 feladatot). Az eredményt gyakran a következő spektroszkópiai jelöléssel írjuk fel:
+\[
+2S+1\,L_J
+\tag{5.45}
+\]
+ahol $2S+1$ a multiplicitás (a spin miatt), $L$ a nagybetűvel írt betűjel (S, P, D, F, \dots) a teljes orbitális impulzusnak megfelelően, és a jobb alsó index $J$ az összteljes impulzus.
+
+Például a szén (carbon) alapállapota a $^3P_0$: itt a teljes spin $S=1$ (innen a multiplicitás $2S+1=3$), a teljes orbitális impulzus $\;L=1\;$ (innen a betűjel $P$), és az összimpulzus $J=0$ (innen a jobb alsó index 0). A 5.1 táblázatban az első négy sorra vonatkozó példák szerepelnek.
+
+\bigskip
+
+\begin{center}
+\begin{tabular}{@{}cccc@{}}
+\hline
+Z & Elem & Konfiguráció & Alapállapot (spektroszk.)\\
+\hline
+1 & H   & (1s)                     & $^2\mathrm{S}_{1/2}$ \\
+2 & He  & (1s)$^2$                 & $^1\mathrm{S}_{0}$   \\
+\hline
+3 & Li  & (1s)$^2$(2s)             & $^2\mathrm{S}_{1/2}$ \\
+4 & Be  & (1s)$^2$(2s)$^2$         & $^1\mathrm{S}_{0}$   \\
+\hline
+5 & B   & (1s)$^2$(2s)$^2$(2p)     & $^2\mathrm{P}_{1/2}$ \\
+6 & C   & (1s)$^2$(2s)$^2$(2p)$^2$ & $^3\mathrm{P}_{0}$   \\
+\hline
+\end{tabular}
+\end{center}
 
 \end{document}
