@@ -1,0 +1,1421 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{{\subfix{../}}}
+
+\begin{document}
+\textit{
+    Mikrokanonikus, kanonikus, nagykanonikus sokaság. Mikroállapotok fogalma, Boltzmann-entrópia, egyszerű alkalmazások. Ergodikus hipotézis. Maxwell–Boltzmann-statisztika. Maxwell-féle sebességeloszlás.
+}
+
+\subsection{Bevezetés a statisztikus módszerekbe}
+A termodinamika statisztikus értelmezésének alapvető problémája az, hogy hogyan tudjuk egy homogén, zárt, makroszkópikus rendszer viselkedését leírni, miután az elérte a termodinamikai egyensúlyt.
+Ha a rendszert a szokásos állapotjelzőkkel ($V$, $N_0$, $E$) tudjuk jellemezni.
+
+Itt el is kezdhetnénk atomonként kiszámolni a rendszer viselkedését, de ezzel akad egy probléma: A rendszerben lévő részecskék nem függetlenek egymástól, bár csak kis hatótávolságon, de képesek kölcsönhatni egymással.
+Ezért érdemes lehet a rendszert olyan, az egésznél kisebb egycségekre bontani, amik mérete nagyobb a részecskék kölcsönhatási távolságánál, így függetlennek tekinthetőek. De a "felbontást" sszerenténk lehető legkisebbre venni,
+ezért az is kikötés, hogy a rendszer méreténél viszont jóval kisebb legyen a felbontás (tehát minél több ilyen alrendszerünk legyen). Ha tehát van egy tipikus termodinamikai rendszerünk melynek 1 cm a mérete, 
+és tudjuk, hogy az atomi méretskála (ahol már atomi kölcsönhatások mint az erős kölcsönhatás már jelen van) nagyságrendileg $10^{-8}$ cm, akkor jó felbontás lehet mondjuk a $10^{-4}$ cm.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/14-tetel/alrendszerek.png}
+    \caption{Egy makroszkópikus rendszer felbontása kisebb, de még makroszkópikus alrendszerekre.}
+\end{figure}
+
+A felbontás után kijelenthetjük, hogy minden részrendszer rendelkezik saját belső energiával, ami a rendszer homogenitása miatt arányos a térfogattal. Emellett van kölcsönhatási energiája is a szomszéd
+alrendszerekkel, ami a rövid hatótáv miatt csak a felülettel arányos (hisz csak a felülethez közeli részecskék vesznek részt benne). Viszont a részrendszer az atomi méretekhez képest nagy, ezért a térfogat (ami a hosszúság köbével arányos) sokkal nagyobb, mint a felület (ami a hosszúság négyzetével arányos).
+Ezért a kölcsönhatási energiát elhanyagolhatjuk a belső energiához képest, így minden részrendszer csak a saját belső energiájával rendelkezik. Ezt a belső energiát jelöljük $e_i$-vel, ahol $i$ az adott részrendszer sorszáma.
+Ekkor a teljes rendszer belső energiája a részrendszerek belső energiáinak összege lesz:
+\begin{equation}
+    E = \sum_{j = 1}^N e_j.
+\end{equation}
+
+Ezt a kifejezést akár egzaktá is tehetjük, ha a teljes rendszer részecskeszámát és térfogatát a végtelenbe toljuk ($N_0, V \to \infty$), miközben a részecskeszám és térfogat arányát állandó értéken tartjuk ($\frac{N_0}{V} = \text{állandó}$).
+Ekkor a részrendszerek méretét is tetszőlegesen növelhetjük (hisz a végtelen nagy rendszert felbonthatom végtelen nagy részekre). Ezt az esetet \textbf{Termodinamikai határesetnek} nevezik,
+és a makroszkópikus rendszerek jó közelítéssel így viselkednek.
+
+Mivel a teljes rendszer egyensúlyban van, ezért a részrendszerek is egyensúlyban vannak egymással. Emellett még három (összesen tehát négy) fontos feltételnek kell megfelelniük:
+\begin{itemize}
+    \item A részrendszerek száma nagyon nagy.
+    \item A részrendszerek megkülönböztethetőek egymástól.
+    \item A részrendszerek közelítőleg függetlenek egymástól (tehát $\sum_{j = 1}^{N} e_j = E$ igaz).
+    \item A részrendszerek egyformák.
+\end{itemize}
+
+A rendszernek csak három állapotát ismerjük: a térfogatát ($V$), részecskeszámát ($N_0$) és belső energiáját ($E$). Ahhoz viszont, hogy ezek a makroállapotokat kapjuk, 
+nagyon sok különböző mikroállapot-konfigurációt használhatunk. Az egyszerűség kedvéért tegyük fel, hogy az egyes részrendszerekben a részecskék száma és a térfogatuk állandó.
+Ekkor a részrendszerek csak a belső energiájukban különbözhetnek egymástól, aminek a \textit{lehetséges állapotait} $\varepsilon_i$-vel jelölünk úgy, hogy a sorszámok az energiák növekvő sorrendjében vannak:
+\begin{equation}
+    \varepsilon_1 \leq \varepsilon_2 \leq \varepsilon_3 \leq \ldots \leq \varepsilon_i \leq \varepsilon_{i+1} \leq \ldots
+\end{equation}
+Mivel az alrendszerek klasszikus, megkülönböztethető objektumok, nem vonatkoznak rájuk kvantumos szimmetriakorlátok (Pauli-elv), tehát egy adott energiához több lehetséges állapot is tartozhat. Mivel az alrendszerek egyformák,
+ezért mindegyik alrendszer csak ezeket a lehetséges állapotokat veheti fel, és egy adott állapotban természetesen több alrendszer is lehet. Legyen egy adott $i$-edik állapotban lévő alrendszerek száma $n_i$.
+Ekkor, mivel a részrendszerek száma $N$, ezért teljesül az alábbi összefüggés:
+\begin{equation}
+    N = \sum_{i = 1}^N n_i.
+\end{equation}
+Emiatt a teljes belső energia is felírható az egyes állapotok energiáinak és az adott állapotban lévő alrendszerek számának szorzataként:
+\begin{equation}
+    E = \sum_{i = 1}^N n_i \varepsilon_i.
+\end{equation}
+
+Ha ismerjük azt, hogy egyes állapotokban hány alrendszer van (vagyis ismerjük a $\{n_i\}$ halmazt), akkor megkérdezhetjük, hogy mi a teljes rendszer \textit{makroállapotainak} száma.
+Jelöljük ezt a számot $P(\{n_i\})$-vel. Mivel a részrendszerek megkülönböztethetőek egymástól, ezért az két különböző állapotot jelent, ha két \underline{eltérő} állapotban lévő részrendszer állapotát felcseréljük.
+Viszont ha két \underline{azonos} állapotú rendszer állapotait cseréljük fel, akkor az nem ad új makroállapotot. Emiatt annak a száma, hogy összesen hány állapota lehet a rendszernek, azt úgy tudjuk meghatározni,
+hogy vesszük hogy hányféleképpen tudnánk $N$ darab részrendszert sorrba rakni (ahol minden sorrend egy új makroállapot lenne, ennek száma: $N!$), majd levesszük belőle azokat az eseteket, amikor azonos állapotú alrendszerek állapotait cseréljük fel (amiért minden $n_i$ darab azonos állapotú részrendszer esetén $n_i!$-féleképpen tudunk felcserélni). Így a makroállapotok száma:
+\begin{equation}
+    P(\{n_i\}) = \frac{N!}{n_1! n_2! n_3! \ldots}. \qquad N = \sum_{i = 1}^N n_i
+\end{equation}
+Ez megadja egy $\{n_i\}$ állapothalmazzal rendelkező rendszer makroállapotainak számát. Ahhoz, hogy az összes lehetséges makroállapot számát megkapjuk, össze kell adnunk ezt az összes lehetséges $\{n_i\}$ halmazra:
+\begin{equation}
+    P = \sum_{n_1} \sum_{n_2} \sum_{n_3} \ldots P(\{n_i\}) = \sum_{\{n_i\}} P(\{n_i\}). \qquad N = \sum_{i = 1}^N n_i
+\end{equation}
+Annak a valószínűsége tehát, hogy egy adott $\{n_i\}$ állapothalmazzal rendelkező rendszerben vagyunk, az:
+\begin{equation}
+    \rho(\{n_i\}) = \frac{P(\{n_i\})}{\sum_{\{n_i\}} P(\{n_i\})}
+\end{equation}
+
+Ebből pedig meghatározhatjuk a legvalószínűbb eloszlást, amit definiálhatunk úgy, mint az a $\{n_i\}$ halmaz, ami maximalizálja a $P(\{n_i\})$ értékét, miközben teljesülnek a fenti korlátok.
+Legyen ez a halmaz $\{\tilde{n}_i\}$. Egyszerűbb lesz a számítás, ha a $P(\{n_i\})$ helyett a logaritmusát maximalizáljuk, hisz a logaritmus egy monoton növekvő függvény, így a maximum helye nem változik:
+\begin{equation}
+    \ln P(\{n_i\}) = \ln N! - \sum_{i = 1}^\infty \ln n_i!
+\end{equation}
+A Stirling-formula
+\footnote{
+    A Stirling-formula, James Stirling skót matematiksuról elnevezett közelítés faktoriálisok logaritmusára:
+    \begin{equation*}
+        \ln n! \approx n \ln n - n + \left(\frac{1}{2} \ln (2 \pi n)\right)
+    \end{equation*}
+    amely már kis $n$-ek esetén is egész pontos közelítést ad, de ahogy $n$ nő, úgy lesz egyre pontosabb. A nagy $n$ azért is hasznos, mert ekkor elhagyhatjuk a zárójelben lévő konstansokat.
+    Létezik formula a faktoriális pontos értékére is, de azzal kevésbé kényelmes számolni:
+    \begin{equation*}
+        n! \approx \sqrt{2 \pi n} \left( \frac{n}{e} \right)^n
+    \end{equation*}
+}
+segítségével, ha $n \gg 1$, akkor:
+\begin{equation}
+    \ln P(\{n_i\}) \approx N \ln N - N - \sum_{i = 1}^\infty (n_i \ln n_i - n_i) = N \ln N - \sum_{i = 1}^\infty n_i \ln n_i
+\end{equation}
+Ezt kell maximalizálnunk a korlátok mellett. Ahhoz, hogy egy függvénynek a maximumát korlátok mellett megkapjuk, használhatjuk a Lagrange-multiplikátor módszert. 
+A korlátaink a következőek:
+\begin{equation}
+    \begin{aligned}
+        N = \sum_{i = 1}^\infty n_i \quad \rightarrow \quad N - \sum_{i = 1}^\infty n_i = 0 \\
+        E = \sum_{i = 1}^\infty n_i \varepsilon_i \quad \rightarrow \quad E - \sum_{i = 1}^\infty n_i \varepsilon_i = 0
+    \end{aligned}
+\end{equation}
+Ekkor, amennyiben bevezetünk két Lagrange-multiplikátort, $\alpha$-t és $\beta$-t, akkor felírhatjuk a Lagrange-függvényét a rendszernek:
+\begin{equation}
+    \mathcal{L}(\{n_i\}, \alpha, \beta) = \ln P(\{n_i\}) - \alpha \left( N - \sum_{i = 1}^\infty n_i \right) - \beta \left( E - \sum_{i = 1}^\infty n_i \varepsilon_i \right)
+\end{equation}
+Ahhoz, hogy megtaláljuk az inflexiós pontot (ami itt a maximum lesz), meg kell határoznunk a részleges deriváltakat az összes változó szerint, és ezeket nullával egyenlővé tenni:
+\begin{equation}
+    \begin{aligned}
+        &\frac{\partial \mathcal{L}}{\partial n_i} = - \ln n_i - \alpha - \beta \varepsilon_i = 0 \\
+        &\frac{\partial \mathcal{L}}{\partial \alpha} = N - \sum_{i = 1}^\infty n_i = 0 \\
+        &\frac{\partial \mathcal{L}}{\partial \beta} = E - \sum_{i = 1}^\infty n_i \varepsilon_i = 0
+    \end{aligned}
+\end{equation}
+Az első egyenletből kifejezve $n_i$-t:
+\begin{equation}
+    n_i = e^{- \alpha - \beta \varepsilon_i} = A e^{- \beta \varepsilon_i}, \quad \text{ahol } A = e^{-1 - \alpha}
+\end{equation}
+Ezt visszahelyettesítve a második és harmadik egyenletbe, megkapjuk az $A$ és $\beta$ értékét a következő két egyenletből:
+\begin{equation}
+    \begin{aligned}
+        &N = A \sum_{i = 1}^\infty e^{- \beta \varepsilon_i} \\
+        &E = A \sum_{i = 1}^\infty \varepsilon_i e^{- \beta \varepsilon_i}
+    \end{aligned}
+\end{equation}
+Ezek megadják a legvalószínűbb eloszlást a részrendszerek között. Ezt az eloszlást \textbf{Maxwell–Boltzmann eloszlásnak} nevezzük, és a következőképpen néz ki:
+\begin{equation}
+    n_i = A e^{- \beta \varepsilon_i}
+\end{equation}
+Ahol az $A$ és $\beta$ paramétereket a fenti két egyenlet határozza meg a rendszer makroszkópikus paraméterei ($N$, $E$) alapján.
+Ha az összeadjuk $e^{- \beta \varepsilon_i}$-kat az összes lehetséges állapotra, akkor megkapjuk a \textbf{Állapotösszeget}:
+\begin{equation}
+    Z = \sum_{i = 1}^\infty e^{- \beta \varepsilon_i}
+\end{equation}
+Ezzel pedig $N$ és $E$ kifejezhető az alábbi módon:
+\begin{equation}
+    \begin{aligned}
+        &N = e^{-1 - \alpha} Z \\
+        &E = \sum_i \varepsilon_i e^{- \alpha - \beta \varepsilon_i} = \frac{N}{Z} \sum_i \varepsilon_i e^{- \beta \varepsilon_i}
+    \end{aligned}
+\end{equation}
+Ebből az egyenletből (nehezen, de) meghatáozható $\beta$ és onnan $\alpha$ is. De a lényegesebb, hogy ebből ki tudjuk fejezni a legvalószínűbb értéket, amit eredetileg kerestünk:
+\begin{equation}
+    \tilde{n}_i = \frac{N}{Z} e^{- \beta \varepsilon_i}
+\end{equation}
+Látható tehát, hogy $\tilde{n}_i \sim N$, tehát jogos volt feltenni, hogy $n_i \gg 1$. A $\frac{e^{-\beta\varepsilon_i}}{Z}$ kifejezést nevezik a \textbf{Boltzmann-faktornak} és a szemléletes jelentése, hogy
+annak a valószínűségét adja meg, hogy egy rendszer az $i$-edik állapotban van. 
+
+Látható továbbá, hogy a legvalószínűbb eloszlás és $E$ úgy is kifejezhető, hogy csak az állapotösszeget és annak deriváltját használjuk:
+\begin{equation}
+    \begin{aligned}
+        &\tilde{n}_i = - \frac{N}{\beta} \frac{\partial \ln Z}{\partial \varepsilon_i} \\
+        &\frac{E}{N} = - \frac{\partial \ln Z}{\partial \beta} 
+    \end{aligned}
+\end{equation}
+
+Ezután meghatározhatjuk azt is, hogy hány részrendszer van egy adott állapotban, vagyis, hogy mennyi $n_i$ átlagértéke:
+\begin{equation}
+    \bar{n}_i = \sum_{\{n_i\}} n_i \rho(\{n_i\}) = \frac{\sum_{\{n_i\}} n_i P(\{n_i\})}{\sum_{\{n_i\}} P(\{n_i\})}
+\end{equation}
+
+Az átlagolás elvégzéséhez használhatjuk a \textbf{generáló függvényt}, amit úgy definiálunk, hogy bevezetünk egy segédfüggvényt $f_i(x)$-et minden egyes $n_i$-hez:
+\begin{equation}
+    f_i(\omega) = \sum_{n_i = 0}^\infty \frac{1}{n_i!} (\omega e^{- \beta \varepsilon_i})^{n_i} = \exp(\omega e^{- \beta \varepsilon_i})
+\end{equation}
+Ekkor a teljes generáló függvény pedig ezek szorzata lesz:
+\begin{equation}
+    F(\omega) = \prod_{i = 1}^\infty f_i(\omega) = \exp \left( \omega \sum_{i = 1}^\infty e^{- \beta \varepsilon_i} \right) = \exp (\omega Z)
+\end{equation}
+Ebből pedig az átlagérték meghatározásához a következő összefüggést használhatjuk:
+\begin{equation}
+    \bar{n}_i = \left. \frac{1}{F(\omega)} \frac{\partial F(\omega)}{\partial (e^{- \beta \varepsilon_i})} \right|_{\omega = 1} = e^{- \beta \varepsilon_i} 
+\end{equation}
+Ebből pedig látható, hogy az átlagérték és a legvalószínűbb érték csak egy normáló tényezőben különbözik:
+\begin{equation}
+    \bar{n}_i = \frac{Z}{N} \tilde{n}_i
+\end{equation}
+További előnye ennek a módszernek, hogy az átlag négyzetét is meg tudjuk határozni:
+\begin{equation}
+    \overline{n_i^2} = \left. \frac{1}{F(\omega)} \frac{\partial^2 F(\omega)}{\partial (e^{- \beta \varepsilon_i})^2} \right|_{\omega = 1} = e^{- \beta \varepsilon_i} + e^{- 2 \beta \varepsilon_i} 
+\end{equation}
+Ebből pedig a szórás is meghatározható:
+\begin{equation}
+    \sigma_{n_i} = \sqrt{\overline{n_i^2} - \bar{n}_i^2} = \sqrt{\bar{n}_i}
+\end{equation}
+Látható tehát, hogy a szórás a gyöke az átlagértéknek, tehát ha az átlagérték nagy, akkor a szórás kicsi lesz az átlagértékhez képest.
+Ez azt jelenti, hogy a makroszkópikus rendszerek esetén, ahol az átlagértékek nagyon nagyok, a szórás elhanyagolható lesz az átlagértékhez képest, így a legvalószínűbb eloszlás és az átlagérték között
+nem lesz jelentős különbség.
+
+Vezessünk be még egy mennyiséget, a \textbf{rendszer állapotösszegét}:
+\begin{equation}
+    Z_0(\beta) = \sum_{j} e^{- \beta E_j}
+\end{equation}
+Ahol $j$ a teljes rendszer j-edik állapotát jelöli, és $E_j$ a hozzá tartozó energia. Az $E'$ energiához tartozó állapotok számát, tehát a degeneráció számát jelöljük $W(E')$-vel.
+Az $E'$ és $E' + \delta E'$ energiák közé eső állapotok száma pedig:
+\begin{equation}
+    W(E') \frac{\delta E'}{\Delta E} \qquad \delta E' \ll E' 
+\end{equation}
+Itt $\Delta E$ két szomszédos energiaérték közötti különbség. Legyen a rendszer legalacsonyabb energiája $E_0$. Ekkor az állapotösszeg felírható az alábbi módon:
+\begin{equation}
+    Z_0(\beta) = \sum_{E' = E_0}^\infty W(E') e^{- \beta E'} = \int_{E_0}^\infty e^{- \beta E'} \omega(E') dE' \qquad \text{ahol } \omega(E') = \frac{W(E')}{\Delta E}
+\end{equation}
+Ahol $\omega(E')$ az \textbf{állapotsűrűség}, ami megadja, hogy egységnyi energiaintervallumban hány állapot található. Ebből pedig az állapotsűrűség meghatározható az állapotösszeg inverz Laplace-transzformációjával
+\footnote{
+    Az inverz Laplace transzfomáljta egy $F$ függvénynek egy valós, folytonos, exponenciálisan korlátos $f$ függvény amire teljesül, hogy:
+    \begin{equation*}
+        \mathcal{L} \{f\}(s) = F(s)
+    \end{equation*}
+    Ahol $\mathcal{L}$ a Laplace-transzformáció operátora:
+    \begin{equation*}
+        \mathcal{L}\{f\}(s) = \int_0^\infty f(t) e^{-st} dt
+    \end{equation*}
+    Ahhoz, hogy a Laplace transzformációból visszakapjuk az eredeti függvényt, használhatjuk az inverz Laplace transzformációt:
+    \begin{equation*}
+        \mathcal{L}^{-1}\{F\}(t) = f(t) = \frac{1}{2 \pi i} \int_{c - i \infty}^{c + i \infty} F(s) e^{st} ds
+    \end{equation*}
+    Ahol $c$ egy valós konstans, ami nagyobb, mint az összes $F(s)$ függvény pólusa.
+}:
+\begin{equation}
+    \omega(E') = \frac{1}{2 \pi i} \int_{- i \infty}^{+ i \infty} Z_0(\beta) e^{\beta E'} d\beta = \frac{1}{2 \pi} \int_{-\infty}^{+ \infty} Z_0 (\beta' + i \beta'')e^{(\beta' + i \beta'') E} d\beta''
+\end{equation}
+Ahol $\beta'$ egy tetszőleges valós szám. Ahhoz, hogy meg tudjuk oldani ezt az integrált, használjuk az energia korábbi meghatározását:
+\begin{equation}
+    E_j = \varepsilon_{j_1} + \varepsilon_{j_2} + \ldots + \varepsilon_{j_{N}}
+\end{equation}
+Ahol $j_k$ a $k$-adik részrendszer $j_k$-edik állapotát jelöli. Ekkor az állapotösszeg felírható a következő módon:
+\begin{equation}
+    Z_0(\beta) = \sum_{j_1} \sum_{j_2} \ldots \sum_{j_N} e^{- \beta (\varepsilon_{j_1} + \varepsilon_{j_2} + \ldots + \varepsilon_{j_N})} = \left( \sum_{j} e^{- \beta \varepsilon_j} \right)^N = (Z(\beta))^N
+\end{equation}
+Láttuk, hogy az energia és $Z(\beta)$ között az alábbi összefüggés áll fenn:
+\begin{equation}
+    \frac{E}{N} = - \frac{\partial \ln Z}{\partial \beta}
+\end{equation}
+Ebbe behelyettesítve az előbb kapott $Z_0(\beta)$-t, az alábbi összefüggést kapjuk:
+\begin{equation}
+    - E = \frac{\partial \ln Z_0}{\partial \beta} \bigg\rvert_{\beta = \tilde{\beta}}
+\end{equation}
+Ahol $\tilde{\beta}$ az az érték, ami megfelel a rendszer belső energiájának. Válasszuk ezt az inverz Laplace-transzformációban szereplő $\beta'$-nek, Helyettesítsük be az állapotsűrűség meghatározásába 
+és fejtsük sorba a $\beta''$ körül:
+\begin{equation}
+    \begin{aligned}
+        \omega(E) &= \frac{1}{2 \pi} \int_{-\infty}^{+ \infty} \exp \left\{ \ln Z_0(\tilde{\beta}) + \tilde{\beta} E - \frac{1}{2} \frac{\partial \ln Z_0}{\partial \beta} \bigg\rvert_{\beta = \tilde{\beta}} \beta''^2 \right\} d\beta'' = \\
+        &= exp \left\{\ln Z_0 (\tilde{\beta}) + \tilde{\beta} \right\} \left(2\pi \frac{\partial \ln Z_0}{\partial \beta} \bigg\rvert_{\beta = \tilde{\beta}} \right)^2 (1 + \ldots)
+    \end{aligned}
+\end{equation}
+Itt kihasználtuk a Gauss-integrál eredményét:
+\begin{equation}
+    \int_{-\infty}^{+\infty} e^{- a x^2} dx = \sqrt{\frac{\pi}{a}} \qquad \text{ha } a > 0
+\end{equation}
+Vegyük mindkét oldal logaritmusát, és használjuk az előző összefüggést az energia és az állapotösszeg között:
+\begin{equation}
+    \ln \omega(E) = \ln Z_0(\tilde{\beta}) + \tilde{\beta} E' - \frac{1}{2} \ln \left( 2 \pi \frac{\partial^2 \ln Z_0}{\partial \beta^2} \bigg\rvert_{\beta = \tilde{\beta}} \right) + \ldots
+\end{equation}
+És mivel $Z_0(\beta) = (Z(\beta))^N$, ezért:
+\begin{equation}
+    \ln \omega(E) = N \left( \ln Z(\tilde{\beta}) + \tilde{\beta} \frac{E}{N} \right) - \frac{1}{2} \ln \left( 2 \pi N \frac{\partial^2 \ln Z}{\partial \beta^2} \bigg\rvert_{\beta = \tilde{\beta}} \right) + \ldots
+\end{equation}
+Tehát $\omega(E)$ az $N$-nek egy igen gyorsan változó függvénye, ami a makroszkópikus rendszerek egyik sajátossága.
+
+Határozzuk meg a levalószínűbb állapotok számát is!
+\begin{equation}
+    \ln P_max \equiv \ln P(\{\tilde{n}_i\}) = N \ln N - \sum_{i = 1}^\infty \tilde{n}_i \ln \tilde{n}_i
+\end{equation}
+Itt helyettesítsük be a legvalószínűbb eloszlást ($\tilde{n}_i = \frac{N}{Z} e^{- \tilde{\beta} \varepsilon_i}$):
+\begin{equation}
+    \ln P (\{\tilde{n}_i\}) = N \ln Z + \tilde{\beta} E
+\end{equation}
+Az $\ln \omega (E)$ utolsó tagja $\ln N$ nagyságrendű, így elhanyagolható a makroszkópikus rendszerek esetén. Így tehát:
+\begin{equation}
+    P(\{\tilde{n}_i\}) \approx \omega(E) \approx \sum_{\{n_i\}} P(\{n_i\})
+\end{equation} 
+Számítással is igazoltuk azt, amit korábban csak szemléletesen láttunk: az összes és a
+legvalószínűbb állapotok száma közel azonos. Ez másképpen azt jelenti, hogy $P(\{n_i\})$
+nagyon éles függvény, s ebből már következik az is, hogy a szórások kicsik, tehát a
+legvalószínűbb és a várható érték csak keveset tér el.
+
+
+\subsection{Mikroállapotok fogalma}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/14-tetel/macrostates.png}
+    \caption{Mikro- és makroállapotok ábrázolása pénzfeldobáskor. Mindegyik mikroállapotnak azonos a valószínűsége, de mivel van olyan makroállapot amit több mikroállapot is előidézhet, ezért a makroállapotok valószínűsége eltérő lehet.}
+\end{figure}
+
+Egy rendszer termodinamikai leírását előszőr \textit{egyensúlyi helyzetben} kíséreljük meg leírni. Ez azt jelenti, hogy ha a rendszeren egymás után sok mérést elvégzünk, mindig ugyanazt az eredményt kapjuk.
+Ez azt jelenti, hogy a rendszer makroszkópikus állapotjelzői (pl. $P$, $V$, $T$, $E$, stb.) időben nem változnak. Ezt a helyzetet nevezzük \textbf{termodinamikai egyensúlynak}. Később be fogjuk látni, hogy
+magára hagyott rendszerek mindig egyensúlyi helyzetre törekednek.
+
+Ha veszünk egy makroszkópikus rendszert, akkor a különböző makroszkópikus jellemzőit meg tudjuk mérni. Érdemes ezeket úgy megválasztani, hogy a rendszer teljes energiáját jellemző $H$ Hamilton-operátor
+tartalmazza őket, pl. a részecskék számát $N$, térfogatát $V$, stb., vagyis az additív, termodinamikában extenzívnek nevezett állapotjelzőket. Az intenzív mennyiségeket (pl. $T$, $P$, stb.) 
+ezekből származtatni tudjuk, így külön meghatározni nem szükséges őket.
+
+A mérésünkben mindig lesz egy bizonytalanság, ez egyrészt a mérőeszközök pontosságából ered, de a másik oka, hogy a makroszkópikus rendszerek energiaszintjei nagyon sűrűn helyezkednek el, emiatt az egyes nívók pontos meghatározásához a
+\begin{equation}
+    \Delta E \Delta t \geq \frac{\hbar}{2}
+\end{equation}
+határozatlansági reláció miatt nagyon sokáig kellene mérni az energiát. Emiatt mindig lesz egy $\delta E$ energiabizonytalanságunk, és az energiát csak egy $[E, E + \delta E]$ intervallumban tudjuk meghatározni.
+
+Klasszikus fizikában a részecskék hely- és impulzuskoordinátáit egy kontinuumon képzeljük el. Célszerű viszont azt mondani, hogy ha a hely vagy impulzus csak kicsit tér el, akkor azokat azonosnak tekintjük, ezzel 
+lehetővé téve véges számú mikroállapot definiálását. Ezek pontos meghatározásához kell néhány új fogalom.
+
+Vegyünk egy $f$ szabadsági fokú endszert, amiben f darab különböző általánosított koordináta ($q_i$) és ugyanennyi kanonikusan konjugált impulzus ($p_i$) van. Ekko vezessük be a következő jelőlést:
+\begin{equation}
+    \mathbf{q} = (q_1, q_2, \ldots, q_f), \quad \mathbf{p} = (p_1, p_2, \ldots, p_f)
+\end{equation}
+Ha a $d$ dimenziód dobozban $N$ darab részecske van, akkor általában $f = Nd$.
+
+\textbf{Fázistér.} Fázistérnek nevezzük azt az elképzelt $2f$ dimenziós teret, aminek a koordináta-rendszer tengelyeit az általánosított koordináták és impulzusok alkotják.
+Egy adott időpontban a rendszer állapotát egy pont határozza meg a fázistérben. Az állapotot jelző pont időbeli változását pedig egy görbe írja le a fázistérben. Zárt rendszerben az energia állandó,
+ami összefüggést ad a koordináták és impulzusok között, emiatt a görbe ekkor egy $2f - 1$ dimenziós felületen helyezkedik el.
+
+\textbf{Fázistér elem.} Osszuk fel a fázisteret egyforma elemekre, amiknek az élei $\delta q_i$ és $\delta p_i$ hosszúságúak az egyes koordináta- és impulzus-tengelyeken, $f$ dimenziójuak és igaz rájuk, hogy:
+\begin{equation}
+    \delta p_i \delta q_i = s
+\end{equation}
+Ahol $s$ egy állandó, aminek az értéke a kvantummechanikában $\hbar$ (vagyis a Planck-állandó osztva $2 \pi$-vel). Ekkor a teljes cella térfogata pedig:
+\begin{equation}
+    \delta p_1 \delta q_1 \delta p_2 \delta q_2 \ldots \delta p_f \delta q_f = \prod_{i=1}^f \delta p_i \delta q_i = s^f
+\end{equation}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{imgs/14-tetel/phase_space.png}
+    \caption{Fázistér felosztásának ábrázolása 2D-ban}
+\end{figure}
+Ha $s$-t elég kicsire választjuk, akkor valóban jogos egyformának tekinteni azokat az állapotokat, melyek egy cellán belülre esnek. Ekkor egy cella a rendszer egy \textbf{mikroállapotának} tekinthető.
+
+Klaszikus fizikában az $s$ egy határozatlan mennyiség és a végeredmények nem is függnek tőle. Kvantummechanikában viszont a határozatlansági reláció miatt nem tudhatjuk $p$ és $q$ pontos értékét egyszerre:
+\begin{equation}
+    \Delta p_i \Delta q_i \geq \frac{\hbar}{2}
+\end{equation}
+Ezért nincs értelme a $\delta q_i \delta p_i < \hbar/2$ választásnak. Viszont általánosan igaz, hogy az állapotok számának kvantummechanikai kifejezését tekintve a klasszikus határesetben leolvasható, hogy:
+\begin{equation}
+    s = h
+\end{equation}
+Ahol $h$ a Planck-állandó. Ezért általában ezt a választást használjuk.
+
+Itt térjünk ki egy kicsit arra, hogy mit is tekintünk \textit{részecskének}. A részecske fogalmát mindig úgy kell megválasztani, hogy az lehető legjobban jellemezze az adott rendszert.
+Például egy szobahőmérsékletű nemesgáz esetén az atomok lesznek a részecskék, hiszen a gáznak nincs elég energiája, hogy ennél kisebb elemekre essen szét. Viszont egy ionizált gáz esetén
+már az elektronokat és a protonokat tekintjük részecskének. A részecskének nem is kell valós, tömeggel rendelkező objektumnak lennie, hanem minden szabadsági fokot befolyásoló objektumot (pl. fononok)
+Emiatt a szabadsági fokok száma ( $f = Nd$ ) függ az adott rendszer körülményeitől.
+
+\textbf{állapotszám.} Láttuk tehát, hogy egy adott makroszkópikus rendszert megszámlálható számú mikroállapotra tudjuk bontani. Ekkor felmerülhet a kérdés, hogy egy makroállapothoz hány mikroállapot tartozik.
+Ezt nevezik állapotszámnak és a jele:
+\begin{equation}
+    \Omega(E, \delta E)
+\end{equation}
+Ez megadja, hogy egy adott $[E, E + \delta E]$ energiaintervallumba eső makroállapothoz hány mikroállapot tartozik. Ezt kvantumosan egyszerűen meg tudjuk kapni, mert csak leszámoljuk hány különböző kvantumszámmal jellemzett
+állapot van ebben az energiaintervallumban. Klasszikusan a fázistérbeli pontok számát kell megszámolni a két határ között amit egy integrállal tudunk megtenni. De mivel a fázistér pontjait mikroállapot cellákra bontottuk, ezért
+az állapotszámot úgy tudjuk megkapni, hogy a fázistérbeli integrált elosztjuk egy mikroállapot cella térfogatával (Először tegyük fel, hogy csak egy fajta részecske van a rendszerben):
+\begin{equation}
+    \Omega(E, \delta E) = \frac{1}{h^{3N} N!} \int_{E \leq E (\mathbf{p}, \mathbf{q}) \leq E + \delta E} d \mathbf{q} d \mathbf{p} \qquad d\mathbf{q} d\mathbf{p} \equiv \prod_i dq_i dp_i
+\end{equation}
+Itt $h^{3N}$ a mikroállapot cella térfogata, ahol $f = 3N$ a szabadsági fokok száma a 3D-s térben. $N!$ pedig azért van a nevezőben, mert a részecskék azonosak, így az ő felcserélésük nem ad új mikroállapotot.
+Ha több fajta részecske van a rendszerben akkor a már ismert egyenletet kapjuk:
+\begin{equation}
+    \Omega(E, \delta E) = \frac{1}{h^{3N} N_1! N_2! \ldots} \int_{E \leq E (\mathbf{p}, \mathbf{q}) \leq E + \delta E} d \mathbf{q} d \mathbf{p}
+\end{equation}
+Ha a $\delta E \ll E$ kellően kicsi, akkor az állapotszám közelítőleg kifejezhető az állapotsűrűség segítségével is:
+\begin{equation}
+    \Omega(E, \delta E) \approx \omega(E) \delta E
+\end{equation}
+Az állapotsűrűség megadja hogy egységnyi energiaintervallumban hány állapot található, így ha ezt megszorozzuk egy kis $\delta E$-vel, akkor megkapjuk a $\delta E$ intervallumba eső állapotok számát.
+
+Érdemes sokszor úgy megválasztani az energia intervallumot, hogy az alapállapot ($E_0$) és egy adott $E$ energia között keressük az állapotszámot. Ekkor választhatjuk a minimum energiát nullának is, így:
+\begin{equation}
+    \Omega_0(E) = \frac{1}{h^{f} N!} \int_{0 \leq E (\mathbf{p}, \mathbf{q}) \leq E} d \mathbf{q} d \mathbf{p}
+\end{equation}
+Ez a mennyiség és $\omega(E, \delta E)$ között a következő összefüggés áll fenn:
+\begin{equation}
+    \Omega(E, \delta E) = \Omega_0(E + \delta E) - \Omega_0(E) = \frac{d \Omega_0}{d E} \delta E
+\end{equation}
+Ha pedig $\delta E \ll E$, akkor:
+\begin{equation}
+    \omega(E) = \frac{d \Omega_0}{d E}
+\end{equation}
+
+\subsection{Mikrokanonikus, kanonikus, nagykanonikus sokaság}
+
+\subsubsection{Gibbs-féle sokaságok, Ergodikus hipotézis}
+Eddig láttuk, hogy egy makroállapothoz sok mikroállapot tartozhat. Ez azt jelenti, hogy a rendszerek a mikroszkópikus elrendezésükben különbözhetnek, de a makroszkópikus, mérhető tulajdonságaikban megegyeznek.
+Tehát elképzelhetünk egy olyan halmazt, amiben azonos makroállapotban lévő rendszerek vannak, de mindegyik rendszerben mások a mikroállapotok. Ha ebben a halmazban minden lehetséges mikroállapothoz
+tartozik egy rendszer, akkor ezt a halmazt \textbf{Gibbs-féle sokaságnak} nevezzük. Ezt úgy is megfogalmazhatjuk, hogy egy Gibbs-féle sokaság egy olyan halmaz, amiben egy adott makroállapotot megvalósító
+összes lehetséges mikroállapot megtalálható.
+
+Ez azért egy nagyon hasznos fogalom, mert amikor egy rendszer tulajdonságait mérjük, akkor, mivel a mérés tipikusan tovább tart mint a rendszer részecskéinek mikroszkópikus kölcsönhatásainak időskálája,
+ezért a mérés során a rendszer sok különböző mikroállapoton keresztül megy, míg a makroállapota azonos marad. Ezért a mérés során, ahelyett, hogy az időbeli átlagot néznénk, elég, ha a Gibbs-féle sokaság
+átlagát nézzük, hiszen a mérés során a rendszer időfejlődése során a sokaság által leírt mikroállapotok között mozog. Ha elég ideig mérjük a rendszert, akkor a leggyakrabban előforduló mikroállapotokat
+fogjuk "leginkább" látni, ezek pedig pont a sokaság eloszlásának csúcsai közelében lévő mikroállapotok lesznek. Tehát ha átlagoljuk időben a megkapott mikroállapotokat, az pont annyi lesz mint a sokaság átlaga.
+Ezt nevezik a statisztikus fizika \textbf{ergodikus hipotézisnek}.
+
+A sokaság, bár könnyebben kezelhető mint az időbeli átlag, a legtöbb esetben nehezen megválasztható. Ennek ellenére létezik pár hasznos és egyszerű sokaság, amik jól használhatók a legtöbb termodinamikai rendszer leírására.
+
+Kérdés, hogy hogyan kell átlagolni a sokaságot? Ehhez meg kell adnunk, hogy a $j$-ik mikroállapot milyen $\rho(j)$ valószínűséggel jelenik meg a rendszerben. Mivel valamelyik állapot biztosan bekövetkezik, ezért:
+\begin{equation}
+    \sum_j \rho(j) = 1
+\end{equation}
+Ekkor, ha van egy fizikai mennyisdég $A$ (pl.: nyomás), és az $A(j)$ az adott mennyiséget megvalósító mikroállapotok $j$-edik értéke, akkor a sokaság átlagértéke:
+\begin{equation}
+    \bar{A} = \sum_j A(j) \rho(j)
+\end{equation}
+
+Klasszikusan, mivel egy kontinuumon dolgozunk a fázistérben, ezért bevezethetjük $\rho'(\mathbf{p}, \mathbf{q})$ valószínűségsűrűséget, ami megadja, hogy egy adott fázistér pontban mekkora a valószínűsége
+hogy a rendszer ott van. Ennek egy fázistérelemen belül közel állandónak kell lennie. $\rho'(\mathbf{p}, \mathbf{q})d\mathbf{p} d\mathbf{q}$ annak a valószínűsége, hogy a rendszer a $(\mathbf{p}, \mathbf{q})$ pont körüli $d\mathbf{p} d\mathbf{q}$ térfogatban van.
+Mivel ez is egy valószínűség, ezért érdemes $\rho'$-t is 1-re normálni a megengedett tartományban. Mivel $\rho' \sim \rho$ ezért használjuk $\rho$-t $\rho'$ helyett. Ekkor a normálás, ha a részecskék különböző fajtájúak:
+\begin{equation}
+    \int \rho(\mathbf{p}, \mathbf{q}) \frac{d\mathbf{p} d\mathbf{q}}{h^{3N}} = 1 \qquad \text{ahol }d\mathbf{p} d\mathbf{q} = \prod_{k=1}^{N} \prod_{i=1}^{3} dp_{k,i} dq_{k,i}
+\end{equation}
+$A$ mennyiség átlagértéke pedig:
+\begin{equation}
+    \bar{A} = \int A(\mathbf{p}, \mathbf{q}) \rho(\mathbf{p}, \mathbf{q}) \frac{d\mathbf{p} d\mathbf{q}}{h^{3N}}
+\end{equation}
+Ha a részecskék azonosak:
+\begin{equation}
+   \bar{A} =  \int A(\mathbf{p}, \mathbf{q}) \rho(\mathbf{p}, \mathbf{q}) \frac{d\mathbf{p} d\mathbf{q}}{h^{3N} N!}
+\end{equation}
+És ha több fajta részecske van:
+\begin{equation}
+   \bar{A} =  \int A(\mathbf{p}, \mathbf{q}) \rho(\mathbf{p}, \mathbf{q}) \frac{d\mathbf{p} d\mathbf{q}}{h^{3N} N_1! N_2! \ldots}
+\end{equation}
+Ezek alapján a sokaság egyértelműen definiálható, ha megadjuk a $\rho(j)$ és $\rho(\mathbf{p}, \mathbf{q})$ eloszlásfüggvényt. Ezt pedig úgy tehetjük meg, hogy egy olyan függvényt választunk
+amivel a sokaság átlaga meg fog egyezni a rendszer időbeli átlagával.
+
+\subsubsection{Mikrokanonikus sokaság}
+Az egyik legegyszerűbb sokaság a \textbf{mikrokanonikus sokaság}, ami egy zárt rendszer egyensúlyi állapotát írja le. Az első feladatunk, mint minden sokaságnál, hogy meghatározzuk a $\rho(j)$ eloszlásfüggvényt.
+Tegyük fel, hogy a zárt rendszerünk energiája $E$ és $E + \delta E$ között van. A térfogat és a részecskeszám adott (és nem változik). Mik lehetnek ekkor az állapotok valószínűségei? Mivel a rendszer zárt,
+így nincs külső hatás, ami befolyásolhatná az állapotokat, ezért feltehetjük, hogy nincs egy kitüntetett állapot, mindegyik azonos valószínűséggel fordul elő. Ekkor a valószínűségsűrűség:
+\begin{equation}
+    \boxed{\rho(\mathbf{p}, \mathbf{q}) = \begin{cases}
+        \frac{1}{\Omega(E, \delta E)} & \text{ha } E \leq H_j(\mathbf{p}, \mathbf{q}) \leq E + \delta E \\
+        0 & \text{egyébként}
+    \end{cases}}
+\end{equation}
+Itt $H(\mathbf{p}, \mathbf{q})$ a rendszer Hamilton-operátora, ami a teljes rendszer energiáját jelöli. Itt látható, hogy a valószínűséget a megengedett intervallumon kívül nullának vettük, hiszen a rendszer energiája
+ebben az intervallumban van. Ha egy rendszer ezzel a valószínűségsűrűséggel rendelkezik, akkor az ezzel definiált sokaságot \textbf{Mikrokanonikus sokaságnak} nevezzük. Azt korábban már láttuk, hogy ez a függvény normált!
+
+Ezt az eredményt úgy is értelmezhetjük, hogy mérés esetén egy $f_i$ fizikai mennyiségről mindig csak annyit tudunk, hogy az $[f_i, f_i + \delta f_i]$ intervallumba esik.
+De ezen az intervallumon belül egyik lehetséges mikroállapot sem kitüntetett, így mindegyik azonos valószínűséggel fordul elő. Ezt \textit{a priori egyenlő valószínűség elvének} nevezzük.
+Ez annyit jelent, hogy egy rendszer minden olyan mikroállapota azonos valószínűséggel fordul elő, amelyek a nem-teljes ismereteink alapján szerzett információkkal összeegyeztethetőek. Tehát ha két mikroállapot 
+a méréseink alapján lehetségesek, akkor azok azonos valószínűséggel vannak jelen. Nem részletezzük, de ez az elv levezethető a fizikai folyamatok időbeli változásának nemegyensúlyi statisztikus fizika általi leírásával is (Master egyenlet).
+
+A mikrokanonikus sokaság hasznos például olyan esetekben amikor egy zárt rendszerről, vagy egy alrendszeréről akarjuk megmondani, milyen valószínűséggel vesz fel egy $x_k$ adott értéket (ahol $x$ egy tetszőleges extenzív mennyiség).
+Ehhez meg kell határozni azoknak az állapotoknak a számát, amelyek meg tudják valósítani az $x_k$ értéket és összhangban vannak a rendszer többi jellemzőjével (pl. energia, részecskeszám, térfogat, stb.).
+Jelölje ezt:
+\begin{equation}
+    \Omega(E, \delta E, x_k)
+\end{equation}
+Az összes megengedett állapot száma pedig:
+\begin{equation}
+    \Omega(E, \delta E) = \sum_{k} \Omega(E, \delta E, x_k)
+\end{equation}
+Tehát a valószínűség, hogy az $x$ mennyiség az $x_k$ értéket veszi fel:
+\begin{equation}
+    P(x_k) = \frac{\Omega(E, \delta E, x_k)}{\Omega(E, \delta E)}
+\end{equation}
+Az $x$ mennyiség átlagértéke pedig:
+\begin{equation}
+    \bar{x} = \sum_k x_k P(x_k) = \sum_k x_k \frac{\Omega(E, \delta E, x_k)}{\Omega(E, \delta E)}
+\end{equation}
+
+Itt vegyük elő újra egy kicsit a termodinamika két releváns posztulátumát:
+\begin{itemize}
+    \item \textbf{I. Posztulátum} Magukra hagyott testek a termodinamikai egyensúlyba kerülnek.
+    \item \textbf{II. Posztulátum} Egyensúlyi állapotban a rendszer minden olyan mikroállapotát egyenlő valószínűséggel veszi fel, amelyek összhangban vannak a makroszkópikus állapotjelzőkkel.
+\end{itemize}
+
+Emellett van két további fontos tulajdonság is:
+\begin{itemize}
+    \item \textbf{I. tulajdonság} Zárt makroszkópikus testre az összes $E$ és $E + \delta E$ közötti állapotok száma nagyon jó közelítéssel megegyezik a legvalószínűbb állapotot megvalósító állapotok számával.
+    \item \textbf{II. tulajdonság} A makroszkópikus testek állapotainak száma az extenzív mennyiségek nagyon gyorsan változó függvénye. Az energiától való függés, ha $E \gg E_0$:
+    \begin{equation}
+        \omega(E) \sim \Omega(E) \sim E^{\alpha f} \qquad \text{ahol } \alpha > 0
+    \end{equation}
+\end{itemize}
+
+Az első tulajdonság azt jelenti, hogy ha egy rendszert két, még makroszkópikus rendszerre bontunk, és az egyikben $x$ értéke $x_1$, akkor:
+\begin{equation}
+    \Omega(E, \delta E) \equiv \sum_{x_1} \Omega(E, \delta E, x_1) = \max_{x_1} \Omega(E, \delta E, x_1) \equiv \Omega(E, \delta E, \tilde{x}_1)
+\end{equation}
+Ahol $\tilde{x}_1$ a legvalószínűbb érték. Ennek az a következménye, hogy $\Omega(E, \delta E, x_1)$ a $x_1$ körül nagyon élesen csúcsosodik, így a valószínűségi eloszlás is nagyon éles lesz, és a szórások kicsik lesznek (Dirac-delta szerű eloszlás).
+Tehát minden extenzív értékre jó közelítéssel igaz, hogy az átlagérték megegyezik a legvalószínűbb értékkel:
+\begin{equation}
+    \bar{x} = \tilde{x}
+\end{equation}
+
+A két tulajdonság nem teljesen független egymástól, ugyanis:
+\begin{equation}
+    \ln \Omega(E, \delta E) = \alpha f \ln E + ln \delta E
+\end{equation}
+Ebből látható, hogy ha $f$ nagy, akkor az állapotszám nagyon gyorsan változik $E$-vel. Ezért a valószínűségi eloszlás is nagyon éles lesz, hiszen a legvalószínűbb állapot körül az állapotszám nagyon gyorsan csökken.
+
+\subsubsection{Kanonikus sokaság}
+A kanonikus sokaságot olyan esetekben használjuk, amikor a rendszerünk termikus kapcsolatban van a környezettel. Ezt praktikusan úgy tudjuk elképzelni mint egy zárt rendszert, ami két alrendszerből áll:
+Az egyik kis rendszer $A$, a másik meg egy jóval nagyobb $A'$ rendszer. Ezt a nagy rendszert nevezük \textit{Hőtartálynak}. A hőtartály egy jó közelítése a rendszer környezetére.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{imgs/14-tetel/canonical_ensemble.png}
+    \caption{Kanonikus sokaság ábrázolása}
+\end{figure}
+$A$-t általában azért elég nagyra kell választani, hogy a két rendszer közötti kölcsönhatási energina - ami a felülettel arányos - elhanyagolható legyen a térfogattal arányos belső energiához képest.
+Viszont $A$ energiája nagy valószínűséggel jóval kisebb mint $A'$-é:
+\begin{equation}
+    E^{(0)} = E + E', \qquad  E \ll E^{(0)}, \qquad E \ll E', \qquad E' \approx E^{(0)}
+\end{equation}
+Itt $E^{(0)}$ a teljes rendszer energiája, $E$ az $A$ rendszer energiája, $E'$ pedig az $A'$ rendszer energiája. Mint minden sokaságnál, itt is a $\rho(j)$ meghatározása a cél.
+
+Tegyük fel, hogy $A$ az $i$-edik állapotban van, és ehhez $E_i$ energia tartozik. Ekkor $A'$ energiája:
+\begin{equation}
+    E' = E^{(0)} - E_i
+\end{equation}
+Tehát az $A'$ rendszer állapotszáma:
+\begin{equation}
+    \Omega' (E^{(0)} - E_i, \delta E') \
+\end{equation}
+Itt $\delta E'$ az $A'$ rendszer energiabizonytalansága. Mivel $A$ és $A'$ egy zárt rendszert alkotnak, így a teljes rendszer mikroállapotainak száma:
+\begin{equation}
+    \Omega^{(0)} (E^{(0)}, \delta E^{(0)}) = \sum_i \Omega' (E^{(0)} - E_i, \delta E')
+\end{equation}
+Mivel a 2. posztulátum szerint minden mikroállapot egyenlő valószínűséggel fordul elő, így az $A$ rendszer $i$-edik állapotának valószínűsége:
+\begin{equation}
+    \rho(i) = \frac{\Omega' (E^{(0)} - E_i, \delta E')}{\Omega^{(0)} (E^{(0)}, \delta E^{(0)})}
+\end{equation}
+Most használjuk ki azt, hogy $A'$ sokkal nagyobb mint $A$, így $E_i \ll E^{(0)}$. Ekkor az $A'$ állapotszámát kifejthetjük Taylor-sorba $E^{(0)}$ körül.
+Először vegyük figyelembe, hogy a 2. tulajdonság miatt az állapotszám felírható így:
+\begin{equation}
+    \Omega' (E^{(0)} - E_i, \delta E') \propto (E^{(0)} - E_i)^{\alpha f'} = (E^{(0)})^{\alpha f'} \left( 1 - \frac{E_i}{E^{(0)}} \right)^{\alpha f'}
+\end{equation}
+Mivel a kitevő egy nagyon nagy szám, ezért $\Omega'$ sorfejtése csak akkor jogos, ha $\frac{E f'}{E^{(0)}} \ll 1$. Ez viszont egy túl erős megkötés, ezért egy kicsit máshogy kell megközelíteni a problémát.
+Szerencsére a probléma feloldható, ha nem $\Omega'$-t fejlesztjük ki, hanem annak a logaritmusát (pontosabban a $\rho(i)$ logaritmusát fejtsük sorba), mert ekkor elég ha a $E_i \ll E^{(0)}$ feltétel teljesül. Ekkor:
+\begin{equation}
+    \ln \rho(i) = \ln \Omega' (E^{(0)} - E_i, \delta E') - \ln \Omega^{(0)} (E^{(0)}, \delta E^{(0)})
+\end{equation}
+Fejtsük ki most sorba az első tagot $E^{(0)}$ körül:
+\begin{equation}
+    \ln \Omega' (E^{(0)} - E_i, \delta E') = \ln \Omega' (E^{(0)}, \delta E') - \left( \frac{\partial \ln \Omega'}{\partial E'} \right)_{E^{(0)}} E_i + \ldots
+\end{equation}
+A második tagban szereplő parciális deriváltat jelöljük:
+\begin{equation}
+    \beta \equiv \left( \frac{\partial \ln \Omega'}{\partial E'} \right)_{E^{(0)}}
+\end{equation}
+Ezt úgy is értelmezhetjük, hogy $A'$ olyan nagy, hogy $A$-tól függetlenül állandónak tekinthető az energiája, és emiatt a hozzárendelhető hőmérséklet is konstans. Ezért nevezzük hőtartálynak. Itt $\beta$ csak egy konstans,
+de később látszódni fog, hogy nagyon fontos fizikai jelentése van. Ekkor a valószínűség logaritmusa:
+\begin{equation}
+    \ln \rho(i) = \ln \Omega' (E^{(0)}, \delta E') - \ln \Omega^{(0)} (E^{(0)}, \delta E^{(0)}) - \beta E_i
+\end{equation}
+Visszaírva az eredeti valószínűséget:
+\begin{equation}
+    \rho(i) = \frac{\Omega' (E^{(0)}, \delta E')}{\Omega^{(0)} (E^{(0)}, \delta E^{(0)})} e^{-\beta E_i}
+\end{equation}
+Az első tört egy konstans, hiszen nem függ $i$-től. Mivel a valószínűségek összege 1 kell legyen, ezért a konstans értékét meg tudjuk határozni:
+\begin{equation}
+    \frac{1}{Z} = \frac{\Omega' (E^{(0)}, \delta E')}{\Omega^{(0)} (E^{(0)}, \delta E^{(0)})} \qquad \Rightarrow \qquad Z = \frac{\Omega^{(0)} (E^{(0)}, \delta E^{(0)})}{\Omega' (E^{(0)}, \delta E')}
+\end{equation}
+Ahol $Z$ az állapotösszeg:
+\begin{equation}
+    Z = \sum_i e^{-\beta E_i}
+\end{equation}
+Így a kanonikus sokaság valószínűségsűrűsége:
+\begin{equation}
+    \boxed{\rho(i) = \frac{1}{Z} e^{-\beta E_i}} 
+\end{equation}
+Ezek az összefüggések megadják a statisztikus fizika egyik legalapvetőbb eredményét, annak a valószínűségét, hogy a hőtartállyal termikus kapcsolatban lévő test i-edik állapotát veszi föl.
+$\rho(i)$ definiálja a kanonikus sokaságot. A levezetésből látszik, hogy az eloszlás az anyagi minőségtől független.
+
+Eddig felhasználtuk azt a termodinamikai tulajdonságot, hogy $E_i \ll E^{(0)}$. Ez abból következett, hogy az $E$-nek azon értékei amik eltérnek az átlagtól, nagyon kicsi valószínűséggel fordulnak elő,
+vagyis $E_i \approx \bar{E}$. Vagyis a rendszer flutkuációja kicsi. De kérdés, hogy valóban jogos-e ez a feltevés? Ehhez nézzük meg az átlagos energiát:
+\begin{equation}
+    \bar{E} = \sum_i E_i \rho(i) = \frac{1}{Z} \sum_i E_i e^{-\beta E_i} = - \frac{1}{Z} \frac{\partial Z}{\partial \beta} = - \frac{\partial \ln Z}{\partial \beta}
+\end{equation}
+Ahol az utolsó lépésben használtuk, hogy:
+\begin{equation}
+    \frac{\partial Z}{\partial \beta} = \sum_i \frac{\partial}{\partial \beta} e^{-\beta E_i} = - \sum_i E_i e^{-\beta E_i}
+\end{equation}
+Az átlag négyzetét pedig így kapjuk meg:
+\begin{equation}
+    \overline{E^2} = \sum_i E_i^2 \rho(i) = \frac{1}{Z} \sum_i E_i^2 e^{-\beta E_i} = \frac{1}{Z} \frac{\partial^2 Z}{\partial \beta^2} = \frac{\partial^2 \ln Z}{\partial \beta^2}
+\end{equation}
+Ahol az utolsó lépésben megint használtuk, hogy:
+\begin{equation}
+    \frac{\partial^2 Z}{\partial \beta^2} = \sum_i \frac{\partial^2}{\partial \beta^2} e^{-\beta E_i} = \sum_i E_i^2 e^{-\beta E_i}
+\end{equation}
+Ebből a szórás négyzete:
+\begin{equation}
+    \sigma_E^2 = \overline{E^2} - \bar{E}^2 = \frac{\partial^2 \ln Z}{\partial \beta^2} = \frac{\partial }{\partial \beta} \left( - \bar{E} \right) = - \frac{\partial \bar{E}}{\partial \beta}
+\end{equation}
+Most használjuk ki, hogy a kanonikus sokaságot egy zárt rendszer egyensúlyi állapotának tekintettük, így a termodinamikai összefüggések érvényesek rá. Ekkor:
+\begin{equation}
+    \frac{\partial \bar{E}}{\partial \beta} = \frac{\partial \bar{E}}{\partial T} \frac{\partial T}{\partial \beta} = - k_B T^2 \left( \frac{\partial \bar{E}}{\partial T} \right)_V
+\end{equation}
+Ahol:
+\begin{equation}
+   C_V \equiv \left(\frac{\partial S}{\partial T}\right)_V = \left( \frac{\partial \bar{E}}{\partial T} \right)_V
+\end{equation}
+A $C_V$ a rendszer térfogaton mért hőkapacitása. Ezért végül kapjuk, hogy:
+\begin{equation}
+    \sigma_E^2 = k_B T^2 C_V
+\end{equation}
+Mivel a szórásnégyztet és a hőmérséklet definíció szerint pozitív értékek, ezért az energia a hőmérséklet monoton növő függvénye. $\bar{E}$ és $C_V$ pedig extenzív mennyiségek, így arányosak a részecskék számával $N$-nel és ezáltal a szabadsági fokok számával $f$-fel is:
+\begin{equation}
+    \frac{\sigma_E}{\bar{E}} \sim \frac{1}{\sqrt{N}} \sim \frac{1}{\sqrt{f}}
+\end{equation}
+Ez azt jelenti, hogy ha a részecskék száma elég nagy, akkor a fluktuációk valóban elhanyagolhatók, így az energia jó közelítéssel megegyezik az átlaggal:
+\begin{equation}
+    E_i \approx \bar{E}
+\end{equation}
+Ezért a kanonikus sokaság leírása önkonzisztens.
+
+Ez a kis szórás olyannyira alapvető tulajdonsága a makroszkópikus rendszereknek, hogy érdemes kicsit más oldalról is megvizsgálni.
+Vezessük be annak a valószínúségét, hogy $A$ rendszer $E$ energiájú állapotban van. Jelülje ezt $P(E)$. Az $E$-hez tartozó állapotok száma legyen $\Omega(E)$.
+Ezt úgy is érthetjük, hogy $E$-hez $\Omega(E)$ különböző mikroállapot tartozik, vagyis $\Omega(E)$ tulajdonképpen a degeneráció fokát adja meg. Ekkor:
+\begin{equation}
+    P(E) = \Omega(E) \rho(E) = \frac{\Omega(E)}{Z} e^{-\beta E}
+\end{equation}
+Itt használtuk, hogy a kanonikus sokaságban minden $E$ energiájú állapot azonos valószínűséggel fordul elő, így $\rho(E) = \frac{1}{Z} e^{-\beta E}$. Most nézzük meg $P(E)$ viselkedését $E$ függvényében.
+Mivel a makroszkópikus rendszerek állapotszáma nagyon gyorsan változik $E$-vel, ezért $P(E)$ is nagyon gyorsan változik. Ezért nézzük meg a $P(E)$ logaritmusát:
+\begin{equation}
+    \ln P(E) = \ln \Omega(E) - \beta E - \ln Z
+\end{equation}
+Most keressük meg a maximumát ennek a függvénynek $E$ szerint:
+\begin{equation}
+    \frac{\partial \ln P(E)}{\partial E} = \frac{\partial \ln \Omega(E)}{\partial E} - \beta = 0
+\end{equation}
+Ebből látható, hogy a maximum ott van, ahol:
+\begin{equation}
+    \left( \frac{\partial \ln \Omega(E)}{\partial E} \right)_{E = \bar{E}} = \beta
+\end{equation}
+Mivel $\Omega(E) \propto E^{\alpha f}$, ezért ha $E$ kicsi, akkor $P(E)$ is kicsi, ha pedig $E$ nagy, akkor a $e^{-\beta E}$ tag miatt $P(E)$ is kicsi lesz. Ezért a maximum egyben egy éles csúcs is lesz:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{imgs/14-tetel/energy_fluctuations.png}
+    \caption{A kanonikus sokaság energia eloszlása}
+\end{figure}
+
+Vezessük be $\epsilon = E - \tilde{E}$-t, ahol $\tilde{E}$ a maximum helye. Ekkor, ha $\Omega(E)$ logaritmusát (megint gyorsan változó függvény miatt) sorfejtjük $\tilde{E}$ körül:
+\begin{equation}
+    \ln \Omega(E) = \ln \Omega(\tilde{E}) + \left( \frac{\partial \ln \Omega}{\partial E} \right)_{E = \tilde{E}} \epsilon + \frac{1}{2} \left( \frac{\partial^2 \ln \Omega}{\partial E^2} \right)_{E = \tilde{E}} \epsilon^2 + \ldots
+\end{equation}
+Megint igaz, hogy $\left( \frac{\partial \ln \Omega}{\partial E} \right)_{E = \tilde{E}} = \beta$, a második deriváltra pedig vezessük be a következőt:
+\begin{equation}
+    \lambda \equiv - \left( \frac{\partial^2 \ln \Omega}{\partial E^2} \right)_{E = \tilde{E}}
+\end{equation}
+Ekkor a $P(E)$ logaritmusa:
+\begin{equation}
+    \ln P(E) = \ln \Omega(\tilde{E}) - \beta \tilde{E} - \ln Z - \frac{1}{2} \lambda \epsilon^2
+\end{equation}
+Visszaírva az eredeti valószínűséget:
+\begin{equation}
+    P(E) = P(\tilde{E}) e^{- \frac{1}{2} \lambda (E - \tilde{E})^2}
+\end{equation}
+Ez egy normál eloszlás, ahol a szórásnégyzet:
+\begin{equation}
+    \sigma_E^2 = \frac{1}{\lambda}
+\end{equation}
+Most nézzük meg, hogy mi a fizikai jelentése $\lambda$-nak. Az 1. tulajdonság szerint $\tilde{E} \approx \bar{E}$, így $\lambda$ közelítőlegesen:
+\begin{equation}
+    \lambda \approx - \left( \frac{\partial^2 \ln \Omega}{\partial E^2} \right)_{E = \bar{E}} = - \left( \frac{\partial \beta}{\partial E} \right)_{E = \bar{E}}
+\end{equation}
+Ebből:
+\begin{equation}
+    \frac{1}{\lambda} = - \left( \frac{\partial E}{\partial \beta} \right)_{E = \bar{E}} = k_B T^2 C_V
+\end{equation}
+Mivel a $P(E)$ eloszlás szórásnégyzete $\sigma_E^2 = \frac{1}{\lambda}$, ezért megint azt kapjuk, hogy:
+\begin{equation}
+    \sigma_E^2 = k_B T^2 C_V
+\end{equation}
+A görbe széllessége pedig $\Delta E \propto \lambda ^{-1/2}$ tehát:
+\begin{equation}
+    \Delta E \approx \frac{\bar{E}}{\sqrt{f}}
+\end{equation}
+
+Ebből az látható, hogy a termikus egyensúlyban lévő rendszerek energiája nagy valószínűséggel az átlagos energia lesz. Ami viszont még érdekesebb, hogy egy ilyen rendszer jó közelítéssel
+zártnak tekinthető. és a mikrokanonikus sokasággal is leírható. Mivel a mikrokanonikus sokaságban is $P(E)$ nagyon éles és 1-re normált, a két függvény nagyon hasonló lesz. A különbség csak annyi,
+hogy a mikrokanonikus sokaságban $P(E)$ álllandó $E$ és $E + \delta E$ között, míg a kanonikus sokaságban $P(E)$ egy Gauss-görbe.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/14-tetel/micro_vs_canonical.png}
+    \caption{Mikrokanonikus és kanonikus sokaság összehasonlítása}
+\end{figure}
+Makroszkopikus testre a fizikai mennyiségek függetlenek $\delta E$-től, ezért a $\Delta E$ bizonytalanságú mikrokanonikus sokaság minden más $\delta E$-jű sokasággal ekvivalens. Igy eljutottunk
+ahhoz a fölismeréshez, hogy a kanonikus és a mikrokanonikus sokaság egyenértékű a makroszkopikus rendszerek egyensúlyi leírása szempontjából.
+Ez a meglepő tény összhangban van a termodinamikai egyensúlyról alkotott ismereteinkkel. Ha ugyanis az $A$ és $A'$ közötti falat hőszigetelővel helyettesítjük, $A$
+és $A'$ is zárt alrendszer lesz, de a tapasztalat szerint semmi változás nem történik, feltéve, hogy eredetileg is egyensúlyban volt a rendszer. Matematikai szempontból, a
+sokaságok ekvivalenciája is a nagy számok egyik érdekes sajátosságának tekinthető. Az eddigieket úgy is fogalmazhatjuk, hogy az eredmény nem függ az eloszlás
+megválasztásától, csak az a lényeges, hogy a makroszkopikus testek tulajdonságait használjuk föl.
+
+Eddig nem beszéltünk a hőmérsékletről, csak a hőtartályéról. A valóságban viszont gyakran előfordul, hogy nagyon lassan áll be az egyensúly (pl. a rendszer és környezete között egy nagyon rossz hővezető
+fal van). Ilyenkor a két rendszerben beállhat külön-külön egy egyensúly és az $A$ tekinthető úgy mint egy zárt rendszer, aminek van egy jól definiált hőmérséklete. Ekkor $A$ hőmérsékletét úgy definiálhatjuk, hogy:
+\begin{equation}
+    \frac{1}{T} = k_B \left( \frac{\partial \ln \Omega}{\partial E} \right)_{E = \bar{E}} = k_B \beta
+\end{equation}
+Vagy:
+\begin{equation}
+    \beta_A (E) = \frac{\partial \ln \Omega(E)}{\partial E}
+\end{equation}
+Ez egy egyértelmű kapcsolatot teremt a rendszer $E$-je és a termodinamikai hőmérséklet között. Az egyensúly feltétele az, hogy $E$ a $\tilde{E}$ értéket vegye fel, ahol $P(E)$ maximuma van.
+Ekkor a hőmérsékletek megegyeznek és $\beta_A = \beta$.
+
+Ezek alapján ha a rendszer energiája eltér $\tilde{E}$-től, de $A$ magával egyensúlyban van, akkor eltér a két hőmérséklet és ekkor beszélhetünk hőmérsékleti fluktuációkról.
+
+\subsubsection{Nagykanonikus sokaság}
+A kanonikus sokaság esetében csak a (hőmérsékleten kereszüli) energiacsere volt megengedett a rendszer és környezete között. De a valóságban ritkán van ilyen jól izolált rendszerünk, ezért érdemesmegnézni,
+mi van akkor, ha a részecskék is áramolhatnak a rendszerek között? A "környezetet" ismét egy nagy rendszerrel modellezzük, amiben sokkal több részecske van mint $A$-ban.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/14-tetel/grand_canonical_ensemble.png}
+    \caption{Nagykanonikus sokaság ábrázolása}
+\end{figure}
+
+A nagy részecskeszám miatt a nagy rendszer kvázi részecsketartályként funkcionál és a kémiai potenciálja nagyjából állandó. Egyensúlyi állapotban pedig $A$ is az $A'$ rendszer kémiai potenciáljához fog igazodni.
+
+$A$-t ismét elég nagynak kell választani, hogy a kölcsönhatási energia elhanyagolható legyen. Ekkor, a zártság miatt:
+\begin{equation}
+    E^{(0)} = E + E', \qquad N^{(0)} = N + N',
+\end{equation}
+Ekkor $A$ energiája nyilván nagy valószínűséggel jóval kisebb lesz mint $A'$-é:
+\begin{equation}
+    E \ll E' \approx E^{(0)} \qquad N \ll N' \approx N^{(0)}
+\end{equation}
+A cél megint a $\rho(i)$ meghatározása, vagyis annak a valószínűsége, hogy $A$ az $i$-edik állapotban van, amihez $E_i$ energia és $N_i$ részecskeszám tartozik.
+
+Ha a rendszer az $i$-edik állaptoban van, akkor $A'$ energiája és részecskeszáma:
+\begin{equation}
+    E' = E^{(0)} - E_i, \qquad N' = N^{(0)} - N_i
+\end{equation}
+Ekkor az $A'$ rendszer állapotszáma:
+\begin{equation}
+    \Omega' (E^{(0)} - E_i, N^{(0)} - N_i)
+\end{equation}
+A $\delta E'$ és $\delta N'$ bizonytalanságokat most elhanyagoljuk, mert láttuk, hogy a végén nem fognak számítani. Az a priori egyenlő valószínűség elve alapján ekkor:
+\begin{equation}
+    \rho(i) = \frac{\Omega' (E^{(0)} - E_i, N^{(0)} - N_i)}{\Omega^{(0)} (E^{(0)}, N^{(0)})}
+\end{equation}
+Itt is ugyan azok lesznek a problémák mint a kanonikus sokaságnál, ezért itt is logaritmusokat fogunk használni. Ekkor $\ln \rho(i)$ sorfejtése $E^{(0)}$ és $N^{(0)}$ körül:
+\begin{equation}
+    \begin{aligned}
+        \ln \rho(i) = állandó &- \left( \frac{\partial \ln \Omega'(E', N^{(0)})}{\partial E'} \right)_{E' = E^{(0)}} E_i \\
+        & - \left( \frac{\partial \ln \Omega'(E^{(0)}, N')}{\partial N'} \right)_{N' = N^{(0)}} N_i + \ldots
+    \end{aligned}
+\end{equation}
+A hő- és részecsketartály miatt $E^{(0)} \approx E'$ és $N^{(0)} \approx N'$, ezért $E_i$ együtthatója $\beta$ és $N_i$ együtthatója pedig pont $\alpha$ lesz (kémiai potenciál), tehát:
+\begin{equation}
+    \rho(i) = C e^{-\beta E_i - \alpha N_i}
+\end{equation}
+Itt is tudjuk, hogy az összes valószínűségnek 1-nek kell lennie, így $\rho(i)$-nak normáltnak kell lennie:
+\begin{equation}
+    \boxed{\rho(i) = \frac{1}{\mathcal{Z}} e^{-\beta E_i - \alpha N_i}}
+\end{equation}
+ahol $\mathcal{Z}$ a \textbf{nagykanonikus állapotösszeg}:
+\begin{equation}
+    \mathcal{Z} = \sum_{i} e^{-\beta E_i - \alpha N_i}
+\end{equation}
+Ez a két egyenlet definiálja a nagykanonikus sokaságot.
+
+A fluktuációt hasonlóan vezethetjük le mint a kanonikus sokaságnál. Az átlagos energiára és részecskeszámra:
+\begin{equation}
+    \frac{\Delta E}{\bar{E}} \sim \frac{1}{\sqrt{N}} \sim \frac{1}{\sqrt{f}} \qquad \text{és} \qquad \frac{\Delta N}{\bar{N}} \sim \frac{1}{\sqrt{N}} \sim \frac{1}{\sqrt{f}}
+\end{equation}
+
+Ez azt jelenti, hogy termikus egyensúlyban az A rendszer energiája és részecskeszáma is gyakorlatilag állandó, noha mindkét mennyiség cseréjére lehetőség van. Igy ismét
+ahhoz a felismeréshez jutottunk, hogy makroszkopikus rendszerek egyensúlyi leírása szempontjából az eddig megismert sokaságok egyenértékűek. Az A rendszer tehát a
+kanonikus és a mikrokanonikus sokaság segítségével is jellemezhető. Az utóbbi esetben például a rendszer energiája és részecskeszáma adott: $E$ és $N$.
+
+Eddig nem beszéltünk az A rendszer hőmérsékletéről és kémiai potenciáljáról. Ha A önmagával már egyensúlyba került, de a hőtartállyal még nem,
+közelítőleg E energiájú és N részecskeszámú zárt rendszernek tekinthető, amelyre a hőmérsékletet és a kémiai potenciált így definiáljuk:
+\begin{equation}
+    \frac{1}{T} = k_B \left( \frac{\partial \ln \Omega(E, N)}{\partial E} \right)_{E = \bar{E}, N = \bar{N}} = k_B \beta
+\end{equation}
+illetve
+\begin{equation}
+    \frac{\mu}{T} = - k_B \left( \frac{\partial \ln \Omega(E, N)}{\partial N} \right)_{E = \bar{E}, N = \bar{N}} = k_B \alpha
+\end{equation}
+vagyis:
+\begin{equation}
+    \beta_A = \frac{\partial \ln \Omega (E, N)}{\partial E} \qquad \alpha_A = \frac{\partial \ln \Omega (E, N)}{\partial N}
+\end{equation}
+Az egyensúly feltétele pedig az, hogy $E$ és $N$ a $\tilde{E}$ és $\tilde{N}$ értékeket vegye fel, ahol $P(E, N)$ maximuma van. Ekkor a hőmérsékletek és kémiai potenciálok megegyeznek:
+\begin{equation}
+    \beta_A = \beta \qquad \text{és} \qquad \alpha_A = \alpha
+\end{equation}
+
+A nagykanonikus sokaság esetén is igaz, hogy az áltagértékek kifejezhetőek az állapotösszeg deriváltjaként:
+\begin{equation}
+    \bar{E} = - \frac{\partial \ln \mathcal{Z}}{\partial \beta} \qquad \bar{N} = - \frac{\partial \ln \mathcal{Z}}{\partial \alpha}
+\end{equation}
+
+\subsubsection{T-p sokaság}
+
+A T-p sokaság olyan esetekben használatos amikr a rendszer és a környezete között energia és térfogatcsere lehetséges. Például elképzelhetünk egy rendszert ami egy hődugattyúval van egy sokkal nagyobb
+hőtartályhoz és egy nyomástartályhoz csatlakoztatva. A kettő együtt egy zárt rendszert alkot.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/14-tetel/tp_ensemble.png}
+    \caption{T-p sokaság ábrázolása}
+\end{figure}
+
+Ha a kölcsönhatási energia elhanyagolható, akkor a zártság miatt:
+\begin{equation}
+    E^{(0)} = E + E', \qquad V^{(0)} = V + V'
+\end{equation}
+Itt $E$ és $V$ az A rendszer energiája és térfogata, $E'$ és $V'$ pedig az A' rendszer energiája és térfogata. Az A rendszer energiája és térfogata nagy valószínűséggel jóval kisebb lesz mint az A' rendszeré:
+\begin{equation}
+    E \ll E' \approx E^{(0)} \qquad V \ll V' \approx V^{(0)}
+\end{equation}
+A cél megint a $\rho(i)$ meghatározása, vagyis annak a valószínűsége, hogy A az i-edik állapotban van, amihez $E_i$ energia és $V_i$ térfogat tartozik. A $V_i$ egy olyan kis térfogat, amit méréssel már nem tudunk
+megkülönböztetni. Ekkor, az a priori egyenlő valószínűség elve alapján:
+\begin{equation}
+    \rho(i) = \frac{\Omega' (E^{(0)} - E_i, V^{(0)} - V_i)}{\Omega^{(0)} (E^{(0)}, V^{(0)})}
+\end{equation}
+Megint sorba fejtve:
+\begin{equation}
+    \begin{aligned}
+        \ln \rho(i) = állandó &- \left( \frac{\partial \ln \Omega'(E', V^{(0)})}{\partial E'} \right)_{E' = E^{(0)}} E_i \\
+        &- \left( \frac{\partial \ln \Omega'(E^{(0)}, V')}{\partial V'} \right)_{V' = V^{(0)}} V_i + \ldots
+    \end{aligned}
+\end{equation}
+A hő- és térfogattartály miatt $E^{(0)} \approx E'$ és $V^{(0)} \approx V'$, ezért $E_i$ együtthatója $\beta$ lesz, míg $V_i$ együtthatója pedig $\beta p$ (nyomás), tehát:
+\begin{equation}
+    \rho(i) = C e^{-\beta E_i - \beta p V_i}
+\end{equation}
+Itt is tudjuk, hogy az összes valószínűségnek 1-nek kell lennie, így $\rho(i)$-nak normáltnak kell lennie:
+\begin{equation}
+    \boxed{\rho(i) = \frac{1}{Y} e^{-\beta E_i - \beta p V_i}}
+\end{equation}
+ahol $Y$ a \textbf{T-p állapotösszeg}:
+\begin{equation}
+    Y = \sum_{i} e^{-\beta E_i - \beta p V_i}
+\end{equation}
+Ez a két egyenlet definiálja a T-p sokaságot. $E_i$ általában függ a térfogattól, emiatt az állapotösszeg felírható klasszikusan is integrálként:
+\begin{equation}
+    Y = \int_{0}^{\infty} \sum_n e^{-\beta E_n(V) - \beta p V} dV
+\end{equation}
+
+Itt is igaz, hogy az áltagértékek kifejezhetőek az állapotösszeg deriváltjaként:
+\begin{equation}
+    \bar{E} = - \frac{\partial \ln Y}{\partial \beta} \qquad \bar{V} = - \frac{\partial \ln Y}{\partial (\beta p)}
+\end{equation}
+
+A relatív szórás nagyságrendje ismég $1/f$, tehát a T-p sokaság is ekvivalens a mikrokanonikus és kanonikus sokasággal makroszkópikus rendszerek egyensúlyi leírása szempontjából.
+
+A megismert négy alapvető sokaság tehát \textit{ekvivalens}. Mindig azt választjuk majd
+ki, amely matematikailag a legegyszerűbb leírást adja. Számolásra rendszerint a nagykanonikus, ill. a kanonikus sokaság a legalkalmasabb, a mikrokanonikusnak elvi jelentősége van,
+a T - p sokaság pedig a kísérletekben legtöbbször megvalósuló körülményeket (állandó nyomás és hőmérséklet) valósítja meg.
+
+Ha az egyensúly lassan áll be, akkor a rendszer önmagával is egyensúlyba kerülhet, így jól definiált hőmérséklete, nyomása és kémiai potenciálja lehet. Ekkor a következőképpen definiálhatjuk ezeket:
+\begin{equation}
+    \frac{1}{T} = k_B \left( \frac{\partial \ln \Omega(E, V, N)}{\partial E} \right)_{E = \bar{E}, V = \bar{V}, N = \bar{N}} = k_B \beta
+\end{equation}
+\begin{equation}
+    \frac{p}{T} = k_B \left( \frac{\partial \ln \Omega(E, V, N)}{\partial V} \right)_{E = \bar{E}, V = \bar{V}, N = \bar{N}} = k_B \beta p
+\end{equation}
+\begin{equation}
+    \frac{\mu}{T} = - k_B \left( \frac{\partial \ln \Omega(E, V, N)}{\partial N} \right)_{E = \bar{E}, V = \bar{V}, N = \bar{N}} = k_B \alpha
+\end{equation}
+Az egyensúly feltétele pedig az, hogy $E$, $V$ és $N$ a $\tilde{E}$, $\tilde{V}$ és $\tilde{N}$ értékeket vegye fel, ahol $P(E, V, N)$ maximuma van. Ekkor a hőmérsékletek, nyomások és kémiai potenciálok megegyeznek:
+\begin{equation}
+    \beta_A = \beta \qquad \beta_A p_A = \beta p \qquad \alpha_A = \alpha
+\end{equation}
+Tehát a hőmérséklet és a nyomás definíciója:
+\begin{equation}
+    \beta_A = \frac{\partial \ln \Omega (E, V, N)}{\partial E} \qquad \beta_A p_A = \frac{\partial \ln \Omega (E, V, N)}{\partial V}
+\end{equation}
+
+\subsection{Boltzmann-entrópia}
+Vegyünk egy zárt rendszert, amit képzeletben, vagy ténylegesen ketté osztunk. Ekkor a két alrendszert jellemeszhetjük a saját állapotjelzőit, mint például energiát, térfogatot és részecskeszámot.
+Ezzel különböző kényszereket is jelenthet, ha mondjuk rögzítünk egy vagy több mennyiséget. Általánosan mondhatjuk, hogy a kényszerek az extenzív mennyiségek eloszlását szabályozzák a két alrendszer között.
+Jelöljük $x_i$-vel az $i$-edik extenzív mennyiséget az 1. alrendszerre. Ekkor az állapotok száma $x_i$-től is függni fog: $\Omega(E, V, N, x_1, x_2, \ldots)$. Ha ezt, vagy bármelyik másik kényszert megszüntetjük (vagy akár többet is egyszerre),
+akkor az állapotok száma nem csökkenhet, hiszen csak több lehetséges állapot szabadul fel a kényszer alól:
+\begin{equation}
+    \Omega(E, V, N, x_2, \ldots) \geq \Omega(E, V, N, x_1, x_2, \ldots)
+\end{equation}
+A kényszer megszüntetése után a rendszer új egyensúlyi állapotba kerül, ahol az extenzív mennyiségek eloszlása megváltozik. Az új eloszlás az, ami az állapotok számát maximalizálja.
+
+Ha a $x_1$ viszont olyan $\tilde{x}_1$ értéket vesz fel, ami $\Omega(E, V, N, \tilde{x}_1, x_2, \ldots)$-t maximalizálja, akkor az állapotok száma ismét nő, de mivel a makroszkópikus rendszerekben a legvalószínűbb 
+állapotok száma majdnem akkora mint az összes állapot száma, ezért a növekedés elhanyagolható lesz. Tehát ebben az esetben $\Omega$ változása elhanyagolható:
+\begin{equation}
+    \Omega(E, V, N, \tilde{x}_1, x_2, \ldots) \approx \Omega(E, V, N, x_2, \ldots)
+\end{equation}
+Ebből az következik, jogos azt a feltételt választani egyensúlyra, hogy a megfelelő extenzív mennyiség a legvalószínűbb értéket vegye fel.
+
+Nézzük meg azt az esetet amikor két alrendszert úgy változtatunk, hogy a térfogad, részecskeszám és energia is rögzített marad, de a két rendszer között megengedjük az energiacserét.
+Ezt pl. úgy érhetjük el, ha a két rendszer között a hőszigetelő falat kicseréljük egy hővezető falra. Ekkor annak a valószínűsége, hogy az 1. rendszer $E_1$ energiájú lesz:
+\begin{equation}
+    P(E_1) = \frac{\Omega(E, 2\delta E, E_1)}{\Omega(E, 2\delta E)}
+\end{equation}
+A mikrokanonikus sokaság szerint. Szintén a mikrokanonikus sokaságot használva, az állapotok számát felírhatjuk úgy is, hogy:
+\begin{equation}
+    \Omega(E, 2\delta E, E_1) = \Omega_1(E_1, \delta E) \Omega_2(E - E_1, \delta E)
+\end{equation}
+Itt $\Omega_1$ és $\Omega_2$ az 1. és 2. rendszer állapotszáma. Ha $E_1$ a legvalószínűbb érték, akkor $P(E_1)$ maximuma lesz, így a termodinamika 1. tulajdonsága miatt:
+\begin{equation}
+    \tilde{E_1} = \bar{E_1}
+\end{equation}
+Hasznos itt is $P$ logaritmusávall számolni:
+\begin{equation}
+    \ln P(E_1) = \ln \Omega_1(E_1, \delta E) + \ln \Omega_2(E_2, \delta E) + \text{állandó}
+\end{equation}
+Ahol $E_2 = E - E_1$. Most keressük meg a maximumát ennek a függvénynek $E_1$ szerint:
+\begin{equation}
+    \left(\frac{\partial \ln P(E_1)}{\partial E_1}\right)_{E_1 = \tilde{E_1} = \bar{E_1}} = \left( \frac{\partial \ln \Omega_1(E_1, \delta E)}{\partial E_1} \right)_{E_1 = \tilde{E_1} = \bar{E_1}} - \left( \frac{\partial \ln \Omega_2(E_2, \delta E)}{\partial E_2} \right)_{E_2 = \tilde{E_2} = \bar{E_2}} = 0
+\end{equation}
+Ebből látható, hogy a maximum ott van, ahol:
+\begin{equation}
+    \left( \frac{\partial \ln \Omega_1(E_1, \delta E)}{\partial E_1} \right)_{E_1 = \bar{E_1}} = \left( \frac{\partial \ln \Omega_2(E_2, \delta E)}{\partial E_2} \right)_{E_2 = \bar{E_2}}
+\end{equation}
+Itt ismét vezessük be a következő mennyiséget:
+\begin{equation}
+    \beta(E) \equiv \frac{\partial \ln \Omega(E, \delta E)}{\partial E}
+\end{equation}
+Ekkor az egyensúly feltétele:
+\begin{equation}
+    \beta_1(\bar{E_1}) = \beta_2(\bar{E_2})
+\end{equation}
+
+Tudjuk, hogy a két energiacserére képes rendszer akkor van egyensúlyban, ha a hőmérsékletek megegyeznek. Ebből következik, hogy a hőmérsékletet a következőképpen definiálhatjuk:
+\begin{equation}
+    \beta = \frac{1}{k_B T} 
+\end{equation}
+Itt definiáltuk az abszolút hőmérsékletet, de majd látni fogjuk, hogy ez ekvivalens a termodinamikai hőmérséklettel. ($k_B$ a Boltzmann állandó).
+
+A termodinamika 2. tulajdonsága szerint:
+\begin{equation}
+    \Omega(E, 2\delta E) \approx E^{\alpha f} \delta E
+\end{equation}
+ahol $\alpha$ egy állandó és $f$ a rendszer szabadsági fokainek száma. Ebből következik, hogy:
+\begin{equation}
+    \ln \Omega(E, 2\delta E) \approx \alpha f \ln E + \text{állandó}
+\end{equation}
+Ebből:
+\begin{equation}
+    \beta(E) = \frac{\alpha f}{E} \quad \rightarrow \quad k_B T = \frac{E}{\alpha f}
+\end{equation}
+A hőmérséklet alapvető fizikai jelentése tehát az, hogy a $k_B T$ körülbelül a rendszer egy szabadsági fokára jutó átlagenergiát adja meg.
+
+Itt definiálhatjuk a \textbf{Boltzmann-entrópiát} is:
+\begin{equation}
+    \boxed{S = k_B \ln \Omega(E, \delta E)}
+\end{equation}
+Erről is be fogjuk látni, hogy ekvivalens a termodinamikai entrópiával.
+
+Láttuk, hogy $\Omega$ az extenzív mennyiségetől függ, ezért $S$ természetes változói is az $E, V, N$ és a többi extenzív mennyiség lesznek. Ez alapján a hőmérséklet kifejezhető az entrópia deriváltjaként is:
+\begin{equation}
+    \frac{1}{T} = \left( \frac{\partial S}{\partial E} \right)_{V, N, \ldots}
+\end{equation}
+Ami egy jól ismert összefüggés. 
+
+De van még egy probléma az entrópia definíciójával kapcsolatban: az entrópia definíciója függ a $\delta E$ megválasztásától. Szerencsére azonban belátható, hogy ez a függés makroszkópikus rendszerek esetén
+elhanyagolható.
+
+Nézzük meg ugyanazt az állapotot $\delta E_1$ és $\delta E_2$ bizonytalanságokkal. Ekkor az állapotok száma (az állapotsűrűséggel kifejezve):
+\begin{equation}
+    \Omega(E, \delta E_1) = \omega(E) \delta E_1 \qquad \text{és} \qquad \Omega(E, \delta E_2) = \omega(E) \delta E_2
+\end{equation}
+Ezeknek a logaritmusa:
+\begin{equation}
+    \ln \Omega(E, \delta E_1) = \ln \omega(E) + \ln \delta E_1 \qquad \text{és} \qquad \ln \Omega(E, \delta E_2) = \ln \omega(E) + \ln \delta E_2
+\end{equation}
+Ebből az entrópiák különbsége:
+\begin{equation}
+    S_1 - S_2 = k_B \ln \frac{\delta E_1}{\delta E_2}
+\end{equation}
+Vegyünk most két olyan $\delta E$-t amelyek hányadosa a szabadsági fokok nagyságrendjébe tartozik. Ez praktikusan elég irreális, de "legrosszabb esetnek" megfelel. 
+A tipikus szabadsági fok $f$ nagyságrendje $10^{24}$, vagyis $\ln 10^{24} \approx 55$. Ekkor:
+\begin{equation}
+    S_1 - S_2 = k_B \ln 10^{24} \approx 55 k_B
+\end{equation}
+Viszont:
+\begin{equation}
+    \ln \omega(E) \propto \alpha f = \alpha \cdot 10^{24}
+\end{equation}
+Tehát összességében:
+\begin{equation}
+    \frac{S_1 - S_2}{S} \approx \frac{55 k_B}{k_B \alpha \cdot 10^{24}} = \frac{55}{\alpha \cdot 10^{24}} \ll 1
+\end{equation}
+Vagyis a Boltzmann-entrópia értéke makroszkópikus rendszerek esetén elhanyagolhatóan kicsit függ a $\delta E$ megválasztásától. Innentől kezdve elhagyhatjuk a $\delta E$ jelölést az entrópia kifejezéséből.
+
+Megnézhetjük az entrópia definícióját akkor is, ha a rendszer minimum energiája és $E$ között nézzük:
+\begin{equation}
+    \ln \Omega_0 (E) = \alpha f \ln E + \ln \frac{E}{\alpha f + 1} + \text{állandó}
+\end{equation}
+Másrészt az eddigi definíció szerint:
+\begin{equation}
+    \ln \Omega(E) = \alpha f \ln E + \ln \delta E + \text{állandó}
+\end{equation}
+A kettő különbsége:
+\begin{equation}
+    \ln \Omega(E) - \ln \Omega_0(E) = \ln \frac{(\alpha f + 1) \delta E}{E}
+\end{equation}
+Itt $\frac{\delta f}{E}$ egészen biztosan jóval kisebb mint $f$, ezért ezt a kis különbséget elhagyhatjuk a makroszkópikus rendszerek esetén. Tehát a Boltzmann-entrópia definíciója független attól is, hogy
+hogyan számoljuk az állapotszámot, az entrópiát definiálhatjuk úgy is, hogy az összes állapotot számoljuk a minimum energiától $E$-ig:
+\begin{equation}
+    \boxed{S = k_B \ln \Omega_0(E) = k_B \ln \omega(E)}
+\end{equation}
+
+Végül lássuk még be, hogy a Boltzmann-entrópia extenzív mennyiség. Vegyünk két rendszert, amit "összerakunk" úgy, hogy nincs közöttük kölcsönhatás. Ekkor $\tilde{E}_1$-hez tartozó állapotok száma:
+\begin{equation}
+    \Omega(E, \tilde{E}_1) = \Omega_1(\tilde{E}_1) \Omega_2(\tilde{E}_2) \qquad \text{ahol} \quad \tilde{E}_2 = E - \tilde{E}_1
+\end{equation}
+De ez az 1. tulajdonság miatt jó közelítéssel az összes állapotok száma $\Omega(E)$-val egyenlő lesz, ha $\tilde{E}_1$ és $\tilde{E}_2$ a legvalószínűbb értékek:
+\begin{equation}
+    \Omega(E) \approx \Omega_1(\bar{E}_1) \Omega_2(\bar{E}_2)
+\end{equation}
+Ebből következik, hogy az entrópia:
+\begin{equation}
+    S(E) = k_B \ln \Omega(E) \approx k_B \ln \Omega_1(\bar{E}_1) + k_B \ln \Omega_2(\bar{E}_2) = S_1(\bar{E}_1) + S_2(\bar{E}_2)
+\end{equation}
+Tehát a Boltzmann-entrópia extenzív mennyiség.
+
+\subsubsection{Egyszerű alkalmazások}
+\textbf{Térfogatcsere.}
+Nézzük meg azt az esetet amikor a két alrendszer az energia mellett képes térfogatot is cserélni. Ezt például úgy érhetjük el, ha a két rendszert egy dugattyúval választjuk el egymástól, ami
+szabadon mozgatható. Most az egyszerűség kedvéért a dugattyú legyen egy ideális rugóval ellátva, és a tartály keresztmetszete legyen állandó $A$. A kölcsönhatási energia is legyen elhangyagolható,
+ekkor $E = E_1(z) + E_2(z)$.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/14-tetel/volume_exchange.png}
+    \caption{Térfogatcsere két alrendszer között}
+\end{figure}
+Legyen az 1. rendszer állapotainak száma, a dugattyú $z$ helyzetében $\Omega_1(E_1, z)$. A rugó egy szabadsági fokot ad a rendszernek, ezért $\Omega_2(E_2, z) = 1$ az állapotainak száma, hiszen az
+1. rendszer állapota egyértelműen meghatározza a 2. rendszer állapotát. A $z$ paraméter tulajdonképpen a térfogatot méri. A $z$ térfogat valószínűsége:
+\begin{equation}
+    P(z) = \frac{\Omega(E_1, z)}{\Omega(E)}
+\end{equation}
+Ez gyakorlatilag a termodinamika 2. posztulátuma. A legvallószínűbb állapotot keressük, tehát $P(z)$ maximumát:
+\begin{equation}
+    \frac{d \ln \Omega (E_1, z)}{dz} \bigg\vert_{E_1 = \tilde{E}_1,z = \tilde{z}} = 0
+\end{equation}
+Az 1. tulajdonság alapján $\tilde{E}_1 = \bar{E}_1$ és $\tilde{z} = \bar{z}$, ezért:
+\begin{equation}
+    \left[\left(-\frac{\partial \ln \Omega(E_1, z)}{\partial E_1}\right) \frac{\partial E_2(z)}{\partial z} + \frac{\partial \ln \Omega (E_1, z)}{\partial z}\right]_{E_1 = \bar{E}_1, z = \bar{z}} = 0
+\end{equation}
+Itt $\frac{\partial E_2(z)}{\partial z}$ klasszikusan a rugó általi dugattyúra kifejtett $F$ erőt jelenti. Az egészet $k_B/A$-vel szorozva és $\beta(E) = \frac{\partial \ln \Omega(E)}{\partial E}$-t behelyettesítve:
+\begin{equation}
+    - \beta(E_1) \frac{F}{A} + \frac{k_B}{A} \left( \frac{\partial \ln \Omega(E_1, V_1)}{\partial V_1} \right)_{E_1 = \bar{E}_1, V_1 = A \bar{z}} = 0
+\end{equation}
+Ebből következik, hogy az egyensúly feltétele:
+\begin{equation}
+    \beta_1(\bar{E}_1) \frac{F}{A} = \left( \frac{\partial \ln \Omega(E_1, V_1)}{\partial V_1} \right)_{E_1 = \bar{E}_1, V_1 = A \bar{z}}
+\end{equation}
+Mivel $\beta = \frac{1}{k_B T}$ és $S = k_B \ln \Omega$, ezért egyszerűbben írhatjuk:
+\begin{equation}
+    \frac{F}{A} \frac{1}{T} = \left(\frac{\partial S}{\partial V}\right)_{E_1}
+\end{equation}
+Ez a mechanikai egyensúly feltétele. Tehát az $F/A$-nak meg kell egyeznie az edényben lévő gáz nyomásával. Ez alapján a nyomást definiálhatjuk:
+\begin{equation}
+    \boxed{\frac{p}{T} =  \left(\frac{\partial S}{\partial V}\right)_{E, N}}
+\end{equation}
+Ahol $p$ azonos a termodinamikai nyomással.
+
+\textbf{Részecskecsere.}
+Nézzük meg amikor két alrendszer között részecskecsere is megengedett, de a térfogat állandó marad. Az egyszerűség kedvéért tegyük fel, hogy mind a két részrendszer energiája a legvallószínűbb érték,
+vagyis egyensúlyban vannak egymással. Ekkor az állapotok száma csak a részecskeszámtól függ.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/14-tetel/particle_exchange.png}
+    \caption{Részecskecsere két alrendszer között}
+\end{figure}
+A zártság miatt $N_0 = N_1 + N_2$. Legyen annak a $P(N_1)$ valószínűsége, hogy az 1. rendszerben $N_1$ részecske van:
+\begin{equation}
+    P(N_1) = \frac{\Omega(E, N_0, N_1)}{\Omega(E, N_0)}
+\end{equation}
+Adott $N_1$ esetén a 2. rendszer álllapotainak száma $\Omega_2(\tilde{E}_2, N_0 - N_1)$ lesz, de az 1. rendszerben ugyanekkor $\Omega_1(\tilde{E}_1, N_1)$ állapot lesz. Tehát:
+\begin{equation}
+    \Omega(E, N_0, N_1) = \Omega_1(\tilde{E}_1, N_1) \Omega_2(\tilde{E}_2, N_0 - N_1)
+\end{equation}
+A legvalószínűbb érték ott lesz, ahol $P(N_1)$ maximuma van. Ezt megkeresve:
+\begin{equation}
+    \frac{\partial \ln P(N_1)}{\partial N_1} \left[\ln \Omega_1 (\tilde{E}_1, N_1) + \ln \Omega_2 (\tilde{E}_2, N_0 - N_1) \right] \bigg\vert_{N = \tilde{N}} = 0
+\end{equation}
+Ebből következik, hogy a maximum ott van, ahol:
+\begin{equation}
+    \left( \frac{\partial \ln \Omega_1 (\tilde{E}_1, N_1)}{\partial N_1} \right)_{N_1 = \tilde{N}_1} = \left( \frac{\partial \ln \Omega_2 (\tilde{E}_2, N_2)}{\partial N_2} \right)_{N_2 = \tilde{N}_2 = N-\tilde{N}_1}
+\end{equation}
+Itt is vezessük be a következő mennyiséget tetszőleges, $N$ részecskét tartalmazó rendszerre:
+\begin{equation}
+    \alpha(N) \equiv \left(\frac{\partial \ln \Omega(E, N)}{\partial N}\right)_{E, V}
+\end{equation}
+Mivel makroszkópikus testekről van szó, ezért a legvalószínűbb érték megegyezik az átlagossal:
+\begin{equation}
+    \tilde{N}_1 = \bar{N}_1
+\end{equation}
+Ebből következik, hogy az egyensúly feltétele:
+\begin{equation}
+    \alpha_1(\bar{N}_1) = \alpha_2(\bar{N}_2)
+\end{equation}
+A részecskecserére képes azonos hőmérsékletű rendszerek akkor vannak egyensúlyban, ha a kémiai potenciálok megegyeznek. Ebből következik, hogy a kémiai potenciált a következőképpen definiálhatjuk:
+\begin{equation}
+    \mu = - \frac{1}{\beta} \left(\frac{\partial \ln \Omega}{\partial N}\right)_{E, V} = - \frac{\alpha}{\beta}
+\end{equation}
+Itt megint behelyettesítve a $\beta = \frac{1}{k_B T}$-t és $S = k_B \ln \Omega$-t:
+\begin{equation}
+    \boxed{\mu = - T \left( \frac{\partial S}{\partial N} \right)_{E, V}}
+\end{equation}
+
+Ezekkel tehát felírhatjuk egy tetszőleges makroszkópikus rendszer entrópiájának megváltozását. Ez az energia, térfogat és részecskeszám változása miatt jön létre, ezért:
+\begin{equation}
+    dS = \left( \frac{\partial S}{\partial E} \right)_{V, N} dE + \left( \frac{\partial S}{\partial V} \right)_{E, N} dV + \left( \frac{\partial S}{\partial N} \right)_{E, V} dN
+\end{equation}
+Behelyettesítve a hőmérséklet, nyomás és kémiai potenciál definícióit:
+\begin{equation}
+    dS = \frac{1}{T} dE + \frac{p}{T} dV - \frac{\mu}{T} dN
+\end{equation}
+Ezt nevezik a termodinamika \textbf{fundamentális egyenletének}. Ez az egyenlet két "közel eső" egyensúlyi állapot állapotjelzői közötti kapcsolatot írja le, függetlenül attól, hogy hogyan jutott
+a rendszer egyensúlyba. Mivel $S$ extenzív, és $T$, $p$ és $\mu$ definíciójából is következik, hogy $T, p$ és $\mu$ intenzív mennyiségek, ezért a fundamentális egyenlet összhangban van a termodinamika alapelveivel.
+
+Ha többfajta részecske van a rendszerben, akkor a fundamentális egyenlet kiterjeszthető:
+\begin{equation}
+    dS = \frac{1}{T} dE + \frac{p}{T} dV - \sum_j \frac{\mu_j}{T} dN_j \qquad \frac{\mu_j}{T} = \left(\frac{\partial S}{\partial N_j}\right)_{E, V, N_{i \neq j}}
+\end{equation}
+
+Ezekből látszódik, hogy ha egy rendszer leírható mikrokanonikus sokasággal (vagy bármelyik ekvivalens sokasággal), az $\Omega(E)$ állapotszám meghatározása után, a $\rho$ eloszlásfüggvény
+és az $S$ entrópia is meghatározható, amikből a rendszer összes termodinamikai mennyisége kiszámolható.
+
+Például, ha az ideális gázt vizsgáljuk akkor az entrópia:
+\begin{equation}
+    S(E, V, N) = k_B N \left[ \ln \frac{V}{N} + \frac{2}{3}\ln \frac{2E}{3N} + \ln \frac{\sqrt{2 \pi m}^3 e^{5/2}}{h^3} \right]
+\end{equation}
+A klasszikus oszcillátorra pedig:
+\begin{equation}
+    S(E, N) = k_B N \left[ \ln \frac{E}{N} - \ln \frac{e}{\hbar \omega} \right]
+\end{equation}
+Ekkor $\frac{1}{T} = \left(\frac{\partial S}{\partial E}\right)_{V, N}$-ből a hőmérséklet energiafüggése is meghatározható:
+\begin{equation}
+    E = \frac{3}{2} N k_B T \qquad \text{(ideális gáz)}
+\end{equation}
+\begin{equation}
+    E = N k_B T \qquad \text{(klasszikus oszcillátor)}
+\end{equation}
+Mindkettő jól ismert eredmény.
+
+\subsection{Maxwell-Boltzmann statisztika, Maxwell-féle sebességeloszlás}
+A maxwell-Boltzmann statisztika a Maxwell-Boltzmann eloszlás továbbgondolásából alakult ki, melynek segítségével klasszikus részecskék sebességének eloszlását lehet meghatározni
+termodinamikai egyensúlyban lévő gázokban. Tegyük fel, hogy van egy zárt, termodinamikai egyensúlyban lévő rendszerünk, mely $N$ darab, egymással kölcsönhatásba nem lépő, azonos tömegű klasszikus részecskét tartalmaz.
+Ekkor az összes részecske száma:
+\begin{equation}
+    N = \sum_i n_i
+\end{equation}
+ahol $n_i$ az $i$-edik állapotban lévő részecskék száma. Ha az $i$-edik részecske energiája $\epsilon_i$, akkor a rendszer teljes energiája:
+\begin{equation}
+    E = \sum_i n_i \epsilon_i
+\end{equation}
+Itt $E$ most a rendszer belső energiáját jelenti. Ekkor a "makroállapot"-ot értelmezhetjük úgy, mint az az állapot, amit az $n_i$-k határoznak meg.
+A mikroállapotok száma pedig annak a száma lesz, hogy hányféleképp tudjuk ezeket az $n_i$-ket elosztani az $N$ részecske között. Mivel a részecskék megkülönböztethetetlenek,
+ezért a mikroállapotok száma egy adott makroállapotra:
+\begin{equation}
+    \Omega(E) = N! \prod_i \frac{1}{n_i!}
+\end{equation}
+
+Azt láttuk, hogy a makroszkópikus rendszerekben a legvalószínűbb makroállapot dominálja az összes állapotok számát. Ezért megkeressük azt az $n_i$ eloszlást, ami maximalizálja az $\Omega(E)$-t,
+miközben az $N$ és $E$ mennyiségek állandóak maradnak. Ezt a következő módon tehetjük meg: vegyük az $\ln \Omega(E)$ logaritmusát, és alkalmazzuk a Stirling közelítést:
+\begin{equation}
+    \ln \Omega(E) = \ln N! - \sum_i \ln n_i! \approx N \ln N - N - \sum_i (n_i \ln n_i - n_i)
+\end{equation}
+Ezt kell maximalizálni az $N$ és $E$ kényszerek mellett. Ehhez használjuk a Lagrange-multiplikátor módszert. A korlátaink a következőek:
+\begin{equation}
+    \begin{aligned}
+        N = \sum_i n_i &\quad \rightarrow \quad G_1(n_i) = \sum_i n_i - N = 0 \\
+        E = \sum_i n_i \epsilon_i &\quad \rightarrow \quad G_2(n_i) = \sum_i n_i \epsilon_i - E = 0
+    \end{aligned}
+\end{equation}
+A lagrange-függvény általános alakja:
+\begin{equation}
+    \mathcal{L}(n_i, \alpha, \beta) = \ln \Omega(E) - \alpha G_1(n_i) - \beta G_2(n_i)
+\end{equation}
+Ahol $\alpha$ és $\beta$ a Lagrange-multiplikátorok. Tehát behelyettesítve:
+\begin{equation}
+    \mathcal{L}(n_i, \alpha, \beta) = N \ln N - N - \sum_i (n_i \ln n_i - n_i) - \alpha \left( \sum_i n_i - N \right) - \beta \left( \sum_i n_i \epsilon_i - E \right)
+\end{equation}
+Ennek az $\mathcal{L}$-nek keressük a maximumát $n_i$ szerint:
+\begin{equation}
+    \frac{\partial \mathcal{L}}{\partial n_i} = - \ln n_i - 1 + 1 - \alpha - \beta \epsilon_i = 0
+\end{equation}
+Ebből következik, hogy:
+\begin{equation}
+    n_i = e^{-\alpha} e^{-\beta \epsilon_i}
+\end{equation}
+Ez alapján az egy részecskére jutó valószínűséget megkaphatjuk, ha elosztjuk $N$-nel:
+\begin{equation}
+    \frac{n_i}{N} = \frac{e^{-\alpha} e^{-\beta \epsilon_i}}{\sum_i e^{-\alpha} e^{-\beta \epsilon_i}}
+\end{equation}
+Mivel az $e^{-\alpha}$ minden tagban szerepel, ezért ki is húzhatjuk:
+\begin{equation}
+    \frac{n_i}{N} = \frac{e^{-\beta \epsilon_i}}{\sum_i e^{-\beta \epsilon_i}} = \frac{e^{-\beta \epsilon_i}}{Z}
+\end{equation}
+Ahol bevezettük a \textbf{kanonikus állapotösszeg}et:
+\begin{equation}
+    Z = \sum_i e^{-\beta \epsilon_i}
+\end{equation}
+Ezt az eloszlást \textbf{Maxwell-Boltzmann eloszlásnak} nevezzük, és ez adja a nevét a statisztikának is.
+
+Ez az eloszlás azt mondja meg, hogy egy adott részecske mekkora valószínűséggel van abban az $n_i$ állapotban, aminek az energiája $\epsilon_i$. Az $\alpha$ paramétert sikerült belőle úgy kiejteni,
+hogy csak az $n_i$ állapotban lévő részecskék \textit{arányát} kerestük, nem az abszolút számukat. Ebből következtethetjük, hogy $\alpha$ valamilyen módon a részecskék teljes számához kapcsolódik. Ez valójában ugyan 
+az az $\alpha$ amivel a nagykanonikus sokaságnál is találkoztunk, és a kémiai potenciálon keresztül kapcsolódik a részecskeszámhoz:
+\begin{equation}
+    \alpha = - \beta \mu
+\end{equation}
+A $\beta$ multiplikátor pedig jól láthatóan valahogy az energiához kapcsolódik hiszen az $\epsilon_i$-hez kapcsolódik az exponensben. Valójában ez ugyanaz a $\beta$ ami a mikrokanonikus sokaságnál is felbukkant, és a hőmérséklettel kapcsolatos:
+\begin{equation}
+    \beta = \frac{1}{k_B T}
+\end{equation}
+Ezeket visszahelyettesítve a Maxwell-Boltzmann eloszlásba:
+\begin{equation}
+    \frac{n_i}{N} = \frac{e^{ \epsilon_i/ k_B T}}{Z}
+\end{equation}
+A kanonikus állapotösszeg pedig:
+\begin{equation}
+    Z = \sum_i e^{\epsilon_i/ k_B T}
+\end{equation}
+
+\subsubsection{Állapotösszeg}
+Kicsit tovább vizsgálva a kanonikus állapotösszeget, nagyon meglepő ereményre tudunk jutni. Az állapotösszeg (vagy partitíciós függvény - \textit{Zustandssumme}, vagyis "állaptotok összege") 
+ugyanis képes egy generátor függvény szerepét felvenni, amivel a rendszer összes termodinamikai mennyisége kiszámolható. Ez azt jelenti, hogy az állapotösszeg valamilyen módon egy termodinamikai tulajdonság
+maga is, ami a gáz állapotát jellemzi. Függ a hőmérséklettől $\beta$-n keresztül, a térfogattól $\epsilon$-on át (mivel az energia változik, ha a rendszert adiabatikusan összenyomjuk vagy kitágítjuk).
+
+Láttuk, hogy az entrópiát fel tudjuk írni a makroállapothoz tartózó mikroállapotok számának segítségével:
+\begin{equation}
+    S = k_B \ln \Omega(E) = k_B \left( N \ln N - \sum_{i = 0} N_i \ln N_i \right)
+\end{equation}
+Ahol megint használtuk a Stirling közelítést. Ha pedig a Boltzmann eloszlást kicsit átalakítjuk:
+\begin{equation}
+    N_i = N \frac{e^{-\beta \epsilon_i}}{Z} \quad \rightarrow \quad \ln N_i = \ln N - \beta \epsilon_i - \ln Z
+\end{equation}
+Akkor ezt be tudjuk helyettesíteni az entrópia kifejezésébe:
+\begin{equation}
+    S = k_B \left( N \ln N - \sum_i N_i (\ln N - \beta \epsilon_i - \ln Z) \right)
+\end{equation}
+Ezt tovább egyszerűsítve:
+\begin{equation}
+    S = k_B \left( N \ln N - N \ln N + \beta \sum_i N_i \epsilon_i + N \ln Z \right)
+\end{equation}
+Mivel $\sum_i N_i \epsilon_i = E$, ezért:
+\begin{equation}
+    S = k_B \beta E + k_B N \ln Z
+\end{equation}
+Ebből látható, hogy az entrópia kifejezhető az állapotösszeg segítségével. Hasonlóan ki lehet vele fejezni az energiát, a nyomást, a Helmholtz szabadenergiát és a kémiai potenciált is:
+\begin{equation}
+    \begin{aligned}
+        E &= k_B T^2 N \frac{\partial \ln Z}{\partial T} \\
+        p &= k_B N T \frac{\partial \ln Z}{\partial V} \\
+        F &= - k_B T N \ln Z \\
+        \mu &= - k_B T \frac{\partial \ln Z}{\partial N}
+    \end{aligned}
+\end{equation}
+
+Tehát $Z$-ból az összes maradék termodinamikai mennyiség kiszámolható. Ezért a kanonikus állapotösszeg egy nagyon fontos mennyiség a statisztikus fizika és a termodinamika kapcsolatában.
+
+Érdekesség, hogy tudunk erre egy alternatív függvényt is definiálni, ami ekvivalens az állapotösszeggel. Ehhez definiáljuk az úgynevezett \textbf{Massieu függvényt}:
+\begin{equation}
+    - \frac{F}{T} \equiv S - \frac{E}{T} = - \frac{F}{T}\left( \frac{1}{T}, V, N \right)
+\end{equation}
+A Massieu függvényt lehet az állapotösszegből is kifejezni:
+\begin{equation}
+    - \frac{F}{T} = k_B N \ln Z\left(\frac{1}{T}, V\right)
+\end{equation}
+Vagy átírva:
+\begin{equation}
+    - \frac{F}{NT} = k_B \ln Z\left(\frac{1}{T}, V\right)
+\end{equation}
+Ahol $- \frac{F}{N T}$ a Massieu függvény egységnyi részecskére. A logaritmust eltüntetve:
+\begin{equation}
+    Z = e^{-F/NT k_B}
+\end{equation}
+Tehát ez egy makroszkópikus generátor függvény, amiből az összes termodinamikai mennyiség kiszámolható.
+
+\subsubsection{Maxwell-féle sebességeloszlás}
+A Maxwell féle sebességeloszlást először James Clerk Maxwell dolgozta ki a kinetikus gázelmélet segítségével, majd Ludwig Boltzmann továbbfejlesztette a statisztikus mechanika keretein belül. 
+Emiatt van, hogy Maxwell-Boltzmann sebességeloszlásként is hivatkoznak rá. A lényege, hogy egy termikus egyensúlyban lévő ideális gáz részecskéinek a sebességeloszlását meg lehet határozni a Boltzmann eloszlás
+segítségével. Tegyük fel, hogy van egy $N$ darab, egymással kölcsönhatásba nem lépő, azonos tömegű klasszikus részecskét tartalmazó zárt rendszerünk, ami termodinamikai egyensúlyban van.
+Ekkor annak a valószínűsége, annak a valószínűségi sűrűsége, hogy egy részecske impulzusa a $\mathbf{p}$ és $\mathbf{p} + d^3 \mathbf{p}$ tartományba esik, a Boltzmann eloszlás szerint:
+\begin{equation}
+    P(\mathbf{p}, d^3 \mathbf{p}) = \frac{1}{Z} e^{-\beta \epsilon(\mathbf{p})}
+\end{equation}
+Ahol az egy részecskére jutó kanonikus állapotösszeg, mivel az impulzus folytonos változó, integrál formában írható fel:
+\begin{equation}
+    Z = \int e^{-\beta \epsilon(\mathbf{p})} d^3 \mathbf{p}
+\end{equation}
+Itt látható, hogy a valószínűségből kiesik a $\mathbf{q}$ térkoordináta, hiszen nem függ az eloszlás tőle, így az integálja csak egy konstanst adna.
+Az álllapotösszeg integrálját ki tudjuk számolni a $\epsilon(\mathbf{p}) = \frac{\mathbf{p}^2}{2m}$ behelyettesítésével:
+\begin{equation}
+    Z = \int e^{-\beta \frac{\mathbf{p}^2}{2m}} d^3 \mathbf{p} = \left( \int_{-\infty}^{\infty} e^{-\beta \frac{p_x^2}{2m}} dp_x \right) \left( \int_{-\infty}^{\infty} e^{-\beta \frac{p_y^2}{2m}} dp_y \right) \left( \int_{-\infty}^{\infty} e^{-\beta \frac{p_z^2}{2m}} dp_z \right)
+\end{equation}
+Ezek az integrálok Gauss integrálok, amiknek az értéke:
+\begin{equation}
+    \int_{-\infty}^{\infty} e^{-a x^2} dx = \sqrt{\frac{\pi}{a}}
+\end{equation}
+Ebből következik, hogy az állapotösszeg:
+\begin{equation}
+    Z = \left( \sqrt{\frac{2 \pi m}{\beta}} \right)^3 = \left( 2 \pi m k_B T \right)^{3/2}
+\end{equation}
+Ezt visszahelyettesítve a valószínűségi sűrűségbe:
+\begin{equation}
+    P(\mathbf{p}, d^3 \mathbf{p}) = \frac{e^{-\beta \frac{\mathbf{p}^2}{2m}}}{(2 \pi m k_B T)^{3/2}} d^3 \mathbf{p}
+\end{equation}
+Ez a részecske impulzusának eloszlása. Azonban a sebességeloszlást szeretnénk megkapni, ezért használjuk a $\mathbf{p} = m \mathbf{v}$ összefüggést:
+\begin{equation}
+    P(\mathbf{v}, d^3 \mathbf{v}) = \frac{m^3}{(2 \pi m k_B T)^{3/2}} e^{-\beta \frac{m \mathbf{v}^2}{2}} d^3 \mathbf{v}
+\end{equation}
+Ez a Maxwell-Boltzmann sebességeloszlás vektoriális formája. Viszont ha a sebesség iránya nem számít akkor átválthatunk gömbi koordinátákra is:
+\begin{equation}
+    d^3 \mathbf{v} = 4 \pi v^2 dv
+\end{equation}
+Ekkor a sebesség nagyságának eloszlása:
+\begin{equation}
+    P(v, dv) = 4 \pi \left( \frac{m}{2 \pi k_B T} \right)^{3/2} v^2 e^{-\frac{m v^2}{2 k_B T}} dv
+\end{equation}
+Itt bevezethetjük a sebességeloszlást:
+\begin{equation}
+    P(v, dv) \equiv F(v) \cdot dv = 4 \pi \left( \frac{m}{2 \pi k_B T} \right)^{3/2} v^2 e^{-\frac{m v^2}{2 k_B T}} dv
+\end{equation}
+Ekkor:
+\begin{equation}
+    \boxed{F(v) = 4 \pi \left( \frac{m}{2 \pi k_B T} \right)^{3/2} v^2 e^{-\frac{m v^2}{2 k_B T}}}
+\end{equation}
+Ez a \textbf{Maxwell-féle sebességeloszlás}. Ebből ki tudjuk számolni a részecskék átlagos sebességét, a legvalószínűbb sebességet és a sebesség szórását is.
+$F(v)$-nek fontos tulajdonsága, hogy normált eloszlás:
+\begin{equation}
+    \int_0^{\infty} F(v) dv = 1
+\end{equation}
+Emellett $F(v)$ alakja:
+\begin{equation}
+    F(x) = A x^2 e^{-B x^2}
+\end{equation}
+Ami pedig egy Gauss-görbére hasonlító görbe, aminek a maximuma $v^{*}$-nál van. Azt tudjuk, hogy a maximum ott van, ahol az adott függvény logaritmusa is maximumot vesz fel:
+\begin{equation}
+    \ln F(x) = \text{maximum}
+\end{equation}
+Ebből következik, hogy:
+\begin{equation}
+    - \beta \frac{m v^2}{2} + 2 \ln v = \text{maximum}
+\end{equation}
+Ennek a maximuma pedig ott van, ahol a deriváltja nulla:
+\begin{equation}
+    \frac{\partial}{\partial v} \left( - \beta \frac{m v^2}{2} + 2 \ln v \right) = - \beta m v + \frac{2}{v} = 0
+\end{equation}
+Ebből következik, hogy a \textbf{legvalószínűbb sebesség}:
+\begin{equation}
+    v^{*} = \sqrt{\frac{2 k_B T}{m}}
+\end{equation}
+Meghatározhatjuk a sebesség $n$-edik momentumát is:
+\begin{equation}
+    \langle v^n \rangle = \int_0^{\infty} v^n F(v) dv
+\end{equation}
+Itt felhasználtjuk a speciális integrált:
+\begin{equation}
+    I_n = \int_0^{\infty} x^n e^{-a x^2} dx = \frac{1}{2} a^{-\frac{n+1}{2}} \Gamma \left( \frac{n+1}{2} \right)
+\end{equation}
+Ebből következik, hogy a sebesség $n$-edik momentuma:
+\begin{equation}
+    \langle v^n \rangle = 4 \pi \left( \frac{m}{2 \pi k_B T} \right)^{3/2} \cdot \frac{1}{2} \left( \frac{m}{2 k_B T} \right)^{-\frac{n+3}{2}} \Gamma \left(\frac{n+3}{2} \right)
+\end{equation}
+Ebből ki tudjuk számolni az átlagos sebességet is ($n = 1$):
+\begin{equation}
+    \langle v \rangle = \sqrt{\frac{8 k_B T}{\pi m}}
+\end{equation}
+Valamint a gyök átlagos sebességet ($n = 2$):
+\begin{equation}
+    v_{rms} = \sqrt{\langle v^2 \rangle} = \sqrt{\frac{3 k_B T}{m}}
+\end{equation}
+
+\textbf{Legvalószínűbb energia}. Nagyon hasonló módon meghatározható a részecskék energiaelloszlása is. A valószínűség ugyan az lesz:
+\begin{equation}
+    P(\mathbf{p}, d^3 \mathbf{p}) = \frac{1}{Z} e^{-\beta \frac{p^2}{2m}} d^3 \mathbf{p}
+\end{equation}
+Itt az energia $\epsilon = \frac{p^2}{2m}$. Ebből kifejezve az impulzust (és ismét csak a nagyságot tekintve, tehát gömbi koordinátákban):
+\begin{equation}
+    p = \sqrt{2 m \epsilon} \quad \rightarrow \quad d^3 \mathbf{p} = 4 \pi p^2 dp = 4 \pi (2 m \epsilon) d\left(\sqrt{2 m \epsilon}\right) = 4 \pi (2 m)^{3/2} \sqrt{\epsilon} d\epsilon
+\end{equation}
+Ezt visszahelyettesítve a valószínűségi sűrűségbe:
+\begin{equation}
+    P(\epsilon, d\epsilon) = \frac{4 \pi (2 m)^{3/2}}{Z} \sqrt{\epsilon} e^{-\beta \epsilon} d\epsilon
+\end{equation}
+Ebből bevezethetjük az energiaeloszlást:
+\begin{equation}
+    P(\epsilon, d\epsilon) \equiv F(\epsilon) d\epsilon = \frac{4 \pi (2 m)^{3/2}}{Z} \sqrt{\epsilon} e^{-\beta \epsilon} d\epsilon
+\end{equation}
+Ekkor:
+\begin{equation}
+    \boxed{F(\epsilon) = \frac{4 \pi (2 m)^{3/2}}{Z} \sqrt{\epsilon} e^{-\beta \epsilon}}
+\end{equation}
+Ez az energiaeloszlás. Ennek a maximumát megkeresve:
+\begin{equation}
+    \frac{\partial}{\partial \epsilon} \left( \ln \sqrt{\epsilon} - \beta \epsilon \right) = \frac{1}{2 \epsilon} - \beta = 0
+\end{equation}
+Ebből következik, hogy a \textbf{legvalószínűbb energia}:
+\begin{equation}
+    \epsilon^{*} = \frac{1}{2 \beta} = \frac{1}{2} k_B T
+\end{equation}
+Ami pont ugyanaz mint amit az ekviparticiós tétele okán várnánk.
+Az energia átlaga pedig:
+\begin{equation}
+    \langle \epsilon \rangle = \int_0^{\infty} \epsilon F(\epsilon) d\epsilon = \frac{4 \pi (2 m)^{3/2}}{Z} \int_0^{\infty} \epsilon^{3/2} e^{-\beta \epsilon} d\epsilon
+\end{equation}
+Ezt az integrált ki tudjuk számolni a speciális integrál segítségével:
+\begin{equation}
+    I_n = \int_0^{\infty} x^n e^{-a x} dx = a^{-(n+1)} \Gamma(n+1)
+\end{equation}
+Ebből következik, hogy az energia átlaga:
+\begin{equation}
+    \langle \epsilon \rangle = \frac{4 \pi (2 m)^{3/2}}{Z} \beta^{-5/2} \Gamma \left( \frac{5}{2} \right)
+\end{equation}
+A Gamma függvény ismert értéke:
+\begin{equation}
+    \Gamma \left( \frac{5}{2} \right) = \frac{3 \sqrt{\pi}}{4}
+\end{equation}
+Ebből következik, hogy az energia átlaga:
+\begin{equation}
+    \langle \epsilon \rangle = \frac{3}{2} \frac{1}{\beta} = \frac{3}{2} k_B T
+\end{equation}
+Ismét az ekvipartíciós tételnek megfelelő eredményt kaptunk.
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
