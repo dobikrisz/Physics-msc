@@ -8,13 +8,793 @@
 }
 
 
+\subsection{Ideális kvantumgázok: Bose–Einstein és Fermi–Dirac statisztika}
+Az ideális gázok olyan modellek, amiben a részecskék közötti kölcsönhatásokat elhanyagoljuk. Ez klasszikus fizikában egy nagyon egyszerű statisztikus leírást enged meg, de ha lecsükkentjük a kőmérsékletet, vagy
+növeljük a gáz sűrűségét, akkor előbb-utóbb kvantummechanikai hatások is megjelennek. Azokat az ideális gázokat, ahol a kvantumos hatások kimutathatóak, kvantumgázoknak nevezzük. Fontos különbség a kvantumgázok
+esetében, hogy két különböző részecsketípust különböztetünk meg: a \textit{bozonokat} és a \textit{fermionokat}. A bozonok egész számú spinnel rendelkeznek (pl. fotonok, $^4He$ atomok), míg a fermionok fél-egész számú spinnel
+(pl. elektronok, protonok, neutronok, $^3He$ atomok). Ezeknek a részecskéknek a statisztikus viselkedése is eltérő, ezért a kvantumgázok esetén két különböző statisztikai rendszert kell alkalmaznunk: a Bose–Einstein statisztikát
+a bozonok esetén, és a Fermi–Dirac statisztikát a fermionok esetén. Természetesen, ha elég nagyra vesszük a hőmérsékletet vagy elég kicsire sűrűséget, akkor ezek a termodinamikai hatások fognak dominálni és határesetben
+mindkét statisztikánál visszakapjuk a klasszikus Maxwell–Boltzmann statisztikát.
+
+\subsubsection{A Bose–Einstein statisztika}
+A Bose–Einstein statisztika a bozonok eloszlását írja le különböző energiájú állapotok között. A bozonok esetén nincs kizárási elv, tehát több bozon is elfoglalhatja ugyanazt az energiájú állapotot,
+de az energianívók a kvantumos tárgyalás miatt már diszkrétnek számítanak. Vegyünk tehát egy nem kölcsönható bozonokból álló kvantumgáz, amely egyrészecske-állapotokra bontható, ahol jelölje $\varepsilon_r$ az $r$-edik egyrészecske-állapot energiáját,
+legyen $E_i$ a teljes rendszer $i$-edik állapotának energiája és legyen $n^{(i)}_r$ az egész rendszer $i$-ik állapotában az $r$-edik egyrészecske energia nívó betöltöttsége. Mivel bozonokról van szó,
+ezért
+\footnote{
+    $n$ ebben a kontextusban azt jelöli, hogy az $r$-edik energiaszintet hány darab részecske foglalja el. Egy gázban például teoretikusan az is lehetséges, hogy az összes atom mondjuk az $r=1$ alapállapotban legyen,
+    de ez a valóságban nem fordul elő, hiszen a hőmozgás miatt az atomok különböző energiaszinteken helyezkednek el.                                            
+}
+$n^{(i)}_r = 0, 1, 2, \ldots$. Ekkor a teljes energia:
+\begin{equation}
+    E_i = \sum_r n^{(i)}_r \varepsilon_r.
+\end{equation}
+A rendszer $i$-edik állapotában lévő részecskék száma pedig:
+\begin{equation}
+    N = \sum_r n^{(i)}_r.
+\end{equation}  
+Ha a kanonikus sokaság módszerét használjuk, akkor a rendszernek csak valamilyen rögzített részecskeszámhoz tartozó állapotait vesszük figyelembe a $Z = \sum_i e^{-\beta E_i}$ állapotösszegben,
+tehát ilyenkor $N_i = N$ minden $i$-re. Ekkor a kanonikus állapotösszeg:
+\begin{equation}
+    Z = \sum_{\{n_r\}}^{}{}^{'} e^{-\beta (n_1 \varepsilon_1 + n_2 \varepsilon_2 + \ldots)}, \qquad \text{ahol } \{n_r\} = n_1, n_2, \ldots
+\end{equation}
+Ahol $\sum^{'}$ azt jelzi, hogy összegeznünk kell a $\sum_k n_k = N$ feltételt kielégítő nem negatív egész számú $n_k$-ra. Ezt azonban nehéz kiszámolni és nyeregpont közelítést kéne alkalmazni,
+ezért érdemesebb a \textit{nagykanonikus sokaságot} használni, ahol ilyen megszorítás nincs.
+
+A nagykanonikus állapotösszeg a következőképpen néz ki:
+\begin{equation}
+    \mathcal{Z} = \sum_i e^{- \beta (E_i - \mu N_i)}
+\end{equation}
+Ahol $\beta = \frac{1}{k_B T}$, $\mu$ a kémiai potenciál és $E_i = \sum_r n^{(i)}_r \varepsilon_r$, $N_i = \sum_r n^{(i)}_r$. Ekkor az állapotösszeg:
+\begin{equation}
+    \mathcal{Z} = \sum_{n_1, n_2, \ldots} e^{-\beta (n_1 \varepsilon_1 + n_2 \varepsilon_2 + \ldots) - \alpha(n_1 + n_2 + \ldots)}.
+\end{equation}
+Ahol $\alpha = - \beta \mu$. Mivel az $n_k$ számok egymástól függetlenül futnak 0-tól $\infty$-ig, ezért az állapotösszeg több summára bontható:
+\begin{equation}
+    \mathcal{Z} = \sum_{n_1 = 0}^{\infty} e^{-(\beta \varepsilon_1 + \alpha)n_1} \sum_{n_2 = 0}^{\infty} e^{-(\beta \varepsilon_2 + \alpha)n_2} \sum_{n_3 = 0}^{\infty} \ldots
+\end{equation}
+Ezek mind geometriai sorok, amiknek az összege:
+\begin{equation}
+    \sum_{n_k = 0}^{\infty} e^{-(\beta \varepsilon_k + \alpha)n_k} = \frac{1}{1 - e^{-(\beta \varepsilon_k + \alpha)}}.
+\end{equation}
+Így az állapotösszeg:
+\begin{equation}
+    \mathcal{Z} = \prod_k \frac{1}{1 - e^{-(\beta \varepsilon_k + \alpha)}}.
+\end{equation}
+Vegyük az állapotösszeg logaritmusát:
+\begin{equation}
+    \ln \mathcal{Z} = - \sum_k \ln (1 - e^{-(\beta \varepsilon_k + \alpha)}).
+\end{equation}
+Mivel itt diszkrét energiaszintek vannak, ezért kvantumstatisztikák esetén nem valószínűség sűrűséggel dolgozunk, hanem az egyes energiaszinteken lévő részecskék átlagos számával. A valószínűségi sűrűséget nagykanonikus sokaság esetén a következőképpen számoltuk:
+\begin{equation}
+    \rho(i) = \frac{1}{\mathcal{Z}} e^{-\beta (E_i - \mu N_i)}.
+\end{equation}
+Ahol $\sum_i \rho(i) = 1$, tehát valamelyik állapotban biztosan megtaláljuk a rendszert. Ez itt úgy módosul, hogy azt heressük, hogy egy $i$-edik állapotban mennyi részecske van az $s$-edik energiaszinten:
+\begin{equation}
+    \bar{n}_s \equiv \sum_{i} n^{(i)}_s \rho(i) = \frac{1}{\mathcal{Z}} \sum_{i} n^{(i)}_s e^{-\beta (E_i - \mu N_i)}.
+\end{equation}
+Tehát $\bar{n}_s$ megadja, hogy az összes állapoton keresztül véve, átlagosan hány részecske van az $s$-edik energiaszinten. Ezt $\ln \mathcal{Z}$ segítségével is ki tudjuk fejezni, hiszen:
+\begin{equation}
+    \mathcal{Z} = \sum_{n_1, n_2, \ldots} e^{-\beta (E_i - \mu N_i)} \quad \rightarrow \quad \ln \mathcal{Z} = \ln \left( \sum_{n_1, n_2, \ldots} e^{-\beta (E_i - \mu N_i)} \right).
+\end{equation}
+Ahol $E_i = \sum_r n^{(i)}_r \varepsilon_r$ és $N_i = \sum_r n^{(i)}_r$, tehát:
+\begin{equation}
+    \ln \mathcal{Z} = \ln \left( \sum_{n_1, n_2, \ldots} e^{- \beta \sum_r n^{(i)}_r \varepsilon_r + \mu \beta \sum_r n^{(i)}_r} \right).
+\end{equation}
+Megint megcsinálva az $\alpha = - \beta \mu$ helyettesítést, akkor:
+\begin{equation}
+    \ln \mathcal{Z} = \ln \left( \sum_{n_1, n_2, \ldots} e^{- \sum_r (\beta \varepsilon_r + \alpha) n^{(i)}_r} \right).
+\end{equation}
+Ha ezt lederiváljuk az $\varepsilon_s$ energiára, akkor:
+\begin{equation}
+    \frac{\partial \ln \mathcal{Z}}{\partial \varepsilon_s} = \frac{1}{\mathcal{Z}} \sum_{n_1, n_2, \ldots} \frac{\partial}{\partial \varepsilon_s} e^{- \sum_r (\beta \varepsilon_r + \alpha) n^{(i)}_r} = \frac{1}{\mathcal{Z}} \sum_{n_1, n_2, \ldots} (-\beta n^{(i)}_s) e^{- \sum_r (\beta \varepsilon_r + \alpha) n^{(i)}_r}. 
+\end{equation}
+Ha pedig itt átosztunk $- \beta$-vel, akkor pont megkapjuk az előzőleg definiált $\bar{n}_s$-t:
+\begin{equation}
+    - \frac{1}{\beta} \frac{\partial \ln \mathcal{Z}}{\partial \varepsilon_s} = \frac{1}{\mathcal{Z}} \sum_{n_1, n_2, \ldots} n^{(i)}_s e^{- \sum_r (\beta \varepsilon_r + \alpha) n^{(i)}_r} = \bar{n}_s.
+\end{equation}
+Tehát az $s$-edik energiaszinten lévő részecskék átlagos száma:
+\begin{equation}
+    \bar{n}_s = - \frac{1}{\beta} \frac{\partial \ln \mathcal{Z}}{\partial \varepsilon_s}.
+\end{equation}
+Most már csak be kell helyettesítenünk a korábban kiszámolt $\ln \mathcal{Z}$-t:
+\begin{equation}
+    \bar{n}_s = - \frac{1}{\beta} \frac{\partial}{\partial \varepsilon_s} \left( - \sum_r \ln (1 - e^{-(\beta \varepsilon_r + \alpha)}) \right) = \frac{1}{\beta} \frac{\partial}{\partial \varepsilon_s} \left( \sum_r \ln (1 - e^{-(\beta \varepsilon_r + \alpha)}) \right).
+\end{equation}
+Mivel csak az $s=r$ tag függ $\varepsilon_s$-tól, ezért:
+\begin{equation}
+    \bar{n}_s = \frac{1}{\beta} \frac{\partial}{\partial \varepsilon_s} \left( \ln (1 - e^{-(\beta \varepsilon_s + \alpha)}) \right).
+\end{equation}
+Ennek a deriváltja:
+\begin{equation}
+    \frac{\partial}{\partial \varepsilon_s} \left( \ln (1 - e^{-(\beta \varepsilon_s + \alpha)}) \right) = \frac{1}{1 - e^{-(\beta \varepsilon_s + \alpha)}} \cdot \beta e^{-(\beta \varepsilon_s + \alpha)}.
+\end{equation}
+Így az átlagos részecskeszám az $s$-edik energiaszinten:
+\begin{equation}
+    \bar{n}_s = \frac{e^{-(\beta \varepsilon_s + \alpha)}}{1 - e^{-(\beta \varepsilon_s + \alpha)}} = \frac{1}{e^{\beta \varepsilon_s + \alpha} - 1}.
+\end{equation}
+Visszahelyettesítve az $\alpha = - \beta \mu$-t, megkapjuk a Bose–Einstein eloszlást:
+\begin{equation}
+    \boxed{
+    \bar{n}_s = \frac{1}{e^{\beta (\varepsilon_s - \mu)} - 1}.
+    }
+\end{equation}
+Az $\bar{n}_s$ átlagos részecskeszám definíció szerint pozitív menyiség, ezért van egy megkötés a kémiai potenciálra: $\varepsilon_s - \mu > 0$ minden $s$-re.
+A rendszer átlagos energiáját és részecskeszámát is ki tudjuk fejezni az $\bar{n}_s$ segítségével:
+\begin{equation}
+    \bar{E} = \sum_s \bar{n}_s \varepsilon_s,
+\end{equation}
+\begin{equation}
+    \bar{N} = \sum_s \bar{n}_s.
+\end{equation}
+
+Ne feledjük el, hogy nagykanonikus sokaságra átlagoltunk, azaz rendszerünk termodinamikai egyensúlyban van egy rögzített $T$ hőmérsékletű és $\mu$ kémiai potenciálú
+hőtartállyal, amellyel energiát és részecskéket cserél, $\bar{E}$ és $\bar{N}$ tehát az átlagos
+energiát és részecskeszámot adja a hőtartály által megszabott $T$ és $\mu$ függvényében.
+Ha e pont elején nem kerültük volna meg a kanonikus állapotösszeg kiszámításánál
+felmerülő matematikai nehézséget és a kanonikus sokaságok módszerét alkalmaztuk
+volna, a számolás során akkor is fellépett volna egy, a $\mu$-nek megfelelő ismeretlen
+paraméter, és ezt éppen egy $\bar{N}$-tel azonos típusú egyenlet rögzítette volna, természetesen baloldalon az $N$ nagykanonikus átlagrészecskeszám helyett a kanonikus
+sokaság rögzített $N$ részecskeszámával (ezek minden gyakorlati szempontból azonos-
+nak vehetők). Mikrokanonikus sokaságban $E$-t és $N$-t is rögzítenénk, a két átlagérték ekkor a
+számolás során belépő ismeretlen $\beta$ és $\mu$ paraméterek megadására szolgálna. A három eredmény ekvivalens.
+
+\subsubsection{Fermi-Dirac Statisztika}
+A Fermi-Dirac statisztika ugyanazokból a feltételezésekből indul ki, kivéve egy dolgot: A fermionok esetén érvényes a Pauli kizárási elv, tehát két részecske nem lehet ugyanabban az állapotban.
+Emiatt egy adott $n^{(i)}_r$-hez csak 0 vagy 1 tartozhat. Vagy van azon az energiaszinten részecske, vagy nincs. Ez szerencsére lényegesen leegyszerűsíti az állapotösszeg kiszámítását:
+\begin{equation}
+    \mathcal{Z} = \sum_{n_1, n_2, \ldots = 0}^{1} e^{-\beta (n_1 \varepsilon_1 + n_2 \varepsilon_2 + \ldots) - \alpha(n_1 + n_2 + \ldots)}.
+\end{equation}
+Itt megint felfedezhetjük, hogy az $n_k$-k függetlenek egymástól, így az állapotösszeg szorzatra bontható:
+\begin{equation}
+    \mathcal{Z} = \prod_r \sum_{n_r = 0}^{1} e^{-(\beta \varepsilon_r + \alpha)n_r}.
+\end{equation}
+Mivel most csak két értéket vehet fel az $n_r$, ezért a belső összeg:
+\begin{equation}
+    \sum_{n_r = 0}^{1} e^{-(\beta \varepsilon_r + \alpha)n_r} = 1 + e^{-(\beta \varepsilon_r + \alpha)}.
+\end{equation}
+Így az állapotösszeg:
+\begin{equation}
+    \mathcal{Z} = \prod_r (1 + e^{-(\beta \varepsilon_r + \alpha)}).
+\end{equation}
+Vegyük az állapotösszeg logaritmusát:
+\begin{equation}
+    \ln \mathcal{Z} = \sum_r \ln (1 + e^{-(\beta \varepsilon_r + \alpha)}).
+\end{equation}
+Most már ugyanúgy ki tudjuk számolni az $s$-edik energiaszinten lévő részecskék átlagos számát, mint a Bose–Einstein statisztika esetén:
+\begin{equation}
+    \bar{n}_s = - \frac{1}{\beta} \frac{\partial \ln \mathcal{Z}}{\partial \varepsilon_s} = - \frac{1}{\beta} \frac{\partial}{\partial \varepsilon_s} \left( \sum_r \ln (1 + e^{-(\beta \varepsilon_r + \alpha)}) \right).
+\end{equation}
+Mivel csak az $s=r$ tag függ $\varepsilon_s$-tól, ezért:
+\begin{equation}
+    \bar{n}_s = - \frac{1}{\beta} \frac{\partial}{\partial \varepsilon_s} \left( \ln (1 + e^{-(\beta \varepsilon_s + \alpha)}) \right).
+\end{equation}
+Ennek a deriváltja:
+\begin{equation}
+    \frac{\partial}{\partial \varepsilon_s} \left( \ln (1 + e^{-(\beta \varepsilon_s + \alpha)}) \right) = \frac{1}{1 + e^{-(\beta \varepsilon_s + \alpha)}} \cdot (-\beta) e^{-(\beta \varepsilon_s + \alpha)}.
+\end{equation}
+Így az átlagos részecskeszám az $s$-edik energiaszinten:
+\begin{equation}
+    \bar{n}_s = \frac{e^{-(\beta \varepsilon_s + \alpha)}}{1 + e^{-(\beta \varepsilon_s + \alpha)}} = \frac{1}{e^{\beta \varepsilon_s + \alpha} + 1}.
+\end{equation}
+Visszahelyettesítve az $\alpha = - \beta \mu$-t, megkapjuk a Fermi–Dirac eloszlást:
+\begin{equation}
+    \boxed{
+    \bar{n}_s = \frac{1}{e^{\beta (\varepsilon_s - \mu)} + 1}.
+    }
+\end{equation}
+Látható, hogy itt nincs megkötés a kémiai potenciálra, de van egy erős megkötés az átlagos részecskeszámra: Mivel $n_s$ csak 0 vagy 1 lehet, ezért az átlagos részecskeszám is $0 \leq \bar{n}_s \leq 1$ kell legyen minden $s$-re.
+Az átlagos energiát és részecskeszámot itt is ki tudjuk fejezni az $\bar{n}_s$ segítségével:
+\begin{equation}
+    \bar{E} = \sum_s \bar{n}_s \varepsilon_s,
+\end{equation}
+\begin{equation}
+    \bar{N} = \sum_s \bar{n}_s.
+\end{equation}
+
+\subsubsection{Állapotsűrűség ideális kvantumgázok esetén}
+Ahogyan a termodinamikában klasszikus esetben is, itt is definiáljható az \textit{állapotsűrűség} fogalma. Az állapotsűrűség megadja, hogy egy adott energiatartományban
+hány darab egyrészecske állapot található. Az állapotsűrűség függvényét jelöljük $\rho(\varepsilon)$-nal, ahol $\rho(\varepsilon) d\varepsilon$ megadja, hogy az $\varepsilon$ és $\varepsilon + d\varepsilon$ közötti energiatartományban
+hány darab egyrészecske állapot található. Ekkor az állapotsűrűség egy $\varepsilon$ és $\varepsilon + d\varepsilon$ közötti tartományban a fázistérben:
+\begin{equation}
+    \rho(\varepsilon)d\varepsilon = d\Omega^{(1)}_0 (\varepsilon) = \frac{d^3q d^3p}{h^3} 
+\end{equation}
+Ha az energia $\varepsilon(\mathbf{p})$ izotróp, tehát azonos minden irányban, akkor a fázistér térfogata felírható a következőképpen:
+\begin{equation}
+    \rho(\varepsilon)d\varepsilon = \frac{V}{h^3} 4 \pi p^2 dp
+\end{equation}
+Ha például az egyrészecske energiát csak a klasszikus kinektikus energia adja $\varepsilon = \frac{p^2}{2m}$, és 3D-ben vagyunk, tehát $p^2_x + p^2_y + p^2_z = (\sqrt{2m\varepsilon})^2$, akkor:
+\begin{equation}
+    \Omega^{(1)}_0 (\varepsilon) = g \frac{V}{h^3} \frac{4\pi R^3}{3} = g \frac{V}{h^3} \frac{4 \pi}{3} (2m\varepsilon)^{3/2},
+\end{equation}
+Ahol $R = \sqrt{2m\varepsilon}$ a fázistérben lévő gömb sugara és $g = 2s + 1$ a spin degenerációs tényező, ami megadja, hogy egy adott energiaszinten hány különböző spinállapot lehetséges. Például egy $\hbar/2$ spinű részecske esetén $g=2$.
+Ebből az állapotsűrűség:
+\begin{equation}
+    \rho(\varepsilon) = \frac{d\Omega^{(1)}_0 (\varepsilon)}{d\varepsilon} = g \frac{V}{h^3} 4 \pi (2m)^{3/2} \frac{1}{2} \varepsilon^{1/2} = g \frac{2\pi V}{h^3} (2m)^{3/2} \varepsilon^{1/2}.
+\end{equation}
+Itt vezessük be az $A = g 2 \pi \left(\frac{2m}{h^2}\right)^{3/2}$ állandót, így az állapotsűrűség:
+\begin{equation}
+    \boxed{
+    \rho(\varepsilon) = A \cdot V \cdot \sqrt{\varepsilon}.
+    }
+\end{equation}
+
+Legyen az energia $\varepsilon = c |\mathbf{p}|$, ahol $c$ egy állandó (például fotonok esetén a fénysebesség), akkor:
+\begin{equation}
+    \rho(\varepsilon) d\varepsilon = g \cdot \frac{V}{h^3} 4 \pi p^2 dp = g \cdot \frac{V}{h^3} 4 \pi \left( \frac{\varepsilon}{c} \right)^2 \frac{d\varepsilon}{c} = g \cdot V \cdot \frac{4 \pi}{h^3 c^3} \varepsilon^2 d\varepsilon.
+\end{equation}
+Ahol bevezettük a $d\varepsilon = c dp$ helyettesítést. Így az állapotsűrűség:
+\begin{equation}
+    \boxed{
+    \rho(\varepsilon) = A \cdot V \cdot \varepsilon^2 \quad \text{, ahol } A = g \cdot \frac{4 \pi}{h^3 c^3}.
+    }
+\end{equation}
+
+Az állapotsűrűség néhány egyszerűbb rendszerre:
+\begin{equation}
+    \begin{aligned}
+        \text{Elektron:} \quad g = 2 (s = \frac{1}{2}) & \quad \Rightarrow \quad \rho(\varepsilon) = A \cdot V \cdot \sqrt{\varepsilon}, \quad A = 2 \pi \left(\frac{2m}{h^2}\right)^{3/2} \\
+        \text{Foton:} \quad g = 2 (\text{polarizáció}) & \quad \Rightarrow \quad \rho(\varepsilon) = A \cdot V \cdot \varepsilon^2, \quad A = \frac{8 \pi}{h^3 c^3} \\
+    \end{aligned}
+\end{equation}
+
+\subsubsection{Folytonos energia spektrum}
+Gyakran előfordul, hogy egy kvantumrendszer egyrészecske energiái annyira közel vannak egymáshoz, hogy a diszkrét energiaszintek közötti különbség elhanyagolható a termikus energiához képest.
+Ilyen esetekben a diszkrét energiaszintek helyett folytonos energia spektrumot feltételezhetünk. Ekkor az összegzéseket integrálokra cserélhetjük az állapotsűrűség segítségével:
+\begin{equation}
+    \phi (T, V, \mu) = F k_B T \int_0^{\infty} \rho(\varepsilon)d\varepsilon \ln \left( 1 + F e^{-\beta (\varepsilon - \mu)} \right),
+\end{equation}
+Ahol $F = -1$ fermionokra (Fermi-Dirac statisztika) és $F = +1$ bozonokra (Bose-Einstein statisztika). A részecskeszám és az energia is integrálokkal számolható:
+\begin{equation}
+    N = \int_0^{\infty} \rho(\varepsilon) f(\varepsilon, \mu, T) d\varepsilon,
+\end{equation}
+\begin{equation}
+    E = \int_0^{\infty} \varepsilon \rho(\varepsilon) d\varepsilon, f(\varepsilon, \mu, T)
+\end{equation}
+Ahol $f(\varepsilon, \mu, T)$ a megfelelő eloszlás:
+\begin{equation}
+    f(\varepsilon, \mu, T) = \frac{1}{e^{\beta (\varepsilon - \mu)} \pm 1}
+\end{equation}
 
 
 
+\subsection{Fermi-rendszer T=0 hőmérséklet közelében (degenerált Fermi-gáz), példa degenerált Fermi-gázra: delokalizált elektronok fémekben}
+Láttuk tehát, hogy a Fermi-Dirac statisztika szerint a fermionok átlagos részecskeszáma az $s$-edik energiaszinten:
+\begin{equation}
+    \bar{n}_s = \frac{1}{e^{\beta (\varepsilon_s - \mu)} + 1}.
+\end{equation}
+Vizsgáljuk meg hogy mi történik a részecskékkel, ha a hőmérsékletet nullához közelítjük, azaz $T \to 0$, vagyis $\beta \to \infty$. Az egyrészecske energiák felírhatóak a klasszikus kinetikus energia formájában:
+\begin{equation}
+    \varepsilon_s = \frac{p_s^2}{2m},
+\end{equation}
+ahol $p_s$ az $s$-edik állapothoz tartozó impulzus és a lehetséges értékeit a gázt tartalmazó térfogat szabja meg. Ha a térfogat elég nagy, akkor az impulzus kvázi-folytonos.
+Az átlagos részecskeszámnál jól látható, hogy ha az energia egyezik a kémiai potenciállal, azaz $\varepsilon_s = \mu$, akkor:
+\begin{equation}
+    \bar{n}_s = \frac{1}{e^{\beta (\mu - \mu)} + 1} = \frac{1}{2}.
+\end{equation}
+Megoldást kapjuk. De ez egy nagyon speciális eset, hiszen csak egyetlen egy energiaszinten teljesül ez az egyenlőség. Nézzük meg mi történik, ha az energia kisebb vagy nagyobb a kémiai potenciálnál:
+\begin{equation}
+    \lim_{T \to 0} \bar{n}_s = \lim_{\beta \to \infty} \frac{1}{e^{\beta (\varepsilon_s - \mu)} + 1} = 
+    \begin{cases}
+        1, & \text{ha } \varepsilon_s < \mu, \\
+        0, & \text{ha } \varepsilon_s > \mu.
+    \end{cases}
+\end{equation}
+Tehát ha az $s$-edik energiaszint kisebb, mint a kémiai potenciál, akkor az átlagos részecskeszám 1 lesz, vagyis az adott energiaszintet egy részecske valószínűleg el fogja foglalni.
+Ha pedig az energiaszint nagyobb, mint a kémiai potenciál, akkor az átlagos részecskeszám 0 lesz, vagyis az adott energiaszintet egy részecske sem fogja elfoglalni. Ez azt jelenti, hogy $T=0$-nál
+a fermionok az alacsonyabb energiaszinteket fogják elfoglalni, amíg el nem fogynak a részecskék
+\footnote{
+    Itt a részecskék spin-jét nem vettük figyelembe, az egy $(2s + 1)$ szorzóz jelentene $\hbar s$ spinű részecskék esetén.
+}. 
+Azt az energiaszintet, amelynél az összes részecske elfogyott, \textit{Fermi-energiának} nevezzük, és jelöljük $\varepsilon_F$-fel. A hozzátartozó impulzust pedig \textit{Fermi-impulzusnak}, jelöljük $p_F$-fel.
+Ha a $T = 0$ hőmérsékleten vagyunk, akkor ha egy $\bar{n}_s$-hez tartozó $\varepsilon_s$ nagyobb mint a Fermi-energia, akkor az adott energiaszintet egy részecske sem fogja elfoglalni, hiszen az összes részecske már elfogyott.
+Ha pedig az $\varepsilon_s$ kisebb, mint a Fermi-energia, akkor az adott energiaszintet egy részecske el fogja foglalni, hiszen még vannak részecskék. Tehát a kémiai potenciál $T=0$-nál megegyezik a Fermi-energiával:
+\begin{equation}
+    \mu(T=0) = \varepsilon_F.
+\end{equation}
 
+Véges, de még nem nulla hőmérsékleten a Fermi-Dirac eloszlás egy folytonos függvény, de ahogy közelítünk a $T=0$-hoz, úgy lesz egyre szűkebb a tartomány ahol az átlagos részecskeszám 1-ről nullára esik. 
+$T=0$-ban pedig egy lépcső-függvénnyé válik az eloszlás. Kellően alacsony hőmérsékleten ez a tartomány arányos $k_B T$-vel. Ez azt jelenti, hogy ha a $T = 0$-ról elkezdjük lassan növelni a hőmérsékletet,
+akkor először a nagy energiájú részecskék lesznek képesek magasabb energiába ugrani. Ezt képletesen úgy szokták mondani, hogy a "fermi tenger a felszínén párolog", vagyis csak a "felszíni" részecskész "szakadnak ki" a Fermi-energia álatal
+meghatározott "tengerből". Ezt a jelenséget természetesen a Pauli elv alapján is megérthetjük, hiszen a "tenger mélyén" lévő részecskéknek még akkor se lesz elég energiájuk a Fermi szint fölé ugrani,
+ha kapnak egy $k_B T$ nagyságrendű energiát. Már betöltött állapotba pedig nem mehet át egy részecske a Pauli elv miatt. Emiatt a hőmérsékleti gerjesztés az eloszlásfüggvényt csak egy $\varepsilon_F \sim k_B T$ nagyságrendű tartományban változtatja meg jelentősen.
+Emiatt az a hőmérséklet ahol az eloszlásfüggvény jelentősen megváltozik a $T=0$-beli lépcsőfüggvényhez képest, a Fermi-hőmérséklet:
+\begin{equation}
+    T_F = \frac{\varepsilon_F}{k_B}.
+\end{equation}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/15-tetel/fermi_distribution.png}
+    \caption{Fermi-Dirac eloszlás különböző hőmérsékleteken. Látható, hogy $T \to 0$-nál az eloszlás lépcsőfüggvénnyé válik, ahol a kémiai potenciál megegyezik a Fermi-energiával.}
+\end{figure}
 
+Ezt a jelenséget, amikor alacsony hőmérsékleten a fermionok tulajdonságai megváltoztatják az anyag működését a klasszikus ideális gázmodellhez képest \textit{degenerált anyagnak} nevezzük.
+Mivel ezeket az anyagokat általában Fermi-gázként modellezik, ezért szokás \textbf{degenerált Fermi gázként} is hivatkozni rájuk. Itt fontos megjegyezni, hogy a "degenerált" jelző kicsit félrevezető,
+ugyanis itt az energiaszinteken pont hogy nincs degeneráció, minden energiaszinten csak egy részecske lehet. Itt a "degenerált" szó egy történelmi maradvány, ami a gázok hőmérsékletével volt kapcsolatos,
+még a kvantummechanika megszületése előtt. Tehát itt csak arra utal, hogy a klasszikus viselkedéstől eltérő kvantumos viselkedés lép fel. Azt az állapotot, amikor alacsony hőmérsékleten (amikor a részecskék
+hőmérsékleti energiája elhanyagolható) az összes energiaszint be van töltve a Fermi-energiáig, \textit{teljes degenerációnak} nevezzük. 
 
+Ebben a degenerált állapotban fellép a rendszerben egy \textit{degenerációs nyomás},
+ami a Pauli kizárási elvből ered. Ha ugyanis az összes energiaszint be van töltve, akkor újabb részecskék hozzáadása a rendszerhez, vagy a térfogat csökkentése csak úgy lehetséges, ha a részecskék egy része magasabb energiaszintekre kerül.
+Erre pedig a rendszer a Pauli elv miatt "ellenállást fejt ki", ami egy nyomásként jelentkezik. Ennek a nyomásnak ellenébe kell összenyomó (kompressziós) munkát végezni a rendszeren, ha újabb részecskéket akarunk hozzáadni,
+vagy a térfogatát csökkenteni. Ez a nyomás még $T=0$-nál is jelen van, és nem függ a hőmérséklettől, csak a fermionok sűrűségétől. Kellően alacsony sűrűségen a teljesen degenerált gáz degenerációs nyomását
+le lehet vezetni az Ideális Fermi Gázból:
+\begin{equation}
+    P = \frac{(3 \pi^2)^{2/3} \hbar^2}{5m} \left(\frac{N}{V}\right)^{5/3}
+\end{equation}
+Ez a degenerációs nyomás fontos szerepet játszik asztrofizikai objektumokban, például ez a degenerációs nyomás tartja fenn a fehér törpéket a gravitációs összeomlás ellen. De fontos szerepe van
+a fémek szabad elektronfelhőjében is.
 
+\subsubsection{Fermi-gáz}
+Láttuk tehát, hogy a Fermi gáz eloszlásfüggvénye a következő:
+\begin{equation}
+    \bar{n}_s = \frac{1}{e^{\beta (\varepsilon_s - \mu)} + 1} \equiv f(\varepsilon_s).
+\end{equation}
+És beláttuk, hogy $\beta \to \infty$ ($T \to 0$) határesetben ez átmegy egy lépcsőfüggvénybe, ahol a kémiai potenciál megegyezik a Fermi-energiával:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/15-tetel/fermi_step.png}
+    \caption{Fermi-Dirac eloszlás $T=0$-nál. Látható, hogy a kémiai potenciál megegyezik a Fermi-energiával, és az eloszlás lépcsőfüggvénnyé válik.}
+\end{figure}
+
+Nézzük meg például a fémekben lévő delokalizált elektronokat, amik egy jó közelítéssel egy ideális Fermi-gáznak tekinthetők. Ezek az elektronok a fém kristályrácsában szabadon mozognak,
+és csak ritkán ütköznek a rács ionjaival vagy egymással. Emellett feltételezzük, hogy a rács és a többi elektron leárnyékolják egymás hatását, így a Coulomb-hatás elhanyagolható egy-egy elektronon. Ezek az elektronok a fém elektromos és hővezetéséért felelősek. A fémekben lévő elektronok sűrűsége nagyon magas, így a Fermi-hőmérsékletük is nagyon magas, általában több tízezer Kelvin.
+Ez azt jelenti, hogy a szobahőmérsékleten a fémekben lévő elektronok már egy degenerált Fermi-gázt alkotnak. Emiatt a fémek elektromos és hővezetési tulajdonságai jelentősen eltérnek a klasszikus ideális gázokétól.
+Például a fémekben lévő elektronok hővezetése sokkal hatékonyabb, mint a klasszikus gázoké, mivel a degenerált Fermi-gázban a részecskék csak a Fermi-energia közelében lévő állapotok között tudnak ugrálni, így a hőenergia gyorsabban terjed.
+
+A részecskék Fermi-energiája az ideális Fermi-gázban:
+\begin{equation}
+    \varepsilon_F = \mu_0 = \frac{p^2_F}{2m}
+\end{equation} 
+Ahol $p_F$ a Fermi-impulzus. Mivel a fermionok impulzusai a Pauli-elv miatt csak egyszer vehetnek fel egy adott impulzust, és mivel, ha kellően nagy a térfogat, az impulzus kvázi-folytonos,
+ezért a részecskék számának arányosnak kell lennie a $p_Fx, p_Fy, p_Fz$ impulzus komponensek által kifeszített gömb térfogatával az impulzus térben:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{imgs/15-tetel/fermi_sphere.png}
+    \caption{Fermi-gáz impulzus térbeli ábrázolása. Az impulzus térben a részecskék csak egyszer foglalhatnak el egy adott impulzust, ezért a részecskék száma arányos a Fermi-gömb térfogatával.}
+\end{figure}
+Ezért a részecskék száma:
+\begin{equation}
+    N = 2 \sum_s n_s = 2 \cdot \frac{V}{(2\pi \hbar)^3} \cdot \int_{0}^{p_F} 4 \pi p^2 dp = 2 \cdot \frac{V}{(2 \pi \hbar)^3} \cdot \frac{4 \pi}{3} p^3_F.
+\end{equation}
+Ahol a 2-es szorzó a spin fel- és leágazásokat jelöli (mivel az elektronok spinje $\hbar/2$), $V$ a rendszer térfogata és a $(2 \pi \hbar)^3$ pedig az impulzus tér egy állapotának a térfogata.
+A $4\pi p^2$, pedig a gömbfelület ami mentén integrálunk. Ebből kifejezve a Fermi-impulzust:
+\begin{equation}
+    p_F = \hbar (3 \pi^2 \frac{N}{V})^{1/3} = \frac{h}{2} (\frac{3}{\pi} \frac{N}{V})^{1/3}.
+\end{equation}
+Ezt visszahelyettesítve a Fermi-energiába:
+\begin{equation}
+    \varepsilon_F = \mu_0 = \frac{\hbar^2}{2m} (3 \pi^2 \frac{N}{V})^{2/3}.
+\end{equation}
+
+Láttuk korábban, hogy a kémiai potenciállal ki lehet fejezni a Fermi hőmérsékletet is:
+\begin{equation}
+    T_F = \frac{\varepsilon_F}{k_B} = \frac{\hbar^2}{2m k_B} (3 \pi^2 \frac{N}{V})^{2/3}.
+\end{equation}
+Ez itt azt a hőmérsékletet adja meg, ahol a fémekben lévő delokalizált elektronok már jelentősen eltérnek a eltérnek a degenerált fermi-gáz viselkedéstől. Be tudjuk látni, hogy ez a hőmérséklet 
+a fémekben igen magas, vagyis szobahőmérsékleten jogos degenerált fermi-gáznak tekinteni az elektronokat. Például a \textit{réz} esetében a következő paramétereket kapjuk:
+\begin{itemize}
+    \item réz sűrűsége: $\rho = 8.96 \, \mathrm{g/cm^3}$
+    \item réz moláris tömege: $M = 63.55 \, \mathrm{g/mol}$
+    \item mólűrűsége tehát: $\frac{\rho}{M} = \frac{8.96}{63.55} = 0.141 \, \mathrm{mol/cm^3}$
+    \item A szabad elektronok sűrűsége (a réz egyvegyértékű): $\frac{N}{V} \approx 8.4 \cdot 10^{22} \, \mathrm{cm^{-3}}$
+    \item Az elektron tömege: $m_e = 9.11 \cdot 10^{-31} \, \mathrm{kg}$
+    \item A Boltzmann állandó: $k_B = 1.38 \cdot 10^{-16} \, \mathrm{erg/K}$
+\end{itemize}
+Ezeket beírva a Fermi-hőmérséklet képletébe:
+\begin{equation}
+    T_F = \frac{\hbar^2}{2m_e k_B} (3 \pi^2 \frac{N}{V})^{2/3} \approx 8.1 \cdot 10^4 \, \mathrm{K}.
+\end{equation}
+Ez egy igen magas hőmérséklet (a nap felülete csak kb. $6000 \, \mathrm{K}$), ezért normális körülmények között a rézben lévő szabadelektronok nagyon jól közelíthetőek egy degenerált Fermi-gázzal.
+
+Most nézzük meg ennek az elektronfelhőnek a termodinamikai viselkedését (amikor $T \ll T_F$). A részecskék számát fel tudjuk írni az állapotsűrűség és az eloszlásfüggvény segítségével is, ahogy láttuk már:
+\begin{equation}
+    N = \int \rho(\varepsilon) f(\varepsilon) d\varepsilon.
+\end{equation}
+Ahol az állapotsűrűség ideális kvantumgáz esetén:
+\begin{equation}
+    \rho(\varepsilon) = A \cdot V \cdot \sqrt{\varepsilon}, \quad A = g \cdot 2 \pi \left( \frac{2m}{h^2} \right)^{3/2}.
+\end{equation}
+Jelen esetben $g=2$ az elektron spin miatt. Az eloszlásfüggvény pedig a Fermi-Dirac eloszlás:
+\begin{equation}
+    f(\varepsilon) = \frac{1}{e^{\beta (\varepsilon - \mu)} + 1}.
+\end{equation}
+Így az integrál a következő lesz:
+\begin{equation}
+    N = A \cdot V \int_0^{\infty} \frac{\sqrt{\varepsilon}}{e^{\beta (\varepsilon - \mu)} + 1} d\varepsilon.
+\end{equation}
+Mivel $T \ll T_F$-ről van szó, ezért a kémiai potenciál közel lesz a Fermi-energiához, ezért az eloszlás egy lépcsofüggvény lesz, ami csak akkor nem nulla, ha az energia kisebb, mint a Fermi energia. 
+Ezért itt elég csak az integrálási határt módosítani:
+\begin{equation}
+    N \approx A \cdot V \int_0^{\varepsilon_F} \sqrt{\varepsilon} d\varepsilon = A \cdot V \cdot \frac{2}{3} \varepsilon^{3/2}_F.
+\end{equation}
+
+Az állapotsűrűség értéke a Fermi-energiánál:
+\begin{equation}
+    \rho(\varepsilon_F) = A \cdot V \cdot \sqrt{\varepsilon_F} = A \cdot V \cdot \left(\frac{3}{2} \frac{N}{V} \frac{1}{A}\right)^{1/3} = \frac{3}{2} N \cdot \underbrace{\left(\frac{2}{3}A\frac{V}{N}\right)^{2/3}}_{1/E_F} = \frac{3}{2} \frac{N}{\varepsilon_F}.
+\end{equation}
+
+Ennek segítségével meg lehet becsülni a fermi-gáz hőkapacitását alacsony hőmérsékleten. Az alapvető feltevés az, hogy a Fermi gáznál a "fermi-tenger" mélyét nem tudjuk gerjeszteni,
+csak a felszinen lévő részecskéket tudjuk "átugrasztani" még be nem töltött állapotokba. Emiatt a gerjeszthető részecskék száma arányos lesz a hőmérséklettel:
+\begin{equation}
+    N_{\text{gerjeszthető}} \approx \rho(\varepsilon_F) k_B T = \frac{3}{2} \frac{N}{\varepsilon_F} k_B T.
+\end{equation}
+Ha feltételezzük, hogy ezek a részecskék átlagosan $k_B T$ energiával rendelkeznek, akkor az energia a hőmérséklet függvényében:
+\begin{equation}
+    E(T) \approx  E_0 + \rho(\varepsilon_F) \cdot k_B T \cdot k_B T = E_0 + \frac{3}{2} \frac{N}{\varepsilon_F} k^2_B T^2.
+\end{equation}
+Ahol $E_0$ a $T=0$-beli energia. Ebből ki tudjuk számolni a hőkapacitást:
+\begin{equation}
+    C_V = \left( \frac{\partial E}{\partial T} \right)_V = k_B 2 \rho(\varepsilon_F) k_B T = \frac{3}{2} N k_B \frac{2 k_B T}{\varepsilon_F}.
+\end{equation}
+De ez csak egy naív becslés, mert nem vettük figyelembe a kémiai potenciál hőmérsékletfüggését. 
+
+Ahhoz, hogy pontosabban ki tudjuk számolni a hőkapacitást, a részecskeszám integrlálját kellene megoldani:
+\begin{equation}
+    N = \int_0^{\infty} \rho(\varepsilon) f(\varepsilon) d\varepsilon = A \cdot V \int_0^{\infty} \frac{\sqrt{\varepsilon}}{e^{\beta (\varepsilon - \mu)} + 1} d\varepsilon.
+\end{equation}
+Amiből a $\mu(T)$-t ki tudjuk fejezni, és be tudjuk helyettesíteni az energia integráljába:
+\begin{equation}
+    E = \int_0^{\infty} \varepsilon \rho(\varepsilon) f(\varepsilon) d\varepsilon = A \cdot V \int_0^{\infty} \frac{\varepsilon^{3/2}}{e^{\beta (\varepsilon - \mu)} + 1} d\varepsilon.
+\end{equation}
+Ezt az integrált a Sommerfeld-sorfektéssel
+\footnote{
+    A Sommerfeld-sorfejtést Arnold Sommerfeld dolgozta ki 1928-ban specifikusan a Fermi-Dirac eloszlást tartalmazó integrálok megoldására. 
+    Az eljárás lényege, hogy ha van egy integrálunk, ami a következő alakú:
+    \begin{equation*}
+        I = \int_0^{\infty} \frac{H(\varepsilon)}{e^{\beta (\varepsilon - \mu)} + 1} d\varepsilon,
+    \end{equation*}
+    ahol $H(\varepsilon)$ egy sima függvény, akkor ezt az integrált a következőképpen lehet közelíteni alacsony hőmérsékleten ($T \to 0$, vagyis $\beta \to \infty$):
+    \begin{equation*}
+        I \approx \int_0^{\mu} H(\varepsilon) d\varepsilon + \frac{\pi^2}{6} (k_B T)^2 H'(\mu) + \frac{7 \pi^4}{360} (k_B T)^4 H'''(\mu) + \ldots
+    \end{equation*}
+    Ez az eljárás kihasználja, hogy alacsony hőmérsékleteken az eloszlásfüggvény egy lépcsőfüggvényhez hasonlít, és csak a kémiai potenciál körüli tartományban van jelentős változás.
+}
+lehet megoldani, ami egy aszimptotikus módszer alacsony hőmérséklet esetén. Ennek eredményeként a kémiai potenciál hőmérsékletfüggése:
+\begin{equation}
+    \mu(T) = \varepsilon_F \left( 1 - \frac{\pi^2}{12} \left( \frac{k_B T}{\varepsilon_F} \right)^2 + \frac{\pi^4}{80} \left( \frac{k_B T}{\varepsilon_F} \right)^4 + \ldots \right).
+\end{equation}
+Innen az energia hőmérsékletfüggése:
+\begin{equation}
+    E(T) = E_0 + \frac{\pi^2}{4} \rho(\mu_0) k^2_B T^2 + \ldots \approx E_0 + \frac{\pi^2}{4} N k_B^2 T^2 \frac{1}{\varepsilon_F}.
+\end{equation}
+Így a hőkapacitás:
+\begin{equation}
+    C_V = \left( \frac{\partial E}{\partial T} \right)_V = \frac{\pi^2}{2} N k_B \frac{k_B T}{\varepsilon_F} + \ldots \approx \frac{\pi^2}{2} N k_B \frac{T}{T_F}.
+\end{equation}
+Tehát látszik, hogy a hőkapacitás lineárisan növekszik a hőmérséklettel alacsony hőmérsékleten, ami jelentősen eltér a klasszikus ideális gázok állandó hőkapacitásától, ahol a hőkapacitás nem függ a hőmérséklettől ($C_V^{\text{klassz.}} = \frac{3}{2} N k_B$).
+Ebből az is látszik, hogy ha $T = 0$, akkor a hőkapacitás is nulla lesz, vagyis a "befagyás" jelenség is megjelenik a fémekben lévő delokalizált elektronok esetén. Ha mondjuk a réz esetén nézzük meg a hőkapacitást,
+mondjuk $T = 300 \, \mathrm{K}$-en, akkor a Fermi-hőmérsékletet már kiszámoltuk korábban, ami $T_F \approx 8.1 \cdot 10^4 \, \mathrm{K}$. Így a hőkapacitás:
+\begin{equation}
+    C_V \approx \frac{\pi^2}{2} N k_B \frac{300}{8.1 \cdot 10^4} \approx 0.018 \cdot N k_B.
+\end{equation}
+Ezzel szemben a klasszikus ideális gáz hőkapacitása:
+\begin{equation}
+    C_V^{\text{klassz.}} = \frac{3}{2} N k_B \approx 1.5 \cdot N k_B.
+\end{equation}
+Tehát a fémekben lévő delokalizált elektronok hőkapacitása sokkal kisebb, mint a klasszikus ideális gázé, ami a degenerált Fermi-gázé.
+
+Ezekből tehát meg lehet adni a degenerált Fermi gáz állapotegyenletét is:
+\begin{equation}
+    p V = \frac{2}{3} E.
+\end{equation}
+Tehát:
+\begin{equation}
+    p V = \frac{2}{5} N E_F \left[1 + \frac{5\pi^2}{12} \left( \frac{T}{T_F} \right)^2 + \ldots \right].
+\end{equation}
+Vagyis:
+\begin{equation}
+    \boxed{
+        p V = \frac{2}{5} N \varepsilon_F \left[ 1 + \frac{5 \pi^2}{12} \left( \frac{k_B T}{\varepsilon_F} \right)^2 \right].
+    }
+\end{equation}
+Ahol $\varepsilon_F = \left(\frac{3}{2} \frac{N}{V} \frac{1}{A}\right)^{2/3}$ és $A = g 2 \pi \left(\frac{2m}{h^2}\right)^{3/2}$.
+Ebből a nyomás:
+\begin{equation}
+    p = \frac{2}{5} \left( \frac{3}{2} \right)^{2/3} \frac{h^2}{2m} \left( \frac{N}{V} \right)^{5/3} \left[ 1 + \frac{5 \pi^2}{12} \left( \frac{k_B T}{\varepsilon_F} \right)^2 \right].
+\end{equation}
+Látható, hogy $T = 0$ esetben is van nyomás, ez a degenerációs nyomás, ami a Pauli elvből ered.
+
+Az energiát ismerve az entrópiát is ki tudjuk számolni:
+\begin{equation}
+    S = - \frac{\partial \phi}{\partial T}\bigg\vert_{V, \mu} = \frac{2}{3} \frac{\partial E}{\partial T}\bigg\vert_{V, N} = \frac{\pi^2}{2} N k_B \frac{k_B T}{\varepsilon_F}.
+\end{equation}
+
+\subsection{Fermi–Dirac- és Bose–Einstein-statisztika magashőmérsékleti határesete (Maxwell–Boltzmann statisztika).}
+Láttuk korábban, hogy a Fermi-Dirac ($+$) és a Bose-Einstein ($-$) statisztika eloszlásfüggvényei a következők:
+\begin{equation}
+    f(\varepsilon) = \frac{1}{e^{\beta (\varepsilon - \mu)} \pm 1},
+\end{equation}
+A Korrespondencia elv alapján azt várjuk ezektől az eloszlásoktól, hogy magas hőmérsékleten visszatérjenek a klasszikus Maxwell-Boltzmann eloszláshoz:
+\begin{equation}
+    \bar{n}_r = \frac{N}{\zeta} e^{-\beta \varepsilon_r}, \quad \zeta = \sum_s e^{-\beta \varepsilon_s}.
+\end{equation}
+Ez akkor teljesül, ha a részecskék megkülönböztethetetlensége nem jelent már lényeges megszorítást. Fontos kiemelni, hogy kvantummechanikai rendszereknél a "megkülönböztethetetlenség"
+nem csak annyit jelent, hogy a részecskék egyformák (ezt klasszikusan is feltesszük), hanem van egy mélyebb jelentése is: A klasszikus mechanikai rendszerekben, bár azonos részecskékről
+beszélünk, feltesszük, hogy a részecskék paramétereit, mint a pozíció vagy impulzus, tetszöleges pontossággal meg tudjuk határozni. Ezzel minden részecskét lehet jellemezni a saját, specifikus
+paramétereivel, ami ad nekik egyfajta "individualizmust". Tehát ha a mérésünk $\Delta q$ és $\Delta p$ hibája lényegesen kisebb mint a részecskék átlagos távolsága ($R$) és impulzusa ($\bar{p}$),
+akkor a részecskék gyakorlatilag megkülönböztethetőek.
+
+Ezzel ellentétben a kvantummechanikai rendszerekben tudjuk, hogy a Heisenberg-féle határozatlansági reláció miatt a részecskék paramétereit csak véges pontossággal tudjuk meghatározni:
+\begin{equation}
+    \Delta q \Delta p \geq \hbar/2.
+\end{equation}
+Ezért a $\Delta q \ll R$ és $\Delta p \ll \bar{p}$ feltételek csak akkor teljesülnek egyidejüleg. ha $R \bar{p} \gg \hbar$. Definiáljuk a részecskék termikus hullámhosszát mint $T$
+hőmérsékleten az átlagos impulzusú részecskék de Broglie hullámhosszát:
+\begin{equation}
+    \lambda_T = \frac{h}{\bar{p}}
+\end{equation}
+Ekkor a részecskék megkülönböztethetőségének feltétele a következő lesz:
+\begin{equation}
+    R \gg \lambda_T.
+\end{equation}
+A részecskék átlagos távolsága pedig a részecskesűrűségből kifejezve:
+\begin{equation}
+    R \sim \left( \frac{V}{N} \right)^{1/3}.
+\end{equation}
+Ahol $\frac{V}{N}$ az egy részecskére jutó térfogat. Ennek a reciproka a részecskesűrűség:
+\begin{equation}
+    \varrho = \frac{N}{V}.
+\end{equation}
+Tehát a részecskék átlagos távolsága:
+\begin{equation}
+    R \sim \varrho^{-1/3}.
+\end{equation}
+A klasszikus tartományban az átlagos impulzus is könnyen megadható az ekvipartíció tétele alapján:
+\begin{equation}
+    \frac{\bar{p}}{2m} \sim k_B T \quad \Rightarrow \quad \bar{p} \sim \sqrt{2 m k_B T}.
+\end{equation}
+Ekkor a klasszikus viselkedés határfeltétele $R \gg \lambda_T$ a következő lesz:
+\begin{equation}
+    \varrho^{-1/3} \sqrt{2m k_B T} \gg h \quad \Rightarrow \quad \varrho \ll \left( \frac{2m k_B T}{h^2} \right)^{3/2}.
+\end{equation}
+Tehát egy rendszer akkor megy át kvantumos viselkedésből klasszikusba, ha kellően magas a hőmérséklet, vagy kellően alacsony a részecskesűrűség.
+
+Nézzünk meg egy példát: A szobahőmérsékletű ($T \approx 300 \, \mathrm{K}$), $10^6 \, \mathrm{Pa}$ nyomású $He$ gáz sűrűsége, ha ideális gáznak tekintjük:
+\begin{equation}
+    \varrho = \frac{p}{k_B T} = \frac{10^6 \, \mathrm{Pa}}{1.38 \cdot 10^{-23} \, \mathrm{J/K} \cdot 300 \, \mathrm{K}} \approx 2.5 \cdot 10^{19} \, \mathrm{cm^{-3}}.
+\end{equation}
+Tehát az átlagos részecsketávolság:
+\begin{equation}
+    R \sim \varrho^{-1/3} \approx (2.5 \cdot 10^{19} \, \mathrm{cm^{-3}})^{-1/3} \approx 3.4 \cdot 10^{-7} \, \mathrm{cm} = 34 \, \AA.
+\end{equation}
+A hélium atom tömege $m_{He} \approx 4 \, \mathrm{u} = 6.64 \cdot 10^{-24} \, \mathrm{g}$, tehát a de Broglie hullámhossz:
+\begin{equation}
+    \lambda_T = \frac{h}{\sqrt{2 m_{He} k_B T}} \approx \frac{6.63 \cdot 10^{-27} \mathrm{erg \cdot s}}{\sqrt{2 \cdot 6.64 \cdot 10^{-24} \mathrm{g} \cdot 1.38 \cdot 10^{-16} \mathrm{erg/K} \cdot 300 \mathrm{K}}} \approx 0.6 \, \AA.
+\end{equation}
+Tehát a részecskék átlagos távolsága sokkal nagy mint a de Broglie hullámhossz, így a hélium gáz jó közelítéssel klasszikus ideális gáznak tekinthető. Ezzel ellentétben a fémek szabadelektron felhőjében a 
+részecskék átlagos távolsága $R \sim 1 \, \AA$, míg a de Broglie hullámhossz $ \lambda_T \sim 10 \, \AA$, így a szabadelektron felhő már kvantumos viselkedést mutat.
+
+Nézzük meg, hogy milyen megkötést ad a klasszikus közelítés $\lambda_T \ll R$ a kémiai potenciálra. A részecskeszámot fel tudjuk írni az állapotsűrűség és az eloszlásfüggvény segítségével:
+\begin{equation}
+    N = \sum_\mathbf{k} \bar{n}_\mathbf{k} = \frac{V}{(2\pi)^3} \int n_\mathbf{k} d^3 \mathbf{k} = \frac{V}{(2\pi \hbar)^3} \int \frac{d^3 \mathbf{p}}{e^{\beta p^2/2m + \alpha} \pm 1}.
+\end{equation}
+Ahol $\hbar \mathbf{k} = \mathbf{p}$ és $\alpha = -\beta \mu$. Ezt át tudjuk írni, hogy a részecskesűrűséget adja meg:
+\begin{equation}
+    \varrho = \frac{N}{V} = \frac{4 \pi}{h^3} \int_0^{\infty} \frac{p^2 dp}{e^{\beta p^2/2m + \alpha} \pm 1} = \frac{2 \pi}{h^3} (2 m k_B T)^{3/2} \int_0^{\infty} \frac{x^{1/2} dx}{e^{x + \alpha} \pm 1}.
+\end{equation}
+Ahol az utolsó lépésben a $x = \beta p^2/2m$ helyettesítést használtuk. A de Broglie hullámhossz továbbra is:
+\begin{equation}
+    \lambda_T = \frac{h}{\sqrt{2 \pi m k_B T}}.
+\end{equation}
+Ezzel a részecskesűrűség:
+\begin{equation}
+    \varrho \sim R^{-3}
+\end{equation}
+Ezért, ha a $R^{-3} = \varrho$ közelítést használjuk, akkor az egyenlet átírható a következő formára:
+\begin{equation}
+    \left(\frac{\lambda_T}{R}\right)^3 = 2\pi \Gamma(\frac{3}{2}) \cdot F^{(\pm)}(\frac{3}{2}, \alpha).
+\end{equation}
+Ahol a $\Gamma$ a gamma függvény, és az $F^{(\pm)}$ a Fermi-Dirac ($+$) és Bose-Einstein ($-$) integrálok
+\footnote{
+    A Fermi-Dirac és Bose-Einstein integrálok a következőképpen definiáltak:
+    \begin{equation*}
+        F^{(+)}(j, \alpha) = \frac{1}{\Gamma(j)} \int_0^{\infty} \frac{x^{j-1}}{e^{x + \alpha} + 1} dx,
+    \end{equation*}
+    \begin{equation*}
+        F^{(-)}(j, \alpha) = \frac{1}{\Gamma(j)} \int_0^{\infty} \frac{x^{j-1}}{e^{x + \alpha} - 1} dx.
+    \end{equation*}
+    Ezek az integrálok gyakran előfordulnak kvantumstatisztikai számításokban, különösen a részecskeszám és energia számításoknál.
+}.
+
+A klasszikus közelítés alkalmazhatóságának feltétele ekkor úgy írható fel, hogy a bal oldali kifejezés sokkal kisebb legyen mint 1:
+\begin{equation}
+    \left( \frac{\lambda_T}{R} \right)^3 \ll 1 \quad \Rightarrow \quad 2 \pi \Gamma(\frac{3}{2}) \cdot F^{(\pm)}(\frac{3}{2}, \alpha) \ll 1.
+\end{equation}
+Mivel a gamma függvény $\Gamma(3/2) = \sqrt{\pi}/2$, ezért elhanyagolható és a feltétel:
+\begin{equation}
+    F^{(\pm)}(\frac{3}{2}, \alpha) \ll 1.
+\end{equation}
+Ez csak akkor teljesül, ha $\alpha \gg 1$, vagyis:
+\begin{equation}
+    \alpha = -\beta \mu \gg 1.
+\end{equation}
+Ezt viszont beírva az eloszlásfüggvénybe:
+\begin{equation}
+    \bar{n}_r = \frac{1}{e^{\beta (\varepsilon - \mu)} \pm 1} = \frac{1}{e^{\beta \varepsilon + \alpha} \pm 1} \approx e^{-\beta \varepsilon - \alpha} = e^{\beta \mu} e^{-\beta \varepsilon}.
+\end{equation}
+Ha $\alpha$ egy nagy pozitív szám, akkor a $\pm 1$ elhanyagolható az exponenciális függvényheez képest. Így visszakaptuk a Maxwell-Boltzmann eloszlást:
+\begin{equation}
+    \bar{n}_r = e^{-\alpha} e^{-\beta \varepsilon_r} \qquad e^{-\alpha} = \frac{N}{\zeta} \qquad \zeta = \sum_s e^{-\beta \varepsilon_s}.
+\end{equation}
+Ahol $\zeta$ az egy részecskére jutó állapotösszeg. Innen:
+\begin{equation}
+    \alpha = \ln \frac{\zeta}{N}, \qquad \mu = -k_B T \ln \frac{\zeta}{N}.
+\end{equation}
+
+\subsubsection{Gibbs-paradoxon}
+Egy másik érdekes tulajdonsága a kvantummechanika klasszikus határesetének az úgynevezett Gibbs-paradoxon feloldása. A Gibbs-paradoxont Josiah Willard Gibbs amerikai fizikus fedezte fel a 19. század végén,
+és még egy jelzés volt a fizikusok számára, hogy a klasszikus fizika akkori értelmezése nem helyes teljesen. Ahhoz, hogy megértsük a paradoxont, vizsgáljuk meg egy kicsit a klasszikus ideális gáz entrópiáját.
+
+A termodinamika az entrópiát egy tetszőleges additív konstansig képes meghatározni. A Boltzmann statisztikában ez az állandó nem határozható meg, mert tartalmazza az állapotok leszámolásánál használt
+fáziscella térfogatát, ami a klasszikus statisztikus fizikában határozatlan marad. Kvantumosan azonban a Planck-állandó megadja ezt a térfogatot, így a kvantumstatisztika képes meghatározni az entrópiakonstanst is.
+
+A nagykanonikus sokaság segítségével az entrópia a következő módon volt kifejezve:
+\begin{equation}
+    S = k_B (\ln \mathcal{Z} + \beta E - \alpha N).
+\end{equation}
+Ahol $\mathcal{Z} = \pm \sum_r \ln (1 \pm e^{-\alpha - \beta \varepsilon_R })$ a nagykanonikus állapotösszeg, ami klasszikus határesetben ($e^{-\alpha} \ll 1$) tart a 
+$N = \sum_r e^{-\alpha - \beta \varepsilon_r}$ limeszhez. Tehát az entrópia a klasszikus határesetben (és $\beta E = \frac{E}{k_B T}$):
+\begin{equation}
+    S = k_B (\alpha + 1)N + \frac{E}{T}.
+\end{equation}
+De az $E$-t is közelíthetjük a klasszikus határesetre, ugyanis $E = \sum_r \varepsilon_r \bar{n}_r = \frac{3}{2}N k_B T$, így:
+\begin{equation}
+    S = k_B N(\alpha + \frac{5}{2}).
+\end{equation}
+Mivel $\alpha = -\beta \mu = \ln \frac{\zeta}{N}$, ezért az entrópia:
+\begin{equation}
+    S = k_B N \left( \ln \frac{\zeta}{N} + \frac{5}{2} \right).
+\end{equation}
+A $\zeta$-t is meg tudjuk határozni egy részecskére jutó állapotösszegként:
+\begin{equation}
+    \zeta = \sum_r e^{-\beta \varepsilon_r} = \frac{2\pi V (2m)^{3/2}}{h^3} \int_0^{\infty} \varepsilon^{1/2} e^{-\beta \varepsilon} d\varepsilon = V \left( \frac{2 \pi m k_B T}{h^2} \right)^{3/2}.
+\end{equation}
+Ebből pedig az $\alpha$ kifejezhető:
+\begin{equation}
+    \alpha = \ln \left[ \frac{V}{N} \left( \frac{2 \pi m k_B T}{h^2} \right)^{3/2} \right] = \ln \frac{V}{N} + \frac{3}{2} \ln \left( \frac{2 \pi m k_B T}{h^2} \right).
+\end{equation}
+Ebből pedig az entrópia:
+\begin{equation}
+    \begin{aligned}
+        &S = k_B N \Bigg[ \ln \frac{V}{N} + \frac{3}{2} \ln T + s \Bigg]. \\
+        \\
+        &\text{Ahol, } s = \frac{5}{2} + \frac{3}{2} \ln \left( \frac{2 \pi m k_B}{h^2} \right)
+    \end{aligned}
+\end{equation}
+Ez az $s$ tag pedig pontosan az a konstans tag, amit a Boltzmann statisztika nem tud megkapni. Látható, hogy ebben a tagban szerepel a Planck-állandó, vagyis klasszikus levezetésből nem is jöhettünk volna rá.
+
+Itt fontos megjegyezni, hogy mivel a kvantum és a klasszikus statisztika határesetét használtuk a levezetésben, ezért ezt az eredményt nem lehet a $T = 0$ limeszben használni! Továbbá ezt az eredményt megvizsgálva
+egyből látszódik, hogy az entrópia egy extenzív mennyiség, vagyis ha két alrendszert összeteszünk, akkor az entrópiájuk összeadódik. Ez abból látható, hogy az entrópia a térfogat és a részecskeszám
+elsőrendű, homogén
+\footnote{
+    Egy $f(x,y)$ függvény elsőrendű homogén, ha a következő feltétel teljesül rá: $f(\lambda x, \lambda y) = \lambda f(x,y)$ minden $\lambda$ valós számra.
+} 
+függvénye.
+
+És ebből ered a Gibbs-paradoxon is: Ugyanis ez az extenzivitása az entrópiának egy klaszikusan is feltételezett eredmény, de klasszikus levezetésből erre ellentmondásokba ütközünk. Hogy ezt láthassuk,
+nézzük meg az entrópia értelmezését a Maxwell-Boltzmann statisztikán belül. A Boltzmann statisztikában a kanonikus állapotösszeg a következő volt:
+\begin{equation}
+    Z_{MB} = \sum_i e^{-\beta E_i}.
+\end{equation}
+Ahol az $E_i = n^{(i)}_1 + n^{(i)}_2 + \dots$ az $i$-edik mikroállapot energiája. Az $n^{(i)}_r$ pedig az $r$-edik egyrészecske állapotban lévő részecskék száma az $i$-edik mikroállapotban. Ezek mindegyike
+eleget tesz a $N = \sum_r n^{(i)}_r$ feltételnek. Ebből az állapotösszeg a következőképpen írható fel:
+\begin{equation}
+    Z_{MB} = \sum_{\{n_r\}}^{}{}^{'} \frac{N!}{n_1! n_2! \ldots} e^{-\beta (n_1 \varepsilon_1 + n_2 \varepsilon_2 + \ldots)}. \qquad \text{Ahol, } \{n_r\} = n_1, n_2, \ldots
+\end{equation}
+Itt a $\sum^{}{}^{'}$ az előbbi megkötés jelenlétét jelzi.
+
+Az exponenciális előtti tag jelzi, hogy most megkülönböztethetőeknek vesszük a részecskéket, tehát ha két különmböző energiájú részecskét felcserélünk, akkor azt egy új állapotnak tekintjük.
+Ha viszont egy cellában cserélünk fel két azonos energiájú részecskét, akkor azt nem tekintjük új állapotnak. Ezt a szummát a polinomiális tétel
+\footnote{
+    A polinomiális tétel egy algebrai azonosság, amely kimondja, hogy ha van egy $n$-edik fokú binomiális kifejezésünk, akkor annak kitevő szerinti kiterjesztése a következőképpen néz ki:
+    \begin{equation*}
+        (x_1 + x_2 + \ldots + x_k)^n = \sum_{n_1 + n_2 + \ldots + n_k = n} \frac{n!}{n_1! n_2! \ldots n_k!} x_1^{n_1} x_2^{n_2} \ldots x_k^{n_k}.
+    \end{equation*}
+    Ahol a szumma az összes olyan nemnegatív egész számú $n_1, n_2, \ldots, n_k$ kombinációra vonatkozik, amelyek összege $n$.
+}
+segítségével lehet megoldani:
+\begin{equation}
+    \begin{aligned}
+        Z_{MB} &= \sum_{\{n_r\}}^{}{}^{'} \frac{N!}{n_1! n_2! \ldots} (e^{-\beta \varepsilon_1})^{n_1} (e^{-\beta \varepsilon_2})^{n_2} \ldots \\
+        &= (e^{-\beta \varepsilon_1} + e^{-\beta \varepsilon_2} + \ldots)^N = \left( \sum_r e^{-\beta \varepsilon_r} \right)^N = \zeta^N.
+    \end{aligned}
+\end{equation}
+Ahol $\zeta$ a már korábban látott egyrészecske állapotösszeg. Ebből látszódik, hogy a statisztikus sokaságban az egyes elemeknek most az egyes részecskék tekinthetőek.
+Ennek a logarimusa pedig:
+\begin{equation}
+    \ln Z_{MB} = N \ln \zeta = N\alpha + N \ln N
+\end{equation}
+Mivel $\alpha = \ln \frac{\zeta}{N}$. Ebből pedig az entrópia:
+\begin{equation}
+    S_{MB} = k_B \ln Z_{MB} + \frac{E}{T}
+\end{equation}
+Mivel az ekvipartíció tétele alapján $E = \frac{3}{2} N k_B T$, ezért:
+\begin{equation}
+    S_{MB} = k_B N \left(\alpha + \frac{5}{2}\right) + k_B (N \ln N - N).
+\end{equation}
+Ha összehasonlítjuk a kvantummechanikai eredménnyel, akkor látható, hogy $k_B N \left(\alpha + \frac{5}{2}\right) = S$ pont a kvantummechanikai entrópia, a klasszikus határesetben.
+Tehát a Maxwell-Boltzmann statisztika entrópiája:
+\begin{equation}
+    S_{MB} = S + k_B (N \ln N - N) = S k_B ln N!
+\end{equation}
+Ahol az utolsó lépésben a Stirling-formulát használtuk fel: $\ln N! \approx N \ln N - N$ nagy $N$ esetén. Ez az extra tag pedig okozza a Gibbs-paradoxont, mert bár $S$ extenzív,
+de $\ln N!$ nem az. Tehát ez a levezetés alapvetően hibás, még akkor is, ha a képlet rögzített részecskeszám esetén a helyes termodinamikai következtetésre vezet. Ekkor $S$ és $S_{MB}$ csak egy
+konstans különbségben térnek el, minden deriváltjuk azonos lesz.
+
+A hiba oka az természetesen, hogy, hogy a $Z_{MB}$-et hibásan adtuk meg. Nézzük meg, hogy hogyan tudjuk helyesen megadni. A legegyszerűbben most a $S = \frac{E}{T} k_B \ln Z$ összefüggés
+és a $S = k_B N \left(\alpha + \frac{5}{2}\right)$ összefüggés alkalmazásával kaphatjuk meg:
+\begin{equation}
+    \ln Z = N (\alpha + 1)
+\end{equation}
+Ebből pedig:
+\begin{equation}
+    Z = e^{N(\alpha + 1)} = e^N e^{N \ln \frac{\zeta}{N}} = e^N \left(\frac{\zeta}{N}\right)^N = \frac{e^N \zeta^N}{N^N} = \frac{e^N}{N^N} Z_{MB} = \frac{Z_{MB}}{N!}.
+\end{equation}
+Tehát a helyes megoldás a Maxwell-Boltzmann állapotösszeg osztva $N!$-el. Gibbs ezt az ellentmondást fedezte fel, de ő még nem tudta megmagyarázni az okát ezért ő egy megmagyarázhatatlan
+empirikus szabályként vezette be a termodinamikába azt, hogy a helyes addíciós tulajdonságok biztosítására, az állapotösszeget mindig el kell osztani $N!$-el. A kvantummechanikai értelmezésből viszont
+világosan látszik, hogy miért van erre szükség, hiszen ez a $N!$ szorzó pont azért került be a képletbe, mert a részecskéket megkülönböztethetőnek gondoltuk. Ha eredetileg is megkülönböztethetetlennek 
+vettük volna őket, akkor a $Z_{MB} = \sum_{\{n_r\}}^{}{}^{'} \frac{N!}{n_1! n_2! \ldots} e^{-\beta (n_1 \varepsilon_1 + n_2 \varepsilon_2 + \ldots)}$ képletben a $\frac{N!}{n_1! n_2! \ldots}$ tag helyett
+egyszerűen csak $1$ szerepelt volna, és így már eleve a helyes eredményt kaptuk volna meg.
+
+De akkor miért működik a Maxwell-Boltzmann statisztika mégis jól sok esetben, ha a részecskék valójában megkülönböztethetetlenek? Ennek az az oka, hogy klasszikus körülmények között a részecskék
+olyan ritkák, hogy az egyes fáziscellákban legfejjebb csak egy részecske tartózkodik, ezért $n_i = 0,1$ általában (pontosabban csak ezek adnak jelentős hozzájárulást az állapotösszeghez). Ezért az
+$n_i! = 1$ feltevéssel nem vétünk nagy hibát ($0! = 1! = 1$). így a kérdéses faktor:
+\begin{equation}
+    N = \sum_i n_i \quad \Rightarrow \quad N! = \prod_i n_i! = 1.
+\end{equation}
+És 
+\begin{equation}
+    n_1! n_2! \ldots = 1.
+\end{equation}
+Tehát az állapotösszeg jó közelítéssel:
+\begin{equation}
+    Z_{MB} = \sum_{\{n_r\}}^{}{}^{'} \frac{N!}{n_1! n_2! \ldots} e^{-\beta (n_1 \varepsilon_1 + n_2 \varepsilon_2 + \ldots)} = \sum_{\{n_r\}}^{}{}^{'} e^{-\beta (n_1 \varepsilon_1 + n_2 \varepsilon_2 + \ldots)}
+\end{equation}
+
+De a tanulság nyilvánvaló, az entrópia csak akkor lesz extenzív, tehát a térfogat és a részecskeszám elsőrendű homogén függvénye, ha a részecskék megkülönböztethetetlenek.
+Ez pedig csak a kvantummechanikai statisztikában valósul meg helyesen. Ezért a Gibbs-paradoxon egy újabb előfutára volt a kvantummechanika megszületésének.
+
+Végezetül nézzük meg, hogy milyen paradox megoldást kapnánk, ha az entrópia nem lenne extenzív mennyiség! írjuk fel az entrópiát a következő formában:
+\begin{equation}
+    S_{MB} = k_B N \left( \ln V + \frac{3}{2} \ln T + s' \right)
+\end{equation}
+Ahol most:
+\begin{equation}
+    s' = \frac{3}{2} \ln \left(\frac{2 \pi m k_B}{h^2}\right) + \frac{3}{2}
+\end{equation}
+Az $s'$-t most azért így attuk meg mert ezek az értékek az érdemi elgondolásokat nem befolyásolják. Alkalmazzuk ezt a helytelen definíciót az alábbi rendszerre: Legyen egy $V$ térfogatú
+$N$ részecskét tartalmazó zárt rendszer, ami termodinamikai egyensúlyban van $T$ hőmérsékleten. Ezt a tartályt pedig egy becsúsztatható fal segítségével ketté lehet osztani az alábbi módon:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/15-tetel/Gibbs_paradoxon_1.png}
+    \caption{Egy zárt rendszer kettéosztása becsúsztatható fallal.}
+\end{figure}
+A fal becsúsztatása előtt a rendszer entrópiája:
+\begin{equation}
+    S_{MB} = N k_B \left(\ln V + \frac{3}{2} \ln T \right) + N k_B s'.
+\end{equation}
+A fal berakása nyilván reverzibilis folyamat, a fal kihúzásával az eredeti állapot visszaáll. Mégis, ha a helytelen formulával számoljuk, akkor, $N$ helyett $N_1 = N_2 = N/2$-t és $V$ helyett
+$V_1 = V_2 = V/2$-t írva be az entrópiába, a két részrendszer entrópiájának összege kisebb mint a fal bedugása előtti entrópia:
+\begin{equation}
+    S_{MB} - (S^{(1)}_{MB} + S^{(2)}_{MB}) = N k_B \ln 2 = k_B \ln 2^N > 0.
+\end{equation}
+Ha a falat ismét kihúzzuk, akkor az entrópia nőni fog, hogy az eredeti értékébe visszajusson. Ez természetesen teljesen ellentmond az eddigi ismereteinknek, hiszen a teljes entrópia egy zárt rendszerben
+nem csökkenhet, végig állandónak kellett volna maradnia. De gondoljuk meg, ha abból az állapotból indultunk volna ki, hogy a fal kettéválasztja a rendszert, és a két oldalon más-más részecskék vannak,
+akkor a fal kihúzása utáni entrópia növekedés teljesen érthető lett volna, hiszen a két részrendszer most már részecskéket cserélhet egymással, így a rendelkezésre álló mikroállapotok száma megnő, és
+a folyamat irreverzibilis lett volna (ha visszateszem a falat, a részecskék már nem fognak újra "szétválogatódni" az eredeti helyükre). Tehát ez az entrópia növekedés éppen a keveredési entrópiát adja meg
+(a két résztérfogatban $N$ darab részecskét pont $2^N$ félekléppen tudnánk elosztani, ennek felel meg a $k_B \ln 2^N$ entrópia növekedés). Tehát a paradox viselkedés onnan ered, hogy a példánkban a 
+tartály két oldalán lévő részecskéket megkülönböztethetőeknek feltételeztük, és a fal bedugásával gyakorlatilag "szétválogattuk" őket. 
+
+A keveredési entrópiához még egy nagyon érdekes észrevételt tehetünk. Vegyük megint azt az elrendezést, hogy a tartály el van választva, és a két oldalon eltérő, de azonos hőmérsékletű gázok vannak.
+A klasszikus fizikában semmi okunk nincs azt feltételezni, hogy a két gáz ne rendelkezhetne tetszőlegesen közeli tulajdonságokkkal (pl. képzeljük el, hogy a két oldalon azonos tipusú részecskék vannak, 
+de a belső állapotaik eltérőek. A klasszikus fizikában ezek az állapotok folytonosak, tehát az eltérést tetszőlegesen kicsivé vehetjük). 
+
+Most képzeljük el az alábbi gondolatkísérletet: Rögzitsük az egyik oldalon lévő gáz minőségét, és a másik oldalon lévő gáz minőségét kezdjük el közelíteni a rögzített gázéhoz.
+Mindaddig, amíg a két oldalon lévő gáz minősége eltérő, akármennyire kicsit is, a fal kihúzása után a keveredési entrópia növeli a teljes entrópiát. Ekkor az entrópia szingulárisan függ a változó gáz
+minőségétől - csak egyetlen egy pont van a kontinuumon belül, ahol az entrópia növekedése nulla, ha a falat kihúzzuk. Ez meglehetősen valószínűtlen. A kvantummechanikában viszont a részecskék vagy azonos állapotban vannak,
+vagy jól definiált, diszkrét különbség van közöttük. Emiatt a képzeletbeli, változó gáz minőségét is csak diszkrét lépésekben tudjuk változtatni és az entrópia növekedése is csak diszkrét lépésekben változik.
+Ekkor már jóval valószínűbb, hogy egy olyan állapotban találjuk a rendszert, ahol a fal kihúzásakor nincs entrópia növekedés. Tehát ebben a tipikus, klasszikus folyamatban is megjelenik a kvantumos viselkedés nyoma.
 
 
 
