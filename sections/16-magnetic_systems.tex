@@ -7,6 +7,926 @@
     Ferro-, antiferro- és ferrimágneses anyagok, ferromágneses domének, hiszterézis. Curie–Weiss-törvény. Szupravezetés.
 }
 
+\subsection{Atomi paramágnesség, atomi diamágnesség}
+A mágneses anyagok viselkedése eredendően Kvantum fizikai jelenségekből ered, ugyanis klasszikus mechanikai modell alapján termodinamikus ekvilibriumban lévő anyagoknál nem kéne mágneses viselkedést megfigyelni,
+mivel a mozgó töltések által keltett mágneses mező átlagosan zérus lesz. Ezt a \textbf{Bohr-van Leeuwen tétel} foglalja össze, ami kimondja, hogy klasszikus fizikai modellek alapján nem lehet megmagyarázni a mágneses jelenségeket.
+Ahogy azt az elektrodinamikában megfigyeltük már, a mmágneses teret mozgó töltések hoznak létre, illetve mágneses tér hatására a mozgó töltésekre Lorentz erő hat.
+Ebből következetethetjük, hogy az atomi szintű mágneses jelenségek valamilyen módon az elektronok spinjével és impulzusmomentumával lesznek majd kapcsolatosak.
+
+Írjuk fel egy elektronra a Hamilton-operátort mágneses térben. Ezt úgy tudjuk meghatározni, hogy meghatározzuk, hogy a kanonikus impulzust hogyan módosítja a mágneses tér.
+Az elektron Lagrange-függvénye a következőképpen alakul mágneses térben:
+\begin{equation}
+    \mathcal{L}_i = \frac{1}{2} m_e v_i^2 + e \cdot U(r_i) + e \mathbf{A} \cdot v_i
+\end{equation}
+ahol $\hat{\mathbf{A}}$ a mágneses térhez tartozó vektorpotenciál, ami módosítja a részecske mozgását. Ennek megfelelően a Lagrange-egyenlet a következőképpen alakul:
+\begin{equation}
+    \frac{d}{dt} \left( \frac{\partial \mathcal{L}}{\partial v_j} \right) - \frac{\partial \mathcal{L}}{\partial r_j} = 0
+\end{equation}
+Elvégezve a parciális deriválásokat:
+\begin{equation}
+   \frac{d}{dt} \left( m_e v_j + e A_j \right) - e v_j \frac{\partial A_i}{\partial r_j} - e \frac{\partial U}{\partial r_j} = 0 
+\end{equation}
+Mivel $\mathbf{A} = \mathbf{A}(\mathbf{r}(t),t)$, ezért a teljes időderivált a következőképpen alakul:
+\begin{equation}
+    m a_j + e \left(\dot{A}_j + v_i \frac{\partial A_j}{\partial r_i}\right) - e v_i \frac{\partial A_i}{\partial r_j} - e \frac{\partial U}{\partial r_j} = 0
+\end{equation}
+Átrendezve:
+\begin{equation}
+    m a_j + e \underbrace{\left(\dot{A}_j + v_i \frac{\partial A_j}{\partial r_i}\right)}_{-\mathbf{E}_j} + e \underbrace{v_i \left(\frac{\partial A_j}{\partial r_i} - \frac{\partial A_i}{\partial r_j}\right)}_{-q (\mathbf{v} \times \mathbf{B})_j} = 0
+\end{equation}
+A második tag a $\mathbf{A}$ deriváltjának (ami egy 3x3 mátrix) az antiszimmetrikus része, ami pont a mágneses tér komponenseit adja meg. Ez a szorzat pedig a Lorentz-erőt adja meg:
+\begin{equation}
+    F_{\text{Lorentz}} = e \left(\mathbf{E} + \mathbf{v} \times \mathbf{B}\right)
+\end{equation}
+A kanonikus impulzust pedig úgy kapjuk meg, hogy a Lagrange-függvényt parciálisan deriváljuk a sebességre:
+\begin{equation}
+    \mathbf{p}_{\text{kanonikus}} = \frac{\partial \mathcal{L}}{\partial \mathbf{v}} = m_e \mathbf{v} + e \mathbf{A} \quad \Rightarrow \quad m_e \mathbf{v} = \mathbf{p}_{\text{kanonikus}} - e \mathbf{A}
+\end{equation}
+A Hamilton-operátort pedig a következőképpen kapjuk meg:
+\begin{equation}
+    \hat{H} = \mathbf{p} \cdot \mathbf{v} - \mathcal{L} = \frac{1}{2m_e} \left( \hat{\mathbf{p}} - e \hat{\mathbf{A}} \right)^2 - e U(\mathbf{r})
+\end{equation}
+Tehát kicsit átformázva:
+\begin{equation}
+    \hat{H} = \frac{1}{2m_e} \left( \hat{\mathbf{p}} + e \hat{\mathbf{A}} \right)^2 \left(+ u (\mathbf{r})\right) 
+\end{equation}
+Itt azért pozitív előjellel írjuk, mert az elektron töltése mindig negatív ezért az előjelet be lehet vinni az $e$-be.
+Ezt a vektorpotenciált a következőképpen választhatjuk meg:
+\begin{equation}
+    \mathbf{B} = \nabla \times \mathbf{A} \qquad \nabla \cdot \mathbf{A} = 0 \quad \text{Coulomb-mértékben}
+\end{equation}
+vagy:
+\begin{equation}
+    \mathbf{B} = rot \mathbf{A} \qquad div \mathbf{A} = 0 \quad \text{Coulomb-mértékben}
+\end{equation}
+Ekkor $\mathbf{A}$-t felírhatjuk a következő alakban:
+\begin{equation}
+    \mathbf{A} = \frac{1}{2} \mathbf{B} \times \mathbf{r}
+\end{equation}
+Ahol $\mathbf{r}$ az elektron helyvektora. Ez csak $\textit{homogén mágneses tér}$ esetén igaz.
+
+Ezt visszahelyettesítve a Hamilton-operátorba:
+\begin{equation}
+    \hat{H} = \frac{1}{2m_e} \left( \hat{\mathbf{p}} + \frac{e}{2} \mathbf{B} \times \mathbf{r} \right)^2 = \frac{\hat{\mathbf{p}}^2}{2m_e} + \underbrace{e \hat{\mathbf{p}} \left(\mathbf{B} \times \mathbf{r}\right)}_{e(\mathbf{r} \times \hat{\mathbf{p}})\mathbf{B} = e \mathbf{L} \mathbb{B}} + \frac{e^2}{4} \left(\mathbf{B} \times \mathbf{r}\right)^2
+\end{equation}
+Tehát a Hamilton operátorban megjelenik az elektron \textbf{impulzusmomentuma} is, ami a mágneses térrel kölcsönhatásba lép. Ebben a válaszutásban $\mathbf{A}$ megfelel a Coulomb-mértéknek is, hiszen $\nabla \cdot (\mathbf{B} \times \mathbf{r}) = 0$.
+
+A Hamilton operátor tehát a következőképpen alakul:
+\begin{equation}
+    \hat{H} = \frac{1}{2m_e} \left(\mathbf{p} + \frac{e}{2} \mathbf{B} \times \mathbf{r} \right)^2 = \frac{1}{2m_e}\mathbf{p}^2 + \underbrace{\frac{e}{2m_e} \mathbf{p} \left(\mathbf{B} \times \mathbf{r}\right)}_{e(\mathbf{r} \times \hat{\mathbf{p}})\mathbf{B} = e \mathbf{L} \mathbb{B}} +\underbrace{\frac{e^2}{8m_e} \left(\mathbf{B} \times \mathbf{r}\right)^2}_{\frac{e^2}{8m_e} B^2 r^2_\perp}
+\end{equation}
+Ahol a $B^2 r^2_\perp$ tagot úgy kapjuk, hogy a $\left(\mathbf{B} \times \mathbf{r}\right)^2$ kifejezésben a keresztszorzat eredményeként kapott vektor hossza (aminek a négyzetét adja meg egy vektor négyzetre emelése)
+pont az $\mathbf{r}$ merőleges, $\mathbf{B}$-be mutató komponense ($|\mathbf{r}| \cdot \sin \theta = r_\perp$), amit megszorzunk a $\mathbf{B}$ nagyságával. Az impulzusmomentum operátort át tudjuk írni
+mértékegysgéf független formában is:
+\begin{equation}
+    \hat{\mathbf{L}} = \hbar \mathbf{l}
+\end{equation}
+A Hamilton-operátor tehát a következőképpen alakul:
+\begin{equation}
+    \hat{H} = \frac{\hat{\mathbf{p}}^2}{2m_e} + \frac{e \hbar}{2 m_e}\left(\mathbf{l} + \underbrace{g \mathbf{S}}_{\text{e spin tagja}}\right)\mathbf{B} + \frac{e^2}{8m_e} B^2 r^2_\perp
+\end{equation}
+Ahol az univerzális állandókból kialakított tag, pont a Bohr-magneton:
+\begin{equation}
+    \mu_B = \frac{e \hbar}{2 m_e}
+\end{equation}
+Így a Hamilton-operátor végső alakja:
+\begin{equation}
+   \boxed{\hat{H} = \frac{\hat{\mathbf{p}}^2}{2m_e} + \mu_B \left(\mathbf{l} + g \mathbf{S}\right) \mathbf{B} + \frac{e^2}{8m_e} B^2 r^2_\perp}
+\end{equation}
+A $g \mathbf{S}$-ben a $g$ az elektron Landé-faktorára utal, ami közelítőleg $2$ értékű, az $\mathbf{S}$ pedig az elektron spinkvantumszámát jelöli
+\footnote{
+    Itt jegyezzük meg, hogy itt nem a teljes impulzusmomentum jelenik meg, mert az $\hat{j} = \hat{l} + \hat{S}$, tehát nincs 2-es faktor. 
+}.
+
+Láttuk tehát, hogy az elektron mágneses tulajdonságai az impulzusmomentumából és a spinjéből adódnak. De hogyan tudom ezeket a mágneses jelenségeket valahogy jellemezni?
+Erre lett bevezetve az úgynevezett \textbf{Mágnesezettség} fogalma, ami egy test átlagos mágneses momentumát adja meg térfogategységre vetítve. Ezt úgy tudjuk meghatározni,
+hogy vesszük az atomok lehetséges energia szintjeit $E_i(\mathbf{B})$, amik függenek a mágneses tértől és ennek az eloszlását (amit a Boltzmann-eloszlás ad meg termodinamikus egyensúlyban)
+megszorozzuk ezzel (az egyelőre még ismeretlen) mágneses momentummal, majd normalizáljuk, hogy összeadva 1-et adjon ki:
+\begin{equation}
+    \langle m \rangle = \frac{\sum_i m_i e^{-\frac{E_i(\mathbf{B})}{k_B T}}}{\sum_i e^{-\frac{E_i(\mathbf{B})}{k_B T}}}
+\end{equation}
+Itt bevezethetjük az úgynevezett \textbf{Szabad Energiát}:
+\begin{equation}
+    F = - k_B T \ln \left( Z \right) \qquad \text{ahol} \quad Z = \sum_i e^{-\frac{E_i(\mathbf{B})}{k_B T}}
+\end{equation}
+És deriváljuk le a mágneses térre:
+\begin{equation}
+    \frac{\partial F}{\partial B} = - k_B T \frac{1}{Z} \frac{\partial Z}{\partial B} = - k_B T \frac{1}{Z} \sum_i \left( -\frac{1}{k_B T} e^{-\frac{E_i(\mathbf{B})}{k_B T}} \frac{\partial E_i(\mathbf{B})}{\partial B} \right) = \frac{1}{Z} \sum_i \left( e^{-\frac{E_i(\mathbf{B})}{k_B T}} \frac{\partial E_i(\mathbf{B})}{\partial B} \right)
+\end{equation}
+$Z$ természetesen az állapotösszeg. Itt már csak azt kell tudni, hogy mennyi $\frac{\partial E_i(\mathbf{B})}{\partial B}$, hogy megkapjuk a mágneses momentumot. Ez egy mágneses dipólusra a következőképpen alakul:
+\begin{equation}
+    E_i(\mathbf{B}) = - m_i B \quad \Rightarrow \quad \frac{\partial E_i(\mathbf{B})}{\partial B} = - m_i
+\end{equation}
+Így a mágneses momentumra a következő összefüggést kapjuk:
+\begin{equation}
+    \langle m \rangle = - \frac{\partial F}{\partial B} = V M
+\end{equation}
+Ahol $V$ a test térfogata, $M$ pedig a mágnesezettség. Ebből következik, hogy a mágnesezettség a következőképpen alakul:
+\begin{equation}
+    M = - \frac{1}{V} \frac{\partial F}{\partial B}
+\end{equation}
+Ez a mágnesezettség termodinamikai definíciója.
+
+Most már csak azt kell megvizsgálnunk, hogy a mágnesezettségnek és az elektron Hamilton-operátorának mégis mi köze van egymáshoz. Először, az egyszerűség kedvéért nézzük meg, hogy mi van akkor, ha
+a $\mu_B \left(\mathbf{l} + g \mathbf{S}\right) \mathbf{B}$ tagot elhanyagolhatjuk a Hamilton-operátorban. Ekkor a szabad energia a következőképpen alakul:
+\begin{equation}
+    F = - k_B T \ln \left(\sum_i e^{-\frac{e^2}{8m}(B^2 r^2_{\perp i})\frac{1}{k_B T}}\right)
+\end{equation}
+Ga csak az alapállapotot nézzük (magasabb állapotok járuléka egyre kisebb lesz, hiszen exponenciálisan csökkennek), akkor a szabad energia a következőképpen alakul:
+\begin{equation}
+    F = - k_B T \ln \left( e^{-\frac{e^2}{8m}(B^2 \langle r^2_\perp \rangle)\frac{1}{k_B T}} \right) = \frac{e^2}{8m} B^2 \langle r^2_\perp \rangle
+\end{equation}
+Ahol $r^2_\perp$-nek csak az átlagos értékére vagyunk kíváncsiak. Ha nem egy részecskét nézünk, hamem $N$ darab, nem kölcsönható részecskét, akkor a summa $N$-szeresére nő, így a szabad energia a következőképpen alakul:
+\begin{equation}
+    F = N \cdot \frac{e^2}{8m} B^2 \langle r^2_\perp \rangle
+\end{equation}
+A mágnesezettség pedig a következőképpen alakul:
+\begin{equation}
+    M = - \frac{1}{V} \frac{\partial F}{\partial B} = - \frac{N}{V} \cdot \frac{e^2}{4m} B \langle r^2_\perp \rangle
+\end{equation}
+Vagy átírva:
+\begin{equation}
+    \boxed{M = \chi B \qquad \text{ahol} \quad \chi_d = - \frac{N}{V} \cdot \frac{e^2}{4m} \langle r^2_\perp \rangle} \approx - \frac{N}{V} \frac{e^2}{4m} \frac{2}{3} \langle r^2 \rangle
+\end{equation}
+Ez a \textbf{Diamágnesség}, ahol a $\chi_d$ a diamágneses szuszceptibilitás, ami mindig negatív előjelű, hiszen az elektronok pályamozgása a mágneses tér hatására olyan irányba változik,
+ami csökkenti a külső mágneses teret. A $\chi$ közelítő értékét onnan kapjuk, hogy a mágneses rendszerek általában gömbszimmetrikusak, így az átlagos $r^2_\perp$ érték a teljes $r^2$-nek a $\frac{2}{3}$-a lesz.
+Érdekesség, hogy a diamágnesességben nem szerepel a $\hbar$ vagyis ezt már klasszikus fizikai modellek alapján is meg tudták magyarázni. 
+
+De mi van a másik $\mu_B \left(\mathbf{l} + g \mathbf{S}\right) \mathbf{B}$ taggal? Ebben a tagban szerepel a Bohr-magnetonon keresztül a $\hbar$ is, így ez már egyértelműen kvantummechanikai jelenség.
+Viszont meglepő módon klasszikus fizikai értelmezésben is lehet értelmezni. Tegyük fel, hogy van egy elektronunk aminek van egy $\boldsymbol{\mu}$ mágneses momentuma valahonnan. Erről nem tudunk semmit, hogy
+honnan van, nem ismerjük a spint vagy a pályamomentumot. Ekkor csak annyit tudunk felírni, hogy ez a mágneses momentum a mágneses térrel (amit most válasszunk z-irányúnak) egy $\theta$ szöget zár be.
+Ekkor az energia a következőképpen alakul:
+\begin{equation}
+    E(\theta) = - \boldsymbol{\mu} \cdot \mathbf{B} = - \mu B \cos \theta
+\end{equation}
+Ekkor az állapotösszeg az energiára nem diszkrét lesz, hanem egy folytonos integrál, hiszen a $\theta$ szög folytonosan változhat $0$ és $\pi$ között. A független válzotó pedig $\Omega$ térszög lesz, hiszen a mágneses momentum iránya
+bármilyen lehet egy gömbfelületen. Így az állapotösszeg a következőképpen alakul:
+\begin{equation}
+    Z = \int e^{-\frac{E(\theta)}{k_B T}} d\Omega = \int e^{\frac{\mu B \cos \theta}{k_B T}} d\Omega
+\end{equation}
+Itt a térszöget átírhatjuk $d\Omega = \sin \theta d\theta d\phi$-re, ahol a $\phi$ szög $0$ és $2\pi$ között változik, a $\theta$ pedig $0$ és $\pi$ között. Viszont $\phi$-ra nincs függés, így az a tag csak egy $2\pi$-s járulékot ad:
+\begin{equation}
+    Z = 2\pi \int_0^\pi e^{\frac{\mu B \cos \theta}{k_B T}} \sin \theta d\theta
+\end{equation}
+Itt végezzünk el egy változó cserét:
+\begin{equation}
+    x = \cos \theta \quad \Rightarrow \quad dx = - \sin \theta d\theta
+\end{equation}
+Így az állapotösszeg a következőképpen alakul:
+\begin{equation}
+    Z = 2\pi \int_{-1}^{1} e^{\frac{\mu B x}{k_B T}} (-dx) = 2\pi \int_{1}^{-1} e^{\frac{\mu B x}{k_B T}} dx = 2\pi \int_{-1}^{1} e^{\frac{\mu B x}{k_B T}} dx
+\end{equation}
+Ezt az integrált ki tudjuk számolni:
+\begin{equation}
+    Z = 2\pi \left[ \frac{k_B T}{\mu B} e^{\frac{\mu B x}{k_B T}} \right]_{-1}^{1} = 2\pi \cdot \frac{k_B T}{\mu B} \underbrace{\left( e^{\frac{\mu B}{k_B T}} - e^{-\frac{\mu B}{k_B T}} \right)}_{= 2\sinh \left( \frac{\mu B}{k_B T} \right)} = 4\pi \cdot \frac{k_B T}{\mu B} \sinh \left( \frac{\mu B}{k_B T} \right)
+\end{equation}
+Ezt aztán be lehet helyettesíteni a szabad energia kifejezésébe:
+\begin{equation}
+    F = - k_B T \ln \left( 4\pi \cdot \frac{k_B T}{\mu B} \sinh \left( \frac{\mu B}{k_B T} \right) \right)
+\end{equation}
+Ebből a mágnesezettség a következőképpen alakul:
+\begin{equation}
+    M = - \frac{N}{V} \frac{\partial F}{\partial B} = \frac{1}{V} k_B T \cdot \frac{1}{Z} \frac{\partial Z}{\partial B}
+\end{equation}
+A deriválást elvégezve:
+\begin{equation}
+    M = \frac{N}{V} k_B T \cdot \frac{1}{Z} \cdot 4\pi \cdot \frac{k_B T}{\mu} \left( \frac{\mu}{k_B T} \cosh \left( \frac{\mu B}{k_B T} \right) - \frac{k_B T}{\mu B^2} \sinh \left( \frac{\mu B}{k_B T} \right) \right)
+\end{equation}
+Ezt egyszerűsítve:
+\begin{equation}
+    M = \frac{N}{V} \left( \coth \left(\frac{\mu B}{k_B T} \right) - \frac{k_B T}{\mu B} \right)
+\end{equation}
+Ez a \textbf{Langevin-függvény}. Ha viszont kellően kicsi a mágneses tér, akkor a $\sinh x \approx x + \frac{x^3}{6}$ közelítést használva a mágnesezettség::
+\begin{equation}
+    \begin{aligned}
+        M &= \frac{N}{V} \mu \frac{d}{dx} \ln \left[\frac{1}{x} \sinh(x)\right] \approx \frac{N}{V} \mu \frac{d}{dx} \ln \left[\frac{1}{x} \left(x + \frac{x^3}{6}\right)\right] = \\
+        &= \frac{N}{V} \mu \frac{d}{dx} \ln \left[1 + \frac{x^2}{6}\right] = \frac{N}{V} \mu \cdot \frac{2x}{6} = \frac{N}{V} \cdot \frac{\mu^2}{3 k_B T} B \\
+        &\text{Ahol, } x = \frac{\mu B}{k_B T}
+    \end{aligned}
+\end{equation}
+Tehát kis mágneses tér esetén a mágnesezettség a következőképpen alakul:
+\begin{equation}
+    \boxed{M = \chi_p B \qquad \text{ahol} \quad \chi_p = \frac{N}{V} \cdot \frac{\mu^2}{3 k_B T}}
+\end{equation}
+Ez a klasszikus \textbf{Paramágnesség}
+\footnote{
+    Általában a szabad energiát nem $\mathbf{B}$ szerint deriválják, hanem a mágneses térerősség $\mathbf{H}$ szerint, ami a következőképpen kapcsolódik a mágneses indukcióhoz: $\mathbf{B} = \mu_0 (\mathbf{H} + \mathbf{M})$. Ekkor
+    a különbség csak annyi lesz, hogy a szuszceptibilitásokat $\mu_0$-val kell megszorozni:
+    \begin{equation*}
+        M = \chi B = \chi \mu_0 (H + M) \quad \Rightarrow \quad M = \frac{\chi \mu_0}{1 - \chi \mu_0} H
+    \end{equation*}
+    Így a szuszceptibilitás ebben az esetben:
+    \begin{equation*}
+        \chi_H = \frac{\chi \mu_0}{1 - \chi \mu_0}
+    \end{equation*}
+}, ahol a $\chi_p$ a klasszikus paramágneses szuszceptibilitás, ami mindig pozitív előjelű, hiszen a mágneses momentumok a külső mágneses tér irányába rendeződnek.
+Érdekesség, hogy a paramágneses szuszceptibilitás fordítottan arányos a hőmérséklettel, tehát minél magasabb a hőmérséklet, annál kisebb a paramágneses hatás. Ezt nevezik \textbf{Curie-törvénynek} 
+(amit Pierre Curie-ről neveztek el, nem a hasonlóan híres feleségéről).
+
+A két fajta szuszcebilitást összehasonlítva látható, hogy a diamágnesség általában sokkal gyengébb, mint a paramágnesség ezért annak a hatását gyakran csak alacsony hőmérsékleten lehet megfigyelni, amikor a paramágnesség már elhanyagolható.
+
+\subsubsection{Kvantumos Paramágnesesség}
+Kvantumos rendszerekben a teljes impulzusmomentumot kell figyelembe venni, ami az impulzusmomentum és a spin összege:
+\begin{equation}
+    \hat{\mathbf{J}} = \hat{\mathbf{L}} + \hat{\mathbf{S}} \qquad \Rightarrow \quad \hat{J}^2 = \cancel{\hbar^2} j(j+1)
+\end{equation}
+A $\hat{J}^2$ értékéből most azért húzzuk ki a $\hbar^2$-t, mert a mágneses momentumot mértékegység független formában fogjuk felírni és a $\hbar$-t majd a Bohr-magnetonban vesszük figyelembe.
+A $\hat{J}$ komponensei pedig a következőképpen alakulnak:
+\begin{equation}
+    \hat{J}_z = \hbar m_j \quad \text{ahol} \quad m_j = -j, -j+1, \ldots, j-1, j
+\end{equation}
+Ez igaz az $\hat{L}$ és az $\hat{S}$ komponenseire is. Tehát $J$-nek $2j+1$ féle lehetséges $m_j$ értéke van. Ekkor a $\mathbf{L} + g \mathbf{S}$ kifejezést át tudjuk írni a következőképpen:
+\begin{equation}
+    \mathbf{L} + g \mathbf{S} = g_J \mathbf{J}
+\end{equation}
+Ahol $g_J$ az impulzusmomentum Landé-faktora (giromágneses faktor), amit a következőképpen tudunk kiszámolni:
+\begin{equation}
+    g_J = \frac{3}{2} + \frac{(s(s+1) - l(l+1))}{2j(j+1)}
+\end{equation}
+Ekkor a mágneses momentum kvantumos rendszerekben a következőképpen alakul:
+\begin{equation}
+    \mu_{m_j} = - \mu_B g_J m_j
+\end{equation}
+Innen az energia szintek a következőképpen alakulnak mágneses térben:
+\begin{equation}
+    E_{m_j}(\mathbf{B}) = - \mu_{m_j} B = \mu_B g_J m_j B
+\end{equation}
+Ekkor az állapotösszeg a következőképpen alakul:
+\begin{equation}
+    Z = \sum_{m_J = -J}^{J} e^{-\frac{E_{m_J}(\mathbf{B})}{k_B T}} = \sum_{m_J = -J}^{J} e^{-\frac{\mu_B g_J m_J B}{k_B T}}
+\end{equation}
+Ez egy véges mértani sorozat
+\footnote{
+    Egy véges mértani sorozat összege a következőképpen alakul:
+    \begin{equation*}
+        S_n = a \frac{1 - r^n}{1 - r} = a \frac{r^n - 1}{r - 1}
+    \end{equation*}
+    Ahol $a$ az első tag, $r$ a hányados, $n$ pedig a tagok száma.
+}, amit ki tudunk számolni:
+\begin{equation}
+    Z = e^{\frac{\mu_B g_J B}{k_B T}J} \cdot \frac{e^{-\frac{\mu_B g_J (2J+1) B}{k_B T}} - 1}{e^{-\frac{\mu_B g_J B}{k_B T}} - 1}
+\end{equation}
+Itt azt a trükköt tudjuk kihasználni, hogy a számlálóban lévő exponenciális tagot szét tudjuk szedni a kitevő két felére:
+\begin{equation}
+    \begin{aligned}
+        e^{-\frac{\mu_B g_J (2J+1) B}{k_B T}} - 1 &= e^{-\frac{\mu_B g_J (J+1/2) B}{k_B T}} \cdot e^{-\frac{\mu_B g_J (J+1/2) B}{k_B T}} - 1 = \\
+        &= e^{-\frac{\mu_B g_J (J+1/2) B}{k_B T}} \left( e^{-\frac{\mu_B g_J (J+1/2) B}{k_B T}} - e^{\frac{\mu_B g_J (J+1/2) B}{k_B T}} \right) = \\
+        &= - 2 e^{-\frac{\mu_B g_J (J+1/2) B}{k_B T}} \sinh \left( \frac{\mu_B g_J (J+1/2) B}{k_B T} \right)
+    \end{aligned}
+\end{equation}
+Hasonlóan a nevezőben is:
+\begin{equation}
+    \begin{aligned}
+        e^{-\frac{\mu_B g_J B}{k_B T}} - 1 &= e^{-\frac{\mu_B g_J B}{2 k_B T}} \cdot e^{-\frac{\mu_B g_J B}{2 k_B T}} - 1 = \\
+        &= e^{-\frac{\mu_B g_J B}{2 k_B T}} \left( e^{-\frac{\mu_B g_J B}{2 k_B T}} - e^{\frac{\mu_B g_J B}{2 k_B T}} \right) = \\
+        &= - 2 e^{-\frac{\mu_B g_J B}{2 k_B T}} \sinh \left( \frac{\mu_B g_J B}{2 k_B T} \right)
+    \end{aligned}
+\end{equation}
+A kettőt összetéve a következőképpen alakul az állapotösszeg:
+\begin{equation}
+    Z = \underbrace{e^{\frac{\mu_B g_J B}{k_B T}J} \cdot \frac{- 2 e^{-\frac{\mu_B g_J (J+1/2) B}{k_B T}}}{- 2 e^{-\frac{\mu_B g_J B}{2 k_B T}}}}_{= 1} \cdot \frac{\sinh \left( \frac{\mu_B g_J (J+1/2) B}{k_B T} \right)}{\sinh \left( \frac{\mu_B g_J B}{2 k_B T} \right)}
+\end{equation}
+Tehát a végső állapotösszeg:
+\begin{equation}
+    Z = \frac{\sinh \left( \frac{\mu_B g_J (J+1/2) B}{k_B T} \right)}{\sinh \left( \frac{\mu_B g_J B}{2 k_B T} \right)}
+\end{equation}
+Ezt behelyettesítve a szabad energia értékébe és deriválva a mágneses térre a következő mágnesezettséget kapjuk:
+\begin{equation}
+    M = - \frac{1}{B} \frac{dF}{dB} = \frac{N}{V} g_J \mu_B J \cdot B_J \left( \frac{g_J \mu_B J B}{k_B T} \right)
+\end{equation}
+Ahol bevezettük a \textbf{Brillouin-függvényt}:
+\begin{equation}
+    B_J(x) = \frac{2J+1}{2J} \coth \left( \frac{2J+1}{2J} x \right) - \frac{1}{2J} \coth \left( \frac{1}{2J} x \right) \quad \text{és} \quad x = \frac{g_J \mu_B J B}{k_B T}
+\end{equation}
+Az \textit{elektron} esetében például $J = \frac{1}{2}$ és $g_J \approx 2$, így a Brillouin-függvény a következőképpen alakul:
+\begin{equation}
+    B_{1/2}(x) = 2 \coth(2x) - \coth(x) = \tanh(x)
+\end{equation}
+
+A Brillouin-függvény a $B$ mágneses térben lineáris, tehát itt is bevezethetünk egy paramágneses szuszceptibilitást:
+\begin{equation}
+    \chi_{p} = \frac{N}{V} \cdot \frac{(g_J \mu_B)^2 J(J+1)}{3 k_B T}
+\end{equation}
+Ez a \textbf{Kvantumos Paramágnesség}. Látható, hogy kvantumos megfontolásokkal is igaz a Curie-törvény. Továbbá azt is láthatjuk, hogy ha $J \to \infty$ akkor a Brillouin-függvény a Langevin-függvényhez tart, vagyis érvényes a korrespondencia elve.
+
+\subsubsection{Curie-Weiss törvény, hiszterézis és ferromágnesség}
+De ezzel a levezetéssel van egy kis probléma. Eddig azt feltételeztük, hogy az egyes részecskék nem hatnak kölcsön egymással, ezért az energiát az egyes részecskék energiáinak összegeként vettük. De tudjuk, hogy a valóságban a mágneses dipólusok nagyon is
+kölcsönhatnak egymással. Ez a kölcsönhatás pedig azt eredményezi, hogy külső mágneses tér esetén ezek a dipólusok beállnak a külső tér irányába, de a külső tér megszünése után is benn fognak ragadni ebben az elrendezésben.
+Ezt a jelenséget \textbf{Ferromágnességnek} nevezzük, ami egy nagyon összetett jelenség, amit csak közelítőleg tudunk leírni. Ezt a jelenséges a \textit{hiszterézis-görbén} tudjuk ábrázolni, ami megmutatja, hogy a mágnesezettség hogyan változik a külső mágneses térrel.
+Helyezzünk egy mágnesezhető anyagot egy tekercsbe, amin keresztül áram folyik, így a tekercsben egy mágneses tér jön létre. Kezdetben a mágneses tér nulla, így a mágnesezettség is nulla. Ha elkezdjük növelni az áramot, akkor a mágneses tér is növekszik és vele együtt a mágnesezettség is. Egy ideig csak a dipólusok csak egy része fog a tér irányába állni, ezeket \textbf{mágneses domain-eknek} nevezzük.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/16-tetel/magnetic_domains.jpg}
+    \caption{Mágneses domain-ek egy ferromágneses anyagban.}
+\end{figure}
+Amikor elérünk egy bizonyos értéket, akkor a mágnesezettség már nem nő tovább, hiszen az anyagban lévő összes dipólus beállt a mágneses tér irányába. Ekkor elérjük a \textbf{szaturációs mágnesezettséget}. Ha ekkor elkezdjük csökkenteni a mágneses teret, akkor a mágnesezettség nem fog nullára csökkeni, hiszen a dipólusok egy része még mindig a mágneses tér irányába mutat. Ekkor
+elérünk egy olyan pontot, amikor a külső mágneses tér nulla, de a mágnesezettség még mindig pozitív értékű. Ezt az értéket \textbf{retenciós mágnesezettségnek} nevezzük. Ha tovább csökkentjük a mágneses teret, akkor elérünk egy olyan pontot, ahol a mágnesezettség nulla lesz. Ezt az értéket \textbf{koercitív erőnek} nevezzük. Ha tovább csökkentjük a mágneses teret, akkor a mágnesezettség negatív értékeket fog felvenni, hiszen a dipólusok
+ellenkező irányba állnak be. Ha elérjük a negatív szaturációs mágnesezettséget, majd elkezdjük növelni a mágneses teret, akkor a mágnesezettség ismét nem fog nullára csökkenni, hanem egy hiszterézis-görbét fog leírni. Ez a hiszterézis-görbe jellemzi a ferromágneses anyagokat. Érdekesség, hogy ha egyszer
+rákerülünk egy hiszterézis-görbére, akkor onnan már nem tudunk eltérni, tehát a hiszterézis-görbe egyfajta stabil állapotot jelent. Viszont léteznek úgynevezett \textit{lágy mágneses anyagok}, amikben a koercitív erő nagyon kicsi, ezért a hiszterézis-görbe majdnem egy egyenes vonal lesz.
+Az ilyen lágy mágneses anyagok hasznosak például a transzformátorokban, ahol az a cél, hogy minél kisebb energiaveszteséggel tudjuk változtatni a feszültséget, vagy a mágneses adattárolókban, ahol az a cél, hogy minél kisebb energiával tudjuk írni és törölni az adatokat.
+
+Lágy mágneseket úgy lehet létrehozni, hogy valami szennyeződéssel "blokkoljuk" a mágneses dipólusok elfordulását, így azok könnyebben vissza tudnak rendeződni egy külső mágneses tér hatására.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{imgs/16-tetel/hysteresis_loop.png}
+    \caption{Hiszterézis-görbe egy ferromágneses anyag esetében.}
+\end{figure}
+Ilyenkor a mágneses teret fel tudjuk bontani egy külső térre és egy belső térre, ami a mágnesezettségből adódik:
+\begin{equation}
+    \mathbf{B} = \mathbf{B}_0 + \mathbf{B}_B
+\end{equation}
+És a belső tér valamilyen módon függ a mágnesezettségtől:
+\begin{equation}
+    \mathbf{B}_B = \lambda \mathbf{M}
+\end{equation}
+Amit Pierre Weiss fetezett fel, ezért ezt az elméletet \textbf{Weiss-féle átlagtér elméletnek} nevezzük. Ezt az elméletet Weiss még a kvantummechanika előtt találta ki, ezért nem teljesen pontos eredményre vezet,
+de a probléma lényegét jól ragadja meg. A külső mágneses teret át lehet írni a külső mágneses térerősség és a vákuum permeabilitásának segítségével:
+\begin{equation}
+    \mathbf{B}_0 = \mu_0 \mathbf{H}
+\end{equation}
+Így a teljes mágneses tér a következőképpen alakul:
+\begin{equation}
+    \mathbf{B} = \mu_0 \mathbf{H} + \mathbf{B}_B = \mu_0 \mathbf{H} + \lambda \mathbf{M}
+\end{equation}
+Ez tehát egy $M$-re vonatkozó implicit egyenlet:
+\begin{equation}
+    M = \frac{N}{V} g_J \mu_B J \cdot B_J \left( \frac{g_J \mu_B J}{k_B T} \left( \mu_0 H + \lambda M \right) \right)
+\end{equation}
+Ha viszont nincs külső mágneses tér, akkor $H = 0$, így az egyenlet a következőképpen alakul:
+\begin{equation}
+    M = \frac{N}{V} g_J \mu_B J \cdot B_J \left( \frac{g_J \mu_B J}{k_B T} \lambda M \right)
+\end{equation}
+Ezt megoldhatjuk grafikusan is. Az egyik oldal egy egyenes vonal lesz, a másik oldal pedig a Brillouin-függvény egy skalárszorozott változata. A Brillouin függvény közelítőleg $B_J(x) \approx \frac{J+1}{3J} x$,:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{imgs/16-tetel/weiss_mean_field.png}
+    \caption{Weiss-féle átlagtér elmélet grafikus megoldása.}
+\end{figure}
+Látható az ábrán, hogy nem triviális megoldás csak akkor létezik, ha a hőmérséklet alacsonyabb egy bizonyos kritikus hőmérsékletnél, amit \textbf{Curie-hőmérsékletnek} nevezünk.
+Ekkor tehát a mágnesezettség akkor, amikor ezen a $T_C$ hőmérsékleten vagyunk:
+\begin{equation}
+    M = \frac{N}{V} g^2_J \mu^2_B J^2 \lambda \frac{(J+1)}{3J} \frac{1}{k_B T_C} M
+\end{equation}
+Ebből a Curie-hőmérséklet a következőképpen alakul:
+\begin{equation}
+    \boxed{T_C = \frac{N}{V} \cdot \frac{g^2_J \mu^2_B J(J+1) \lambda}{3 k_B}}
+\end{equation}
+Ez azt jelenti, hogy ha a hőmérséklet alacsonyabb, mint a Curie-hőmérséklet, akkor a mágneses dipólusok kölcsönhatása miatt spontán mágnesezettség jön létre, még akkor is, ha nincs külső mágneses tér. Ha viszont a hőmérséklet magasabb, mint a Curie-hőmérséklet, akkor a termikus rezgések miatt a dipólusok rendezetlenek maradnak és nincs spontán mágnesezettség.
+
+Ez a levezetés nem teljesen pontos, mert a valóságba beleszól a kvantummechanika is, ugyanis a kicserélődési kölcsönhatás miatt a spin pályamomentum kölcsönhatás is befolyásolja a mágnesezettséget.
+Ezt Weiss-ék nem tudhatták, ezért nem nem vehették figyelembe, de ha ezt a kiegészítést hozzáadjuk akkor jó eredményt fogunk kapni.
+
+A mágnezesettség ekkor $T > T_C$ esetén a következőképpen alakul:
+\begin{equation}
+    \begin{aligned}
+        M &= \frac{N}{V} g_J \mu_B J B_J \left( \frac{g_J \mu_B J}{k_B T} \left( \mu_0 H + \lambda M \right) \right) \approx \frac{N}{V} g^2_J \mu^2_B J^2 \frac{J + 1}{3J} \left( \frac{\mu_0 H}{k_B T} + \frac{\lambda M}{k_B T} \right) \\
+        & = \frac{1}{k_B T} \mu_0 g^2_J \mu^2_B \frac{J + 1}{3 J} H + \frac{k_B T_C}{k_B T} M \\
+        k_B (T - T_C) M &= \mu_0 g^2_J \mu^2_B \frac{J + 1}{3 J} H \\
+    \end{aligned}
+\end{equation}
+Így a mágnesezettség a következőképpen alakul:
+\begin{equation}
+    M = \frac{\mu_0 g^2_J \mu^2_B \frac{J + 1}{3 J}}{k_B (T - T_C)} H
+\end{equation}
+Tehát a szuszceptibilitás a következőképpen alakul:
+\begin{equation}
+    \boxed{\chi_p = \frac{\mu_0 g^2_J \mu^2_B \frac{J + 1}{3 J}}{k_B (T - T_C)}}
+\end{equation}
+Ez a \textbf{Curie-Weiss törvény}, ami azt mondja ki, hogy a paramágneses szuszceptibilitás fordítottan arányos a hőmérséklettel csökkentett Curie-hőmérséklettel. Ez a törvény jól leírja a valóságot, hiszen a mágneses anyagok
+szuszceptibilitása valóban így viselkedik a Curie-hőmérséklet környékén.
+
+De mi van, ha $T < T_C$-n vagyunk? Ekkor a mágnesezettség nem nulla még akkor sem, ha nincs külső mágneses tér. Ekkor tovább kell menni a Brillouin-függvény Taylor-sorában:
+\begin{equation}
+    B_J(x) \approx \frac{J + 1}{3 J} x - \frac{(J + 1)(2J + 1)}{90 J^3} x^3
+\end{equation}
+Mivel a Brillouin-függvény páratlan függvény, így csak páratlan hatványok jelennek meg a Taylor-sorban. Tehát megjelenik, egy $M^3$ tag is az egyenletben:
+\begin{equation}
+    M = \frac{N}{V} g^2_J \mu^2_B \frac{J(J + 1)}{3 J} \frac{\mu_0}{k_B T} H  - (\dots) M^3
+\end{equation}
+Az értéke ennek nem annyira lényeges, de ha átrendezzük az egyenletet, akkor látható lesz, hogy a mágnesezettség hogyan függ a hőmérséklettől:
+\begin{equation}
+    M^2 = \ldots (T_C - T)
+\end{equation}
+Tehát:
+\begin{equation}
+    \boxed{M \propto \sqrt{T_C - T} \quad \text{ha} \quad T < T_C}
+\end{equation}
+
+És ha $T = T_C$? Ekkor a lineáris tag eltűnik (itt $H \neq 0$), így a mágnesezettség a következőképpen alakul:
+\begin{equation}
+    M^3 \propto H \quad \Rightarrow \quad M \propto H^{1/3}
+\end{equation}
+Ez azt jelenti, hogy a Curie-hőmérsékleten a mágnesezettség a mágneses tér köbének gyökével arányos. Összegezve tehát a mágnesezettség függése a hőmérséklettől:
+\begin{equation}
+    M \propto \begin{cases}
+        \sqrt{T_C - T} & \text{ha } T < T_C \\
+        H^{1/3} & \text{ha } T = T_C \\
+        \frac{H}{T - T_C} & \text{ha } T > T_C
+    \end{cases}
+\end{equation}
+
+\subsubsection{Landau-elmélet}
+Ugyanezt a mágnesezettség viselkedést le tudjuk vezetni egy általánosabb megközelítéssel is, amit \textbf{Landau-elméletnek} nevezünk. Ezt az elméletet Lev Landau dolgozta ki, aki a szimmetria törésével foglalkozott. Az elmélet lényege, hogy a szabad energiát egy Taylor-sorral
+fejtjük ki a mágnesezettség körül:
+\begin{equation}
+    F(M, T) = F_0(T) + a(T) M^2 + b(T) M^4 + c(T) M^6 + \ldots - MH
+\end{equation}
+Itt a $F_0(T)$ csak a hőmérséklettől függ, a $-MH$ tag pedig a külső mágneses térrel való kölcsönhatást írja le. A mágnesezettség csak páros hatványokban jelenik meg, mert a mágneses tér irányának megváltoztatásakor a mágnesezettség is megváltozik, de a szabad energia nem.
+A Taylor-sorban csak az első három tagot vesszük figyelembe, mert a többi tag hatása elhanyagolhatóan kicsi lesz. A $b(T)$-t pozitívnak kell venni, hogy a szabad energia alulról korlátos legyen. A $a(T)$-t pedig úgy választjuk meg, hogy a Curie-hőmérsékletnél nullát vegyen fel:
+\begin{equation}
+    a(T) = a' (T - T_C) \quad \text{ahol } a' > 0
+\end{equation}
+Ekkor a szabad energia a következőképpen alakul:
+\begin{equation}
+    \frac{F(M, T)}{V} = \frac{F_0(T)}{V} + a' (T - T_C) M^2 + b M^4 - M\mu_0 H
+\end{equation}
+A mágnesezettség egyensúlyi értékét úgy kapjuk meg, hogy a szabad energiát $M$ szerint minimáljuk:
+\begin{equation}
+    \frac{\partial F}{\partial M} = 2 a' (T - T_C) M + 4 b M^3 - \mu_0 H = 0
+\end{equation}
+Ebből az egyenletből tudjuk kifejezni a mágnesezettséget:
+\begin{equation}
+    H = 2 a' (T - T_C) M + 4 b M^3
+\end{equation}
+Látható, hogy ez az egyenlet pont ugyanazt a viselkedést adja vissza mint az előző levezetések. Ha $T > T_C$, akkor a mágnesezettség a következőképpen alakul:
+\begin{equation}
+    M = \frac{H}{2 a' (T - T_C)} \quad \Rightarrow \quad M \propto \frac{H}{T - T_C}
+\end{equation}
+Ha $T < T_C$, akkor a mágnesezettség a következőképpen alakul:
+\begin{equation}
+    M^2 = \frac{a' (T_C - T)}{2 b} \quad \Rightarrow \quad M \propto \sqrt{T_C - T}
+\end{equation}
+Ha pedig $T = T_C$, akkor a mágnesezettség a következőképpen alakul:
+\begin{equation}
+    M^3 = \frac{\mu_0 H}{4 b} \quad \Rightarrow \quad M \propto H^{1/3}
+\end{equation}
+Tehát a Landau-elmélet is ugyanazt a viselkedést írja le, mint az előző elméletek. Ez az elmélet azonban általánosabb, mert bármilyen más rendezett állapot leírására is használható, nem csak a mágneses rendszerekre.
+Általánosságban tehát a következőképpen tudjuk felírni a különböző húmérséklet és mágnesezettségi tagokat:
+\begin{equation}
+    \begin{aligned}
+        & \chi_p (T) \propto (T - T_C)^{-\gamma} \\
+        & M(T) \propto (T_C - T)^{\beta} \\
+        & M(H) \propto H^{1/\delta} \\
+        & C_H (T) \propto |T - T_C|^{-\alpha} \\
+    \end{aligned}
+\end{equation}
+Ahol $C_H$ a mágneses térben mért hőkapacitás. Ezeket a kitevőket szokás \textbf{kritikus kitevőknek} nevezni, mivel a $T_C$ kritikus hőmérséklettel állnak kapcsolatban, ahol a rendszer egy fázisátalakuláson megy keresztül.
+Az előző levezetések alapján a kritikus kitevők értékei a következők:
+\begin{equation}
+    \alpha = 0, \quad \beta = \frac{1}{2}, \quad \gamma = 1, \quad \delta = 3
+\end{equation}
+És a kövwetkező relációkat lehet felírni közöttük:
+\begin{equation}
+    \begin{aligned}
+        & \alpha + 2 \beta + \gamma = 2 \\
+        & \gamma = \beta (\delta - 1) \\
+    \end{aligned}
+\end{equation}
+Ezeket \textbf{Skálatörvényeknek} nevezzük (mivel a hatványfüggvények skálafüggetlenek). A meglepő dolog, hogy ezek a kritikus kitevők értékei a kísérleti eredmények szerint gyakran nem egyeznek meg az
+itt megkapott értékekkel, de a skálatörvények mégis univerzálisan igaznak bizonyúltak. Ennek a megértése most nem része ennek a jegyzetnek, de aktív kutatási terület a mai napig.
+\subsubsection{Összefoglalás}
+A mágneses anyagokat a külső mágneses térre adott válaszuk alapján három alapvető csoportba sorolhatjuk:
+diamágneses, paramágneses és ferromágneses anyagokra. A mágneses válasz mértékét a mágneses
+szuszceptibilitás jellemzi:
+\[
+\chi = \frac{M}{H},
+\]
+ahol $M$ a mágnesezettség és $H$ a külső mágneses térerősség.
+
+\paragraph{Diamágnesség}
+A diamágnesség minden anyagban jelen van, és a mozgó töltések külső mágneses tér hatására
+kialakuló indukált áramaira vezethető vissza. Az indukált mágneses dipólusmomentum mindig
+ellentétes irányú a külső térrel, ezért a diamágneses szuszceptibilitás negatív:
+\[
+\chi_d < 0.
+\]
+A diamágnesség gyenge és gyakorlatilag hőmérséklettől független. Szabad elektronok esetén
+kvantummechanikai eredetű (Landau-diamágnesség), kötött elektronoknál klasszikusan is
+levezethető (Larmor-diamágnesség).
+\\
+\textit{Példák:} réz, bizmut, grafit, nemesgázok.
+
+\paragraph{Paramágnesség}
+A paramágnesség olyan anyagokban lép fel, amelyekben állandó mágneses dipólusmomentummal
+rendelkező részecskék (pl. nem párosított spinek) találhatók. Külső mágneses tér hatására
+ezek részlegesen a tér irányába rendeződnek, ezért:
+\[
+\chi_p > 0.
+\]
+A klasszikus paramágnesség (Langevin-, Brillouin-féle leírás) esetén a szuszceptibilitás
+a Curie-törvényt követi:
+\[
+\chi \propto \frac{1}{T}.
+\]
+Vezető elektronok esetén a Pauli-paramágnesség lép fel, amely gyenge és közel
+hőmérsékletfüggetlen, mivel csak a Fermi-energia közelében lévő elektronok járulnak hozzá.
+\\
+\textit{Példák:} alumínium, platina, oxigén, alkálifémek.
+
+\paragraph{Ferromágnesség}
+A ferromágnesség erős mágneses kölcsönhatás következménye, amely az elektronok
+spinjének kvantummechanikai csatolásából (csere-kölcsönhatás) ered. A dipólusmomentumok
+külső tér nélkül is párhuzamosan rendeződhetnek, ezért spontán mágnesezettség alakul ki:
+\[
+M \neq 0 \quad \text{külső tér nélkül is}.
+\]
+A ferromágneses anyagokban mágneses domének jönnek létre, és a mágnesezettség
+nemlineáris módon függ a külső tértől (hiszterézis). A ferromágnesség egy kritikus
+hőmérséklet, a Curie-hőmérséklet felett megszűnik.
+\\
+\textit{Példák:} vas, kobalt, nikkel.
+
+\paragraph{Összefoglalás}
+\begin{center}
+\begin{tabular}{lccc}
+\hline
+Tulajdonság & Diamágneses & Paramágneses & Ferromágneses \\
+\hline
+$\chi$ előjele & $<$ 0 & $>$ 0 & $\gg 0$ \\
+Erősség & nagyon gyenge & gyenge & erős \\
+Spontán $M$ & nincs & nincs & van \\
+$T$-függés & nincs & $\sim 1/T$ vagy konst. & $T_C$ alatt van \\
+\hline
+\end{tabular}
+\end{center}
+
+
+\subsection{Pauli-szuszceptibilitás, Landau-diamágnesség}
+\subsubsection{Pauli-szuszceptibilitás}
+Bizonyos alkáli fémekben és nemesgázokban az elektronok olyan gyengén kötöttek, hogy az atomok körül kvázi szabadon mozgó elektronfelhőt hoznak létre. Ez a már korábban vizsgált \textit{Fermi gáz}.
+Ha egy ilyen anyagot egy külső $H$ mágneses térbe helyezünk, akkor a Pauli-elv miatt az $\frac{1}{2}$ spinű elektronok energianívói felhasadnak. Ez volt a \textit{Zeeman-effektus}. Ekkor az elektronok
+két csoportra oszlanak: azok, amik a mágneses tér irányába állnak (alacsonyabb energia), és azok, amik a mágneses tér ellenkező irányába állnak (magasabb energia):
+\begin{equation}
+    \varepsilon = \frac{\mathbf{p}^2}{2m} \mp \mu_B B
+\end{equation}
+Ahol a mínusz jelenti az alacsonyabb energiájú állapotot (spin a mágneses tér irányába), a plusz jel pedig a magasabb energiájú állapotot (spin a mágneses tér ellenkező irányába). Mivel a két állapot
+felhasadása kicsi, ezért a részecskék állapotsűrűsége a két állapotban csak kis mértékben fog eltérni egymástól.
+Vegyük a $T = 0K$ esetet, amikor a részecskék a legalacsonyabb energiájú állapotokat töltik be. Ekkor a felhasadás miatt a két állapotban lévő részecskék állapotsűrűségének máshol lesz a minimum értéke:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{imgs/16-tetel/pauli_paramagnetism.png}
+    \caption{Pauli-paramágnesség illusztrációja.}
+\end{figure}
+Az eredő mágnesezettség ekkor $M = \mu_B (N_+ - N_-)$ lesz, ahol $N_+$ a föl és $N_-$ a lefelé álló spinnel rendelkező részecskék száma
+\footnote{
+    A fermi-gázban azt feltételezzük, hogy a pozitív atommagok és az elektronok kölcsönösen leárnyékolják egymást, ezért az elektronok csak elhanyagolható mértékben hatnak kölcsön egymással.
+}. 
+A szupszceptibilitást pedig úgy definiáltuk, hogy $\chi_p = \frac{M}{H}$ és a cél ennek a meghatározása. A részecskék számát az állapotsűrűség és a Fermi-energia segítségével tudjuk kifejezni:
+\begin{equation}
+    N_{\pm} = \int \rho(\varepsilon) f(\varepsilon) d\varepsilon
+\end{equation}
+Ahol $f(\varepsilon)$ a Fermi-Dirac eloszlásfüggvény, ami $T = 0K$ esetén egy lépcsőfüggvény lesz.
+Ekkor, mivel kicsi a felhasadás, ezért feltehetően a két állapotban lévő részecskék nagyjából azonos lesz, tehát a két állapotban lévő részecskék számát a következőképpen tudjuk kifejezni:
+\begin{equation}
+    \begin{aligned}
+        N_+ & = \int_{-\infty}^{\infty} \frac{\rho(\varepsilon + \mu_B B)}{2} f(\varepsilon) d\varepsilon \\
+        N_- & = \int_{-\infty}^{\infty} \frac{\rho(\varepsilon - \mu_B B)}{2} f(\varepsilon) d\varepsilon \\
+    \end{aligned}
+\end{equation}
+Továbbá, mivel a külső mágneses tér kicsi, ezért az állapotsűrűséget Taylor-sorral ki tudjuk fejteni a feladott energiák körül:
+\begin{equation}
+    \rho(\varepsilon \pm \mu_B B) = \rho(\varepsilon) \pm \rho'(\varepsilon) \cdot \mu_B \cdot B
+\end{equation}
+Tehát a teljes részecskeszám a két állapotban a következőképpen alakul:
+\begin{equation}
+    N_\pm = \int_{-\infty}^{\infty} \frac{\rho(\varepsilon)}{2} f(\varepsilon) d\varepsilon \pm \int_{-\infty}^{\infty} \frac{\rho'(\varepsilon)}{2} \cdot \mu_B \cdot B \cdot f(\varepsilon) d\varepsilon
+\end{equation}
+Ahol $\rho'(\varepsilon) = \frac{d\rho}{d\varepsilon}$. Tehát $N_+ - N_-$ a következőképpen alakul:
+\begin{equation}
+    N_+ - N_- = \mu_B B \int_{-\infty}^{\infty} \rho'(\varepsilon) f(\varepsilon) d\varepsilon
+\end{equation}
+Ezt az integrált parciális integrálással tudjuk megoldani:
+\begin{equation}
+    \begin{aligned}
+        \int_{-\infty}^{\infty} \rho'(\varepsilon) f(\varepsilon) d\varepsilon & = \left[ \rho(\varepsilon) f(\varepsilon) \right]_{-\infty}^{\infty} - \int_{-\infty}^{\infty} \rho(\varepsilon) f'(\varepsilon) d\varepsilon \\
+        & = - \int_{-\infty}^{\infty} \rho(\varepsilon) f'(\varepsilon) d\varepsilon \\
+    \end{aligned}
+\end{equation}
+Mivel $f'(\varepsilon)$ egy delta-függvény lesz $T = 0K$ esetén, ezért az integrál értéke egyszerűen az állapotsűrűség a Fermi-energiánál:
+\begin{equation}
+    \int_{-\infty}^{\infty} \rho'(\varepsilon) f(\varepsilon) d\varepsilon = \rho(\varepsilon_F)
+\end{equation}
+Így a mágnesezettség a következőképpen alakul:
+\begin{equation}
+    M = \mu_B^2 \rho(\varepsilon_F) B = \mu_0 \mu_B^2 \rho(\varepsilon_F) H
+\end{equation}
+És mivel a szuszceptibilitás $\chi_p = \frac{M}{H}$, ezért a Pauli-szuszceptibilitás a következőképpen alakul:
+\begin{equation}
+    \boxed{\chi_p = \mu_0 \mu_B^2 \rho(\varepsilon_F)}
+\end{equation}
+
+Ez szabad elektronrak könnyen meghatározható (és az elektronfelhőben jó közelítéssel szabad elektronok vannak), mivel az állapotsűrűség a Fermi-energiánál a következőképpen alakul:
+\begin{equation}
+    \rho(\varepsilon_F) = \frac{3 N}{2 V \varepsilon_F}
+\end{equation}
+Így a Pauli-szuszceptibilitás:
+\begin{equation}
+    \boxed{\chi_p = \frac{3 \mu_0 \mu_B^2 N}{2 V \varepsilon_F}}
+\end{equation}
+ahol $N/V$ az elektronok számsűrűsége és $\varepsilon_F$ a Fermi-energia.
+
+A Pauli-paramágnesség közvetlenül megfigyelhető a szokásos vezető fémekben, például nátriumban, rézben vagy alumíniumban. Ezekben az anyagokban a vezetési elektronok kvázi szabad Fermi-gázt alkotnak.
+Külső mágneses tér hatására az elektronspin-állapotok Zeeman-felhasadása miatt a Fermi-szint közelében kissé több elektron kerül az alacsonyabb energiájú spinállapotba.
+
+Mivel csak a Fermi-energia környezetében lévő elektronok tudnak átrendeződni, a kialakuló mágnesezettség kicsi, hőmérséklettől gyakorlatilag független, és arányos az állapotsűrűséggel a Fermi-szinten.
+Ez a jelenség felelős a legtöbb egyszerű fém gyenge, de mérhető paramágneses válaszáért.
+
+\subsubsection{Landau-Diamágnesség}
+A szabad elektronok egy másik mágneses tulajdonsága a Landau-diamágnesség, amely a mozgó töltött részecskék kvantált pályamozgásából ered külső mágneses tér jelenlétében. A mágneses tér hatására az elektronok mozgása kvantálódik, és kialakulnak az ún. Landau-szintek, amelyek az energiaszintek diszkrét felhasadását jelentik.
+
+Az így létrejövő orbitális áramok mágneses dipólusmomentumot hoznak létre, amely ellentétes irányú a külső mágneses térrel, ezért a hatás diamágneses jellegű. A Landau-diamágnesség tisztán kvantummechanikai eredetű jelenség, klasszikusan nem jelenik meg.
+Gyenge mágneses tér esetén a Landau-diamágneses szuszceptibilitás:
+\begin{equation}
+    \chi_d = -\frac{1}{3} \mu_0 \mu_B^2 \rho(\varepsilon_F)
+\end{equation}
+ahol a negatív előjel a külső térrel ellentétes irányú mágneses választ jelzi.
+
+Érdekes módon a Landau-diamágnesség nagysága pontosan egyharmada a Pauli-paramágnességének, de ellentétes előjelű. Így a szabad elektronok teljes mágneses válasza:
+\begin{equation}
+    \chi_{total} = \chi_p + \chi_d = \mu_0 \mu_B^2 \rho(\varepsilon_F) - \frac{1}{3} \mu_0 \mu_B^2 \rho(\varepsilon_F) = \frac{2}{3} \mu_0 \mu_B^2 \rho(\varepsilon_F)
+\end{equation}
+Tehát a szabad elektronok összmágneses válasza gyenge paramágnesség, amely a Pauli-paramágnesség és a Landau-diamágnesség együttes hatásából ered.
+
+\subsection{Ferro-, antiferro- és ferrimágneses anyagok}
+\subsubsection{Ferromágneses anyagok}
+A ferromágnesességet anyagokban viszonylag komplex probléma megmagyarázni. Nem minden anyagban jelenik meg, csak bizonyos fémekben, mint például a vas, kobalt és nikkel. A lényege, ahogy már korábban is láttuk,
+hogy az anyagban lévő atomoknak van egy pozitív atommagja és egy vagy több negatív elektronja ami mágneses dipólusmomentumot hoz létre. Ezek a dipólusmomentumok általában rendezetlenek, emiatt az anyag össz mágneses
+momentuma nulla, de külső tér hatására, a az elektronok spin elrendeződése képes módosulni, ami képes eltolni a mágneses dipólusmomentumokat egy irányba, így az anyag mágnesezetté válik. És ha ezek a dipólok beállnak egy irányba,
+utána a külső tér megszűnése után is úgy maradnak, hiszen az általuk generált mágneses momentum nem engedi meg, hogy elmozduljanak. Ezt az elrendeződést a hőmérsékleti rezgések képesek felbontani, ezért minden anyagnak
+van egy kritikus hőmérséklete, a Curie-hőmérséklet, ami fölött már nem képesek a dipólusok egy irányba rendeződni, így az anyag elveszíti a mágnesezettségét.
+
+A ferromágneses jelenséget a legkönnyebb az úgynevezett \textit{átmenetifémeken}
+\footnote{
+    Az átmeneti fémek olyan fémek, melyeknek a d-alhélyon vannak a vegyérték-elektronjai, de a d-alhéj nincs teljesen betöltve. Ilyenek például a vas, kobalt, nikkel, réz, ezüst, arany, stb. Ezek mind ferromágneses anyagok.
+} lehet értelmezni. Nézzük meg például a Réz és a Nikkel közti különbséget. A Réz nem ferromágneses, mert a 3d sávja teljesen betöltött, de ha egy elektront elveszünk róla, akkor pont a Nikkel-t kapjuk, ami ennélfogva pedig pont
+ferromágneses lesz. 
+
+Azt tudjuk, hogy $T=0K$ esetében a Pauli-elv miatt az elektronok a legalacsonyabb energiájú állapotokat töltik be, egészen a Fermi-energiáig ezért vizsgáljuk ezt az egyszerű állapotot. A spin eltérések miatt viszont ezek az állapotok felhasadnak,
+de mivel töltött sávokról beszélünk, ezért a fel- és a lefelé álló spin tartományt is teljesen ki tudják tölteni az elektronok. Emiatt a teljes mágneses momentum nulla lesz, hiszen a fel és lefelé álló spinű elektronok száma
+megegyezik egymással:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{imgs/16-tetel/non_magnetic_metal.png}
+    \caption{Nem ferromágneses Réz energiaszint diagramja.}
+\end{figure} 
+
+De mi van ha elveszünk egy elektront? Mivel az elektronok nincsenek "hozzákötve" egy adott héjhoz, ezért ez effektíve úgy néz ki, mintha $0.54$ eletronnyit vettem volna ki a 4s héjból, és
+$2 \cdot 0.27 = 0.54$ elektront a 3d héjból. Ez a Curie hőmérséklet felett nem igazán számít, mert az elektronok továbbra is egyensúlyban lesznek:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{imgs/16-tetel/non_magnetic_metal_with_hole.png}
+    \caption{A Nikkel energiaszint diagramja $T > T_C$ esetén.}
+\end{figure}
+De ha lemegyünk $T=0K$-ra, akkor a hőmérséklet rendező ereje már nem lesz jelen, és ezért egy másik hatás fog dominálni: a kicserélődési kölcsönhatás. Ez a kölcsönhatás kvantummechanikai eredetű, és abból adódik, hogy az elektronok hullámfüggvényeinek szimmetriája megköveteli, hogy az azonos spinnel rendelkező elektronok
+távolabb legyenek egymástól, mint a különböző spinnel rendelkező elektronok. Ez azt jelenti, hogy az azonos spinnel rendelkező elektronok közti taszító kölcsönhatás kisebb lesz, mint a különböző spinnel rendelkező elektronok közti taszító kölcsönhatás.
+Ezért az energetikailag kedvezőbb lesz, ha az elektronok minél több azonos spinnel rendelkeznek, mert így kisebb lesz a taszító kölcsönhatás. Ezért a Nikkel esetében, ahol van egy "lyuk" a 3d sávban, az energetikailag kedvezőbb lesz,
+ha a lyuk egy adott spinnel rendelkezik, és így több azonos spinnel rendelkező elektron lesz jelen az anyagban:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{imgs/16-tetel/magnetic_metal_with_hole.png}
+    \caption{A Nikkel energiaszint diagramja $T = 0K$ esetén.}
+\end{figure}
+Ezért a Nikkelben a 3d sávban több azonos spinnel rendelkező elektron lesz jelen, ami egy nettó mágneses dipólusmomentumot hoz létre az anyagban, így az ferromágneses lesz. Ezt a jelenséget nevezzük \textbf{Stoner-feltételnek}. A Curie hőmérséklet tehát azt a pontot jelöli,
+ahol a kicserélődési kölcsönhatás már nem képes legyőzni a hőmérséklet rendezetlenítő hatását, és az anyag elveszíti a mágnesezettségét.
+
+\subsubsection{Ferrimágneses Anyagok}
+A ferrimágneses anyagok olyan komplexebb összetételű kristályos anyagok, melyekben a különböző ionok mágneses momentumai különböző módokon szeretnek elrendeződni, és ezek kölcsönhatása eredményezi a ferrimágnesességet.
+A ferrimágneses anyagok általában $MO \cdot Fe_2O_3$ típusú vegyületek, ahol $M$ egy kétértékű fémion, mint például a vas ($Fe^{2+}$), a mangán ($Mn^{2+}$), a nikkel ($Ni^{2+}$) vagy a cink ($Zn^{2+}$). Ezek az anyagok kristályszerkezetükben két különböző helyet foglalnak el, ahol a fémionok mágneses momentumai eltérő módon rendeződnek.
+Például a $Fe_3O_4$ (magnézit) ferrimágneses anyagban ($FeO \cdot Fe_2O_2$) a $Fe^{2+}$ és $Fe^{3+}$ ionok impulzusmomentumokkal rendelkeznek ($Fe^{3+}$ spinje $5/2$, míg $Fe^{2+}$ spinje $2$) ezért az $Fe^{3+}$ ion fermionként viselkedik, a $Fe^{2+}$ ion pedig bozonként. Emiatt a kicserélődési külcsönhatás eltérően hat rájuk, a fermionos ionnál a
+az azonos spinű ionoknál kisebb a taszítás, míg a bozonos ionnál az ellentétes irányú spineknél. Ezért a kristály különböző régiói különböző módon rendeződnek be, és az $Fe^{3+}$ ionok kioltják egymást, csak a $Fe^{2+}$ ionok hatását meghagyva:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{imgs/16-tetel/ferrimagnetism.png}
+    \caption{Ferrimágneses anyag illusztrációja.}
+\end{figure}
+
+
+\subsubsection{Antiferromágneses anyagok}
+Az antiferromágnesek tulajdonképpen egy speciális esetei a ferrimágneses anyagoknak, ahol a kristályban lévő ionok mágneses momentumai teljesen kioltják egymást.
+Ez akkor történik meg, ha a kristályban lévő ionok mágneses momentumai egyenlő nagyságúak, de ellentétes irányúak. Ilyenkor a kristály két (vagy több) alrácsra oszlik, ahol az egyik alrácsban lévő ionok mágneses momentumai
+egy irányba, míg a másik alrácsban lévő ionok mágneses momentumai az ellenkező irányba mutatnak. Emiatt az anyag összmágneses momentuma nulla lesz, de a belső mágneses rend mégis jelen van.
+Például a mangán-oxid ($MnO$) egy antiferromágneses anyag, ahol a $Mn^{2+}$ ionok mágneses momentumai ellentétes irányba rendeződnek a kristályban. Az antiferromágneses anyagoknak emiatt van egy második
+kritikus hőmérséklete is, a \textbf{Neél-hőmérséklet}, ami alatt az anyag antiferromágneses rendezettséget mutat, míg felette paramágneses viselkedést.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{imgs/16-tetel/antiferromagnetism_susceptibility.png}
+    \caption{Antiferromágneses, ferromágneses és paramágneses anyag szupszceptibilitása.}
+\end{figure} 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/16-tetel/antiferromagnetism.png}
+    \caption{Antiferromágneses anyag illusztrációja.}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{imgs/16-tetel/ferro_and_antiferromagnetism.png}
+    \caption{Ferromágneses és antiferromágneses anyag spin elrendeződése.}
+\end{figure}
+
+\subsubsection{Mágneses domain-ek}
+A ferromágneses és ferrimágneses anyagokban a mágneses dipólusmomentumok nem feltétlenül rendeződnek egy irányba az egész anyagban, hanem kisebb régiókra, úgynevezett \textbf{mágneses domainekre} oszlanak.
+Ezekben a domain-ekben a dipólusok szaturálva vannak, és a teljes mágneses momentum közelítőleg nulla lesz, de regionálisan mégis erős mágnezesezettség alakul ki. Emiatt ezek a domain-ek megmaradnak külső mágneses tér nélkül is.
+
+A domain-ek kialakulásának több oka is van, de az egyik legfontosapp az \textbf{anizotrópikus energia}. Ez olyan kristályos anyagokban jelenik meg, amiknél geometriai okokból bizonyos irányokban könnyebb
+magnetizálni az anyagot mint másokban. Például a Kobalt egy hexagonális kristályszerkezetű anyag és a hexagonális tengely irányába sokkal könnyebb magnezitálni szobahőmérsékleten. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{imgs/16-tetel/magnetic_domains1.png}
+    \caption{A mágnesezettségi görbéje vasnak, nikkelnek és kobaltnak különböző irányokban. Jól látható, hogy a kobalt esetében a hexagonális tengely irányába sokkal könnyebb a mágnesezettség elérése mint a bazális tengely mentén.}
+\end{figure}
+Ez az anizotropikus energia azért alakul ki, mert a kristály mágneseződése a kristályrácsot csak úgy "látja", mint az elektronok pályáinak összeérését. Mivel a spin-pálya kölcsönhatás befolyásolja az elektronok
+pályáját, ezért nem gömb alakú lesz az elektronfelhő, hanem egy forgási ellipszoid. Emiatt egyes irányokban jobban összeérnek az elektronok pályái, mint másokban, és ahol nagyobb az összeérés, ott jelentősebb a
+kicserélődési kölcsinhatás és az elektrosztatikus interakció, ami energetikailag kedvezőbbé teszi a mágneseződést:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/16-tetel/magnetic_domains2.png}
+    \caption{Elektronpályák anizotrópiája.}
+\end{figure}
+
+\subsubsection*{Domain-ek közötti átmenet}
+A mágneses domain-ek között egy vékony réteg található, amit \textbf{Bloch-falnak}, vagy csak simán Domain falnak nevezünk. Ez az a keskeny régió, ahol a dipólusok iránya átmegy az egyik domain által preferált irányból a másikba.
+A domainek kialakulása nem egy régióból indulnak ki, és terjednek szét az egész anyagban, hanem több régióban alakulnak ki, és terjednek szét. Emiatt kialakulnak "ütköző zónák", ahol két ilyen domain találkozik, és közöttük a dipólusok "befagynak" egy 
+átmeneti pozícióba. Ez általában több dipólust is tartalmaz, mert egy graduális átmenet energetikailag kedvezőbb, mint egy hirtelen váltás. Ezek a domain falak általában néhány tíz nanométer szélesek, és a falon belül a dipólusok iránya fokozatosan változik.
+
+Ez a fal azért nem tud a végtelenségig szélesedni, mert az anizotropikus energia megfogja őket, ugyanis a fal dipólusai általában a kedvező irányoktól elfelé állnak.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/16-tetel/magnetic_domains3.png}
+    \caption{Mágneses domain fal illusztrációja.}
+\end{figure}
+
+\subsubsection*{Domain-ek eredete}
+Landau és Lifshitz bizonyította, hogy ezek a domainek kialakulása egy természetes következménye a kicserélődési kölcsönhatás, anizotrópia, mágneses és egyéb energiák fellépésének. Sikeresen belátták ugyanis,
+hogy a mágneses domain-ek segítségével az anyag képes minimalizálni a mágneses energiáját és ezáltal egy stabilabb állapotba kerülni. Ha ugyanis az anyag uniformálisan lenne mágnesezett, akkor az egy nagyon nagy dipólust
+eredményezne, ami egy nagy mágneses teret generálna a környezetében. Ez a mágneses tér pedig növeli az anyag összmágneses energiáját, ami energetikailag kedvezőtlen. Ezzel szemben, ha az anyag több kisebb domaint tartalmaz,
+amik egymást ki tudják oltani, akkor az anyag összmágneses tere sokkal kisebb lesz, és így az anyag összmágneses energiája is csökkenni fog. Azonban a domain-ek kialakulása növeli a domain falak számát, ami növeli az anyag
+összenergiáját, ezért egyensúlyi állapotban az anyag olyan domain méretet és elrendeződést fog felvenni, ami minimalizálja az összenergiát. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{imgs/16-tetel/magnetic_domains4.png}
+    \caption{Mágneses domain-ek kialakulásának illusztrációja.}
+\end{figure} 
+Emiatt a ferromágnesek, amennyiben lehetőségük van rá, a szaturációs állapotból mindig megpróbálnak átjutni egy energetikailag kedvezőbb domain elrendezésbe.
+
+
+
+\subsection{Szupravezetés}
+A szupravezetés olyan speciális tulajdonsága bizonyos anyagoknak, amikor kellően lehűtve őket, elveszítik az elektromos ellenállásukat, és tökéletes vezetővé vállnak.
+Az elektromos ellenállásról már régóta ismert volt, hogy hőmérséklet függő, de a szupravezetés különlegessége, hogy egy kritikus hőmérséklet elérésekor (ami az anyagot jellemzi), az ellenállásgőrbe 
+hírtelen letörik és nullává válik. Ezt a jelenséget 1911-ben Heike Kamerlingh Onnes fedezte fel, amikor higanyt hűtött le folyékony héliummal. Később azt is felfedezték, hogy bizonyos kerámia anyagok
+esetében (amik normál körülmények között szigetelők) is megjelenik a szupravezetés, ráadásul jóval magasabb hőfokon. Míg a higanynak $\sim 4K$ kellett a szupravazetővé váláshoz, ezek, olyan $92K$-körül
+is mutatták már a jelenséget, amit már folyékony nitrogénnel is el lehet érni
+\footnote{
+    Ez azért nagyon "hasznos" mert folyékony nitrogént jóval olcsóbban be lehet szerezni, mint folyékony héliumot.
+}.
+Ezeket az anyagokat nevezzük \textbf{nagy hőmérsékletű szupravezetőknek}. 
+
+A jelenség egyik oka az az, hogy ezt a kritikus hőmérsékletet elérve, az anyag belsejében hírtelen megszűnik a mágneses tér, vagyis $\mathbf{B} = 0$ lesz.
+Ekkor, mivel a mágneses teret fel tudjuk írni a mágnesezettség és a mágneses térerősség segítségével:
+\begin{equation}
+    \mathbf{B} = \mu_0 (\mathbf{H} + \mathbf{M})
+\end{equation}
+Ez azt jelenti, hogy szupravezetés esetén a mágnesezettség a következőképpen alakul:
+\begin{equation}
+    \mathbf{M} = - \mathbf{H}
+\end{equation}
+Ez a jelenség a \textbf{Meissner-effektus}, ami azt jelenti, hogy a szupravezetők tökéletes Diamágnessé vállnak, és kvázi kiszorítják a mágneses teret a belsejükből. Ebből az is látszódik, hogy
+a szupravezetés a $H$ értékétől is függ (amit mondjuk egy külső elektromos árammal tudok szabályozni), tehát ha felrajzoljuk a $H-T$ fázistérképet, akkor egy kritikus vonalat fogunk kapni, ami elválasztja a szupravezető és a normál állapotot:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{imgs/16-tetel/superconductor_phase_diagram.png}
+    \caption{Szupravezető fázistérkép.}
+\end{figure}
+Tehát, ha túl nagy a külső mágneses tér, akkor már nem tud kompenzálni a Meissner-effektus, és a szupravezetési jelenség megszűnik.
+
+További kísérleti eredmény volt, hogy vannak olyan anyagok, melyek nem vállnak tökéletes diamágnessé, hanem csak részben taszítják ki a mágneses teret.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{imgs/16-tetel/type_1_and_type_2_superconductors.png}
+    \caption{1. és 2. fajú szupravezetők összehasonlítása.}
+\end{figure}
+Ezért ezeket az anyagokat \textbf{2. fajú szupravezetőknek} nevezzük, míg azokat, amik tökéletes diamágnessé vállnak \textbf{1. fajú szupravezetőknek}. Az 1-es típusú szupravezetők esetében a mágneses tér
+egy kritikus értéke felett teljesen megszűnik a szupravezetés, míg a 2-es típusú szupravezetők esetében két kritikus mágneses tér létezik. Az első kritikus térig az anyag tökéletes diamágnessé váll, majd a második kritikus térig
+részben engedi be a mágneses teret, majd a második kritikus tér felett teljesen megszűnik a szupravezetés. Továbbá az is kiderült, hogy a 2. fajú szupravezetőkben vannak kis tartományok, ahol van mágneses tér (a többi részen nincs),
+ahol emiatt van valamekkora mágneses fluxus, ezt \textbf{szupravezető mágneses fluxusnak} nevezik. Ezt úgy tudjuk kiszámolni, hogy $\Phi_0 = \frac{h}{2e}$, ahol $h$ a Planck-állandó, $e$ pedig az elektron töltése. Ezt az értéket \textbf{fluxus kvantumnak} nevezzük, ezeket a régiókat pedig \textbf{szupravezető vortex-eknek}.
+A Planck-állandó megjelenéséből egyből látszódi, hogy ez egy kvantumos jelenség, ami valahogy a kvantálással lesz összefüggésben.
+
+Az előbb említett nagy hőmérsékletű szupravezetők is ilyen másodfajú szupravezetők. A praktikus probléma velük az, hogy azon túl, hogy ezek a kerámia anyagok törékenyek, ezek a vortex-ek könnyen el tudnak mozdulni.
+Ha pedig ezek elkezdenek mozogni, akkor ezek elkezdenek rácsrezgéseket kelteni, ami hőt termel. Az pedig elrontja a szupravezetési képességét! Ezért az anyagot szennyeződésekkel kell telerakni, hogy megfogja a vortexeket,
+és így stabilan tudjon szupravezető maradni. Ezek a szennyeződések, viszont lecsökkentik a $H_{C2}$-t, ami miatt csak nagyon kicsi áramot tudunk vele vezetni (mivel a vezetett áram is generál mágneses teret).
+Ezért nagy árammal dolgozni, csak a sokkal nehezebben előállítható 1. fajú szupravezetőkkel lehet.
+
+Egy szupravezetőt tehát úgy tudunk jellemezni, hogy benne az áram:
+\begin{equation}
+    \mathbf{j} = \cancel{\sigma} \mathbf{E} \qquad \mathbf{E} = \cancel{\rho} \mathbf{j}
+\end{equation} 
+Ezeket az összefüggéseket tehát nem tudjuk használni, emiatt nézzük meg az elektron mozgását egy szupravezetőben. Az elektronok mozgását a következőképpen írhatjuk fel:
+\begin{equation}
+    m \frac{d \mathbf{v}}{dt} = - e \mathbf{E} \quad = \quad \frac{d}{dt} \mathbf{j} = - e n \frac{d\mathbf{v}}{dt} \quad \Rightarrow \quad \frac{d \mathbf{j}}{dt} = \frac{n e^2}{m} \mathbf{E}
+\end{equation}
+Azt is tudjuk, hogy a mágneses tér az elektromos tér rotációja:
+\begin{equation}
+    \nabla \times \mathbf{E} = - \frac{\partial \mathbf{B}}{\partial t}
+\end{equation}
+Ezeket összevetve a következő egyenletet kapjuk:
+\begin{equation}
+    \nabla \times \frac{d \mathbf{j}}{dt} = - \frac{n e^2}{m} \frac{\partial \mathbf{B}}{\partial t}
+\end{equation}
+Vagy átrendezve:
+\begin{equation}
+    \nabla \times (\frac{m}{e^2 n}) \frac{d \mathbf{j}}{dt} = - \nabla \times \frac{d \mathbf{A}}{dt} \qquad \text{mivel } \mathbf{B} = \nabla \times \mathbf{A}
+\end{equation}
+Ebből pedig következik, hogy:
+\begin{equation}
+    \boxed{\mathbf{j} = - \frac{e^2 n}{m} \mathbf{A}}
+\end{equation}
+Ezt nevezik a \textbf{szupravezetők anyagi egyenletének}. Ezzel azonban akad egy probléma, az $A$ vektorpotenciál nincs egyértelműen meghatározva, hiszen bármilyen skalárfüggvény gradiensével kiegészítve is ugyanazt a mágneses teret adja.
+Viszont mégis van rá egy megkötés, hiszen, ha az áram időben állandó, akkor a töltésmegmaradás miatt:
+\begin{equation}
+    \nabla \cdot \mathbf{j} = 0 \quad \Rightarrow \quad \nabla \cdot \mathbf{A} = 0
+\end{equation}
+Ezt a feltételt \textbf{Coulomb-feltételnek} nevezzük. Ez azt jelenti, hogy ez az egyenlet csak Coulomb-mértékben érvényes. 
+
+Van mégegy Maxwell egyenlet, amit figyelembe kell vennünk:
+\begin{equation}
+    \nabla \times \mathbf{B} = \mu_0 \mathbf{j} + \dots
+\end{equation}
+Itt most statikus esetet nézünk, vagyis az eltolási árammal nem foglalkozunk. Ebbe behelyettesítve a szupravezetők anyagi egyenletét:
+\begin{equation}
+    \nabla \times \mathbf{B} = - \mu_0 \frac{e^2 n}{m} \mathbf{A}
+\end{equation}
+Vegyük mindkét oldal rotációját:
+\begin{equation}
+    \nabla \times (\nabla \times \mathbf{B}) = - \mu_0 \frac{e^2 n}{m} (\nabla \times \mathbf{A}) = - \mu_0 \frac{e^2 n}{m} \mathbf{B}
+\end{equation}
+Használjuk a vektorműveletek azon azonosságát, hogy $\nabla \times (\nabla \times \mathbf{B}) = \nabla (\nabla \cdot \mathbf{B}) - \nabla^2 \mathbf{B}$, és hogy $\nabla \cdot \mathbf{B} = 0$:
+\begin{equation}
+    \nabla^2 \mathbf{B} = \mu_0 \frac{e^2 n}{m} \mathbf{B}
+\end{equation}
+Itt a konstansokra be szokás vezetni a $\mu_0 \frac{e^2 n}{m} = \frac{1}{\lambda_L^2}$ jelölést, ahol $\lambda_L$ a \textbf{London-féle behatolási mélység}, ami jellemzi, hogy a mágneses tér milyen mélyen tud behatolni egy szupravezetőbe:
+\begin{equation}
+    \boxed{\nabla^2 \mathbf{B} = \frac{1}{\lambda_L^2} \mathbf{B}}
+\end{equation}
+Ez a \textbf{London-egyenlet}, ami azt mondja ki, hogy a mágneses tér exponenciálisan csökken egy szupravezetőben, és a csökkenés mértékét a London-féle behatolási mélység határozza meg. Ez magyarázza a Meissner-effektust, hiszen a mágneses tér egy szupravezetőben nagyon gyorsan eltűnik.
+
+Vegyük például azt az esetet, hogy van egy normális és egy szupravezető anyag közötti határon vagyunk. $B$ a $z$ irányba mutat, és csak az $x$ irányba változik ($B_z (x)$). Ekkor a London-egyenlet a következőképpen alakul:
+\begin{equation}
+    \frac{d^2 B_z (x)}{dx^2} = \frac{1}{\lambda_L^2} B_z (x)
+\end{equation}
+Ennek az egyenletnek a megoldása egy sima exponenciális függvény lesz:
+\begin{equation}
+    B_z (x) = B_0 e^{\pm x / \lambda_L}
+\end{equation}
+Viszont a pozitív megoldás felrobban a végtelenben, ezért csak a negatív megoldás jöhet szóba:
+\begin{equation}
+    B_z (x) = B_0 e^{- x / \lambda_L}
+\end{equation}
+Tehát a mágneses tér exponenciálisan csökken egy szupravezetőben, és a csökkenés mértékét a London-féle behatolási mélység határozza meg. Ez a megoldás természetesen csak az elsőfajú szupravezetőkre igaz, a másodfajú szupravezetők esetében venni kéne egy $\delta(x)$-szerű forrást is, ami a vortex-eket írja le.
+Ennek a megoldása bonyolultabb, de Bessel-függvényeket fogunk kapni.
+
+Most már csak egy dolgot kell egy kicsit jobban megvizsgálni. A másodfajú szupravezetők esetében a vortexeken lévő fluxus kvantált, vagyis $\Phi_0 = \frac{h}{2e}$. De miért pont ez az érték jön ki?
+Előszőr kezdjük a Sommerfeld-féle kvantálási feltétellel:
+\begin{equation}
+    \oint \mathbf{p} \cdot d\mathbf{l} = n h
+\end{equation}
+Itt a $\mathbf{p}$ a részecske impulzusa, ami egy töltött részecske esetében a következőképpen alakul egy mágneses térben:
+\begin{equation}
+    \mathbf{p} = m \mathbf{v} - e \mathbf{A}
+\end{equation}
+Behelyettesítve a kvantálási feltételbe:
+\begin{equation}
+    \oint (m \mathbf{v} - e \mathbf{A}) \cdot d\mathbf{l} = \oint m \mathbf{v} d\mathbf{l} - \oint e \mathbf{A} \cdot d\mathbf{l} = n h
+\end{equation}
+Ha statikát nézünk és nincs mozgás, akkor az első tag eltűnik, így a következőt kapjuk:
+\begin{equation}
+    - e \oint \mathbf{A} \cdot d\mathbf{l} = n h
+\end{equation}
+Ezt a vonalintegrált a Stokes-tétel segítségével át tudjuk írni egy felületi integrállá:
+\begin{equation}
+    - e \int (\nabla \times \mathbf{A}) \cdot d\mathbf{S} = \underbrace{- e \int \mathbf{B} \cdot d\mathbf{S}}_{\Phi} = n h
+\end{equation}
+De ugye a felületintegrálja a mágneses térnek pont a fluxust adja meg, így a következőt kapjuk:
+\begin{equation}
+    \Phi = \frac{n h}{e}
+\end{equation} 
+Ez majdnem ugyanaz mint az általunk keresett eredmény, de hiányzik egy $2$-es osztó ($\Phi_0 = \frac{h}{2e}$). A 2-es onnan ered, hogy a szupravezetésben az áramot nem egyedül az elektronok vezetik, hanem \textbf{Cooper-párok}, amik két elektronból állnak össze.
+Cooper megfigyelése az volt, hogy ha elektronok helyett elektronpárokat veszünk (a párok olyan elektronok, melyeknek az impulzusa ellentétes irányú) és ezekhez a párokhoz hozzáadjuk a rácsrezgéseket (fononokat), akkor ezek a párok együttesen egy effektív vonzó kölcsönhatást tudnak létrehozni,
+ami nem tud szóródni vagy energiát felvenni. Az alacsony hőmérséklet pedig amiatt kell, mert elég magas hőmérséklet képes lehet ezeket a párokat felbontani. Így a Cooper-párok effektív töltése $-2e$ lesz, ezért jelenik meg a fluxus kvantumban a $2$-es osztó.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \end{document}
