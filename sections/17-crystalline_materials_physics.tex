@@ -8,11 +8,1665 @@
 }
 
 
+\subsection{Szimmetriák, pontcsoportok, Bravais-rácsok}
+A kondenzált anyagokat általában két csoportra oszthatjuk: a kristályos és az amorf anyagok. A kristályos anyagok olyan anyagok melyekben az atomok, vagy molekulák amelyek felépítik az anyagot, valamilyen
+rendezettséget mutatnak. Az amorf anyagok (mint pl. az üveg) ezzel ellentétben rendezetlenek
+\footnote{
+    A valóságban lehet valamiféle lokális rendezettség az amorf anyagokban is, de ezt nem lehet általánosítani a teljes szerkezetre.
+}, az atomok elhelyezkedése véletlenszerű. A kristályos anyagokban a rendezettség miatt szimmetriák figyelhetők meg, melyek a kristályszerkezetek leírására szolgálnak. A szimmetriák olyan transzformációk melyek
+azonos állapotba viszik át a rendszert. Tehát mondjuk egy kocka-szimmetriát mutató kristály esetében egy kockát a kocka élének hosszával, az egyik él irányába eltolva pont egy ugyanolyan kockába fogunk eljutni. 
+A szimmetriák jellemzéséhez bevezethetjük a \textbf{elemi rácsvektor} fogalmát, melyek a kristály legkisebb ismétlődő egységének a vektorai. Ezek a vektorok három irányban határozzák meg a kristályt, és ezek lineáris kombinációjával
+az egész kristály felépíthető. Az elemi rácsvektorok megválasztása nem egyértelmű, több, ekvivalens választás is lehetséges, és a probléma természete szabja meg melyiket érdemes használni.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{imgs/17-tetel/racsvektorok.png}
+    \caption{több lehetséges elemi rácsvektor választás egy egyszerű kristályszerkezet esetében.}
+\end{figure}
 
+Egy 3D-s kristály esetében például három elemi rácsvektorra van szükségünk ($\mathbf{a}_1, \mathbf{a}_2, \mathbf{a}_3$), melyek lineáris kombinációjával a kristály bármely pontja elérhető:
+\begin{equation}
+    \mathbf{R}_n = n_1 \mathbf{a}_1 + n_2 \mathbf{a}_2 + n_3 \mathbf{a}_3, \quad n_i \in \mathbb{Z}
+\end{equation}
+Ha tehát a kristály ugyanúgy néz ki egy $\mathbf{r}' = \mathbf{r} + \mathbf{R}_n$ eltolás után mint $\mathbf{r}$-ben, akkor a kristály periodikus. $n_1, n_2, n_3$ tetszőleges egész számok. A szerkezet amit a három elemi rácsvektor határoz meg, \textbf{Bravais-rácsnak} nevezzük.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{imgs/17-tetel/bravais_lattice.png}
+    \caption{Bravais-rács, bázis és kristályszerkezet egy 2D-s rács esetében.}
+\end{figure}
 
+Egy másik nagyon hasznos szerkesztés az úgynevezett \textbf{Wigner-Seitz cella}, mely egy adott rácspont körüli legkisebb térfogatot határozza meg, amelyet a rácspont és a környező rácspontok középpontjait összekötő síkok határolnak.
+Ezt úgy tudjuk előállítani, hogy egy kiválasztott rácspontot összekötjük az összes szomszédjával, majd a pontok közötti egyenesre berajzoljuk a felező merőleges síkot. Ekkor a síkok mindig ki fognak jelölni egy térfogatot,
+és ebben a térfogatban mindig csak egy darab rácspont lesz. Azokat a cellákat amikkel az egész kristályt ki lehet tölteni, és csak egy rácspontot tartalmaznak, \textbf{elemi cellának} (vagy primitív cellának) nevezzük. 
+A Wigner-Seitz cella egy elemi cella, de más szerkesztési módok is léteznek.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{imgs/17-tetel/wigner_seitz.png}
+    \caption{Wigner-Seitz cella egy 2D-s rács esetében.}
+\end{figure}
+Ezt a szerkesztést nem-periodikus szerkezetek esetén is lehet használni, ezért ez egy általánosabb jellemzésre ad lehetőséget.
 
+Ha az elemi cellában akarok egy konkrét pontot jellemezni, akkor használhatom a \textbf{kristály koordinátákat}, melyek az elemi rácsvektorokhoz viszonyítva adják meg a pont helyét. Tehát egy adott pont helye a következőképpen adható meg:
+\begin{equation}
+    \mathbf{r} = x_1 \mathbf{a}_1 + x_2 \mathbf{a}_2 + x_3 \mathbf{a}_3, \quad -1 \le x_i < 1
+\end{equation}
+Fontos megjegyezni, hogy a kondenzált anyagok fizikájában a negatív irányokat speciális módon jelölik, tehát a $-\frac{1}{2}$-et $\bar{\frac{1}{2}}$-ként írják. A felülvonás mindig a negatív előjelet jelöli.
+Tehát összefoglalva a $n_1, n_2, n_3$ jelöli a Bravais-rács helyét magát, $x_1, x_2, x_3$ pedig a Bravais-rácson belüli pontok helyét.
 
+Mivel a kristályban az "irány" fogalma sem egyértelmű (mivel a kristály periodikus, így bármely irányt eltolva egy ekvivalens irányt kapunk), ezért bevezetjük a \textbf{kristálytani irányokat}, melyek az elemi rácsvektorok lineáris kombinációi egész számokkal:
+\begin{equation}
+    [u v w] = u \mathbf{a}_1 + v \mathbf{a}_2 + w \mathbf{a}_3, \quad u,v,w \in \mathbb{Z}
+\end{equation}
+Ahol $u, v, w$ számok a legkisebb olyan számok, amik relatív prímek\footnote{
+    A relatív prímek olyan egész számok, melyeknek nincs közös osztójuk 1-en kívül.
+}.
+A kristálytani irányokat szögletes zárójelben szokták jelölni, hogy megkülönböztessék a valódi vektoroktól. Például egy kocka esetében a [100], [010], [001] irányok megfelelnek a kocka éleinek irányainak.
+A kristálytani irányokat a következő módon lehet meghatározni:
+\begin{itemize}
+    \item A kristálytani irányokat jelölő vektorok mindig az origóból indulnak, tehát ha a keresett irány nem onnan indul, akkor el kell tolni az origóba.
+    \item Határozzuk meg, hogy az irányvektort hogyan lehet az elemi rácsvektorok lineáris kombinációjaként felírni (vagyis, hogy az adott tengely irányú komponense hanyad része az elemi rácsvektornak): pl.: $3a_1, -1a_2, 2a_3$.
+    \item Osszuk le az iránykomponenseket a legkisebb közös nevezővel, majd skálázzuk egész számokra: $\left(\frac{1}{3}, -1, \frac{1}{2}\right)$.
+    \item Skálázzuk ezeket a legkisebb relatív prím egész számokra: $(2, -6, 3)$.
+    \item Írjuk fel a kristálytani irányokat szögletes zárójelben: [2 $\bar{6}$ 3].
+\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{imgs/17-tetel/crystal_direction.png}
+    \caption{
+        A képen látható irányt úgy tudjuk meghatározni, hogy előszőr eltoljuk az origóba, majd megnézzük, hogy mekkora a vektor komponense az adott tengely mentén: $-1a_1, \frac{1}{2}a_2, 1a_3$.
+        De mivel a kristálytani $n_1, n_2, n_3$ számoknak egész számoknak kell lenniük, ezért skálázzuk fel őket a legkisebb relatív prím egész számokra: (-2, 1, 2). Tehát az irány a [$\bar{2}$ 1 2].
+        Másik módszer, hogy skálázgatás helyett egyszerűen vesszük a vektor fejének és farkának a különbségét: $(0, \frac{1}{2}, 1) - (1, 0, 0) = (-1, \frac{1}{2}, 1)$, majd ezeket alakítjuk egész számokká: [$\bar{2}$ 1 2].
+        }
+\end{figure}
+Sokszor visszafelé kell dolgozni, és a megadott indexekből kell meghatározni az irányvektort. Ekkor, pl. ha az indexek [2 $\bar{3}$ 1], akkor először vesszük a reciprokukat: $\left(\frac{1}{2}, -\frac{1}{3}, 1\right)$, majd skálázzuk őket az elemi rácsvektorokra: $\frac{1}{2}a_1, -\frac{1}{3}a_2, 1a_3$. Végül összeadva megkapjuk a vektort:
+\begin{equation}
+    \mathbf{r} = \frac{1}{2} \mathbf{a}_1 - \frac{1}{3} \mathbf{a}_2 + 1 \mathbf{a}_3
+\end{equation}
 
+Be lehet még vezetni a \textbf{kovariáns koordinátarendszert}, mely az elemi rácsvektorokhoz képest reciprok viszonyban álló vektorokat használja a pontok helyének meghatározására. Ekkor a $\mathbf{b}_1, \mathbf{b}_2, \mathbf{b}_3$ vektorokat használjuk, melyek a következőképpen definiáltak:
+\begin{equation}
+    \mathbf{a}_i \cdot \mathbf{b}_i = 2 \pi \delta_{ij} 
+\end{equation}
+Itt megjelenik egy extra $2 \pi$ faktor, ami a későbbiekben lesz hasznos. Explicit formában a következőképpen néznek ki ezek a vektorok:
+\begin{equation}
+    \mathbf{b}_1 = 2 \pi \frac{\mathbf{a}_2 \times \mathbf{a}_3}{\mathbf{a}_1 \cdot (\mathbf{a}_2 \times \mathbf{a}_3)}, \quad
+    \mathbf{b}_2 = 2 \pi \frac{\mathbf{a}_3 \times \mathbf{a}_1}{\mathbf{a}_2 \cdot (\mathbf{a}_3 \times \mathbf{a}_1)}, \quad
+    \mathbf{b}_3 = 2 \pi \frac{\mathbf{a}_1 \times \mathbf{a}_2}{\mathbf{a}_3 \cdot (\mathbf{a}_1 \times \mathbf{a}_2)}
+\end{equation}
+Ezek a vektorok is egy rácsot alkotnak, melyet \textbf{reciprok rácsnak} nevezünk. A reciprok rács vektorai a hullámvektorok leírására szolgálnak, és fontos szerepet játszanak a diffrakciós jelenségek leírásában.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{imgs/17-tetel/reciprocal_lattice.jpg}
+    \caption{Reciprok rács egy 2D-s rács esetében.}
+\end{figure}
+Az elemi rács térfogatát a hármas skalárszorzat adja meg:
+\begin{equation}
+    V_c = \mathbf{a}_1 \cdot (\mathbf{a}_2 \times \mathbf{a}_3) = \begin{vmatrix}
+        a_{1x} & a_{1y} & a_{1z} \\
+        a_{2x} & a_{2y} & a_{2z} \\
+        a_{3x} & a_{3y} & a_{3z}
+    \end{vmatrix}
+\end{equation}
+Hasonlóan a reciprok rács elemi cellájának térfogata:
+\begin{equation}
+    V_r = \mathbf{b}_1 \cdot (\mathbf{b}_2 \times \mathbf{b}_3) = \begin{vmatrix}
+        b_{1x} & b_{1y} & b_{1z} \\
+        b_{2x} & b_{2y} & b_{2z} \\
+        b_{3x} & b_{3y} & b_{3z}
+    \end{vmatrix}
+\end{equation}
+Ezek között az összefüggés a következő:
+\begin{equation}
+    \begin{pmatrix}
+        b_1x & b_1y & b_1z \\
+        b_2x & b_2y & b_2z \\
+        b_3x & b_3y & b_3z
+    \end{pmatrix}
+    \cdot 
+    \begin{pmatrix}
+        a_1x & a_1y & a_1z \\
+        a_2x & a_2y & a_2z \\
+        a_3x & a_3y & a_3z
+    \end{pmatrix}
+    = \begin{pmatrix}
+        2 \pi & 0 & 0 \\
+        0 & 2 \pi & 0 \\
+        0 & 0 & 2 \pi
+    \end{pmatrix}
+\end{equation}
+És mivel a mátrix-szorzatok determinánsa egyenlő a determinánsok szorzatával, ezért a következő összefüggést kapjuk:
+\begin{equation}
+    V_c V_r = (2 \pi)^3 \quad \Rightarrow \quad \boxed{V_r = \frac{(2 \pi)^3}{V_c}}
+\end{equation}
+A recipokrácsra is tudunk Wigner-Seitz cellát szerkeszteni, melyet \textbf{Brillouin-zónának} nevezünk.
+
+A reciprokrács terében is tudunk irányokat definiálni, és az ehhez tartozó szorzatokat \textbf{Miller-index}-eknek nevezzük:
+\begin{equation}
+    \mathbf{G}_{hkl} = h \mathbf{b}_1 + k \mathbf{b}_2 + l \mathbf{b}_3, \quad h,k,l \in \mathbb{Z}
+\end{equation}
+Ahol $h, k, l$ Miller-indexek ismét a legkisebb relatív prím egész számok. Ez a $\mathbf{G}_{hkl}$ kijelöl egy síkot a kristályban amire merőleges ez a vektor:
+\begin{equation}
+    \mathbf{r} \cdot \mathbf{G}_{hkl} = \text{áll.}
+\end{equation}
+Ahol $\mathbf{r} = (x,y,z)$ a futópont ami végigmegy a síkon. Ekkor ez egy sík egyenlete lesz. Ha a sík az origón megy át, akkor a jobb oldal nulla lesz, ha pedig egy tetszőleges $\mathbf{p}$ ponton, akkor $\mathbf{p} \cdot \mathbf{G}_{hkl}$ lesz a jobb oldal.
+Mivel $\mathbf{R}_n$-en mindenképpen át kell mennie a síknak (hiszen az egy rácspont), ezért felírhatjuk $\mathbf{p}$-nek a $\mathbf{R}_n$-t:
+\begin{equation}
+    \mathbf{R}_n \cdot \mathbf{G}_{hkl} = (n_1 \mathbf{a}_1 + n_2 \mathbf{a}_2 + n_3 \mathbf{a}_3) \cdot (h \mathbf{b}_1 + k \mathbf{b}_2 + l \mathbf{b}_3) = 2 \pi (h n_1 + k n_2 + l n_3)
+\end{equation}
+Tehát a sík egyenlete felírható a következő formában is:
+\begin{equation}
+    \mathbf{r} \cdot \mathbf{G}_{hkl} = 2 \pi (h n_1 + k n_2 + l n_3) = 2 \pi m, \quad m \in \mathbb{Z}
+\end{equation}
+Mivel $n_1, n_2, n_3, h, k, l$ egész számok, ezért a jobb oldal mindig $2 \pi$ egész számú többszöröse lesz (azaz $2 \pi m$, ahol $m \in \mathbb{Z}$). A $\mathbf{r}$-t felírhatjuk kristály koordinátákban is, hiszen $x_1, x_2, x_3$ bármilyen valós szám lehet az elemi cellán belül:
+\begin{equation}
+    \mathbf{r} = x_1 \mathbf{a}_1 + x_2 \mathbf{a}_2 + x_3 \mathbf{a}_3
+\end{equation}
+Behelyettesítve a sík egyenletébe:
+\begin{equation}
+    (x_1 \mathbf{a}_1 + x_2 \mathbf{a}_2 + x_3 \mathbf{a}_3) \cdot (h \mathbf{b}_1 + k \mathbf{b}_2 + l \mathbf{b}_3) = 2 \pi m
+\end{equation}
+Ebből a következő egyenletet kapjuk:
+\begin{equation}
+    2 \pi (h x_1 + k x_2 + l x_3) = 2 \pi m \quad \Rightarrow \quad h x_1 + k x_2 + l x_3 = m
+\end{equation}
+Tehát a Miller-indexek kijelölnek egy síkot a kristályon belül úgy, minden kristályelemhez tartozik egy ilyen sík. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{imgs/17-tetel/miller_index.png}
+    \caption{Miller-indexek által kijelölt síkok egy 2D-s rács esetében.}
+\end{figure}
+$m$ és $m \pm 1$ között a síkok távolsága a következőképpen adható meg:
+\begin{equation}
+    d_{hkl} = \left(\frac{m}{h} - \frac{m-1}{h}\right)\mathbf{a}_1 \cdot \frac{\mathbf{G}_{hkl}}{|\mathbf{G}_{hkl}|} = \frac{2 \pi}{|\mathbf{G}_{hkl}|}
+\end{equation}
+Ennek az értéknek a diffrakció megértésében lesz nagyon fontos szerepe, ezért \textbf{diffrakciós síkok távolságának} nevezzük.
+
+Köbös kristályszerkezetnél például a következőképpen alakul a diffrakciós síkok távolsága:
+\begin{equation}
+    d_{hkl} = \frac{2\pi}{\sqrt{h^2 + k^2 + l^2}}
+\end{equation}
+Ezeket a síkokat úgy szokás jellemezni, hogy melyik Miller-indexekhez tartoznak, például:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/17-tetel/miller_planes.png}
+    \caption{
+        Az ábrán látható kristálysík a $3a_1, 2a_2, 2a_3$ pontokban metszi az elemi rácsvektorok által kijelölt tengelyeket. Ennek a reciproka $\left(\frac{1}{3}, \frac{1}{2}, \frac{1}{2}\right)$, és a legkisebb egész számok melyeknek az aránya pont ez a $2, 3, 3$.
+        Tehát ez a sík a (233) Miller-indexű sík.
+    }
+\end{figure}
+Például néhány fontos kristálysíkra egy kockakristályban:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/17-tetel/miller_examples.png}
+    \caption{Néhány fontos kristálysík egy kockakristályban.}
+\end{figure}
+Tehát a Miller-indexeket úgy kell meghatározni, hogy megtaláljuk az $n_1, n_2, n_3$ értékeket ahol a sík metszi az elemi rácsvektorokat, vesszük ezek reciprokát, majd a legkisebb relatív prím egész számokra skálázzuk őket.
+pl. van egy síkunk ami $2, 1, 4$ pontokban metszi a tengelyeket, akkor a reciprokuk: $\left(\frac{1}{2}, 1, \frac{1}{4}\right)$, amit a legkisebb relatív prím egész számokra skálázva megkapjuk a (2, 4, 1) Miller-indexeket. 
+Ha az egyik metszéspont a negatív tartományba esik, akkor azt egy felülvonással jelöljük, pl. ha a sík $-2, 1, 4$ pontokban metszi a tengelyeket, akkor a Miller-indexek: ($\bar{2}, 4, 1$).
+
+Még egy lehetséges jellemzése a kristályoknak a forgatási szögekre való invariancia. Például, ha egy kocka alakú kristályt elforgatunk $90^\circ$-kal az egyik tengelye körül, akkor a kristály szerkezete nem változik meg.
+Tehát minden kristálynál megkérdezhetjük, hogy mi az a $\phi$ szög, amivel elforgatva a kristályt, a kristály szerkezete változatlan marad. Ez az elemi rácsvektorok nyelvén azt jelenti, hogy egy $\phi$ szöggel való forgatás után is az összes elemi rácsvektor egy rácspontba fog mutatni.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{imgs/17-tetel/forgatasi_szog.png}
+    \caption{Forgatási szög egy 2D-s rács esetében.}
+\end{figure}
+Tehát igaznak kell lennie a következő egyenletnek:
+\begin{equation}
+    2 \mathbf{a} \cos \phi = m \mathbf{a}, \quad m \in \mathbb{Z}
+\end{equation}
+Tehát:
+\begin{equation}
+    \cos \phi = \frac{m}{2}, \quad m = 0, 1, 2
+\end{equation}
+Mivel a $\cos \phi$ csak $-1 \leq \cos \phi \leq 1$ értékeket vehet fel, ezért csak az $m = 0, 1, 2$ értékek jöhetnek szóba. Ezekhez a következő forgatási szögek tartoznak:
+\begin{itemize}
+    \item $m = 0 \quad \Rightarrow \quad \phi = 90^\circ$
+    \item $m = \pm 1 \quad \Rightarrow \quad \phi = 60^\circ$
+    \item $m = \pm 2 \quad \Rightarrow \quad \phi = 0^\circ$
+\end{itemize}
+Tehát a $\phi$ csak a következő értékeket veheti fel:
+\begin{equation}
+    \phi = \pm \frac{2\pi}{2}, \pm \frac{2\pi}{3}, \pm \frac{2\pi}{6}, \ldots = \pm30^\circ, \pm90^\circ, \pm120^\circ, \ldots
+\end{equation}
+Vagyis a forgatási szimmetriák csak akkor lehetségesek, ha ezekhez szögekhez tartoznak.
+
+\subsection{Diffrakció, kinematikus elmélet}
+Láttuk, hogy a kristályok szerkezetére nagyon szép modelleket lehet készíteni, de honnan tudjuk, hogy hejtálló-e? És honnan tudjuk, hogy melyik kristály milyen szerkezetű?
+Ez sokáig komoly probléma volt a tudományban és csak közvetett módszerekkel tudták vizsgálni a kristályszerkezetet. A 20. század elején viszont több módszert is sikerült kidolgozni, amelyekkel
+a kristályok elrendezését sikerült közvetlenül megfigyelni. Ebből az egyik legfontosabb a röntgendiffrakció volt, mely a röntgensugarak diffrakciós elhajlásával tudta meghatározni az atomok egymáshoz
+történő helyzetét a kristályban. Később kifejlesztették az elektrondiffrakciót is, mely az elektronok hullámtermészetét használta ki a kristályszerkezet meghatározására. Neutronszórásnál is a hullámtermészet az alapja a diffrakciónak,
+de az erős kölcsönhatás miatt a magokkal, illetve a mágneses momentumokkal való kölcsönhatás is megjelenik.
+
+Most nézzük meg a röntgendiffrakció alapját képező kinematikus elméletet. Ehhez a Hyugens-Fresnel elvet használjuk, mely szerint egy hullámfront minden pontja újabb gömbhullámforrásként viselkedik.
+Ezt a Maxwell-egyenletekből tudjuk levezetni. A Maxwell egyenletek anyagban a következő alakban írhatók fel:
+\begin{equation}
+    \begin{aligned}
+        div \mathbf{D} &= \rho_f \\
+        div \mathbf{B} &= 0 \\
+        rot \mathbf{E} &= -\frac{\partial \mathbf{B}}{\partial t} \\
+        rot \mathbf{H} &= \mathbf{J}_f + \frac{\partial \mathbf{D}}{\partial t} 
+    \end{aligned}
+\end{equation}
+Ahol $\rho_f$ a szabad töltéssűrűség, és $\mathbf{J}_f$ a szabad áram sűrűség. Ezek az anyagban lévő töltések és áramok miatt jelennek meg, ezért az anyagi egyenletekre is szükség van:
+\begin{equation}
+    \begin{aligned}
+        \mathbf{D} &= \varepsilon_0 \mathbf{E} + \mathbf{P}(\mathbf{E}) \\
+        \mathbf{H} &= \frac{1}{\mu_0} \mathbf{B} - \mathbf{M}(\mathbf{B})
+    \end{aligned}
+\end{equation}
+Ezeket összetéve a következő hullámegyenletet kapjuk az elektromágneses térre:
+\begin{equation}
+    \begin{aligned}
+        div \mathbf{E} &= \frac{\rho}{\varepsilon_0} - div \mathbf{P} = \frac{\rho^*}{\varepsilon_0}\\
+        div \mathbf{B} &= 0 \\
+        rot \mathbf{E} &= -\frac{\partial \mathbf{B}}{\partial t} \\
+        rot \mathbf{B} &= \mu_0 \mathbf{J} + \mu_0 rot \mathbf{M} + \mu_0 \varepsilon_0 \frac{\partial \mathbf{E}}{\partial t} + \mu_0 \frac{\partial \mathbf{P}}{\partial t}
+    \end{aligned}
+\end{equation}
+Ahol $\rho$ és $\mathbf{J}$ az összes töltés és áram sűrűség. Az utolsó egyenletet kicsit átrendezve:
+\begin{equation}
+    rot \mathbf{B} - \underbrace{\frac{1}{c^2}}_{\mu_0 \varepsilon_0} \frac{\partial \mathbf{E}}{\partial t} = \mu_0 \left(\mathbf{J} + rot \mathbf{M} + \frac{\partial \mathbf{P}}{\partial t}\right) = \mu_0 \mathbf{J}^*
+\end{equation}
+Tehát összegezve:
+\begin{equation}
+    \boxed{
+    \begin{aligned}
+        &div \mathbf{E} = \frac{\rho^*}{\varepsilon_0} \\
+        &div \mathbf{B} = 0 \\
+        &rot \mathbf{E} = -\frac{\partial \mathbf{B}}{\partial t} \\
+        &rot \mathbf{B} - \frac{1}{c^2} \frac{\partial \mathbf{E}}{\partial t} = \mu_0 \mathbf{J}^*
+    \end{aligned}}
+\end{equation}
+Ezek a Maxwell-egyenletek nagyon hasonló alakban vannak mint a Maxwell-egyenletek vákuumban, ezért hasonló módon oldhatjuk meg őket. Itt is bevezethetjük a vektorpotenciált és a skalárpotenciált:
+\begin{equation}
+    \mathbf{B} = rot \mathbf{A}, \quad \mathbf{E} = -grad \phi - \frac{\partial \mathbf{A}}{\partial t}
+\end{equation}
+Továbbá, mivel $\mathbf{A}$ és $\phi$ nem egyértelműen meghatározottak, ezért bevezethetjük a Lorenz-féle választást:
+\begin{equation}
+    div \mathbf{A} + \frac{1}{c^2} \frac{\partial \phi}{\partial t} = 0
+\end{equation}
+Ezzel a választással a Maxwell-egyenletek a következő alakra redukálódnak:
+\begin{equation}
+    \boxed{
+    \begin{aligned}
+        \Delta \phi - \frac{1}{c^2} \frac{\partial^2 \phi}{\partial t^2} = \Box \phi &= \frac{\rho^*}{\varepsilon_0} \\
+        \Delta \mathbf{A} - \frac{1}{c^2} \frac{\partial^2 \mathbf{A}}{\partial t^2} = \Box \mathbf{A} &= \mu_0 \mathbf{J}^*
+    \end{aligned}}
+\end{equation}
+Továbbá feltesszük, hogy $\rho = 0$ és $\mathbf{J} = 0$, tehát nincsenek szabad töltések és áramok az anyagban (ettől még $\rho^*$ és $\mathbf{J}^*$ nem biztos, hogy 0!).
+Ekkor a hullámegyenletek homogén alakot öltenek:
+\begin{equation}
+    \begin{aligned}
+        \Box \phi &= \frac{1}{\varepsilon_0} div \mathbf{P}(\mathbf{E}) \\
+        \Box \mathbf{A} &= - \mu_0 \left(rot \mathbf{M}(\mathbf{B}) + \frac{\partial \mathbf{P}(\mathbf{E})}{\partial t}\right)
+    \end{aligned}
+\end{equation}
+Viszont a legtöbb anyagban a mágneses polarizáció elhanyagolható, tehát $\mathbf{M}(\mathbf{B}) \approx 0$. Ekkor a hullámegyenletek a következő alakot öltik:
+\begin{equation}
+    \begin{aligned}
+        \Box \phi &= \frac{1}{\varepsilon_0} div \mathbf{P}(\mathbf{E}) \\
+        \Box \mathbf{A} &= - \mu_0 \frac{\partial \mathbf{P}(\mathbf{E})}{\partial t}
+    \end{aligned}
+\end{equation}
+Ezt az egyenletrendszert Hertz oldotta meg először, és az ő tiszteletére nevezik ezt a megoldást \textbf{Hertz-potenciálnak}. Bevezetjük a Hertz-potenciált $\mathbf{\Pi}_e$, melyre igaz, hogy:
+\begin{equation}
+    \begin{aligned}
+        \phi &= - div \mathbf{\Pi}_e \\
+        \mathbf{A} &= \mu_0 \frac{\partial \mathbf{\Pi}_e}{\partial t}
+    \end{aligned}
+\end{equation}
+Ezeket behelyettesítve a hullámegyenletekbe a következő egyenletet kapjuk:
+\begin{equation}
+    - \frac{1}{\varepsilon_0} div \left(\Delta \mathbf{\Pi}_e - \frac{1}{c^2} \frac{\partial^2 \mathbf{\Pi}_e}{\partial t^2}\right) = \frac{1}{\varepsilon_0} div \mathbf{P}(\mathbf{E})
+\end{equation}
+Ebből következik, hogy a Hertz-potenciálnak a következő hullámegyenletet kell kielégítenie:
+\begin{equation}
+    \boxed{
+    - \mathbf{P}(\mathbf{E}) = \Delta \mathbf{\Pi}_e - \frac{1}{c^2} \frac{\partial^2 \mathbf{\Pi}_e}{\partial t^2}
+    }
+\end{equation}
+Ez az egyenlet azt mondja ki, hogy a polarizációs vektor forrásként viselkedik az elektromágneses hullámok számára az anyagban. Hasonlóan behelyettesítve, az elektromos térre is hasonló eredményt kapunk:
+\begin{equation}
+    \boxed{
+    \mathbf{E} = \frac{1}{\varepsilon_0} \left(grad \, div \, \mathbf{\Pi}_e - \frac{1}{c^2} \frac{\partial^2 \mathbf{\Pi}_e}{\partial t^2}\right)
+    } = - \frac{1}{\varepsilon_0} grad \, div \, \mathbf{\Pi}_e - \mu_0 \frac{\partial^2 \mathbf{\Pi}_e}{\partial t^2}
+\end{equation}
+Ez az egyenlet azt mondja ki, hogy a polarizációs vektor forrásként viselkedik az elektromágneses hullámok számára az anyagban.
+
+Most már csak az a kérdés, hogy ez az elektromágneses hullám hogyan hat a kristályban lévő atomok elektronjaira. Az elektronokat, mivel a kristályban kötött állapotban vannak, harmonikus oszcillátorként modellezhetjük,
+ahol megjelenik egy csillapító hatás is, ami abból ered, hogy ha egy elektron elkezd rezegni, az megrezgeti a többi elektront is, ami elvesz az energiájából. Ekkor tehát az elektron mozgásegyenlete a következő lesz
+\footnote{
+    Elektromosságtanban az komplex számot $j$-vel szokás jelölni $i$ helyett mert az $i$-t a komplex áramsűrűség esetében szokták használni.
+}:
+\begin{equation}
+    m \ddot{\mathbf{r}} = -D \mathbf{r} - \lambda \dot{\mathbf{r}} - e \mathbf{E}_0 e^{j \omega t} \qquad j^2 = -1
+\end{equation}
+Ahol $D$ a rugóállandó, $\lambda$ a csillapítási tényező, és az utolsó tag az elektromágneses hullám által keltett erő (azért $-$, mert az elektron töltéséből kihoztuk a negatív előjelet).
+Ezt a szokásos módon tudjuk megoldani, vezessük be a $\omega_0^2 = \frac{D}{m}$ és $\beta = \frac{\lambda}{m}$ jelöléseket, majd rendezzük az $\mathbf{r}$ függő tagokat egy oldalra:
+\begin{equation}
+    \ddot{\mathbf{r}} + \beta \dot{\mathbf{r}} + \omega_0^2 \mathbf{r} = -\frac{e}{m} \mathbf{E}_0 e^{j \omega t}
+\end{equation}
+Keressük a megoldást a következő alakban:
+\begin{equation}
+    \mathbf{r} = \mathbf{r}_0 e^{j \omega t}
+\end{equation}
+Ezt behelyettesítve az egyenletbe:
+\begin{equation}
+    (-\omega^2 + j \beta \omega + \omega_0^2) \mathbf{r}_0 e^{j \omega t} = -\frac{e}{m} \mathbf{E}_0 e^{j \omega t}
+\end{equation}
+Ebből következik, hogy:
+\begin{equation}
+    \mathbf{r}_0 = - \frac{e}{m} \frac{\mathbf{E}_0}{\omega_0^2 - \omega^2 + j \beta \omega} 
+\end{equation}
+Tehát az elektron elmozdulása a következő lesz:
+\begin{equation}
+    \mathbf{r} = - \frac{e}{m} \frac{\mathbf{E}_0}{\omega_0^2 - \omega^2 + j \beta \omega} e^{j \omega t} = - \frac{e}{m} \frac{\mathbf{E}}{\omega_0^2 - \omega^2 + j \beta \omega}
+\end{equation}
+Most már ki tudjuk számolni a dipólmomentum (vagy polarizációs) vektort is, hiszen az egy elektron esetében az alábbi lesz:
+\begin{equation}
+    \mathbf{p} = - e \mathbf{r} = \frac{e^2}{m} \frac{\mathbf{E}}{\omega_0^2 - \omega^2 + j \beta \omega}
+\end{equation}
+Ha $\varrho(\mathbf{r})$ az elektronok térfogati sűrűsége, akkor a polarizációs vektor a következő lesz:
+\begin{equation}
+    \mathbf{P}(\mathbf{r}) = \varrho(\mathbf{r}) \mathbf{p} = \varrho(\mathbf{r}) \frac{e^2}{m} \frac{\mathbf{E}(\mathbf{r})}{\omega_0^2 - \omega^2 + j \beta \omega}
+\end{equation}
+A polarizációs vektor tehát arányos az elektromos térrel: $\mathbf{P} = \alpha(\omega) \varrho(\mathbf{r}) \mathbf{E}$. Ezt behelyettesítve a Hertz-potenciál egyenletébe:
+\begin{equation}
+    \Delta \mathbf{\Pi}_e - \frac{1}{c^2} \frac{\partial^2 \mathbf{\Pi}_e}{\partial t^2} = - \alpha(\omega) \varrho(\mathbf{r}) \left(\frac{1}{\varepsilon_0} grad \, div \, \mathbf{\Pi}_e - \mu_0 \frac{\partial^2 \mathbf{\Pi}_e}{\partial t^2}\right)
+\end{equation}
+Most fejtsük sorba a Hertz-potenciált:
+\begin{equation}
+    \mathbf{\Pi}_e(\mathbf{r}, t) = \mathbf{\Pi}_0 + \mathbf{\Pi}_1 + \ldots
+\end{equation}
+Válasszuk úgy a sorfejtést, hogy a $\mathbf{\Pi}_0$ tag ne függjön még $\varrho(\mathbf{r})$-tól, viszont a $\mathbf{\Pi}_1$ már tartalmazza az első rendű hatásokat. Ez azt jelenti, hogy:
+\begin{equation}
+    \begin{aligned}
+        \Delta \mathbf{\Pi}_0 - \frac{1}{c^2} \frac{\partial^2 \mathbf{\Pi}_0}{\partial t^2} &= 0 \\
+        \Delta \mathbf{\Pi}_1 - \frac{1}{c^2} \frac{\partial^2 \mathbf{\Pi}_1}{\partial t^2} &= - \alpha(\omega) \varrho(\mathbf{r}) \left(\frac{1}{\varepsilon_0} grad \, div \, \mathbf{\Pi}_0 - \mu_0 \frac{\partial^2 \mathbf{\Pi}_0}{\partial t^2}\right) \\
+        &\ldots
+    \end{aligned}
+\end{equation}
+Ez kvázi egy $\varrho$ körüli sorfejtése a Hertz-potenciálnak. A $\Pi_1$-es tagot \textbf{kinematikus szóráselméletnek} neveznek. Ha magasabb rendű tagokat is figyelembe veszünk, akkor \textbf{dinamikus szóráselméletről} beszélünk.
+
+Látható, hogy a 0-ik tag megoldása egy egyszerű síkhullám lesz:
+\begin{equation}
+    \mathbf{\Pi}_0 = \mathbf{\Pi}_{0}^0 e^{j(\omega t + \mathbf{k}_i \cdot \mathbf{r})} \qquad \omega = c |\mathbf{k}_i|
+\end{equation}
+Ahol $\mathbf{k}_i$ a beeső hullám hullámvektora. A $\Pi_1$-es tagról is feltételezhetjük, hogy periodikus, ezért keressük a megoldást a következő alakban:
+\begin{equation}
+    \mathbf{\Pi}_1 = \mathbf{\Pi}_{1}^* e^{j\omega t}
+\end{equation}
+Ezt behelyettesítve a $\Pi_1$ egyenletébe:
+\begin{equation}
+    \Delta \mathbf{\Pi}_{1}^* + |\mathbf{k}_i|^2 \mathbf{\Pi}_{1}^* = - \alpha(\omega) \varrho(\mathbf{r}) \left(\frac{1}{\varepsilon_0} grad \, div \, \mathbf{\Pi}_0^0 e^{j \mathbf{k}_i \cdot \mathbf{r}} + k^2 \mu_0 \mathbf{\Pi}_0^0 e^{j \mathbf{k}_i \cdot \mathbf{r}}\right)
+\end{equation}
+A zárójelben lévő tagok mind adni fognak egy $e^{j \mathbf{k}_i \cdot \mathbf{r}}$ faktort, és egy csomó konstans szorzót, ezeket belerakhatjuk egy $\beta(\mathbf{k})$ állandóba:
+\begin{equation}
+    \boxed{\Delta \mathbf{\Pi}_{1}^* + |\mathbf{k}_i|^2 \mathbf{\Pi}_{1}^* = \beta(\mathbf{k}_i) \varrho(\mathbf{r}) e^{j \mathbf{k}_i \cdot \mathbf{r}}} \qquad \omega = c |\mathbf{k}_i|
+\end{equation}
+Ezt nevezik \textbf{inhomogén Helmholtz egyenletnek}\footnote{
+    A homogén Helmholtz egyenlet egyszerűen:
+    \begin{equation}
+        \Delta \mathbf{\Pi}_{1}^* + |\mathbf{k}_i|^2 \mathbf{\Pi}_{1}^* = 0
+    \end{equation}
+}. Ezt az egyenletet a határfeltételek figyelembevételével és a Green-fügvénnyel lehet megoldani. A Green-függvény a következő alakú egyenlet megoldása:
+\begin{equation}
+    \Delta G(\mathbf{r}, \mathbf{r}') + |\mathbf{k}_i|^2 G(\mathbf{r}, \mathbf{r}') = - \delta(\mathbf{r}) \qquad G = \frac{1}{4 \pi |\mathbf{r}|} e^{j |\mathbf{k}_i| |\mathbf{r}|}
+\end{equation}
+Ennek az eredménye pedig gömbhullámok lesznek. Ez pedig pont azt jelenti, hogy a kristályban lévő atomok az elektromágneses hullám hatására gömbhullámokat bocsátanak ki, ami pont az, amit Hyugens-Fresnel elv mond ki.
+Ennek a megoldása a következő lesz:
+\begin{equation}
+    \mathbf{\Pi}_{1}^*(\mathbf{r}) = \int \frac{1}{4 \pi |\mathbf{r} - \mathbf{r}'|} e^{j |\mathbf{k}_i| |\mathbf{r} - \mathbf{r}'|} \beta(\mathbf{k}_i) \varrho(\mathbf{r}') e^{j \mathbf{k}_i \cdot \mathbf{r}'} d^3 \mathbf{r}'
+\end{equation}  
+Itt az integrálás egy konvolúciónak felel meg, hiszen a Green-függvényt konvolváljuk a forrással.
+Ha a detektorunk a kristálytól messze van (vagyis a hullám nagyságrendjénél sokkal messzebb), a Fraunhofer-féle geometriát alkalmazhatjuk, és a következő közelítést használhatjuk:
+\begin{equation}
+    |\mathbf{r} - \mathbf{r}'| \approx |\mathbf{r}| - \frac{\mathbf{r}}{|\mathbf{r}|} \cdot \mathbf{r}'
+\end{equation}
+Ezt visszahelyettesítve a $\mathbf{\Pi}_1^*$ egyenletébe:
+\begin{equation}
+    \mathbf{\Pi}_{1}^*(\mathbf{r}) = \frac{e^{j |\mathbf{k}_i| |\mathbf{r}|}}{4 \pi |\mathbf{r}|} \beta(\mathbf{k}_i) \int \varrho(\mathbf{r}') e^{j \mathbf{k}_i \mathbf{r}'} \cdot e^{-j \left(|\mathbf{k}_i| \frac{\mathbf{r}}{|\mathbf{r}|} \cdot \mathbf{r}'\right)} d^3 \mathbf{r}'
+\end{equation}
+Ahol bevezethetjük a $\mathbf{k}_o = |\mathbf{k}_i| \frac{\mathbf{r}}{|\mathbf{r}|}$ jelölést, ami a kilépő hullám hullámvektora lesz (output). Ekkor a következő alakot kapjuk:
+\begin{equation}
+    \mathbf{\Pi}_{1}^*(\mathbf{r}) = \frac{e^{j |\mathbf{k}_i| |\mathbf{r}|}}{4 \pi |\mathbf{r}|} \beta(\mathbf{k}_i) \int \varrho(\mathbf{r}') e^{j (\mathbf{k}_i - \mathbf{k}_o) \cdot \mathbf{r}'} d V'
+\end{equation}
+Tehát a Hertz-potenciálra igaz, hogy:
+\begin{equation}
+    \mathbf{\Pi}_1^* \sim A(\boldsymbol{\kappa}) \qquad \boldsymbol{\kappa} = \mathbf{k}_i - \mathbf{k}_o \qquad A(\boldsymbol{\kappa}) = \int \varrho(\mathbf{r}') e^{j \boldsymbol{\kappa} \cdot \mathbf{r}'} d V'
+\end{equation}
+Ahol $A(\boldsymbol{\kappa})$ a szórási amplitúdó, $\boldsymbol{\kappa}$ pedig a szórási vektor. Látható, hogy a szórási amplitúdó a töltéssűrűség Fourier-transzformáltja a szórási vektorra. Mivel 
+az elektromos térerősség és a mágneses indukció is a Hertz-potenciál első deriváltjai, ezért ezek is a szórási amplitúdóval lesznek arányosak. Tehát a kristályból kilépő hullám amplitúdója
+a kristály töltéssűrűségének Fourier-transzformáltja a szórási vektorra.
+
+Amikor egy berenedezéssel mérem az elektromos sugárzást, akkor egy nagyfrekvenciás hullám esetén nem tudom az amplitúdóját mérni, vagyis a tér és időfüggését. Ekkor csak az intenzitást tudom mérni, amit a 
+Poyting vektor ad meg ($\mathbf{S} = \mathbf{E} \times \mathbf{H}$), ami azt mondja meg, hogy egységnyi felületen egységnyi idő alatt mennyi energia halad át. Az intenzitás pedig a Poyting vektor időátlagaként definiálható:
+\begin{equation}
+    I = \langle S \rangle = \frac{1}{2} Re(\mathbf{E} \times \mathbf{H}^*)
+\end{equation}
+Ahol $^*$ a komplex konjugáltat jelöli. Mivel az elektromos tér és a mágneses indukció is a szórási amplitúdóval arányos (tehát $I(\mathbf{r}) \sim |E(\mathbf{r})|^2$), ezért az intenzitás is a szórási amplitúdó négyzetével lesz arányos:
+\begin{equation}
+    I(\boldsymbol{r}) \sim |A(\boldsymbol{\kappa})|^2
+\end{equation}
+Az intenzitást tehát a kristály töltéssűrűségének Fourier-transzformáltja fogja meghatározni. Viszont $A(\boldsymbol{\kappa})$ egy komplex szám ezért nem tudom megmérni, ezért a diffrakcióval a fázisinformációt
+elveszítjük. Amit mérni tudunk az a Poyting vektor időátlagaként definiált intenzitás, ami arányos a szórási amplitúdó négyzetével. Az egyéb szorzókkal általában nem foglalkozunk, mert nem tudunk abszolút
+intenzitást mérni, csak relatív intenzitásokat, ezért az integrált magát egyre szokás normálni.
+
+De kérdés, hogy mire jó ez? Ha nincs a fázisinformáció, akkor nem tudjuk a kristály töltéssűrűségét visszafejteni a Fourier-inverzióval, hiszen az egy komplex szám, tehát a kristályszerkezetet közvetlenül nem tudjuk meghatározni.
+Viszont van a kristályoknak még egy fontos tulajdonsága, mégpedig az, hogy periodikusak. Láttuk, hogy egy tetszőleges rácspont helye a következőképpen adható meg:
+\begin{equation}
+    \mathbf{r} = \mathbf{R}_n + \mathbf{r}_p + \mathbf{r}'
+\end{equation}
+Ahol $\mathbf{R}_n$ az elemi rácsvektorokba mutató vektor, $\mathbf{r}_p$ azt mondja meg, hogy a Bravais-rácson belül hol van az adott atom, és $\mathbf{r}'$ pedig egy tetszőleges pont koordinátája.
+Az elektronsűrűséget ekkor (ha azonos atomokból áll a kristály, ha különbözőek, akkor külön-külön fel lehet írni a vektorokat és összegezni a hozzájárulásukat) a következőképpen írhatjuk fel:
+\begin{equation}
+    \varrho(\mathbf{r}) = \sum_{\mathbf{n}} \sum_{p} \varrho_0(\mathbf{r} - \mathbf{R}_n - \mathbf{r}_p)
+\end{equation}
+Ahol $\varrho_0$ az egy atomhoz tartozó elektronsűrűség, $\mathbf{n}$ a rácspontokat jelöli, és $p$ az adott rácsponton belüli atomokat. Ezt behelyettesítve a szórási amplitúdó egyenletébe:
+\begin{equation}
+    A(\boldsymbol{\kappa}) = \int \sum_{\mathbf{n}} \sum_{p} \varrho_0(\mathbf{r} - \mathbf{R}_n - \mathbf{r}_p) e^{j \boldsymbol{\kappa} \cdot \mathbf{r}} d V'
+\end{equation}
+Itt áttérhetünk egy új változóra: $\mathbf{r}' = \mathbf{r} - \mathbf{R}_n - \mathbf{r}_p$, ekkor az integrálás változója is megváltozik, de mivel eltolásról van szó, ezért a határok nem változnak meg. Ekkor a következő alakot kapjuk:
+\begin{equation}
+    A(\boldsymbol{\kappa}) = \sum_{\mathbf{n}} \sum_{p} \int \varrho_0(\mathbf{r}') e^{j \boldsymbol{\kappa} r'} e^{j \boldsymbol{\kappa} \mathbf{R}_n } e^{j \boldsymbol{\kappa} \cdot \mathbf{r}_p} d V'
+\end{equation}
+Ebből látható, hogy az integrál már nem függ sem $\mathbf{R}_n$-tól, sem $\mathbf{r}_p$-tól, ezért kiemelhetjük:
+\begin{equation}
+    A(\boldsymbol{\kappa}) = \left(\sum_{\mathbf{n}} e^{j \boldsymbol{\kappa} \mathbf{R}_n}\right) \underbrace{\left(\sum_{p} e^{j \boldsymbol{\kappa} \cdot \mathbf{r}_p}\right)}_{A_s(\boldsymbol{\kappa})} \underbrace{\int \varrho_0(\mathbf{r}') e^{j \boldsymbol{\kappa} r'} d V'}_{A_a(\boldsymbol{\kappa})}
+\end{equation}
+Ahol $\mathbf{A}_a$ a \textbf{szórási tényező}, ami az egy atomhoz tartozó szórási amplitúdót adja meg, $A_s$ a \textbf{strukturális tényező}, ami a rácsponton belüli atomok hozzájárulását adja meg.
+A harmadik tagot pedig tovább fejthetjük, ha felírjuk $\mathbf{R}_n$ és $\boldsymbol{\kappa}$ szorzatát:
+\begin{equation}
+    \boldsymbol{\kappa} \cdot \mathbf{R}_n = (q_1 \mathbf{b}_1 + q_2 \mathbf{b}_2 + q_3 \mathbf{b}_3) \cdot (n_1 \mathbf{a}_1 + n_2 \mathbf{a}_2 + n_3 \mathbf{a}_3) = 2 \pi (q_1 n_1 + q_2 n_2 + q_3 n_3)
+\end{equation}
+Ezt visszahelyettesítve a szummába:
+\begin{equation}
+    \sum_{\mathbf{n}} e^{j \boldsymbol{\kappa} \cdot \mathbf{R}_n} = \sum_{0}^{N_1} e^{j 2 \pi q_1 n_1} \sum_{0}^{N_2} e^{j 2 \pi q_2 n_2} \sum_{0}^{N_3} e^{j 2 \pi q_3 n_3}
+\end{equation}
+Ezek geometriai sorozatok
+\footnote{
+    Egy geometriai sorozat összege a következőképpen számolható ki:
+    \begin{equation}
+        S_N = \sum_{n=0}^{N} r^n = \frac{1 - r^{N+1}}{1 - r} \quad \text{ha } r \neq 1
+    \end{equation}
+}, melyek összege a következő lesz:
+\begin{equation}
+    \begin{aligned}
+        \sum_{0}^{N} e^{j 2 \pi q n} &= \frac{e^{2\pi j q N} - 1}{e^{e 2 \pi j q} - 1} = \\
+        &= \frac{e^{\pi j q N} \left(e^{\pi j q N} - e^{-\pi j q N}\right)}{e^{\pi j q} \left(e^{\pi j q} - e^{-\pi j q}\right)} = \\
+    \end{aligned}
+\end{equation}
+viszont a $e^{\pi j q N}$ és $e^{\pi j q}$ tagok csak egy fázisfaktor-t adnak, amit viszont továbbra se tudunk mérni, ezért elhanyagolhatjuk, és ezért a summa a következő alakot ölti:
+\begin{equation}
+   f(q) = \sum_{0}^{N} e^{j 2 \pi q n} \approx \frac{\sin(\pi q N)}{\sin(\pi q)} 
+\end{equation}
+Ebből következik, hogy ha a $q = \frac{c}{N}$,  ahol $c$ egy egész szám, akkor a számláló $\sin(\pi c)$ lesz, ami 0 lesz, és ha $\frac{c}{N}$ is egész szám, akkor a nevező is 0 lesz. Tehát határozatlan alakhoz jutunk, amit L'Hospital szabály segítségével tudunk kezelni:
+\begin{equation}
+   \begin{aligned}
+        \lim_{q \to \frac{c}{N}} f(q) &= \lim_{q \to \frac{c}{N}} \frac{\sin(\pi q N)}{\sin(\pi q)} = \\
+        &= \lim_{q \to \frac{c}{N}} \frac{\pi N \cos(\pi q N)}{\pi \cos(\pi q)} = N \frac{\cos(\pi c)}{\cos\left(\pi \frac{c}{N}\right)} = N
+   \end{aligned}
+\end{equation}
+Tehát az $f(q)$ függvény akkor veszi fel a maximumát amikor $q$ egy egész szám, de nulla csak akkor lesz, ha $q$ nem egész szám, de felírható úgy, hogy $\frac{c}{N}$, ahol $c$ egy egész szám.
+Azokon a helyeken, ahol $q$ nem egész, de nem is fejezhető ki mint $N$ egészu számú hányadosa, ott "kis dombok" lesznek, de ezek elhanyagolhatóak nagy $N$ esetén, mert ezek a dombok egyre keskenyebbek lesznek, és a magasságuk is csökken.
+
+Összegezve tehát $f(q)$ akkor lesz nullától jelentősen eltérő, ha:
+\begin{equation}
+    \boldsymbol{\kappa} = q_1 \mathbf{b}_1 + q_2 \mathbf{b}_2 + q_3 \mathbf{b}_3 \quad \text{ahol } q_i \in \mathbb{Z}
+\end{equation}
+Ha a $q_i$-k pedig egész számok, akkor ezek a reciprokrácsok irányaiba mutatnak (nem feltétlenül Miller indexek, mert nem kell relatív prímeknek lennie, de akkor a Miller indexek egész számú többszörösei lesznek).
+Tehát csak akkor kapunk jelentős szórást, ha a reciprokrács irányába esik a szórási vektor:
+\begin{equation}
+    \boxed{\boldsymbol{\kappa} = \mathbf{k}_i - \mathbf{k}_o = \mathbf{G}_{hkl}} \qquad \mathbf{G} = h \mathbf{b}_1 + k \mathbf{b}_2 + l \mathbf{b}_3 \quad h,k,l \in \mathbb{Z}
+\end{equation}
+Természetesen ahhoz, hogy a végeredmény teljes legyen, hozzá kell szorozni a strukturális és szórási tényezőket is:
+\begin{equation}
+    A(\boldsymbol{\kappa}) = A_s(\boldsymbol{\kappa}) A_a(\boldsymbol{\kappa}) f(\mathbf{q})
+\end{equation}
+A struktúrafaktor csak annyit csinál, hogy ha a Bravais-rácsot úgy választom, hogy nem csak egy atom legyen benne, akkor az $f(\mathbf{q})$ függvény maximumai közelebb lesznek egymáshoz, de struktúrafaktor bizonyos reciprokrácspontokat kiolt vagy megerősít, a rácson belüli atomelrendezéstől függően
+
+A szórási tényező esetében egy keskeny függvény Fourier-transzformáltja van (mivel a töltéssűrűség egy atom körül kb. $1 \text{\AA}$-es tartományban van), ezért a szórási tényező egy széles függvény lesz a $\boldsymbol{\kappa}$ vektor függvényében.
+Ezzel a lassan változó függvénnyel való szorzás pedig változó magasságú csúcsokat eredményez a szórási amplitúdóban, de a csúcsok helye nem változik meg, csak a magasságuk. Ez peddig egy extra információt ad a rácsszerkezetre!
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/17-tetel/diffraction.png}
+    \caption{
+        Diffrakciós kép matematikai modellje. A kék görbe az $f(q)$ függvényt mutatja (pontosabban az abszolút értékét, mert az előjelét mérés során nem tudjuk meghatározni, mivel négyzetesen arányos az intenzitással, amit mérni tudunk), a zöld pedig egy lassan változó szórási tényezőt modellez. Az eredmény egy olyan diffrakciós kép, mely $q$ egész 
+        értékeinél csúcsokat mutat, de a csúcsok magassága a szórási tényezőtől függ. Az ábrán $N=6$-et vettünk fel, tehát az értéke kicsi, nagyobb $N$-ekre a középső kis dombok és a csúcsok közötti magasságkülönbség
+        jóval jelentősebb lesz.
+    }
+\end{figure}
+Tehát a szóródási maximumok irányának meghatározásával megkaphatjuk a kristály elemi rácsvektorainak az irányát, a csúcsok intenzitásának vizsgálatával pedig információt kaphatunk az egyes atomok körüli töltéssűrűségről is. Ezt a két adatot felhasználva pedig
+meg tudjuk határozni, hogy pontosan milyen atomok vannak a kristályban, és azok hol helyezkednek el a rácspontokhoz képest.
+
+Itt a röntgendiffrakcióra számoltuk ki az eredményt, de nagyon hasonló lesz az eredmény az elektron- és a neutron diffrakció esetén is. A fő különbség az lesz, hogy a szórási tényezőbe az elektronsűrűség
+helyett elektronszórás esetén a potenciálteret, neutronszórás esetén pedig a spinsűrűséget kell behelyettesíteni, de a végeredmény hasonló lesz.
+
+\subsubsection{Ewald Gömb}
+Amikor egy kristályt röntgensugárzással vizsgálunk, akkor sokszor kezdetben semmit nem tudunk a kristályszerkezet orientációjáról. Ahhoz viszont hogy diffrakciós képet tudjunk kapni,
+a bejövő hullám ($\mathbf{k}_i$) és a kilépő hullám ($\mathbf{k}_o$) különbségének pont egy reciprokrács vektor irányába kell állnia. Ezt geometriailag úgy tudjuk értelmezni, hogy mivel 
+$\mathbf{k}_i$ és $\mathbf{k}_o$ vektor hosszának azonosnak kell lennie, ezért a $\mathbf{k}_i$ végpontja (ami egy rácspont lesz ha szóródást akarunk) köré egy gömböt képzelhetünk, aminek a sugara
+$|\mathbf{k}_i| = \frac{2 \pi}{\lambda}$ lesz. Diffrakciós képet pedig csak azokban az irányokban fogunk kapni, ahol a gömb felületén van egy másik rácspont is, hiszen csak ott lesz $\mathbf{k}_i - \mathbf{k}_o$ reciprokrács irányú.
+Ezt a gömböt nevezik \textbf{Ewald gömbnek}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/17-tetel/ewald_sphere.png}
+    \caption{
+        Az Ewald gömb ábrázolása. Látható, hogy a bejövő hullám két komponensre bomlik, egy amelyik megy tovább egyenesen (a képen $\mathbf{k}_0$), és egy amelyik szóródik (a képen $\mathbf{k}_1$). A két vektor különbsége pedig
+        egy reciprokrács vektor lesz (képen $\mathbf{d}^*$), ha a szóródott hullám végpontja a gömb felületén van.
+    }
+\end{figure}
+
+Az esetek nagy részében a kristályt besugározva nem fogunk egy diffrakciós képet se kapni, ezért az Ewald gömb közepét addig kell mozgatni amig nem találunk egy megfelelő orientációt. Általában ezt
+úgy oldják meg, hogy lassan forgatják a kristályt különböző irányokba és figyelik, hogy mikor kapnak diffrakciós képet. Ha elég sokáig csinálják, akkor előbb-utóbb ki lehet következetni a megfelelő irányokból a kristály
+szerkezetét.
+
+Van egy gyorsabb módszer is, amit \textbf{pontdiffrakciónak} hívnak. Itt a kristályból port preparálnak, amiben a kis szemcsék az összes lehetséges irányba állhatnak. Emiatt itt elég egy irányból megvilágítani
+az anyagot, mert jó eséllyel így is el fogunk találni egy szemcsét aminek jó az orientációja. Ekkor nem pontokat hanem gyűrűket fogunk látni a detektoron, mert az összes lehetséges irányból fogunk kapni szóródást. Ezekből a gyűrűkből pedig vissza lehet következtetni a kristályszerkezetre is.
+
+Másik opció, hogy nem monokromatikus röntgensugárral világítjuk meg a kristályt, hanem egy széles spektrumút használunk ("fehér fény"). Mivel az Ewald gömb sugara függ a hullámhossztól ($|\mathbf{k}| = \frac{2 \pi}{\lambda}$),
+ezért ekkor valamelyik gömb jó eséllyel el fogja találni a megfelelő rácspontokat, és így diffrakciós képet kaphatunk. Ezt a módszert \textbf{Laue-féle diffrakciónak} hívják. Érdekesség, hogy ekkor nem gyűrűket, hanem pontokat kapunk
+a detektoron, mert itt a különböző hullámhosszok miatt különböző sugarú gömbök lesznek, és ezek különböző irányokba fognak metszeni a rácspontokat.
+
+\subsubsection{Bragg-feltétel}
+További egyszerűsítést jelenthetünk a szórási feltételre, ha a kristályt síkokra bontjuk. Láttuk, hogy $G_{hkl}$ vektorok a kristályokban lévő síkok normális vektorai, ha $h,k,l$ legkisebb relatív prímek. Ennek a vektornak a hossza pedig
+megegyezik a síkok közötti távolság reciproka szorozva $2 \pi$-al:
+\begin{equation}
+    |\mathbf{G}_{hkl}| = \frac{2 \pi}{d_{hkl}}
+\end{equation}
+A szórási feltétel pedig az volt, hogy:
+\begin{equation}
+    \mathbf{k}_i - \mathbf{k}_o = \mathbf{G}_{hkl}
+\end{equation}
+Ebből fel tudjuk írni a síkok távolságát a következőképpen:
+\begin{equation}
+    d_{hkl} = \frac{2 \pi}{|\mathbf{G}_{hkl}|} = \frac{2 \pi}{|\mathbf{k}_i - \mathbf{k}_o|}
+\end{equation}
+A hullámvektorok különbségének hosszát könnyen ki tudjuk számolni, ha felírjuk a vektorok közötti szöget:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/17-tetel/bragg.png}
+    \caption{
+        A bejövő és kilépő hullámvektor közötti szög ábrázolása.
+    }
+\end{figure}
+Ekkor a koszinusz tétel segítségével a következőt kapjuk:
+\begin{equation}
+    |\mathbf{k}_i - \mathbf{k}_o|^2 = |\mathbf{k}_i|^2 + |\mathbf{k}_o|^2 - 2 |\mathbf{k}_i| |\mathbf{k}_o| \cos(2 \theta) 
+\end{equation}
+Mivel $|\mathbf{k}_i| = |\mathbf{k}_o| = \frac{2 \pi}{\lambda}$, ezért ez tovább egyszerűsödik:
+\begin{equation}
+    |\mathbf{k}_i - \mathbf{k}_o|^2 = 2 \left(\frac{2 \pi}{\lambda}\right)^2 (1 - \cos(2 \theta)) = 4 \left(\frac{2 \pi}{\lambda}\right)^2 \sin^2(\theta)
+\end{equation}
+Tehát:
+\begin{equation}
+    |\mathbf{k}_i - \mathbf{k}_o| = \frac{4 \pi}{\lambda} \sin(\theta)
+\end{equation}
+De van még egy dolog amit figyelembe kell vennünk. A diffrakciós síkok esetében ugye megköveteltük, hogy $h,k,l$ legkisebb relatív prímek legyenek, viszont a szórási feltételben ez nem volt megkötés. Ez azt jelenti, hogy a szórási feltétel teljesülhet akkor is,
+ha a $\mathbf{G}$ vektor egy egész számú többszöröse egy adott $\mathbf{G}_{hkl}$-nek. Ezt bevezetve a szórási feltételbe:
+\begin{equation}
+    \mathbf{k}_i - \mathbf{k}_o = m \mathbf{G}_{hkl} \qquad m \in \mathbb{Z}
+\end{equation}
+Ekkor $G_{hkl}$ hossza a következőképpen írható fel:
+\begin{equation}
+    |\mathbf{G}_{h'k'l'}| = \frac{4 \pi}{\lambda} \sin(\theta) = \frac{2\pi m}{d_{hkl}} 
+\end{equation}
+Ahol $h', k', l'$-vel jeleztük, hogy ezek csak egész számok, de nem feltétlenül relatív prímek. Ezt visszahelyettesítve a síkok távolságára:
+\begin{equation}
+    \boxed{\frac{2}{\lambda} \sin(\theta) = \frac{m}{d_{hkl}}}
+\end{equation}
+Ezt nevezik \textbf{Bragg-feltételnek}. Bragg-ék tehát úgy képzelték el a diffrakciót, hogy a kristály egyik diffrakciós síkján verődik vissza a bejövő hullám, majd az alatta lévő síkon is, és így tovább,
+és mivel ezek a síkok nem feltétlenül egy hullámhossz egész számú többszörösére vannak egymástól, ezért a hullámok között elcsúszik a fázis és ezért interferenciára lépnek egymással. Csúcsokat tehát akkor kapunk,
+hogyha ezek az interferenciák pont maximálisan erősítik egymást, amit a Bragg-feltétel ír le.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/17-tetel/bragg2.png}
+    \caption{
+        Bragg-féle visszaverődés ábrázolása. Látható, hogy a bejövő hullám több síkon is visszaverődik, és ezek a visszaverődések interferenciára lépnek egymással. Ha a Bragg-feltétel teljesül, akkor ezek az interferenciák
+        konstruktívak lesznek, és diffrakciós képet kapunk.
+    }
+\end{figure}
+
+\subsection{Elektronoptika, elektronmikroszkóp}
+A klasszikus fénymikroszkóppal az a probléma, hogy korlátolt a felbontóképessége a fény hullámhossza miatt. Általában azt szokás mondani, hogy a fénymikroszkóppal 1000x-es nagyitást érhető el maximum ($\sim 1 \mu m$).
+Utána hiába növeljük a lencsét, a fókusztávolságot stb. a szórás miatt a fény a lencsétől "el fog törni" és nem fogunk tudni éles képet kapni. Ezért a fénymikroszkóp csak olyan mintákra alkalmazható, amelyeknél a karakterisztikus hossz
+\footnote{
+    A karakterisztikus hossz az a méret, amihez képest a minta "nagy" vagy "kicsi". Például egy sejt esetében ez lehet néhány mikrométer, míg egy atom esetében ez lehet néhány angström.
+} lényegesen nagyobb mint a rácsállandó. Mivel a fény hulllámhossza a látható tartományban van ($\lambda \sim 400-700 nm$), ezért a fénymikroszkóp csak maximum néhány száz nanométeres felbontást tud elérni.
+
+Ezt a problémát úgy lehet orvosolni, hogy sokkal kisebb hullámhosszú sugárzással próbáljuk meg leképezni a mintát. Ekkor, mivel $d_{hkl} \sim \lambda$ ezért a karakterisztikus hossz is sokkal kisebb lehet. 
+Erre például a röntgensugárzás is kiválóan alkalmas ($\lambda \sim 0.1-10 \text{\AA}$), de a röntgenoptikában nagyon nehéz lencséket készíteni ezért ezek a berendezések rendkívűl drágák és bonyolultak lesznek.
+Viszont mivel az elektronnak is van hullámtermészete ($\lambda \sim 0.1 - 1 \text{nm}$, de nagyenergiás elektronokkal a pikométeres tartomány is elérhető), ezért azt is lehet használni leképezésre. És nagy előnye 
+az elektronnak a röntgenhez képest, hogy relatíve triviális lencséket készíteni hozzá, hiszen megfelelő elektromágneses mezőkkel úgy irányítjuk az elektronokat ahogy akarjuk, így fókuszálni is lehet őket (hasonló a katódsugaras tévék működéséhez).
+
+Egy elektronmikroszkóp általában 5-8 \AA a felbontása, mert a leképezőrendszer hibája miatt nehéz ennél jobb eredményt elérni. Lehet növelni a gyorsítófeszültséget, de ahhoz komoly és drága berendezésekre van szükség,
+ráadásul a mérete is jelentősen megnő (mivel kell út amin felgyorsul az elektron). Ezért sokkal nagyobb felbontást már csak nagyon speciális berendezésekkel lehet elérni. Ennek ellenére vannak módszerek, amikkel bizonyos
+körülmények között lehet korrekciókat alkalmazni amivel javítani lehet a felbontást (például a lencserendszer asztigmatizmusát ki lehet küszöbölni speciális lencsékkel).
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/17-tetel/electronmicroscope.png}
+    \caption{
+        Az elektronmikroszkóp két fajtája. Bal oldalon a TEM (transmission electron microscope), ahol a mintán áthaladó elektronokat használjuk a képalkotáshoz. Jobb oldalon az SEM (scanning electron microscope), ahol a minta felületéről
+        visszaverődő elektronokat használjuk a képalkotáshoz.
+    }
+\end{figure}
+Az elektronmikroszkópoknak két fő tipusa van. Az egyik a \textbf{TEM} (transmission electron microscope - transzmissziós elektronmikroszkóp), ahol a mintán áthaladó elektronokat használjuk a képalkotáshoz. Itt nagyon vékony mintára van szükség,
+hogy az elektronok át tudjanak haladni rajta. A másik a \textbf{SEM} (scanning electron microscope - Pásztázó elektronmikroszkóp), ahol a minta felületéről visszaverődő elektronokat használjuk a képalkotáshoz.
+Itt nem kell olyan vékony mintára van szükség, de csak a minta felszínéről kapunk információt. A pásztázó mikroszkóp felbontása néhány nanométeres, és a felület topográfiáját lehet vele vizsgálni.
+
+Viszont az elektronok becsapódása kölcsönhatásba léphet az atomokkal, ami ekkor röntgensugárzást tud kelteni (szénnél nehezebb atomok esetében). Ezeknek a röntgensugaraknak pedig az energiája jellemző az adott elemre (ezért karakterisztikus röntgensugárnak hívják),
+ezért ezt mérve, az anyag összetételéről is lehet információt szerezni. 
+
+\subsubsection{Alagútmikroszkóp}
+Az \textbf{Alagútmikroszkóp} (STM - Scanning Tunneling Microscope) egy speciális mikroszkóp, ami a minta felületének atomi felbontású képét tudja elkészíteni. Az STM működése a kvantummechanikai alagúthatáson alapul.
+A lényege, hogy preparálok egy kis atomi vastagságú tűt (amit maratással vagy gallium ionos megmunkálással lehet elérni), és ezt a tűt nagyon közel viszem a minta felületéhez (néhány angström távolságra). Ezután a minta és a tű közé feszültséget kapcsolunk.
+Ekkor a tű és a minta között egy potenciálgát jön létre, amin, ha a tű és az anyag elég közel van egymáshoz, az elektronok az alagúthatás miatt át tudnak ugrani. Ekkor egy áram fog folyni a tű és a minta között, amit meg tudunk mérni. Mivel az alagúthatás valószínűsége exponenciálisan csökken a potenciálgát szélességével,
+ezért ha a tűt függőlegesen mozgatjuk, akkor az áram nagyon érzékenyen fog változni a tű és a minta közötti távolsággal. Ezt az áramot pedig visszacsatolva a tű pozíciójára, a tűt úgy tudjuk mozgatni, hogy az áram állandó maradjon 
+(ezt Piezo-kristályokkal tudjuk elérni, amik változtatják az alakjukat, ha feszültséget kapcsolunk rájuk). Ekkor a tű pozíciója a minta felületének topográfiáját fogja leképezni.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/17-tetel/tunneling_microscope.jpeg}
+    \caption{
+        Az alagútmikroszkóp működési elve. A tű nagyon közel van a minta felületéhez, és a tű és a minta között egy potenciálgát jön létre. Az elektronok az alagúthatás miatt át tudnak ugrani a gáton, és egy áram fog folyni a tű és a minta között.
+        Ezt az áramot mérve, és visszacsatolva a tű pozíciójára, a tűt úgy tudjuk mozgatni, hogy az áram állandó maradjon. Ekkor a tű pozíciója a minta felületének topográfiáját fogja leképezni.
+    }
+\end{figure}
+
+Ezzel a berendezéssel csak egy baj van, hogy a működéséhez az kell, hogy a tű és a minta is vezesse az áramot. Ennek a feloldására találták ki az \textbf{AFM-et} (Atomic Force Microscope - Atomi Erő Mikroszkóp), ahol a tű és a minta között fellépő erőket mérjük. Itt a tű egy rugóra van erősítve, és amikor a tű közel kerül a mintához, akkor 
+a tű és a felület között atomi Wan der Waals erők lépnek fel, amik elhajlítják a rugót. Ezt az elhajlítást pedig lézerfénnyel mérve meg tudjuk határozni a tű és a minta közötti távolságot, és így leképezni a minta felületét. Az AFM-nek az a nagy előnye, hogy nem kell vezető anyagot vizsgálni vele, mert az erők minden anyag között fellépnek.
+
+\subsection{Rácsrezgések termikus hatásai}
+\subsubsection{egyatomos lineáris lánc}
+Eddigi levezetéseink során azt feltételeztük, hogy a kristályrácson belüli pontok statikusak, a helyükről nem mozdulnak el. Ezt azonban tudjuk, hogy nem igaz, ugyanis a hőmérséklet hatására a kristályrács
+elemei magasabb energiájú állapotokba kerülnek és elkezdenek rezegni. Ennek a rezgésnek pedig nagyon sok fontos következménye van a kristályok fizikai tulajdonságaira nézve, például a hővezetésre, elektromos vezetésre, optikai tulajdonságokra stb.
+
+A kristályok rezgésének legegyszerűbb modellje a 1D-os lineáris lánc, amit úgy képzelhetünk el, mint egy sor egymáshoz kötött harmonikus oszcillátort. A rezgő golyó a kristályrács eleme, és az őket összekötő rugók
+pedig az atomok kémiai kötései adják. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/17-tetel/linear_chain.png}
+    \caption{
+        A 1D-os lineáris lánc modellje. A golyók a kristályrács elemei, a rugók pedig az atomok közötti kémiai kötéseket modellezik.
+    }
+\end{figure}
+Ebben a modellben a golyók csak egy irányba tudnak mozogni (például jobbra-balra), és csak a szomszédos golyókkal vannak összekötve rugókkal. Ekkor a golyók mozgását a következő differenciálegyenlet írja le:
+\begin{equation}
+    m \ddot{u}_n = D(u_{n+1} - u_n) + D(u_{n-1} - u_n) = D(u_{n+1} + u_{n-1} - 2 u_n)
+\end{equation}
+Ahol $u_n$ az $n$-edik golyó kitérése az egyensúlyi helyzetéből, $m$ a golyó tömege, $D$ pedig a rugóállandó. Itt, ha leosztunk $m$-el és bevezetjük a $\omega_0^2 = \frac{D}{m}$-et, akkor a következőt kapjuk:
+\begin{equation}
+    \ddot{u}_n = \omega_0^2 (u_{n+1} + u_{n-1} - 2 u_n)
+\end{equation}
+Ennek az egyenletnek a megoldása egy periodikus hullám lesz, amit a következő alakban írhatunk fel:
+\begin{equation}
+    u_n(t) = \tilde{u}_0 e^{j \omega t} \qquad j^2 = -1
+\end{equation}
+Ahol $\tilde{u}_0$ a hullám amplitúdója, és $\omega$ a hullám körfrekvenciája. Ezt visszahelyettesítve a differenciálegyenletbe:
+\begin{equation}
+    -\omega^2 \tilde{u}_n = \omega_0^2 (\tilde{u}_{n + 1} + \tilde{u}_{n - 1} - 2 \tilde{u}_n)
+\end{equation}
+Itt az $\omega^2$-et nem ismerjük, de az egyenletet fel tudjuk írni mátrix formában is:
+\begin{equation}
+    -\frac{\omega^2}{\omega_0^2}
+    \begin{pmatrix}
+        \tilde{u}_1 \\
+        \tilde{u}_2 \\
+        \tilde{u}_3 \\
+        \vdots \\
+        \tilde{u}_N
+    \end{pmatrix} =
+    \begin{pmatrix}
+        -2 & 1 & 0 & \cdots & 1 \\
+        1 & -2 & 1 & \cdots & 0 \\
+        0 & 1 & -2 & \cdots & 0 \\
+        \vdots & \vdots & \vdots & \ddots & \vdots \\
+        1 & 0 & 0 & \cdots & -2
+    \end{pmatrix}
+    \begin{pmatrix}
+        \tilde{u}_1 \\
+        \tilde{u}_2 \\
+        \tilde{u}_3 \\
+        \vdots \\
+        \tilde{u}_N
+    \end{pmatrix}
+\end{equation}
+Itt behoztunk egy fontos feltételezést, mégpedig, hogy a lánc első és utolsó eleme össze van kötve (periodikus határfeltétel). Ennek az az oka, hogy így a kristályrács végtelennek tekinthető, és nem kell a végek hatásával foglalkoznunk.
+Ezt kellően hosszú láncok esetében megtehetjük mert a szélek hatása elhanyagolható a középső részekhez képest. Ez a mátrix egy $N^2$ elemű mátrix, aminek $N$ darab sajátértéke és sajátvektora lesz. Szerencsére viszont nem kell egyesével kiszámolnunk ezeket,
+ugyanis feltehetjük, hogy a kristály periodikus, tehát a $\tilde{u}_n$-ek is periodikusak lesznek, vagyis felírhatjuk őket a következő alakban:
+\begin{equation}
+    \tilde{u}_n = u(q) e^{j q n a}
+\end{equation}
+Ahol $a$ a rácsállandó, és $q$ a hullámvektor. Ezt visszahelyettesítve a mátrix egyenletbe:
+\begin{equation}
+    \begin{aligned}
+        -\omega^2 u(q) e^{j q n a} &= \omega_0^2 \left( u(q) e^{j q (n+1) a} + u(q) e^{j q (n-1) a} - 2 u(q) e^{j q n a} \right) \\
+        &= \omega_0^2 u(q) e^{j q n a} \left( e^{j q a} + e^{-j q a} - 2 \right) \\
+        - \omega^2 &= \omega_0^2 \left(e^{j q a} + e^{-j q a} - 2\right) \\
+        \omega^2 &= \omega_0^2 \left(2 - e^{j q a} - e^{-j q a}\right) \\
+        &= 2 \omega_0^2 \left(1 - \cos(q a)\right) = 4 \omega_0^2 \sin^2\left(\frac{q a}{2}\right)
+    \end{aligned}
+\end{equation}
+Itt figyelembe kell venni a periodikus határfeltételt is, vagyis a kezdeti és a végállapotnak meg kell egyeznie:
+\begin{equation}
+    e^{0 \cdot j a q} = e^{N \cdot j a q} \qquad \rightarrow \qquad e^{j N a q} = 1
+\end{equation}
+Ez pedig csak akkor teljesül, ha $Naq$ a $2 \pi$ egész számú többszöröse, vagyis:
+\begin{equation}
+    q = \frac{2 \pi}{N a} c \qquad c \in \mathbb{Z}
+\end{equation}
+Tehát az $\tilde{u}(q)$-t úgy kell megválasztani, hogy $q \to q + \frac{2 \pi}{a}$-nál ugyanazt az értéket adja vissza. A $2\pi/a$-s faktor pedig pont egy recipokrács vektornyi eltolást jelent. Tehát
+$q$ csak egy reciprokrácson belül vehet fel különböző értékeket, és ott is csak diszkréteket. Ehhez tehát ki kell választanunk egy olyan $\frac{2\pi}{a}$ hosszúságú intervallumot, amiben $q$ fel tud venni $N$ különböző értéket.
+Erre pedig egy jó választás a $-\frac{\pi}{a} \leq q \leq \frac{\pi}{a}$ intervallum, pont a recipokrács Wigner-Seitz cellája. Ezt az intervallumot nevezik \textbf{Brillouin-zónának}.
+Tehát a körfrekvencia a következőképpen írható fel:
+\begin{equation}
+    \boxed{\omega = 2\omega_0 \left|\sin\left(\frac{q a}{2}\right)\right|} \qquad q = \frac{2 \pi}{N a} c \quad c \in \mathbb{Z}, \quad -\frac{\pi}{a} \leq q \leq \frac{\pi}{a}
+\end{equation}
+Ez a \textbf{Diszperziós reláció} a 2D-os lineáris lánc modelljére. Látható, hogy a körfrekvencia $q$ függvényében periodikus, és a Brillouin-zóna határainál nullára esik vissza. Ez azt jelenti, hogy a kristályrács rezgései csak bizonyos frekvenciákon tudnak létezni,
+ezeket a rezgéseket pedig \textbf{fononoknak} nevezzük. A fononok kvázirészecskék, amik a kristályrács rezgéseit hordozzák.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{imgs/17-tetel/phonons.png}
+    \caption{
+        A diszperziós reláció ábrázolása a 1D-os lineáris lánc modelljére. 
+    }
+\end{figure}
+
+Érdekeség, hogy ha kicsit átírjuk a mozgásegyenletet:
+\begin{equation}
+    m \ddot{u}_n = D(u_{n+1} - u_n + u_{n-1} - u_n) = a^2 D \left(\frac{\frac{u_{n+1} - u_n}{a} - \frac{u_n - u_{n-1}}{a}}{a}\right)
+\end{equation}
+És $a$-t kellően kicsinek vesszük, akkor ez kvázi a második parciális deriváltja a $u(x,t)$ függvénynek:
+\begin{equation}
+    m \frac{\partial^2 u(x,t)}{\partial t^2} \approx a^2 D \frac{\partial^2 u(x,t)}{\partial x^2} \qquad x = n a
+\end{equation} 
+Ha pedig a tömeget "szétkenem" a lánc mentén és $\varrho = \frac{m}{a}$ sűrűséget veszek, akkor a következőt kapom:
+\begin{equation}
+    \varrho \frac{\partial^2 u(x,t)}{\partial t^2} = \underbrace{D \frac{a}{A}}_E \frac{\partial^2 u(x,t)}{\partial x^2}
+\end{equation}
+Ahol $A$ a lánc keresztmetszete, és $E$ a Young-modulus. Ez pedig pontosan úgy néz ki mint a rugalmas folytonos közegek egyenlete 1D esetben:
+\begin{equation}
+    \varrho \frac{\partial^2 u(x,t)}{\partial t^2} = E \frac{\partial^2 u(x,t)}{\partial x^2}
+\end{equation}
+Magyarán le tudtuk vezetni egy anyag rugalmas viselkedését pusztán abból, hogy az atomok a kristályban hogy viselkednek. 
+Ha most megnézzük a diszperziós relációt kis $q$ értékeknél ($q a \ll 1$), akkor a szinusz függvényt közelíthetjük $sin(x) \approx x$-szel, így a következőt kapjuk:
+\begin{equation}
+    \omega \approx 2 \omega_0 \frac{q a}{2} = \underbrace{\omega_0 a}_{v} q
+\end{equation}
+Ez pedig egy lineáris diszperziót jelent, ahol a fázissebesség $v = \omega_0 a = a \sqrt{\frac{D}{m}}$. Ez pontosan úgy néz ki, mint egy rugalmas folytonos közegben terjedő hullám, ahol a hullámterjedési sebesség
+a rugalmas közeg anyagi tulajdonságaitól függ.
+
+Összegezve tehát az eredmény:
+\begin{equation}
+    \boxed{
+    \begin{aligned}
+        &u_n(t) = \tilde{u}_0 e^{j \omega t} \\
+        &\omega = 2 \omega_0 \left|\sin\left(\frac{q a}{2}\right)\right| \\
+        &q = \frac{2 \pi}{N a} c \quad c \in \mathbb{Z}, \quad -\frac{\pi}{a} \leq q \leq \frac{\pi}{a}
+    \end{aligned}
+    }
+\end{equation}
+
+\subsubsection{kétatomos lineáris lánc}
+Sok anyag esetében a kristályrács nem csak egyféle atomot tartalmaz, hanem kettőt (vagy akár többet is). Ezért érdemes megnézni a lineáris lánc működését két különböző tömegű atom esetében is.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/17-tetel/linear_chain2.png}
+    \caption{
+        A kétatomos lineáris lánc modellje. Két különböző tömegű golyó váltakozik a láncban, amiket rugók kötnek össze. Természetesen a függvény itt a valóságban csak diszkrét értékeket vehet fel,
+        de szemléltetni általában folytonos függvénnyel szokás.
+    }
+\end{figure}
+Ekkor a mozgásegyenletek a következőképp módosulnak:
+\begin{equation}
+    \begin{aligned}
+        m_1 \ddot{u}_n &= D(v_n - u_n) + D(v_{n-1} - u_n) = D(v_n + v_{n-1} - 2 u_n) \\
+        m_2 \ddot{v}_n &= D(u_{n+1} - v_n) + D(u_n - v_n) = D(u_{n+1} + u_n - 2 v_n)
+    \end{aligned}
+\end{equation}
+Próbáljuk meg ezt is olyan alakba keresni, mint az egyatomos lánc esetében:
+\begin{equation}
+    \begin{aligned}
+        u_n(t) &= u(q) e^{j (\omega t + q a n)} \\
+        v_n(t) &= v(q) e^{j (\omega t + q a n)}
+    \end{aligned}
+\end{equation}
+Ezt visszahelyettesítve a mozgásegyenletekbe:
+\begin{equation}
+    \begin{aligned}
+        -\omega^2 m_1 u(q) &= D \left( v(q) + v(q) e^{-j q a} - 2 u(q) \right) = D\left(u(q) \left(1 + e^{-j q a}\right) - 2 u(q)\right) \\
+        -\omega^2 m_2 v(q) &= D \left( u(q) e^{j q a} + u(q) - 2 v(q) \right) = D\left(v(q) \left(1 + e^{j q a}\right) - 2 v(q)\right)
+    \end{aligned}
+\end{equation}
+Ezt is fel tudjuk írni mátrix formában:
+\begin{equation}
+    -\omega^2
+    \begin{pmatrix}
+        m_1 u(q) \\
+        m_2 v(q)
+    \end{pmatrix} =
+    D
+    \begin{pmatrix}
+        -2 & 1 + e^{-j q a} \\
+        1 + e^{j q a} & -2
+    \end{pmatrix}
+    \begin{pmatrix}
+        u(q) \\
+        v(q)
+    \end{pmatrix}
+\end{equation}
+Ez most nem teljesen egy sajátérték egyenlet az $m_1$ és $m_2$ miatt, de átrendezve a következőt kapjuk:
+\begin{equation}
+    \begin{pmatrix}
+        -2 D + \omega^2 m_1 & D(1 + e^{-j q a}) \\
+        D(1 + e^{j q a}) & -2 D + \omega^2 m_2
+    \end{pmatrix}
+    \begin{pmatrix}
+        u(q) \\
+        v(q)
+    \end{pmatrix} = 0
+\end{equation}
+Ami egy homogén lineáris egyenletrendszer (és mivel a transzponáljta az adjungáltja ezért minden sajátértéke valós lesz ennek a mátrixnak), aminek akkor van nem triviális megoldása, ha a mátrix determinánsa nulla:
+\begin{equation}
+    \begin{vmatrix}
+        -2 D + \omega^2 m_1 & D(1 + e^{-j q a}) \\
+        D(1 + e^{j q a}) & -2 D + \omega^2 m_2
+    \end{vmatrix} = 0
+\end{equation}
+Ennek a determinánsnak a kiszámolása után a következőt kapjuk:
+\begin{equation}
+    \begin{aligned}
+        &\left(-2D + \omega^2 m_1\right)\cdot \left(-2D + \omega^2 m_2\right) - D^2 \left(1 + e^{-j q a}\right)\left(1 + e^{j q a}\right) = 0 \\
+        &4 D^2 - 2 D \omega^2 (m_1 + m_2) + \omega^4 m_1 m_2 - D^2 \left(2 + e^{j q a} + e^{-j q a}\right) = 0 \\
+        &4 D^2 - 2 D \omega^2 (m_1 + m_2) + \omega^4 m_1 m_2 - D^2 \cdot 2 (1 + \cos(q a)) = 0 \\
+        &\omega^4 m_1 m_2 - 2 D \omega^2 (m_1 + m_2) + 2 D^2 (2 - 2 \cos(q a)) = 0 \\
+        &\omega^4 m_1 m_2 - 2 D \omega^2 (m_1 + m_2) + 4 D^2 \sin^2\left(\frac{q a}{2}\right) = 0
+    \end{aligned}
+\end{equation}
+Ez egy másodfokú egyenlet $\omega^2$-re, amit meg tudunk oldani a másodfokú megoldóképlettel:
+\begin{equation}
+    \begin{aligned}
+        \omega^2_\pm &= \frac{2 D (m_1 + m_2) \pm \sqrt{\left(2 D (m_1 + m_2)\right)^2 - 4 m_1 m_2 \cdot 4 D^2 \sin^2\left(\frac{q a}{2}\right)}}{2 m_1 m_2} \\
+        &= \frac{D (m_1 + m_2) \pm 2 D \sqrt{(m_1 + m_2)^2 - 4 m_1 m_2 \sin^2\left(\frac{q a}{2}\right)}}{m_1 m_2} \\
+        &= \frac{D}{m_1 m_2} \left( (m_1 + m_2) \pm \sqrt{(m_1 + m_2)^2 - 4 m_1 m_2 \sin^2\left(\frac{q a}{2}\right)} \right)
+    \end{aligned}
+\end{equation}
+Itt megint bevezethetünk egy $\omega_0^2 = 2D \left(\frac{1}{m_1} + \frac{1}{m_2}\right)$-et, ami a redukált tömeget tartalmazza, és a $\gamma^2 = 4 \frac{m_1 m_2}{(m_1 + m_2)^2}$-t, ami egy dimenzió nélküli mennyiség: 
+\begin{equation}
+    \boxed{\omega^2_\pm = \frac{\omega_0^2}{2} \left( 1 \pm \sqrt{1 - \gamma^2 \sin^2\left(\frac{q a}{2}\right)} \right)}
+\end{equation}
+Itt jól látható, hogy ha $m_1 = m_2$ akkor $\gamma^2 = 1$, és visszaáll az egyatomos lánc eredménye. Itt a $\pm$ azt jelenti, hogy a diszperziós relációnak két ága van, egy alsó és egy felső:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/17-tetel/phonons2.png}
+    \caption{
+        A diszperziós reláció ábrázolása a kétatomos lineáris lánc modelljére. Látható, hogy két ág van, egy alsó (akusztikus) és egy felső (optikai).
+    }
+\end{figure}
+Az alsó ágat \textbf{akusztikus ágnak} nevezzük, mert ez a ág felelős a hanghullámok terjedéséért a kristályban. Ez az ág hasonlóan viselkedik, mint az egyatomos lánc diszperziós relációja, hiszen kis $q$ értékeknél lineáris lesz:
+\begin{equation}
+    \omega_- \approx \frac{\omega_0}{2} \gamma \left| q a \right| = v |q|
+\end{equation}
+Ahol a hullámterjedési sebesség:
+\begin{equation}
+    v = a \sqrt{\frac{D}{2} \left(\frac{1}{m_1} + \frac{1}{m_2}\right)}
+\end{equation}
+Ezt azért nevezik "akusztikusnak" mert ez nagyjából a 20 kHz tartományba esik, ami a hallható hangok tartománya.
+
+A felső ágat pedig \textbf{optikai ágnak} nevezzük, mert ez az ág felelős az optikai rezgésekért a kristályban. Ez az ág nem megy nullára $q=0$-nál, hanem egy véges értéket vesz fel:
+\begin{equation}
+    \omega_+ (q=0) = \omega_0
+\end{equation}
+Ez azt jelenti, hogy az optikai rezgéseknek van egy minimális frekvenciájuk, ami alatt nem tudnak létezni a kristályban. Ez azért "optikai" ág, mert ezek a rezgések a látható fény tartományába esnek, és ezért ezek a rezgések kölcsönhatásba tudnak lépni a fény hullámokkal.
+
+Az ágak között megjelenik egy tiltott sáv (bandgap), ahol nincs megengedett rezgés. Ennek a sávnak a szélességét a $\gamma$ határozza meg:
+\begin{equation}
+    \Delta \omega = \omega^2_\pm (\frac{\pi}{a}) = \frac{\omega_0^2}{2} \left( 1 \pm \sqrt{1 - \gamma^2} \right)
+\end{equation}
+Ha $\gamma = 1$, tehát $m_1 = m_2$, akkor a távolság nulla lesz, és az ágak összeérnek. Ekkor a frekvencia négyzete:
+\begin{equation}
+    \omega^2 = \frac{\omega_0^2}{2} \left( 1 \pm \underbrace{\sqrt{1 - \sin^2 \left(\frac{q a}{2}\right)}}_{cos\left(\frac{qa}{2}\right)} \right) = \frac{\omega_0^2}{2} \left( 1 \pm \cos\left(\frac{q a}{2}\right) \right)
+\end{equation}
+De itt ugye a rácsállandó kétszeresét válaszottuk az egyatomos lánchoz képest, tehát, ha kicsit átalakítjuk a cosinusz tagot:
+\begin{equation}
+    \cos \left(\frac{q a}{2}\right) = \cos(2 \frac{q a}{4}) = \cos^2 \left(\frac{q a}{4}\right) - \sin^2 \left(\frac{q a}{4}\right) = 2 \cos^2 \left(\frac{q a}{4}\right) - 1
+\end{equation}
+Akkor azt kapjuk, hogy:
+\begin{equation}
+    \omega^2 = \frac{\omega_0^2}{2} \left( 1 \pm (2 \cos^2 \left(\frac{q a}{4}\right) - 1) \right) = \omega_0^2
+    \begin{cases}
+        \cos^2 \left(\frac{q a}{4}\right) & + \text{ esetén} \\
+        \sin^2 \left(\frac{q a}{4}\right) & - \text{ esetén}
+    \end{cases}
+\end{equation}
+Ez pedig pontosan az egyatomos lánc diszperziós relációja, ha a rácsállandót $2a$-nak vesszük.
+
+\subsubsection{Általános Rezgések Kristályokban}
+Általános esetben kicsit bonyolultabb a mozgásegyenletek felírása, hiszen a kristályban a tér minden irányába lehetnek elmozdulások és többféle atom is jelen lehet. Ahhoz, hogy egy adott rácspontot jellemezni tudjunk,
+a Bravais-rács-hoz viszonyítva kell megadnunk a rácspont helyzetét ($\mathbf{R}_\mathbf{m} + \mathbf{r}^\mu$), ami egy adott irányba még kimozdulhat ($\mathbf{u}^\mu(\mathbf{m})$). Tehát egy rácspont helyzete a kristályon belül:
+\begin{equation}
+    \mathbf{r}^{*\mu}(\mathbf{m}) = \underbrace{\mathbf{R}_\mathbf{m} + \mathbf{r}^\mu}_{\text{egyensúlyi helyzet}} + \mathbf{u}^\mu(\mathbf{m})
+\end{equation}
+Ahol $\mu$ az adott rácsponton belüli atomot jelöli (ha több atom van a rácsponton belül), és $\mathbf{m}$ a Bravais-rács pontját jelöli.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/17-tetel/crystal_oscillation.png}
+    \caption{
+        Általános kristályrács rezgések modellje. A Bravais-rács pontjai körül több atom is lehet, amik elmozdulhatnak az egyensúlyi helyzetükből.
+    }
+\end{figure}
+Ennek a rendszernek fel kell írni a potenciális energiáját. Ezt legegyszerűbben úgy tudjuk megtenni, hogy sorba fejtjük $u$ szerint:
+\begin{equation}
+    \phi = \phi_0 + \frac{1}{2} \sum_{\mathbf{m}, \mathbf{n}, \mu, \nu, \alpha, \beta} D_{\alpha \beta}^{\mu \nu} (\mathbf{m} - \mathbf{n}) u_\alpha^\mu (\mathbf{m}) u_\beta^\nu (\mathbf{n}) + \ldots \qquad \alpha = 1,2,3; \quad \mu = 1,2,...,p;
+\end{equation}
+Ahol $D_{\alpha \beta}^{\mu \nu} (\mathbf{m} - \mathbf{n})$ a dinamikus mátrix elemei, amik a rácspontok közötti kölcsönhatásokat írják le (kvázi egy sokdimenziós rugóállandó), $p$ a Bravais-rácsban lévő rácspontok száma és $\alpha, \beta$ a térbeli irányokat jelölik.
+A sorfejtésben az első tag az egyensúlyi potenciális energia, a második tag a harmonikus közelítés, a többi tag pedig a nemlineáris közelítések. Itt most csak a harmonikus közelítéssel foglalkozunk. Az $\frac{1}{2}$ szorzó konvenció miatt jelenik meg.
+
+Az erőt a potenciál negatív gradiense adja, de mindegy, hogy $u(\mathbf{m})$ vagy $u(\mathbf{n})$ szerint vesszük a deriváltat, hiszen a dinamikus mátrix szimmetrikus, tehát csak egy kettes szorzó jelenik meg (ami eltünteti a behozott $\frac{1}{2}$-t):
+\begin{equation}
+    F_\alpha^\mu (\mathbf{m}) = - \frac{\partial \phi}{\partial u_\alpha^\mu (\mathbf{m})} = - \sum_{\mathbf{n}, \nu, \beta} D_{\alpha \beta}^{\mu \nu} (\mathbf{m} - \mathbf{n}) u_\beta^\nu (\mathbf{n})
+\end{equation}
+
+Itt megjelenik egy extra megkötés is, ugyanis ha az $u$ elmozdulás nem függ attól, hogy melyik rácspontot melyik Bravais-rácsban mozdítjuk el (tehát $\nu$ és $\mathbf{n}$.től független az $u$), akkor azt szeretnénk, hogy ne jelenjen meg erő. 
+Ez azért van, mert ha az $u$ konstans $\nu$-re és $\mathbf{n}$-re nézve, akkor az összes rácspont ugyanabba az irányba mozdul el, ami egy szimpla merev test elmozdulás lesz. Ekkor a rácspontok közötti távolságok nem változnak, a "rugók" nem feszülnek meg vagy nyúlnak ki,
+ezért nem jelenik meg erő. Ezért a dinamikus mátrix elemeinek teljesíteniük kell a következő feltételt:
+\begin{equation}
+    \sum_{\mathbf{n}, \nu} D_{\alpha \beta}^{\mu \nu} (\mathbf{n}) = 0
+\end{equation}
+Ez azt jelenti, hogy az atomok között nem választhatok ki tetszőleges rugóállandókat, hanem ezeknek a feltételeknek meg kell felelniük.
+
+De visszatérve az erőhöz, a Newton II. törvénye alapján a következőt kapjuk:
+\begin{equation}
+    m^\mu \ddot{u}_\alpha^\mu (\mathbf{m}) = F_\alpha^\mu (\mathbf{m}) = - \sum_{\mathbf{n}, \nu, \beta} D_{\alpha \beta}^{\mu \nu} (\mathbf{m} - \mathbf{n}) u_\beta^\nu (\mathbf{n})
+\end{equation}
+Ennek a megoldását megint kereshetjük egy hullám alakban:
+\begin{equation}
+    u_\alpha^\mu (\mathbf{m}, t) = u_\alpha^\mu (\mathbf{q}) \frac{1}{\sqrt{m^\mu}} e^{j (\omega t + \mathbf{R}_\mathbf{m} \cdot \mathbf{q})}
+\end{equation}
+itt a $\frac{1}{\sqrt{m^\mu}}$ megint azért került oda, hogy a végeredmény szebb legyen, itt most nincs komolyabb fizikai jelentősége. írjuk be ezt a mozgásegyenletbe:
+\begin{equation}
+    \begin{aligned}
+        -\omega^2 m^\mu u_\alpha^\mu (\mathbf{q}) \frac{1}{\sqrt{m^\mu}} e^{j (\omega t + \mathbf{R}_\mathbf{m} \cdot \mathbf{q})} &= - \sum_{\mathbf{n}, \nu, \beta} D_{\alpha \beta}^{\mu \nu} (\mathbf{m} - \mathbf{n}) \frac{1}{\sqrt{m^\nu}} e^{j (\omega t + \mathbf{R}_\mathbf{n} \cdot \mathbf{q})} u_\beta^\nu (\mathbf{q}) \\
+        -\omega^2 \sqrt{m^\mu} u_\alpha^\mu (\mathbf{q}) &= - \sum_{\mathbf{n}, \nu, \beta} D_{\alpha \beta}^{\mu \nu} (\mathbf{m} - \mathbf{n}) \frac{1}{\sqrt{m^\nu}} e^{-j \mathbf{q} \cdot (\mathbf{R}_\mathbf{m} - \mathbf{R}_\mathbf{n})} u_\beta^\nu (\mathbf{q}) \\
+        -\omega^2 u_\alpha^\mu (\mathbf{q}) &= - \sum_{\nu, \mu} \underbrace{\sum_{\mathbf{n}} D_{\alpha \beta}^{\mu \nu} (\mathbf{m} - \mathbf{n}) \frac{1}{\sqrt{m^\nu m^\mu}} e^{-j \mathbf{q} \cdot (\mathbf{R}_\mathbf{m} - \mathbf{R}_\mathbf{n})}}_{D^{* \mu \nu}_{\alpha \beta} (\mathbf{q})} u_\beta^\nu (\mathbf{q})
+    \end{aligned}
+\end{equation}
+Tehát összefoglalva azt kaptuk, hogy:
+\begin{equation}
+    \boxed{
+    \begin{aligned}
+        \omega^2 u_\alpha^\mu (\mathbf{q}) &= \sum_{\nu, \beta} D^{* \mu \nu}_{\alpha \beta} (\mathbf{q}) u_\beta^\nu (\mathbf{q}) \\
+        D^{* \mu \nu}_{\alpha \beta} (\mathbf{q}) &= \sum_{\mathbf{n}} D_{\alpha \beta}^{\mu \nu} (\mathbf{n}) \frac{1}{\sqrt{m^\nu m^\mu}} e^{-j \mathbf{q} \cdot (\mathbf{R}_\mathbf{m} - \mathbf{R}_\mathbf{n})}
+    \end{aligned}}
+\end{equation}
+De miért jó ez az alak? Az eredeti rugóállandó-mátrixunk egy $(3pN) \times (3pN)$ méretű mátrix volt, ahol $N$ a Bravais-rács pontjainak száma, és $p$ a rácsponton belüli atomok száma. Ez egy hatalmas mátrix, amit nehéz kezelni. Azonban a
+átalakítás után a dinamikus mátrixunk $D^{* \mu \nu}_{\alpha \beta} (\mathbf{q})$ csak egy $(3p) \times (3p)$ méretű mátrix lett, ami sokkal kevesebb sajátértékproblémát jelent. A "hátrány" itt viszont az, hogy ezt a mátrixot minden egyes $\mathbf{q}$ hullámvektorra ki kell számolnunk.
+Ez azonban még így is sokkal egyszerűbb, mintha az eredeti hatalmas mátrixot kellene kezelni.
+
+Ezt a sajátértékproblémát úgy próbáljuk meg megoldani, hogy bevezetjük a $e^\lambda_{\alpha, \mu} (\mathbf{q})$ sajátvektorokat, és $\omega^\lambda (\mathbf{q})$ sajátértékeket:
+\begin{equation}
+    \omega^2_\lambda (\mathbf{q}) e^\lambda_{\alpha, \mu} (\mathbf{q}) = \sum_{\nu, \beta} D^{* \mu \nu}_{\alpha \beta} (\mathbf{q}) e^\lambda_{\beta, \nu} (\mathbf{q})
+\end{equation}
+Itt $\lambda = 1, 2, ..., 3p$ jelöli a különböző rezgési módokat egy adott $\mathbf{q}$ hullámvektorra. Mivel a dinamikus mátrix hermitikus, ezért a sajátértékek valósak lesznek, és a sajátvektorok ortogonálisak egymással.
+Ebből következik, hogy ha $\lambda \leq 3$, akkor is három ág meg fog jelenni, amik az akusztikus ágak lesznek (mivel ezek a módok mennek nullára $\mathbf{q} \to 0$-nál). A többi $\lambda > 3$ esetén pedig az optikai ágak lesznek, amik nem mennek nullára $\mathbf{q} \to 0$-nál.
+
+Ha az atomokat csak egy kicsit térítjük ki az egyensúlyi helyzetükből, akkor a kristályrács rezgései lineárisak lesznek, és a különböző rezgési módok nem fognak kölcsönhatásba lépni egymással. Ez azt jelenti, hogy minden rezgési mód függetlenül viselkedik,
+és a kristályrács rezgései egyszerűen összeadhatók lesznek. Ezeknek a normál módusoknak lesz egy $Q^\lambda$ amplitúdója, (ahol a $\lambda$ a rezgési módusokat jelöli), és ekkor a következő összefüggés áll fenn:
+\begin{equation}
+    \boxed{\ddot{Q}^\lambda (\mathbf{q}, t) = - \omega^2_\lambda (\mathbf{q}) Q^\lambda (\mathbf{q}, t)}
+\end{equation}
+Mivel a normál módusok fixek (az adott konfigurációhoz tartoznak), ezért ezek egy kvantáltságot adnak a rendszernek. A kristályban minden atom a saját módján fog rezegni, és ezek lineárkombinációjaként fogjuk látni a teljes rezgést.
+Ez a kvantáltság pedig nagyon hasonló az elektromágneses tér kvantáltságához (ahol az energia csak $E = \hbar \omega (n + \frac{1}{2})$ értékeket tud felvenni), ezért ezeket a rezgési amplitúdókat a fotonokhoz hasonlóan \textbf{fononoknak} nevezzük. ($\phi \omega \nu \eta$ görög szóból, ami 'hangot' jelent).
+
+Itt se szabad megfeletkeznük a periodicitás által bevezetett megkötésekről. Ugye az $u$-ra azt írtuk fel, hogy:
+\begin{equation}
+    u_\alpha^\mu (\mathbf{m}, t) = u_\alpha^\mu (\mathbf{q}) \frac{1}{\sqrt{m^\mu}} e^{j (\omega t + \mathbf{R}_\mathbf{m} \cdot \mathbf{q})}
+\end{equation}
+Ez pedig akkor ad ugyanazt az értéket, ha $\mathbf{q}$-t eltoljuk egy reciprok rács vektorral:
+\begin{equation}
+    \mathbf{q} \to \mathbf{q} + \mathbf{G}
+\end{equation}
+Ezért a $\mathbf{q}$ csak egy reciprok rácson belül vehet fel különböző értékeket, és ott is csak diszkréteket. Ehhez tehát ki kell választanunk egy olyan térfogatot a reciprok rácson belül, amiben $\mathbf{q}$ fel tud venni $N$ különböző értéket.
+Erre pedig egy jó választás a reciprok rács Wigner-Seitz cellája, amit itt is \textbf{Brillouin-zónának} nevezünk. Tehát a $\mathbf{q}$ hullámvektor értékei a következők lesznek:
+\begin{equation}
+    \mathbf{q} = \frac{2 \pi}{N} (c_1 \mathbf{b}_1 + c_2 \mathbf{b}_2 + c_3 \mathbf{b}_3) \quad c_i \in \mathbb{Z}, \quad \mathbf{q} \in \text{Brillouin-zóna}
+\end{equation}
+Ahol $\mathbf{b}_i$ a reciprok rács bázisvektorai.
+
+\subsubsection{Rezgések és hőmérséklet kapcsolata}
+A statisztikus fizikában láttuk, hogy egy adott energiaállapot valószínűsége a Boltzmann-eloszlás szerint alakul:
+\begin{equation}
+    p(E_n) \sim e^{-\frac{E_n}{k T}}
+\end{equation}
+Ahol a kvantummechanikából tudjuk, hogy $E_n = \hbar \omega (n + \frac{1}{2})$ kvantált. De hogy tényleg valószínűség legyen, ezért normalizálni kell az eloszlást:
+\begin{equation}
+    p(E_n) = \frac{e^{-\frac{E_n}{k T}}}{\sum_n e^{-\frac{E_n}{k T}}} = \frac{e^{-\frac{E_n}{k T}}}{Z}
+\end{equation}
+Ahol $Z$ a kanonikus állapotösszeg. Innen tehát ki tudjuk számolni egy adott állapot várható értékét:
+\begin{equation}
+    \langle E \rangle = \sum_n E_n p(E_n) = \frac{\sum_n E_n e^{-\frac{E_n}{k T}}}{\sum_n e^{-\frac{E_n}{k T}}} = - \frac{1}{Z} \frac{\partial Z}{\partial \beta} = - \frac{\partial \ln Z}{\partial \beta} \qquad \beta = \frac{1}{k T}
+\end{equation}
+Most már csak az állapösszeget kell meghatározni, de szerencsére egy harmonikus oszcillátorra ezt elég könnyű meghatározni. Az állapotösszeg mégegyszer:
+\begin{equation}
+    Z = \sum_{n = 0}^{\infty} e^{-\beta \hbar \omega (n + \frac{1}{2})} = e^{-\frac{1}{2} \beta \hbar \omega} \sum_{n=0}^{\infty} \left(e^{-\beta \hbar \omega}\right)^n = \frac{e^{-\frac{1}{2} \beta \hbar \omega}}{1 - e^{-\beta \hbar \omega}}
+\end{equation}
+Ennek kell a logaritmusát venni:
+\begin{equation}
+    \ln Z = -\frac{1}{2} \beta \hbar \omega - \ln \left(1 - e^{-\beta \hbar \omega}\right)
+\end{equation}
+És ezt kell $\beta$ szerint deriválni:
+\begin{equation}
+    \langle E \rangle = -\frac{\partial \ln Z}{\partial \beta} = -\frac{d}{d \beta} \left\{ -\frac{1}{2} \beta \hbar \omega - \ln \left(1 - e^{-\beta \hbar \omega}\right) \right\}
+\end{equation}
+Látható, hogy az első tag deriváltja egyszerűen $\frac{1}{2} \hbar \omega$ lesz, tehát ez nem függ a hőmérséklettől. Ezt nevezik \textbf{nullponti energiának}, és ez a kvantummechanika miatt mindig jelen lesz, még $T=0$ K-en is. De mivel ez nem ad járulékot a hőkapacitáshoz, ezért ezt általában elhanyagoljuk.
+A második tag deriváltja pedig a következő lesz:
+\begin{equation}
+    \frac{d}{d \beta} \ln \left(1 - e^{-\beta \hbar \omega}\right) = \frac{1}{1 - e^{-\beta \hbar \omega}} \cdot \hbar \omega e^{-\beta \hbar \omega} = \frac{\hbar \omega}{e^{\beta \hbar \omega} - 1}
+\end{equation}
+Így tehát a teljes várható érték:
+\begin{equation}
+    \boxed{\langle E \rangle = \frac{\hbar \omega}{e^{\frac{\hbar \omega}{k T}} - 1}}
+\end{equation}
+Ez az eredmény nagyon hasonló a fekete test sugárzásnál kapotthoz, hiszen ott is egy kvantált harmonikus oszcillátort vizsgáltunk. Ezt úgy lehet interpretálni, hogy egy darab fonon energiája $\hbar \omega$, és a fononok Bose-Einstein statisztikát követnek (mivel bozonok), 
+ebből pedig következik, hogy a fononok száma a $\beta$ függvényében:
+\begin{equation}
+    n(\beta) = \frac{1}{e^{\beta \hbar \omega} - 1}
+\end{equation}
+Tehát a fononok száma egy adott frekvencián a hőmérséklettől függ. Minél magasabb a hőmérséklet, annál több fonon lesz jelen a kristályban. 
+
+most vegyünk egy általános mennyiséget ami csak az $\omega$-tól függ: $f(\omega^\lambda(\mathbf{q}))$. Például az energia várható értéke is ilyen.
+Ennek a mennyiségnek a teljes várható értékét úgy tudjuk kiszámolni, hogy összegezzük az összes rezgési módra és hullámvektorra:
+\begin{equation}
+    \langle f \rangle = \sum_{\lambda} \sum_{\mathbf{q}} f(\omega^\lambda(\mathbf{q})) \qquad \mathbf{q} = 2\pi c \cdot \left(\frac{\mathbf{b}_1}{N_1}, \frac{\mathbf{b}_2}{N_2}, \frac{\mathbf{b}_3}{N_3}\right) \quad c \in \mathbb{Z}
+\end{equation}
+Látható, hogy $\mathbf{q}$-t továbbra is köti, hogy új értékeket csak a Brillouin-zónán belül vehet fel ezért csak $\frac{\mathbf{b}_i}{N_i}$ egész számú többszörösei lehet.
+Ha itt aztán az $N$ értékét elég nagyra vesszük, akkor a $\mathbf{q}$ értékei olyan sűrűn lesznek elosztva a Brillouin-zónában, hogy az összeg helyett integrált is használhatunk:
+\begin{equation}
+    \langle f \rangle = \sum_{\lambda} \int f(\omega^\lambda(\mathbf{q})) \frac{d^3 q}{\Delta^3 \mathbf{q}}
+\end{equation}
+Ahol $\Delta^3 \mathbf{q}$ azért kell, mert az összegzés az az egyes $\mathbf{q}$ hullámvektorokra történik, amik pedig a Brillouin-zónában csak diszkrét értékeket vehetnek fel. Az integrálás során
+viszont a Brillouin-zóna térfogatára integrálunk, ezért le kell osztani az egyes $\mathbf{q}$ értékek térfogatával. Ezt a kis térfogatot pedig pont a $\left(\frac{\mathbf{b_1}}{N_1}, \frac{\mathbf{b_2}}{N_2}, \frac{\mathbf{b_3}}{N_3}\right)$
+által kifeszített paralelepipedon adja meg, amit úgy kapjuk meg, hogy:
+\begin{equation}
+    \Delta^3 \mathbf{q} =  \begin{vmatrix}
+        \frac{\mathbf{b_1}}{N_1} & \frac{\mathbf{b_2}}{N_2} & \frac{\mathbf{b_3}}{N_3}
+    \end{vmatrix} = \frac{1}{N_1 N_2 N_3} \left(\mathbf{b}_1 \cdot (\mathbf{b}_2 \times \mathbf{b}_3) \right)
+\end{equation}
+A hármas skalárszorzatot pedig ismerjük a reciprok rács definíciójából:
+\begin{equation}
+    \mathbf{b}_1 \cdot (\mathbf{b}_2 \times \mathbf{b}_3) = (2 \pi)^3 \frac{1}{V_c}
+\end{equation}
+Ahol $V_c$ a Bravais-rács cellájának térfogata. Így tehát a kis térfogat:
+\begin{equation}
+    \Delta^3 \mathbf{q} = \frac{(2 \pi)^3}{N V_c} = \frac{(2 \pi)^3}{V}
+\end{equation}
+Itt ugye a rácspontok száma szorozva az elemi cella térfogatával pont a teljes térfogatot fogja megadni. Ezt visszahelyettesítve az integrálba:
+\begin{equation}
+    \langle f \rangle = V \sum_{\lambda} \int f(\omega^\lambda(\mathbf{q})) \frac{1}{(2 \pi)^3} d^3 q
+\end{equation}
+Itt észrevehetjük, hogy az integrálandó függvényünk direktben nem függ a $\mathbf{q}$-tól, csak az $\omega$-n keresztül. Ezt pedig ki tudjuk használni, hogy ki tudjuk emelni az $\omega$ függést.
+Képzeljünk el a $q$ térben egy felületet, ahol $\omega$ állandó. Ha ekkor veszünk egy $\omega \to \omega + d\omega$ kis eltolódást, akkor kapunk egy kis gömbhéjat. Az integrál meg annyit csinál csupánk, hogy ezeket a gömbhéjakat összeadja.
+Ekkor tehát bevezethetünk egy új mennyiséget: $g(\omega)$ jelöléssel, amire igaz, hogy:
+\begin{equation}
+    \Delta V = g(\omega) \Delta \omega
+\end{equation}
+Ezt a mennyiséget \textbf{állapotsűrűségnek} nevezzük, és megadja, hogy egy adott frekvenciatartományban mennyi állapot található. Ezt felhasználva az integrált át tudjuk írni:
+\begin{equation}
+    \langle f \rangle = V \int f(\omega) g(\omega) d\omega
+\end{equation}
+Itt a $\frac{1}{(2 \pi)^3}$-t beleolvasztjuk az állapotsűrűségbe ahogy a $\lambda$ szerinti összegzést is, hiszen az állapotsűrűség már tartalmazza az összes rezgési módot is.
+
+Most már csak az állapotsűrűséget kell meghatároznunk. Ez viszont sok esetben nem triviális feladat. Ezért általában az úgynevezett \textbf{Debye közelítést} használjuk, ami egy egyszerűsített modellt ad az állapotsűrűségre.
+Láttuk az egyatomos lineáris lánc modellnél, hogy a diszperziós reláció közel lineáris a kis $q$ értékeknél ($\omega \approx c |\mathbf{q}|$ ahol $c$ a hangsebesség). 
+Ezt lehet általánosítani egy háromdimenziós kristályra is, de figyelembe kell venni, hogy nem lehet bármilyen $q$ értéket felvenni, csak azokat, amik a Brillouin-zónán belül vannak. Ezért csak olyan $\omega$ mentén akarunk integrálni, amik a Brillouin-zóna belsejében vannak.
+A szélénél abba kell hagyni az integrálást. Emellett azt se szabad elfelejteni, hogy három akusztikus ág van, hiszen három irányba tudnak a hanghullámok terjedni (kettő transzverzális és egy longitudinális). Ezt figyelembe véve összesen három $\omega$-t tudunk felvenni egy adott $q$ értékre:
+\begin{equation}
+    \begin{aligned}
+        &\omega_T = c_T |\mathbf{q}| \quad (2 \text{ darab}) \\
+        &\omega_L = c_L |\mathbf{q}| \quad (1 \text{ darab})
+    \end{aligned}
+\end{equation}
+Viszont szerencsére itt a $q$ térben az egyenlő $\omega$-k gömböket fognak alkotni, hiszen $\omega$ csak a $|\mathbf{q}|$-tól függ. Ezért:
+\begin{equation}
+    \Delta V = 4 \pi q^2 \Delta q = 4 \pi \frac{\omega^2}{c^3} \Delta \omega
+\end{equation}
+Ezt pedig be tudjuk helyettesíteni az állapotsűrűség definíciójába:
+\begin{equation}
+    g(\omega) = \frac{4 \pi}{(2 \pi)^3} \cdot \left(\frac{2}{c_T^3} + \frac{1}{c_L^3}\right) \omega^2
+\end{equation}
+Itt ugye mivel összegzés van $\omega$-ra ezért a különböző ágakat csak simán összeadjuk. Hogy ne kelljen ilyen sokat írni
+\footnote{
+    Ennél természetesen többről van szó, ezzel is jelzi, hogy csak a Brillouin-zóna belsejéig integrálunk.
+}, Debye bevezette az úgynevezett \textbf{Debye hangsebességet} $c_D$-t, ami a következőképpen van definiálva:
+\begin{equation}
+    \frac{3}{c_D^3} = \frac{2}{c_T^3} + \frac{1}{c_L^3}
+\end{equation}
+Ezt visszahelyettesítve az állapotsűrűségbe:
+\begin{equation}
+    \boxed{g(\omega) = \frac{1}{2 \pi^2} \cdot \frac{3}{c_D^3} \omega^2}
+\end{equation}
+Ez az állapotsűrűség azonban csak akkor érvényes, ha az összes megengedett $\omega$ értéket figyelembe vesszük. De mivel a Brillouin-zóna véges kiterjedésű, ezért van egy maximális $q$ értékünk, amit nem léphetünk túl. Ez pedig egy maximális frekvenciát is meghatároz, amit \textbf{Debye frekvenciának} nevezünk.
+Azt úgy tudjuk meghatározni, hogy bevezetjük a \textbf{Debye hullámvektort} $q_D$-t, amit Debye úgy határozott meg, hogy ha a Debye hullámhosszig végeznénk el az integrálást (ami $\lambda_D = \frac{4\pi}{3} q_D^3$), akkor az pont egyezzen meg a Brillouin-zóna térfogatával:
+\begin{equation}
+    \frac{4\pi}{3} q_D^3 = \frac{(2 \pi)^3}{V_c}
+\end{equation}
+Innen pedig a Debye hullámvektor:
+\begin{equation}
+    q_D = \left(6 \pi^2 \frac{1}{V_c}\right)^{\frac{1}{3}}
+\end{equation}
+Innen tehát az energia átlagos értékét ki tudjuk számolni a következőképpen:
+\begin{equation}
+    \boxed{
+    \begin{aligned}
+        &\langle E \rangle = V \int_0^{\omega_D} \frac{\hbar \omega}{e^{\frac{\hbar \omega}{k T}} - 1} \cdot \frac{1}{2 \pi^2} \cdot \frac{3}{c_D^3} \omega^2 d\omega \\
+        &\omega_D = c_D q_D \\
+        &\frac{2\pi}{3} q_D^3 = \frac{(2 \pi)^3}{V_c}
+    \end{aligned}}
+\end{equation}
+Ahhoz, hogy ezt az integrált meg tudjuk oldani, bevezetünk egy új változót:
+\begin{equation}
+    x = \frac{\hbar \omega}{k T} \quad \Rightarrow \quad d\omega = \frac{k T}{\hbar} dx
+\end{equation}
+Ekkor a határ pedig:
+\begin{equation}
+    \omega_D \to \frac{\hbar \omega_D}{k T}
+\end{equation}
+Ezt visszahelyettesítve az integrálba:
+\begin{equation}
+    \langle E \rangle = V \cdot \frac{3}{2 \pi^2} \cdot \frac{1}{c_D^3} \cdot \frac{(k T)^4}{\hbar^3} \int_0^{\frac{\hbar \omega_D}{k T}} \frac{x^3}{e^x - 1} dx
+\end{equation}
+
+Most nézzük meg azt a határesetet, amikor $T \to 0$ K. Ekkor a határ $\frac{\hbar \omega_D}{k T} \to \infty$ lesz, így az integrál értéke:
+\begin{equation}
+    \int_0^{\infty} \frac{x^3}{e^x - 1} dx = \frac{\pi^4}{15}
+\end{equation}
+Ezt visszahelyettesítve az energia várható értékébe:
+\begin{equation}
+    \langle E \rangle = V \cdot \frac{3}{2 \pi^2} \cdot \frac{1}{c_D^3} \cdot \frac{(k T)^4}{\hbar^3} \cdot \frac{\pi^4}{15} = V \cdot \frac{\pi^2}{10} \cdot \frac{1}{c_D^3} \cdot \left(\frac{k T}{\hbar}\right)^4
+\end{equation}
+Ebből következik, hogy alacsony hőmérsékleten a kristály várható energiája $T^4$-tel arányos. Emellett megjelenik a $\hbar$ is, tehát ez egy kvantummechanikai effektus.
+A fajhő pedig úgy jön ki, hogy az energiát deriváljuk a hőmérséklet szerint:
+\begin{equation}
+    C_V = \left(\frac{\partial \langle E \rangle}{\partial T}\right)_V = V \cdot \frac{2 \pi^2}{5} \cdot \frac{1}{c_D^3} \cdot \frac{k^4}{\hbar^3} T^3
+\end{equation}
+Tehát alacsony hőmérsékleten a kristály fajhője $T^3$-mal arányos. Ez az eredmény jól egyezik a kísérleti adatokkal, és ezt a viselkedést \textbf{Debye Térfogat Törvénynek} nevezzük.
+
+És mi van a magashőmérsékleti határesettel? Akkor $T \to \infty$, így a határ $\frac{\hbar \omega_D}{k T} \to 0$. Ekkor viszont egy $\int_0^0$ integrált kapunk, amit közelíthetünk az integrálandó függvény
+Taylor-sorának első tagjával:
+\begin{equation}
+    \frac{x^3}{e^x - 1} \approx \frac{x^3}{1 + x + \frac{x^2}{2} + ... - 1} \approx \frac{x^3}{x} = x^2
+\end{equation}
+Ezt visszahelyettesítve az integrálba:
+\begin{equation}
+    \int_0^{\frac{\hbar \omega_D}{k T}} \frac{x^3}{e^x - 1} dx \approx \int_0^{\frac{\hbar \omega_D}{k T}} x^2 dx = \left[\frac{x^3}{3}\right]_0^{\frac{\hbar \omega_D}{k T}} = \frac{1}{3} \left(\frac{\hbar \omega_D}{k T}\right)^3
+\end{equation}
+Ezt visszahelyettesítve az energia várható értékébe:
+\begin{equation}
+    \langle E \rangle = V \cdot \frac{3}{2 \pi^2} \cdot \frac{1}{c_D^3} \cdot \frac{(k T)^4}{\hbar^3} \cdot \frac{1}{3} \left(\frac{\hbar \omega_D}{k T}\right)^3 = \frac{V}{2 \pi^2} \left(\underbrace{\frac{\omega_D}{c_D}}_{q_D}\right)^3 \cdot k T = \frac{V}{2 \pi^2} q_D^3 k T
+\end{equation}
+Itt, ha beírjuk a Debye hullámvektor definícióját ($q_D = \left(6 \pi^2 \frac{1}{V_c}\right)^{\frac{1}{3}}$), akkor a következőt kapjuk:
+\begin{equation}
+    \langle E \rangle = \frac{V}{2 \pi^2} \cdot 6 \pi^2 \frac{1}{V_c} \cdot k T = 3 N k T
+\end{equation}
+Itt ugye $N = \frac{V}{V_c}$ a rácspontok száma. Ez pedig pont az ekvipartíció tétel eredménye, hiszen minden atomnak három szabadsági foka van, és mindegyikre $k T$ energia jut.
+Magas hőmérsékleten tehát a kristály fajhője:
+\begin{equation}
+    C_V = \left(\frac{\partial \langle E \rangle}{\partial T}\right)_V = 3 N k
+\end{equation}
+Vagyis nem függ a hőmérséklettől, és ez is jól egyezik a kísérleti adatokkal. Ezt a viselkedést \textbf{Dulong-Petit törvénynek} nevezzük.
+
+Összegzésként azt láthattuk, hogy azzal a nagyon egyszerű modellel, hogy egy szilárd anyagban az atomokat rugókkal összekötött harmonikus oszcillátoroknak tekintjük,
+sikerült levezetni a szilárd anyagok hőkapacitásának hőmérsékletfüggését, ami jól egyezik a kísérleti adatokkal mind alacsony, mind magas hőmérsékleten. Természetesen ahhoz, hogy ezt megkapjuk,
+a Debye közelítéseket is alkalmazni kellett, de ettől függetlenül ez az eredmény elég közel van a legtöbb anyag viselkedéséhez. Természetesen pontosabb eredményekért az integrálokat kell direkt módon 
+kiszámolni (pontosabban, mivel ez ritkán lehetséges, numerikus módszerekkel közelíteni), és figyelembe venni a kristály specifikus diszperziós relációit is.
+
+Vannak dolgok amiket viszont nem lehet ebben a modellben kiszámolni, például a hőtágulás esetén nem elég csak a harmonikus közelítést figyelembe venni, ott már el kell menni az anharmonikus hatásokig is.
+
+\subsection{Sávszerkezet}
+\subsubsection{Elektron periodikus térben}
+Eddig a kristályszerkezetekben főként az atomok elhelyezkedését és viselkedését vizsgáltuk, de természetesen a teljes képhez hozzátartozik a hozzájuk kapcsolódó elektronok is.
+Ez elsőre egy nagyon bonyolult problémának tűnhet, hisz az elektron mind az atommagokkal, mind egymással kölcsönhatnak, de meglepően érdekes eredményekre juthatunk akkor is,
+ha egy jóval egyszerűbb modellt vizsgálunk. Elsőkörben vegyünk egy darab elektront a kristályban, és tegyük fel, hogy az elektron csak a kristályrács periodikus potenciáljával áll kölcsönhatásban, más elektronokkal nem.
+Ekkor a Schrödinger-egyenlet a következőképpen írható fel:
+\begin{equation}
+    \left[-\frac{\hbar^2}{2m} \nabla^2 + U(\mathbf{r})\right] \psi(\mathbf{r}) = E \psi(\mathbf{r})
+\end{equation}
+Itt a kristályrács speciális szerkezete miatt a potenciál is periodikus lesz:
+\begin{equation}
+    U(\mathbf{r} + \mathbf{R}_n) = U(\mathbf{r}) \quad \forall \mathbf{R}_n
+\end{equation}
+Itt $\mathbf{R}_n$ a Bravais-rács pontjainak helyvektorai. Ezt kapásból megpróbálhatjuk kihasználni úgy, hogy egy periodikus hullámfüggvényt keresünk megoldásként ($\psi(\mathbf{r} + \mathbf{R}_n) \stackrel{?}{=} \psi(\mathbf{r})$).
+De ennél tudunk egy általánosabb dolgot is mondani. Ugyanis egy periodikus kristályban tudjuk, hogy az elektron eloszlássűrűsége is periodikus lesz, vagyis a következő feltételnek meg kell felelnie:
+\begin{equation}
+    \varrho_e (\mathbf{r}) = |\psi(\mathbf{r})|^2 =\psi^*(\mathbf{r}) \psi(\mathbf{r}) = \varrho_e (\mathbf{r} + \mathbf{R}_n)
+\end{equation}
+Tehát ha a hullámfüggvény eltolásánál megjelenik egy egység abszolútértékű komplex szorzó (valami $e^{j \phi}$ tag), attól még az elektron eloszlássűrűsége nem váltózik ($\psi^* \psi$ -nál ez az extra tag simán 1 lesz). 
+Emiatt nem kell nekünk az a megkötés, hogy a hullámfüggvény periodikus legyen. Emiatt bevezethetünk egy eltolási operátort, ami a következőképpen hat a hullámfüggvényre:
+\begin{equation}
+    \hat{T}(\mathbf{R}_n) \psi(\mathbf{r}) = \psi(\mathbf{r} + \mathbf{R}_n) = c(\mathbf{R}_n) \psi(\mathbf{r})
+\end{equation}
+Itt az $c(\mathbf{R}_n)$ egy tetszőleges egység abszolútértékű komplex szám. Ez az operátor pedig kommutál a Hamilton-operátorral:
+\begin{equation}
+    \begin{aligned}
+        [\hat{H}, \hat{T}(\mathbf{R}_n)]\psi(\mathbf{r}) &=  \hat{H} \hat{T}(\mathbf{R}_n) \psi(\mathbf{r}) - \hat{T}(\mathbf{R}_n) \hat{H} \psi(\mathbf{r}) = \\
+        &= \hat{H} \psi(\mathbf{r} + \mathbf{R}_n) - \hat{T}(\mathbf{R}_n) E \psi(\mathbf{r}) = \\
+        &= E \psi(\mathbf{r} + \mathbf{R}_n) - E \psi(\mathbf{r} + \mathbf{R}_n) = 0
+    \end{aligned}
+\end{equation}
+Ha pedig két operátor kommutál, akkor létezik közös sajátfüggvény rendszerük. Tehát elég csak a $\hat{T}(\mathbf{R}_n)$ operátor sajátfüggvényeit meghatározni, és azok egyben a Hamilton-operátor sajátfüggvényei is lesznek.
+Tehát a következő sajátérték problémát kell megoldanunk:
+\begin{equation}
+    \hat{T}(\mathbf{R}_n) \psi(\mathbf{r}) = c(\mathbf{R}_n) \psi(\mathbf{r})
+\end{equation}
+Ha alkalmazunk két egymás utáni elktolást, akkor a következő összefüggést kapjuk:
+\begin{equation}
+    \begin{aligned}
+        \hat{T}(\mathbf{R}_1) \hat{T}(\mathbf{R}_2) \psi(\mathbf{r}) &= c(\mathbf{R}_1) c(\mathbf{R}_2) \psi(\mathbf{r}) \\
+        \hat{T}(\mathbf{R}_1 + \mathbf{R}_2) \psi(\mathbf{r}) &= c(\mathbf{R}_1 + \mathbf{R}_2) \psi(\mathbf{r})
+    \end{aligned}
+\end{equation}
+Tehát $c$-re igaznak kell lennie, hogy $c(\mathbf{R}_1) c(\mathbf{R}_2) = c(\mathbf{R}_1 + \mathbf{R}_2)$. Ennek az egyetlen megoldása az exponenciális függvény, így felírhatjuk:
+\begin{equation}
+    c(\mathbf{R}_n) = e^{\boldsymbol{\alpha} \cdot \mathbf{R}_n}
+\end{equation}
+Itt az $\alpha$ egy konstans vektor, amit még meg kell határozni. Tudjuk még $c$-ről, hogy van rá még egy megkötés, mégpedig az, hogy az eltolt függvény abszolútértéke megegyezik az eredeti függvény abszolútértékével.
+Ez pedig csak akkor teljesül, ha az $\boldsymbol{\alpha}$ vektor tisztán képzetes komponensekből áll. Ezt felírhatjuk úgy is, hogy:
+\begin{equation}
+    \boldsymbol{\alpha} = j \mathbf{k} \quad \Rightarrow \quad c(\mathbf{R}_n) = e^{i \mathbf{k} \cdot \mathbf{R}_n}
+\end{equation}
+Itt a $\mathbf{k}$ egy valós vektor, ami csak a Brillouin-zónán belül vehet fel értékeket. De ez az egyetlen jó megoldás? Lehet más választást is tenni, például:
+\begin{equation}
+    \boxed{\psi (\mathbf{r}) = e^{i \mathbf{k} \cdot \mathbf{r}} u_\mathbf{k} (\mathbf{r})}
+\end{equation}
+Itt az $u_\mathbf{k} (\mathbf{r})$ egy tetszőleges rácsperiodikus függvény. Ezt nevezik \textbf{Bloch függvény}-nek. Ezen kívül még más választások is lehetségesek, de ez a megoldás azért jó,
+mert ha behelyettesítjük a Schrödinger-egyenletbe, akkor az $u_\mathbf{k}$-ra vonatkozó egyenletet fogunk kapni. Ez azért előnyös, mert normális esetben, amikor megoldjuk a Schrödinger-egyenletet,
+akkor az egész térben kell egy olyan megoldást keresnünk, amelyik normálható, vagyis olyan gyorsan megy nullába, hogy még a négyzete is véges integált adjon. Ez sok esetben nem egyszerű feladat, 
+hogy megtaláljuk a megfelelő függvényeket. Viszont ebben a periodikus esetben, az $u_\mathbf{k}$ fügvénnyel elértük, hogy ne kelljen az egész térben keresni a megoldást, csak egy elemi cellán belül.
+Az "áldozat" amit hozunk ezért pedig az lesz, hogy au $u$ minden $\mathbf{k}$-ra különböző lesz, így minden $\mathbf{k}$-ra meg kell oldani a Schrödinger-egyenletet. Tehát egy bonyolult fügvénykeresési probléma
+helyett kapunk $\mathbf{k}$ darabnyi (sok esetben) könnyebb problémát. Ez számítógépes kiértékelés esetén pedig nagyon hasznos.
+
+Kérdés marad még, hogy minden $\mathbf{k}$ jó a Brillouin-zónán belül? Nem, mert véges kristály esetében figyelembe kell venni a határfeltételeket is. Eddig nem kötöttük meg ebben a számolásban,
+de most már ki kell kötni, hogy periodikus határfeltételeket alkalmazunk. Ez azt jelenti, hogy a kristály egyik oldalán lévő hullámfüggvény értéke megegyezik a másik oldalán lévőével:
+\begin{equation}
+    \psi (\mathbf{r} + N_1 \mathbf{a}_1) = \psi (\mathbf{r}) \quad , \quad \psi (\mathbf{r} + N_2 \mathbf{a}_2) = \psi (\mathbf{r}) \quad , \quad \psi (\mathbf{r} + N_3 \mathbf{a}_3) = \psi (\mathbf{r})
+\end{equation}
+Itt az $N_i$ a rácspontok száma az adott irányban. Ezt a feltételt alkalmazva a Bloch-függvényre:
+\begin{equation}
+    e^{i \mathbf{k} \cdot (\mathbf{r} + N_i \mathbf{a}_i)} u_\mathbf{k} (\mathbf{r} + N_i \mathbf{a}_i) = e^{i \mathbf{k} \cdot \mathbf{r}} u_\mathbf{k} (\mathbf{r})
+\end{equation}
+Mivel az $u_\mathbf{k}$ rácsperiodikus, ezért $u_\mathbf{k} (\mathbf{r} + N_i \mathbf{a}_i) = u_\mathbf{k} (\mathbf{r})$, így ez egyszerűsödik:
+\begin{equation}
+    e^{i \mathbf{k} \cdot N_i \mathbf{a}_i} = 1 \quad \Rightarrow \quad \mathbf{k} \cdot N_i \mathbf{a}_i = 2 \pi m \quad , \quad m \in \mathbb{Z}
+\end{equation}
+Innen pedig a következő diszkrét $\mathbf{k}$ értékeket kapjuk:
+\begin{equation}
+    \mathbf{k} = 2 \pi \left(\frac{m_1}{N_1} \mathbf{b}_1 + \frac{m_2}{N_2} \mathbf{b}_2 + \frac{m_3}{N_3} \mathbf{b}_3\right) \quad , \quad m_i \in \mathbb{Z}
+\end{equation}
+Tehát a periodikus határfeltételek miatt a $\mathbf{k}$ értékek diszkrétek lesznek, és csak a Brillouin-zónán belül vehetnek fel értékeket. Itt vegyük észre, hogy nem
+a $\psi$-re kötjük meg a periodikus feltételt, hanem az $\mathbf{r}$-re! A $\psi$ esetében továbbra is megjelenhet egy képzetes exponenciális szorzó.
+
+Most már csak az maradt hátra, hogy visszahelyettesítsük a Bloch-függvényt a Schrödinger-egyenletbe. Először számoljuk ki a Bloch-függvény gradiensét:
+\begin{equation}
+    \nabla \psi(\mathbf{r}) = e^{i \mathbf{k} \mathbf{r}} i \mathbf{k} u_\mathbf{k} (\mathbf{r}) + e^{i \mathbf{k} \mathbf{r}} \nabla u_\mathbf{k} (\mathbf{r}) = e^{i \mathbf{k} \mathbf{r}} (\nabla + i \mathbf{k}) u_\mathbf{k} (\mathbf{r})
+\end{equation}
+Ebből pedig a Laplace hatását könnyű kiszámolni:
+\begin{equation}
+    \nabla^2 \psi(\mathbf{r}) = e^{i \mathbf{k} \mathbf{r}} (\nabla + i \mathbf{k})^2 u_\mathbf{k} (\mathbf{r})
+\end{equation}
+Ezt visszahelyettesítve a Schrödinger-egyenletbe:
+\begin{equation}
+    \boxed{\left[-\frac{\hbar^2}{2m} (\nabla + i \mathbf{k})^2 + U(\mathbf{r})\right] u_\mathbf{k} (\mathbf{r}) = E_n(\mathbf{k}) u_\mathbf{k} (\mathbf{r})}
+\end{equation}
+Itt látható, hogy az energia most már csak a $\mathbf{k}$-tól függ, hiszen minden $\mathbf{k}$-ra különböző egyenletet kapunk. Ezt az egyenletet kell megoldani minden $\mathbf{k}$-re a Brillouin-zónán belül, hogy megkapjuk az energia diszperziós relációját $E_n(\mathbf{k})$. 
+Természetesen egy $\mathbf{k}$-hoz sok $E_n$ megoldás tartozik. Ez a \textbf{Bloch-egyenlet}, ami a kristályok elektronikus szerkezetének alapját képezi.ű
+
+\subsubsection{Kváziszabad elektron}
+Most alakítsuk a problémát egy kicsit valósághűbbé, és egy teljesen szabad elektron helyett vegyünk egy kváziszabad elektront. Ez annyit jelent, hogy az elektron szabadon mozog a kristályban, de a kristályrács potenciáljával gyengén kölcsönhatásban áll.
+Ekkor a Schrödinger-egyenlet Potenciális része kicsi lesz, így alkalmazhatjuk a perturbációs elméletet. Az első lépés felírni a szabad elektron Bloch-egyenletét:
+\begin{equation}
+    -\frac{\hbar^2}{2m} (\nabla + i \mathbf{k})^2 u_\mathbf{k} (\mathbf{r}) = E_n^{(0)} (\mathbf{k}) u_\mathbf{k} (\mathbf{r})
+\end{equation}
+Hattatva az operátort (a $-$ kiesik az $i$ miatt):
+\begin{equation}
+    \frac{\hbar^2}{2m} \left(\mathbf{G} + \mathbf{k}\right)^2 e^{i \mathbf{G} \cdot \mathbf{r}} = E_n^{(0)} (\mathbf{k}) e^{i \mathbf{G} \cdot \mathbf{r}}
+\end{equation}
+Vagyis a szabad elektron energiája:
+\begin{equation}
+    \boxed{E_n^{(0)} (\mathbf{k}) = \frac{\hbar^2}{2m} \left(\mathbf{G} + \mathbf{k}\right)^2}
+\end{equation}
+De ezt még normálni is kellene, szerencsére az $u_\mathbf{k} (\mathbf{r})$ rácsperiodikus ezért, ha feltesszük, hogy egy cellában csak egy elektron van, akkor az elemi cellára a normált lesz\footnote{
+    Ez természetesen az egész rendszerre nem normált eredményt fog adni, de mivel a kristály periodikus, ezért elég csak egy cellára normálni. Választhanánk úgy is, hogy az egész térre normálunk, de mivel gyakran nem tudjuk a teljes rendszer méretét, ezért nem mindig könnyű
+}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/17-tetel/quasifree_electron.png}
+    \caption{
+        Kváziszabad elektron Energiája a $\mathbf{k}$ függvényében. Látható, hogy ez egy periodikus parabola sorozat lenne, de csak az $[-\frac{\pi}{a}, \frac{\pi}{a}]$ tartományban értelmezzük, de
+        a külső régiókban induló ágakat is figyelembe kell vennünk. Ez úgy is értelmezhetnénk, mint ha egy parabolát "behajtogatnánk" a Brillouin-zóna tartományába.    
+    }
+    \label{fig:band_structure}
+\end{figure}
+
+Erre a megoldásra kell alkalmazni a perturbációs elméletet, amivel a gyenge kristályrács potenciál hatását vesszük figyelembe. Ekkor az Energia függvény úgy módosuln hogy:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/17-tetel/quasifree_electron_perturbation.png}
+    \caption{Kváziszabad elektron Energiája a $\mathbf{k}$ függvényében gyenge kristályrács potenciál mellett.}
+    \label{fig:band_structure_perturbation}
+\end{figure}
+Látható, hogy a perturbáció hatására a lehetséges energiák sávokba rendeződnek, amik között nincs triviális átmenet. Ezt nevezzük \textbf{sávszerkezetnek}, és ezek a sávok határozzák meg a kristály elektronikus tulajdonságait.
+Ha tehát a szabad elektronra "ráengedünk" egy gyenge potenciált, akkor az energiaállapotok fel fognak hasadni. Ha még egy kicsi potenciált ráengedünk (mondjuk mégtöbb elektron-elektron kölcsönhatását figyelembe veszek), akkor kicsit még jobban felhasadnak (degenerátlak lesznek).
+Ha pedig az egészet összeadjuk, akkor kapjuk meg a sávszerkezetet. Látható, hogy a sávszerkezet nem a periodikusság következménye, hiszen a szabad elektron esetében is periodikus volt az energia, hanem a kristályrács potenciáljának hatására jön létre.
+A periodikusság itt csak ott jelenik meg, hogy a $\mathbf{k}$-val jellemezzük a rendszert (kvantumszám). Ha nem periodikus anyagot nézünk, akkor ez a $\mathbf{k}$ nem lesz jó és valami más kvantumszámot kell találni.
+Ettől függetlenül sávszerkezet amorf anyagokban is létezhet.
+
+Ha jól megnézzük az ábrát, akkor látható, hogy a sávszerkezet görbéi azért jó közelítéssel még mindig parabolák. Ezért a megkapott kvázisszabad elektron energiáját perturbáció nélkül is lehet használni
+közelítésre. A különbség csak annyi lesz, hogy az elektron tömege helyett az úgynevezett \textbf{effektív tömeget} kell használni (jele: $m^*$ - Fontos, hogy ez nem a redukált tömeg!). És így az energia:
+\begin{equation}
+    \boxed{E_n (\mathbf{k}) = \frac{\hbar^2}{2 m^*} \left(\mathbf{G} + \mathbf{k}\right)^2}
+\end{equation}
+Ezt úgy értelmezhetjük, hogy az elektronra a külső potenciál jó közelítéssel úgy hat, mintha egy kicsit csak megváltoztatná a tömegét. Az effektív tömeg lehet kisebb vagy nagyobb is (általában kisebb), mint az elektron tömege, sőt negatív is lehet.
+
+\subsubsection{Anyagok sávszerkezete}
+Láttuk tehát, hogy egy elektronnak egy kristályban lesz egy sávszerkezete ami meghatározza a megengedett energiáit. A Pauli-elv miatt azt is tudjuk, hogy egy állapotba csak két elektron lehet (egy fel és egy le spinű),
+ez egy elég egyszerű sávszerkezetet eredményez. De ha veszünk 2 atomot 1-1 elektronnal, és elkezdjük őket kezelíteni, akkor előbb-utóbb elkezdenek egymással kölcsönhatni, ami degenerált sávszerkezetet okoz, ami miatt $n \to 2n$ sávot okoz.
+De egy anyagban nem 1-2 atom van, hanem sok, vagyis a sávok $N$ részre szakadnak fel (ahol $N$ az atomok száma) és ezek a sávok annyira közel lesznek egymáshoz, hogy gyakorlatilag folytonosnak tűnnek. Ezek között viszont továbbra is lesznek tiltott sávok, ahol nincs megengedett energiaállapot. Ezek a tiltott sávok határozzzák meg az anyag elektromos tulajdonságait.
+
+Úgy is jellemezhetjük viszont az anyagokat, hogy az egy atomra jutó elektronok hány sávot töltenek be. Ha egy anyagban egy atomra egy elektron jut, akkor a legalsó sávot átlagosan csak félig tölti be.
+Ha 2 elektron jut egy atomra, akkor viszont a legalsó sáv áltagosan teljesen töltött lesz. Ez a tulajdonság szabályozza a vezetési képességet. Ha egy anyagban a külső sáv teljesen töltött, akkor az anyag szigetelő lesz,
+hiszen az elektronnak egy ekész tiltott sávot át kell ugornia, hogy magasabb állapotba jusson. Ha viszont a külső sáv félig töltött, akkor az elektronok könnyen tudnak mozogni, hiszen a sávon belül vannak megengedett állapotok, amik között kicsi energiával is át tud menni.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{imgs/17-tetel/bandgap.jpg}
+    \caption{Sávszerkezet különböző anyagtípusokban. Balra egy szigetelő, jobbra egy vezető és középen egy félvezető sávszerkezete látható.}
+    \label{fig:insulator_conductor_semiconductor}
+\end{figure}
+
+De ez a kép csak atomok esetében működik jól. Ha egy anyag szeret molekulákat alkotni, akkor az már problémát tud okozni. Például a Hidrogén ez a kép alapján vezető lenne,
+de ha szilárd anyagra hűtjük, akkor $H_2$ molekulákat alkot, amiknek az elektronjai teljesen betöltik a legalsó sávot, így a szilárd hidrogén szigetelő lesz.
+
+Szintén nem jó például a Berílium aminek szigetelőnek kéne lennie, de az a probléma, hogy a külső sávja (2s sáv) és a következő sáv (2p sáv) túl közel vannak egymáshoz, ezért a felhasadás után összecsúsznak 
+és a 2p sáv is félig be lesz töltve, így a Berílium vezető lesz.
+
+Tehát ez a modell csak egy nagyon naív közelítés, a valóságban nagyon sok hatás közrejátszik abban, hogy egy anyag vezető, félvezető vagy szigetelő legyen. A periodus rendszer esetében is tudjuk, hogy bár a sávszerkezet
+modellje alapján arra számítanánk, hogy minden második elem szigetelő, a valóságban csak 22 elem nem fém (vagyis hogy a külső sáv teljesen be van töltve).
+
+Érdekesség, hogy ha egy szennyezést teszünk az anyagba, az nem változtatja meg a sávszerkezetet, de a állapsűrűség eloszlásába megjelennek úgynevezett szennyeződési nívók.
+Ha pedig elég szennyeződést teszünk be a megfelelő anyagból, akkor a tiltott zónákba is el tudjuk érni, hogy ne menjen le az állaposűrűség nullára, vagyis szigetelő anyagból is tudunk vezetőt csinálni.
+A félvezető anyagok pont ezen az elven működnek.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/17-tetel/density_of_states.png}
+    \caption{Különböző anyagtípusok állapotsűrűsége. Látható, hogy a Fermi energiának fontos szerepe van abban, hogy egy anyag vezető, félvezető vagy szigetelő legyen.}
+\end{figure}
+
+\subsection{Félvezetők}
+A 20. század elején találták fel a vákuumcsöveket, amikben a katódból kilépő elektronok egy vákuumon keresztül jutottak el az anódhoz. Ezeknek az eszközök forradalmasították az elektronikát, ugyanis lehetővé tették
+az áram folyásának szabályozását. Segítségükkel lehetett elektronikus jelet erősíteni, kapcsolókat készíteni, zajt szűrni stb. Emiatt korai TV készülékek, rádiók, radar és az első számítógépek működéséhez is elengethetelenek voltak.
+A működési elvük relatíve egyszerű volt, egy üvegbúrában vákuumot hoztak létre (hasonlóan egy villanykörtéhez), majd az egyik oldalára egy katódot, a másikra pedig egy anódot helyeztek el.
+Ezután az a katódot árammal felmelegítették, amiből a termoionizáció miaelektronok léptek ki az anód felé. Ezek a vákuumban haladó elektronok pedig egy áramot hoznak létre az anód és a katód között.
+Ez önmagában csak arra volt jó, hogy egyirányúsítsuk az áramot (csak a katód felöl folyhatott, visszafele nem), de egy kis kiegészítéssel már lehetett szabályozni is ezt az áramot.
+
+Ha az egész rendszer köré tettek egy vezérlő elektródát (rácsot), akkor a potenciálját változtatva lehetett szabályozni az anód és katód között folyó áramot. Ha nagy negatív áram a vezérlő elektródán
+nagy negatív potenciált hozott létre, ami visszalökte az elektronokat és csak kevés elektron tudott átjutni. Kis potenciál esetén viszont egészen nagy áram is ki tudott alakulni. Ami pedig az egésznek a lényege volt,
+hogy a vezérlő elektródára elég volt relatíve kis áramot is ráadni, hogy ezt a szabályzást elérjük, így pl. egy kis jelből (ami a szabályzóra fut be) lehetett nagy jelet csinálni vagy egy nagyból kicsit.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{imgs/17-tetel/vacuum_tube.png}
+    \caption{Vákuumcső felépítése és működési elve. A katódot felmelegítve elektronok lépnek ki, amik az anód felé haladnak. A rács potenciiáljával szabályozható az anód és katód között folyó áram.}
+    \label{fig:vacuum_tube}
+\end{figure}
+Az egyiránúsító vákuumcsövet diódának, a vezérlővel ellátottat pedig triódának nevezték. Később aztán egyéb konfigurációk is megjelentek, ahol vákuum helyett valami gázzal töltötték ki a csövet, vagy egyéb elektródákat raktak bele (tetrióda vagy pentióda).
+Illetve később megjelentek olyanok is amik nem a termoionizációt használták ki, hanem fénnyel szabadították fel az elektronokat a fotoelektromos effektus segítségével (fotovákuumcső).
+
+Viszont ezekkel a vákuumcsovekkel volt pár komoly probléma. Egyrészt nagyok és törékenyek voltak, másrészt sok energiát fogyasztottak a katód felmelegítésére. Továbbá az katódoknak volt is egy élettartalma,
+ami miatt relatíve gyakran kellett őket cserélni. Továbbá komoly gond kezdett az is lenni, hogy ezeknek a berendezéseknek volt egy minimális feszültsége amin használni lehetett őket. Néhány száz volt alatt
+már nem működtek jól, emniatt nagyon érzékeny berendezéseket nem lehetett velük készíteni. Emiatt a 20-as 30-as években komoly kutatások indultak arra, hogy valahogyan ki tudjuk váltani ezeket az eszközöket.
+Ezek lettek a félvezetők.
+
+\subsubsection{Félvezetők működése}
+Az első felfedezés, amelyik később a félvezetők felfedezéséhez vezetett, a szilíciumban megfigyelt furcsa vezetési tulajdonságok voltak. A szilícium egy 4 vegyértékű elem, tehát a legfelső sávjai teljesen be vannak töltve. Emiatt egy teljesen tiszta szilícium kristály szigetelő.
+Viszont a Szilícium kristály gap-je (a távolság a legfelső betöltött sáv és a legalsó üres sáv között) relatíve kicsi ($\sim 1.5 eV$), Ezért nem kell sok extra energia ahhoz, hogy egy elektron át tudjon ugrani a tiltott sávon. A termikus energia $kT$ a szobahőmérsékleten kb. $0.025 eV$, 
+tehát nem sok, de már így is előfordulhat, hogy magától fel-fel ugrik egy elektron. Az áramsűrűséget úgy lehet kifejezni, hogy:
+\begin{equation}
+    J = \sigma E = nq \mu E
+\end{equation}
+Itt $n$ a vezetésre képes elektronok száma, $q$ a töltésük, $\mu$ a mozgékonyságuk és $E$ a külső elektromos tér. Itt $nq\mu$ lesz a fajlagos vezetőképesség $\sigma$.
+Egy vezetőben jól látszik, hogy ha növeljük a $T$ hőmérsékletet, $n$ száma nem változik, viszont a $\mu$ mozgékonyság csökken, mert nagyobb hümérsékleten több a rácshiba, vakancia, fononok stb. amibe bele tud ütközni az elektron.
+Félvezetők esetében viszont a hőmérséklet növelése növeli az esélyét annak, hogy az elektronok át tudják ugorni a gap-et, ezért $n$ növekszik. Ha pedig elég kicsi a gap, akkor az $n$ növekedése "legyőzi" a $\mu$ csökkenését, és a fajlagos vezetőképesség növekszik a hőmérséklettel. 
+
+De mi van ha az $n$-t direktben is tudom befolyásolni? Ezt úgy lehet pl. megtenni, hogy beteszünk egy 5 vegyértékű szennyező anyagot (például Arzén\footnote{
+    ez pont a szilícium alatt van a periódikus rendszerben vagyis méretre azonos ezért befér a szilícium atom helyére.
+}). Ezzel egyel megnövelem az $n$ értékét, tehát kicsit jobban fog vezetni az anyag. Hasonlóan megtehetem a másik irányba is, tehát egy 3 vegyértékű anyagot (például Indiumot) teszek bele, ami csökkenti az $n$ értékét. Ekkor ott megjelenik egy hiány, amit az egyik szabad elektron be fog tudni tölteni.
+Ez a hiány pedig egy speciális viselkedést fog mutatni, hiszen amikor egy véletlenszerűen felugró elektron betölti azt, akkor ott keletkezik egy hiány, ahonnan az az elektron kijött. Tehát azt is befogja tölteni egy másik elektron és így tovább.
+Ez azt jelenti, hogy az elektronhiány egy kvázirészecskeként fog működni, ugyanúgy képes lesz mozogni a kristályban mint egy elektron, csak pozitív töltéssel. A hiányt \textbf{vakanciának} vagy lyuknak neveznek és ezt a félvezetőt \textbf{p-tipusú félvezetőnek}, az 5 vegyértékes atommal létrehozott elektronos vezetést pedig \textbf{n-típusú félvezetőnek} fogják hívni.
+
+Ebből következik, hogy ha mondjuk 10 darab 5 vegyértékűt, és 10 darab 3 vegyértékű szennyeződést rakunk a kristályba, akkor azok elektronjai szépen el fognak rendeződni, és utána szigetelőként fog működni az anyag.
+Tehát a szennyeződés mennyiségétől és minőségétől (mennyi vegyértékelektron van benne) nagyon függ a félvezető vezetőképessége (egy fémnél csak a szennyeződés mennyisége számít, a minősége csak minimálisan befolyásolja).
+
+A vezető sávot és a vegyértéksávot közelíthetjük a kváziszabad elektron modelljével, hisz ebben is igaz, hogy a sávok között gap van, amit normál esetben nem tudnak átugrani az elektronok. Ekkor az energiája a két sávnak:
+\begin{equation}
+    \begin{aligned}
+        E_c (\mathbf{k}) &= E_c + \frac{\hbar^2 k^2}{2 m_c^*} \\
+        E_v (\mathbf{k}) &= E_v - \frac{\hbar^2 k^2}{2 m_v^*}
+    \end{aligned}
+\end{equation}
+Itt az $E_c$ a vezetési sáv alja, az $E_v$ a vegyértéksáv teteje, $m_c^*$ (mint "conductor") az elektron effektív tömege a vezetési sávban, $m_v^*$ (mint "vacancy") pedig a lyuk effektív tömege a vegyértéksávban.
+Ekkor az állapotsűrűségek\footnote{
+    Itt $D$-vel jelöljük az állapotsűrűséget, de van, hogy $\rho$-val jelöltük.
+}:
+\begin{equation}
+    \begin{aligned}
+        D_c (E) &= \frac{1}{2 \pi^2} \left(\frac{2 m_c^*}{\hbar^2}\right)^{3/2} \sqrt{E - E_c} \\
+        D_v (E) &= \frac{1}{2 \pi^2} \left(\frac{2 m_v^*}{\hbar^2}\right)^{3/2} \sqrt{E_v - E}
+    \end{aligned}
+\end{equation}
+Itt az $E$ az energia, ami a vezetési sávban $E \geq E_c$ és a vegyértéksávban $E \leq E_v$. Ezekből pedig ki tudjuk számolni az elektronok és lyukak számát a sávokban:
+\begin{equation}
+    \begin{aligned}
+        n(T) &= \int_{E_c}^{\infty} D_c (E) f(E) dE \\
+        p(T) &= \int_{-\infty}^{E_v} D_v (E) [1 - f(E)] dE
+    \end{aligned}
+\end{equation}
+Itt az $f(E)$ a Fermi-Dirac eloszlásfüggvény:
+\begin{equation}
+    f(E) = \frac{1}{e^{(E - E_F) / kT} + 1}
+\end{equation}
+Itt az $E_F$ a Fermi-szint, ami a kémiai potenciál nulla hőmérsékleten. A $p(T)$ tudjuk egy kicsit tovább egyszerűsíteni:
+\begin{equation}
+    p(T) = \int_{-\infty}^{E_v} D_v (E) \frac{e^{(E - E_F) / kT}}{e^{(E - E_F) / kT} + 1} dE = \int_{-\infty}^{E_v} D_v (E) \frac{1}{e^{\frac{\mu - E}{kt}} + 1} dE
+\end{equation}
+Itt a $\mu = E_F - E_v$ a kémiai potenciál a vegyértéksáv tetejéhez képest. Tehát összesen (és a másikba is behelyettesítve $\mu$-t):
+\begin{equation}
+    \begin{aligned}
+        n(T) &= \int_{E_c}^{\infty} D_c (E) \frac{1}{e^{(E - \mu) / kT} + 1} dE \\
+        p(T) &= \int_{-\infty}^{E_v} D_v (E) \frac{1}{e^{(\mu - E) / kT} + 1} dE
+    \end{aligned}
+\end{equation}
+Viszont van egy extra megkötés is. Ha nem teszünk be kívülről szennyeződést, akkor a semmiből nem jöhet be vagy tűnhet el elektron, egy elektron csak akkor keletkezhet, ha megjelenik egy lyuk is. Ezért a következő egyenletnek teljesülnie kell:
+\begin{equation}
+    n(T) = p(T)
+\end{equation}
+Tehát a $\mu$ kémiai potenciált úgy kell megválasztani, hogy ez az egyenlet teljesüljön\footnote{
+    Természetesen ha rakunk be szennyeződést, akkor az adott oldalhoz azt még hozzá kell adni.
+}.
+
+Még egy közelítéssel is élhetünk, ugyanis a félvezetőkben a Fermi-szint általában a gap közepén helyezkedik el, és a hőmérséklet is kicsi (szobahőmérsékleten kb. $0.025 eV$), ezért az exponenciális tagok nagyok lesznek:
+\begin{equation}
+    e^{(E - E_F) / kT} \gg 1 \quad , \quad e^{(\mu - E) / kT} \gg 1
+\end{equation}
+Ekkor a Fermi-Dirac eloszlásfüggvényt le tudjuk közelíteni a Maxwell-Boltzmann eloszlásra:
+\begin{equation}
+    f(E) \approx e^{-(E - \mu) / kT} \quad , \quad 1 - f(E) \approx e^{-(\mu - E) / kT}
+\end{equation}
+Így tehát az $n(T) = p(T)$ alapján a következő egyenletet kapjuk:
+\begin{equation}
+    \int_{E_c}^{\infty} D_c (E) e^{-(E - \mu) / kT} dE = \int_{-\infty}^{E_v} D_v (E) e^{-(\mu - E) / kT} dE
+\end{equation}
+A $D_c(E)$ és $D_v(E)$ behelyettesítése után:
+\begin{equation}
+    \begin{aligned}
+        &\frac{1}{2 \pi^2} \left(\frac{2 m_c^*}{\hbar^2}\right)^{3/2} \int_{E_c}^{\infty} \sqrt{E - E_c} e^{-(E - \mu) / kT} dE = \\
+        &= \frac{1}{2 \pi^2} \left(\frac{2 m_v^*}{\hbar^2}\right)^{3/2} \int_{-\infty}^{E_v} \sqrt{E_v - E} e^{-(\mu - E) / kT} dE
+    \end{aligned}
+\end{equation} 
+Itt a $\mu$-t is ki tudjuk emelni az integrálból, hiszen $e^{-(E - \mu) / kT} = e^{-(E - E_c)/kT} e^{-(E_c - \mu)/kT}$ és $e^{-(\mu - E) / kT} = e^{-(\mu - E_v)/kT} e^{-(E_v - E)/kT}$. Ekkor az egyenlet:
+\begin{equation}
+    \begin{aligned}
+        &\frac{1}{2 \pi^2} \left(\frac{2 m_c^*}{\hbar^2}\right)^{3/2} e^{-(E_c - \mu) / kT} \int_{E_c}^{\infty} \sqrt{E - E_c} e^{-(E - E_c) / kT} dE = \\
+        &= \frac{1}{2 \pi^2} \left(\frac{2 m_v^*}{\hbar^2}\right)^{3/2} e^{-(\mu - E_v) / kT} \int_{-\infty}^{E_v} \sqrt{E_v - E} e^{-(E_v - E) / kT} dE
+    \end{aligned}
+\end{equation}
+Ezt az integrált már ki tudjuk számolni egy változócserével ($x = E - E_c$):
+\begin{equation}
+    \int_{0}^{\infty} \sqrt{x} e^{-x / kT} dx = \left(\frac{\pi}{4}\right)^{1/2} (kT)^{3/2}
+\end{equation}
+Ezt visszahelyettesítve a következőt kapjuk $n(T)$ -re:
+\begin{equation}
+    n(T) = 2 \left(\frac{m_c^* kT}{2 \pi \hbar^2}\right)^{3/2} e^{-(E_c - \mu) / kT}
+\end{equation}
+Nagyon hasonlóan $p(T)$-re is:
+\begin{equation}
+    p(T) = 2 \left(\frac{m_v^* kT}{2 \pi \hbar^2}\right)^{3/2} e^{-(\mu - E_v) / kT}
+\end{equation}
+Ezeket visszahelyettesítve az $n(T) = p(T)$ egyenletbe:
+\begin{equation}
+    2 \left(\frac{m_c^* kT}{2 \pi \hbar^2}\right)^{3/2} e^{-(E_c - \mu) / kT} = 2 \left(\frac{m_v^* kT}{2 \pi \hbar^2}\right)^{3/2} e^{-(\mu - E_v) / kT}
+\end{equation}
+Ebből pedig a kémiai potenciál:
+\begin{equation}
+    \boxed{\mu = \frac{E_c + E_v}{2}} + \frac{3}{4} kT \ln \left(\frac{m_v^*}{m_c^*}\right)
+\end{equation}
+Tehát a kémiai potenciál a gap közepén helyezkedik el, egy kis korrekcióval ami az effektív tömegek arányától függ. A kémiai potenciál pedig $T = 0K$ esetében ugye pont egyenlő a $E_F$ Fermi-szinttel, tehát a Fermi-szint is a gap közepén helyezkedik el nulla hőmérsékleten,
+és nem nulla hőmérsékleten is csak egy kis korrekcióval tér el ettől.
+
+\subsubsection{PN-átmenet}
+A félvezetők egyik legfontosabb alkalmazása a PN-átmenet, ami a félvezető eszközök alapját képezi. A PN-átmenet egy olyan szerkezet, ahol egy p-típusú és egy n-típusú félvezetőt kapcsolunk össze. Ez a kapcsolat egy határfelületet hoz létre, ahol a két félvezető anyag találkozik.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/17-tetel/pn_junction.png}
+    \caption{PN-átmenet felépítése és működési elve. A p-típusú és n-típusú félvezetők között egy határfelület jön létre, ahol a két anyag találkozik.}
+    \label{fig:pn_junction}
+\end{figure}
+Ezt technológiailag, úgy oldják meg, hogy beszennyezik az egész anyagot n-típusú szennyezővel, majd a félvezető egyik felét p-típusú szennyezővel kezelik úgy, hogy először kioltsa n-t majd túl is kompenzálja.
+Így a két félvezető anyag között egy határfelület jön létre ahova p szennyeződés már nem jut direkben de diffúzióval még beszivárog. manapság már nanométeres tartományban is tudnak ilyen PN-átmenetes anyagot csinálni.
+
+Fontos, hogy ezeknek az anyagoknak nagyon tisztának kell lennie, mert a diszlokációk miatt felerősödhet a diffúzió, és a P és N oldalak "összecsúsznak". Ezt az is erősíti, hogy a két oldal nincs egyensúlyban,
+ugyanis a különböző szennyeződések miatt a kémai potenciáljuk nem azonos. Viszont a negatív töltéseket vonnza a p oldal, a pozitívokat pedig az n oldal, tehát egy jó félvezető úgy van pont megcsinálva, hogy
+a diffúziós áram és ez a coulomb erő pont egyensúlyban legyenek. Ekkor jön létre egy ún. \textbf{kiürítési réteg} a határfelületen, ahol nincsenek szabad töltéshordozók (sem elektronok, sem lyukak), csak a szennyező ionok maradnak ott.
+Ez a kiürítési réteg egy potenciálgátat hoz létre, ami megakadályozza, hogy az elektronok és lyukak átjussanak a határfelületen. Ez a potenciálgát azonban külső feszültséggel megváltoztatható. Ha a p oldalra pozitív feszültséget kapcsolunk,
+akkor az elviszi az elektronokat a határfelülettől, így csökken a potenciálgát magassága és szélessége, és az elektronok könnyebben át tudnak jutni. Ezt nevezik \textbf{előfeszítésnek} vagy \textbf{forward bias}-nak.
+Ha viszont a p oldalra negatív feszültséget kapcsolunk, akkor az elektronokat a határfelület felé tolja, így növeli a potenciálgát magasságát és szélességét, és az elektronok nehezebben tudnak átjutni. Ezt nevezik \textbf{visszafeszítésnek} vagy \textbf{reverse bias}-nak.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/17-tetel/diode.png}
+    \caption{Dióda Skematikus ábrája és áramköri jele}
+    \label{fig:diode_bias}
+\end{figure}
+Ezáltal, ahogy a vákuumcsöveknél is, lesz egy záró és egy nyitó irány, ami szintén képes az áramot egyirányúsítani. Persze az alagúthatás miatt egy kicsi szivárgó áram lesz a záró irányba is, és ha elég nagy áramot kapcsolunk rá,
+akkor egyszercsak akkora lesz az impulzusa az elektronoknak, hogy egyszerűen átszakítják a potenciálgátat. Ez a feszültség, ahol ez kialakul, egy karakterisztikus értéke az adott félvezetőnek, ezért referenciaértéknek is használják.
+Ezt nevezik \textbf{áttörési feszültségnek} vagy \textbf{breakdown voltage}-nak. Ha ezt elérjük akkor a dióda általában leolvad.
+
+Ebből a diódából is tudunk jelerősítőt csinálni, ha úgy szennyezzük be a félvezetőt, hogy a két oldalán N tipusú szennyeződést rakunk, a közepén pedig egy vékony sávban P tipusút. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/17-tetel/npn.jpg}
+    \caption{Bipoláris NPN tranzisztor skematikus ábrája és áramköri jele}
+\end{figure}
+Ezután rákötünk egy áramkört a PN-átmenetre mint egy diódán, majd párhuzamosan egy másik áramkört az NP átmenetre is (ami záróirányban van). Ekkor a töltések elkezdenek menni a PN átmeneten kereszül,
+de a középső régió (amit bázisnak hívunk) nagyon vékony, ezért, mivel az elektronoknak nagy az impulzusuk, valamilyen valószínűséggel át fog menni véletlenül a P sávon. Onnan viszont vissza már nem tud menni,
+a záró irány miatt ezért kimegy a másik oldalon az N sávon kereszül. A kimenő áramot Emitter áramnak hívjuk, a bejövőt pedig Collector áramnak. Mivel a P-n lévő áramkör is rá van kötve a hálózatra, ezért onnan is
+folyik be egy kis áram amit Base áramnak hívunk. Kirchoff törvénye alapján nem "teremhet" áram a semmiből, ezért a következő összefüggésnek kell teljesülnie:
+\begin{equation}
+    I_C = I_E + I_B
+\end{equation}
+Ha a P réteg vékony, akkor az emitter áram arányos lesz a kollector árammal:
+\begin{equation}
+    I_C = \alpha I_E
+\end{equation}
+Itt az $\alpha$ egy arányossági tényező ami $0 < \alpha < 1$. Ebből következik, hogy a bázis áram:
+\begin{equation}
+    I_B = I_E - I_C = I_E - \alpha I_E = (1 - \alpha) I_E
+\end{equation}
+Ebből pedig a kollector áram kifejezhető a bázis áram segítségével:
+\begin{equation}
+    I_C = \frac{\alpha}{1 - \alpha} I_B = \beta I_B
+\end{equation}
+Itt a $\beta = \frac{\alpha}{1 - \alpha}$ az erősítési tényező, ami általában 20-100 között van. Tehát egy kis bázis áram nagy kollector áramot tud generálni, vagyis ezzel az eszközzel tudunk jelerősítőt csinálni. Ezt nevezik \textbf{NPN Bipoláris tranzisztornak}.
+
+Természetesen "fordítva" is lehet ilyet csinálni, amit PNP tranzisztornak hívunk. Ezeknek a működési elve teljesen hasonló, csak a töltéshordozók típusa és az áramirányok fordítottak.
+
+\subsubsection{Tranzisztor áramköri szerepe}
+A tranzisztorok manapság szinte minden elektronikai eszköz alapját képezik. Ezekkel lehet a jeleket erősíteni, kapcsolókat készíteni, logikai kapukat megvalósítani stb.
+A tranzisztoroknak két fő működési módja van: erősítő és kapcsoló. Erősítő módban a tranzisztor a bemenő jeletet nagyobb kimenő jellé alakítja át, míg kapcsoló módban a tranzisztor két állapot között vált, ami lehetővé teszi
+az áramkörök vezérlését.
+
+Szintén fontos a tranzisztorok szerepe az áramkörök stabilizálásában. Vegyünk egy egyszerű áramkört:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{imgs/17-tetel/circuit.png}
+    \caption{Egyszerű erősítő}
+    \label{fig:simple_circuit}
+\end{figure}
+Itt a kimenő feszültség a terhelésen a következő lesz:
+\begin{equation}
+    U_{\text{ki}} = U_T - R_C I_C
+\end{equation}
+Itt $U_T$ a tápegység feszültsége, $R_C$ az collector áramkör ellenállása és $I_C$ a kollector áram.
+A bejövő feszültség pedig a bázis áramkörön:
+\begin{equation}
+    U_{\text{be}} = U_{BE}(I_B) + R_E I_E
+\end{equation}
+Itt $U_{BE}$ a bázis-emitter feszültség. Itt feltesszük, hogy a bázis áram ellenállása a kis feszültség miatt elhanyagolható.
+Az emitter és collector áramok pedig :
+\begin{equation}
+    I_E = I_C + I_B \qquad I_C = \beta I_B
+\end{equation} 
+
+A probléma már csak az, hogy ahhoz, hogy megtudjuk oldani az egyenleteket, ismernünk kellene a $U_{BE}(I_B)$ függvényt, ami viszont egy elég csúnya nemlineáris függvény. Tehát a célunk az lesz, hogy valahogy közelítsük ezt a függvényt egy lineáris függvénnyel.
+Ehhez adjunk hozzá egy kis $\Delta U_{ki/be}$ feszültségekhezet, amik kicsit elmozdítják a feszültségeket:
+\begin{equation}
+    \begin{aligned}
+        U_{\text{ki}} + \Delta U_{\text{ki}} &= U_T - R_C (I_C + \Delta I_C) \\
+        U_{\text{be}} + \Delta U_{\text{be}} &= U_{BE}(I_B) + R_E (I_E + \Delta I_E)
+    \end{aligned}
+\end{equation}
+Ezekre a kis $\Delta I$ áramokra ugyanúgy igazak a Kirchoff törvényei:
+\begin{equation}
+    \Delta I_E = \Delta I_C + \Delta I_B \qquad \Delta I_C = \beta \Delta I_B
+\end{equation}
+Ebből pedig a következőket kapjuk:
+\begin{equation}
+    \begin{aligned}
+        \Delta U_{\text{ki}} &= - R_C \Delta I_C \\
+        \Delta U_{\text{be}} &= U_{BE}(I_B + \Delta I_B) - U_{BE}(I_B) + R_E \Delta I_E = \underbrace{\left.\frac{dU_{BE}}{dI_B}\right|_{I_B}}_{R_b} R_E \Delta I_E
+    \end{aligned}
+\end{equation}
+Itt kihasználtuk, hogy $U_{BE}(I_B + \Delta I_B)$ gyakorlatilag a derivált definíciója, csak meg kell szorozni $\Delta I_B$-vel. Ezt a deriváltat pedig elnevezzük a belső ellenállásnak $R_b$-nek.
+Tehát a két egyenletünk:
+\begin{equation}
+    \begin{aligned}
+        \Delta U_{\text{ki}} &= - R_C \Delta I_C \\
+        \Delta U_{\text{be}} &= R_b \Delta I_B + R_E \Delta I_E 
+    \end{aligned}
+\end{equation}
+Ebbe helyettesítsük be az $\Delta I_C$ és $\Delta I_E$ kifejezéseket:
+\begin{equation}
+    \begin{aligned}
+        \Delta U_{\text{ki}} &= - R_C \beta \Delta I_B \\
+        \Delta U_{\text{be}} &= R_b \Delta I_B + R_E ( \beta \Delta I_B + \Delta I_B ) = R_b \Delta I_B + R_E (\beta + 1) \Delta I_B
+    \end{aligned}
+\end{equation}
+Tehát ennek a tranzisztoros áramkörnek az erősítése ($A = \frac{\Delta U_{ki}}{\Delta U_{be}}$):
+\begin{equation}
+    A = \frac{- R_C \beta \Delta I_B}{(R_b + R_E (\beta + 1)) \Delta I_B} = \boxed{\frac{- R_C \beta}{R_b + R_E (\beta + 1)}}
+\end{equation}
+Látható, hogy az erősítés negatív, tehát ha növelem a bemenő feszültséget, akkor a kimenő csökkenni fog. Ez egy inverz erősítés, ami sok áramkörben hasznos lehet.
+Ha kellően nagy a $\beta$ érték, akkor a $R_b$ elhanyagolható az $R_E (\beta + 1)$-hez képest, így az erősítés egyszerűsödik:
+\begin{equation}
+    A \approx \frac{- R_C \beta}{R_E (\beta + 1)} \approx \frac{- R_C}{R_E}
+\end{equation}
+Tehát az erősítés csak az ellenállásoktól függ, ami egy nagyon hasznos tulajdonság, hiszen így könnyen beállítható az erősítés értéke az ellenállások megválasztásával és nem kell a hőmérséklettel vacakolni.
+Ezt az áramkőrt \textbf{fázisfordító erősítőnek} nevezik, hiszen a kimenő jel fázisa 180 fokkal el van tolva a bemenő jelhez képest.
 
 
 
