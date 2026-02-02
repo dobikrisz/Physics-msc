@@ -7,8 +7,1548 @@
     csillagok energiatermelése. Kompakt objektumok: fehér törpék, neutroncsillagok, fekete lyukak. Megfigyelés alapjai: luminozitás, magnitúdó, vöröseltolódás.
 }
 
+\subsection{Az ősrobbanás elmélet alapvető feltevései, a Hubble-törvény, Friedmann-egyenletek szemléletes értelme \cite{inflation_cosmology}}
+
+\subsubsection{A kozmológiai elv}
+A kozmológiai elv a kozmológia tudományának fundamentális posztulátuma, amiből kiindulva vezetjük le az univerzum nagyskálás szerkezetére vonatkozó elméleteinket. Az elv két alapvető állításból áll:
+az Univerzum \textbf{homogén} és \textbf{izotróp}. Ezt a két állítást jelenlegi technológiáinkal és megfigyeléseinkkel képtelenek vagyunk kategorikusan bizonyítani, de jelenlegi ismereteink egyike se mond
+ellent neki. 
+
+A homogenitás gyakorlatilag egyenlő az eltolás-invarianciával. Egy tér egy fizikai mennyiségre akkor homogén, ha bármelyik pontján megmérve ugyan azt kapjuk. Az univerzum esetén ezt az anyagsűrűségre szoktuk
+érteni a homogenitást. Fontos megkülönböztetni a lokális és a globális homogenitást. Az könnyen belátható, hogy az univerzum nem lehet lokálisan homogén, hiszen rengeteg kisebb-nagyobb szervezeti egységből áll
+(csillagok, naprendszerek, galaxisok, galaxishalmazok stb.), ezért a homogenitást nagy méretskálán értelmezzük és statisztikus értelemben. Tehát ez az elv azt állítja, hogy ha kiválasztunk két térfogati 
+elemet az univerzumban, melynek a méretskálája összemérhető az univerzum méretskálájával, akkor azokban az anyagsűrűség megközelítőleg azonos lesz.
+
+Az izotrópia pedig a forgatási-invariancia. Ez azt mondja ki, hogy bármelyik irányba nézünk, az univerzum szerkezete hasonló lesz. Ez is csak nagy méretskálán igaz értelemszerűen.
+
+Ezt a két elvet már 100 évvel ezelőtt felvetették hiszen már szabad szemmel az éjszakai eget vizsgálva is ezt tapasztaljuk. Természetesen a valóságban megzavarja a képet a tény, hogy egy galaxisban élünk,
+ami egy lokális szerveződés, emiatt a Tejútrendszer spiráljainak irányaiban kb. 20x annyi csillagot kéne látnunk, de a csillagközi por a nagyrészét kitakarja a csillagoknak így közelítőleg egy homogén és izotróp égboltot kapunk.
+
+Érdekesség, hogy a homogenitás helyett az úgynevezett Kopernikuszi elvet is alkalmazhatjuk, ami azt feltételezi, hogy a világegyetem nem csak egy pontból, hanem bármelyik, tetszőleges pontból nézve izotróp.
+Ebből ugyanis egyértelműen következik a homogenitás is. Képzeljünk el egy izotróp univerzumot egy adott $A$ pontból nézve. Ekkor az $A$ pontból állított $r_1$ sugarú gömbfelület pármelyik pontján azonosnak
+kell lennie a sűrűségnek. De az izotrópiából nem következik, hogy mondjuk egy $r_2$ sugarú gömbfelületen azonosnak kell lennie a sűrűségnek az $r_1$ gömbfelületével.
+Ugyanezt a szerkesztést egy $B$ pontból is megtehetjük, és az abból alláított $r_3$ sugarú gömfelület valahol metszeni fogja az $r_1$ és $r_2$ gömböket. Viszont ha a Kopernikuszi elv igaz,
+akkor a  $B$ pontból is izotrópnak kell lennie az univerzumnak, így a metszéspontban az $r_1$, $r_2$ és $r_3$ gömbfelületeken is azonosnak kell lennie a sűrűségnek. Ez viszont már csak úgy lehetséges,
+ha a sűrűség minden gömbfelületen azonos, tehát a homogenitás is igaz.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{imgs/18-tetel/kopernikusz.png}
+    \caption{A Kopernikuszi elv szemléltetése. Ha az univerzum bármelyik pontból izotróp és a kopernikuszi elv igaz, akkor homogen is kell legyen.}
+    \label{fig:kopernikusz_elv}
+\end{figure}
+
+Visszafele viszont már nem feltétlenül igaz az állítás! Egy univerzum lehet homogén, de nem izotróp. Például ha jelen van egy tágulás, ami nem izotróp hanem triaxiális\footnote{
+    különbözik a három tengely mentén
+},
+akkor elképzelhető egy olyan helyzet, hogy minden irányban azonos a homogenitás, de egyes irányokban mást látunk (pl. a vöröseltolódás mértéke különböző lehet az egyes irányokban).
+
+A kozmológiai elvből még egy fontos állítás következik, mégpedig, hogy az univerzumban lévő objektumok egymáshoz viszonított sebessége és távolsága lineárisan függ egymástól. Ahhoz, hogy ezt belássuk,
+nézzünk meg egy egyszerű esetet. Vegyünk egy csillagot egy $C$ pontban, amit egy $A$ és egy $B$ pontból is megfigyelünk. az $A$ pontból az $\mathbf{x}$ vektor mentén, a $B$ pontból pedig a $\mathbf{x}'$ vektor mentén látjuk a csillagot. 
+Továbbá tegyük fel, hogy az anyag ebben az univerzumban tetszőleges mozgást végezhet, és ekkor a két megfigyelő együtt "úszik" az anyaggal, vagyis a lokális segebbésgük zérus az anyaghoz képest.
+Legyen a $B$-hez rögzített koordináta rendszer a $'$-vel jelölt, és az $A$-hoz rögzített koordináta rendszer a jelöletlen értékek. Továbbá a két megfigyelő közötti távolságot jelölje az $ \mathbf{a}$ vektor.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{imgs/18-tetel/homogenitas.png}
+    \caption{Homogén univerzum két megfigyelővel és egy csillaggal.}
+    \label{fig:homogenitas_elv}
+\end{figure}
+Ekkor a $C$ csillag sebessége felírható mind a két megfigyelőhőz képest. Az $A$ pontból nézve (a relativisztikus hatásokat most hanyagoljuk):
+\begin{equation}
+    \mathbf{v}(\mathbf{x}, t) = \mathbf{v}(\mathbf{a}, t) - \mathbf{v}(0, t) + \mathbf{v}'(\mathbf{x}', t)
+\end{equation}
+Itt $\mathbf{v}(\mathbf{a}, t)$ az $A$ pont és a $B$ pont közötti relatív sebesség, $\mathbf{v}(0, t)$ pedig az $A$ pont sebessége az anyaghoz képest (ami most $\mathbf{v}(0, t) = 0$). A $\mathbf{v}'(\mathbf{x}', t)$ pedig a csillag sebessége a $B$ pontból nézve. 
+A vektorok összeadásából pedig látszódik, hogy $\mathbf{v}(\mathbf{x}, t) = \mathbf{v}(\mathbf{a}, t) + \mathbf{v}'(\mathbf{x}', t)$. Ekkor $\mathbf{v}'$ kifejezhető az $\mathbf{v}$-ből:
+\begin{equation}
+    \mathbf{v}'(\mathbf{x}', t) = \mathbf{v}(\mathbf{x}, t) - \mathbf{v}(\mathbf{a}, t)
+\end{equation}
+A csillag helyzetét kifejezhetjük a másik megfigyelő koordináta rendszerében is:
+\begin{equation}
+    \mathbf{x} = \mathbf{x}' + \mathbf{a} \quad \implies \quad \mathbf{x}' = \mathbf{x} - \mathbf{a}
+\end{equation}
+Ezt visszahelyettesítve a sebesség kifejezésébe:
+\begin{equation}
+    \mathbf{v}'(\mathbf{x} - \mathbf{a}, t) = \mathbf{v}(\mathbf{x}, t) - \mathbf{v}(\mathbf{a}, t)
+\end{equation}
+A kopernikuszi elv miatt minden megfigyelő szempontjából izotrópnak kell lennie az univerzumnak, vagyis ugyanazt kell látniuk. Emiatt a következő összefüggésnek teljesülnie kell:
+\begin{equation}
+    \mathbf{v}(\mathbf{x}, t) - \mathbf{v}(\mathbf{a}, t) = \mathbf{v}'(\mathbf{x}, t) - \mathbf{v}'(\mathbf{a}, t)
+\end{equation}
+Tehát az előző egyenlet alapján:
+\begin{equation}
+    \mathbf{v}'(\mathbf{x} - \mathbf{a}, t) = \mathbf{v}'(\mathbf{x}, t) - \mathbf{v}'(\mathbf{a}, t)
+\end{equation}
+Ez csak akkor lehetséges, ha a sebességmező lineáris függvénye a helyvektornak, vagyis felírható a következő alakban:
+\begin{equation}
+    \mathbf{v}(\mathbf{x}, t) = C_{ik}(t) \mathbf{x}
+\end{equation}
+Ahol $C_{ik}(t)$ egy időfüggő másodrendű tenzor. Ez sokfajta lehetséges mezőt leírhat, csak annyi a megkötés, hogy lineáris kapcsolatot kell biztosítania a sebesség és a hely között. Ilyen lehet például:
+\begin{equation}
+    C^{(1)}_{ik}(t) = \begin{pmatrix}
+        0.2 & 0 \\
+        0 & -0.1 \\
+    \end{pmatrix}
+\end{equation}
+Vagy:
+\begin{equation}
+    C^{(2)}_{ik}(t) = \begin{pmatrix}
+        0 & -0.2 \\
+        0.2 & 0 \\
+    \end{pmatrix}
+\end{equation}
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=0.8\linewidth]{imgs/18-tetel/linearis1.png}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=0.8\linewidth]{imgs/18-tetel/linearis2.png}
+\end{subfigure}
+\caption{A $C^{(1)}_{ik}$ és $C^{(2)}_{ik}$ tenzorok által leírt sebességmezők. Az első egy táguló/összehúzódó mezőt ír le, míg a második egy forgó mezőt.}
+\end{figure}
+
+Ezek matematikailag helyes megoldások, de a $C^{(2)}_{ik}$-val van egy kis gond. Ez ugyanis egy forgó mezőt ír le, ami nem lehet izotróp! Az egyik irányban a forgás miatt közelednek az objektumok, míg a másik irányban távolodnak.
+Emiatt ezt a mozgást nem veheti fel az univerzum, tehát az eredeti feltevésünk, hogy az anyag bármilyen mozgást végezhet, nem helyes. Hogy ezt jobban lássuk, bontsuk fel a $C_{ik}$ tenzort egy szimmetrikus és egy antiszimmetrikus részre:
+\begin{equation}
+    C_{ik} = \frac{1}{2} (C_{ik} + C_{ki}) + \frac{1}{2} (C_{ik} - C_{ki}) = S_{ik} + A_{ik}
+\end{equation}
+Ahol $S_{ik}$ a szimmetrikus rész, $A_{ik}$ pedig az antiszimmetrikus rész\footnote{
+    Az antiszimmetria annyit jelent, hogy előjelet váltanak a komponensei, ha felcseréljük az indexeket. Tehát:
+    \begin{equation}
+        C_{ij} = - C_{ji}
+    \end{equation}
+}.
+Az antiszimmetrikus tag pontosan a forgó részt írja le, ezért ennek nullának kell lennie az izotrópia miatt! Tehát ez a tenzor csak szimmetrikus lehet, amiből egyből következik, hogy diagonizálható is.
+A diagonizálható tenzorok pedig mindig egy dilatációt\footnote{
+    A dilatáció azt jelenti, hogy a térfogat egy táguláson vagy összehúzódáson megy keresztül. 
+} írnak le. Ha megköveteljük hogy ez a dilatáció izotróp legyen (amit a triaxiális tágulásnál láttunk, hogy az izotrópia miatt megkövetelünk), akkor a tenzor nemcsak hogy diagonizálható, de egy egységmátrix is lesz
+(vagy annak egy egész számű többszöröse):
+\begin{equation}
+    C_{ik}(t) = S(t) \delta_{ik}
+\end{equation}
+Tehát a sebességmező felírható a következő alakban:
+\begin{equation}
+    \mathbf{v}(\mathbf{x}, t) = S(t) \mathbf{x}
+\end{equation}
+Ebből az egyszerű megfontolásból tehát egy nagyon fontos következetésre jutottunk! Ha a kozmológiai elv igaz, akkor az univerzum időfejlődése csak háromféleképpen történhet:
+\begin{itemize}
+    \item Statikus univerzum: $S(t) = 0$
+    \item Táguló univerzum: $S(t) > 0$
+    \item Összehúzódó univerzum: $S(t) < 0$
+\end{itemize}
+
+\subsubsection{Hidrodinamikai közelítés}
+Ha az univerzumot egy folytonos és izotróp anyagnak képzeljük el, akkor egy egyszerűbb modellként akár egy folyadéknak is elképzelhetjük. Az ideális folyadékra is igaz, hogy homogén és izotróp (nincs belső szerkezete, így nincs irányfüggése sem).
+Ekkor használtjuk a Hidrodinamika elveit is, hogy egy naív modellt alkossunk. 
+
+Legyen az "univerzum-folyadék" sűrűsége $\varrho(\mathbf{x}, t)$, nyomása $p(\mathbf{x}, t)$ és sebességmezője $\mathbf{v}(\mathbf{x}, t)$. Ekkor a szokásos kontinuitási egyenlet:
+\begin{equation}
+    \boxed{\frac{\partial \varrho}{\partial t} + \nabla \cdot (\varrho \mathbf{v}) = 0}
+\end{equation}
+És az Euler-féle mozgásegyenlet:
+\begin{equation}
+    \frac{\partial \mathbf{v}}{\partial t} + (\mathbf{v} \cdot \nabla) \mathbf{v} = - \frac{1}{\varrho} f - \frac{1}{\varrho} \nabla p
+\end{equation}
+Ahol $f$ az erősűrűség, ezáltal $\frac{1}{\varrho} f$ az egységnyi tömegre ható erő. Mivel az univerzumban a gravitáció a domináns kölcsönhatás, ezért $f$-et a gravitációs erő sűrűségként értelmezzük:
+\begin{equation}
+    \frac{1}{\varrho} f_i = - \partial_i U_i
+\end{equation}
+Ahol $U$ a gravitációs potenciál. Mivel az univerzumban a "részecskék" elég távol vannak egymástól, és emiatt csak nagyon ritkán ütköznek, ezért a nyomást effektíve nullának vehetjük (por-univerzum közelítés). Így a mozgásegyenletünk a következő alakot ölti:
+\begin{equation}
+    \frac{\partial \mathbf{v}}{\partial t} + (\mathbf{v} \cdot \nabla) \mathbf{v} = - \nabla U
+\end{equation}
+A kozmológiában általában komponensek szerint írjuk fel a vektorokat, így a fenti egyenlet komponensenként:
+\begin{equation}
+    \frac{\partial v_i}{\partial t} + v_k \frac{\partial v_i}{\partial x_k} = - \frac{\partial U}{\partial x_i}
+\end{equation}
+Vagy még egyszerűbb jelöléssel:
+\begin{equation}
+    \boxed{\partial_t v_i + v_k \partial_k v_i = - \partial_i U}
+\end{equation}
+Emellett fontos lesz később a Laplace-Poisson egyenlet is, ami a gravitációs potenciált köti össze a sűrűséggel:
+\begin{equation}
+    \nabla^2 U = 4 \pi G \varrho \quad \implies \quad \boxed{\partial_i \partial_i U = 4 \pi G \varrho}
+\end{equation}
+Ahol $G$ a gravitációs állandó.
+
+A kozmológiai elvnél láttuk, hogy $\mathbf{v}(\mathbf{x}, t) = S(t) \mathbf{x}$. Ezt visszahelyettesítve a kontinuitási egyenletbe:
+\begin{equation}
+    \partial_t \varrho + \varrho \partial_i S_{ik} x_k = \partial_t \varrho + \varrho S(t) \partial_i x_i = \partial_t \varrho + 3 S(t) \varrho = 0
+\end{equation}
+Ahol a $3$ faktor a $\partial_i x_i$ deriválásból származik, mivel $i$ három dimenzióban fut. Ebből a következő differenciálegyenletet kapjuk a sűrűségre:
+\begin{equation}
+    3S(t) = -\frac{1}{\varrho} \frac{d \varrho}{d t} = -\frac{d}{d t} \ln \varrho
+\end{equation}
+
+Alakítsuk át hasonlóan az Euler-egyenletet is. Írjuk be a sebességmezőt:
+\begin{equation}
+    \partial_t [S(t) x_i] + S(t) x_k \partial_k [S(t) x_i] = - \partial_i U
+\end{equation}
+Ahol a baloldalon az első tag:
+\begin{equation}
+    \partial_t [S(t) x_i] = \dot{S}(t) x_i
+\end{equation}
+Ahol kihasználtuk, hogy a helyvektor időben nem változik ($\partial_t x_i = 0$) a megfigyelőhöz képest (hiszen együtt "úszunk" az anyaggal).
+A második tag pedig:
+\begin{equation}
+    S(t) x_k \partial_k [S(t) x_i] = S(t) x_k S(t) \partial_k x_i = S^2(t) x_k \delta_{ki} = S^2(t) x_i
+\end{equation}
+Ezt visszahelyettesítve az Euler-egyenletbe:
+\begin{equation}
+    \dot{S}(t) x_i + S^2(t) x_i = - \partial_i U
+\end{equation}
+Vagyis:
+\begin{equation}
+    - \partial_i U = [\dot{S}(t) + S^2(t)] x_i
+\end{equation}
+Ezt most deriváljuk még egyszer $x_i$ szerint, hogy felhasználhassuk a Laplace-Poisson egyenletet is:
+\begin{equation}
+    - \partial_i \partial_i U = - [\dot{S}(t) + S^2(t)] \partial_i x_i = - 3 [\dot{S}(t) + S^2(t)]
+\end{equation}
+Ezt egyenlítsük ki a Laplace-Poisson egyenlet jobb oldalával:
+\begin{equation}
+    - 3 [\dot{S}(t) + S^2(t)] = 4 \pi G \varrho
+\end{equation}
+Ebből a következő differenciálegyenletet kapjuk $S(t)$-re:
+\begin{equation}
+    \dot{S}(t) + S^2(t) = - \frac{4 \pi G}{3} \varrho
+\end{equation}
+$S$ időbeli deriváltját megkaphatjuk a $3S(t) = - \frac{d}{d t} \ln \varrho$ egyenletből:
+\begin{equation}
+    \dot{S}(t) = - \frac{1}{3} \frac{d^2}{d t^2} \ln \varrho
+\end{equation}
+Ezt visszahelyettesítve az előző egyenletbe:
+\begin{equation}
+    \frac{d^2}{dt^2} \ln \varrho = 4 \pi G \varrho + 3 S^2(t)
+\end{equation}
+Ebből az egyenletből az univerzum sűrűségének időfejlődését kaphatjuk meg. De itt egy újabb nagyon fontos megoldállapítást tehetünk! A jobb oldal nem lehet 0. 
+Az első tag, $4 \pi G \varrho$ mindig pozitív ha van anyag, hiszen a sűrűség és a gravitációs állandó is pozitív. A második tag pedig a négyzet miatt vagy pozitív, vagy zérus.
+Tehát, ha van sűrűsége az univerzumnak (tehát van benne anyag), akkor ez a sűrűség nem lehet konstans! Tehát ezzel az egyszerű modellel beláttuk, hogy az univerzum nem lehet statikus, ha az nem üres.
+Továbbá mivel minden tag a jobb oldalon pozitív, ezért a sűrűség logaritmusának második deriváltja is pozitív, vagyis a sűrűség logaritmusa konvex függvény. Ez azt jelenti, hogy a sűrűség időfejlődése
+vagy egyre gyorsuló tágulás, vagy egyre gyorsuló összehúzódás lesz.
+
+De kérdés, hogy hogyan tudjuk megoldani a kontinuitási egyenletet a nem statikus univerzum esetén? Ehhez vezessünk be egy új változót, amit a következőképpen definiálunk:
+\begin{equation}
+    x_i = R(t) c_i
+\end{equation}
+Ahol $R(t)$ egy időfüggő skálafaktor, $c_i$ pedig egy új helyvektor, amit \textbf{kozmikus koordinátának} nevezünk. A skálafaktor valamilyen módon az univerzum méretskáláját jellemzi, de szemléletes értelmet
+majd a későbbiekben fogunk hozzárendelni. Mindenesetre, a sebességet át tudjuk írni ezen új változók segítségével:
+\begin{equation}
+    v_i = S(t) x_i = \dot{x}_i = \dot{R}(t) c_i = \dot{R}(t) \frac{x_i}{R(t)} = \frac{\dot{R}(t)}{R(t)} x_i
+\end{equation}
+Tehát az $S(t)$ skálafaktor kifejezhető a $R(t)$ skálafaktor segítségével:
+\begin{equation}
+    S(t) = \frac{\dot{R}(t)}{R(t)}
+\end{equation}
+Ezt a differenciálegyenletet pedig meg is oldhatjuk:
+\begin{equation}
+    R(t) = R_0 \exp\left(\int_{t_0}^t S(\tau) d \tau\right)
+\end{equation}
+Ahol $R_0$ az $R$ skálafaktor $t = t_0$ időpontbeli értéke, de később majd az univerzum jelenlegi állapotát fogja reprezentálni Emiatt bevezethetjük a \textbf{viszonyított méretskálát}, ami a jelenlegi
+univerzum méretével hasonlítja össze a vizsgált $R(t)$-t:
+\begin{equation}
+    a(t) = \frac{R(t)}{R_0}
+\end{equation}
+A sebesség pedig:
+\begin{equation}
+    v_i = \frac{\dot{R}(t)}{R(t)} x_i
+\end{equation}
+Az $R$-t elképzelhetjük úgy, mint az Univerzum egy darabjának, pl. a lokális horizontnak\footnote{
+    A lokális horizont az a távolság, ameddig még képesek vagyunk ellátni az univerzumban.
+} a mérete, vagy két galaxis távolsága. Csak ezen egyenletek alapján $R$ bármilyen dimenziójú lehetne, de az $x_i = R(t) c_i$ egyenlet miatt célszerű távolságdimenziójúként értelmezni (különben a $c_i$-nek valamilyen furcsa dimenziója lenne).
+
+Ezt mind visszahelyettesítve a kontinuitási egyenletbe:
+\begin{equation}
+    3 S(t) = - \frac{1}{\varrho} \frac{d \varrho}{d t} \quad \implies \quad 3 \frac{\dot{R}(t)}{R(t)} + \frac{\dot{\varrho}}{\varrho} = 0
+\end{equation}
+Ezt integrálva:
+\begin{equation}
+    \int 3 \frac{\dot{R}(\tau)}{R(\tau)} d \tau + \int \frac{d \varrho'}{\varrho'} = \text{Áll.}
+\end{equation}
+A második integrál egyszerű:
+\begin{equation}
+    \int \frac{d \varrho'}{\varrho'} = \ln \varrho + \text{Áll.}
+\end{equation}
+Az első integrál pedig:
+\begin{equation}
+    \int 3 \frac{\dot{R}(\tau)}{R(\tau)} d \tau = 3 \ln R + \text{Áll.}
+\end{equation}
+Ezeket összeadva:
+\begin{equation}
+    \ln \varrho + 3 \ln R = \ln \left(R^3 \varrho\right) = \text{Áll.}
+\end{equation}
+Ebből a következő összefüggést kaptuk
+\begin{equation}
+    \varrho R^3 = \text{Áll.}
+\end{equation}
+Ez a mennyiség pedig arányos az univerzum tömegével:
+\begin{equation}
+    M = \frac{4\pi}{3} R^3 \varrho = \text{Áll.}
+\end{equation}
+Tehát a kontinuitási egyenletből az következik, hogy az univerzum tömege állandó időben, ami értelemszerű is, hiszen zárt rendszerként kezeljük az univerzumot.
+
+Az Euler-egyenletbe is behelyettesíthetjük a skálafaktort:
+\begin{equation}
+    \dot{S}(t) + S^2(t) = - \frac{4 \pi G}{3} \varrho \quad \implies \quad \frac{d}{d t} \left(\frac{\dot{R}(t)}{R(t)}\right) + \left(\frac{\dot{R}(t)}{R(t)}\right)^2 = - \frac{4 \pi G}{3} \varrho
+\end{equation}
+A baloldalon az első tag:
+\begin{equation}
+    \frac{d}{d t} \left(\frac{\dot{R}(t)}{R(t)}\right) = \frac{\ddot{R}(t) R(t) - \dot{R}^2(t)}{R^2(t)}
+\end{equation}
+Ezt visszahelyettesítve az Euler-egyenletbe:
+\begin{equation}
+    \frac{\ddot{R}(t) R(t) - \dot{R}^2(t)}{R^2(t)} + \frac{\dot{R}^2(t)}{R^2(t)} = - \frac{4 \pi G}{3} \varrho
+\end{equation}
+Ahol a második tag az elsőből kiesik, így a következő egyenletet kapjuk:
+\begin{equation}
+    \frac{\ddot{R}(t)}{R(t)} = - \frac{4 \pi G}{3} \varrho
+\end{equation}
+Vagy ha ebbe is visszahelyettesítjük a tömeget:
+\begin{equation}
+    \ddot{R}(t) = - \frac{G M}{R^2(t)}
+\end{equation}
+Ezt integráljuk le, de először alakítsuk kicsit át a $\ddot{R}(t)$-t:
+\begin{equation}
+    \ddot{R}(t) = \frac{d \dot{R}}{d R} \frac{d R}{d t} = \frac{d \dot{R}}{d R} \dot{R} = \frac{d}{d R} \left(\frac{1}{2} \dot{R}^2\right)
+\end{equation}
+Ezt visszahelyettesítve az egyenletbe:
+\begin{equation}
+    \frac{d}{d R} \left(\frac{1}{2} \dot{R}^2\right) = - \frac{G M}{R^2}
+\end{equation}
+Ezt most integráljuk le $R$ szerint:
+\begin{equation}
+    \int \frac{d}{d R} \left(\frac{1}{2} \dot{R}^2\right) d R = \int - \frac{G M}{R^2} d R
+\end{equation}
+A baloldalon egyszerűen csak:
+\begin{equation}
+    \frac{1}{2} \dot{R}^2 + \text{Áll.} = G M \frac{1}{R} + \text{Áll.}
+\end{equation}
+Ezt rendezzük át:
+\begin{equation}
+    \frac{1}{2} \dot{R}^2 - \frac{G M}{R} = \text{Áll.}
+\end{equation}
+Nevezzük el az állandót $E$-nek, mert ebben a formában az egyenlet az energiamegmaradásra utal. Tehát az egyenletünk:
+\begin{equation}
+    \boxed{\frac{1}{2} \dot{R}^2 - \frac{G M}{R} = E}
+\end{equation}
+Ezt az egyenletet nevezzük \textbf{Friedmann-egyenletnek} a newtoni mechanikából levezetve. Az $R$ jelentése egyelőre még nem világos, de a megértéséhez a relativitást is figyelembe kell vennünk.
 
 
+\subsubsection{Általános relativitáselmélet}
+Az Általános Relativitáselméletet Albert Einstein alkotta meg 1915-ben, hogy az akkor létező elméleti és megfigyelésbeli ellentmondásokat feloldja a gravitációval kapcsolatban. A fő motizvációja a
+a Merkúr keringési anomáliája volt, ugyanis a pályájának perihéliuma\footnote{
+    A perihélium az a pont a pályán, ahol a legközelebb van egy égitest a Naphoz.
+}
+folyamatosan elmozdult, vagy precesszált, egy olyan rátával amit a Newtoni gravitációs elmélet egész egyszerűen nem tudott megmagyarázni. 
+
+Az elmélet alapja egy új \textbf{metrika} bevezetése volt, amivel a ta téridő metrikája dinamikusan függ az anyag-energia eloszlásától, és maga a gravitáció a téridő geometriájaként jelenik meg.
+A metrika annyit jelent, hogy az adott koordináta rendszerben hogyan határozzuk meg két pont között a távolságokat. Ez egy 2 dimenziós Euclideszi térben például a következőképpen néz ki:
+\begin{equation}
+    ds^2 = dx^2 + dy^2
+\end{equation}
+Ebből gyököt vonva kapjuk meg a fizikai távolságot. Hasonlóan lehet eljárni, bár kicsit bonyolultabb a polárkoordináták esetén is:
+\begin{equation}
+    ds^2 = dr^2 + r^2 d\theta^2
+\end{equation}
+Fontos tulajdonság az invariancia, vagyis, hogy a távolságot nem befolyásolja az, hogy milyen koordináta rendszert használunk. Például a fenti két metrika ugyanazt a távolságot méri, csak más koordinátarendszerben.
+
+Ezt az eljárást általánossíthatjuk is, ha bevezetünk egy metrika tenzort, amit $g_{ij}$-vel jelölünk. Ekkor a metrika általános alakja:
+\begin{equation}
+    ds^2 = g_{ij} dx^i dx^j
+\end{equation}
+Ahol az $i$ és $j$ indexek a tér dimenzióit jelölik. Például egy 2D-s térben $i, j = 1$ vagy $2$. A metrika tenzor komponensei pedig megadják, hogy az egyes koordináta tengelyek mentén hogyan mérjük a távolságokat, és hogy ezek a tengelyek
+hogyan viszonyulnak egymáshoz (pl. derékszögben állnak-e egymáshoz, vagy sem). Például az Euclideszi tér metrika tenzora:
+\begin{equation}
+    g_{ij} = \begin{pmatrix}
+        1 & 0 \\
+        0 & 1 \\
+    \end{pmatrix}
+\end{equation}
+Vagy a polárkoordináták metrika tenzora:
+\begin{equation}
+    g_{ij} = \begin{pmatrix}
+        1 & 0 \\
+        0 & r^2 \\
+    \end{pmatrix}
+\end{equation}
+
+Az általános relativitáselmélet újítása az volt, hogy ebbe a tenzorba a kravitációs kölcsönhatásokat is belefoglaljuk, emiatt a gravitáció metrika-elméletének is nevezik.
+Mivel az anyageloszlás befolyásolja a tér geometriáját, ezért a metrikát is eszerint kell meghatározni. A térben a részecskék pedig a metrika által meghatározott görbült térben mozognak szabadon,
+ezt érzékeljük mi gravitációs erőként. Négydimenziós térben (3 - tér és 1 - idő dimenzió) az indexeket görög betükkel szokás jelölni, amik 0-tól 3-ig futnak:
+\begin{equation}
+    ds^2 = g_{\mu \nu} dx^{\mu} dx^{\nu}
+\end{equation}
+Itt $ds$-t \textit{ívelemnek} nevezzük. Ezt a fénysebesség négyzetével osztva az idő dimenziójú \textit{sajátidőt} kapjuk:
+\begin{equation}
+    d\tau^2 = \frac{1}{c^2} ds^2
+\end{equation}
+A két mennyiséget gyakran felváltva használják, hiszen csak egy állandóval térnek el egymástól. Emellett gyakran olyan mértékegység választást használnak, ahol a fénysebesség egységnyi, így
+a kettő megegyezik:
+\begin{equation}
+    c = 1 \quad \implies \quad d\tau^2 = ds^2
+\end{equation}
+
+A metrika tenzort kétféleképpen szokás megválasztani, attól függően, hogy milyen problémával foglalkozunk. A speciális relativitáselméletben nem foglalkozunk a gravitációval, ezért a metrikus tenzort a 
+\textbf{Minkowski-téridő} metrikájára szerint választjuk meg:
+\begin{equation}
+    \eta_{\mu \nu} = \begin{pmatrix}
+        1 & 0 & 0 & 0 \\
+        0 & -1 & 0 & 0 \\
+        0 & 0 & -1 & 0 \\
+        0 & 0 & 0 & -1 \\
+    \end{pmatrix}
+\end{equation}
+Itt megjegyezzük, hogy a diagonális elemek előjele különböző lehet, attól függően, hogy milyen konvenciót használunk. Néhány irodalomban a térbeli komponensek pozitív előjellel szerepelnek.
+Ha figyelembe akarjuk venni az univerzum tágulását is akkor a \textbf{Friedmann-Robertson-Walker (FRW) metrikát} használjuk, ami A Friedmann-Robertson-Walker metrika homogén és izotróp téridőt ír le:
+\begin{equation}
+    g_{\mu \nu} = \begin{pmatrix}
+        1 & 0 & 0 & 0 \\
+        0 & -a^2(t) & 0 & 0 \\
+        0 & 0 & -a^2(t) & 0 \\
+        0 & 0 & 0 & -a^2(t) \\
+    \end{pmatrix}
+\end{equation}
+Ahol $a(t)$ az előzőekben bevezetett viszonyított méretskála. Ez a metrika tehát figyelembe veszi az univerzum tágulását is az idő függvényében. Speciális esetben, ha $a(t)=\text{const}$, $a(t)=\text{const}$ és a tér lapos, visszakapjuk a Minkowski-metrikát.
+
+Ha van anyag a térben, akkor a tér görbült, ezért egy erőhatás nélkül mozgó részecske pályáját egy \textbf{geodetikus} írja le, ami egy olyan görbe ami hozzásimul a téridő lokális görbületéhez.
+Ez a geodetikus a Minkowski-téridőben, ami egy lapos, statikus téridőt ír le, egy szimpla egyenes vonal lesz:
+\begin{equation}
+    \frac{d^2 \mathbf{x}}{d t^2} = 0
+\end{equation}
+Euklidészi koordinátákban ($i = 1,2$) külön-külön is igaz hogy:
+\begin{equation}
+    \frac{d^2 x_i}{d t^2} = 0
+\end{equation}
+Polárkoordinátákra áttérve (ezt jelöljük $\mathbf{x}'$-el):
+\begin{equation}
+    \frac{d^2 \mathbf{x}'}{d t^2} = 0
+\end{equation}
+Itt viszont már nem igaz, hogy a komponensek külön-külön is eltünnek:
+\begin{equation}
+    \frac{d^2 x'_i}{d t^2} \neq 0
+\end{equation}
+Ez azért van mivel polárkoordinátákban a tengelyek nem derkészögben állnak egymáshoz, ezért a komponensek nem feltétlenül függetlenek egymástól. Ahhoz, hogy ezt lássuk, nézzük meg hogyan kell a két 
+koordináta rendszert összekapcsolni. 2D-ben pl. a következő transzformációval megyünk át Euklidészi koordinátákból polárkoordinátákba:
+\begin{equation}
+    \begin{pmatrix}
+        x_{1} \\
+        x_{2} \\
+    \end{pmatrix} = \begin{pmatrix}
+        x'_1 \cos x'_2 \\
+        x'_1 \sin x'_2 \\
+    \end{pmatrix}    
+\end{equation}
+Ahol $x'_1 = \sqrt{x_1^2 + x_2^2}$ és $x'_2 = \arctan{\frac{x_2}{x_1}}$. Látható tehát, hogy a két koordinátarendszer között nem egy lineáris transzformáció van, hanem  nemlineáris fügvényekkel jellemezhetjük őket.
+Általánosan tehát a transzformációt a következőképpen írhatjuk fel:
+\begin{equation}
+    x_i = x_i(x'_1, x'_2, \ldots, x'_n)
+\end{equation}
+Ennek az idő szerinti deriváltja:
+\begin{equation}
+    \frac{d x_i}{d t} = \frac{\partial x_i}{\partial x'_j} \frac{d x'_j}{d t}
+\end{equation}
+Ahol $\frac{\partial x_i}{\partial x'_j}$ lesz a transzformációs mátrix eleme\footnote{
+    Ez egy Jakobi-mátrix lesz ami átváltja a vektorok idő szerinti deriváltját egyik koordináta rendszerből a másikba.
+}. Most vegyük a teljes idő szerinti deriváltját ennek az egyenletnek:
+\begin{equation}
+    \frac{d}{d t} \frac{d x_i}{d t} = \frac{d}{d t} \left(\frac{\partial x_i}{\partial x'_j} \frac{d x'_j}{d t}\right) = 0
+\end{equation}
+Ahol a teljes deriváltat felbontva:
+\begin{equation}
+    \frac{d}{d t} \left(\frac{\partial x_i}{\partial x'_j} \frac{d x'_j}{d t}\right) = \frac{\partial x_i}{\partial x'_j} \frac{d^2 x'_j}{d t^2} + \frac{d x'_k}{d t} \frac{\partial}{\partial x'_k} \left(\frac{\partial x_i}{\partial x'_j}\right) \frac{d x'_j}{d t} = 0
+\end{equation}
+Látható, hogy mind a két tagban megjelenik a transzformációs mátrix. Ahhoz hogy kicsit szebbé tegyük az egyenletet, vezessünk be egy új mátrixot ami magába foglalja ezeket a transzformációs tényezőket:
+\begin{equation}
+    \Gamma^m_{jk} = \frac{\partial x'_m}{\partial x_i} \frac{\partial}{\partial x'_k} \left(\frac{\partial x_i}{\partial x'_j}\right)
+\end{equation}
+Ezt nevezik \textbf{Christoffel-szimbolumnak}. Ezt visszahelyettesítve az előző egyenletbe:
+\begin{equation}
+    \frac{d^2 x'_m}{d t^2} + \Gamma^m_{jk} \frac{d x'_j}{d t} \frac{d x'_k}{d t} = 0
+\end{equation}
+Ez a Christoffel-szimbólum gyakorlatilag azt mondja meg, hogy az általunk használt koordináta rendszer (ebben az esetben polárkoordináták) mennyire "térnek el" a derékszögű Euklidészi koordinátáktól.
+A Christoffel-szimbólum értéke akkor lesz nulla, ha a lokális inerciarendszerben a koordinátarendszerünk derékszögű és lineáris, mint az Euklidészi koordináták. Ha görbült koordinátarendszert használunk,
+például egy olyat ami egy görbült téridőhöz illeszkedik, akkor a Christoffel-szimbólum nem lesz nulla, és a második tag nem tűnik el az egyenletből. Egyébként pedig jól láthatóan visszakapjuk az eredeti
+egyenletet.
+
+Ha visszatérünk a 4 dimenziós görbült téridőhöz, akkor még egy paramétert be kell vezetnünk, ami az idő dimenziót is figyelembe veszi. Ezt nevezik \textbf{affin paraméternek} és általában
+$\lambda$-val jelölik. Erre azért van szükség, mert most az idő egy koordináta, és emiatt nem biztos, hogy monoton növekvő lesz egy részecske pályáján.
+Ezzel az affin paraméterrel (amit monoton növegvőnek választunk a részecske pályájának mentén) tudjuk paraméterezni a problémát a kezdeti feltételektől függetlenül. Ekkor a geodetikus egyenlet a következő alakot ölti:
+\begin{equation}
+    \frac{d^2 x^{\mu}}{d \lambda^2} + \Gamma^{\mu}_{\rho \sigma} \frac{d x^{\rho}}{d \lambda} \frac{d x^{\sigma}}{d \lambda} = 0
+\end{equation}
+Ahol a görög indexek 0-tól 3-ig futnak. Ez az egyenlet írja le egy szabadon eső részecske pályáját egy görbült téridőben. Ezt átrendezve egy mozgásegyenletet kapunk:
+\begin{equation}
+    \boxed{\frac{d^2 x^\mu}{d \lambda^2} = - \Gamma^{\mu}_{\rho \sigma} \frac{d x^{\rho}}{d \lambda} \frac{d x^{\sigma}}{d \lambda}}
+\end{equation}
+Ezt nevezik az általános relativitáselmélet \textbf{geodetikus egyenletének}. Ez az egyenlet tehát azt mondja meg, hogy egy részecske hogyan mozog egy görbült téridőben, amit a metrika tenzor határoz meg. 
+
+\subsubsection{Einstein-egyenlet}
+Ha az univerzum szerkezete képes az anyag hatására torzulni, akkor feltehetjük, hogy, ahogy egy torzult anyag esetében is, megjelennek különböző feszültségek és nyomások a az anyagban/mezőkben, ami hatással lesz a téridő görbületére.
+Ezeket a "feszültségeket" viszont nem az anyagot felépítő részecskék közötti kölcsönhatások hozzák létre, hanem az energia és impulzus sűrűségének és fluxusának eloszlásának egyenetlenségei (amit a torzulás okoz).
+Ekkor bevezethetünk egy általánosított feszültségtenzort, amit ebben az esetben \textbf{energia-impulzus tenzornak} nevezünk, és $T_{\mu \nu}$-vel jelölünk. Ez a tenzor megadja, hogy az adott pontban milyen az energia és impulzus sűrűsége, valamint ezek hogyan áramlanak
+az adott ponton keresztül. Az energia-impulzus tenzor komponensei a következőket jelentik:
+\begin{itemize}
+    \item $T_{00}$: energia sűrűség
+    \item $T_{0i}$: az $i$-edik irányú impulzus sűrűség (vagy energia fluxus)
+    \item $T_{i0}$: az $i$-edik irányú energia fluxus (vagy impulzus sűrűség)
+    \item $T_{ij}$: az $i$ és $j$ irányú impulzus fluxus (vagy feszültség)
+\end{itemize}
+Mivel ezt mind a téridő geometriája okozza, ezért arányosnak kell lennie az Einstein-ről elnevezett \textbf{Einstein-tenzorral}, ami a téridő geometriáját jellemzi. A kettő kapcsolatát nevezzük \textbf{Einstein-egyenletnek}:
+\begin{equation}
+    G_{\mu \nu} = 8 \pi G T_{\mu \nu}
+\end{equation}
+Ahol $G_{\mu \nu}$ az Einstein-tenzor, $T_{\mu \nu}$ az energia-impulzus tenzor, és $G$ a gravitációs állandó. Az Einstein-tenzor a következőképpen definiált:
+\begin{equation}
+    G_{\mu \nu} = R_{\mu \nu} - \frac{1}{2} g_{\mu \nu} R
+\end{equation}
+Ahol $R_{\mu \nu}$ a \textit{Ricci-tenzor}, $g_{\mu \nu}$ a metrika tenzor, és $R$ a \textit{Ricci-skalár}. Az Einstein-egyenlet analóg a Newton fizikából ismert Poisson-egyenlettel,
+ami azt adja meg, hogy az anyageloszlás milyen gravitációs potenciált eredményez\footnote{
+    Vagy a töltéseloszlás milyen elektromos potenciált okoz. A poisson-egyenlet ugyanis a fizika rengeteg különböző területén megjelenik.
+}. 
+
+A Ricci-skalárt a Ricci-tenzorból kaphatjuk meg úgy, hogy a metrika tenzorral összeszorozzuk:
+\begin{equation}
+    R = g^{\mu \nu} R_{\mu \nu}
+\end{equation}
+Ez a tenzor kontrakcióját adja meg. A Ricci-tenzort pedig a Christoffel-szimbolumokból tudjuk kiszámolni:
+\begin{equation}
+    R_{\mu \nu} = \partial_{\alpha} \Gamma^{\alpha}_{\mu \nu} - \partial_{\nu} \Gamma^{\alpha}_{\mu \alpha} + \Gamma^{\alpha}_{\alpha \beta} \Gamma^{\beta}_{\mu \nu} - \Gamma^{\alpha}_{\nu \beta} \Gamma^{\beta}_{\mu \alpha}
+\end{equation}
+De hogy ne kelljen ennyit írni, ezért a parciális deriváltakat gyakran beleolvasztják a Christoffel-szimbólumba ($\frac{\partial \Gamma^\alpha_{\mu \nu}}{\partial x^\alpha} = \Gamma^{\alpha}_{\mu \nu, \alpha}$), így a Ricci-tenzor:
+\begin{equation}
+    R_{\mu \nu} = \Gamma^{\alpha}_{\mu \nu, \alpha} - \Gamma^{\alpha}_{\mu \alpha, \nu} + \Gamma^{\alpha}_{\alpha \beta} \Gamma^{\beta}_{\mu \nu} - \Gamma^{\alpha}_{\nu \beta} \Gamma^{\beta}_{\mu \alpha}
+\end{equation}
+Mivel mindegyik tagban két koordináta szerint deriválunk, ezért az Einstein-tenzor részecskefizikai egységrendszerben ($\hbar = c = 1$) a tömeg négyzetének dimenziójával rendelkezik:
+\begin{equation}
+    [G_{\mu \nu}] = [\text{m}^{-2}]
+\end{equation}
+
+Az Enstein-egyenlet megoldása tehát automatikus: Meghatározzuk a metrika tenzort, amiből ki tudjuk számolni a Christoffel-szimbólumokat, amikből ki tudjuk számolni a Ricci-tenzort és a Ricci-skalárt,
+és ezekből össze tudjuk állítani az Einstein-tenzort. Ezt egyenlővé téve az energia-impulzus tenzorral megkapjuk az univerzum szerkezetét az adott anyageloszlás mellett.
+
+Vegyük például a Friedmann-Robertson-Walker metrikát, és egy tökéletes folyadék energia-impulzus tenzorát:
+\begin{equation}
+    T_{\mu \nu} = (\varrho + p) u_{\mu} u_{\nu} - p g_{\mu \nu}
+\end{equation}
+A metrikus tenzor komponensei (ha a tér lapos):
+\begin{equation}
+    g_{\mu \nu} = \begin{pmatrix}
+        1 & 0 & 0 & 0 \\
+        0 & -a^2(t) & 0 & 0 \\
+        0 & 0 & -a^2(t) & 0 \\
+        0 & 0 & 0 & -a^2(t) \\
+    \end{pmatrix}
+\end{equation}
+A Christoffel-szimbólumoknál csak néhány komponens lesz nem nulla:
+\begin{equation}
+    \Gamma^0_{11} = \Gamma^0_{22} = \Gamma^0_{33} = a(t) \dot{a}(t)
+\end{equation}
+\begin{equation}
+    \Gamma^1_{10} = \Gamma^2_{20} = \Gamma^3_{30} = \frac{\dot{a}(t)}{a(t)}
+\end{equation}
+A Ricci-tenzor komponensei pedig:
+\begin{equation}
+    R_{00} = - 3 \frac{\ddot{a}(t)}{a(t)}
+\end{equation}
+\begin{equation}
+    R_{11} = R_{22} = R_{33} = a(t) \ddot{a}(t) + 2 \dot{a}^2(t)
+\end{equation}
+A Ricci-skalár pedig (az előjelek konvenció függők, más metrika konvencióban pozitív is lehet):
+\begin{equation}
+    R = g^{\mu \nu} R_{\mu \nu} = R_{00} - \frac{1}{a^2} (R_{11} + R_{22} + R_{33}) = - 6 \left(\frac{\ddot{a}(t)}{a(t)} + \frac{\dot{a}^2(t)}{a^2(t)}\right)
+\end{equation}
+Ezekből összeállítva az Einstein-tenzort:
+\begin{equation}
+    G_{00} = 3 \frac{\dot{a}^2(t)}{a^2(t)}
+\end{equation}
+\begin{equation}
+    G_{11} = G_{22} = G_{33} = - a^2(t) \left(2 \frac{\ddot{a}(t)}{a(t)} + \frac{\dot{a}^2(t)}{a^2(t)}\right)
+\end{equation}
+Az energia-impulzus tenzor komponensei pedig:
+\begin{equation}
+    T_{00} = \varrho
+\end{equation}
+\begin{equation}
+    T_{11} = T_{22} = T_{33} = - p a^2(t)
+\end{equation}
+Ezeket egyenlővé téve az Einstein-egyenlet komponenseiben:
+\begin{equation}
+    \left(\frac{\dot{a}(t)}{a(t)}\right)^2 = \frac{8 \pi G}{3} \varrho
+\end{equation}
+\begin{equation}
+    2 \frac{\ddot{a}(t)}{a(t)} + \frac{\dot{a}^2(t)}{a^2(t)} = - 8 \pi G p
+\end{equation}
+Az első egyenletet nevezzük \textbf{I. Friedmann-egyenletnek}, a másodikat pedig egy kicsit átalakítva, és behelyettesítve az első egyenletet a másodikba, \textbf{II. Friedmann-egyenletnek}:
+\begin{equation}
+    \frac{\ddot{a}(t)}{a(t)} = - \frac{4 \pi G}{3} (\varrho + 3 p)
+\end{equation}
+Tehát a két Friedmann-egyenlet:
+\begin{equation}
+    \boxed{\left(\frac{\dot{a}(t)}{a(t)}\right)^2 = \frac{8 \pi G}{3} \varrho \qquad \frac{\ddot{a}(t)}{a(t)} = - \frac{4 \pi G}{3} (\varrho + 3 p)}
+\end{equation}
+Fontos megjegyezni, hogy ezek az egyenletek csak a Friedmann-Robertson-Walker metrikára és egy tökéletes folyadék energia-impulzus tenzorára érvényesek. Más metrikák vagy anyageloszlások esetén
+más egyenleteket kapunk. A II. Friedmann egyenletből láthatő, hogy ez egy pontosabb megfogalmazása a korábbi Friedmann-egyenletnek, $E = 0$ esetben.
+
+Fel lehet írni ennél bonyolultabb rendszerekre is az egyenleteket, például egy zárt univwerzumra is. Képzeljünk el egy 4D hipergömböt, aminek a sugara:
+\begin{equation}
+    a^2 = x^2 + y^2 + z^2 + u^2
+\end{equation}
+Ahol a koordináták:
+\begin{equation}
+    \begin{aligned}
+        x &= a \sin \chi \sin \theta \cos \phi \\
+        y &= a \sin \chi \sin \theta \sin \phi \\
+        z &= a \sin \chi \cos \theta \\
+        u &= a \cos \chi \\
+    \end{aligned}
+\end{equation}
+Ha csak a térbeli részt nézzük, akkor a metrika a következő lesz:
+\begin{equation}
+    ds^2 = a^2(t) \left(d \chi^2 + \sin^2 \chi (d \theta^2 + \sin^2 \theta d \phi^2)\right)
+\end{equation}
+Ha erre végezzük el a fenti számításokat, akkor a Friedmann-egyenletek a következőképpen módosulnak:
+\begin{equation}
+    \left(\frac{\dot{a}}{a}\right)^2 - \frac{8 \pi G}{3} \varrho = - \frac{k}{a^2(t)}
+\end{equation}
+Ahol $k$ egy változó, ami meghatározza, hogy az univerzum zárt ($k > 0$), nyílt ($k < 0$) vagy lapos ($k = 0$) geometriájú-e. A $k$ dimenziója energia inverz négyzet részecskefizikai egységrendszerben:
+\begin{equation}
+    [k] = [\text{m}^{-2}]
+\end{equation}
+Ez az egyenlet tehát általánosabb formája az I. Friedmann-egyenletnek, ami figyelembe veszi az univerzum görbületét is.
+
+\subsubsection{Friedmann-egyenletek megoldásai és a Hubble-paraméter}
+Most már csak egy feladat van hátra, meg kell oldani a Friedmann-egyenleteket arra az esetre, ha az univerzum összenergiája (görbülete) nulla, negatív vagy pozitív.
+
+\subsubsection*{k = 0}
+Ha az univerzum geometriája lapos, akkor $k = 0$, és az I. Friedmann-egyenlet a következőképpen alakul:
+\begin{equation}
+    \left(\frac{\dot{a}(t)}{a(t)}\right)^2 = \frac{8 \pi G}{3} \varrho
+\end{equation}
+Jelöljük a jelen pillanathoz tartozó időkördinátát $t_0$-val. Ekkor az egyenlet:
+\begin{equation}
+    H^2_0 \equiv \left(\frac{\dot{a}(t_0)}{a(t_0)}\right)^2 = \frac{8 \pi G}{3} \varrho(t_0)
+\end{equation}
+Vezessük be a következő jelöléseket:
+\begin{equation}
+    \varrho_{c, 0} = \frac{3 H^2_0}{8 \pi G} \quad \Omega_0 = \frac{\varrho(t_0)}{\varrho_{c, 0}}
+\end{equation}
+A $\varrho_{c, 0}$-t kritikus sűrűségnek nevezzük, és megadja azt az anyagsűrűséget ami mellett az univerzum lapos lesz. Az $\Omega_0$ pedig a sűrűség paraméter, ami megadja, hogy az univerzum anyagsűrűsége hogyan viszonyul a kritikus sűrűséghez. 
+Használjuk fel továbbá az anyag hígulását leíró egyenletet is:
+\begin{equation}
+    a^3(t) \varrho(t) = \varrho(t_0) \equiv \varrho_0
+\end{equation}
+Ez az univerzum tágulásával arányosan csökkenő anyagsűrűséget ír le (a tér minden irányába tágulás miatt $a^3(t)$ térfogatnövekedés). $\varrho_0$ pedig a jelenlegi anyagsűrűséget jelöli. 
+Most szeparáljuk az idő és a méretskála változóját az I. Friedmann-egyenletben:
+\begin{equation}
+    \begin{aligned}
+        \left(\frac{d a}{d t}\right)^2 &= \frac{8 \pi G}{3} \varrho a^2 \\
+        dt^2 &= \frac{3}{8 \pi G \varrho} \frac{d a^2}{a^2} \\
+        dt &= \sqrt{\frac{3}{8 \pi G \varrho}} \frac{d a}{a} \\
+    \end{aligned}
+\end{equation}
+Itt bevezethetjük a korábbi jelöléseinket:
+\begin{equation}
+    \frac{1}{H_0 \sqrt{\Omega_0}} = \sqrt{\frac{3}{8 \pi G \varrho}} = \sqrt{\frac{3}{8 \pi G}} \sqrt{\frac{a^3(t)}{\varrho_0}}
+\end{equation}
+Ezt visszahelyettesítve az egyenletbe:
+\begin{equation}
+    dt = \frac{1}{H_0 \sqrt{\Omega_0}} a^{1/2} d a
+\end{equation}
+Integráljuk le az egyenletet $t$ és $a$ szerint a kezdeti feltételektől ($a(t = 0) = 0$ és $t = 0$):
+\begin{equation}
+    \int_0^{t} d t = \frac{1}{H_0 \sqrt{\Omega_0}} \int_0^{a(t_0)} a^{1/2} d a
+\end{equation}
+Az integrálás után:
+\begin{equation}
+    t = \frac{2}{3 H_0 \sqrt{\Omega_0}} a^{3/2}(t)
+\end{equation}
+Ebből pedig kifejezhetjük az univerzum méretskálájának változását az idő függvényében:
+\begin{equation}
+    \boxed{a(t) = \left(\frac{3}{2} H_0 \sqrt{\Omega_0} t\right)^{2/3}}
+\end{equation}
+Korábban már láttuk, hogy a kozmológiai elv kizárja a statikus univerzumot, ha van benne anyag, csak tágulhat vagy összehúzódhat. Most megkaptuk, hogy amennyiben lapos a geometriája, akkor
+az univerzum tágul és a mérete az idő 2/3-dik hatványával nő. Ezt az egyenletet az univerzum tágulását empírikusan felfedező Edwin Hubble-ről nevezték el \textbf{Hubble-törvénynek}. Emlékezzünk vissza,
+hogy az $a$ a viszonyított méretskála, amit úgy definiáltunk, hogy $a(t) = \frac{R(t)}{R(t_0)}$, ahol $R(t)$ az univerzum méretét jellemző skálafaktor. Ez a skálafaktor pedig az univerzumot jellemző
+sebességmezővel volt kapcsolatos $\mathbf{v}(\mathbf{x}, t) = S(t)\mathbf{x}$, ahol $S(t) = \frac{\dot{R}(t)}{R(t)} = \frac{\dot{a}}{a}$. Ezt az $S$ skálafaktort is Hubble-ről nevezték el \textbf{Hubble paraméternek}, tehát 
+a sebességmező:
+\begin{equation}
+    \mathbf{v}(\mathbf{x}, t) = H(t) \mathbf{x} \quad \text{ahol} \quad H(t) = \frac{\dot{R}(t)}{R(t)}
+\end{equation}
+Ezt a paramétert gyakran nevezik Hubble-állandónak is, bár valójában időfüggő mennyiség (van hogy ezt az egyenletet nevezik Hubble-törvénynek). Ilyenkor a jelenkori értékére szokás utalni (amit meg is tudunk mérni, illetve a modern kozmológia alapja) és $H_0$-val jelöljük. 
+A Hubble-paraméter tehát azt mondja meg, hogy egy adott távolságú objektum milyen sebességgel távolodik tőlünk az univerzum tágulása miatt. Értéke tehát nem állandó, hanem az idővel változik, hiszen a méretskála is változik az idővel.
+Ezt megfigyelésekkel alá is sikerült támasztani, hiszen jelenleg az a tapasztalat, hogy a távolabbi (és régebbi) objektumok gyorsabban távolodnak tőlünk, mint a közelebbiek (és fiatalabbak).
+
+A Hubble-állandó mértékegysége $[\frac{1}{s}]$, de gyakran használják a reciprokát, amit \textbf{Hubble-időnek} neveznek, és $[s]$ mértékegységű:
+\begin{equation}
+    T_H = \frac{1}{H_0} \quad implies \quad v = H(t) x = \frac{1}{T_H(t)} x
+\end{equation}
+Ha $a(t_0) = 1$ és $\Omega_0 = 1$ konvenciót használunk, akkor látható, hogy a Hubble-idő az univerzum kezdete óta eltelt idő másfélszerese:
+\begin{equation}
+    t_0 = \frac{2}{3} T_H \quad \implies \quad T_H = \frac{3}{2} t_0
+\end{equation}
+A Hubble-állandó ma ismert értéke:
+\begin{equation}
+    H_0 = 71 \pm 3 \frac{km}{s}\frac{1}{Mpc} \approx 2.3 \times 10^{-18} \frac{1}{s}
+\end{equation}
+A dimenziója azért ilyen fura, mert a galaxisok közötti sebességet általában km/s-ban mérik, míg a távolságokat megaparszekben (Mpc)\footnote{
+    1 parsek (pc) = 3.086 x $10^{16}$ m, tehát 1 megaparsek (Mpc) = $10^6$ parsek. A parsek a csillagászok által használt távolság mértékegység, ami a Föld-Nap távolság és egy ívmásodperc szög alatt
+    lévő távolság viszonyából származik.
+}.
+
+\subsubsection*{k > 0}
+Ha az univerzum geometriája zárt, akkor $k > 0$, és az I. Friedmann-egyenlet a következőképpen alakul:
+\begin{equation}
+    \left(\frac{\dot{a}(t)}{a(t)}\right)^2 = \frac{8 \pi G}{3} \varrho - \frac{k}{a^2(t)}
+\end{equation}
+Itt röktön látható, hogy ha $k$ értékét növeljük, akkor $\dot{a}(t)$ csökkenni fog, tehát az univerzum tágulási sebessége kisebb lesz, amíg el nem éri az álló állapotot ($\dot{a}(t) = 0$). Ezután pedig elkezd a negatív irányba
+nőni, vagyis az univerzum kiterjedése elkezd csökkenni és az univerzum összehúzódik.
+
+Ha a Friedmann-egyenletet $a(t = 0) = a_0 = 1$-re felírjuk, akkor:
+\begin{equation}
+    H^2_0 = \frac{8 \pi G}{3} \varrho_0 - k
+\end{equation}
+Ebbe behelyettesítve az $\Omega_0 = \frac{\varrho_0}{\varrho_{c, 0}}$ és $\varrho_{c, 0} = \frac{3 H^2_0}{8 \pi G}$ kifejezéseket:
+\begin{equation}
+    k = H^2_0 (\Omega_0 - 1)
+\end{equation}
+Itt egy nagyon fontos következtetést vonhatunk le: a $k$ paraméter értéke az univerzum sűrűségétől függ! Akkor lesz zárt az univerzum, ha $\Omega_0 > 1$, vagyis az univerzum anyagsűrűsége nagyobb mint 1 (ezt később látni fogjuk mit jelent pontosan).
+Emiatt be szoktak vezetni egy extra paramétert is amit $\tilde{k}$-val jelölnek, és ami a következőképpen definiált:
+\begin{equation}
+    \tilde{k} = \frac{k}{H_0^2(\Omega_0 - 1)} = \begin{cases}
+        +1 & \text{ha } \Omega_0 > 1 \\
+        0 & \text{ha } \Omega_0 = 1 \\
+        -1 & \text{ha } \Omega_0 < 1 \\
+    \end{cases}
+\end{equation}
+Tehát a $\tilde{k}$ paraméter megadja, hogy az univerzum zárt, lapos vagy nyílt geometriájú-e az anyagsűrűség alapján.
+
+Ezt visszahelyettesítve az I. Friedmann-egyenletbe:
+\begin{equation}
+    \left(\frac{\dot{a}(t)}{a(t)}\right)^2 = H^2_0 \left(\Omega_0 a^{-3}(t) + 1 - \Omega_0 a^{-2}(t)\right)
+\end{equation}
+Itt azért hogy szebb eredményre juthassunk érdemes bevezetni egy új változót:
+\begin{equation}
+    d\eta = \frac{d t}{a(t)}
+\end{equation}
+Ezt a változót konform időváltozónak nevezik, és a segítségével el tudjuk érni, hogy az idő paraméter ne függjön az adott mérettől. Ezzel a változóval az egyenlet:
+\begin{equation}
+    \left(\frac{d a}{d \eta}\right)^2 = H^2_0\Omega_0 a(\eta) + H^2_0 (1 - \Omega_0) a^2(\eta)
+\end{equation}
+Ennek az egyenletnek periodikus megoldása van:
+\begin{equation}
+    \boxed{a(\tilde{\eta}) = A (1 - \cos \tilde{\eta})} \quad \text{ahol} \quad A = \frac{\Omega_0}{2(\Omega_0 - 1)} \quad \text{és} \quad \tilde{\eta} = H_0 (\Omega_0- 1)^{1/2} \eta
+\end{equation}
+Látható tehát, hogy az $a$ skálatényezőnek lesz egy maximuma és egy minimuma is. A maximum értéke $a_{max} = \frac{\Omega_0}{\Omega_0 - 1}$, ez az univerzum legnagyobb mérete, amit elérhet.
+A minimuma pedig $a_{min} = 0$, ami az univerzum összeomlását jelenti. Tehát egy zárt univerzum tágulás után újra össze fog húzódni, és egy "nagy Reccs" következik be.
+
+Ahhoz, hogy megkapjuk az $a(t)$ időbeli változását, először le kell integerálnunk a kapott függvényt az $\eta$ konform időváltozó szerint:
+\begin{equation}
+    t = \int_0^{\eta} a(\eta') d \eta' = \int_0^{\tilde{\eta}} a(\tilde{\eta}') \frac{d \eta'}{d \tilde{\eta}'} d \tilde{\eta}'
+\end{equation}
+Ahol:
+\begin{equation}
+    \frac{d \eta'}{d \tilde{\eta}'} = \frac{1}{H_0 (\Omega_0 - 1)^{1/2}}
+\end{equation}
+Ezt visszahelyettesítve az egyenletbe:
+\begin{equation}
+    t = \frac{A}{H_0 (\Omega_0 - 1)^{1/2}} \int_0^{\tilde{\eta}} (1 - \cos \tilde{\eta}') d \tilde{\eta}'
+\end{equation}
+Az integrálás után:
+\begin{equation}
+    t(\tilde{\eta}) = \frac{A}{H_0 (\Omega_0 - 1)^{1/2}} (\tilde{\eta} - \sin \tilde{\eta})
+\end{equation}
+Itt jól látszik, hogy egy mozgási periódus alatt az $\tilde{\eta}$ változó $0$-tól $2 \pi$-ig változik, tehát az univerzum tágulási és összehúzódási ciklusa is ennyi "konform idő" alatt zajlik le.
+Látható, hogy az univerzum a $\eta = 0$ után tágulni kezd, eléri a maximális méretét $\tilde{\eta} = \pi$-nél, majd újra összehúzódik és a $\tilde{\eta} = 2 \pi$ időpontban ismét eléri a nullás méretet.
+Ez az összeomlás időpontja:
+\begin{equation}
+    t_{min} = \frac{\pi \Omega_0}{H_0 (\Omega_0 - 1)^{3/2}}
+\end{equation}
+Ez az az időpont amikor az univerzum visszazuhan önmagába ("Nagy Reccs"). Ez a függvény egyébként a matematikában jól ismert ciklois görbe.
+
+\subsubsection*{k < 0}
+Ha az univerzum geometriája nyílt, akkor $k < 0$, és annyiban módosul a Friedmann-egyenlet, hogy az egyenlet jobb oldalán a $k$ függő tag pozitív előjelet kap ($\tilde{k} = -1$), amitől egyre jobban tágul az univerzum.
+Viszont ahogy nő az univerzum mérete, egyre jobban az $a^{-2}(t)$ tag fog dominálni, emiatt a $\frac{k}{a^2}$ tag elkezd nullához tartani. Ekkor már csak egy konstans marad az egyenlet jobb oldalán,
+tehát $\dot{a}(t)$ is egy állandó lesz. Ez azt jelenti, hogy az univerzum a végtelenségig tágul, de a tágulás sebessége egy állandó érték felé konvergál a következőképpen:
+\begin{equation}
+    a(\tilde{\eta}) = A (\cosh \tilde{\eta} - 1) \quad \text{ahol} \quad A = \frac{\Omega_0}{2(1 - \Omega_0)} \quad \text{és} \quad \tilde{\eta} = H_0 (1 - \Omega_0)^{1/2} \eta
+\end{equation}
+Az idő változása pedig:
+\begin{equation}
+    t(\tilde{\eta}) = \frac{A}{H_0 (1 - \Omega_0)^{1/2}} (\sinh \tilde{\eta} - \tilde{\eta})
+\end{equation}
+
+Ezzel tehát három különböző megoldást kaptunk ($E = 0$, $E < 0$, $E > 0$ vagy $\tilde{k} = 0$, $\tilde{k} = -1$, $\tilde{k} = 1$) az univerzum tágulására a Friedmann-egyenletek alapján, attól függően, hogy milyen a görbülete.
+
+\subsubsection*{Kritikus anyagsűrűség}
+Láttuk tehát, hogy az univerzum időfejlődése függ az anyagsűrűségtől. A Friedmann-egyenlet bal oldalát át is tudjuk alakítani, hogy szerepeljen benne az úgynevezett \textbf{pillanatnyi kritikus sűrűség}:
+\begin{equation}
+    \left(\frac{\dot{a}(t)}{a(t)}\right)^2 = \frac{8 \pi G}{3} \varrho - \frac{k}{a^2(t)}
+\end{equation}
+Ebből kifejezve az anyagsűrűséget:
+\begin{equation}
+    \varrho = \frac{3}{8 \pi G} \left[\left(\frac{\dot{a}(t)}{a(t)}\right)^2 + \frac{k}{a^2(t)}\right]
+\end{equation}
+Ebből bevezethetjük a pillanatnyi kritikus sűrűséget:
+\begin{equation}
+    \varrho_c(t) = \frac{3}{8 \pi G} \left(\frac{\dot{a}(t)}{a(t)}\right)^2 = \frac{3 H^2(t)}{8 \pi G}
+\end{equation}
+Tehát a Friedmann-egyenlet:
+\begin{equation}
+    \frac{1}{2} \dot{a}^2 - \frac{4 \pi G}{3} \varrho a^2 = \frac{4 \pi G}{3} (\varrho_c - \varrho) a^2
+\end{equation}
+Innen pedig jól látható, hogy miért is "kritikus" a $\varrho_c$ sűrűség: Amikor az univerzum anyagsűrűsége pontosan megegyezik a kritikus sűrűséggel ($\varrho = \varrho_c$), akkor az univerzum geometriája lapos lesz ($k = 0$),
+és az univerzum tágulási sebessége pont annyi lesz, hogy a tágulás sosem áll meg, de összehúzódás sem következik be. Ha az anyagsűrűség kisebb mint a kritikus sűrűség ($\varrho < \varrho_c$), akkor az univerzum nyílt geometriájú lesz ($k < 0$),
+és az univerzum örökké tágulni fog. Végül, ha az anyagsűrűség nagyobb mint a kritikus sűrűség ($\varrho > \varrho_c$), akkor az univerzum zárt geometriájú lesz ($k > 0$), és az univerzum előbb-utóbb összehúzódik.
+
+Emiatt a kozmológusok bevezettek még egy paramétert, ami a kritikus sűrűség és az adott sűrűség arányát adja meg:
+\begin{equation}
+    \Omega(t) \equiv \frac{\varrho(t)}{\varrho_c(t)} = \frac{8 \pi G}{3 H^2(t)} \varrho(t)
+\end{equation}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/18-tetel/omega_universe.png}
+    \caption{Az univerzum sorsa az $\Omega$ paraméter függvényében. Ha $\Omega < 1$, akkor az univerzum nyílt, ha $\Omega = 1$, akkor lapos, ha $\Omega > 1$, akkor zárt geometriájú.}
+    \label{fig:omega_universe}
+\end{figure}
+A korábbi egyenletekben használt $\varrho_{0, c}$ pont a kritikus sűrűség jelenkori értékét jelöli, míg az $\Omega_0$ pedig a jelenkori sűrűségparamétert.
+
+\subsubsection{Sugárzás és anyag dominált univerzum}
+Amikor bevezettük a kritikus sűrűség fogalmát, feltételeztük, hogy az anyag sűrűsége (és ezáltal a tömege) a tér minden irányába egyenletesen oszlik el, tehát fennál a:
+\begin{equation}
+    \varrho_m \sim \frac{1}{a^3}
+\end{equation}
+arányosság. Ez viszont csak nem-relativisztikusan mozgó anyagokra igaz. Ha a tágulási modell igaz, akkor az univerzum korai szakaszában sokkal kompaktabb és ezáltal melegebb volt, ami miatt lehetett egy olyan időszak,
+amikor nem az anyagi részecskék, hanem az elektromágneses sugárzás dominált. A sugárzás energiasűrűsége viszont nem az $a$ méretskála köbének reciprokával skálázódik.
+
+A Wien törvény szerint:
+\begin{equation}
+    \lambda_{max} T = \text{Áll.}
+\end{equation}
+Tehát a fotonok hőmérséklete fordítottan arányos a hullámhosszukkal. Ahogy az univerzum tágul, a fotonok hullámhossza is növekszik az $a(t)$ méretskála arányában:
+\begin{equation}
+    \lambda \sim a(t)
+\end{equation}
+Ebből következik, hogy a fotonok hőmérséklete fordítottan arányos az univerzum méretskálájával:
+\begin{equation}
+    T \sim \frac{1}{\lambda} \sim \frac{1}{a(t)}
+\end{equation}
+A fotonok energiasűrűsége\footnote{
+    Itt észrevehetjük, hogy az energiasűrűséget és az anyasűrűséget néhol felváltva használjuk. Ez nem pongyola megfogalmazás, ugyanis a Relativitáselmélet alapján a két érték arányos egymással az $E = mc^2$ összefüggés miatt.
+    Tehát energia és tömeg között szabadon át tudunk váltani, hogy a problémát legszemléletesebben jellemző mennyiségeket tudjuk használni.
+}
+úgy határozható meg, hogy összeszorozzuk a számsűrűségüket az egyes fotonok energiájával:
+\begin{equation}
+    \varrho_r = n_{\gamma} E_{\gamma}
+\end{equation}
+Tehát a fotonok energiasűrűsége a következőképpen skálázódik az univerzum tágulásával:
+\begin{equation}
+    \varrho_r \sim \frac{1}{a^3} \cdot T = \frac{1}{a^3} \cdot \frac{1}{a} = \frac{1}{a^4}
+\end{equation}
+Ez azt jelenti, hogy a sugárzás energiasűrűsége gyorsabban csökken az univerzum tágulásával, mint az anyag sűrűsége. Emiatt az univerzum korai szakaszában a sugárzás dominált, míg később az anyag sűrűsége vált dominánssá. 
+Ezt a korszakot nevezzük sugárzás-dominált korszaknak. Ma már mintegy három nagyságrendel kisebb a sugárzás energiasűrűsége, mint az anyagé, tehát jelenleg az univerzum anyag-dominált állapotban van.
+
+Mivel a sugárzás és az anyag máshogy viselkedik az univerzumban, így érdemes különválasztani őket a sűrűségparaméterekben is:
+\begin{equation}
+    \Omega_{\text{teljes}} = \Omega_m + \Omega_\text{sug.}
+\end{equation}
+
+\subsubsection{Kozmológiai Állandó}
+Az univerzum ma szerkezetére és viselkedésére ránézve fel kell tételeznünk, hogy a Friedmann-egyenletekben szereplő $\Omega_\text{teljes}$ paraméternek elég közel kell lennie az 1-hez. Ha csak 1\%-kal lenne több, és $\Omega_\text{teljes} = 1.01$ lenne,
+akkor az univerzum a létrejövése után 20 percel össze is omlott volna. Ha pedig csak 1\%-kal lenne kevesebb, és $\Omega_\text{teljes} = 0.99$ lenne, akkor az univerzum olyan sebességgel "fröccsent" volna szét, hogy esélytelen lett volna, hogy bármilyen komplexebb struktúra
+kialakulhatott volna. 
+
+A modern kozmológiai megfigyelések rámutattak az úgynevezett "sötét anyag" létezésére is\footnote{
+    A sötét anyag létezését galaxisok mozgásának megfigyeléséből következtették ki, ugyanis ahogy a neve is sugallja, nem bocsájt ki semmilyen elektromágneses sugárzást (és nem is nyeli el), emiatt közvetlenül nem lehet detektálni.
+    Ezért onnan tudni, hogy mégis van, mert a spirális galaxisok ágai szögsebessége nem csökken a távolság növekedésével, aminek nincs értelme a gravitációs törvény $\frac{1}{r^2}$-es függése alapján, hacsak nincs nagy mennyiségű anyag a galaxisok körülött is.
+    Ma úgy becsülik, hogy a galaxisok tömegének mintegy 85\%-a sötét anyagból áll.
+}
+de ezt beleszámítva se jön ki ez az 1 közeli érték. 
+
+Ezt a problémát úgy tudjuk feloldani, hogy bevezetünk egy korrekciós tagot, amit \textbf{kozmológiai állandónak} nevezünk:
+\begin{equation}
+    \frac{\ddot{a}(t)}{a(t)} = -\frac{4 \pi G}{3} \varrho_m + \frac{\Lambda}{3}
+\end{equation}
+Ezt behelyettesítve a Friedmann-egyenletbe:
+\begin{equation}
+    \left(\frac{\ddot{a}(t)}{a(t)}\right)^2 = \frac{8 \pi G}{3} \varrho_m + \frac{\Lambda}{3} - \frac{k}{a^2(t)}
+\end{equation}
+Ha feltételezzük, hogy az anyag nem relativisztikus, akkor végigszorozva az egyenletet $a\dot{a}$-val:
+\begin{equation}
+    a \dot{a}^2 = \frac{8 \pi G}{3 a^2} \varrho_{m, 0} + \frac{\Lambda}{3} a^3 - k a \quad \implies \quad \frac{1}{2} \dot{a}^2 - \frac{4 \pi G}{3a} \varrho_{m, 0} - \frac{\Lambda}{6} a^2 = -\frac{k}{2}
+\end{equation}
+A jobb oldalon pont az integrációs állandó szerepel, továbbá ha végigosztjuk az egyenletet $a^2$-vel, akkor:
+\begin{equation}
+    \frac{4 \pi G}{3} \left(\varrho_{\text{krit}} - \varrho(t) - \frac{\Lambda}{8 \pi G}\right) = - \frac{k}{a^2}
+\end{equation}
+Látható, hogy ez a korrekció úgy viselkedik mint egy extra energia sűrűség, emiatt ezt $\varrho_\Lambda = \frac{\Lambda}{8 \pi G}$-val szokták jelölni. Ezt a tagot \textbf{sötét energiának} nevezik, és úgy gondolják, hogy ez az energia felelős az univerzum gyorsuló tágulásáért.
+Ezzel az egyenletet a metrikus tenzorra vonatkozó Friedmann-egyenletté alakíthatjuk:
+\begin{equation}
+    \frac{1}{2} \left(\frac{\dot{a}}{a}\right)^2 - \frac{4 \pi G}{3} \left(\varrho_m + \varrho_\text{sug.} + \varrho_\Lambda \right) = - \frac{k}{2 a^2}
+\end{equation}
+Emeljük ki a $H^2(t) = \left(\frac{\dot{a}}{a}\right)^2$ kifejezést:
+\begin{equation}
+    \frac{H^2}{2} \left(1 - \Omega_m - \Omega_\text{sug.} - \Omega_\Lambda \right) = - \frac{k}{2 a^2}
+\end{equation}
+Ahol az új sűrűségparaméter:
+\begin{equation}
+    \Omega_\Lambda \equiv \frac{\varrho_\Lambda}{\varrho_c} = \frac{\Lambda}{3 H^2(t)}
+\end{equation}
+Ha átosztunk $H^2/2$-vel, akkor a bal oldalon egy dimenziótlan mennyiséget kapunk amit a tér görbületének járuléka ad:
+\begin{equation}
+    1 - \Omega_m - \Omega_\text{sug.} - \Omega_\Lambda = - \frac{k}{H^2(t) a^2(t)}
+\end{equation}
+Ezt a dimenziótlan állandót pedig $\Omega_k$-val szokták jelölni és ezt szokták formálisan a tér görbületi paraméterének nevezni:
+\begin{equation}
+    \Omega_k \equiv 1 - \Omega_m - \Omega_\text{sug.} - \Omega_\Lambda = - \frac{k}{H^2(t) a^2(t)}
+\end{equation}
+Tehát az egyes $\Omega$-k járuléka:
+\begin{equation}
+    \Omega_k = 1 - \Omega_\text{teljes} = 1 - \Omega_m - \Omega_\text{sug.} - \Omega_\Lambda
+\end{equation}
+Tehát az univerzum teljes $\Omega$-ja 1-től pont $\Omega_k$-val tér el, ami a tér görbületét jellemzi. Ennek az értéknek pedig nagyon közel kell lennie a nullához, hogy az univerzum életképes legyen.
+
+\subsubsection{Az univerzum fejlődése a kozmológiai paraméterek függvényében}
+A 20. század nagy részében a kozmológusok az $\Omega_\Lambda = 0$ és $\Omega_k = 0$ modellt használták, mivel az akkori mérések és elméletek nem tették ezeket szükségessé. Az $\Omega_\Lambda$ bevezetését csak a modern
+mérések tették szükségessé, míg az $\Omega_k$-t pedig azért nem vették figyelembe, mert az univerzumnak nem tudtak számottevő görbületet kimutatni (mint tárgyaltuk, az $\Omega_k$-nak nagyon kicsinek kell lennie, hogy az univerzum életképes legyen).
+Az ok amiért ezek a paraméterek megjelentek a $\Omega_\text{teljes} \approx 1$ és $\Omega_m + \Omega_\text{sug.} < 1$ ellentmondásai voltak.
+
+Láttuk, hogy az az anyag és a sugárzás sűrűsége eltérően aránylik $a$-hoz, $\Omega_\Lambda$ pedig nem függ az univerzum tágulásától. Emiatt a Hubble-paramétert úgy tudjuk felírni, hogy az egyes komponensek járulékait összeadjuk:
+\begin{equation}
+    H^2(a) = H^2_0 \left(+ \Omega_{\Lambda,0} + \Omega_{m,0} a^{-3} + \Omega_{\text{sug.,0}} a^{-4}\right)
+\end{equation}
+Itt a 0 index azt jelzi, hogy a jelenkori értékeket használjuk. Ebből látható tehát, hogy az univerzum tágulása során a különböző komponensek lesznek a dominánsak.
+A kezdeti univerzumban akkor a sugárzás dominált, majd amikor az univerzum nagyjából a mai méret $1/1000$-ed része volt, akkor volt a kettő ekvivalens, ezt nevezik sugárzás- és anyagkorszak határának.
+Ezután jött az anyag-dominált univerzum, ahol jelenleg is vagyunk, amikor $a = 1$-nek vesszük a méretskálát. Ezután el fog jönni egy idő, amikor az $a$-val nem skálázódó $\Omega_\Lambda$ lesz a domináns komponens.
+
+Ha most feltesszük, hogy a $k$ nem nulla, viszont elhagyjuk a sugárzás hatását (mivel jelenleg az anyag dominál), akkor A Hubble-paraméter a következőképpen alakul:
+\begin{equation}
+    H^2(a) = H^2_0 \left( \Omega_{m,0} a^{-3} + \Omega_{k,0} a^{-2} + \Omega_{\Lambda,0} \right)
+\end{equation}
+Ekkor:
+\begin{equation}
+    \Omega_{\text{teljes}, 0} = \Omega_{m,0} + \Omega_{\Lambda,0} \qquad
+\end{equation}
+És
+\begin{equation}
+    \Omega_{k,0} = 1 - \Omega_{\text{teljes}, 0} = 1 - \Omega_{m,0} - \Omega_{\Lambda,0}
+\end{equation}\subsubsection{Az univerzum fejlődése a kozmológiai paraméterek függvényében}
+A 20. század nagy részében a kozmológusok az $\Omega_\Lambda = 0$ és $\Omega_k = 0$ modellt használták, mivel az akkori mérések és elméletek nem tették ezeket szükségessé. Az $\Omega_\Lambda$ bevezetését csak a modern
+mérések tették szükségessé, míg az $\Omega_k$-t pedig azért nem vették figyelembe, mert az univerzumnak nem tudtak számottevő görbületet kimutatni (mint tárgyaltuk, az $\Omega_k$-nak nagyon kicsinek kell lennie, hogy az univerzum életképes legyen).
+Az ok amiért ezek a paraméterek megjelentek a $\Omega_\text{teljes} \approx 1$ és $\Omega_m + \Omega_\text{sug.} < 1$ ellentmondásai voltak.
+
+Láttuk, hogy az az anyag és a sugárzás sűrűsége eltérően aránylik $a$-hoz, $\Omega_\Lambda$ pedig nem függ az univerzum tágulásától. Emiatt a Hubble-paramétert úgy tudjuk felírni, hogy az egyes komponensek járulékait összeadjuk:
+\begin{equation}
+    H^2(a) = H^2_0 \left(+ \Omega_{\Lambda,0} + \Omega_{m,0} a^{-3} + \Omega_{\text{sug.,0}} a^{-4}\right)
+\end{equation}
+Itt a 0 index azt jelzi, hogy a jelenkori értékeket használjuk. Ebből látható tehát, hogy az univerzum tágulása során a különböző komponensek lesznek a dominánsak.
+A kezdeti univerzumban akkor a sugárzás dominált, majd amikor az univerzum nagyjából a mai méret $1/1000$-ed része volt, akkor volt a kettő ekvivalens, ezt nevezik sugárzás- és anyagkorszak határának.
+Ezután jött az anyag-dominált univerzum, ahol jelenleg is vagyunk, amikor $a = 1$-nek vesszük a méretskálát. Ezután el fog jönni egy idő, amikor az $a$-val nem skálázódó $\Omega_\Lambda$ lesz a domináns komponens.
+
+Ha most feltesszük, hogy a $k$ nem nulla, viszont elhagyjuk a sugárzás hatását (mivel jelenleg az anyag dominál), akkor A Hubble-paraméter a következőképpen alakul:
+\begin{equation}
+    H^2(a) = H^2_0 \left( \Omega_{m,0} a^{-3} + \Omega_{k,0} a^{-2} + \Omega_{\Lambda,0} \right)
+\end{equation}
+Ekkor:
+\begin{equation}
+    \Omega_{\text{teljes}, 0} = \Omega_{m,0} + \Omega_{\Lambda,0} \qquad
+\end{equation}
+És
+\begin{equation}
+    \Omega_{k,0} = 1 - \Omega_{\text{teljes}, 0} = 1 - \Omega_{m,0} - \Omega_{\Lambda,0}
+\end{equation}
+Ezeket visszahelyettesítve a Hubble-paraméterbe:
+\begin{equation}
+    \begin{aligned}
+        \frac{H^2(a)}{H_0^2} &= \Omega_{m,0} a^{-3} + (1 - \Omega_{m,0} - \Omega_{\Lambda,0}) a^{-2} + \Omega_{\Lambda,0} \\
+        &= \Omega_{m,0} a^{-3} + (1 - \Omega_{\Lambda,0}) a^{-2} - \Omega_{m,0} a^{-2} + \Omega_{\Lambda,0} \\
+        &= \Omega_{m,0} (a^{-3} - a^{-2}) + \Omega_{\Lambda,0} (1 - a^{-2}) + a^{-2}
+    \end{aligned}
+\end{equation}
+Ezt az egyenletet numerikusan ki lehet számolni különböző $\Omega_{m,0}$ és $\Omega_{\Lambda,0}$ értékekre, hogy megkapjuk az univerzum tágulásának időfejlődését. Az eredményeket az alábbi ábra mutatja be különböző paraméterekre:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/18-tetel/universe_expansion.png}
+    \caption{
+        Az univerzum tágulásának időfejlődése különböző kozmológiai paraméterek mellett.
+    }
+    \label{fig:universe_expansion}
+\end{figure}
+Az ábra bal felső sarka azt a régiót mutatja, ahol az a $\Omega_\Lambda$ túl nagy, és ezáltal az univerzum nem létezhetett zérus skálarendszer, vagyis Ősrobbanás se. Az alatta lévő régióban az univerzum
+tágulása gyorsul, az alatta lévőnél pedig épp lassul a tágulás sebessége. Az alsó régió jelzi azt a tartományt, ahol az univerzum előbb-utóbb össze fog omlani. A jelenleg legelfogadottabb
+értékeket a nagy pont jelöli ($\Omega_{m,0} \approx 0.3, \Omega_{\Lambda,0} \approx 0.7$) alapján egy sík geometriájú, jelenleg gyorsulóan táguló univerzumot kapunk. Látható, hogy a az állandókban a mai tudásunk szerint
+tehát a $\Omega_\Lambda$ érték dominál.
+
+Továbbá egy kis további számolással megkaphatjuk a tágulási paraméter időfejlődését is:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/18-tetel/universe_expansion_rate.png}
+    \caption{
+        Az univerzum tágulási paraméterének időfejlődése jelenlegi tudásunk szerint.
+    }
+    \label{fig:universe_expansion_rate}
+\end{figure}
+Ezeket visszahelyettesítve a Hubble-paraméterbe:
+\begin{equation}
+    \begin{aligned}
+        \frac{H^2(a)}{H_0^2} &= \Omega_{m,0} a^{-3} + (1 - \Omega_{m,0} - \Omega_{\Lambda,0}) a^{-2} + \Omega_{\Lambda,0} \\
+        &= \Omega_{m,0} a^{-3} + (1 - \Omega_{\Lambda,0}) a^{-2} - \Omega_{m,0} a^{-2} + \Omega_{\Lambda,0} \\
+        &= \Omega_{m,0} (a^{-3} - a^{-2}) + \Omega_{\Lambda,0} (1 - a^{-2}) + a^{-2}
+    \end{aligned}
+\end{equation}
+Ezt az egyenletet numerikusan ki lehet számolni különböző $\Omega_{m,0}$ és $\Omega_{\Lambda,0}$ értékekre, hogy megkapjuk az univerzum tágulásának időfejlődését. Az eredményeket az alábbi ábra mutatja be különböző paraméterekre:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/18-tetel/universe_expansion.png}
+    \caption{
+        Az univerzum tágulásának időfejlődése különböző kozmológiai paraméterek mellett.
+    }
+    \label{fig:universe_expansion}
+\end{figure}
+Az ábra bal felső sarka azt a régiót mutatja, ahol az a $\Omega_\Lambda$ túl nagy, ahol az egyenletek nem engednek meg Big Bang típusú, $a = 0$-ból induló megoldást. Az alatta lévő régióban az univerzum
+tágulása gyorsul, az alatta lévőnél pedig épp lassul a tágulás sebessége. Az alsó régió jelzi azt a tartományt, ahol az univerzum előbb-utóbb össze fog omlani. A jelenleg legelfogadottabb
+értékeket a nagy pont jelöli ($\Omega_{m,0} \approx 0.3, \Omega_{\Lambda,0} \approx 0.7$) alapján egy sík geometriájú, jelenleg gyorsulóan táguló univerzumot kapunk. Látható, hogy az állandókban a mai tudásunk szerint
+tehát a $\Omega_\Lambda$ érték dominál.
+
+Továbbá egy kis további számolással megkaphatjuk a tágulási paraméter időfejlődését is:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/18-tetel/universe_expansion_rate.png}
+    \caption{
+        Az univerzum tágulási paraméterének időfejlődése jelenlegi tudásunk szerint. Ez az ábra jól mutatja, hogy az univerzum tágulása a múltban lassult,
+        majd a kozmológiai állandó dominanciája miatt a közelmúltban gyorsuló fázisba lépett.
+    }
+\end{figure}
+
+\subsubsection{Az elméletet alátámasztó megfigyelések}
+Az előző részben tárgyalt elmélet a következő képet alkotja az Univerzumról: az Univerzum a Friedman-egyenlet megoldásának megfelelően
+folyamatosan tágul, a tágulás ütemét ma már a kozmológiai konstans és a nem-relativisztikus anyag nagyjából egyenlő mértékben határozza meg.
+A nem-relativisztikus anyag ma meglehetősen egyenetlen eloszlású. A determinisztikus fizikát időben visszafelé követve eljutunk egy egyre sűrűbb, és
+így szükségképpen egyre forróbb állapotba. A mai mérési eredmények alapján legvalószínűbb paraméterek nem zárják ki, hogy az Univerzum nagyon
+korai állapotában az akkori homogén anyageloszlás összetevői köznapi fizikai fogalmaink szerint értelmezhetetlenül magas hőmérsékletű és magas nyomású plazmát alkottak.
+
+Egy ötven évvel ezelőtti kozmológiai konferencián, az elmélet születésekor, az elméletet ellenző angol asztrofizikus, F. Hoyle a vita során felcsattant:
+"Úgy képzelik, hogy volt valami nagy bumm, aztán útnak indult az egész?". Ő ragasztotta az elméletre a nem túl vonzó, de érzékletes rövidsége miatt
+azóta is használt elnevezést. A Nagy Bumm vagy az Ősrobbanás kifejezések ugyanis nem írják le helyesen azt, ami történt. Mindössze annyit állíthatunk,
+hogy az az anyag, amit ma látunk az Univerzumban, az korábban nagyon sűrű és nagyon meleg állapotban, nagyon kis térrészre volt összezsúfolva.
+A szigorúan vett $t = 0$ időpillanatig - a kísérletileg nehezen tanulmányozható és elméletileg nehezen érthető extrém fizikai állapotra vonatkozó tudatlanságunk okán
+- ma még nem tudjuk visszavezetni az elméletet.
+
+Ennek ellenére a tanulmányozható időszakasz, amely felöleli gyakorlatilag a teljes Univerzum-élettartamot, eltekintve a másodperc törtrészétől a
+kezdetek kezdetén, tartogat kísérletileg ellenőrizhető jóslatokat. Az irodalomban elterjedt az a fordulat, hogy az Ősrobbanás elméletét három kísérleti alappillér támasztja
+alá. Mindhárom megfigyelés a XX. század természettudományának eredménye. Ezt megelőzően meg kell említeni azonban egy századokra visszanyúló, alapvető megfigyelést,
+amely lényeges kozmológiai konzekvenciát rejtett magában, bár jelentősége sokáig nem tudatosult a fizikusokban.
+
+Az univerzum végességét (akár időben akár térben értjük ezt) már 1610-ben Kepler elkezdte feszegetni, majd később Halley és Cheseaux is leírta, de végül 1823-ban Olbers paradoxonként híresült el az alábbi probléma:
+Ha az univerzum végtelen időben is ÉS térben is és az univerzum anyagát egyenletesen eloszlónak feltételezzük, akkor ha húzunk egy $r$ sugarú gömböt a föld körül, akkor a gömb felszínén lévő csillagból $\frac{1}{r^2}$-el arányos mennyiségű fény jut el hozzánk.
+De az egyenletes anyageloszlás miatt ezen a gömbön átlagosan $r^2$-el arányos számú csillag van, ami azt jelenti, hogy ahogy távolodunk a földtől, minden ilyen gömbhély azonos járuléknyi fényt juttat el hozzánk $r$-től függetlenül.
+Ha ezeket a járulékokat összegezzük $r = 0$-tól $r = \infty$-ig, akkor azt kapjuk, hogy éjszaka az égbolt minden pontjáról egy átlagos csillag által kibocsátott fénynek kéne érkeznie hozzánk. A fény csak azért nem lenne végtelen,
+mert a csillagok egy idő után elkezdik kitakarni egymást. Ez értelemszerűen totálisan ellentmond a mindennapi tapasztalatainkkal, hiszen éjszaka az égbolt sötét.
+
+Ezt a paradoxont sokféleképp megpróbálták feloldani, felmerült, hogy a csillagok esetleg nem homogénen oszlanak el, de ma már tudjuk, hogy léteznek nagyobb skálájú struktúrák is, de ha mondjuk csillagok helyett galaxisokat vesszük,
+akkor is ugyan ebbe a problémába ütközünk. A legnagyobb skálán pedig a kozmológiai elv feltételezi a homogenitást. Másik megoldás lehetne, hogy az univerzum nagyrész olyan porral és gázokkal vannak kitöltve, amik elnyelik a fényt.
+Ezzel csak az a gond, hogy előbb-utóbb ezek az anyagok is telítődnének energiával, és utána ők is elkezdenének sugározni. 
+
+Emiatt a csillagászoknak és később a kozmológusoknak előbb-utóbb be kellett ismernie, hogy ez csak egy dolgot jelenthet: Az univerzum nem lehet végtelen térben vagy nem létezhet végtelen ideje.
+
+Természetesen ez a megkötés még nem feltételezi, hogy az Ősrobbanás elmélete az egyetlen jó elmélet, de a korábbi statikus végtelen univerzum elképzelését mindenképp megdöntötte.
+
+Az Ősrobbanást általában három fő megfigyeléssel támasztják alá:
+\begin{itemize}
+    \item Az Univerzum Hubble-ről elnevezett tágulási törvénye
+    \item A mikrohullámú háttérsugárzás felfedezése (KMHS)
+    \item A könnyű elemek előfordulási gyakorisága
+\end{itemize}
+
+\subsubsection*{Tágulási törvény}
+Edwin Hubble és Vesto Slipher a 20. század elején vizsgálták a távoli galaxisok színképeit, amikor feltűnt nekik, hogy a színképek szinte mindegyik vizsgált galaxisnál valamilyen mértékben vöröseltolódást mutatnak.
+A vöröseltolódás mértékét úgy szokták jellemezni, hogy a spektrum egy ismert vonalának a hullámhosszát összehasonlítják a laboratóriumi értékkel:
+\begin{equation}
+    z = \frac{\lambda_{\text{megfigyelt}} - \lambda_{\text{labor}}}{\lambda_{\text{labor}}}
+\end{equation}
+Ebből pedig a kis sebességekre érvényes Doppler-összefüggéssel megkapható a galaxisok relatív sebessége:
+\begin{equation}
+    \frac{\lambda_{\text{megfigyelt}} - \lambda_{\text{labor}}}{\lambda_{\text{labor}}} = \frac{\Delta \lambda}{\lambda} \approx \frac{v}{c}
+\end{equation}
+Mivel a vöröseltolódás során $\lambda_{\text{megfigyelt}} > \lambda_{\text{labor}}$, ezért $z > 0$ és így $v > 0$, tehát a galaxisok távolodnak tőlünk.
+Hubble ezután az általa kapott eredményeket egy grafikonra helyezte ahol láthatóvá vált, hogy a galaxisok távolsága egyenesen arányos a távolodási sebességükkel, és az egyenes meredekségét, a később róla elnevezett
+Hubble-állandó adja meg:
+\begin{equation}
+    v = H d
+\end{equation}
+Ahol $d$ a galaxis távolsága, $v$ pedig a távolodási sebessége. Ezt a törvényt nevezzük Hubble-törvénynek, és ez volt az egyik első bizonyítéka az ősrobbanás elméletének.
+Hubble eredményét később a Friedmann-egyenletek ágyazták bele egy komprehenzív elméleti keretbe, ahol a tágulás a metrikus tenzor időfüggő skálázásaként jelent meg.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/18-tetel/hubble_law.png}
+    \caption{
+        A távolodási sebesség és a luminozitási távolság kapcsolatát feltáró
+        Hubble-diagram. A pontokra illesztett egyenes a Hubble-törvény, annak meredeksége a Hubble-állandó.
+    }
+    \label{fig:hubble_law}
+\end{figure}
+A vöröseltolódás jelentése a Friedmann-egyenletek fényében:
+\begin{equation}
+    1 + z = \frac{\lambda_{\text{megfigyelt}}}{\lambda_{\text{labor}}} = \frac{a_0}{a(t)}
+\end{equation}
+
+\subsubsection*{Kozmikus Mikrohullámú Háttérsugárzás (KMHS)}
+A kozmikus háttérsugárzás megléte az Ősrobbanás elméletének egyik legerősebb bizonyítéka. Az elmélet szerint ha az univerzum tágul, akkor az időben visszafelé haladva előbb-utóbb eljutunk
+egy olyan ponthoz, ahol az univerzum olyan sűrű és a hőmérséklet ezáltal olyan nagy volt, hogy az atomok nem tudtak stabilan létezni, hanem egy ionizált plazma állapotban voltak.
+Ebben a korszakban a fotonok (és talán más részecskék is) folyamatosan ütköztek a töltött és szabad elektronokkal és protonokkal, ezért termikus egyensúlyban voltak az anyaggal. Viszont amikor az univerzum elérte
+a kb. 3000 K hőmérsékletet, az elemi részecskék rekombinálódtak és megjelentek a semleges töltésű stabil atomok. Ezeken már nem szóródtak a fotonok (úgy szokás mondani, hogy "átlátszóvá vált az anyag")
+ezért a fotonok innentől kezdve szabadon tudtak terjedni az univerzumban és csak alig-alig interaktálnak a nem-relativisztikus anyaggal. Ahogy viszont tágul az univerzum, úgy a fotonok hullámhossza is növekszik,
+és mivel a hullámhossz fordítottan arányos a hőmérséklettel a Wien törvény alapján ezért a fotonok hőmérséklete is csökken:
+\begin{equation}
+    T \sim \frac{1}{a(t)}
+\end{equation}
+Az első számításokat Alpher, Bethe és Gamow végezték el, akik azt feltételezték, hogy az univerzum kb. 1000x-re nőtt a rekombináció óta, emiatt ezek a háttérsugárzást adó fotonok ma kb. 3 K hőmérsékletűek lehetnek.
+Ez nagyon közel van a ma elfogadott $\sim 2.7$ K értékhez. A háttérsugárzás felfedezése Penzias és Wilson nevéhez fűződik, akik 1965-ben egy mikrohullámú antennával végeztek méréseket, és egy állandó, minden irányból érkező zajt tapasztaltak, ami
+nem magyarázható a földi forrásokkal. Később kiderült, hogy ez a zaj a kozmikus háttérsugárzásból származik, ami az Ősrobbanás elméletének egyik legerősebb bizonyítéka lett.
+
+\subsubsection*{Könnyű elemek előfordulási gyakorisága}
+Ahogy a KMHS-nél már tárgyaltuk, volt egy időszaka az univerzumnak, amikor stabil atommagok nem tudtak létezni, hanem egy forró plazma állapotban voltak. Ekkor, ha találkozott is egy proton és egy elektron,
+olyan nagy sebeséggel csapódtak össze, hogy le is pattantak egymásról. Ahogy az univerzum lehűlt, elérkezett egy pont amikor az átlagos kinetikus energia már olyan kicsi volt, hogy lehetővé vált, hogy
+egyes részecskék összetapadjanak és stabil magokat alkossanak. Ezt a folyamatot nevezzük nukleoszintézisnek. Ekkor az atommagok szabad úthossza akkora lett, hogy kicsi volt az esélye, hogy a létrejövő magok
+egy újabb ütközésben szét is essenek. Ez viszont azt is okozta, hogy túl nagy atommagok nem tudtak létrejönni, hiszen a szabad úthossz egy idő után nagyobb lett mint a horizont mérete.
+Emiatt két atom találkozási valószínűsége nagyon lecsökkent, és így csak a legkönnyebb elemek tudtak létrejönni. Emiatt az ősrobbanás elmélete azt feltételezi, hogy az univerzum leggyakoribb elemei azok az egyszerű atomok lesznek,
+amik még ki tudtak alakulni ebben a korai időszakban. Az ennél nehezebb elemek már csak egy másodlagos nukleoszintézis során jöhetnek létre. Ez az elmélet nagyon jól egyezik a megfigyelésekkel, hiszen a hidrogén és hélium a leggyakoribb elemek az univerzumban, utánuk még a lítium következik, ami kis valószínűséggel,
+de létrejöhetett ebben a \textit{primordiális nukleoszintézisben}, de a többi elem ezekhez képest elenyészően ritka. Ezt az elméletet erősíti az a megfigyelés is, hogy a nehezebb elemek (kozmológiában minden olyan elemet, ami nem ebben a
+primordiális nukleoszintézisben jött létre, fémnek szokás nevezni) sokkal nagyobb arányban fordulnak elő a csillagokban és galaxisokban, mint az intergalaktikus térben, ami arra utal, hogy ezek az elemek csillagokban és szupernóvákban jöttek létre.
+
+\subsubsection{Problémák az elmélettel}
+Az Ősrobbanás elmélete nagyon sikeresen megmagyarázza e legtöbb megfigyelésünket az univerzum mai állapotáról, de azért akadt vele néhány probléma is, aminek a megmagyarázására jelenleg csak elméletek léteznek,
+megfigyelések még nincsenek rájuk.
+
+\subsubsection*{Horizont Probléma}
+Az egyik első problémát maga az ősrobbanást bizonyító KMHS okozza. Ugyanis a háttérsugárzás vizsgálata során kiderült, hogy a KHS fotonja a tér minden irányából érkezve mérési hibahatáron belül azonosan $\sim 2.73$ K
+hőmérsékletűek. Ez azt jelenti, hogy a teljes KHS homogén, ami megköveteli azt, hogy a KHS fotonjai kazuális kapcsolatban legyenek egymással legalább addig, amíg a termális egyensúly létrejött közöttük.
+Azt viszont egyszerű megfontolásokból beláthatjuk, hogy ez nem állhatott fenn, mivel a fény terjedési sebessége véges, ezért meg lehet határozni egy horizontot, amin túl a fotonok nem tudtak utazni az univerzum létrejötte
+óta eltelt időben. Ennek a horizontnak a mai mérete:
+\begin{equation}
+    R_\text{ma} = c t_\text{ma} \quad \implies \quad \frac{R_\text{ma}}{c t_\text{ma}} = 1
+\end{equation}
+Ahol $t_\text{ma}$ az univerzum kora, ami kb. 13.8 milliárd év. Azt is tudjuk, hogy a horizont sugara az idő $2/3$-ad részével arányos, mivel ekkor már az anyag dominálta az univerzumot\footnote{
+    Ezt onnan tudjuk, mert az anyag-dominálta univerzumban a tágulási faktor $a(t) \sim t^{2/3}$-mal skálázódik, ahogy azt a Friedmann-egyenletek lehetséges megoldásainál láttuk.
+}:
+\begin{equation}
+    R(t) \sim t^{2/3} \quad \implies \quad t \sim R^{3/2}
+\end{equation}
+Továbbá Alpher et al. számításaiból azt is tudjuk, hogy a KHS akkor alakult ki, amikor az univerzum mérete kb. 1/1000-ed része volt a mai méretének:
+\begin{equation}
+    R_\text{akkor} = \frac{1}{1000} R_\text{ma}
+\end{equation}
+Most azt próbáljuk meghatározni, hogy a mai horizont akkori mérete (amikor a KHS kialakult) hogyan viszonyult a fény által addig megtett úthoz:
+\begin{equation}
+    \begin{aligned}
+        \frac{R_\text{akkor}}{c t_\text{akkor}} &= \left(\frac{R_\text{akkor}}{R_\text{ma}}\right) \left(\frac{R_\text{ma}}{c t_\text{ma}}\right) \left(\frac{ct_\text{ma}}{ct_\text{akkor}}\right) \\ 
+        &= \left(\frac{1}{1000}\right) (1) \left(\frac{R_\text{ma}^{3/2}}{R_\text{akkor}^{3/2}}\right) \\
+        &= \left(\frac{1}{1000}\right) \left(1000^{3/2}\right) \approx 30
+    \end{aligned}
+\end{equation}
+Tehát a fény által megtett út mindegy $\frac{1}{30}$-ad része volt az akkori horizontnak. Ez azt jelenti, hogy az a foton ami éppen most lép be a horizonton belülre, az a foton sose volt kapcsolatban azokkal a fotonokkal,
+amik most a horizonton kívül vannak. Emiatt ha az univerzum egyes részein csak egy kicsit is eltérő hőmérséklet volt, akkor ma nem kéne ilyen homogenitást tapasztalnunk a KHS-ben. Ezt a problémát nevezzük horizont problémának.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/18-tetel/Spacetime_Diagram_without_Inflation.png}
+    \caption{
+        A téridő diagramja a horizont problémának. A függőleges tengely a konformális időt, a vízszintes tengely pedig a térbeli távolságot jelöli. Látható, hogy ha két foton nagy távolságra szóródik
+        utoljára a KHS keletkezésekor, akkor a fénykúpok nem fedik egymást, tehát sose voltak kapcsolatban egymással.
+    }
+    \label{fig:horizon_problem}
+\end{figure}
+
+\subsubsection*{Finomhangolási probléma}
+A másik probléma amit nehéz megmagyarázni a finomhangolás, vagy a \textit{térbeli metrika sík jellegének problémája}. Azt tudjuk, hogy a tér görbületét jellemző $\Omega_k$ változik az idővel:
+\begin{equation}
+    1 - \Omega_\text{teljes}(t) = \Omega_k(t) = - \frac{k}{H^2(t) a^2(t)} \sim \frac{1}{\dot{a}^2} \sim t^{2/3}
+\end{equation}
+Tehát a görbület idővel nő. Mivel az univerzumban van annyi anyag, hogy létrejöjjenek struktúrák, de annyi nincs, hogy 13.7 milliárd év múlva elkezdjen összeomlani, ezért $\Omega_\text{teljes}$-nek tudunk egy határt szabni:
+\begin{equation}
+    0.5 < \Omega_{\text{teljes},0} < 2
+\end{equation}
+Ez azt jelenti, hogy az univerzum nagyon korai szakaszában nagyon közel kellett lennie az $\Omega_\text{teljes}$-nek az 1-hez (tehát $k$-nak nagyon közel kellett lennie a 0-hoz),
+különben ma már vagy összeomlott volna az univerzum, vagy pedig annyira gyorsan tágulna, hogy nem jöhetnének létre struktúrák. De miért lett ilyen pontosan "finomhangolva"?
+Mi az ami ennyire kitünteti ezt a sík geometriát a többi lehetőség közül?
+
+\subsubsection*{Struktúrák kialakulásának problémája}
+Ha megnézzük az anyag eloszlását az univerzumban, jól láthatóan inhomogén kisebb skálán nézve ($R < 100 Mpc$). Vannak bolygók, csillagok, galaxisok, galaxishalmazok és még nagyobb struktúrák is.
+Ezeket értelemszerűen a gravitációs vonzás hozta létre, de ahhoz, hogy kialakulhassanak, a korai univerzumban is kellettek kis "kezdemények" amik köré ezek a struktúrák létrejöhettek.
+Kérdés, hogy mi hozta létre ezeket a kezdeményeket?
+
+\subsubsection{Infláció}
+Ezekre a problémákra több magyarázat is létezik, kezdve az inkonzisztens fénysebesség elméletétől a ciklikus univerzuméig. Azonban a legelfogadottabb magyarázat Alan Guth amerikai fizikus nevéhez fűződik,
+amit \textbf{inflációnak} neveznek. Ennek a lényege, hogy az univerzum nagyon korai szakaszában (kb. $10^{-36}$ másodperc után, ezt Planck időnek hívjuk) egy nagyon rövid ideig (kb. $10^{-32}$ másodpercig) egy rendkívül gyors tágulási fázison ment keresztül,
+ami olyan gyors volt, hogy ha volt is valamiféle görbülete az univerzumnak, az teljesen elhanyagolható volt a növekedéshez képest. 
+
+Guth ezt úgy képzelte el, hogy az univerzum elején volt egy másik anyagfajta, ami ezt az inflációt dinamikusan megvalósította, és ennek a megjelenése okán kezdett az univerzum tágulni és lehülni.
+Ezután ez az anyag gyorsan elbomlott, amitől az univerzum visszamelegedett a kezdeti állapotába, és innentől már a Friedmann-egyenletek szerint tágult tovább.
+
+Ez megoldja a horizont problémát, hiszen ebben az inflációs fázisban a tágulás előtt kazuális kapcsolatban lévő részecskék kerültek ki a horizonton túlra, így a KHS minden pontja korábban kapcsolatban állt egymással.
+Ezáltal érthető, hogy a fotonok miért vannak termikus egyensúlyban, hiszen eredetileg kapcsolatban voltak és most csak "visszajönnek" a horizonton belülre.
+
+A térbeli sík metrika problémáját a gyors infláció úgy oldja meg, hogy ha volt is görbület az univerzumban, akkor is a gyors tágulás miatt ez a görbület elhanyagolhatóvá vált.
+
+Végül a struktúrák kialakulásának problémáját is megoldja az infláció, hiszen a gyors tágulás olyan nagyra fújta fel az univerzumot, hogy a kezdetben jelen lévő kvantumfluktuációkat makroszkópikus méretüre
+fújta, amik így már elegendő kiindulási pontot szolgáltattak a struktúrák kialakulásához a későbbi univerzumban.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/18-tetel/inflation.png}
+    \caption{
+        A skálafaktor időbeli változása az inflációs modellben.
+    }
+    \label{fig:inflation_solution}
+\end{figure}
+
+\subsection{Galaxisok kialakulása, morfológiája}
+Az előző fejezetben tárgyaltuk, hogy az univerzum, bár nagy skálán homogénnek feltételezett, kisebb skálákon tele van struktúrákkal, amik az anyag inhomogén eloszlásából jöttek létre.
+Láttuk, hogy ez nagy valószínűséggel az ősrobbanás után infláció okozta kvantumfluktuációk során jöttek létre, és ezeknek köszönhetjük, hogy ma mi is itt vagyunk. A bolygók és a nap mint csillagászati 
+objektumok már nagyon régóta ismert egységek voltak, de a nagyobb struktúrákat sokáig nem ismerhettük fel. Bár az éjszakai égboltra felnézve rengeteg kis világító pontot látunk, szabad szemmel, illetve kezdetleges
+távcsövekkel lehetetlen volt megkülönböztetni, hogy mik ezen pontok forrásai, így sokáig ezeket mind csillagoknak vélték.
+
+A 20. század elején aztán elég fejlett lett a technológia, hogy észrevegyék, hogy az égen nem minden fényforrás pontszerű. Akadnak kiterjedt objektumok is, amik nagy fénnyel "ízzanak".
+Ezek értelemszerűen nem lehetnek a naphoz hasonló csillagok, hisz azok a gravitáció miatt csak gömbszimmetrikusak lehetnek, ezért két népszerű elmélet született meg:
+\begin{enumerate}
+    \item Ezek az objektumok relatíve közeli gázfelhők, amiket a csillagok fénye felhevített és ezért maguktól is sugároznak.
+    \item Ezek az objektumok rendkívül távoli csillaghalmazok, amik annyira messze vannak, hogy a fényük pontszerűnek tűnik.
+\end{enumerate}
+
+Ezt végül Edwin Hubble döntötte el, amikor 1924-ben a Hubble-űrtávcső elődjével, a Mount Wilson obszervatóriumban található Hooker-távcsővel megfigyelte az Androméda-ködöt (M31),
+és felfedezte benne a Cepheid változócsillagokat. Ezek a csillagok egy ismert fénygörbével rendelkeznek, amiből meg lehet határozni a távolságukat. Hubble kiszámolta, hogy az Androméda-köd távolsága
+több száz Kpc, ami azt jelentette, hogy ez az objektum nem lehet a Tejútrendszer része, hanem egy különálló csillagrendszer. Ezzel bebizonyította, hogy az univerzum tele van más csillagrendszerekkel is,
+amiket ma galaxisoknak nevezünk.
+
+\subsubsection{Galaxisok tulajdonságai}
+A galaxisok felfedezése után hamar elkezdték kategorizálni őket különböző tulajdonságok mentén. A galaxisok meglepően nagy diverzitást mutatnak, rengeteg apróbb és nagyobb tulajdonságban különbözhetnek.
+Emiatt a kialakulási mechanizmusuk is rendkívűl sokrétű. Ráadásul a galaxisok feltárása a mai napig egy aktív kutatási terület, így megesik, hogy újabb, eddig sosem látott galaxis típusokat találnak.
+Ennek ellenére 8 darab fő dulajdonságot szokás általában kiválasztani ami alapján kategorizálják a galaxisokat.
+\newline
+\newline
+\textbf{a. Morfológia} A galaxisok egyik legszembetűnőbb tulajdonsága a morfológiájuk. Jelenleg két fő típust különböztetünk meg: elliptikus és spirális galaxisokat. Az elliptikus galaxisok
+enyhén lapított elliptikus rendszerek, melyekben a csillagok nagyrészt véletlenszerű pályákon keringenek. A spirális galaxisok ezzel szemben egy lapított korongból és egy központi dudorból állnak, ahol a csillagok
+rendezettebb pályákon keringenek, és a korongban spirális karok is megfigyelhetők. De a legtöbb galaxis nem illik be szépen ebbe a két kategóriába, hanem valahol a kettő között helyezkedik el.
+A galaxisok azon részét ahol a spirális rész dominál korongnak hívjuk, azt a részt pedig ahol az elliptikus rész dominál dudornak.
+Ezeket a galxisokat általában a Hubble-féle osztályozási rendszer szerint kategorizálják, ami egy két dimenziós mátrixban helyezi el a galaxisokat a morfológiai tulajdonságaik alapján.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/18-tetel/hubble_sequence.png}
+    \caption{
+        A Hubble-féle osztályozási rendszer a galaxisok morfológiája alapján. Bár léteznek ennél modernebb osztályozási rendszerek is, a mai napig széles körben használják ezt a rendszert.
+    }
+    \label{fig:hubble_tuning_fork}
+\end{figure}
+
+Vannak olyan galaxisok is, melyek nem szerepelnek a Hubble-féle osztályozási rendszerben, ezek az úgynevezett Törpe-galaxisok, amik lényegesen nagyobb gáztartalommal rendelkeznek és sokkal kisebbek is, mint a normál galaxisok.
+Ezek a törpegalaxisok gyakran keringenek nagyobb galaxisok körül, és azok gravitációs hatása miatt torzulnak is, illetve nem ritka hogy egymással egybeolvadva nagyobb galaxisokat alkotnak. Emellett létezik egy fényesebb galaxis 
+osztály is amit "különleges" vagy pekuliáris galaxisoknak hívunk, amik szintén nem illeszkednek a tradicionális morfológiába. Ezek általában olyan galaxisok amik valamilyen kölcsönhatásban állnak más galaxisokkal, például összeolvadnak vagy közel kerülnek egymáshoz.
+
+\textbf{b. luminozitás és Csillag tömeg.} A különböző galaxisok nagyon eltérő fényerősséggel rendelkeznek. A Fényerősséget általában a nap fényerősségéhez viszonyítva adják meg és Watt-ban mérik (jele: $L_\odot = 3.828 \times 10^{26} W$).
+A legfényesebb galaxisok luminozitása elérheti a $10^{12} L_\odot$-t is, míg a halvány galaxisok között van olyan is amelyik $1000L_\odot$ alatt van. 
+
+Nem meglepő módon a luminozitás valamilyen módon arányos a galaxisban lévő csillagok számával és tömegével, de a csillagközi por és gáz mennyisége, illetve a csillagok típusai befolyásolhatják ezt.
+Általában a fiatalabb galaxisok fényesebbek tömegarányosan mint az idősebbek mivel több nagy tömegű, fényes csillag van bennük.
+
+Fontos metrika az úgynevezett \textit{Luminozitás valószínűségi eloszlás függvény}, vagy Luminozitás függvény (LF), ami megadja hogy egy adott térfogatban hány galaxis található adott luminozitás tartományban.
+A megfigyelések azt mutatják, hogy bár számszerűen a halványabb galaxisok dominálnak, de a a teljes luminozitáshoz nem a legfényesebb vagy halványabb galaxisok adják hozzá a legtöbb járulélot, hanem egy köztes luminozitású galaxis csoport.
+Ez az eloszlás jelzi, hogy van valamiféle karakterisztikus luminozitás ami körül a galaxisok többsége található. További érdekesség, hogy ettől a karakterisztikus skálától felfelé gyakoribb az elliptikus galaxis forma, míg lefelé a halványabb irányba
+gyakoribb a spirális galaxis forma. Ez a karakterisztikus luminozitás jelenleg egy megoldatlan probléma a galaxis kialakulás elméletében.
+
+\textbf{c. Méret és felületi fényesség.} A galaxisok esetében a méret definiálása nem egy triviális probléma, ugyanis nincs jól definiált határuk. Emiatt több különböző definíció is kialakult a méret meghatározására,
+például a sugara annak a zárt felületnek, ami a teljes luminozitás egy részét (pl. felét) tartalmazza, vagy a sugara annak a felületnek ahol a felületi fényesség egy adott küszöb alá csökken. 
+
+Arra számítanánk, hogy a galaxisok mérete arányos a fényességükkel, de ez nincs így. Egy fix luminozitás mellett is nagyon eltérő méretű galaxisokat találhatunk. Máshogy fogalmazva, az egységnyi felületre vett
+luminozitás, amit felületi fényességnek neveznek, nagyon eltérő lehet hasonló méretű galaxisok között is.
+
+Ennek ellenére a galaxisok mérete nagyon fontos adat, mert a korong galaxisoknál meghatározza az adott galaxis perdületét, az elliptikus galaxisoknál pedig azt lehet megmondani, hogy 
+a kialakulása során mekkora volt a disszipáció mértéke.
+
+\textbf{d. Gáz/tömeg arány.} A galaxisok egy másik hasznos metrikája a "hideg gáz" és a csillagok tömegének aránya. Ezt általában úgy definiálják, hogy:
+\begin{equation}
+    f_\text{gáz} = \frac{M_\text{gáz}}{M_\text{csillag} + M_\text{gáz}}
+\end{equation}
+Ez az arány kvázi azt jelzi, hogy mennyi gáz alakult már át csillaggá a galaxisban. Az elliptikus galaxisokban a kialakulás során a gáz nagy része rögtön csillagokká alakul, ezért ott ez az arány elhanyagolhatóan kicsi,
+de spirális galaxisoknál ez az érték ellentétesen arányos a felületi fényességgel. Vannak galaxisok, ahol az arány akár a $90\%$-ot is elérheti, míg a Tejútban ez kb. $f_\text{gáz} \sim 0.1$.
+
+\textbf{e. Szín.} A galaxisok színe is eltérhet egymástól. Általában úgy szokták jellemezni a galaxisok színét, hogy két különböző hullámhosszon mérik a luminozitásukat (például kék és vörös fényben),
+és ezek arányából számolják ki a színindexet. Ha egy galaxis színe a vörös hullámhosszon dominál akkor azt mondjuk, hogy "vörös galaxis", ha pedig a kék hullámhosszon dominál akkor "kék galaxis"-ról beszélünk.
+A galaxisok színe fontos informciót tartalmaz a bennük lévő csillagok típusáról és koráról. A kék galaxisokban több fiatal, nagy tömegű csillag található, míg a vörös galaxisokban inkább idősebb, fémesebb, kisebb tömegű csillagok dominálnak.
+Tehát a galaxis színéből következtethetünk a korára és a csillagképződési aktivitására is. Komoly probléma viszont hogy a galaxisokban lévő por, vagy a galaxis és a megfigyelő között lévő por is eltolhatja a vörös irányba a galaxis színét,
+ezért ezeket a hatásokat is figyelembe kell venni a szín meghatározásakor.
+
+\textbf{f. Környezet.} Ahogy a csillagok esetében is, így a galaxisok se csak véletlenszerűen vannak szészórva az univerzumban, hanem nagyobb struktúrák részei. Ezek a nagyobb struktúrák maguk is 
+a gravitáció által állnak össze, és azért fontos tudni, hogy egy galaxis milyen környezetben helyezkedik el, mert ez befolyásolja a fejlődését is.
+
+\textbf{g. Nukleáris aktivitás.} Sok galaxis központjában található egy szupermasszív fekete lyuk, ami aktívan nyeli el a körülötte lévő anyagot. Ez az aktív mag (AGN) jelentős mennyiségű energiát képes kibocsátani,
+ami befolyásolhatja a galaxis fejlődését is. Az AGN-ek különböző típusai léteznek, például kvazárok, Seyfert galaxisok és rádiógalaxisok, amik különböző hullámhosszokon sugároznak.
+
+\textbf{h. Vöröseltolódás és távolság.} A galaxisok vöröseltolódása fontos információt szolgáltat az univerzum tágulásáról és a galaxisok távolságáról. A Hubble-törvény szerint a galaxisok távolodási sebessége
+arányos a távolságukkal, így a vöröseltolódás alapján meghatározható a galaxis távolsága is. Ez segít megérteni az univerzum szerkezetét és fejlődését. Mivel a távolabbi galaxisokból kijövő fény hosszabb utat tett meg,
+ezért a távoli galaxisokat vizsgálva az univerzum korábbi állapotára tekintünk vissza, aminek köszönhetően a galaxisok fejlődését is tanulmányozhatjuk.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/18-tetel/galaxy_flowchart.png}
+    \caption{
+        A galaxisok kialakulásának "flowchart"-ja. Ez a diagram bemutatja, hogy a különböző tulajdonságok hogyan kapcsolódnak egymáshoz és hogyan befolyásolják a galaxis fejlődését.
+    }
+    \label{fig:galaxy_properties}
+\end{figure}
+
+\subsubsection{Galaxisok klasszifikációja}
+Most, hogy megismertük a galaxisok fő tulajdonságait, nézzük meg, hogyan lehet ezeket a tulajdonságokat felhasználni a galaxisok osztályozására. A galaxisok osztályozására több különböző rendszert is kidolgoztak,
+de a legismertebb és legszélesebb körben használt a Hubble-féle osztályozási rendszer, amit Edwin Hubble dolgott ki az 1920-as években. Ez a rendszer a galaxisokat morfológiai tulajdonságaik alapján osztályozza,
+és egy "villa" alakú diagramon helyezi el őket. A Hubble-féle osztályozási rendszerben a galaxisokat három fő kategóriába sorolják: elliptikus galaxisok (E), spirális galaxisok (S) és lentikuláris galaxisok (S0).
+Az elliptikus galaxisokat az alakjuk alapján további alosztályokra bontják, az E0-tól E7-ig, ahol az E0 a legkerekebb, az E7 pedig a leglapítottabb. A spirális galaxisokat pedig a karok száma és a dudor mérete alapján osztályozzák,
+például Sa, Sb, Sc, ahol az Sa galaxisoknak nagy dudoruk és szorosan tekeredő karjaik vannak, SB esetén a karokon jól látható sávok vannak, míg az Sc galaxisoknak kisebb dudoruk és lazábban tekeredő karjaik vannak. A lentikuláris galaxisok pedig olyan átmeneti típusok,
+amiknek van dudoruk és korongjuk is, de nincsenek spirális karjaik. Emellett vannak még különleges vagy irreguláris galaxisok is, amelyekre ezek a kategóriák nem alkalmazhatók. Ezeket Irr I és Irr II jelöléssel látják el. Hubble még nem jeleölte ezeket a saját rendszerén,
+de manapság gyakran a spirális galaxisok folytatásaként kezelik őket.
+Összesítve tehát:
+\begin{enumerate}
+    \item Elliptikus galaxisok: E0 - E7
+    \item Spirális galaxisok: Sa, Sb, Sc
+    \item Lentikuláris galaxisok: S0
+    \item Irreguláris galaxisok: Irr I, Irr II
+\end{enumerate}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{imgs/18-tetel/galaxy_types.png}
+    \caption{
+        Néhány példa a különböző galaxis osztályokra. Jobbról-balra és fentről-lefelé haladva: NGC 4278 (E1), NGC 3377 (E6), NGC 5866 (S0), NGC 175 (SBa), NGC 6814 (Sb), 
+        NGC 4565 (Sb, szélével), NGCX 5364 (Sc), Ho II (Irr I), NGC 520 (Irr II).
+    }
+\end{figure}
+
+\subsubsection{Galaxisok kialakulása \cite{galaxy_formation}}
+A galaxisok kialakulására először 1962-ben sikerült egy elfogadható modellt kialakítani, amit Eggen, Lynden-Bell és Sandage dolgozott ki. Ez a modell azt feltételezi, hogy a galaxisokat hatalmas gázfelhők ütközése alakítja ki,
+amikor is a gázfelhők összeolvadnak és elkezdenek a saját gravitációjuk hatására összehúzódni. Ekkor az elmélet szerint ha az összeolvadás elég gyors, akkor a gázok anyagának nagyrésze szinte azonnal csillaggá alakul miközben bezuhan
+a kilalakuló galaxisba, és a mozgási energiájuk azonnal a random keringési páyává konvertálódik, amivel aztán a kialakult galaxisban is mozogni fognak. Ezzel szemben a korong galaxisok lassú ötközés során jöttek létre,
+amikor a gravitációs energiát van idő disszipálni hullámok és radioktív hűlés formájában, és a felhő addig fog összeúzódni, ameddig a perdülete nem lesz elég erős, hogy fenntartsa a struktúrát. 
+Ekkor a kialakuló csollagok már mind hasonló perdülettel rendelkeznek, emiatt fognak azonos irányba, nagyjából egy síkban keringeni a galaxis korongjában.
+
+Ez az elmélet nagyon jól megmagyarázta a főbb galaxis tipusok kialakulását, de hamar kiderült hogy nem lehet teljes. Larsen, aki számítógépes szimulációkkal vizsgálta az ütközéses elméletet, észrevette, hogy
+ez a magyarázat nem képes "előállítani" olyan, már megfigyelt galaxisokat, melyeknek nagyon magas volt a felületi fényessége. Ezek nagyon kompakt elliptikus galaxisok, melyeket ezzel az elmélettel nem lehetett létrehozni,
+mert ahhoz, hogy a megfelelő kompaktságot el tudják érni, olyan lassan kellett volna forogniuk, hogy azzal már elkezdett volna korongá vállni a galaxis. Tehát azok a nagyon fényes elliptikus galaxisok melyek szinte semmilyen
+forgást nem mutattak, komoly problémát jelentettek az elmélet számára.
+
+1972-ben Toomre és Toomre sikeresen szimulálta, hogy a különleges galaxisokban látható hosszú "farkak" két normális spirális galaxis ütközése során történő kinyúlásából jöhettek létre.
+Az ilyen galaxisok előfordulási gyakoriságából Toomre és Toomre arra következtettek, hogy ezek a kompakt elliptikus galaxisok talán ilyen ütközések maradnányai lehetnek. Később szimulációkkal is sikerült
+alátámasztani, hogy ezek az ütközések képesek olyan galaxisokat létrehozni, amik megfelelnek a megfigyeléseknek. Ez az elmélet egyik extrém változata, hogy minden galaxis korongként indul,
+de az ütközések hatására sok galaxis végül más formában köt ki. Ezt alátámasztotta az is, hogy akkoriban az összes ismert kialakulófélben lévő galaxis korong alakú volt, míg az idősebb univerzumban
+több elliptikus galaxis is előfordult.
+
+De ez az elmélet se úszta meg a problémákat. 1980-ban ugyanis Ostriker rámutatott, hogy egyes hatalmas elliptikus galaxisokban a sebességdiszperzió $\sim 300 \frac{km}{s}$ is lehet, ez pedig nem alakulhat ki
+spirális galaxisok ütközéseként, amikor ezeknek a sebességdiszperziója sose éri el a $\sim 300 \frac{km}{s}$-t. Tehát az ütközéses elmélet se tudta megmagyarázni az összes megfigyelt galaxis tulajdonságot.
+
+A problémát végül a \textbf{Sötét anyag} elmélete oldotta meg. 1978-ban White és Rees publikáltak egy elméletet egy kétlépéses galaxis kialakulásról. Először a galaxis körül kialakul egy hatalmas sötét anyag halo,
+amiben aztán végbemegy a gáz összehúzódása és csillagképződés. Ebben az elméletben a sötét anyag halo gravitációs potenciálja segít a gáz összehúzódásában, és lehetővé teszi, hogy olyan galaxisok is kialakuljanak,
+amiket korábban nem tudtunk megmagyarázni. Ezután a sötétanyag ottmarad a galaxis körül, megközelítőleg egy gömbszimmetrikus eloszlásban, és emiatt a galaxis forgási sebesége nem változik a távolsággal,
+ami megfelel a megfigyeléseknek. Ezt az elméletet ha ötvözzük a különböző visszacsatolási mechanizmusokkal (mint pl. hogy kis galaxisokban a szupernovák kisöpörhetik az anyagot ami miatt kevesebb csillag keletkezik,
+ez okozza a halvány törpe galaxisokat), akkor egy nagyon jó modellt kapunk a galaxisok kialakulására és fejlődésére.
+
+\subsection{A HR diagram és a csillagfejlődés szemléletes képe, csillagok energiatermelése}
+Az univerzum tele van csillagokkal, amik különböző méretűek, tömegűek és életkorúak lehetnek. Ezek adják nagyrészt a galaxisok és egyéb nagyobb struktúrák fényét és hőjét, emiatt az univerzum szerkezetének
+és fejlődésének megértéséhez elengedhetetlen a csillagok tulajdonságainak részletes ismerete. A csillagot tulajdonságait általában úgy adjuk meg, hogy az általunk legismertebb csillag, a Nap tulajdonságaival hasonlítjuk össze.
+A tömegüket naptömegben szokás megadni ($1 M_\odot = 2 \times 10^{30} kg$), a fényességüket a nap fényerősségével ($1 L_\odot = 4 \times 10^{26} W$) és a sugarukat a nap sugarának arányában ($1 R_\odot = 7 \times 10^8 m$).
+Fontos markerje a csillagok korának még a \textit{fémesség} is, ami a klasszikus periodikus rendszerrel eltérően minden olyan elemet magába foglal ami nehezebb a héliumnál (tehát relatíve ritka az univerzumban). 
+A fémességet a nap tömegének és a napban található fémek tömegének arányában szokás megadni:
+\begin{equation}
+    Z = \frac{M_\text{fém}}{M_\text{összes}}
+\end{equation}
+A nap esetében ez nagyjából $Z_\odot \approx 0.02$, de léteznek olyan csillagok is amikben ez az érték sokkal kisebb (pl. Populáció III csillagok), illetve olyanok is amikben sokkal nagyobb (pl. Populáció I csillagok).
+Létezik még a \textit{relatív gyakoriság} is, ami azt adja meg, hogy egy bizonyos elem milyen arányban van jelen a csillagban a naphoz képest:
+\begin{equation}
+    [A/B] = log \left( \frac{N_A}{N_B} \right)_\text{csillag} - log \left( \frac{N_A}{N_B} \right)_\odot = log \left( \frac{N_A / N_B}{(N_A / N_B)_\odot} \right)
+\end{equation}
+itt $\left(\frac{N_A}{N_B}\right)_\text{csillag}$ a csillagban lévő $A$ és $B$ elemek számának aránya, míg $\left(\frac{N_A}{N_B}\right)_\odot$ a napban lévő $A$ és $B$ elemek számának aránya.
+
+Mivel a csillagok nagy része még a legjobb távcsöveinkel nézve is pontszerű, ezért közvetlenül nem igazán tudjuk vizsgálni a felületükön lévő fizikai tulajdonságokat. Amit direkt módon vizsgálni tudunk
+az a fényesség, a szín és a spektrum. Emiatt a csillagok kategorizációja is ezeken az értékeken alapszik. Ezt a kategorizációt nevezzük \textbf{Morgan-Keenan} (MK) osztályozásnak, ami a csillagokat 
+ezen értékek alapján sorolja osztályokba és alosztályokba. A főbb osztályok külön vannak a luminozitásra és a spektrumra. A spektrum alapján a csillagokat 7 fő osztályba sorolják:
+\begin{center}
+\begin{tabular}{cclc}
+\hline
+\hline
+Osztály & Hőmérséklet & Spektrum karakterisztika  \\
+\hline
+O & 28.000 K - 50.000 K & Forró napok He II abszorbció, erős UV vonal  \\
+B & 10.000 K - 28.000 K & He I abszorbció, gyenge H vonalak  \\
+A & 7.500 K - 10.000 K & Erős H vonalak A0-nál, kevésbé a többinél, Ca II csökken \\
+F & 6.000 K - 7.500 K & H vonalak csökkennek, Ca II nő, ionizált fémvonalak  \\
+G & 5.200 K - 6.000 K & H vonalak gyengék, Ca II erős, fémvonalak nőnek  \\
+K & 3.700 K - 5.200 K & erős fémes vonalak, CH és CN nő, gyenge kék spektrum  \\
+M & 2.400 K - 3.700 K & Nagyon vörös, TiO vonalak erősek  \\
+\hline
+\hline
+\end{tabular}
+\end{center}
+A luminozitás alapján egy kicsit egyszerűbb a helyzet, itt csak 5 fő osztályt különböztetünk meg:
+\begin{center}
+\begin{tabular}{clc}
+\hline
+\hline
+I & Szuperóriás \\
+II & Fényes óriás \\
+III & Óriás \\
+IV & Óriás alatti \\
+V & Törpe (Fősorozati) \\
+\hline
+\hline
+\end{tabular}
+\end{center}
+Ezekben a beosztásokban az a fontos, hogy bár teljesen megfigyelhető tulajdonságokon alapulnak, de nagyon szorosan kapcsolódnak a csillagok fizikai tulajdonságaihoz is. A luminozitás a felszini gravitációkhoz,
+a spektrum pedig a felszini hőmérséklethez kapcsolódik. Emiatt a csillagok fizikai tulajdonságait is meg tudjuk határozni ezek alapján. Például a csillag sugarát egy egyszerű Stefan-Boltzmann törvénnyel ki tudjuk számolni:
+\begin{equation}
+    L = 4 \pi R^2 \sigma T_\text{eff}^4 \implies R = \sqrt{\frac{L}{4 \pi \sigma T_\text{eff}^4}}
+\end{equation}
+ahol $L$ a csillag luminozitása, $R$ a sugara, $T_\text{eff}$ a felszini effektív hőmérséklete és $\sigma$ a Stefan-Boltzmann állandó. A csillag tömegét is meg tudjuk becsülni a luminozitás és a felszini hőmérséklet alapján,
+bár ez egy kicsit bonyolultabb, mert a tömeg-luminozitás kapcsolat csak a fősorozati csillagokra igaz pontosan. Ezt a kapcsolatot általában egy hatványfüggvénnyel szokták megadni:
+\begin{equation}
+    L \propto M^{3.5}
+\end{equation}
+ahol $M$ a csillag tömege. Ebből a kapcsolatokból látszik, hogy a MK osztályozás segítségével a csillagok fizikai tulajdonságait is meg tudjuk határozni.
+
+Miután a csillagászok sok-sok ezer csillagot katalogizáltak, el tudtak kezdeni statisztikai elemzéseket végezni rajtuk, és megfigyelni hogy milyen az eloszlásuk az általunk megfigyelhető csillagoknak ezekre az értékekre.
+Az egyik ilyen elemzés az úgynevezett \textbf{Hertzsprung-Russell diagram} (H-R diagram), amit Hertzsprung és Russell dolgozott ki külön-külön az 1910-es években. Ez a diagram a csillagok luminozitását ábrázolja a felszini hőmérsékletük függvényében.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{imgs/18-tetel/hr_diagram.png}
+    \caption{
+        Egy tipikus Hertzsprung-Russell diagram a Hipparcos és a Gliese katalógusokból összeszedett minted 22000 csillagról. Az MK spektrum és luminozitás osztályok is fel vannak tüntetve, mindkettő napegységekben.
+    }
+    \label{fig:hr_diagram}
+\end{figure}
+A H-R diagramra ránézve azonnal látszik, hogy a csillagok egyáltalán nem homogénen oszlanak el a térképen, hanem megjelenik egy jól definiált sáv, amit \textbf{fősorozatnak} (MS - main sequence) nevezünk.
+Ebben a főágban vannak az V-ös osztályú MK luminozitású csillagok (törpecsillagok), amelyeknek a helyzete főképp a tömegük által van meghatározva (bal felül a fényes, nagy tömegű, forró csillagok,
+jobb alul a halvány, kis tömegű, hideg csillagok). A fővonal fölött van egy "felhő" amit óriások alkotnak és jóval fényesebbek a fővonalbeli társaiknál, de ritkábbak. Ezeknek a luminozitás az I-IV osztályokban van.
+A diagram alján találhatóak a Fehér törpék, olyan kis csillagok amik már nem képesek fúzióra, ezért nagyon kis méretűek és halványak, de a hőmérsékletük még mindig elég magas lehet.
+
+A H-R diagram nem csak a csillagok jelenlegi eloszlását szemlélteti kiválóan, de a csillagok időbeli fejlődését is végig lehet követni rajta. Minden csillagnak van egy útja, amit bejár a H-R diagramon,
+amit \textbf{evolúciós pályának} nevezünk. A pálya konkrét alakját a csillag kezdeti tömege határozza meg főként. A csillagok a fősorozaton töltik el az életük nagy részét, ahol a hidrogén fúziója zajlik a magjukban.
+Amikor a hidrogén elfogy, a csillag elkezd kitágulni és lehűlni, így az óriás ágba lép át. Itt a csillag külső rétegei kitágulnak, míg a magban a hélium fúziója indul el. Ezután a csillag további fúziós folyamatokon megy keresztül,
+attól függően, hogy mekkora a tömege. A nagyobb tömegű csillagok akár vasig is eljuthatnak a fúziós folyamatokban, míg a kisebb tömegű csillagok csak héliumig jutnak el. Végül a csillagok különböző végállapotokba kerülnek,
+például fehér törpévé, neutroncsillaggá vagy fekete lyukká alakulhatnak, attól függően, hogy mekkora volt a tömegük kezdetben.
+
+Mivel a csillagok evolúciós pályáját nagyrészt a tömeg határozza meg, ezért nagyon fontos megérteni a csillagok tömegének eloszlását is. Ezt az eloszlást \textbf{kezdeti tömegeloszlás függvénynek} (IMF - Initial Mass Function) nevezzük.
+Az IMF megadja, hogy egy adott tömegű csillagból mennyi keletkezik egy adott térfogatban. Az MS-ben töltött idő nagyjából a tömeg $M^{-3}$ hatványával arányos, vagyis a nagyobb tömegű csillagok sokkal rövidebb ideig maradnak a fősorozaton,
+mint a kisebb tömegűek. Emiatt a csillagok populációja idővel változik, mivel a nagyobb tömegű csillagok hamarabb elhagyják a fősorozatot és különböző végállapotokba kerülnek.
+
+\subsubsection{Csillagfejlődés, Kompakt objektumok: fehér törpék, neutroncsillagok, fekete lyukak}
+A csillagok a galaxisokhoz hasonlóan gázfelhőként kezdik életüket, amikor egy kis perturbáció hatására a gázfelhő (a csillag esetében ennek hidrogénfelhőnek kell lennie) elkezd összehúzódni a saját gravitációja hatására.
+Ahogy a felhő összehúzódik és nő a nyomás, úgy fogy egyre jobban melegedni is. Ezt nevezzük \textbf{protocsillag} fázisnak. Ekkor alakul ki a csillag körül egy forgó korong is, ami a későbbi bolygórendszer alapját képezheti.
+
+Amikor a protocsillag központi hőmérséklete eléri a kb. $10^7 K$-t, akkor beindul a hidrogén fúziója a magban, és a csillag belép a fősorozatba. Itt a csillag stabilizálódik, mivel a fúzióból származó sugárnyomás kiegyensúlyozza
+a gravitációs összehúzódást. A csillag a fősorozaton tölti el az életének nagy részét, ahol a hidrogén fúziója zajlik a magban. Ezután a csillag tömege határozza meg a további fejlődését.
+
+A kisebb csillagok (melyek a fősorozatra kerülve nem volt nagyobb tömegűek mint kb. $ 4 M_\odot$) amikor a hidrogén elfogy a magjukban, akkor akkor a sugárnyomásm enyhül és a gravitáció még összébbhúzza a csillagot.
+Ekkor viszont még nagyobb lesz a hőmérséklet és a nyomás, ami beindítja a He fúzióját is. Ekkor a sugárnyomás hírtelen megnő, és a csillag vörös óriássá tágul. Miután a He tartalékokat is elégette a csillag, újra összeomlik,
+de mivel a tömege nem elég nagy, ezért nem tud újabb fúziós folyamatokat beindítani. Végül a külső rétegeit ledobja egy planetáris köd formájában, és a magja \textbf{fehér törpévé} válik. A csillag azért nem tud teljesen magába roskadni,
+mert az alapállapotba kerülő elektronok degenerációs nyomása megakadályozza ezt. Ezeknél a csillagoknál a mag főként szén és oxigén lesz. Ha a fehér törpe teljesen kihűl, akkor fekete törpévé válik, de ennek az időskálája sokkal hosszabb mint az univerzum kora,
+így ilyen objektumokat még nem figyeltünk meg.
+
+A nagyobb csillagoknál (a fősorozatra kerülve kb. $ 8 M_\odot$) a hidrogén elfogyása után hasonlóan vörös szuperóriássá tágulnak, viszont a nagyobb tömeg miatt akár vasig is eljuthatnak a fúziós folyamatokban. A vasnál nehezebb elemek fúziója már nem energetikailag
+kedvező, ezért amikor a magban vas keletkezik, akkor a fúzió leáll, és a mag hirtelen összeomlik. Ez olyan erős lökéshullámot indít be, hogy a héj "lerobban" a csillagról egy \textbf{szupernóva} robbanás következik be, ami során a csillag külső rétegei hatalmas energiával kilökődnek az űrbe.
+Ez a szupernóva azért rendkivül fontos, mert a vasnál nehezebb elemek döntő többsége ezekben a robbanásokban jön létre. Szupernovák nélkül életről se beszélhetnénk. Ekkor két lehetőség van,
+a kicsit kisebb tömegű csillagoknál az összezuhanáskor az elektronok belepréselődnek a protonokba, ezzel neutronokat létrehozva. Ezek nyomása már ellen tud tartani a gravitációnak, és egy \textbf{neutroncsillag} jön létre. 
+A neutroncsillag nagyon kicsi lesz, de rendkívül sűrű, és erős mágneses térrel rendelkezik.
+
+A legnagyobb csillagok összezuhanását még a neutron se tudja megfogni, és a csillag olyan mértékben magábaroskad, hogy egy \textbf{fekete lyuk} jön létre. A fekete lyuk olyan objektum, aminek a gravitációs tere annyira erős, hogy még a fény sem tud elmenekülni előle. A fekete lyukak körül kialakulhat egy akkréciós korong is,
+ami a fekete lyukba zuhanó anyagból áll, és hatalmas energiát sugározhat ki.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/18-tetel/star_evolution.jpg}
+    \caption{
+        Különböző tömegű csillagok lehetséges evolúciója.
+    }
+    \label{fig:star_evolution}
+\end{figure}
+
+\subsubsection{A csillagok energiatermelése}
+A csillagok energiatermelése a magfúzióból származik, ami során könnyebb atommagok egyesülnek nehezebb atommagokká, miközben hatalmas mennyiségű energia szabadul fel. A csillagokban a legfontosabb fúziós folyamatok a hidrogén fúziója,
+ami a fősorozaton zajlik, és a hélium fúziója, ami a vörös óriás és szuperóriás fázisokban történik. A hidrogén fúziója során négy hidrogén atommag egyesül egy hélium atommagba, miközben energia szabadul fel a tömegkülönbségből.
+Ez a folyamat két fő mechanizmuson keresztül történhet: a \textbf{proton-proton láncreakció} (p-p lánc) és a \textbf{CNO ciklus} (C - szén, N - nitrogén, O - oxigén). A proton-proton láncreakció a kisebb tömegű csillagokban dominál (kb. nap méretű csillagok), míg a CNO ciklus a nagyobb tömegű csillagokban játszik fő szerepet, de ketten együtt 
+a csillagok energiatermelésének majd 90\%-át teszik ki. Mindkét folyamat során a felszabaduló energia sugárzás és részecskék formájában távozik a csillagból, ami fenntartja a csillag hőmérsékletét és fényességét.
+
+A p-p lánc az egyszerűbb folyamat, mivel elegendő Négy darab Hidrogén atom hozzá (az elemi hidrogén csak egy protonból áll), hogy egy Hélium atomot hozzon létre. A folyamat során először két proton egyesül,
+ami egy neutrínó és egy pozitron kibocsátása mellett deutériummá\footnote{
+    A Deutérium a Hidrogén nehezebb változata, amiben a mag egy protont és egy neutront tartalmaz
+} alakul. Ezután a Deutérium újból ütközik egy másik Hidrogénnel, ami most egy gamma fotont bocsát ki, és egy Hélium-3 atommagot hoz létre. Végül két Hélium-3 atommag egyesül, ami két Hidrogén atommagot és egy Hélium-4 atommagot eredményez.
+A teljes folyamat során tehát négy Hidrogén atommagból egy Hélium-4 atommag keletkezik, miközben energia szabadul fel gamma fotonok és neutrínók formájában. A reakciónak vannak más ágai is, például a He-3 és He-4 atomok is egyesülhetnek, Beryllium-7-et létrehozva,
+ami további reakciókban részt vehet, de ezek kevésbé gyakoriak. A teljes folyamat során a négy proton tömegének csak mintegy 0.7\%-a alakul át energiává, ami összesen 26.73 MeV felszabaduló energiát jelent.
+A felszabaduló gamma sugárzás és a kinetikus energiája a többi terméknek melegen tartja a csillag belsejét, és rá nyomást kifejtve fenntartja a hidrosztatikus egyensúlyt. Ezalól kivétel a Neutrínó, ami 
+nem valószínű, hogy bármivel is interakcióba lép, ezért ez egy 2\% energiaveszteséget jelent a p-p I láncban (más láncoknál még magasabb a veszteség). 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{imgs/18-tetel/pp_chain.png}
+    \caption{
+        A proton-proton láncreakció folyamata.
+    }
+    \label{fig:pp_chain}
+\end{figure}
+
+A pp láncal ellentétben a CNO láncnak nincs szüksége közbenső lépésekre a Hélium előállításához, hanem egy ciklikus folyamatot használ, ahol a szén, nitrogén és oxigén atommagok katalizátorként működnek, majd a ciklus későbbi lépéseiben visszaalakulnak.
+Emiatt a ciklus beindításához szükség van Szén, Oxigén vagy Nitrogén atomokra is, amit csak nagyobb tömegű csillagokban találunk meg. A ciklus során először egy proton egyesül egy Szén-12 atommaggal, ami Nitrogén-13-at hoz létre,
+majd egy másik protonnal egyesülve Oxigén-14-et képez. Ezután egy újabb protonnal egyesülve Nitrogén-15-öt hoz létre, ami végül egy negyedik protonnal egyesülve visszaalakul Szén-12-vé, miközben egy Hélium-4 atommagot és egy gamma fotont bocsát ki.
+A teljes ciklus során tehát négy Hidrogén atommagból egy Hélium-4 atommag keletkezik, miközben energia szabadul fel gamma fotonok formájában. A CNO ciklus során a négy proton tömegének mintegy 0.7\%-a alakul át energiává, ami összesen 26.73 MeV felszabaduló energiát jelent,
+ami hasonló a p-p lánc eredményéhez. Természetesen itt is vannak különböző ágak és reakciók, de a végeredmény mindegyik esetben hasonló. A CNO ciklus egyik jellegzetessége, hogy a reakciók miatt a szén-12/sén-13 arány lecsökken egy csak pp láncal operáló csillaghoz képest,
+ezért a nitrogén-14 atom lesz a leggyakoribb elem a ciklusban résztvevő elemek közül, bármi is volt a kezdeti arányuk. A vörösóriásokban pedig pont ez az arány figyelhető meg, ami egy bizonyíték a CNO ciklus létrejöttére.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{imgs/18-tetel/cno_cycle.png}
+    \caption{
+        A CNO ciklus folyamata.
+    }
+\end{figure}
+
+Ezeken kívül is előfordulnak még fúziós folyamatok, mint a PEP lánc vagy a hármas-alpha folyamat (amiben három hélium atommag egyesül szénné), de ezek sokkal kisebb mértékben járulnak hozzá a csillagok energiatermeléséhez.
+Ezeknek inkább csak a magasabb rendszámú atomok előállításában van szerepük, nem pedig a csillagok fő energiatermelő folyamataiban.
+
+\subsection{Megfigyelés alapjai: luminozitás, magnitúdó, vöröseltolódás \cite{galaxy_formation}}
+A kozmológiai megfigyelések során szinte kizárólag az elektromágneses sugárzás segítségével tudjuk vizsgálni az univerzumot. Vagy a vizsgálni kívánt objektum által kibocsájtott sugárzást figyeljük meg,
+vagy a kibocsájtó és a megfigyelő közötti anyag által elnyelt sugárzást. Ezáltal mindenről tudunk adatot gyűjteni ami valamilyen módon képes az elektromágneses sugárzással interakcióba lépni (ezért okoz gondot
+a sötét anyag vizsgálata.). A sugárzás egy forrásból a Spektrális energia eloszlás (SED - Spectral Energy Distribution) függvényével jellemezhető, ami a teljes energiája a kibocsájtott fotonoknak $\lambda$ és
+$\lambda + d\lambda$ között. Emiatt a műszereinkel nem egy konkrét hullámhosszt akarunk megmérni, hanem lehetőleg minél szélesebb spektrumot, hogy minél több információt kapjunk a forrásról.
+A legtöbb objektum nagyon széles spektrumon sugároznak, viszont a földi légkör ennek a nagyrészét elnyeli. A tengerszintre eljutni csak az univerzális háttérsugárzás (CMB), a rádióhullámok, a látható fény és egy kis rész az infravörös tartományból képes.
+Emiatt ha ennél részletesebb képet akarunk kapni, akkor a földi légkör fölé kell vinnünk a műszereinket, például ballonokkal, repülőkkel vagy űrtávcsövekkel.
+
+\subsubsection{luminozitás, fluxus, felületi fényesség}
+Egy csillagászati objektum képe visszaadja a felületi fényesség eloszlását az objektumnak. A felületi fényesség úgy van definiálva, mint a megfigyelő műszer egy egységnyi területére jutó fotonok teljes energiája egy egységnyi idő alatt,
+úgy hogy a műszer egy adott térszög alatt látja az objektumot, egy adott irányból. Ha a felületi fényességet $I$-vel jelöljük, aminek a mértékegysége $[I] erg s^{-1} cm^{-2} sr^{-1}$\footnote{
+    az $erg$ egy energia mértékegység, ami $1 erg = 10^{-7} J$
+}, akkor ha az egész képre kiintegrálunk a felületi fényesség szerint,
+akkor megkapjuk a \textbf{fluxust} (vagy fényáramot), amit $f$-fel jelölünk és a mértékegysége $[f] = erg s^{-1} cm^{-2}$. Ha ezután a fluxust kiintegráljuk egy $r$ sugarú körre (ahol $r$ az objektum távolsága), aminek a közepén az objektum van, 
+akkor megkapjuk a \textbf{bolometrikus luminozitást}:
+\begin{equation}
+    L = 4 \pi r^2 f \qquad [L] = erg s^{-1}
+\end{equation}
+
+\subsubsection{Hullámsávok és sávszélesség}
+A fotometrikus vizsgálatok általában egy kiválasztott hullámhossz tartományban történnek, amit \textbf{hullámsávnak} nevezünk. Ebben a sávban kapott fluxus kapcsolódik a SED-hez az alábbi módon:
+\begin{equation}
+    f_X = \int f_\lambda F_X(\lambda) R(\lambda) T(\lambda) d\lambda
+\end{equation}
+ahol $f_X$ a $X$ hullámsávban mért fluxus, $f_\lambda$ a SED, $F_X(\lambda)$ a szűrő áteresztőképessége, $R(\lambda)$ a műszer érzékenysége és $T(\lambda)$ a légkör áteresztőképessége.
+A szűrő határozza meg melyik hullámsávban mérünk, a műszer pedig azt, hogy az adott hullámsávon belül milyen hatékonyan tudja detektálni a fotonokat. Ismert objektumok mérésével lehet kalibrálni a műszert,
+amivel a $T(\lambda)$ és $R(\lambda)$ függvényeket "ki tudjuk egyenlíteni", így csak a szűrő hatását kell figyelembe venni a méréseknél. A csillagászok sokfajta szűrőt használnak illetve a sávszélesség is sokféle lehet.
+Nagyobb sávszélességgel egy általánosabb képet kapunk az objektum spektrális eloszlásáról, egy szűkebb sávszélességgel pedig részletesebb információt kapunk egy adott hullámhossz tartományról.
+
+\subsubsection{Magnitúdó és szín}
+Történeti okokból a látható tartományban lévő fluxust a relatív magnitúdó szerint szokás megadni:
+\begin{equation}
+    m = -2.5 log \left( \frac{f}{f_0} \right)
+\end{equation}
+ahol $f$ a mért fluxus, $f_0$ pedig egy referencia fluxus, amihez viszonyítunk. A magnitúdó skála fordított, tehát a kisebb magnitúdó értékek fényesebb objektumokat jelentenek. A magnitúdó skála logaritmikus, így egy 5 magnitúdó különbség
+100-szoros fényesség különbséget jelent. A magnitúdó skálát eredetileg a csillagok fényességének osztályozására használták, de ma már minden csillagászati objektum fényességét ezen a skálán adják meg. A magnitúdó skála két fő típusa a \textbf{látszólagos magnitúdó},
+ami a megfigyelő által mért fényességet jelenti, és az \textbf{abszolút magnitúdó}, ami egy standard távolságra (10 parsec) vonatkoztatott fényességet jelenti. Az abszolút magnitúdó segítségével összehasonlíthatjuk
+különböző objektumok valódi fényességét, függetlenül attól, hogy milyen messze vannak tőlünk.
+
+A skála nullpontjának tradicionálisan a Vega csillagot használták, ami azt jelenti, hogy Vega magnitúdója 0 volt minden vizsgált hullámsávban. Ma már többféle referencia rendszer is létezik,
+az egyik leggyakoribb ezek közül az AB magnitúdók.
+
+Az abszolút magnitúdót gyakran a nap abszolút magnitúdójához viszonyítva adják meg, ami a látható tartományban körülbelül $M_\odot \approx 4.83$ magnitúdó:
+\begin{equation}
+    M - M_\odot = -2.5 log \left( \frac{L}{L_\odot} \right)
+\end{equation}
+ahol $M$ az objektum abszolút magnitúdója, $L$ az objektum luminozitása, és $L_\odot$ a nap luminozitása.
 
 
 \end{document}
