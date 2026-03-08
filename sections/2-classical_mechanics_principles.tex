@@ -29,75 +29,57 @@ A Hamilton és Lagrange formalizmusok tehát alternatív megközelítést kíná
 
 \subsection{Virtuális munka elve, Hamilton-elv. Legkisebb hatás elve.}
 \subsubsection{Virtuális munka elve}
-A virtuális munka elve azon a megfigyelésen alapszik, hogy ha egy testre erő hat, és emiatt $A$ pontból $B$ pontba mozog, akkor a két pont között úgy választja ki a pályát, hogy a pálya és a körülötte lévő "közeli" pályák között a a munka nulla legyen (elsőrendűen).
-Ez tehát a munka függvényének egy szélsőértékét kell megtalálni  (lehet inflexiós pont is) ami azt jelenti, hogy kis változásokra munka nem változik elsőrendűen. A munkát úgy definiáltuk, hogy:
-\begin{equation}
-    W = \int_{\bold{r}(t_0) = A}^{\bold{r}(t_1) = B} \bold{F} \cdot d\bold{r} = \int_{t_0}^{t_1} \bold{F} \cdot \frac{d\bold{r}}{dt} dt = \int_{t_0}^{t_1} \bold{F} \cdot \bold{v} dt
-\end{equation}
-ahol $\bold{F}$ a testre ható erő, és $d\bold{r}$ a test kis elmozdulása. Most tegyük fel, hogy a test egy kicsit eltér a valódi pályától, és egy közeli pályán mozog, amelyet $\bold{r}(t) + \delta \bold{r}(t)$-vel jelölünk.
-Ekkor a munka változása a két pálya között a következőképpen írható fel:
-\begin{equation}
-    \delta W = \int_{t_0}^{t_1} \bold{F} \cdot \frac{d}{dt} (\bold{r} + \delta \bold{r}) dt - \int_{t_0}^{t_1} \bold{F} \cdot \frac{d\bold{r}}{dt} dt
-\end{equation}
-\begin{equation}
-    \delta W = \int_{t_0}^{t_1} \bold{F} \cdot \frac{d (\delta \bold{r})}{dt} dt
-\end{equation}
-Ezt nevezik virtuális munkának, és ez a munka egy olyan kis virtuális elmozdulásra vonatkozik, amely nem valósul meg a tényleges rendszeben de elképzelhető.
+A Galilei által megalkotott, majd Newton által továbbfejlesztett Dinamikai elmélet gyönyörűen leírta a mechanikai időfejlődését adott kezdőfeltételek mellett, de akadt velük egy probléma. A Newton féle mozgásegyenletek másodrendű deriváltakat tartalmaznak, emiatt ezek másodrendű differenciálegyenleteket eredményeznek. Ez egy 3D-s térben 3 megoldandó másodrendű differenciálegyenletet eredményez egy test esetén, és $3n$ darabot $n$ darab test esetén. Ezeket az egyenletrendszereket sok esetben nagyon komplikált, vagy akár lehetetlen is lehet megoldani. Emiatt hamar kialakult az "igény" arra, hogy esetleg ezeket az egyenleteket valahogy felbontsuk egy elsőrendű differenciálegyenleteket tartalmazó rendszerre. Emiatt a 18-19. században sokan kezdtek el foglalkozni a mechanika alapelveinek alternatív megfogalmazásának lehetőségével. 
 
-Ha a rendszer statikus egyensúlyi állapotban van, akkor a virtuális munka elve szerint a virtuális munka nulla kell legyen minden lehetséges virtuális elmozdulásra:
+Az új elmélet alapját a Virtuális Munka elve jelentette, amit Bernoulli már a 17. század elején megalkotott. A munkát a Newtoni mechanika alapján a következőképp definiáltuk:
 \begin{equation}
-    \delta W = \sum_i \bold{F}_i \cdot \delta \bold{r}_i = 0
+    W = \int_0^{t} \mathbf{F} \cdot \mathbf{v} dt = \int_0^{t} \mathbf{F} \cdot \frac{d\mathbf{r}}{dt} dt = \int_0^{r'} \mathbf{F} d\mathbf{r} 
 \end{equation}
-ahol $\delta W$ a virtuális munka, $\bold{F}_i$ a rendszerre ható erők, és $\delta \bold{r}_i$ a testek virtuális elmozdulásai. 
-
-Szabad mozgás esetén a feltétel csupán annyi, hogy minden i-re igaz legyen, hogy $\bold{F}_i = 0$. Ha a testeknek viszont vannak kényszerei (pl. egy kötött pályán mozognak), akkor a kényszererők is hatnak a testekre,
-és ezeket is figyelembe kell venni a virtuális munka elvében. Tegyük fel, hogy a kényszereket megadhatjuk a következő alakban:
+Tehát a teljes munka egy pálya mentén azt mondja meg, hogy mennyi az össz-erő ami a testre hat a mozgás során. A virtuális munka elvének az a lényege, hogy ezzel a munka definícióval is fel lehet írni az egyensúly feltételét egy adott rendszerre, ami Newton első törvényével ekvivalens. Az alapötlet az, hogy amikor egy test egyensúlyban van, akkor a rá ható eredő erők összege nulla. Ezt viszont sok esetben kényelmetlen meghatározni, például kényszererők vagy sok testből álló rendszerek esetén. Ezért azt csináljuk inkább, hogy elképzelünk egy kis virtuális elmozdulást $\delta \mathbf{r}$, ami elméletileg lehetséges lenne (tehát a kényszerekfeltételeket teljesíti), de a valóságban nem megy végbe. A virtuális munka elve azt mondja ki, hogy erre a kis virtuális elmozdulásra a munka (ezt nevezzük virtuális munkának) nulla lesz. Ekkor a munkavégzés különbsége az eredeti állapot és a virtuális elmozdulás között:
 \begin{equation}
-    \phi_j(\bold{r}_1, \bold{r}_2, \ldots, \bold{r}_N) = 0, \quad j = 1, 2, \ldots, k
+    \delta W = \int_0^{t} \mathbf{F} \frac{d(\mathbf{r} + \mathbf{\delta r})}{dt} dt - \int_0^t \mathbf{F} \frac{d\mathbf{r}}{dt}
 \end{equation}
-Ahol $k$ a kényszerek száma. Ezeknek a kényszereknek kis elmozdulás esetén is teljesülniük kell, tehát a kényszerfeltételek teljesülnek a virtuális elmozdulásokra is:
+Vagyis:
 \begin{equation}
-    \phi_j (\bold{r}_1 + \delta \bold{r}_1, \bold{r}_2 + \delta \bold{r}_2, \ldots, \bold{r}_N + \delta \bold{r}_N) = 0
+    \delta W = \int_0^{t} \mathbf{F} \frac{d(\mathbf{\delta r})}{dt} dt
 \end{equation}
-Vezessünk be egy egyszerűbb jelölést a kényszerfeltételekhez:
+Tehát a virtuális munka a valódi erők és a virtuális elmozdulás szorzata. Ennek minden pont virtuális elmozdulására nullának kell lennie, a virtuális munka elve szerint:
 \begin{equation}
-    \{\bold{r}_1, \bold{r}_2, \ldots, \bold{r}_N\} = \bold{r}_i
+    \delta W = \sum_i \mathbf{F}_i \delta \mathbf{r}_i = 0
 \end{equation}
+Ez a virtuális munka általános alakja. Itt két esetet különböztethetünk meg: Szabad esetben triviális a megoldás, hiszen csak annak kell teljesülnie, hogy minden esetben nulla legyen az erő ($\mathbf{F}_i = 0$). Viszont ha vannak kényszererők, akkor azokat külön-külön figyelembe kell venni. A kényszererők azok az erők, melyek egy adott pályára "kényszerítenek" egy testet. Ez lehet egy gravitációs vonzás is, de egy szó szerinti pálya is lehet, ami pl. egy lejtő egy labdát egy adott pályára kényszerít. A kényszererőkből több is lehet, és függhet az értékük a helytől, ezért általánosan így definiáljuk őket:
 \begin{equation}
-    \{\bold{r}_1 + \delta \bold{r}_1, \bold{r}_2 + \delta \bold{r}_2, \ldots, \bold{r}_N + \delta \bold{r}_N\} = \bold{r}_i + \delta \bold{r}_i
+    \phi_j \{ \mathbf{r_1}, \mathbf{r}_2, \ldots \mathbf{r}_N\} = \phi_j \{\mathbf{r}_i\} = 0 \qquad i = 1,2,\ldots,N 
 \end{equation}
-Ekkor a kényszerfeltételek a következőképpen írhatók fel:
+Ezt Holonomikus kényszernek hívjuk. Ezek olyan kényszerek, melyek nem függnek a sebességtől vagy magasabb deriváltaktól, csak a helytől és esetleg az időtől. A holonomikus kényszerek pont azok melyek egy konkrét pályára kényszerítik a testet (pl.: egy kényszer holonomikus ha egy gömb felületére kényszeríti a testet. Ha a test leeshet a gömb felületéről a gravitáció miatt akkor a kényszer már nem holonomikus). Emiatt a holonomikus kényszereket mindig felírhatjuk egy nullára rendezett egyenlet segítségével. Ha ezeket a kényszererőket is eltoljuk virtuálisan, akkor a következőt kapjuk:
 \begin{equation}
-    \phi_j (\bold{r}_i) = 0
+    \phi_j \{ \mathbf{r_1} + \delta \mathbf{r_1}, \mathbf{r}_2 + \delta \mathbf{r}_2, \ldots \mathbf{r}_N + \delta \mathbf{r}_N\} = \phi_j \{\mathbf{r}_i + \delta \mathbf{r}_i\} = 0 \qquad i = 1,2,\ldots,N
 \end{equation}
+Tehát a virtuális munka elve a következőképp módosul:
 \begin{equation}
-    \phi_j (\bold{r}_i + \delta \bold{r}_i) = 0
+    \delta W = \sum_j \phi_j \{\mathbf{r}_i + \delta \mathbf{r}_i\} = 0
 \end{equation}
-Most alkalmazzuk a Taylor-sorfejtést a kényszerfeltételekre, és hagyjuk el a másod- és magasabb rendű tagokat, mivel a virtuális elmozdulások kicsik:
+Fejtsük sorrendbe a kényszererőket és csak az elsőrendű tagokat hagyjuk meg:
 \begin{equation}
-    \phi_j (\bold{r}_i + \delta \bold{r}_i) = \phi_j (\bold{r}_i) + \sum_i \frac{\partial \phi_j}{\partial \bold{r}_i} \cdot \delta \bold{r}_i = 0
+    \phi_j \{\mathbf{r}_i + \delta \mathbf{r}_i\} = \phi_j \{\mathbf{r}_i\} + \sum_i \frac{\partial \phi_j(\mathbf{\delta r}_i)}{\partial \mathbf{r}_i} \cdot \delta \mathbf{r_i}
 \end{equation}
-Mivel $\phi_j (\bold{r}_i) = 0$, ezért a fenti egyenlet egyszerűsödik:
+Itt $\phi_j \{\mathbf{r}_i\} = 0$ Tehát elsőrendben a következő egyenletet kapjuk:
 \begin{equation}
-    \sum_i \frac{\partial \phi_j}{\partial \bold{r}_i} \cdot \delta \bold{r}_i = 0
+    \sum_i \frac{\partial \phi_j(\mathbf{\delta r}_i)}{\partial \mathbf{r}_i} \cdot \delta \mathbf{r_i} = 0
 \end{equation}
-Vagy a Nabla jelöléssel:
+Ezt a Lagrange féle multiplikátorokkal tudjuk megoldani. Vezessünk be egy új függvényt:
 \begin{equation}
-    \sum_i \boldsymbol{\nabla}_i \phi_j(\bold{r}_i) \cdot \delta \bold{r}_i = 0
+    \mathcal{L} = \delta W + \sum_j \lambda_j \sum_i \frac{\partial \phi_j(\mathbf{\delta r}_i)}{\partial \mathbf{r}_i} \cdot \delta \mathbf{r_i}
 \end{equation}
-Ezt az egyenletet a Lagrange multiplikátor módszerével oldhatjuk meg, amelynek használatával megtaláhatjuk egy függvény szélsőértékét kényszerfeltételek mellett. A módszer lényege, hogy bevezetünk egy új függvényt, amely a keresett függvény és a kényszerfeltételek lineáris kombinációja:
+Ennek továbbra is nullának kell lennie, tehát:
 \begin{equation}
-    \mathcal{L} = \delta W + \sum_j \lambda_j \sum_i \boldsymbol{\nabla}_i \phi_j(\bold{r}_i) \cdot \delta \bold{r}_i
+    \sum_i \mathbf{F}_i \delta \mathbf{r}_i + \sum_j \lambda_j \sum_i \frac{\partial \phi_j(\mathbf{\delta r}_i)}{\partial \mathbf{r}_i} \cdot \delta \mathbf{r_i} = 0
 \end{equation}
-ahol $\lambda_j$ a Lagrange multiplikátorok. Most már alkalmazhatjuk a virtuális munka elvét a $\mathcal{L}$ függvényre:
-\begin{equation}
-    \mathcal{L} = \sum_i \bold{F}_i \cdot \delta \bold{r}_i + \sum_j \lambda_j \sum_i \boldsymbol{\nabla}_i \phi_j(\bold{r}_i) \cdot \delta \bold{r}_i = 0
-\end{equation}
-Mivel a virtuális elmozdulások tetszőlegesek, ezért a fenti egyenlet csak akkor teljesülhet, ha az egyes tagok külön-külön is nulla:
-\begin{equation}
-    \bold{F}_i + \sum_j \lambda_j \boldsymbol{\nabla}_i \phi_j(\bold{r}_i) = 0
-\end{equation}
-Ez az egyenlet a rendszer mozgásegyenleteit írja le kényszerfeltételek mellett, ahol a $\lambda_j$ multiplikátorok a kényszererőket reprezentálják.
+Ez pedig csak akkor lehet nulla, ha a tagok külön-külön nullák:
+ \begin{equation}
+     \mathbf{F}_i + \sum_j \lambda_j \frac{\partial \phi_j(\mathbf{\delta r}_i)}{\partial \mathbf{r}_i} = \mathbf{F}_i + \sum_j \lambda_j \boldsymbol{\nabla}_i \phi_j(\mathbf{\delta r}_i) = 0
+ \end{equation}
+Ez tehát a virtuális munka elve kényszerfeltételek mellett. A $\lambda_j$ Lagrange multiplikátorok jellemzik a kényszererőket. Fontos megjegyezni, hogy ez a levezetés csak konzervatív erőtérben működik, komplexebb erőterekben egyéb hatásokat is figyelembe kéne venni.
 
 \subsubsection{Hamilton-elv, Legkisebb hatás elve}
 Amikor egy fizikai rendszer változását vizsgáljuk, gyakran előfordul, álapotok között, gyakran több lehetséges útvonal is létezik. Például, ha egy Konzervatív erőtérben (pl. gravitációs térben) leejtünk egy tárgyat,
@@ -185,25 +167,27 @@ Akkor a fény által megtett idő változása a következőképpen alakul:
 Ez a variációs számítás alapja a Fermat-elv alkalmazásának a fény útvonalának meghatározására. A variációs számítás elvégzése után megkapjuk a fény útvonalát, amely a két pont között a legkisebb idő alatt teszi meg az utat.
 
 \subsubsection*{Maupertuis-elv}
-Pierre Louis Maupertuis, francia matematikus és filozófus, a 18. században dolgozott ezen a poblémán és póbálta meg általánosítani a Fermat-elvet minden fizikai rendszerre. Maupertuis felismerte, hogy a fizikai rendszerek hajlamosak arra,
-hogy egy adott állapotból egy másik állapotba úgy menjenek át, hogy egy funkcionál minimális legyen. Ezt a funkcionált Maupertuis hatásnak nevezte el, és a következőképpen definiálta:
+Maupertuis Francia fizikus a 18. század második felében általánosította a virtuális munka és a Fermat elvet általános fizikai rendszerekre. Az ő által meghatározott képben minden rendszerre bevezethetünk egy általános (vagy kanonikus) hely $\mathbf{q}(t)$ és általános (vagy kanonikus) impulzus $\mathbf{p}(t)$ koordinátát (ezek nem feltétlenül felelnek meg a fizikai hely és impulzusnak) és ezekkel fel lehet írni egy általános funkcionált ami a rendszert jellemzi:
 \begin{equation}
-    \bold{S}[\bold{q}(t)] = \int \bold{p} \, d\bold{q}
+    S[\mathbf{q}(t)] = \int \mathbf{p} d\mathbf{q}
 \end{equation}
-ahol $\bold{p}$ a rendszer általánosított impulzusa (nem feltétlen egyezik meg a fizikai impulzussal), és $\bold{q}$ a rendszer általánosított koordinátái. Maupertuis elve azt mondja ki, hogy egy fizikai rendszer akkor megy át egy adott állapotból egy másik állapotba,
-ha a Maupertuis hatás minimális:
+Egy rendszer az időfejlődése során akkor képes átmenni az egyik állapotból a másikba, ha ennek az általános funkcionálnak a variációja nulla:
 \begin{equation}
-    \delta \bold{S} = 0
+    \delta \mathbf{S} = 0
 \end{equation}
-Ez az elv hasonló a Fermat-elvhez, de általánosabb, mivel nem csak a fényre, hanem minden fizikai rendszerre alkalmazható. Maupertuis elve tehát egy univerzális elv, amely a fizikai rendszerek viselkedését írja le.
+Ez egy sokkal fundamentálisabb kimondása az előbbi elvekre, hiszen ez minden fizikai rendszerre érvényes. Ezt a funkcionált Maupertuis "hatásnak" nevezte el, és ezért ezt a szemléletet a legkisebb hatás elvének hívják... bár a pontosabb megnevezése a stacionárius hatás elve, hiszen ezzel a variációval egy minimumot, maximumot vagy inflexiós pontot is megkaphatunk. A Maupertuis elv csak olyan rendszerekre érvényes, ahol a funkcionálban lévő kezdeti $\mathbf{q}_1$ és végső $\mathbf{q}_2$ általános koordináta között az energia megmarad. 
+
 
 \subsubsection*{Hamilton-elv}
-A Hamilton-elv hasonló a Maupertuis-elvhez, de egy kicsit általánosabb formában. Hamilton elve azt mondja ki, hogy egy fizikai rendszer akkor megy át egy adott állapotból egy másik állapotba,
-ha a Lagrange-függvény integrálja, amelyet akciónak nevezünk, minimális:
+De mi ez a hatás pontosan? Erre Lagrange és Hamilton adott pontosabb választ, akik az úgynevezett Lagrange-függvényt használták fel. A Lagrange függvény, egy a dinamikai rendszereket jellemző függvény, amire mindig igaz, hogy a funkcionáljának a variációjának a minimuma határozza meg a megengedett átmeneteket. Nem létezik olyan Lagrange függvény amit általánosan minden dinamikai rendszerre fel lehet írni, de a leggyakoribb az a verzió amit nem relativisztikus, elektromágneses tér mentes, konzervatív erőtérben lévő rendszerekre használunk. 
+
+Ezzel a Lagrange-függvénnyel Hamilton felírta a Hamilton-elvet, ami a Maupertuis elvnél egy még fundamentálisabb meghatározás volt:
 \begin{equation}
     S = \int_{t_1}^{t_2} \mathcal{L}(q, \dot{q}, t) \, dt
 \end{equation}
-Itt az $S$ szintén az akciót jelöli. Ahogy hogy ezt minimalizálni tudjuk, szintén a variációs kalkulus eszközeit használjuk:
+Itt az $S$ szintén az akciót jelöli. Ezt is szokás a legkisebb hatás elvének hívni, de itt a Maupertuis elvel ellentétben nem az általános koordináták szerint integrálunk, hanem az idő szerint. Emiatt a Maupertuis elv csak a pálya alakját tudta meghatározni az általános koordináták koordinátarendszerében, míg a Hamilton elv konkrétan a mozgás időfejlődését adja meg. A Hamilton elv már az energia megmaradást se követeli meg, de cserébe a kezdeti és a végállapot koordinátája mellett, az kezdet és vég idejére is szükség van a meghatározásához.
+
+Ahogy hogy ezt minimalizálni tudjuk, szintén a variációs kalkulus eszközeit használjuk:
 \begin{equation}
     \delta S = \delta \int_{t_1}^{t_2} \mathcal{L}(q, \dot{q}, t) \, dt = 0
 \end{equation}
@@ -381,102 +365,167 @@ Ezek az egyenletek azt mondják ki, hogy a test gyorsulása arányos a rá ható
 Tehát a Hamilton-elvből kiindulva sikerült levezetnünk a mozgásegyenleteket egy forgó koordináta rendszerben.
 
 \subsubsection{Lagrange-féle elsőfajú és másodfajú egyenletek}
-A 18. század második felében Jean le Rond d'Alembert francia matematikus és fizikus is vizsgálta ennek az új megközelítésnek a lehetőségeit és felismerte, hogy a virtuális munka elvét ki lehet terjeszteni dinamikai rendszerekre is.
-Ő azzal az ötlettel állt elő, hogy egy dinamikai rendszerben akkor beszélhetünk egyensúlyi állapotról, ha a rendszerre ható erők és a tehetetlenségi erők egyensúlyban vannak. Ezért bevezette a tehetetlenségi erők fogalmát, amelyeket a rendszer gyorsulása okoz:
+Ahhoz, hogy a Lagrange függvényt meg tudjuk határozni, szükséges bevezetni a \textbf{d'Alambert elvet}. A d'Alambert elv lényege, hogy dinamikai problémákat is kezelhetünk úgy, mint egy egyensúlyi rendszer. d'Alambert úgy definiálta a dinamikus egyensúlyt, hogy a testre ható tehetetlenségi erők pont egyensúlyban vannak az őket létrehozó dinamikus erőkkel:
 \begin{equation}
-    \bold{F}_{\text{tehetetlenség}} = -m \bold{a}
+    \mathbf{F}_{\text{tehetetlen}} = - m\mathbf{a}
 \end{equation}
-Ahol $m$ a test tömege, és $\bold{a}$ a test gyorsulása. Ekkor a virtuális munka elve a következőképpen írható fel dinamikai rendszerekre:
+Ekkor, bár hatnak erők a testre, annak a mozgásállapota nem fog változni, hiszen a tehetetlenségi erő kioltja őket. Ilyen lehet például forgás esetén a középpontba mutató húzó erő és a centrifugális erő. A körpálya ott fog futni, ahol ez a dinamikai és tehetetlenségi (más néven virtuális) erő pont egyensúlyban van (itt a többi virtuális erőt is figyelembe lehetne venni, de azok elenyészőek a centrifugálishoz képest). Ezzel kiegészítve felírhatjuk a Newton féle mozgásegyenletet:
 \begin{equation}
-    \sum_i (\bold{F}_i + \bold{F}_{\text{tehetetlenség}}) \cdot \delta \bold{r}_i = 0
+    \mathbf{F}_i + \mathbf{F}_{\text{tehetetlen}} = \mathbf{F}_i - m_i \mathbf{a}_i = \mathbf{F}_i - \mathbf{\dot{p}}_i = 0
 \end{equation}
+A d'Alambert elv lényege, hogy ennek az egyenletnek kis virtuális elmozdulásokra is igaznak kell lennie (más szóval ott fog beállni az egyensúly, ahol kis virtuális elmozdulásokra nem változik a mozgásegyenlet értéke):
 \begin{equation}
-    \sum_i (\bold{F}_i - m_i \bold{a}_i) \cdot \delta \bold{r}_i = 0
+    \sum_i (\mathbf{F}_i - \mathbf{\dot{p}}_i) \cdot \delta\mathbf{r}_i = 0
 \end{equation}
+Ez kvázi a virtuális munka elve dinamikai rendszerekre általánosítva. Ebből az is következik, hogy ha a kis elmozdulás konzisztens a kényszerekkel, akkor a virtuális pályákon a kényszerek nem végezhetnek munkát, tehát a virtuális munka elve teljesül:
 \begin{equation}
-    \sum_i (\bold{F}_i - \bold{\dot{p}}_i) \cdot \delta \bold{r}_i = 0
+    \sum_i \mathbf{F}_i + \sum_j \lambda_j \boldsymbol{\nabla}_i \sum_i \phi_j(\mathbf{\delta r}_i) \cdot \delta \mathbf{r} = 0
 \end{equation}
-Ez onnan ered, hogy a tehetetlenségi erőket D'Alembert azért vezette be, hogy a dinamikai rendszert "egyensúlyi rendszerként" kezelhesse, ahol a virtuális munka elve alkalmazható. Ezt az elvet D'Alembert elvének nevezzük.
-Ebbe a formalizmusba beilleszthetjük a kényszerfeltételeket is a Euler-Lagrange egyenlet alapján, hasonlóan ahogy azt a virtuális munka elvében tettük:
+A kényszererőket tehát nyugodtan behozhatom az egyenletbe:
 \begin{equation}
-    \sum_i (\bold{F}_i - \bold{\dot{p}}_i) \cdot \delta \bold{r}_i + \sum_j \lambda_j \sum_i \boldsymbol{\nabla}_i \phi_j(\bold{r}_i) \cdot \delta \bold{r}_i = 0  
+    \sum_i (\mathbf{F}_i - \mathbf{\dot{p}}_i) \cdot \delta\mathbf{r}_i + \sum_j \lambda_j \boldsymbol{\nabla}_i \sum_i \phi_j(\mathbf{\delta r}_i) \cdot \delta \mathbf{r} = 0
 \end{equation}
+Vagy átrendezve:
 \begin{equation}
-    \bold{F}_i - \bold{\dot{p}}_i + \sum_j \lambda_j \boldsymbol{\nabla}_i \phi_j(\bold{r}_i) = 0
+    \begin{aligned}
+        \mathbf{F}_i + \sum_j \lambda_j \boldsymbol{\nabla}_i \phi_j(\mathbf{\delta r}_i) &= \mathbf{\dot{p}}_i \\
+        \mathbf{F}_i + \sum_j \lambda_j \boldsymbol{\nabla}_i \phi_j(\mathbf{\delta r}_i) &= m_i\mathbf{\ddot{r}}_i
+    \end{aligned}
 \end{equation}
+Ez a d'Alambert elv szerinti dinamikai egyensúlyi egyenlet kényszererőkkel. Ezt szokás \textbf{Lagrange-féle elsőfajú mozgásegyenletnek} is nevezni. Nade kényszerekkel dolgozni nem mindig a legkézenfekvőbb feladat. Ezért Lagrange megpróbált egy olyan felírást is megadni, amivel a kényszereket ki lehet ejteni. Mivel a kényszererők csakis a probléma geometriájából adódnak, ezért lehet mindig olyan koordináta rendszert választani amiben pont kiesnek, mert a kényszerfeltételek automatikusan teljesülnek. Ennek a speciális koordinátarendszernek a koordinátáit nevezzük a már korábban látott általánosított koordinátáknak $q(t)$. Ezekkel felírva a d'Alambert elv egyenletét a kényszerek eltünnek, de $\mathbf{r}_i \to \mathbf{r}_i(q_1(t), q_2(t), \ldots, q_N(t),t) = \mathbf{r}_i(q_k(t),t)$-ként módosul:
 \begin{equation}
-    \bold{\dot{p}}_i = \bold{F}_i + \sum_j \lambda_j \boldsymbol{\nabla}_i \phi_j(\bold{r}_i)
+    \sum_i (\mathbf{F}_i - \mathbf{\dot{p}}_i) \cdot \frac{\partial \mathbf{r}_i}{\partial q_k} = 0
 \end{equation}
+Vagy felbontva a zárójelet:
 \begin{equation}
-    m_i \bold{\ddot{r}}_i = \bold{F}_i + \sum_j \lambda_j \boldsymbol{\nabla}_i \phi_j(\bold{r}_i)
+    \underbrace{\sum_i \mathbf{F}_i \cdot \frac{\partial \mathbf{r}_i}{\partial q_k}}_{Q_k} - \sum_i \mathbf{\dot{p}}_i \cdot \frac{\partial \mathbf{r}_i}{\partial q_k} = 0
 \end{equation}
-Ez az egyenlet a rendszer mozgásegyenleteit írja le kényszerfeltételek mellett, ahol a $\lambda_j$ multiplikátorok a kényszererőket reprezentálják. Ezt az egyenletet Lagrange-féle elsőfajú egyenletnek nevezzük.
-
-\subsubsection*{Lagrange-féle másodfajú egyenletek}
-A kényszereket nem csak Lagrange multiplikátorokkal lehet kezelni, hanem úgy is, hogy a kényszerfeltételeknek megfelelően választjuk meg a koordinátákat. Ezzel a módszerrel a kényszerfeltételek automatikusan teljesülnek, és nem kell külön kényszererőket bevezetni.
-Irjuk át a D'Alembert elvét általánosított koordinátákra $q_k$:
+Az első tag lesz a $Q_k$ általánosított erő, a másodiknál viszont egy kis trükközéssel felfedezhetünk egy új identitást. Ha bevezetjük ugyanis a kinetikus energiát $K = \frac{1}{2} m_i \mathbf{\dot{r}}_i^2$ és ezt lederiváljuk az általános koordináták és az általános impulzusok szerint:
 \begin{equation}
-    \sum_i (\bold{F}_i - \bold{\dot{p}}_i) \cdot \delta \bold{r}_i = 0
+    \begin{aligned}
+        \frac{\partial K}{\partial q_k} &= \sum_i \frac{1}{2} m_i 2\mathbf{\dot{r}}_i \cdot \frac{\partial \mathbf{\dot{r}}_i}{\partial q_k} = \sum_i m_i \mathbf{\dot{r}}_i \cdot \frac{\partial \mathbf{\dot{r}}_i}{\partial q_k} \\
+        \frac{\partial K}{\partial \dot{q}_k} &= \sum_i \frac{1}{2} m_i 2\mathbf{\dot{r}}_i \cdot \frac{\partial \mathbf{\dot{r}}_i}{\partial \dot{q}_k} = \sum_i m_i \mathbf{\dot{r}}_i \cdot \frac{\partial \mathbf{\dot{r}}_i}{\partial \dot{q}_k} \\
+    \end{aligned}
 \end{equation}
+Itt bontsuk fel a deriváltakat:
 \begin{equation}
-    \sum_i (\bold{F}_i - \bold{\dot{p}}_i) \cdot \sum_k \frac{\partial \bold{r}_i}{\partial q_k} \delta q_k = 0
+    \frac{\partial \mathbf{\dot{r}}_i}{\partial q_k} = \frac{d}{dt} \frac{\partial \mathbf{r}_i}{\partial q_k}
 \end{equation}
+És a második:
 \begin{equation}
-    \sum_k \left( \sum_i (\bold{F}_i - \bold{\dot{p}}_i) \cdot \frac{\partial \bold{r}_i}{\partial q_k} \right) \delta q_k = 0
+    \frac{\partial \mathbf{\dot{r}}_i}{\partial \dot{q}_k} = \frac{\partial}{\partial \dot{q}_k} \frac{d\mathbf{r}_i}{dt} = \frac{\partial}{\partial \dot{q}_k}\left(\sum_j \frac{\partial \mathbf{r}_i}{\partial q_j} \dot{q}_j + \mathbf{\dot{r}}_i \right) = \frac{\partial \mathbf{r}_i}{\partial q_k}
 \end{equation}
-Mivel a virtuális elmozdulások tetszőlegesek, ezért a fenti egyenlet csak akkor teljesülhet, ha az egyes tagok külön-külön is nulla:
+Itt látható, ahogy a $\dot{q}_k$ szerinti derivált miatt $\frac{\partial \mathbf{r}_i}{\partial q_j}$ csa $j = k$ esetében nem nulla, és akkor is eltűnik a $\dot{q}$ szorzó a deriválás miatt. Tehát ha lederiválom idő szerint a $\frac{\partial K}{\partial \dot{q}_k}$-t:
 \begin{equation}
-    \sum_i (\bold{F}_i - \bold{\dot{p}}_i) \cdot \frac{\partial \bold{r}_i}{\partial q_k} = 0
+    \frac{d}{dt} \frac{\partial K}{\partial \dot{q}_k} = \frac{d}{dt} \sum_i m_i \mathbf{\dot{r}}_i \cdot \frac{\partial \mathbf{r}_i}{\partial q_k} = \sum_i m_i \mathbf{\ddot{r}}_i \cdot \frac{\partial \mathbf{r}_i}{\partial q_k} + \sum_i m_i \mathbf{\dot{r}}_i \cdot \frac{d}{dt}\frac{\partial \mathbf{r}_i}{\partial q_k}
 \end{equation}
-Most bontsuk fel az egyes tagokat:
+És kivonjuk egymásból a kettőt:
 \begin{equation}
-    \sum_i \bold{F}_i \cdot \frac{\partial \bold{r}_i}{\partial q_k} - \sum_i \bold{\dot{p}}_i \cdot \frac{\partial \bold{r}_i}{\partial q_k} = 0
+    \frac{d}{dt} \frac{\partial K}{\partial \dot{q}_k} - \frac{\partial K}{\partial q_k} = \sum_i m_i \mathbf{\ddot{r}}_i \cdot \frac{\partial \mathbf{r}_i}{\partial q_k} + \sum_i m_i \mathbf{\dot{r}}_i \cdot \frac{d}{dt}\frac{\partial \mathbf{r}_i}{\partial q_k} - \sum_i m_i \mathbf{\dot{r}}_i \cdot \frac{d}{dt}\frac{\partial \mathbf{r}_i}{\partial q_k} = \sum_i m_i \mathbf{\ddot{r}}_i \cdot \frac{\partial \mathbf{r}_i}{\partial q_k} = \sum_i \mathbf{\dot{p}}_i \cdot \frac{\partial \mathbf{r}_i}{\partial q_k}
 \end{equation}
-Ahol az első tag az általánosított erő $Q_k$:
+Ez pedig pont a második tagunk a mozgásegynletben! Tehát az egyenletünk a következőképpen módosul:
 \begin{equation}
-    Q_k = \sum_i \bold{F}_i \cdot \frac{\partial \bold{r}_i}{\partial q_k}
+    Q_k - \left(\frac{d}{dt} \frac{\partial K}{\partial \dot{q}_k} - \frac{\partial K}{\partial q_k}\right) = 0
 \end{equation}
-Ezt visszahelyettesítve a D'Alembert elvébe:
+Ha konzervatív erőteret feltételezünk, akkor az erő a potenciáltér negatív gradiense:
 \begin{equation}
-    \left( Q_k - \sum_i \bold{\dot{p}}_i \cdot \frac{\partial \bold{r}_i}{\partial q_k} \right) = 0
+    Q_k = -\boldsymbol{\nabla}_k U = - \frac{\partial U}{\partial q_k}
 \end{equation}
-Itt vizsgáljuk meg a második tagot kicsit részletesebben. Felfedezhetjük, hogy ez a kifejezés a kinetikus energia $K$ deriváltjával kapcsolatos:
+Vagyis:
 \begin{equation}
-    K = \sum_i \frac{1}{2} m_i \dot{\bold{r}}_i^2
+    \begin{aligned}
+        - \frac{\partial U}{\partial q_k} -\frac{d}{dt} \frac{\partial K}{\partial \dot{q}_k} + \frac{\partial K}{\partial q_k} &= 0 \\
+        \frac{\partial U}{\partial q_k} + \frac{d}{dt} \frac{\partial K}{\partial \dot{q}_k} - \frac{\partial K}{\partial q_k} &= 0 
+    \end{aligned}
 \end{equation}
-Ha ezt deviáljuk $q_k$ és $\dot{q}_k$ szerint, akkor a következőt kapjuk:
+Mivel $U$ nem függ a sebességtől, ezért $\frac{\partial K}{\partial \dot{q}_k} = \frac{\partial (K-U)}{\partial \dot{q}_k}$-ként is írható, a második tagnál pedig:
 \begin{equation}
-    \frac{\partial K}{\partial q_k} = \sum_i m_i \dot{\bold{r}}_i \cdot \frac{\partial \dot{\bold{r}}_i}{\partial q_k}
+    \frac{\partial U}{\partial q_k} - \frac{\partial K}{\partial q_k} = \frac{\partial (U - K)}{\partial q_k} = - \frac{\partial (K - U)}{\partial q_k}
 \end{equation}
-\begin{equation}
-    \frac{\partial K}{\partial \dot{q}_k} = \sum_i m_i \dot{\bold{r}}_i \cdot \frac{\partial \bold{\dot{r}}_i}{\partial \dot{q_k}}
-\end{equation}
-Ha pedig kivonjuk egymásból a kettőt, akkor a következőt kapjuk:
-\begin{equation}
-    \frac{d}{dt} \frac{\partial K}{\partial \dot{q}_k} - \frac{\partial K}{\partial q_k} = \sum_i m_i \bold{\ddot{r}}_i \cdot \frac{\partial \bold{r}_i}{\partial q_k} = \sum_i \bold{\dot{p}}_i \cdot \frac{\partial \bold{r}_i}{\partial q_k}
-\end{equation}
-Ez pedig pont a második tag a D'Alembert elvében. Ezt visszahelyettesítve:
-\begin{equation}
-    Q_k - \left( \frac{d}{dt} \frac{\partial K}{\partial \dot{q}_k} - \frac{\partial K}{\partial q_k} \right) = 0
-\end{equation}
-\begin{equation}
-    \frac{d}{dt} \frac{\partial K}{\partial \dot{q}_k} - \frac{\partial K}{\partial q_k} = Q_k
-\end{equation}
-Ha pedig ide behelyettesítjük a konzervatív erőt, mint a potenciális energia gradiensét, akkor a következőt kapjuk:
-\begin{equation}
-    Q_k = - \frac{\partial U}{\partial q_k}
-\end{equation}
-\begin{equation}
-    \frac{d}{dt} \frac{\partial K}{\partial \dot{q}_k} - \frac{\partial K}{\partial q_k} = - \frac{\partial U}{\partial q_k}
-\end{equation}
+Tehát a végeredmény:
 \begin{equation}
     \frac{d}{dt} \frac{\partial (K - U)}{\partial \dot{q}_k} - \frac{\partial (K - U)}{\partial q_k} = 0
 \end{equation}
-A Kinematikus energia és a potenciális energia különbsége pedig pont a Lagrange-függvény:
+Az itt kapott $K - U$ pedig pont a Lagrange függvénye lesz a rendszernek:
+\begin{equation}
+    \mathcal{L} = K - U
+\end{equation}
+Tehát a végeredmény, amit szokás a \textbf{Másodfajú Lagrange egyenletnek} is nevezni:
 \begin{equation}
     \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot{q}_k} - \frac{\partial \mathcal{L}}{\partial q_k} = 0
 \end{equation}
-Ez pedig pont az Euler-Lagrange-féle mozgásegyenlet, amely a Hamilton-elvből is levezethető. Ezt az egyenletet Lagrange-féle másodfajú egyenletnek nevezzük dinamikai rendszerek esetén.
+De honnan tudjuk, hogy ez pont az a függvény ami a hatás funkcionáljában stacionárius lesz kis variációkra? Ahhoz, hogy ezt láthassuk, írjuk fel a \textbf{Hamilton-elvet}:
+\begin{equation}
+    S[\mathcal{L}(q,\dot{q},t)] = \int_{t_1}^{t_2} \mathcal{L}(q,\dot{q},t) dt
+\end{equation}
+Ahhoz, hogy egy átmenet engedélyezett legyen, ennek a hatásnak kell a variációját nullára venni:
+\begin{equation}
+    \delta S[\mathcal{L}(q,\dot{q},t)] = \int_{t_1}^{t_2} \mathcal{L}(q,\dot{q},t) dt = 0
+\end{equation}
+Ahhoz, hogy ezt meg tudjuk oldani, bontsuk fel az eseményeket kis diszkrét intervallumokra:
+\begin{equation}
+    \int_0^{t'} dt = \epsilon \sum_i \mathcal{L}\left(q_i, \frac{q_{i+1} - q_i}{\epsilon}\right)
+\end{equation}
+Ahol $\epsilon$ a kis időegység és $\frac{q_{i+1} - q_i}{\epsilon}$ pedig a $q_i$ és a $q_{i+1}$-edik pont közötti egyenes meredeksége, ami elég kicsi $\epsilon$ esetén az idő deriváltja lesz. Most zoomoljunk be még jobban, és csak a $q_i$ és a $q_{i-1}$ -edik pont közötti szakaszt vizsgáljuk. Ekkor a summa tovább egyszerűsödik:
+\begin{equation}
+    \epsilon \mathcal{L}\left(q_i, \frac{q_{i+1} - q_i}{\epsilon}\right) + \epsilon \mathcal{L}\left(q_{i-1}, \frac{q_{i} - q_{i-1}}{\epsilon}\right)
+\end{equation}
+Arra számítunk, hogy ha ezt a kis szakaszt megperturbáljuk, a változás továbbra is nulla lesz:ű
+\begin{equation}
+    \frac{\partial}{\partial q_i} \left( \epsilon \mathcal{L}\left(q_i, \frac{q_{i+1} - q_i}{\epsilon}\right) + \epsilon \mathcal{L}\left(q_{i-1}, \frac{q_{i} - q_{i-1}}{\epsilon}\right)\right) = 0
+\end{equation}
+Itt vezessük be a $v_i = \frac{q_{i+1} - q_i}{\epsilon}$ jelölést:
+\begin{equation}
+    \frac{\partial}{\partial q_i} \epsilon \mathcal{L}\left(q_i, v_i\right) + \frac{\partial}{\partial q_i} \epsilon \mathcal{L}\left(q_{i-1}, v_{i-1}\right) = 0
+\end{equation}
+Lederiválva őket:
+\begin{equation}
+    \epsilon \frac{\partial \mathcal{L}}{\partial q_i} \underbrace{\frac{\partial q_i}{\partial q_i}}_{1} + \epsilon \frac{\partial \mathcal{L}}{\partial v_i} \frac{\partial v_i}{\partial q_i} + \epsilon \frac{\partial \mathcal{L}}{\partial q_{i-1}} \underbrace{\frac{\partial q_{i-1}}{\partial q_i}}_0 + \epsilon \frac{\partial \mathcal{L}}{\partial v_{i-1}} \frac{\partial v_{i-1}}{\partial q_i} = 0
+\end{equation}
+Tehát az eredmény:
+\begin{equation}
+    \epsilon \frac{\partial \mathcal{L}}{\partial q_i} + \epsilon \frac{\partial \mathcal{L}}{\partial v_i} \frac{\partial v_i}{\partial q_i} + \epsilon \frac{\partial \mathcal{L}}{\partial v_{i-1}} \frac{\partial v_{i-1}}{\partial q_i} = 0
+\end{equation}
+A sebességek deriváltja pedig:
+\begin{equation}
+    \frac{\partial v_i}{\partial q_i} = \frac{\partial}{\partial q_i} \frac{q_{i+1} - q_i}{\epsilon} = - \frac{1}{\epsilon} \qquad \frac{\partial v_{i-1}}{\partial q_i} = \frac{\partial}{\partial q_i} \frac{q_{i} - q_{i-1}}{\epsilon} = \frac{1}{\epsilon}
+\end{equation}
+Tehát a megoldás:
+\begin{equation}
+    \epsilon \frac{\partial \mathcal{L}}{\partial q_i} - \frac{\partial \mathcal{L}}{\partial v_i} + \frac{\partial \mathcal{L}}{\partial v_{i-1}} = 0
+\end{equation}
+Vagy kicsit átrendezve:
+\begin{equation}
+    \epsilon \left( \frac{\partial \mathcal{L}}{\partial q_i} - \frac{1}{\epsilon}\frac{\partial \mathcal{L}}{\partial v_i} + \frac{1}{\epsilon}\frac{\partial \mathcal{L}}{\partial v_{i-1}}\right) = 0
+\end{equation}
+Itt az $\epsilon$ eltűnik, de felfedezhetünk egy másik azonosságot is:
+\begin{equation}
+    -\frac{1}{\epsilon}\frac{\partial \mathcal{L}}{\partial v_i} + \frac{1}{\epsilon}\frac{\partial \mathcal{L}}{\partial v_{i-1}} = -\frac{d}{dt} \frac{\partial \mathcal{L}}{\partial v_i}
+\end{equation}
+Ha $\epsilon \to 0$ akkor ez pont az idő szerinti deriváltat adja meg (azért negatív, mert visszafele haladunk időben). Tehát as végeredmény:
+\begin{equation}
+    \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial v_i} - \frac{\partial \mathcal{L}}{\partial q_i} = 0
+\end{equation}
+Vagy klasszikus jelöléssel, és $-1$-el beszorozva:
+\begin{equation}
+    \frac{\partial \mathcal{L}}{\partial q_i} - \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot{q}_i} = 0
+\end{equation}
+Ez pedig pontosan ugyanaz mint amit a d'Alambert elvből kaptunk! Tehát beláttuk, hogy a Hamilton elvből egyenesen következik, hogy a Lagrange függvénynek teljesítenie kell az Euler-Lagrange egyenletet, és ekkor az egy megfelelő választás a Hatásintegrál maghatározására (amennyiben a Lagrange függvény a rendszert is megfelelően jellemzi persze).
+
+\subsubsection*{Példa: Newtoni mechanika}
+Már csak egy feladat van hátra, hogy belássuk, hogy a Hamilton elv ekvivalens-e a Newtoni fizikával, meg kell tudnunk belőle határozni a Newton egyenletet. Ehhez vegyünk egy egyszerű dinamikai rendszert melynek a Lagrange függvénye:
+\begin{equation}
+    \mathcal{L} = \frac{1}{2} m \dot{q}^2 - U(q)
+\end{equation}
+Legyen az erőtér konzervatív. Ekkor az Euler-Lagrange egyenlet:
+\begin{equation}
+    \frac{\partial \mathcal{L}}{\partial q} - \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot{q}} = - \frac{\partial U(q)}{\partial q} - m \ddot{q} = 0 
+\end{equation}
+Ha az erőtér konzervatív akkor az erő egyenlő a potenciáltér gradiensének $-1$-szeresével $F = -\frac{\partial U}{\partial q}$, tehát:
+\begin{equation}
+    F - m \ddot{q} = 0 \implies F = m \ddot{q}
+\end{equation}
+Ez pedig pont Newton második törvénye.
 
 \subsection{Szimmetriák és megmaradási tételek}
 A legkisebb hatás elvének (pontosabb stacionárius hatás elve) van egy nagyon meglepő következménye, ami a Newtoni mechanikán is túlmutató eredményt hozott, és a természet egy alapvető tulajdonságát tárta fel.
@@ -623,9 +672,7 @@ Ez azt jelenti, hogy a következő mennyiség megmarad:
 \begin{equation}
     \sum_k \frac{\partial \mathcal{L}}{\partial \dot{q}_k} \delta q_k = \text{konstans}
 \end{equation}
-Ez a Noether-tétel, amely kimondja, hogy minden szimmetria esetén megmaradási törvény létezik. Például, ha a rendszer szimmetrikus térbeli eltolásra, akkor a lendület megmarad, ha szimmetrikus időbeli eltolásra, akkor az energia megmarad,
-és ha szimmetrikus forgatásra, akkor a perdület megmarad. Ez egy borzasztó fontos felismerés, hisz ez a tétel köti össze a szimmetriákat a megmaradási törvényekkel, amelyek a fizika alapvető törvényei. Tehát ha egy tetszőleges szimmetriát találunk egy fizikai rendszerben,
-akkor biztosak lehetünk benne, hogy létezik egy megmaradó mennyiség is.
+Ezt nevezik \textbf{Noether-tételnek} és a lényege, hogy ha a rendszer szimmetrikus egy transzformációra, akkor mindig van benne egy megmaradó mennyiség. Ez a tétel fordítva is igaz, tehát ha van egy megmaradó mennyiségünk, akkor biztosan van egy szimmetriánk is. Ez egy hatalmas horderejű felfedezés volt a 19. században, ugyanis ez egy fundamentálisan új megértést adott a fizikának ami messze túlmutat az egyszerű konzervatív térben lévő mechanikai rendszereken. Ez ugyanis mindig igaz. A szimmetriák és a megmaradó mennyiségek szoros kapcsolatban állnak egymással bármilyen rendszert is vizsgálunk. Ez annyira egy alapvető dolog, hogy manapság ha valaki egy új fizikai elméletet próbál kidolgozni, akkor az egyik első lépés a szimmetriák vizsgálata és a megmaradó mennyiségek meghatározása az elméletben.
 
 \subsubsection*{Példa: transzlációs szimmetria}
 Legyen egy rendszer ahol van $q_1$ és $q_2$ részecske, és ezeket kis $\delta$-val eltoljuk:
@@ -700,165 +747,134 @@ Ez a mennyiség a rendszer kinetikus energiája, amely megmarad az időbeli elto
 \end{equation}
 
 \subsection{Hamilton függvény, kanonikus egyenletek, kanonikus transzformációk}
-Láthattuk, hogy a Lagrange formalizmus központi eleme a Lagrange-függvény, amit eredetileg egy olyan függvényként definiáltunk, melynek az integrálja két pont között, a hatás. De hogyan is lehet értelmezni a Lagrange-függvényt?
-Egyik intuitív gondolat lehet az, hogy esetleg a Lagrange-függvény a rendszer energiáját írja le. De ahhoz, hogy ez igaz legyen, egy magmaradó mennyiségnek kell lennie időben, úgyhogy vizsgáljuk meg, hogy ez helytálló-e.
-Vegyünk egy általános Lagrange-függvényt, amely nem függ kifejezetten az időtől (különben nem lenne megmaradó mennyiség) és nézzük meg a deriváltját idő szerint:
+És ha már az energiánál tartunk, mit tudunk a rendszer teljes energiájáról? Azt már a Newtoni mechanika alapján felismerték, hogy a teljes energia egy adott (zárt) rendszerben megmarad. Azt is látjuk ebben a Lagrange-i formalizmusban, hogy a Lagrange függvény energia dimenziójú. Intuitív gondolat lehet tehát, hogy a Lagrange függvény nem maga-e a teljes energia? Ahhoz viszont hogy ez teljesüljön, a Lagrange függvénynek is megmaradó mennyiségnek kell lennie. Nézzük meg tehát, hogy hogyan változik az időben a Lagrange függvény:
 \begin{equation}
-    \frac{d\mathcal{L}}{dt} = \sum_k \left( \frac{\partial \mathcal{L}}{\partial q_k} \dot{q}_k + \frac{\partial \mathcal{L}}{\partial \dot{q}_k} \ddot{q}_k \right)
+    \frac{d \mathcal{L}}{dt} = \sum_k \left(\frac{\partial \mathcal{L}}{\partial q_k} \dot{q}_k + \frac{\partial \mathcal{L}}{\partial \dot{q}_k} \ddot{q}_k \right)
 \end{equation}
-Most alkalmazzuk az Euler-Lagrange-féle mozgásegyenletet:
+Megint helyettesítsük be az Euler-Lagrange egyenletet $\frac{\partial \mathcal{L}}{\partial q_k} = \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot{q}_k}$:
 \begin{equation}
-    \frac{\partial \mathcal{L}}{\partial q_k} = \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot{q}_k}
+    \frac{d \mathcal{L}}{dt} = \sum_k \left(\frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot{q}_k} \dot{q}_k + \frac{\partial \mathcal{L}}{\partial \dot{q}_k} \ddot{q}_k \right)
 \end{equation}
-Ezt behelyettesítve:
+Itt $\frac{\partial \mathcal{L}}{\partial \dot{q}_k} = m \dot{q}_k = p_k$ a kanonikus impulzus, tehát:
 \begin{equation}
-    \frac{d\mathcal{L}}{dt} = \sum_k \left( \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot{q}_k} \dot{q}_k + \frac{\partial \mathcal{L}}{\partial \dot{q}_k} \ddot{q}_k \right)
+    \frac{d \mathcal{L}}{dt} = \sum_k \underbrace{\left( \dot{p}_k \dot{q}_k + \dot{p}_k \ddot{q}_k \right)}_{\frac{d}{dt} p_k \dot{q}_k}
 \end{equation}
-hozzuk be a kanonikus impulzust $ p_k = m\dot{q}_k = \frac{\partial \mathcal{L}}{\partial \dot{q}_k} $:
+Ahol megint felfedezhetünk egy teljes deriváltat. A Lagrange függvény időbeli változása tehát:
 \begin{equation}
-    \frac{d\mathcal{L}}{dt} = \sum_k \left( \dot{p}_k \dot{q}_k + p_k \ddot{q}_k \right)
+    \frac{d \mathcal{L}}{dt} = \frac{d}{dt} \sum_k p_k \dot{q}_k
 \end{equation}
-Ezt átrendezve:
+Ez pedig általában nem nulla, vagyis a Lagrange függvény nem egy megmaradó mennyiség. Ez azt jelenti, hogy a Lagrange függvény nem a rendszer teljes energiája. Viszont itt alkalmazhatunk egy kis algebrai trükköt amit Hamilton vezetett be:
 \begin{equation}
-    \frac{d\mathcal{L}}{dt} = \sum_k \frac{d}{dt} (p_k \dot{q}_k)
+     \frac{d}{dt} \sum_k p_k \dot{q}_k - \frac{d \mathcal{L}}{dt} = \frac{d}{dt} \left( \sum_k p_k \dot{q}_k - \mathcal{L}\right) = 0
 \end{equation}
+Ez már egy megmaradó mennyiség! Ezt a megmaradó mennyiséget Hamilton tiszteletére \textbf{Hamilton függvénynek} nevezik és ez már a rendszer teljes energiáját adja meg:
 \begin{equation}
-    \frac{d\mathcal{L}}{dt} = \frac{d}{dt} \left( \sum_k p_k \dot{q}_k \right)
+    \boxed{\mathcal{H} = \sum_k p_k \dot{q}_k - \mathcal{L} = \text{Áll.}}
 \end{equation}
-Tehát a Lagrange-függvény nem egy megmaradó mennyiség időben, hiszen a deriváltja nem nulla, hanem a kanonikus impulzus és sebesség szorzatának az idő szerinti deriváltja. De ha ezt átrendezzük, akkor a következőt kapjuk:
+Hogy ezt láthassuk, nézzük meg megint az egyszerű mechanikai rendszerünket:
 \begin{equation}
-    \frac{d}{dt} \left( \sum_k p_k \dot{q}_k - \mathcal{L} \right) = 0
+    \mathcal{L} = K - U = \frac{1}{2} m \dot{q}^2 - U(q)
 \end{equation}
+A kanonikus impulzus pedig:
 \begin{equation}
-    \sum_k p_k \dot{q}_k - \mathcal{L} = \mathcal{H} = \text{konstans}
+    \frac{\partial \mathcal{L}}{\partial \dot{q}} = m \dot{q}
 \end{equation}
-Ez a mennyiség pedig már egy megmaradó mennyiség, amelyet Hamilton-függvénynek nevezünk. A Hamilton-függvény tehát a kanonikus impulzus és sebesség szorzatának és a Lagrange-függvény különbsége.
-Most nézzük meg, hogy a Hamilton-függvény valóban az energia-e. Vegyünk egy egyszerű rendszert, ahol a Lagrange-függvény a következő:
+Tehát a Hamilton függvény:
 \begin{equation}
-    \mathcal{L} = K - U = \frac{1}{2}m \dot{q}^2 - U(q)
+    \mathcal{H} = p \dot{q} - \mathcal{L} = m \dot{q}^2 - \left( \frac{1}{2} m \dot{q}^2 - U(q) \right) = \frac{1}{2} m \dot{q}^2 + U(q) = K + U = E
 \end{equation}
-Akkor a kanonikus impulzus:
+Tehát a Hamilton függvény valóban a rendszer teljes energiáját adja meg, mely egy megmaradó mennyiség. Eddig viszont nem vettük figyelembe a Lagrange függvény explicit időfüggését. Ha a Lagrange függvény közvetlenül is függ az időtől akkor a küvetkezőképp módósul a Hamilton függvény:
 \begin{equation}
-    p = \frac{\partial \mathcal{L}}{\partial \dot{q}} = m \dot{q}
+    \begin{aligned}
+        \frac{d \mathcal{L}}{dt} &= \sum_k \left(\frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot{q}_k} \dot{q}_k + \frac{\partial \mathcal{L}}{\partial \dot{q}_k} \ddot{q}_k \right) + \frac{\partial \mathcal{L}}{\partial t} \\
+        \frac{d \mathcal{L}}{dt} &= \sum_k \left( \dot{p}_k \dot{q}_k + \dot{p}_k \ddot{q}_k \right) + \frac{\partial \mathcal{L}}{\partial t} \\
+        \frac{d \mathcal{L}}{dt} &= \sum_k \frac{d}{dt} p_k\dot{q}_k + \frac{\partial \mathcal{L}}{\partial t} \\
+        \frac{d}{dt} \left( \sum_k p_k \dot{q}_k - \mathcal{L}\right) &= -\frac{\partial \mathcal{L}}{\partial t} \\
+        \frac{d \mathcal{H}}{dt} &= -\frac{\partial \mathcal{L}}{\partial t}
+    \end{aligned}
 \end{equation}
-A Hamilton-függvény pedig:
+Tehát a Hamilton függvény nem egy megmaradó mennyiség, ha a Lagrange függvény expliciten függ az időtől. Emiatt ekkor az energia se marad meg! Most, hogy definiáltuk a Hamilton függvényt, nézzük meg hogy mi történik ha ezt variáljuk meg:
 \begin{equation}
-    \mathcal{H} = p \dot{q} - \mathcal{L} = m \dot{q}^2 - \left( \frac{1}{2}m \dot{q}^2 - U(q) \right)
+    \delta \mathcal{H} = \delta \left( \sum_k p_k \dot{q}_k - \mathcal{L}\right) = \sum_k \left(\dot{q}_k \delta p_k + p_k \delta\dot{q}_k - \frac{\partial \mathcal{L}}{\partial q_k} \delta p_k - \frac{\partial \mathcal{L}}{\partial \dot{q}_k} \delta \dot{q}_k \right)
 \end{equation}
+Itt megint behelyettesítve az Euler-Langrange egyenletet:
 \begin{equation}
-    \mathcal{H} = \frac{1}{2}m \dot{q}^2 + U(q) = K + U = E
+    \delta \mathcal{H} = \sum_k \left(\dot{q}_k \delta p_k + p_k \delta\dot{q}_k - \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot{q}_k} \delta p_k - \frac{\partial \mathcal{L}}{\partial \dot{q}_k} \delta \dot{q}_k \right)
 \end{equation}
-Tehát a Hamilton-függvény valóban az energia, amely megmarad időben, ha a Lagrange-függvény nem függ kifejezetten az időtől.
+Itt behelyettesíthetjük a kanonikus impulzust $\frac{\partial \mathcal{L}}{\partial \dot{q}_k} = p_k$:
+\begin{equation}
+    \begin{aligned}
+        \delta \mathcal{H} &= \sum_k \left(\dot{q}_k \delta p_k + p_k \delta\dot{q}_k - \dot{p}_k \delta p_k - p_k \delta \dot{q}_k \right) \\
+        \delta \mathcal{H} &= \sum_k \left(\dot{q}_k \delta p_k - \dot{p}_k \delta p_k \right)
+    \end{aligned}
+\end{equation}
+Ha átosztunk $\delta p_k$ vagy $\delta q_k$-val akkor a következőket kapjuk:
+\begin{equation}
+    \frac{\partial \mathcal{H}}{\partial p_k} = \dot{q}_k \qquad \frac{\partial \mathcal{H}}{\partial p_k} = -\dot{p}_k
+\end{equation}
+Ezek pedig a Kanonikus mozgásegyenletek a Hamiltoni képben és ezeket nevezzük kanonikus egyenleteknek. Ezek ekvivalensek a Lagrange-i képben való felírással. Ősszességében tehát a Lagrange és a Hamilton-féle mozgásegyenletek:
+\begin{center}
+\begin{tabular}{ | c | c | c | }
+\hline
+  & Lagrange kép & Hamilton kép \\ 
+    \hline
+ függvény & $\mathcal{L} = K - U$ & $\mathcal{H} = \sum_k p_k\dot{q}_k - \mathcal{L} = K + U$ \\
+ \hline
+ időfejlődés & $\frac{d \mathcal{L}}{d t} = \sum_k \left(\frac{\partial \mathcal{L}}{\partial q_k} \dot{q}_k + \frac{\partial \mathcal{L}}{\partial \dot{q}_k} \ddot{q}_k\right) + \frac{\partial \mathcal{L}}{\partial t}$ & $\frac{d \mathcal{H}}{d t} = - \frac{\partial \mathcal{L}}{\partial t}$ \\
+ \hline
+ mozg. egyenletek & $\frac{\partial \mathcal{L}}{\partial \dot{q}} = p \qquad \frac{\partial \mathcal{L}}{\partial q} = \dot{p}$ & $\frac{\partial \mathcal{H}}{\partial p_k} = \dot{q}_k \qquad \frac{\partial \mathcal{H}}{\partial q_k} = - \dot{p}_k$ \\
+ \hline
+\end{tabular}
+\end{center}
 
-Általános esetben, ha a Lagrange-függvény expliciten is függ az időtől, akkor a következőképpen alakul a Hamilton-függvény:
+\subsubsection{Ciklikus koordináták, Kanonikus transzformációk}
+Már csak egy kérdést kell tisztázni a stacionárius hatás elvében. Mennyire jól definiált ez a hatás? Az elvet kifejezhetjük az imént bevezetett Hamilton fügvénnyel a következő alakban:
 \begin{equation}
-    \frac{d\mathcal{L}}{dt} = \sum_k \left( \frac{\partial \mathcal{L}}{\partial q_k} \dot{q}_k + \frac{\partial \mathcal{L}}{\partial \dot{q}_k} \ddot{q}_k \right) + \frac{\partial \mathcal{L}}{\partial t}
+    \delta \int_{t_1}^{t_2} \sum_k p_k \dot{q}_k - \mathcal{H}(q_k, p_k, t) dt = 0
 \end{equation}
+Ez viszont nem az egyetlen alak ami kielégíti a variációs feltételt. Át lehet ugyanis térni úgynevezett ciklikus változókra, amik csak egy tetszőleges függvény időderiváltjával térnek el a kanonikus változóktól, ezért a Hamilton féle mozgásegyenletek alakját megtartják (ezt nevezik forma invarianciának). Ezekszerint ha áttérek a $q,p \to Q,P$ ciklikus koordinátákra akkor a következőképp módosul az egyenlet:
 \begin{equation}
-    \frac{d\mathcal{L}}{dt} = \sum_k \left( \dot{p}_k \dot{q}_k + p_k \ddot{q}_k \right) + \frac{\partial \mathcal{L}}{\partial t}
+    \delta \int_{t_1}^{t_2} \sum_k P_k \dot{Q}_k - \mathcal{K}(Q_k, P_k, t) + \frac{dF}{dt}dt = 0
 \end{equation}
+Itt $\mathcal{K}$ az új Hamilton függvény és $F$ az úgynevezett generátor függvény. Ez a generátorfüggvény jelenti a kapcsolatot a régi és az új koordináták között, emiatt négy alakja lehetséges:
 \begin{equation}
-    \frac{d\mathcal{L}}{dt} = \sum_k \frac{d}{dt} (p_k \dot{q}_k) + \frac{\partial \mathcal{L}}{\partial t}
+    \begin{aligned}
+        &F_1(q_k, Q_k) \qquad F_2(q_k, P_k) \\
+        &F_3(p_k, Q_k) \qquad F_4(p_k, P_k) \\
+    \end{aligned}
 \end{equation}
+Innen az idő deriváltak :
 \begin{equation}
-    \frac{d}{dt} \left( \sum_k p_k \dot{q}_k - \mathcal{L} \right) = - \frac{\partial \mathcal{L}}{\partial t}
+    \begin{aligned}
+        \frac{d}{dt} F_1(q_k, Q_k) &= \sum_k \frac{\partial F_1}{\partial q_k} \dot{q}_k + \frac{\partial F_1}{\partial Q_k} \dot{Q_k} + \frac{\partial F_1}{\partial t} \\
+        \frac{d}{dt} F_2(q_k, P_k) &= \sum_k \frac{\partial F_2}{\partial q_k} \dot{q}_k + \frac{\partial F_2}{\partial P_k} \dot{P_k} + \frac{\partial F_2}{\partial t} \\
+        \frac{d}{dt} F_3(p_k, Q_k) &= \sum_k \frac{\partial F_3}{\partial p_k} \dot{p}_k + \frac{\partial F_3}{\partial Q_k} \dot{Q_k} + \frac{\partial F_3}{\partial t} \\
+        \frac{d}{dt} F_4(p_k, P_k) &= \sum_k \frac{\partial F_4}{\partial p_k} \dot{p}_k + \frac{\partial F_4}{\partial P_k} \dot{P_k} + \frac{\partial F_4}{\partial t} \\
+    \end{aligned}
 \end{equation}
+Helyettesítsük vissza mondjuk az első lehetőséget:
 \begin{equation}
-    \frac{d\mathcal{H}}{dt} = - \frac{\partial \mathcal{L}}{\partial t}
+    p_k\dot{q}_k - \mathcal{H} = P_k \dot{Q}_k - \mathcal{K}(Q_k, P_k, t) + \frac{\partial F_1}{\partial q_k} \dot{q}_k + \frac{\partial F_1}{\partial Q_k} \dot{Q_k} + \frac{\partial F_1}{\partial t}
 \end{equation}
-Tehát ha a Lagrange-függvény kifejezetten függ az időtől, akkor a Hamilton-függvény nem marad meg időben, tehát az energia nem lesz megmaradó mennyiség!
-
-\subsubsection{Kanonikus egyenletek}
-Most, hogy megvan a Hamilton-függvény, nézzük meg, hogy mi történik ha a Hamilton-függvénybe hozunk be egy kis változást a kanonikus impulzusok és koordináták szerint:
+Rendezzük át egy kicsit:
 \begin{equation}
-    \delta F(q, p) = \frac{\partial F}{\partial q} \delta q + \frac{\partial F}{\partial p} \delta p \quad \rightarrow \quad \text{Ahol F egy tetszőleges függvény}
+    p_k\dot{q}_k - \mathcal{H} - P_k \dot{Q}_k + \mathcal{K}(Q_k, P_k, t) =  \frac{\partial F_1}{\partial q_k} \dot{q}_k + \frac{\partial F_1}{\partial Q_k} \dot{Q_k} + \frac{\partial F_1}{\partial t}
 \end{equation}
+Mivel a kanonikus és a ciklikus koordinátáknak függetleneknek kell lenniük, ezért ez az egyenlőség csak akkor lehetséges, ha az együtthatók megegyeznek. Tehát a következő feltételeknek kell teljesülnie:
 \begin{equation}
-    \mathcal{H} = \sum_k p_k \dot{q}_k - \mathcal{L}
+    \begin{aligned}
+        \frac{\partial F_1}{\partial q_k} &= p_k \\
+        \frac{\partial F_1}{\partial Q_k} &= - P_k \\
+        \mathcal{K} &= \mathcal{H} + \frac{\partial F_1}{\partial t}
+    \end{aligned}
 \end{equation}
+Nagyon hasonló megfontolásokkal a többit is meg lehet határozni. Látható, hogy a ciklikus koordinátákkal meg tudjuk tartani az alakját a mozgásegyenleteknek. Az előnye ennek a módszernek, hogy lehetüvé teszi, hogy úgy válasszuk meg a koordinátákat, hogy azok a lehető "legjobban" illeszkedjenek a problémához, így sokkal egyszerűbb problémákat kapva. Bár a generátorfüggvényt sok esetben triviális megválasztani, szükség esetén az eredeti Hamilton függvénnyel is lehet használni a ciklikus koordinátákat, ugyanis igazak rájuk a következő összefüggések:
 \begin{equation}
-    \delta \mathcal{H} = \sum_k \left( \dot{q}_k \delta p_k + p_k \delta \dot{q}_k - \frac{\partial \mathcal{L}}{\partial q_k} \delta q_k - \frac{\partial \mathcal{L}}{\partial \dot{q}_k} \delta \dot{q}_k \right)
+    \begin{aligned}
+        -\frac{\partial \mathcal{H}}{\partial Q} &= -\frac{\partial \mathcal{K}}{\partial Q} = \dot{P} \\
+        \frac{\partial \mathcal{H}}{\partial P} &= \frac{\partial \mathcal{K}}{\partial P} = \dot{Q} \\
+    \end{aligned}
 \end{equation}
-Ahol az Euler-Lagrange-féle mozgásegyenletet alkalmazva:
-\begin{equation}
-    \frac{\partial \mathcal{L}}{\partial q_k} = \frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot{q}_k} = \dot{p}_k
-\end{equation}
-\begin{equation}
-    \delta \mathcal{H} = \sum_k \left( \dot{q}_k \delta p_k + p_k \delta \dot{q}_k - \dot{p}_k \delta q_k - p_k \delta \dot{q}_k \right)
-\end{equation}
-\begin{equation}
-    \delta \mathcal{H} = \sum_k \left( \dot{q}_k \delta p_k - \dot{p}_k \delta q_k \right)
-\end{equation}
-Ebből következik, hogy a Hamilton-függvény parciális deriváltjai a kanonikus koordináták és impulzusok szerint a következők:
-\begin{equation}
-    \frac{\partial \mathcal{H}}{\partial p_k} = \dot{q}_k \quad \quad \frac{\partial \mathcal{H}}{\partial q_k} = -\dot{p}_k
-\end{equation}
-Ezek a Hamilton-féle kanonikus egyenletek, amelyek a Lagrange-féle mozgásegyenletek alternatív megfogalmazásai.
-
-Tehát összefoglalva:
-\begin{equation}
-    \mathcal{L}(q, \dot{q}, t) \rightarrow
-\end{equation}
-\begin{equation}
-    p = \frac{\partial \mathcal{L}}{\partial \dot{q}} \quad \quad \dot{p} = \frac{\partial \mathcal{L}}{\partial q}
-\end{equation}
-\begin{equation}
-    \frac{d\mathcal{L}}{dt} = \sum_k \left( \frac{\partial \mathcal{L}}{\partial q_k} \dot{q}_k + \frac{\partial \mathcal{L}}{\partial \dot{q}_k} \ddot{q}_k \right) + \frac{\partial \mathcal{L}}{\partial t}
-\end{equation}
-\noindent\hfil\rule{0.5\textwidth}{.4pt}\hfil
-\begin{equation}
-    \mathcal{H}(q, p, t) = \sum_k p_k \dot{q}_k - \mathcal{L}
-\end{equation}
-\begin{equation}
-    \frac{d\mathcal{H}}{dt} = - \frac{\partial \mathcal{L}}{\partial t}
-\end{equation}
-\begin{equation}
-    \frac{\partial \mathcal{H}}{\partial p_k} = \dot{q}_k \quad \quad \frac{\partial \mathcal{H}}{\partial q_k} = -\dot{p}_k
-\end{equation}
-\noindent\hfil\rule{0.5\textwidth}{.4pt}\hfil
-\begin{equation}
-    \text{Kanonikus egyenletek:}
-\end{equation}
-\begin{equation}
-    \dot{q}_k = \frac{\partial \mathcal{H}}{\partial p_k} \quad \quad \dot{p}_k = -\frac{\partial \mathcal{H}}{\partial q_k}
-\end{equation}
-
-\subsubsection{Kanonikus transzformációk}
-A Hamilton-függvény és a kanonikus egyenletek bevezetése után vizsgáljuk meg, hogy milyen transzformációkat alkalmazhatunk a kanonikus koordinátákra $(q_k, p_k)$ úgy, hogy a kanonikus egyenletek formája megmaradjon.
-Ezeket a transzformációkat kanonikus transzformációknak nevezzük. Legyen egy kanonikus transzformáció, amely a következőképpen néz ki:
-\begin{equation}
-    (q_k, p_k) \to (Q_k, P_k)
-\end{equation}
-A kanonikus egyenletek formája a következő:
-\begin{equation}
-    \dot{q}_k = \frac{\partial \mathcal{H}}{\partial p_k} \quad \quad \dot{p}_k = -\frac{\partial \mathcal{H}}{\partial q_k}
-\end{equation}
-\begin{equation}
-    \dot{Q}_k = \frac{\partial \mathcal{K}}{\partial P_k} \quad \quad \dot{P}_k = -\frac{\partial \mathcal{K}}{\partial Q_k}
-\end{equation}
-Ahol $\mathcal{K}$ az új Hamilton-függvény, amely a kanonikus transzformáció után keletkezik. A kanonikus transzformáció akkor megengedett, ha a kanonikus egyenletek formája megmarad, tehát a következő feltételnek kell teljesülnie:
-\begin{equation}
-    \frac{\partial \mathcal{H}}{\partial p_k} = \frac{\partial \mathcal{K}}{\partial P_k} \quad \quad -\frac{\partial \mathcal{H}}{\partial q_k} = -\frac{\partial \mathcal{K}}{\partial Q_k}
-\end{equation}
-Ezt a feltételt úgy is felírhatjuk, hogy a következő mátrix egyenletnek kell teljesülnie:
-\begin{equation}
-    \begin{pmatrix}\frac{\partial Q}{\partial q} & \frac{\partial Q}{\partial p} \\ \frac{\partial P}{\partial q} & \frac{\partial P}{\partial p} \end{pmatrix}
-    \begin{pmatrix} 0 & I \\ -I & 0 \end{pmatrix}
-    \begin{pmatrix}\frac{\partial Q}{\partial q} & \frac{\partial Q}{\partial p} \\ \frac{\partial P}{\partial q} & \frac{\partial P}{\partial p} \end{pmatrix}^T
-    = \begin{pmatrix} 0 & I \\ -I & 0 \end{pmatrix}
-\end{equation}
-Ahol $I$ az egységmátrix. Ez a feltétel biztosítja, hogy a kanonikus egyenletek formája megmaradjon a kanonikus transzformáció után.
-Egy kanonikus transzformációt gyakran egy generátorfüggvénnyel definiálnak, amely a következőképpen néz ki:
-\begin{equation}
-    F(q, P, t)
-\end{equation}
-A generátorfüggvény segítségével a kanonikus transzformáció a következőképpen néz ki:
-\begin{equation}
-    p_k = \frac{\partial F}{\partial q_k} \quad \quad Q_k = \frac{\partial F}{\partial P_k}
-\end{equation}
-A generátorfüggvény segítségével a kanonikus transzformációk könnyen definiálhatók és kezelhetők, és számos hasznos tulajdonsággal rendelkeznek. Például, ha a generátorfüggvény nem függ kifejezetten az időtől,
-akkor a kanonikus transzformáció megőrzi a Hamilton-függvény formáját, tehát az új Hamilton-függvény is megmarad időben. Ezért a kanonikus transzformációk nagyon hasznosak a Hamilton-függvények és a kanonikus egyenletek vizsgálatában,
-és számos alkalmazásuk van a fizikában és a matematikában.
 
 \subsubsection*{Példa: Harmonikus oszcillátor}
 Vegyünk egy harmonikus oszcillátort, amelynek a Hamilton-függvénye a következő (teljes energia):
