@@ -71,7 +71,7 @@ Ha a Hooke-törvényt kiterjesztjük 3D-re akkor a hossz helyett a térfogatvál
     \frac{\Delta V}{V} = \frac{(l + \Delta l)^2 (d + \Delta d)^2 - ld^2}{ld^2} = \frac{\Delta l (d + \Delta d)^2 + l 2d \Delta d + l \Delta d^2}{ld^2}
 \end{equation}
 \begin{equation}
-    \sim \frac{\Delta l d^2 + 2 l d \Delta d}{ld^2} = \frac{\Delta l}{l} + 2 \frac{\Delta d}{d}
+    \sim \frac{\Delta l d^2 + 2 l d \Delta d}{ld^2} = \frac{\Delta l}{l} + 2 \frac{\Delta d}{d} = \frac{\Delta l}{l} - 2 \nu \frac{\Delta l}{l} = (1 - 2 \nu) \frac{\Delta l}{l}
 \end{equation}
 Ezt a közelítést azért tehettem meg, mert tudom, hogy a $\Delta l$ és $\Delta d$ között kb. $10^{-3}$ nagyságrendű különbség van, vagyis kb. hasonlóak.
 Helyettesítsük be ide a Poisson arányt:
@@ -113,7 +113,7 @@ Ahol $\tau$ a nyíró feszültség, $\gamma$ a nyírási szög (kis szögnél $\
 Vegyünk egy henger alakú rudat, amit az egyik végénél rögzítünk, a másik végénél pedig egy $M$ nyomatékot alkalmazunk:
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{imgs/4-tetel/csavaras.png}
+    \includegraphics[width=0.8\textwidth]{imgs/4-tetel/csavaras.png}
     \caption{Csavarás}
 \end{figure}
 
@@ -131,15 +131,15 @@ Ekkor $\alpha$ és $\gamma$ között a következő összefüggés áll fenn:
 \end{equation}
 Az ezt az elmozdsulást okozó erő legyen $\Delta F$:
 \begin{equation}
-    \Delta F = \tau \Delta A = \mu \gamma \Delta r r \Delta \phi = \mu \frac{\alpha}{L} r^2 \Delta r \Delta \phi
+    \Delta F = \tau \Delta A = \mu \gamma \Delta r r \Delta \varphi = \mu \frac{\alpha}{L} r^2 \Delta r \Delta \varphi
 \end{equation}
-Ahol $\Delta A = r \Delta \phi \Delta r$ a kis felület, $\tau$ pedig a nyírási feszültség. Ebből pedig a nyomaték:
+Ahol $\Delta A = r \Delta \varphi \Delta r$ a kis felület, $\varphi$ a csavarodási szög, $\tau$ pedig a nyírási feszültség. Ebből pedig a nyomaték:
 \begin{equation}
-    \Delta M = \Delta F r = \mu \frac{\alpha}{L} r^3 \Delta r \Delta \phi
+    \Delta M = \Delta F r = \mu \frac{\alpha}{L} r^3 \Delta r \Delta \varphi
 \end{equation}
-Ezt össze kell adni minden kis felületre, tehát integrálni kell $r$ és $\phi$ szerint:
+Ezt össze kell adni minden kis felületre, tehát integrálni kell $r$ és $\varphi$ szerint:
 \begin{equation}
-    M = \int_0^{2\pi} \int_0^R \mu \frac{\alpha}{L} r^3 dr d\phi = \mu \frac{\alpha}{L} 2 \pi \frac{R^4}{4} = \frac{\pi \mu R^4}{2L} \alpha
+    M = \int_0^{2\pi} \int_0^R \mu \frac{\alpha}{L} r^3 dr d\varphi = \mu \frac{\alpha}{L} 2 \pi \frac{R^4}{4} = \frac{\pi \mu R^4}{2L} \alpha
 \end{equation}
 Itt a konstans tagokra bevezethetünk egy új mennyiséget, a torziós moduluszt ($D^*$):
 \begin{equation}

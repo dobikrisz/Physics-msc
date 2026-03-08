@@ -139,9 +139,14 @@ Csoportosítsuk a $sin$ és $cos$ tagokat külön:
 \begin{equation}
     \left( -A \omega^2 + \omega_0^2 A \right) sin(\omega t + \phi) + 2\beta A \omega cos(\omega t + \phi) = \frac{F_0}{m} sin(\omega t)
 \end{equation}
-Most használjuk a szögösszeg képletet, hogy kifejezzük a $sin(\omega t + \phi)$ és $cos(\omega t + \phi)$-t:
+Most használjuk a szögösszeg képletet\footnote{
+$sin(a + b) = sin(a) cos(b) + cos(a) sin(b)$ és $cos(a + b) = cos(a) cos(b) - sin(a) sin(b)$
+}, hogy kifejezzük a $sin(\omega t + \phi)$ és $cos(\omega t + \phi)$-t:
 \begin{equation}
-    \left( -A \omega^2 + \omega_0^2 A \right) \left( sin(\omega t) cos(\phi) + cos(\omega t) sin(\phi) \right) + 2\beta A \omega \left( cos(\omega t) cos(\phi) - sin(\omega t) sin(\phi) \right) = \frac{F_0}{m} sin(\omega t)
+    \begin{aligned}
+        & \left( -A \omega^2 + \omega_0^2 A \right) \left( sin(\omega t) cos(\phi) + cos(\omega t) sin(\phi) \right) + \\
+        & 2\beta A \omega \left( cos(\omega t) cos(\phi) - sin(\omega t) sin(\phi) \right) = \frac{F_0}{m} sin(\omega t)
+    \end{aligned}
 \end{equation}
 Csoportosítsuk a $sin(\omega t)$ és $cos(\omega t)$ tagokat külön:
 \begin{equation}
@@ -159,7 +164,10 @@ Mivel a $sin(\omega t)$ és $cos(\omega t)$ függvények lineárisan függetlene
 \end{equation}
 Itt a két egyenletet négzetre emelve és összeadva kifejezhetjük az $A$ amplitúdót:
 \begin{equation}
-    A^2\left[\left(\left( -\omega^2 + \omega_0^2 \right) cos(\phi) - 2\beta  \omega sin(\phi)\right)^2 + \left( \left( - \omega^2 + \omega_0^2 \right) sin(\phi) + 2\beta \omega cos(\phi) \right)^2\right] = \left(\frac{F_0}{m}\right)^2
+    \begin{aligned}
+        & A^2 \left( \left( -\omega^2 + \omega_0^2 \right) cos(\phi) - 2\beta  \omega sin(\phi) \right)^2 + \\
+        & A^2 \left( \left( - \omega^2 + \omega_0^2 \right) sin(\phi) + 2\beta  \omega cos(\phi) \right)^2 = \left(\frac{F_0}{m}\right)^2
+    \end{aligned}
 \end{equation}
 \begin{equation}
     \begin{aligned}
@@ -597,11 +605,26 @@ A jobboldal kiértékeléséhez használjuk ki a $\mathbf{a} = -G \frac{M}{r^2} 
 Ebből következik, hogy a $\frac{d}{dt} (\mathbf{v} \times \mathbf{K} - GM \hat{\mathbf{e}}_r) = \vec{0}$ vagyis ez a $\mathbf{v} \times \mathbf{K} - GM \hat{\mathbf{e}}_r$ egy konstans vektor,
 amit nevezzünk el $GM\boldsymbol{\varepsilon}$:
 \begin{equation}
+    \frac{d}{dt} (\mathbf{v} \times \mathbf{K} - \gamma M \mathbf{\hat{e}}_r) = \vec{0}
+\end{equation}
+Vagyis:
+\begin{equation}
+    \mathbf{v} \times \mathbf{K} - \gamma M \mathbf{\hat{e}}_r = \mathbf{C} \qquad \mathbf{C} = \text{Áll.}
+\end{equation}
+Ezt nevezik a Laplace-Runge-Lenz vektornak. Rendezzük át egy kicsit:
+\begin{equation}
+    \begin{aligned}
+        \mathbf{v} \times \mathbf{K} &= \mathbf{C} + \gamma M \mathbf{\hat{e}}_r \\
+        \mathbf{v} \times \mathbf{K} &= GM (\boldsymbol{\varepsilon} +\mathbf{\hat{e}}_r) \qquad \boldsymbol{\varepsilon} = \frac{\mathbf{C}}{GM}
+    \end{aligned}
+\end{equation}
+Ahol bevezzük az $\boldsymbol{\varepsilon}$ mennyiséget aminek a nagyságát ekszcentricitásnak neveznek. Ez a vektor mindig a periapszis felé mutat, amelyik az a pont a pályán ahol a test a legközelebb van a naphoz. Tehát a $\boldsymbol{\varepsilon}$ vektor iránya a pálya orientációját határozza meg, míg a nagysága az excentricitást, ami a pálya alakját jellemzi. Ha $\varepsilon = 0$, akkor a pálya kör alakú, ha $0 < \varepsilon < 1$, akkor elliptikus, ha $\varepsilon = 1$, akkor parabolikus, és ha $\varepsilon > 1$, akkor hiperbolikus.:
+\begin{equation}
     \mathbf{v} \times \mathbf{K} = GM (\boldsymbol{\varepsilon} + \hat{\mathbf{e}}_r)
 \end{equation}
 Tehát az eredeti hármas skalárszorzat egyenletünk jobboldala:
 \begin{equation}
-    \mathbf{v} \times \mathbf{K} \cdot \mathbf{r} = GM (\boldsymbol{\varepsilon} + \hat{\mathbf{e}}_r) \cdot \mathbf{r} = GM (|\mathbf{r}| + \boldsymbol{\varepsilon} \cdot \mathbf{r}))
+    \mathbf{v} \times \mathbf{K} \cdot \mathbf{r} = GM (\boldsymbol{\varepsilon} + \hat{\mathbf{e}}_r) \cdot \mathbf{r} = GM (|\mathbf{r}| + \boldsymbol{\varepsilon} \cdot \mathbf{r})
 \end{equation}
 Egyenlővé téve a két oldalt:
 \begin{equation}
@@ -872,7 +895,7 @@ Ahol $k = \sqrt{\frac{2mE}{\hbar^2}}$. Itt is beláthatjuk, hogy az $A$ együtth
 \end{equation}
 A harmadik régióban hasonlóan:
 \begin{equation}
-    \psi_{III}(x) = F e^{kx}, \quad x > a
+    \psi_{III}(x) = F e^{-kx}, \quad x > a
 \end{equation}
 A második régióban a Schrödinger-egyenlet a következőképpen néz ki:
 \begin{equation}
@@ -898,7 +921,7 @@ akkor elég az egyik oldalra (pl. $+ a$-nál) megoldani as határfeltételeket, 
 Nézzük meg a páros esetet, tehát vehetjük, hogy $C = 0$, így a teljes hullámfüggvény:
 \begin{equation}
 \psi(x) = \begin{cases}
-    F e^{kx} & x > a \\
+    F e^{-kx} & x > a \\
     D cos(l x) & 0 < x < a \\
     \psi_I(-x) & x < 0 
     \end{cases}
@@ -1183,11 +1206,11 @@ Most már felírhatjuk a bevezetett operátorok szorzatát a kommutátorral:
     \hat{a}_- \hat{a}_+ = \frac{1}{2 \hbar m \omega} \left( \hat{p}^2 + m^2 \omega^2 \hat{x}^2 + i m \omega [\hat{x}, \hat{p}] \right)
 \end{equation}
 \begin{equation}
-    \hat{a}_- \hat{a}_+ = \frac{1}{\hbar \omega} \left[\hat{p}^2 + (m \omega \hat{x})^2\right] + \frac{i}{2 \hbar} [\hat{x}, \hat{p}]
+    \hat{a}_- \hat{a}_+ = \frac{1}{2 \hbar m \omega} \left[\hat{p}^2 + (m \omega \hat{x})^2\right] + \frac{i}{2 \hbar} [\hat{x}, \hat{p}]
 \end{equation}
 Itt pedig észrevehetjük a Hamilton-operátort:
 \begin{equation}
-    \hat{a}_- \hat{a}_+ = \frac{2}{\hbar \omega} \hat{H} + \frac{i}{2 \hbar} [\hat{x}, \hat{p}]
+    \hat{a}_- \hat{a}_+ = \frac{1}{\hbar \omega} \hat{H} + \frac{i}{2 \hbar} [\hat{x}, \hat{p}]
 \end{equation}
 Most már csak ki kell számolnunk a kommutátort. Ezt úgy tehetjük meg, hogy alkalmazzuk a két operátort egy tetszőleges teszt függvényre $f(x)$:
 \begin{equation}
@@ -1211,7 +1234,7 @@ Mivel ez igaz minden $f(x)$ tesztfüggvényre, ezért a kommutátor maga:
 \end{equation}
 Ezt visszahelyettesítve az előző egyenletbe:
 \begin{equation}
-    \hat{a}_- \hat{a}_+ = \frac{2}{\hbar \omega} \hat{H} + \frac{1}{2} [\hat{x}, \hat{p}] = \frac{2}{\hbar \omega} \hat{H} + \frac{1}{2} i \hbar
+    \hat{a}_- \hat{a}_+ = \frac{1}{\hbar \omega} \hat{H} + \frac{1}{2} [\hat{x}, \hat{p}] = \frac{1}{\hbar \omega} \hat{H} + \frac{1}{2} i \hbar
 \end{equation}
 vagy a Hamilton-operátorra rendezve:
 \begin{equation}
@@ -1699,7 +1722,10 @@ Ahol $v(\varrho)$ egy ismeretlen függvény, amit meg kell határoznunk, abban r
 \end{equation}
 Ez egyelőre nem túl bíztató, de helyettesítsük be az eredeti egyenletbe:
 \begin{equation}
-    \varrho^{l - 1} e^{-\varrho} \left\{\left[-2l - 2 + \varrho + \frac{l(l+1)}{\varrho}\right]v + 2(l + 1 - \varrho) \frac{dv}{d \varrho} + \varrho \frac{d^2 v}{d \varrho^2}\right\} = \left[1 - \frac{\varrho_0}{\varrho} + \frac{l(l + 1)}{\varrho^2}\right] \varrho^{l + 1} e^{-\varrho} v
+    \begin{aligned}
+        & \varrho^{l - 1} e^{-\varrho} \left\{\left[-2l - 2 + \varrho + \frac{l(l+1)}{\varrho}\right]v + 2(l + 1 - \varrho) \frac{dv}{d \varrho} + \varrho \frac{d^2 v}{d \varrho^2}\right\} = \\
+        & = \left[1 - \frac{\varrho_0}{\varrho} + \frac{l(l + 1)}{\varrho^2}\right] \varrho^{l + 1} e^{-\varrho} v
+    \end{aligned}
 \end{equation}
 \begin{equation}
    \varrho \frac{d^2 v}{d \varrho^2} + 2(l + 1 - \varrho) \frac{dv}{d \varrho} + [\varrho_0 - 2(l + 1)] v = 0

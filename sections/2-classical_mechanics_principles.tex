@@ -108,7 +108,14 @@ A kérdés megválaszolását először a fény útvanálanak vizsgálata induk�
 Itt felmerülhet a kérdés, hogy mit is jelent az, hogy "legrövidebb útvonal"? 
 
 Arra hogy egy tetszőleges koordináta rendszerben meg tudjuk határozni a két pont közötti utat, a variációs kalkulust használjuk. A variációs kalkulus egy olyan matematikai eszköz, amely lehetővé teszi a függvények szélsőértékeinek meghatározását, amikor a függvények nem csak egy változótól, hanem egy függvénytől is függenek.
-A variációs kalkulus alapvető fogalma a funkcionál, amely egy olyan függvény, amely egy függvényt rendel egy valós számhoz. Például, ha van egy $y(x)$ függvényünk, akkor egy funkcionál lehet a következő:
+A variációs kalkulus alapvető fogalma a funkcionál, amely egy olyan függvény, amely egy függvényt rendel egy valós számhoz\footnote{
+    Kicsit pontosabban a funkcionál egy olyan objektum, ami egy függvényt rendel egy valós számhoz, és általában egy integrál formájában van megadva, ahol a függvény és annak deriváltjai szerepelnek az integrandumban. Például:
+    \begin{equation}
+        S[f] = \int_{0}^{1} f'(x)^2 \, dx
+    \end{equation}
+    Az $S[f]$ értéke egy valós szám amit az $f$ függvényhez rendelünk. 
+
+}. Például, ha van egy $y(x)$ függvényünk, akkor egy funkcionál lehet a következő:
 \begin{equation}
     S[y] = \int_{x_1}^{x_2} F(x, y, y') \, dx
 \end{equation}
@@ -228,6 +235,23 @@ Ennek a kifejezésnek vagyunk kiváncsiak, hogyan változik egy kis perturbáci�
     \frac{\partial}{\partial q_i} \left( \epsilon\mathcal{L}(q_i, \frac{q_{i+1} - q_i}{\epsilon}) + \epsilon\mathcal{L}(q_{i-1}, \frac{q_{i} - q_{i-1}}{\epsilon}) \right) = 0
 \end{equation}
 Vezessük be a kifejezést $v_i = \frac{q_{i+1} - q_i}{\epsilon}$ sebességet, és ekkor a következő eredményt kapjuk:
+\begin{equation}
+    \begin{aligned}
+        \frac{\partial}{\partial q_i} \epsilon\mathcal{L}(q_i, v_i) + \frac{\partial}{\partial q_i} \epsilon\mathcal{L}(q_{i-1}, v_{i-1}) &= 0 \\
+        \epsilon \frac{\partial \mathcal{L}}{\partial q_i} + \epsilon \frac{\partial \mathcal{L}}{\partial v_i} \frac{\partial v_i}{\partial q_i} + \epsilon \frac{\partial \mathcal{L}}{\partial v_{i-1}} \frac{\partial v_{i-1}}{\partial q_i} &= 0
+    \end{aligned}
+\end{equation}
+Itt a többváltozós láncszabályt alkalmaztuk\footnote{
+    A láncszabály szerint, ha egy függvény több változótól függ, és ezek a változók maguk is függnek egy harmadik változótól, akkor a teljes derivált kiszámításához minden változó részleges deriváltját ki kell számítani, és ezeket össze kell adni:
+\begin{equation}
+    \frac{d f(y(x), z(x), \ldots)}{d x} = \frac{\partial f}{\partial y} \frac{d y}{d x} + \frac{\partial f}{\partial z} \frac{d z}{d x} + \ldots
+\end{equation}
+}
+Az általánosított sebességek deriváltjai a következőképpen alakulnak:
+\begin{equation}
+    \frac{\partial v_i}{\partial q_i} = \frac{\partial}{\partial q_i} \left( \frac{q_{i+1} - q_i}{\epsilon} \right) =  - \frac{1}{\epsilon} \quad \text{és} \quad \frac{\partial v_{i-1}}{\partial q_i} = \frac{\partial}{\partial q_i} \left( \frac{q_{i} - q_{i-1}}{\epsilon} \right) = \frac{1}{\epsilon}
+\end{equation}
+Vagyis a perturbáció hatására a következő egyenletet kapjuk:
 \begin{equation}
     \epsilon \left( \frac{\partial \mathcal{L}}{\partial q_i} - \frac{1}{\epsilon} \frac{\partial \mathcal{L}}{\partial v_i} + \frac{1}{\epsilon} \frac{\partial \mathcal{L}}{\partial v_{i-1}} \right) = 0
 \end{equation}
