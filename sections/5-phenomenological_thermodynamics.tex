@@ -381,11 +381,11 @@ Ezek alapján vegyünk egy dobozt, amiben egy ideális gáz van:
     \includegraphics[width=0.5\textwidth]{imgs/5-tetel/kinetikus_model_doboz.png}
     \caption{Kinetikus gázelmélet doboz modell}
 \end{figure}
-Próbáljuk meg kiszámolni, hogy a gáz részecskéi milyen nyomást gyakorolnak a doboz falára. Azt tudjuk, hogy amikor as részecske $v$ sebességgel $x$ irányba nekiütközik a falnak, akkor a falra ható erő:
+Próbáljuk meg kiszámolni, hogy a gáz részecskéi milyen nyomást gyakorolnak a doboz falára. Azt tudjuk, hogy amikor a részecske $v$ sebességgel $x$ irányba nekiütközik a falnak, akkor a falra ható erő:
 \begin{equation}
     F_x = \frac{\Delta I_x}{\Delta t}
 \end{equation}
-Itt $I$-vel jelüljük az impulzust, hogy a nyomás jelölésével ne keverjük össze. Bontsuk fel a dobozt is egységekre, úgyhogy egy kis doboz-szelet szélessége pont $v\delta t$m vagyis 
+Itt $I$-vel jelüljük az impulzust, hogy a nyomás jelölésével ne keverjük össze. Bontsuk fel a dobozt is egységekre, úgyhogy egy kis doboz-szelet szélessége pont $v \cdot \delta t$ vagyis 
 pont akkora, amekkorát a részecske egy időegység alatt megtesz. A részecske impulzusváltozása az ütközés során:
 \begin{equation}
     |\Delta I_x| = |I_{x, \text{ütközés után}} - I_{x, \text{ütközés előtt}}| = |-\nu v - (\nu v)| = 2\nu v
@@ -398,7 +398,7 @@ Ahol $\nu$ a részecske tömege. Már csak az a kérdés, hogy egy időegység a
 Ahol $A$ a doboz fala, $\varrho$ a részecskék sűrűsége ($\varrho = \frac{N}{V}$), és az $\frac{1}{6}$ azért van, mert a részecskék hat irányba mozgáshatnak egyenlő valószínűséggel (mivel függetlenek egymástól és véletlenszerűen mozognak), de csak a pozitív $x$ irányú sebességgel rendelkező részecskék ütköznek a fallal.
 Tehát az impulzusváltozás időegység alatt:
 \begin{equation}
-    \Delta I_x = \Delta n \cdot 2\nu v = -2\nu v \cdot v \Delta t \cdot A \cdot \varrho \cdot \frac{1}{6}
+    \Delta I_x = \Delta n \cdot 2\nu v = 2\nu v \cdot v \Delta t \cdot A \cdot \varrho \cdot \frac{1}{6}
 \end{equation}
 Innen a nyomás:
 \begin{equation}

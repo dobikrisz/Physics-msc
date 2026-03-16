@@ -1,0 +1,17 @@
+[0] Config.pm:307> INFO - This is Biber 2.19
+[0] Config.pm:310> INFO - Logfile is 'main.blg'
+[29] biber:340> INFO - === Mon Mar 16, 2026, 07:53:17
+[35] Biber.pm:419> INFO - Reading 'main.bcf'
+[59] Biber.pm:979> INFO - Found 11 citekeys in bib section 0
+[65] Biber.pm:4419> INFO - Processing section 0
+[69] Biber.pm:4610> INFO - Looking for bibtex file '/home/krisztian/Desktop/MSc Prep/kidolgozas/references/references.bib' for section 0
+[69] bibtex.pm:1713> INFO - LaTeX decoding ...
+[73] bibtex.pm:1519> INFO - Found BibTeX data source '/home/krisztian/Desktop/MSc Prep/kidolgozas/references/references.bib'
+[110] UCollate.pm:68> INFO - Overriding locale 'hu-HU' defaults 'variable = shifted' with 'variable = non-ignorable'
+[110] UCollate.pm:68> INFO - Overriding locale 'hu-HU' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[110] Biber.pm:4239> INFO - Sorting list 'ynt/global//global/global' of type 'entry' with template 'ynt' and locale 'hu-HU'
+[115] bbl.pm:660> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[117] bbl.pm:763> INFO - Output to main.bbl
+[117] Biber.pm:131> WARN - BibTeX subsystem: /tmp/biber_tmp_jiQP/33e59b5ca9ec342068223d604c3f8d55_6713.utf8, line 78, warning: 1 characters of junk seen at toplevel
+[117] Biber.pm:131> WARN - BibTeX subsystem: /tmp/biber_tmp_jiQP/33e59b5ca9ec342068223d604c3f8d55_6713.utf8, line 86, warning: 1 characters of junk seen at toplevel
+[117] Biber.pm:133> INFO - WARNINGS: 2

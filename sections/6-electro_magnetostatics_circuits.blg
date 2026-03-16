@@ -1,0 +1,9 @@
+[0] Config.pm:307> INFO - This is Biber 2.19
+[0] Config.pm:310> INFO - Logfile is 'sections/6-electro_magnetostatics_circuits.blg'
+[30] biber:340> INFO - === Mon Mar  9, 2026, 08:53:01
+[37] Biber.pm:419> INFO - Reading 'sections/6-electro_magnetostatics_circuits.bcf'
+[61] Biber.pm:979> INFO - Found 0 citekeys in bib section 0
+[68] bbl.pm:660> INFO - Writing 'sections/6-electro_magnetostatics_circuits.bbl' with encoding 'UTF-8'
+[68] bbl.pm:763> INFO - Output to sections/6-electro_magnetostatics_circuits.bbl
+[68] Biber.pm:131> WARN - The file 'sections/6-electro_magnetostatics_circuits.bcf' does not contain any citations!
+[68] Biber.pm:133> INFO - WARNINGS: 1
