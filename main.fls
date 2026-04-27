@@ -1624,6 +1624,12 @@ INPUT ./imgs/7-tetel/integral_utak.png
 INPUT imgs/7-tetel/integral_utak.png
 INPUT ./imgs/7-tetel/integral_utak.png
 INPUT ./imgs/7-tetel/integral_utak.png
+INPUT /usr/share/texmf/fonts/tfm/public/lm/lmmib10.tfm
+INPUT /usr/share/texmf/fonts/tfm/public/lm/lmmib7.tfm
+INPUT /usr/share/texmf/fonts/tfm/public/lm/lmmib5.tfm
+INPUT /usr/share/texmf/fonts/tfm/public/lm/lmbsy10.tfm
+INPUT /usr/share/texmf/fonts/tfm/public/lm/lmbsy7.tfm
+INPUT /usr/share/texmf/fonts/tfm/public/lm/lmbsy5.tfm
 INPUT ./imgs/7-tetel/magnetized_cylinder.png
 INPUT ./imgs/7-tetel/magnetized_cylinder.png
 INPUT imgs/7-tetel/magnetized_cylinder.png
@@ -2685,12 +2691,6 @@ INPUT ./imgs/12-tetel/inkoherens_per.png
 INPUT imgs/12-tetel/inkoherens_per.png
 INPUT ./imgs/12-tetel/inkoherens_per.png
 INPUT ./imgs/12-tetel/inkoherens_per.png
-INPUT /usr/share/texmf/fonts/tfm/public/lm/lmmib10.tfm
-INPUT /usr/share/texmf/fonts/tfm/public/lm/lmmib7.tfm
-INPUT /usr/share/texmf/fonts/tfm/public/lm/lmmib5.tfm
-INPUT /usr/share/texmf/fonts/tfm/public/lm/lmbsy10.tfm
-INPUT /usr/share/texmf/fonts/tfm/public/lm/lmbsy7.tfm
-INPUT /usr/share/texmf/fonts/tfm/public/lm/lmbsy5.tfm
 INPUT ./imgs/12-tetel/kivalasztas.png
 INPUT ./imgs/12-tetel/kivalasztas.png
 INPUT imgs/12-tetel/kivalasztas.png
@@ -3350,6 +3350,7 @@ INPUT /usr/share/texmf/fonts/type1/public/lm/lmbsy10.pfb
 INPUT /usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb
 INPUT /usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb
 INPUT /usr/share/texmf/fonts/type1/public/lm/lmbx6.pfb
+INPUT /usr/share/texmf/fonts/type1/public/lm/lmbx7.pfb
 INPUT /usr/share/texmf/fonts/type1/public/lm/lmbx8.pfb
 INPUT /usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb
 INPUT /usr/share/texmf/fonts/type1/public/lm/lmex10.pfb

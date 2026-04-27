@@ -1,14 +1,14 @@
 # Fdb version 4
-["biber main"] 1773643997.28125 "main.bcf" "main.bbl" "main" 1773644013.17596 0
+["biber main"] 1773643997.28125 "main.bcf" "main.bbl" "main" 1773731909.74774 0
   "/home/krisztian/Desktop/MSc Prep/kidolgozas/references/references.bib" 1770023649.31522 2705 983206bca18807ac9297da2a4caa2a1a ""
-  "main.bcf" 1773644012.91575 108989 0dff5b6a0f8f4734b36ad2bf88d3921c "pdflatex"
+  "main.bcf" 1773731909.47637 108989 0dff5b6a0f8f4734b36ad2bf88d3921c "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1773644005.41828 "/home/krisztian/Desktop/MSc Prep/kidolgozas/main.tex" "main.pdf" "main" 1773644013.17614 0
+["pdflatex"] 1773731901.9475 "/home/krisztian/Desktop/MSc Prep/kidolgozas/main.tex" "main.pdf" "main" 1773731909.74794 0
   "/etc/texmf/web2c/texmf.cnf" 1759166874.49077 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/krisztian/Desktop/MSc Prep/kidolgozas/main.tex" 1773643981.31425 3220 094ec59d85df5caa1340511d00d96921 ""
+  "/home/krisztian/Desktop/MSc Prep/kidolgozas/main.tex" 1773731893.71766 3220 094ec59d85df5caa1340511d00d96921 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm1200.tfm" 1136768653 3584 f80ddd985bd00e29e9a6047ebd9d4781 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -166,6 +166,7 @@
   "/usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb" 1255129361 121021 1bf809ce4a594679006bd72263eba59b ""
   "/usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb" 1255129361 116908 1fca96723793882c2e0160350c192fc8 ""
   "/usr/share/texmf/fonts/type1/public/lm/lmbx6.pfb" 1255129361 123928 f1dd00d394b594999dc15fd8014bed65 ""
+  "/usr/share/texmf/fonts/type1/public/lm/lmbx7.pfb" 1255129361 119461 4a38ff487952cdeffc81de782e40a4a0 ""
   "/usr/share/texmf/fonts/type1/public/lm/lmbx8.pfb" 1255129361 125241 1d6de6a4ab0d08571b46009b6426dace ""
   "/usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb" 1255129361 116427 4a5b1ccaa7cce719091920a86b58608d ""
   "/usr/share/texmf/fonts/type1/public/lm/lmex10.pfb" 1254269338 23055 2e5b42921de910eaa97b85df04ca4891 ""
@@ -518,12 +519,12 @@
   "imgs/9-tetel/rainbow_path.png" 1765102727.34365 34357 c2837443a9b9059d8065d2830ec87be9 ""
   "imgs/9-tetel/siktukor.jpg" 1765013757.63697 79171 7ceb95319dea5e0f44c86b4365fc40fc ""
   "imgs/9-tetel/tores.jpg" 1765014329.7482 28831 e247289700161f4fbec7d0b78c337158 ""
-  "main.aux" 1773644012.91105 150169 21562f54a6cd8f49bc10035c2ea1c9b0 "pdflatex"
+  "main.aux" 1773731909.47137 150169 1ab914b30e18b288bf0ab5ba223c76bb "pdflatex"
   "main.bbl" 1773643997.68367 13745 1c558128891dc83e84a29e82f5f48aa2 "biber main"
-  "main.out" 1773644012.91522 85863 6789154d6cea56d28171f84ecbe397aa "pdflatex"
-  "main.run.xml" 1773644012.91675 2359 57e26ccec802ab00a0f52a411e53108e "pdflatex"
-  "main.tex" 1773643981.31425 3220 094ec59d85df5caa1340511d00d96921 ""
-  "main.toc" 1773644012.91675 51476 fe8cf5066312077a78494dff2899f331 "pdflatex"
+  "main.out" 1773731909.47595 85863 6789154d6cea56d28171f84ecbe397aa "pdflatex"
+  "main.run.xml" 1773731909.47866 2359 57e26ccec802ab00a0f52a411e53108e "pdflatex"
+  "main.tex" 1773731893.71766 3220 094ec59d85df5caa1340511d00d96921 ""
+  "main.toc" 1773731909.47866 51476 d181d709fb363b9aa5381d46d716c055 "pdflatex"
   "sections/1-classical_mechanics.tex" 1770620206.90041 114480 c6192da37acbd7e4f8aaaa69686462b3 ""
   "sections/10-quantum_theory_experiments.tex" 1766480568.1379 107894 e67362c9808f709f058d781228d589ec ""
   "sections/11-quantum_mechanics_basics.tex" 1766480550.1876 160779 48877bd9b118c8cb1254b1683fdd7e25 ""
@@ -539,7 +540,7 @@
   "sections/4-continous_fluids.tex" 1771917826.77481 72978 80ec5648702bd95ef2261c13bc42f562 ""
   "sections/5-phenomenological_thermodynamics.tex" 1772961817.27335 160611 8d08b31b505cf949a7fa43b76fbebab1 ""
   "sections/6-electro_magnetostatics_circuits.tex" 1773500671.02224 104348 814ee99f122a2fbe100eca111a718028 ""
-  "sections/7-electrodynamics.tex" 1766480620.09386 73764 ba7b267d2f7b26dce7f377e2d2550dde ""
+  "sections/7-electrodynamics.tex" 1773731557.58709 75981 d1632a47e5f4f1d0ddbb59d57f124b1b ""
   "sections/8-wave_equation_wave_phenomena.tex" 1766480605.13072 108349 cee2c0bc99e82a1fba551f73e7a072c3 ""
   "sections/9-geometrical_optics_applications.tex" 1766480591.09441 42119 87f6844f7fabf41ed39914b535a9e718 ""
   (generated)

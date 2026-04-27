@@ -243,10 +243,8 @@ Egy olyan térben ahol vákuum van, a Maxwell-egyenletek a következőképpen al
 Ezek egy kapcsolt, elsőrendű parciális differenciálegyenlet rendszert alkotnak a $\bold{E}$ és $\bold{B}$ terekre. A kapcsoltságot meg lehet szüntetni, ha mindkét egyenletet rotáljuk:
 \begin{equation}
     \begin{aligned}
-        \boldsymbol{\nabla} \times (\boldsymbol{\nabla} \times \bold{E}) &= \boldsymbol{\nabla} (\boldsymbol{\nabla} \cdot \bold{E}) - \boldsymbol{\nabla}^2 \bold{E} = \boldsymbol{\nabla} \times \left(-\frac{\partial \bold{B}}{\partial t}\right) \\
-        &= -\frac{\partial}{\partial t} (\boldsymbol{\nabla} \times \bold{B}) = -\mu_0 \epsilon_0 \frac{\partial^2 \bold{E}}{\partial t^2} \\
-        \boldsymbol{\nabla} \times (\boldsymbol{\nabla} \times \bold{B}) &= \boldsymbol{\nabla} (\boldsymbol{\nabla} \cdot \bold{B}) - \boldsymbol{\nabla}^2 \bold{B} = \boldsymbol{\nabla} \times \left( \mu_0 \epsilon_0 \frac{\partial \bold{E}}{\partial t} \right) \\
-        &= \mu_0 \epsilon_0 \frac{\partial}{\partial t} (\boldsymbol{\nabla} \times \bold{E}) = -\mu_0 \epsilon_0
+        \boldsymbol{\nabla} \times (\boldsymbol{\nabla} \times \bold{E}) &= \underbrace{\boldsymbol{\nabla} (\boldsymbol{\nabla} \cdot \bold{E})}_{0} - \boldsymbol{\nabla}^2 \bold{E} = \boldsymbol{\nabla} \times \left(-\frac{\partial \bold{B}}{\partial t}\right) \\
+        \boldsymbol{\nabla} \times (\boldsymbol{\nabla} \times \bold{B}) &= \underbrace{\boldsymbol{\nabla} (\boldsymbol{\nabla} \cdot \bold{B})}_{0} - \boldsymbol{\nabla}^2 \bold{B} = \boldsymbol{\nabla} \times \left( \mu_0 \epsilon_0 \frac{\partial \bold{E}}{\partial t} \right) \\
     \end{aligned}
 \end{equation}
 De mivel $\boldsymbol{\nabla} \cdot \bold{E} = 0$ és $\boldsymbol{\nabla} \cdot \bold{B} = 0$, ezért a bal oldali első tagok kiesnek, és a következőket kapjuk:
