@@ -34,8 +34,9 @@
 \select@language {magyar} \contentsline {subsubsection}{\numberline {2.2.3}Lagrange-féle elsőfajú és másodfajú egyenletek}{62}{subsubsection.2.2.3}%
 \select@language {magyar} \contentsline {subsection}{\numberline {2.3}Szimmetriák és megmaradási tételek}{66}{subsection.2.3}%
 \select@language {magyar} \contentsline {subsection}{\numberline {2.4}Szimmetriák általánosan}{67}{subsection.2.4}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {2.4.1}Ciklikus Koordináták}{69}{subsubsection.2.4.1}%
 \select@language {magyar} \contentsline {subsection}{\numberline {2.5}Hamilton függvény, kanonikus egyenletek, kanonikus transzformációk}{70}{subsection.2.5}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {2.5.1}Ciklikus koordináták, Kanonikus transzformációk}{72}{subsubsection.2.5.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {2.5.1}Kanonikus transzformációk}{72}{subsubsection.2.5.1}%
 \select@language {magyar} \contentsline {section}{\numberline {3}Egzaktul megoldható Fizikai problémák}{75}{section.3}%
 \select@language {magyar} \contentsline {subsection}{\numberline {3.1}Csillapított és kényszerrezgések, csatolt rezgések, lineáris lánc}{75}{subsection.3.1}%
 \select@language {magyar} \contentsline {subsubsection}{\numberline {3.1.1}Csillapított rezgés}{75}{subsubsection.3.1.1}%
@@ -118,266 +119,266 @@
 \select@language {magyar} \contentsline {subsection}{\numberline {7.3}Maxwell-egyenletek, anyagi összefüggések, illesztési feltételek}{259}{subsection.7.3}%
 \select@language {magyar} \contentsline {subsubsection}{\numberline {7.3.1}Maxwell-Egyenletek}{261}{subsubsection.7.3.1}%
 \select@language {magyar} \contentsline {subsubsection}{\numberline {7.3.2}Maxwell-egyenletek anyagban, anyagi összefüggések}{263}{subsubsection.7.3.2}%
-\select@language {magyar} \contentsline {subsection}{\numberline {7.4}Elektromágneses potenciálok, mértékinvariancia}{267}{subsection.7.4}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {7.4.1}mértékinvariancia (Gauge Transformation)}{269}{subsubsection.7.4.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {7.4.2}Coulomb mérték}{270}{subsubsection.7.4.2}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {7.4.3}Lorentz mérték}{270}{subsubsection.7.4.3}%
-\select@language {magyar} \contentsline {subsection}{\numberline {7.5}Elektromágneses tér energiája és impulzusa}{271}{subsection.7.5}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {7.5.1}Kontinuitási Egyenlet}{271}{subsubsection.7.5.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {7.5.2}Poynting tétel}{272}{subsubsection.7.5.2}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {7.5.3}Impulzus}{274}{subsubsection.7.5.3}%
-\select@language {magyar} \contentsline {section}{\numberline {8}Hullámegyenlet és hullámjelenségek \blx@tocontentsinit {0}\cite {electro_intro}}{277}{section.8}%
-\select@language {magyar} \contentsline {subsection}{\numberline {8.1}Hullámegyenletek származtatása, megoldásai}{277}{subsection.8.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {8.1.1}A hullámegyenlet}{277}{subsubsection.8.1.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {8.1.2}Klasszikus hullám}{277}{subsubsection.8.1.2}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {8.1.3}Határfeltételek: Visszaverődés és transzmisszió}{280}{subsubsection.8.1.3}%
-\select@language {magyar} \contentsline {subsection}{\numberline {8.2}Polarizáció}{281}{subsection.8.2}%
-\select@language {magyar} \contentsline {subsection}{\numberline {8.3}Elektromágneses hullámok}{283}{subsection.8.3}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {8.3.1}Elektromágneses hullám vákuumban}{283}{subsubsection.8.3.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {8.3.2}Monokromatikus hullámok}{283}{subsubsection.8.3.2}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {8.3.3}Elektromágneses hullámok energia és impulzusa}{285}{subsubsection.8.3.3}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {8.3.4}Elektomágneses hullámok anyagban}{286}{subsubsection.8.3.4}%
-\select@language {magyar} \contentsline {subsection}{\numberline {8.4}Diszperzió, csoport- és fázissebesség, Doppler-effektus}{297}{subsection.8.4}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {8.4.1}Doppler-Effektus}{298}{subsubsection.8.4.1}%
-\select@language {magyar} \contentsline {subsection}{\numberline {8.5}interferencia, diffrakció}{299}{subsection.8.5}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {8.5.1}Interferencia}{299}{subsubsection.8.5.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {8.5.2}diffrakció}{300}{subsubsection.8.5.2}%
-\select@language {magyar} \contentsline {subsection}{\numberline {8.6}Retardált potenciálok. Dipólsugárzás}{302}{subsection.8.6}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {8.6.1}Retardált potenciálok}{302}{subsubsection.8.6.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {8.6.2}Dipólsugárzás}{305}{subsubsection.8.6.2}%
-\select@language {magyar} \contentsline {section}{\numberline {9}Geometriai optika és alkalmazásai}{316}{section.9}%
-\select@language {magyar} \contentsline {subsection}{\numberline {9.1}Fermat-elv}{316}{subsection.9.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {9.1.1}törés és visszaverődés}{316}{subsubsection.9.1.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {9.1.2}Fermat-elv}{317}{subsubsection.9.1.2}%
-\select@language {magyar} \contentsline {subsection}{\numberline {9.2}Paraxiális közelítés}{319}{subsection.9.2}%
-\select@language {magyar} \contentsline {subsection}{\numberline {9.3}Optikai, leképezési törvények, felbontóképesség}{320}{subsection.9.3}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {9.3.1}Optikai törvények}{320}{subsubsection.9.3.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {9.3.2}Leképezési törvények}{320}{subsubsection.9.3.2}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {9.3.3}Felbontóképesség}{324}{subsubsection.9.3.3}%
-\select@language {magyar} \contentsline {subsection}{\numberline {9.4}Optikai eszközök}{325}{subsection.9.4}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {9.4.1}Távcsövek}{325}{subsubsection.9.4.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {9.4.2}Fénymikroszkóp}{328}{subsubsection.9.4.2}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {9.4.3}Szemüveg}{330}{subsubsection.9.4.3}%
-\select@language {magyar} \contentsline {subsection}{\numberline {9.5}Optikai jelenségek a természetben, Kausztikák}{331}{subsection.9.5}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {9.5.1}Délibáb}{331}{subsubsection.9.5.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {9.5.2}Naplemente}{333}{subsubsection.9.5.2}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {9.5.3}Szivárvány}{333}{subsubsection.9.5.3}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {9.5.4}Kausztikák}{335}{subsubsection.9.5.4}%
-\select@language {magyar} \contentsline {section}{\numberline {10}A kvantumelmélet alapvető kísérletei \blx@tocontentsinit {0}\cite {kiserleti_atomfizika}}{337}{section.10}%
-\select@language {magyar} \contentsline {subsection}{\numberline {10.1}Fotoeffektus}{337}{subsection.10.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {10.1.1}A fotoeffektus kvantumos magyarázata: a fotonkép}{339}{subsubsection.10.1.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {10.1.2}Atomi fotoeffektus}{340}{subsubsection.10.1.2}%
-\select@language {magyar} \contentsline {subsection}{\numberline {10.2}Compton-effektus}{340}{subsection.10.2}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {10.2.1}Compton kísérletei a röntgensugárzás rugalmatlan szóródására}{340}{subsubsection.10.2.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {10.2.2}A Compton-effektus értelmezése}{341}{subsubsection.10.2.2}%
-\select@language {magyar} \contentsline {subsection}{\numberline {10.3}Hőmérsékleti sugárzás spektruma}{343}{subsection.10.3}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {10.3.1}Az abszolút fekete test}{343}{subsubsection.10.3.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {10.3.2}Kirchhoff törvények}{345}{subsubsection.10.3.2}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {10.3.3}A feketetest sugárzás}{345}{subsubsection.10.3.3}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {10.3.4}Rayleigh-Jeans féle sugárzási törvény}{346}{subsubsection.10.3.4}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {10.3.5}Wien-féle sugárzási törvény}{349}{subsubsection.10.3.5}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {10.3.6}Planck-Féle sugárzási törvény}{349}{subsubsection.10.3.6}%
-\select@language {magyar} \contentsline {subsection}{\numberline {10.4}Rutherford-kísérlet}{350}{subsection.10.4}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {10.4.1}Atommodellek Rutherford Előtt}{350}{subsubsection.10.4.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {10.4.2}Kisérleti elrendezés}{351}{subsubsection.10.4.2}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {10.4.3}Rutherford atommodellje}{353}{subsubsection.10.4.3}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {10.4.4}Hatáskeresztmetszet}{353}{subsubsection.10.4.4}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {10.4.5}A Rutherford-féle szórási formula}{355}{subsubsection.10.4.5}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {10.4.6}A Rutherford-kísérlet következményei}{357}{subsubsection.10.4.6}%
-\select@language {magyar} \contentsline {subsection}{\numberline {10.5}Millikan-kísérlet}{358}{subsection.10.5}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {10.5.1}Sörétzaj}{361}{subsubsection.10.5.1}%
-\select@language {magyar} \contentsline {subsection}{\numberline {10.6}Davisson–Germer-kísérlet}{361}{subsection.10.6}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {10.6.1}De Broglie-féle hullámok}{361}{subsubsection.10.6.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {10.6.2}Davisson-Germer kísérlete}{362}{subsubsection.10.6.2}%
-\select@language {magyar} \contentsline {subsection}{\numberline {10.7}Stern–Gerlach-kísérlet}{363}{subsection.10.7}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {10.7.1}Iránykvantáltság mérése}{364}{subsubsection.10.7.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {10.7.2}Több mágneses tér használata}{366}{subsubsection.10.7.2}%
-\select@language {magyar} \contentsline {subsection}{\numberline {10.8}Einstein–de Haas-kísérlet}{367}{subsection.10.8}%
-\select@language {magyar} \contentsline {subsection}{\numberline {10.9}Zeeman-effektus}{369}{subsection.10.9}%
-\select@language {magyar} \contentsline {section}{\numberline {11}A kvantummechanika alapjai \blx@tocontentsinit {0}\cite {quantum_intro}}{372}{section.11}%
-\select@language {magyar} \contentsline {subsection}{\numberline {11.1}A kvantummechanika matematikai háttere, kvantummechanikai reprezentációk}{372}{subsection.11.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {11.1.1}Hilbert-tér Vektorok \blx@tocontentsinit {0}\cite {quantum_primer}}{372}{subsubsection.11.1.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {11.1.2}Hilbert tér operátorai}{376}{subsubsection.11.1.2}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {11.1.3}Determinisztikus állapotok}{378}{subsubsection.11.1.3}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {11.1.4}A hermitikus operátor sajátfüggvényei}{378}{subsubsection.11.1.4}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {11.1.5}Bázisok a Hilbert téren}{382}{subsubsection.11.1.5}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {11.1.6}Dirac Jelölés}{385}{subsubsection.11.1.6}%
-\select@language {magyar} \contentsline {subsection}{\numberline {11.2}Schrödinger-egyenlet}{386}{subsection.11.2}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {11.2.1}Schrödinger Egyenlet Szeparálása}{387}{subsubsection.11.2.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {11.2.2}Schrödinger egyenlet megoldása}{390}{subsubsection.11.2.2}%
-\select@language {magyar} \contentsline {subsection}{\numberline {11.3}Statisztikus interpretáció}{391}{subsection.11.3}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {11.3.1}Normalizálás}{393}{subsubsection.11.3.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {11.3.2}általánosított statisztikus interpretáció}{394}{subsubsection.11.3.2}%
-\select@language {magyar} \contentsline {subsection}{\numberline {11.4}Határozatlansági reláció}{397}{subsection.11.4}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {11.4.1}Momentum operátor}{397}{subsubsection.11.4.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {11.4.2}Határozatlansági reláció elve}{399}{subsubsection.11.4.2}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {11.4.3}általánosított határozatlansági reláció}{400}{subsubsection.11.4.3}%
-\select@language {magyar} \contentsline {subsection}{\numberline {11.5}Szabad részecske hullámfüggvénye, szuperpozíció}{402}{subsection.11.5}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {11.5.1}Disperziós reláció}{405}{subsubsection.11.5.1}%
-\select@language {magyar} \contentsline {subsection}{\numberline {11.6}Impulzusmomentum operátor, sajátértékei, sajátfüggvényei}{407}{subsection.11.6}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {11.6.1}A Schrödinger egyenlet három dimenzióban}{407}{subsubsection.11.6.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {11.6.2}Gömbi-koordináták}{408}{subsubsection.11.6.2}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {11.6.3}A szögektől függő egyenlet}{410}{subsubsection.11.6.3}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {11.6.4}A sugárfüggő egyenlet}{412}{subsubsection.11.6.4}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {11.6.5}Az impulzusmomentum}{413}{subsubsection.11.6.5}%
-\select@language {magyar} \contentsline {subsection}{\numberline {11.7}Spin}{420}{subsection.11.7}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {11.7.1}1/2 Spin}{421}{subsubsection.11.7.1}%
-\select@language {magyar} \contentsline {subsection}{\numberline {11.8}Korrespondanciaelv}{424}{subsection.11.8}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {11.8.1}Oszcillátor sugárzása}{424}{subsubsection.11.8.1}%
-\select@language {magyar} \contentsline {section}{\numberline {12}Atom- és molekulaszerkezet \blx@tocontentsinit {0}\cite {quantum_intro}}{426}{section.12}%
-\select@language {magyar} \contentsline {subsection}{\numberline {12.1}Atomi energiaszintek, emissziós, abszorpciós spektrumok \blx@tocontentsinit {0}\cite {kiserleti_atomfizika}}{426}{subsection.12.1}%
-\select@language {magyar} \contentsline {subsection}{\numberline {12.2}A Hidrogén atom spektruma}{427}{subsection.12.2}%
-\select@language {magyar} \contentsline {subsection}{\numberline {12.3}Bohr-modell}{429}{subsection.12.3}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {12.3.1}Izotóp eltolódás, a többtest probléma}{432}{subsubsection.12.3.1}%
-\select@language {magyar} \contentsline {subsection}{\numberline {12.4}Kvantummechanikai közelítő módszerek}{432}{subsection.12.4}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {12.4.1}Időfüggetlen Perturbációs elmélet}{432}{subsubsection.12.4.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {12.4.2}Variációs elv}{443}{subsubsection.12.4.2}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {12.4.3}A WKB közelítés}{446}{subsubsection.12.4.3}%
-\select@language {magyar} \contentsline {subsection}{\numberline {12.5}Felhasadások: finomfelhasadás, hiperfinom felhasadás, Lamb-eltolódás}{448}{subsection.12.5}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {12.5.1}Finomfelhasadás}{449}{subsubsection.12.5.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {12.5.2}Hiperfinom felhasadás}{455}{subsubsection.12.5.2}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {12.5.3}Lamb-eltolódás}{456}{subsubsection.12.5.3}%
-\select@language {magyar} \contentsline {subsection}{\numberline {12.6}Spektrumvonalak felhasadása külső térben: Stark- és Zeeman-effektusok}{457}{subsection.12.6}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {12.6.1}A Zeeman-effektus}{457}{subsubsection.12.6.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {12.6.2}Stark-effektus}{461}{subsubsection.12.6.2}%
-\select@language {magyar} \contentsline {subsection}{\numberline {12.7}Fermi-féle aranyszabály, alagútjelenség}{463}{subsection.12.7}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {12.7.1}Inkoherens perturbáció}{464}{subsubsection.12.7.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {12.7.2}Einstein féle $A$ és $B$ együtthatók}{465}{subsubsection.12.7.2}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {12.7.3}Kiválasztási szabályok}{467}{subsubsection.12.7.3}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {12.7.4}Fermi-féle aranyszabály}{468}{subsubsection.12.7.4}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {12.7.5}Alagút-effektus}{469}{subsubsection.12.7.5}%
-\select@language {magyar} \contentsline {subsection}{\numberline {12.8}He-atom, Kétatomos molekulák, Pauli-elv}{472}{subsection.12.8}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {12.8.1}Hélium atom}{472}{subsubsection.12.8.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {12.8.2}Kétatomos molekulák}{476}{subsubsection.12.8.2}%
-\select@language {magyar} \contentsline {section}{\numberline {13}A magfizika alapjai \blx@tocontentsinit {0}\cite {atommag_fizika}}{484}{section.13}%
-\select@language {magyar} \contentsline {subsection}{\numberline {13.1}Izotóptérkép, atommagok tömege, mérete, kötési energiája}{484}{subsection.13.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {13.1.1}Atommagok mérete}{486}{subsubsection.13.1.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {13.1.2}Atomok töltése}{489}{subsubsection.13.1.2}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {13.1.3}Atommagok tömege}{490}{subsubsection.13.1.3}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {13.1.4}Atomok kötési energiája}{492}{subsubsection.13.1.4}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {13.1.5}Izotóptérkép}{495}{subsubsection.13.1.5}%
-\select@language {magyar} \contentsline {subsection}{\numberline {13.2}Energia és tömeg ekvivalencia, tömegdefektus}{496}{subsection.13.2}%
-\select@language {magyar} \contentsline {subsection}{\numberline {13.3}A cseppmodell és a félempirikus kötési formula}{497}{subsection.13.3}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {13.3.1}Cseppmodell}{499}{subsubsection.13.3.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {13.3.2}Az atommag energiája a cseppmodell szerint}{499}{subsubsection.13.3.2}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {13.3.3}A félempirikus kötési energia formula}{502}{subsubsection.13.3.3}%
-\select@language {magyar} \contentsline {subsection}{\numberline {13.4}Maghasadás, magfúzió, radioaktivitás}{503}{subsection.13.4}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {13.4.1}Maghasadás}{503}{subsubsection.13.4.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {13.4.2}Magfúzió}{508}{subsubsection.13.4.2}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {13.4.3}Radioaktivitás}{512}{subsubsection.13.4.3}%
-\select@language {magyar} \contentsline {subsection}{\numberline {13.5}Sugárzás és anyag kölcsönhatása: Bethe–Bloch-formula}{513}{subsection.13.5}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {13.5.1}Elektromosan töltött részecskék kölcsönhatása az anyaggal}{513}{subsubsection.13.5.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {13.5.2}Lineáris energiaátadás}{514}{subsubsection.13.5.2}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {13.5.3}Behatolási mélység}{515}{subsubsection.13.5.3}%
-\select@language {magyar} \contentsline {subsection}{\numberline {13.6}Radioaktív bomlások, magátalakulások}{516}{subsection.13.6}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {13.6.1}Alfa- béta- gamma-sugárzások}{516}{subsubsection.13.6.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {13.6.2}Alfa-részecske, alfa-sugárzás}{519}{subsubsection.13.6.2}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {13.6.3}Beta-részecske, beta-sugárzás}{519}{subsubsection.13.6.3}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {13.6.4}Gamma-bomlás}{520}{subsubsection.13.6.4}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {13.6.5}A radioaktivitás jellemző mennyiségei}{521}{subsubsection.13.6.5}%
-\select@language {magyar} \contentsline {subsection}{\numberline {13.7}Elemi részecskék és alapvető kölcsönhatások \blx@tocontentsinit {0}\cite {kiserleti_atomfizika}}{523}{subsection.13.7}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {13.7.1}Történelmi előzmény}{524}{subsubsection.13.7.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {13.7.2}Részecskék osztályozása}{528}{subsubsection.13.7.2}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {13.7.3}Leptonok}{534}{subsubsection.13.7.3}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {13.7.4}Hadronok}{534}{subsubsection.13.7.4}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {13.7.5}Kvarkok}{534}{subsubsection.13.7.5}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {13.7.6}Kölcsönhatások}{538}{subsubsection.13.7.6}%
-\select@language {magyar} \contentsline {subsection}{\numberline {13.8}Kísérleti eszközök}{541}{subsection.13.8}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {13.8.1}Gáztöltésű számlálók}{541}{subsubsection.13.8.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {13.8.2}Szcintillációs számlálók}{545}{subsubsection.13.8.2}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {13.8.3}Félvezető dsetektorok}{545}{subsubsection.13.8.3}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {13.8.4}Cserenkov-számlálók}{546}{subsubsection.13.8.4}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {13.8.5}Részecskenyom-detektorok (vizuális detektorok)}{546}{subsubsection.13.8.5}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {13.8.6}elektrosztatikus részecskegyorsítók - Van de Graaff-gyorsító}{549}{subsubsection.13.8.6}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {13.8.7}Lineáris Rezonancia Gyorsító (Linac)}{549}{subsubsection.13.8.7}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {13.8.8}Ciklotron}{550}{subsubsection.13.8.8}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {13.8.9}CERN}{552}{subsubsection.13.8.9}%
-\select@language {magyar} \contentsline {section}{\numberline {14}A termodinamika statisztikus alapozása\blx@tocontentsinit {0}\cite {stat_fiz}}{555}{section.14}%
-\select@language {magyar} \contentsline {subsection}{\numberline {14.1}Bevezetés a statisztikus módszerekbe}{555}{subsection.14.1}%
-\select@language {magyar} \contentsline {subsection}{\numberline {14.2}Mikroállapotok fogalma}{562}{subsection.14.2}%
-\select@language {magyar} \contentsline {subsection}{\numberline {14.3}Mikrokanonikus, kanonikus, nagykanonikus sokaság}{565}{subsection.14.3}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {14.3.1}Gibbs-féle sokaságok, Ergodikus hipotézis}{565}{subsubsection.14.3.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {14.3.2}Mikrokanonikus sokaság}{566}{subsubsection.14.3.2}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {14.3.3}Kanonikus sokaság}{568}{subsubsection.14.3.3}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {14.3.4}Nagykanonikus sokaság}{573}{subsubsection.14.3.4}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {14.3.5}T-p sokaság}{575}{subsubsection.14.3.5}%
-\select@language {magyar} \contentsline {subsection}{\numberline {14.4}Boltzmann-entrópia}{577}{subsection.14.4}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {14.4.1}Egyszerű alkalmazások}{580}{subsubsection.14.4.1}%
-\select@language {magyar} \contentsline {subsection}{\numberline {14.5}Maxwell-Boltzmann statisztika, Maxwell-féle sebességeloszlás}{583}{subsection.14.5}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {14.5.1}Állapotösszeg}{585}{subsubsection.14.5.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {14.5.2}Maxwell-féle sebességeloszlás\blx@tocontentsinit {0}\cite {therm_stat}}{586}{subsubsection.14.5.2}%
-\select@language {magyar} \contentsline {section}{\numberline {15}Kvantumstatisztikák\blx@tocontentsinit {0}\cite {stat_fiz}}{590}{section.15}%
-\select@language {magyar} \contentsline {subsection}{\numberline {15.1}Ideális kvantumgázok: Bose–Einstein és Fermi–Dirac statisztika}{590}{subsection.15.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {15.1.1}A Bose–Einstein statisztika}{590}{subsubsection.15.1.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {15.1.2}Fermi-Dirac Statisztika}{593}{subsubsection.15.1.2}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {15.1.3}Állapotsűrűség ideális kvantumgázok esetén}{594}{subsubsection.15.1.3}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {15.1.4}Folytonos energia spektrum}{595}{subsubsection.15.1.4}%
-\select@language {magyar} \contentsline {subsection}{\numberline {15.2}Fermi-rendszer T=0 hőmérséklet közelében (degenerált Fermi-gáz), példa degenerált Fermi-gázra: delokalizált elektronok fémekben}{595}{subsection.15.2}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {15.2.1}Fermi-gáz}{598}{subsubsection.15.2.1}%
-\select@language {magyar} \contentsline {subsection}{\numberline {15.3}Fermi–Dirac- és Bose–Einstein-statisztika magashőmérsékleti határesete (Maxwell–Boltzmann statisztika).}{602}{subsection.15.3}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {15.3.1}Gibbs-paradoxon}{605}{subsubsection.15.3.1}%
-\select@language {magyar} \contentsline {section}{\numberline {16}Mágneses rendszerek\blx@tocontentsinit {0}\cite {solid_state}}{611}{section.16}%
-\select@language {magyar} \contentsline {subsection}{\numberline {16.1}Atomi paramágnesség, atomi diamágnesség}{611}{subsection.16.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {16.1.1}Kvantumos Paramágnesesség}{616}{subsubsection.16.1.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {16.1.2}Curie-Weiss törvény, hiszterézis és ferromágnesség}{618}{subsubsection.16.1.2}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {16.1.3}Landau-elmélet}{622}{subsubsection.16.1.3}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {16.1.4}Összefoglalás}{623}{subsubsection.16.1.4}%
-\select@language {magyar} \contentsline {paragraph}{Diamágnesség}{623}{section*.445}%
-\select@language {magyar} \contentsline {paragraph}{Paramágnesség}{624}{section*.446}%
-\select@language {magyar} \contentsline {paragraph}{Ferromágnesség}{624}{section*.447}%
-\select@language {magyar} \contentsline {paragraph}{Összefoglalás}{624}{section*.448}%
-\select@language {magyar} \contentsline {subsection}{\numberline {16.2}Pauli-szuszceptibilitás, Landau-diamágnesség}{624}{subsection.16.2}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {16.2.1}Pauli-szuszceptibilitás}{624}{subsubsection.16.2.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {16.2.2}Landau-Diamágnesség}{626}{subsubsection.16.2.2}%
-\select@language {magyar} \contentsline {subsection}{\numberline {16.3}Ferro-, antiferro- és ferrimágneses anyagok}{627}{subsection.16.3}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {16.3.1}Ferromágneses anyagok}{627}{subsubsection.16.3.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {16.3.2}Ferrimágneses Anyagok}{629}{subsubsection.16.3.2}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {16.3.3}Antiferromágneses anyagok}{630}{subsubsection.16.3.3}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {16.3.4}Mágneses domain-ek}{631}{subsubsection.16.3.4}%
-\select@language {magyar} \contentsline {subsection}{\numberline {16.4}Szupravezetés}{633}{subsection.16.4}%
-\select@language {magyar} \contentsline {section}{\numberline {17}Kristályos anyagok fizikája\blx@tocontentsinit {0}\cite {solid_state}}{638}{section.17}%
-\select@language {magyar} \contentsline {subsection}{\numberline {17.1}Szimmetriák, pontcsoportok, Bravais-rácsok}{638}{subsection.17.1}%
-\select@language {magyar} \contentsline {subsection}{\numberline {17.2}Diffrakció, kinematikus elmélet}{644}{subsection.17.2}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {17.2.1}Ewald Gömb}{652}{subsubsection.17.2.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {17.2.2}Bragg-feltétel}{653}{subsubsection.17.2.2}%
-\select@language {magyar} \contentsline {subsection}{\numberline {17.3}Elektronoptika, elektronmikroszkóp}{655}{subsection.17.3}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {17.3.1}Alagútmikroszkóp}{656}{subsubsection.17.3.1}%
-\select@language {magyar} \contentsline {subsection}{\numberline {17.4}Rácsrezgések termikus hatásai}{658}{subsection.17.4}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {17.4.1}egyatomos lineáris lánc}{658}{subsubsection.17.4.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {17.4.2}kétatomos lineáris lánc}{661}{subsubsection.17.4.2}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {17.4.3}Általános Rezgések Kristályokban}{664}{subsubsection.17.4.3}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {17.4.4}Rezgések és hőmérséklet kapcsolata}{667}{subsubsection.17.4.4}%
-\select@language {magyar} \contentsline {subsection}{\numberline {17.5}Sávszerkezet}{672}{subsection.17.5}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {17.5.1}Elektron periodikus térben}{672}{subsubsection.17.5.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {17.5.2}Kváziszabad elektron}{674}{subsubsection.17.5.2}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {17.5.3}Anyagok sávszerkezete}{676}{subsubsection.17.5.3}%
-\select@language {magyar} \contentsline {subsection}{\numberline {17.6}Félvezetők}{677}{subsection.17.6}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {17.6.1}Félvezetők működése}{678}{subsubsection.17.6.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {17.6.2}PN-átmenet}{682}{subsubsection.17.6.2}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {17.6.3}Tranzisztor áramköri szerepe}{684}{subsubsection.17.6.3}%
-\select@language {magyar} \contentsline {section}{\numberline {18}Az asztrofizika alapjai}{686}{section.18}%
-\select@language {magyar} \contentsline {subsection}{\numberline {18.1}Az ősrobbanás elmélet alapvető feltevései, a Hubble-törvény, Friedmann-egyenletek szemléletes értelme \blx@tocontentsinit {0}\cite {inflation_cosmology}}{686}{subsection.18.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {18.1.1}A kozmológiai elv}{686}{subsubsection.18.1.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {18.1.2}Hidrodinamikai közelítés}{690}{subsubsection.18.1.2}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {18.1.3}Általános relativitáselmélet}{694}{subsubsection.18.1.3}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {18.1.4}Einstein-egyenlet}{697}{subsubsection.18.1.4}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {18.1.5}Friedmann-egyenletek megoldásai és a Hubble-paraméter}{700}{subsubsection.18.1.5}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {18.1.6}Sugárzás és anyag dominált univerzum}{705}{subsubsection.18.1.6}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {18.1.7}Kozmológiai Állandó}{706}{subsubsection.18.1.7}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {18.1.8}Az univerzum fejlődése a kozmológiai paraméterek függvényében}{708}{subsubsection.18.1.8}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {18.1.9}Az univerzum fejlődése a kozmológiai paraméterek függvényében}{708}{subsubsection.18.1.9}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {18.1.10}Az elméletet alátámasztó megfigyelések}{712}{subsubsection.18.1.10}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {18.1.11}Problémák az elmélettel}{715}{subsubsection.18.1.11}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {18.1.12}Infláció}{717}{subsubsection.18.1.12}%
-\select@language {magyar} \contentsline {subsection}{\numberline {18.2}Galaxisok kialakulása, morfológiája}{718}{subsection.18.2}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {18.2.1}Galaxisok tulajdonságai}{719}{subsubsection.18.2.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {18.2.2}Galaxisok klasszifikációja}{721}{subsubsection.18.2.2}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {18.2.3}Galaxisok kialakulása \blx@tocontentsinit {0}\cite {galaxy_formation}}{722}{subsubsection.18.2.3}%
-\select@language {magyar} \contentsline {subsection}{\numberline {18.3}A HR diagram és a csillagfejlődés szemléletes képe, csillagok energiatermelése}{724}{subsection.18.3}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {18.3.1}Csillagfejlődés, Kompakt objektumok: fehér törpék, neutroncsillagok, fekete lyukak}{727}{subsubsection.18.3.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {18.3.2}A csillagok energiatermelése}{728}{subsubsection.18.3.2}%
-\select@language {magyar} \contentsline {subsection}{\numberline {18.4}Megfigyelés alapjai: luminozitás, magnitúdó, vöröseltolódás \blx@tocontentsinit {0}\cite {galaxy_formation}}{730}{subsection.18.4}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {18.4.1}luminozitás, fluxus, felületi fényesség}{731}{subsubsection.18.4.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {18.4.2}Hullámsávok és sávszélesség}{731}{subsubsection.18.4.2}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {18.4.3}Magnitúdó és szín}{731}{subsubsection.18.4.3}%
-\select@language {magyar} \contentsline {section}{Irodalomjegyzék}{733}{section*.522}%
+\select@language {magyar} \contentsline {subsection}{\numberline {7.4}Elektromágneses potenciálok, mértékinvariancia}{268}{subsection.7.4}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {7.4.1}mértékinvariancia (Gauge Transformation)}{270}{subsubsection.7.4.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {7.4.2}Coulomb mérték}{271}{subsubsection.7.4.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {7.4.3}Lorentz mérték}{272}{subsubsection.7.4.3}%
+\select@language {magyar} \contentsline {subsection}{\numberline {7.5}Elektromágneses tér energiája és impulzusa}{273}{subsection.7.5}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {7.5.1}Kontinuitási Egyenlet}{273}{subsubsection.7.5.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {7.5.2}Poynting tétel}{273}{subsubsection.7.5.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {7.5.3}Impulzus}{275}{subsubsection.7.5.3}%
+\select@language {magyar} \contentsline {section}{\numberline {8}Hullámegyenlet és hullámjelenségek \blx@tocontentsinit {0}\cite {electro_intro}}{278}{section.8}%
+\select@language {magyar} \contentsline {subsection}{\numberline {8.1}Hullámegyenletek származtatása, megoldásai}{278}{subsection.8.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {8.1.1}A hullámegyenlet}{278}{subsubsection.8.1.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {8.1.2}Klasszikus hullám}{278}{subsubsection.8.1.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {8.1.3}Határfeltételek: Visszaverődés és transzmisszió}{281}{subsubsection.8.1.3}%
+\select@language {magyar} \contentsline {subsection}{\numberline {8.2}Polarizáció}{282}{subsection.8.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {8.3}Elektromágneses hullámok}{284}{subsection.8.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {8.3.1}Elektromágneses hullám vákuumban}{284}{subsubsection.8.3.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {8.3.2}Monokromatikus hullámok}{284}{subsubsection.8.3.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {8.3.3}Elektromágneses hullámok energia és impulzusa}{286}{subsubsection.8.3.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {8.3.4}Elektomágneses hullámok anyagban}{287}{subsubsection.8.3.4}%
+\select@language {magyar} \contentsline {subsection}{\numberline {8.4}Diszperzió, csoport- és fázissebesség, Doppler-effektus}{298}{subsection.8.4}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {8.4.1}Doppler-Effektus}{299}{subsubsection.8.4.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {8.5}interferencia, diffrakció}{300}{subsection.8.5}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {8.5.1}Interferencia}{300}{subsubsection.8.5.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {8.5.2}diffrakció}{301}{subsubsection.8.5.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {8.6}Retardált potenciálok. Dipólsugárzás}{303}{subsection.8.6}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {8.6.1}Retardált potenciálok}{303}{subsubsection.8.6.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {8.6.2}Dipólsugárzás}{306}{subsubsection.8.6.2}%
+\select@language {magyar} \contentsline {section}{\numberline {9}Geometriai optika és alkalmazásai}{317}{section.9}%
+\select@language {magyar} \contentsline {subsection}{\numberline {9.1}Fermat-elv}{317}{subsection.9.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {9.1.1}törés és visszaverődés}{317}{subsubsection.9.1.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {9.1.2}Fermat-elv}{318}{subsubsection.9.1.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {9.2}Paraxiális közelítés}{320}{subsection.9.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {9.3}Optikai, leképezési törvények, felbontóképesség}{321}{subsection.9.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {9.3.1}Optikai törvények}{321}{subsubsection.9.3.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {9.3.2}Leképezési törvények}{321}{subsubsection.9.3.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {9.3.3}Felbontóképesség}{325}{subsubsection.9.3.3}%
+\select@language {magyar} \contentsline {subsection}{\numberline {9.4}Optikai eszközök}{326}{subsection.9.4}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {9.4.1}Távcsövek}{326}{subsubsection.9.4.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {9.4.2}Fénymikroszkóp}{329}{subsubsection.9.4.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {9.4.3}Szemüveg}{331}{subsubsection.9.4.3}%
+\select@language {magyar} \contentsline {subsection}{\numberline {9.5}Optikai jelenségek a természetben, Kausztikák}{332}{subsection.9.5}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {9.5.1}Délibáb}{332}{subsubsection.9.5.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {9.5.2}Naplemente}{334}{subsubsection.9.5.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {9.5.3}Szivárvány}{334}{subsubsection.9.5.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {9.5.4}Kausztikák}{336}{subsubsection.9.5.4}%
+\select@language {magyar} \contentsline {section}{\numberline {10}A kvantumelmélet alapvető kísérletei \blx@tocontentsinit {0}\cite {kiserleti_atomfizika}}{338}{section.10}%
+\select@language {magyar} \contentsline {subsection}{\numberline {10.1}Fotoeffektus}{338}{subsection.10.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {10.1.1}A fotoeffektus kvantumos magyarázata: a fotonkép}{340}{subsubsection.10.1.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {10.1.2}Atomi fotoeffektus}{341}{subsubsection.10.1.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {10.2}Compton-effektus}{341}{subsection.10.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {10.2.1}Compton kísérletei a röntgensugárzás rugalmatlan szóródására}{341}{subsubsection.10.2.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {10.2.2}A Compton-effektus értelmezése}{342}{subsubsection.10.2.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {10.3}Hőmérsékleti sugárzás spektruma}{344}{subsection.10.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {10.3.1}Az abszolút fekete test}{344}{subsubsection.10.3.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {10.3.2}Kirchhoff törvények}{346}{subsubsection.10.3.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {10.3.3}A feketetest sugárzás}{346}{subsubsection.10.3.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {10.3.4}Rayleigh-Jeans féle sugárzási törvény}{347}{subsubsection.10.3.4}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {10.3.5}Wien-féle sugárzási törvény}{350}{subsubsection.10.3.5}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {10.3.6}Planck-Féle sugárzási törvény}{350}{subsubsection.10.3.6}%
+\select@language {magyar} \contentsline {subsection}{\numberline {10.4}Rutherford-kísérlet}{351}{subsection.10.4}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {10.4.1}Atommodellek Rutherford Előtt}{351}{subsubsection.10.4.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {10.4.2}Kisérleti elrendezés}{352}{subsubsection.10.4.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {10.4.3}Rutherford atommodellje}{354}{subsubsection.10.4.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {10.4.4}Hatáskeresztmetszet}{354}{subsubsection.10.4.4}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {10.4.5}A Rutherford-féle szórási formula}{356}{subsubsection.10.4.5}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {10.4.6}A Rutherford-kísérlet következményei}{358}{subsubsection.10.4.6}%
+\select@language {magyar} \contentsline {subsection}{\numberline {10.5}Millikan-kísérlet}{359}{subsection.10.5}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {10.5.1}Sörétzaj}{362}{subsubsection.10.5.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {10.6}Davisson–Germer-kísérlet}{362}{subsection.10.6}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {10.6.1}De Broglie-féle hullámok}{362}{subsubsection.10.6.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {10.6.2}Davisson-Germer kísérlete}{363}{subsubsection.10.6.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {10.7}Stern–Gerlach-kísérlet}{364}{subsection.10.7}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {10.7.1}Iránykvantáltság mérése}{365}{subsubsection.10.7.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {10.7.2}Több mágneses tér használata}{367}{subsubsection.10.7.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {10.8}Einstein–de Haas-kísérlet}{368}{subsection.10.8}%
+\select@language {magyar} \contentsline {subsection}{\numberline {10.9}Zeeman-effektus}{370}{subsection.10.9}%
+\select@language {magyar} \contentsline {section}{\numberline {11}A kvantummechanika alapjai \blx@tocontentsinit {0}\cite {quantum_intro}}{373}{section.11}%
+\select@language {magyar} \contentsline {subsection}{\numberline {11.1}A kvantummechanika matematikai háttere, kvantummechanikai reprezentációk}{373}{subsection.11.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {11.1.1}Hilbert-tér Vektorok \blx@tocontentsinit {0}\cite {quantum_primer}}{373}{subsubsection.11.1.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {11.1.2}Hilbert tér operátorai}{377}{subsubsection.11.1.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {11.1.3}Determinisztikus állapotok}{379}{subsubsection.11.1.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {11.1.4}A hermitikus operátor sajátfüggvényei}{379}{subsubsection.11.1.4}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {11.1.5}Bázisok a Hilbert téren}{383}{subsubsection.11.1.5}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {11.1.6}Dirac Jelölés}{386}{subsubsection.11.1.6}%
+\select@language {magyar} \contentsline {subsection}{\numberline {11.2}Schrödinger-egyenlet}{387}{subsection.11.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {11.2.1}Schrödinger Egyenlet Szeparálása}{388}{subsubsection.11.2.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {11.2.2}Schrödinger egyenlet megoldása}{391}{subsubsection.11.2.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {11.3}Statisztikus interpretáció}{392}{subsection.11.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {11.3.1}Normalizálás}{394}{subsubsection.11.3.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {11.3.2}általánosított statisztikus interpretáció}{395}{subsubsection.11.3.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {11.4}Határozatlansági reláció}{398}{subsection.11.4}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {11.4.1}Momentum operátor}{398}{subsubsection.11.4.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {11.4.2}Határozatlansági reláció elve}{400}{subsubsection.11.4.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {11.4.3}általánosított határozatlansági reláció}{401}{subsubsection.11.4.3}%
+\select@language {magyar} \contentsline {subsection}{\numberline {11.5}Szabad részecske hullámfüggvénye, szuperpozíció}{403}{subsection.11.5}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {11.5.1}Disperziós reláció}{406}{subsubsection.11.5.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {11.6}Impulzusmomentum operátor, sajátértékei, sajátfüggvényei}{408}{subsection.11.6}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {11.6.1}A Schrödinger egyenlet három dimenzióban}{408}{subsubsection.11.6.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {11.6.2}Gömbi-koordináták}{409}{subsubsection.11.6.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {11.6.3}A szögektől függő egyenlet}{411}{subsubsection.11.6.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {11.6.4}A sugárfüggő egyenlet}{413}{subsubsection.11.6.4}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {11.6.5}Az impulzusmomentum}{414}{subsubsection.11.6.5}%
+\select@language {magyar} \contentsline {subsection}{\numberline {11.7}Spin}{421}{subsection.11.7}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {11.7.1}1/2 Spin}{422}{subsubsection.11.7.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {11.8}Korrespondanciaelv}{425}{subsection.11.8}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {11.8.1}Oszcillátor sugárzása}{425}{subsubsection.11.8.1}%
+\select@language {magyar} \contentsline {section}{\numberline {12}Atom- és molekulaszerkezet \blx@tocontentsinit {0}\cite {quantum_intro}}{427}{section.12}%
+\select@language {magyar} \contentsline {subsection}{\numberline {12.1}Atomi energiaszintek, emissziós, abszorpciós spektrumok \blx@tocontentsinit {0}\cite {kiserleti_atomfizika}}{427}{subsection.12.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {12.2}A Hidrogén atom spektruma}{428}{subsection.12.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {12.3}Bohr-modell}{430}{subsection.12.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {12.3.1}Izotóp eltolódás, a többtest probléma}{433}{subsubsection.12.3.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {12.4}Kvantummechanikai közelítő módszerek}{433}{subsection.12.4}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {12.4.1}Időfüggetlen Perturbációs elmélet}{433}{subsubsection.12.4.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {12.4.2}Variációs elv}{444}{subsubsection.12.4.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {12.4.3}A WKB közelítés}{447}{subsubsection.12.4.3}%
+\select@language {magyar} \contentsline {subsection}{\numberline {12.5}Felhasadások: finomfelhasadás, hiperfinom felhasadás, Lamb-eltolódás}{449}{subsection.12.5}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {12.5.1}Finomfelhasadás}{450}{subsubsection.12.5.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {12.5.2}Hiperfinom felhasadás}{456}{subsubsection.12.5.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {12.5.3}Lamb-eltolódás}{457}{subsubsection.12.5.3}%
+\select@language {magyar} \contentsline {subsection}{\numberline {12.6}Spektrumvonalak felhasadása külső térben: Stark- és Zeeman-effektusok}{458}{subsection.12.6}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {12.6.1}A Zeeman-effektus}{458}{subsubsection.12.6.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {12.6.2}Stark-effektus}{462}{subsubsection.12.6.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {12.7}Fermi-féle aranyszabály, alagútjelenség}{464}{subsection.12.7}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {12.7.1}Inkoherens perturbáció}{465}{subsubsection.12.7.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {12.7.2}Einstein féle $A$ és $B$ együtthatók}{466}{subsubsection.12.7.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {12.7.3}Kiválasztási szabályok}{468}{subsubsection.12.7.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {12.7.4}Fermi-féle aranyszabály}{469}{subsubsection.12.7.4}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {12.7.5}Alagút-effektus}{470}{subsubsection.12.7.5}%
+\select@language {magyar} \contentsline {subsection}{\numberline {12.8}He-atom, Kétatomos molekulák, Pauli-elv}{473}{subsection.12.8}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {12.8.1}Hélium atom}{473}{subsubsection.12.8.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {12.8.2}Kétatomos molekulák}{477}{subsubsection.12.8.2}%
+\select@language {magyar} \contentsline {section}{\numberline {13}A magfizika alapjai \blx@tocontentsinit {0}\cite {atommag_fizika}}{485}{section.13}%
+\select@language {magyar} \contentsline {subsection}{\numberline {13.1}Izotóptérkép, atommagok tömege, mérete, kötési energiája}{485}{subsection.13.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {13.1.1}Atommagok mérete}{487}{subsubsection.13.1.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {13.1.2}Atomok töltése}{490}{subsubsection.13.1.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {13.1.3}Atommagok tömege}{491}{subsubsection.13.1.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {13.1.4}Atomok kötési energiája}{493}{subsubsection.13.1.4}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {13.1.5}Izotóptérkép}{496}{subsubsection.13.1.5}%
+\select@language {magyar} \contentsline {subsection}{\numberline {13.2}Energia és tömeg ekvivalencia, tömegdefektus}{497}{subsection.13.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {13.3}A cseppmodell és a félempirikus kötési formula}{498}{subsection.13.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {13.3.1}Cseppmodell}{500}{subsubsection.13.3.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {13.3.2}Az atommag energiája a cseppmodell szerint}{500}{subsubsection.13.3.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {13.3.3}A félempirikus kötési energia formula}{503}{subsubsection.13.3.3}%
+\select@language {magyar} \contentsline {subsection}{\numberline {13.4}Maghasadás, magfúzió, radioaktivitás}{504}{subsection.13.4}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {13.4.1}Maghasadás}{504}{subsubsection.13.4.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {13.4.2}Magfúzió}{509}{subsubsection.13.4.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {13.4.3}Radioaktivitás}{513}{subsubsection.13.4.3}%
+\select@language {magyar} \contentsline {subsection}{\numberline {13.5}Sugárzás és anyag kölcsönhatása: Bethe–Bloch-formula}{514}{subsection.13.5}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {13.5.1}Elektromosan töltött részecskék kölcsönhatása az anyaggal}{514}{subsubsection.13.5.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {13.5.2}Lineáris energiaátadás}{515}{subsubsection.13.5.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {13.5.3}Behatolási mélység}{516}{subsubsection.13.5.3}%
+\select@language {magyar} \contentsline {subsection}{\numberline {13.6}Radioaktív bomlások, magátalakulások}{517}{subsection.13.6}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {13.6.1}Alfa- béta- gamma-sugárzások}{517}{subsubsection.13.6.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {13.6.2}Alfa-részecske, alfa-sugárzás}{520}{subsubsection.13.6.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {13.6.3}Beta-részecske, beta-sugárzás}{520}{subsubsection.13.6.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {13.6.4}Gamma-bomlás}{521}{subsubsection.13.6.4}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {13.6.5}A radioaktivitás jellemző mennyiségei}{522}{subsubsection.13.6.5}%
+\select@language {magyar} \contentsline {subsection}{\numberline {13.7}Elemi részecskék és alapvető kölcsönhatások \blx@tocontentsinit {0}\cite {kiserleti_atomfizika}}{524}{subsection.13.7}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {13.7.1}Történelmi előzmény}{525}{subsubsection.13.7.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {13.7.2}Részecskék osztályozása}{529}{subsubsection.13.7.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {13.7.3}Leptonok}{535}{subsubsection.13.7.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {13.7.4}Hadronok}{535}{subsubsection.13.7.4}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {13.7.5}Kvarkok}{535}{subsubsection.13.7.5}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {13.7.6}Kölcsönhatások}{539}{subsubsection.13.7.6}%
+\select@language {magyar} \contentsline {subsection}{\numberline {13.8}Kísérleti eszközök}{542}{subsection.13.8}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {13.8.1}Gáztöltésű számlálók}{542}{subsubsection.13.8.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {13.8.2}Szcintillációs számlálók}{546}{subsubsection.13.8.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {13.8.3}Félvezető dsetektorok}{546}{subsubsection.13.8.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {13.8.4}Cserenkov-számlálók}{547}{subsubsection.13.8.4}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {13.8.5}Részecskenyom-detektorok (vizuális detektorok)}{547}{subsubsection.13.8.5}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {13.8.6}elektrosztatikus részecskegyorsítók - Van de Graaff-gyorsító}{550}{subsubsection.13.8.6}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {13.8.7}Lineáris Rezonancia Gyorsító (Linac)}{550}{subsubsection.13.8.7}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {13.8.8}Ciklotron}{551}{subsubsection.13.8.8}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {13.8.9}CERN}{553}{subsubsection.13.8.9}%
+\select@language {magyar} \contentsline {section}{\numberline {14}A termodinamika statisztikus alapozása\blx@tocontentsinit {0}\cite {stat_fiz}}{556}{section.14}%
+\select@language {magyar} \contentsline {subsection}{\numberline {14.1}Bevezetés a statisztikus módszerekbe}{556}{subsection.14.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {14.2}Mikroállapotok fogalma}{563}{subsection.14.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {14.3}Mikrokanonikus, kanonikus, nagykanonikus sokaság}{566}{subsection.14.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {14.3.1}Gibbs-féle sokaságok, Ergodikus hipotézis}{566}{subsubsection.14.3.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {14.3.2}Mikrokanonikus sokaság}{567}{subsubsection.14.3.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {14.3.3}Kanonikus sokaság}{569}{subsubsection.14.3.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {14.3.4}Nagykanonikus sokaság}{574}{subsubsection.14.3.4}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {14.3.5}T-p sokaság}{576}{subsubsection.14.3.5}%
+\select@language {magyar} \contentsline {subsection}{\numberline {14.4}Boltzmann-entrópia}{578}{subsection.14.4}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {14.4.1}Egyszerű alkalmazások}{581}{subsubsection.14.4.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {14.5}Maxwell-Boltzmann statisztika, Maxwell-féle sebességeloszlás}{584}{subsection.14.5}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {14.5.1}Állapotösszeg}{586}{subsubsection.14.5.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {14.5.2}Maxwell-féle sebességeloszlás\blx@tocontentsinit {0}\cite {therm_stat}}{587}{subsubsection.14.5.2}%
+\select@language {magyar} \contentsline {section}{\numberline {15}Kvantumstatisztikák\blx@tocontentsinit {0}\cite {stat_fiz}}{591}{section.15}%
+\select@language {magyar} \contentsline {subsection}{\numberline {15.1}Ideális kvantumgázok: Bose–Einstein és Fermi–Dirac statisztika}{591}{subsection.15.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {15.1.1}A Bose–Einstein statisztika}{591}{subsubsection.15.1.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {15.1.2}Fermi-Dirac Statisztika}{594}{subsubsection.15.1.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {15.1.3}Állapotsűrűség ideális kvantumgázok esetén}{595}{subsubsection.15.1.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {15.1.4}Folytonos energia spektrum}{596}{subsubsection.15.1.4}%
+\select@language {magyar} \contentsline {subsection}{\numberline {15.2}Fermi-rendszer T=0 hőmérséklet közelében (degenerált Fermi-gáz), példa degenerált Fermi-gázra: delokalizált elektronok fémekben}{596}{subsection.15.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {15.2.1}Fermi-gáz}{599}{subsubsection.15.2.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {15.3}Fermi–Dirac- és Bose–Einstein-statisztika magashőmérsékleti határesete (Maxwell–Boltzmann statisztika).}{603}{subsection.15.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {15.3.1}Gibbs-paradoxon}{606}{subsubsection.15.3.1}%
+\select@language {magyar} \contentsline {section}{\numberline {16}Mágneses rendszerek\blx@tocontentsinit {0}\cite {solid_state}}{612}{section.16}%
+\select@language {magyar} \contentsline {subsection}{\numberline {16.1}Atomi paramágnesség, atomi diamágnesség}{612}{subsection.16.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {16.1.1}Kvantumos Paramágnesesség}{617}{subsubsection.16.1.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {16.1.2}Curie-Weiss törvény, hiszterézis és ferromágnesség}{619}{subsubsection.16.1.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {16.1.3}Landau-elmélet}{623}{subsubsection.16.1.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {16.1.4}Összefoglalás}{624}{subsubsection.16.1.4}%
+\select@language {magyar} \contentsline {paragraph}{Diamágnesség}{624}{section*.445}%
+\select@language {magyar} \contentsline {paragraph}{Paramágnesség}{625}{section*.446}%
+\select@language {magyar} \contentsline {paragraph}{Ferromágnesség}{625}{section*.447}%
+\select@language {magyar} \contentsline {paragraph}{Összefoglalás}{625}{section*.448}%
+\select@language {magyar} \contentsline {subsection}{\numberline {16.2}Pauli-szuszceptibilitás, Landau-diamágnesség}{625}{subsection.16.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {16.2.1}Pauli-szuszceptibilitás}{625}{subsubsection.16.2.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {16.2.2}Landau-Diamágnesség}{627}{subsubsection.16.2.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {16.3}Ferro-, antiferro- és ferrimágneses anyagok}{628}{subsection.16.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {16.3.1}Ferromágneses anyagok}{628}{subsubsection.16.3.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {16.3.2}Ferrimágneses Anyagok}{630}{subsubsection.16.3.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {16.3.3}Antiferromágneses anyagok}{631}{subsubsection.16.3.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {16.3.4}Mágneses domain-ek}{632}{subsubsection.16.3.4}%
+\select@language {magyar} \contentsline {subsection}{\numberline {16.4}Szupravezetés}{634}{subsection.16.4}%
+\select@language {magyar} \contentsline {section}{\numberline {17}Kristályos anyagok fizikája\blx@tocontentsinit {0}\cite {solid_state}}{639}{section.17}%
+\select@language {magyar} \contentsline {subsection}{\numberline {17.1}Szimmetriák, pontcsoportok, Bravais-rácsok}{639}{subsection.17.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {17.2}Diffrakció, kinematikus elmélet}{645}{subsection.17.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {17.2.1}Ewald Gömb}{653}{subsubsection.17.2.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {17.2.2}Bragg-feltétel}{654}{subsubsection.17.2.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {17.3}Elektronoptika, elektronmikroszkóp}{656}{subsection.17.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {17.3.1}Alagútmikroszkóp}{657}{subsubsection.17.3.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {17.4}Rácsrezgések termikus hatásai}{659}{subsection.17.4}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {17.4.1}egyatomos lineáris lánc}{659}{subsubsection.17.4.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {17.4.2}kétatomos lineáris lánc}{662}{subsubsection.17.4.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {17.4.3}Általános Rezgések Kristályokban}{665}{subsubsection.17.4.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {17.4.4}Rezgések és hőmérséklet kapcsolata}{668}{subsubsection.17.4.4}%
+\select@language {magyar} \contentsline {subsection}{\numberline {17.5}Sávszerkezet}{673}{subsection.17.5}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {17.5.1}Elektron periodikus térben}{673}{subsubsection.17.5.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {17.5.2}Kváziszabad elektron}{675}{subsubsection.17.5.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {17.5.3}Anyagok sávszerkezete}{677}{subsubsection.17.5.3}%
+\select@language {magyar} \contentsline {subsection}{\numberline {17.6}Félvezetők}{678}{subsection.17.6}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {17.6.1}Félvezetők működése}{679}{subsubsection.17.6.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {17.6.2}PN-átmenet}{683}{subsubsection.17.6.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {17.6.3}Tranzisztor áramköri szerepe}{685}{subsubsection.17.6.3}%
+\select@language {magyar} \contentsline {section}{\numberline {18}Az asztrofizika alapjai}{687}{section.18}%
+\select@language {magyar} \contentsline {subsection}{\numberline {18.1}Az ősrobbanás elmélet alapvető feltevései, a Hubble-törvény, Friedmann-egyenletek szemléletes értelme \blx@tocontentsinit {0}\cite {inflation_cosmology}}{687}{subsection.18.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {18.1.1}A kozmológiai elv}{687}{subsubsection.18.1.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {18.1.2}Hidrodinamikai közelítés}{691}{subsubsection.18.1.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {18.1.3}Általános relativitáselmélet}{695}{subsubsection.18.1.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {18.1.4}Einstein-egyenlet}{698}{subsubsection.18.1.4}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {18.1.5}Friedmann-egyenletek megoldásai és a Hubble-paraméter}{701}{subsubsection.18.1.5}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {18.1.6}Sugárzás és anyag dominált univerzum}{706}{subsubsection.18.1.6}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {18.1.7}Kozmológiai Állandó}{707}{subsubsection.18.1.7}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {18.1.8}Az univerzum fejlődése a kozmológiai paraméterek függvényében}{709}{subsubsection.18.1.8}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {18.1.9}Az univerzum fejlődése a kozmológiai paraméterek függvényében}{709}{subsubsection.18.1.9}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {18.1.10}Az elméletet alátámasztó megfigyelések}{713}{subsubsection.18.1.10}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {18.1.11}Problémák az elmélettel}{716}{subsubsection.18.1.11}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {18.1.12}Infláció}{718}{subsubsection.18.1.12}%
+\select@language {magyar} \contentsline {subsection}{\numberline {18.2}Galaxisok kialakulása, morfológiája}{719}{subsection.18.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {18.2.1}Galaxisok tulajdonságai}{720}{subsubsection.18.2.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {18.2.2}Galaxisok klasszifikációja}{722}{subsubsection.18.2.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {18.2.3}Galaxisok kialakulása \blx@tocontentsinit {0}\cite {galaxy_formation}}{723}{subsubsection.18.2.3}%
+\select@language {magyar} \contentsline {subsection}{\numberline {18.3}A HR diagram és a csillagfejlődés szemléletes képe, csillagok energiatermelése}{725}{subsection.18.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {18.3.1}Csillagfejlődés, Kompakt objektumok: fehér törpék, neutroncsillagok, fekete lyukak}{728}{subsubsection.18.3.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {18.3.2}A csillagok energiatermelése}{729}{subsubsection.18.3.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {18.4}Megfigyelés alapjai: luminozitás, magnitúdó, vöröseltolódás \blx@tocontentsinit {0}\cite {galaxy_formation}}{731}{subsection.18.4}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {18.4.1}luminozitás, fluxus, felületi fényesség}{732}{subsubsection.18.4.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {18.4.2}Hullámsávok és sávszélesség}{732}{subsubsection.18.4.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {18.4.3}Magnitúdó és szín}{732}{subsubsection.18.4.3}%
+\select@language {magyar} \contentsline {section}{Irodalomjegyzék}{734}{section*.522}%

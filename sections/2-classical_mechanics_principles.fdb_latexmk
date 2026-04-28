@@ -1,13 +1,13 @@
 # Fdb version 4
-["biber sections/2-classical_mechanics_principles"] 1772958327.80289 "sections/2-classical_mechanics_principles.bcf" "sections/2-classical_mechanics_principles.bbl" "sections/2-classical_mechanics_principles" 1772959572.91049 0
-  "sections/2-classical_mechanics_principles.bcf" 1772959572.86083 107315 caf95294bc6e04654a148507f903a7b7 "pdflatex"
+["biber sections/2-classical_mechanics_principles"] 1772958327.80289 "sections/2-classical_mechanics_principles.bcf" "sections/2-classical_mechanics_principles.bbl" "sections/2-classical_mechanics_principles" 1777365569.22885 0
+  "sections/2-classical_mechanics_principles.bcf" 1777365569.17817 107315 caf95294bc6e04654a148507f903a7b7 "pdflatex"
   (generated)
   "sections/2-classical_mechanics_principles.bbl"
   "sections/2-classical_mechanics_principles.blg"
   (rewritten before read)
-["pdflatex"] 1772959572.22128 "/home/krisztian/Desktop/MSc Prep/kidolgozas/sections/2-classical_mechanics_principles.tex" "sections/2-classical_mechanics_principles.pdf" "2-classical_mechanics_principles" 1772959572.91067 0
+["pdflatex"] 1777365568.49426 "/home/krisztian/Desktop/MSc Prep/kidolgozas/sections/2-classical_mechanics_principles.tex" "sections/2-classical_mechanics_principles.pdf" "2-classical_mechanics_principles" 1777365569.22902 0
   "/etc/texmf/web2c/texmf.cnf" 1759166874.49077 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/krisztian/Desktop/MSc Prep/kidolgozas/sections/2-classical_mechanics_principles.tex" 1772959571.37951 65850 80c4349451bfc2649180d7cf7238ecc4 ""
+  "/home/krisztian/Desktop/MSc Prep/kidolgozas/sections/2-classical_mechanics_principles.tex" 1777365568.24875 67477 dec0f932cc927345374d7bf03f3e131c ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm1200.tfm" 1136768653 3584 f80ddd985bd00e29e9a6047ebd9d4781 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -175,12 +175,12 @@
   "imgs/2-tetel/CalculusofVariations.png" 1760213436.30894 48386 279bac2aa79463a769291315f4b870cf ""
   "imgs/2-tetel/Hamilton1.png" 1760215755.19638 79767 6f0c02f3d39eb59c3f6324c68a690d0b ""
   "imgs/2-tetel/Hamilton2.png" 1760216084.9295 84654 59be2337257b4843fbdfaeb3c610fec9 ""
-  "sections/../main.tex" 1771917831.92531 3220 094ec59d85df5caa1340511d00d96921 ""
-  "sections/2-classical_mechanics_principles.aux" 1772959572.86055 2741 b8d21fcd75d4ca5a2d1cc01bc9834fa0 "pdflatex"
+  "sections/../main.tex" 1773731893.71766 3220 094ec59d85df5caa1340511d00d96921 ""
+  "sections/2-classical_mechanics_principles.aux" 1777365569.17763 2882 5452e2e2d30ade830f4b90898e818af2 "pdflatex"
   "sections/2-classical_mechanics_principles.bbl" 1772958328.22523 466 ee04f40f768daeed26442158e95aba61 "biber sections/2-classical_mechanics_principles"
-  "sections/2-classical_mechanics_principles.out" 1772959572.86083 2342 460aa0e59538de61a173ea3992ebcea5 "pdflatex"
-  "sections/2-classical_mechanics_principles.run.xml" 1772959572.86202 2555 ea3fec6e62e7e0eee87d34790a4e3330 "pdflatex"
-  "sections/2-classical_mechanics_principles.tex" 1772959571.37951 65850 80c4349451bfc2649180d7cf7238ecc4 ""
+  "sections/2-classical_mechanics_principles.out" 1777365569.17763 2397 960dac63ed68c96006ff28454fe64a26 "pdflatex"
+  "sections/2-classical_mechanics_principles.run.xml" 1777365569.17909 2555 ea3fec6e62e7e0eee87d34790a4e3330 "pdflatex"
+  "sections/2-classical_mechanics_principles.tex" 1777365568.24875 67477 dec0f932cc927345374d7bf03f3e131c ""
   (generated)
   "sections/2-classical_mechanics_principles.aux"
   "sections/2-classical_mechanics_principles.bcf"

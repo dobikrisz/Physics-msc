@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.9.29)  8 MAR 2026 09:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.9.29)  28 APR 2026 10:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -766,18 +766,18 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 100.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 100.
-<imgs/2-tetel/CalculusofVariations.png, id=80, 653.44125pt x 338.26375pt>
+<imgs/2-tetel/CalculusofVariations.png, id=84, 653.44125pt x 338.26375pt>
 File: imgs/2-tetel/CalculusofVariations.png Graphic file (type png)
 <use imgs/2-tetel/CalculusofVariations.png>
 Package pdftex.def Info: imgs/2-tetel/CalculusofVariations.png  used on input line 112.
 (pdftex.def)             Requested size: 226.48395pt x 117.24306pt.
  [4 <./imgs/2-tetel/CalculusofVariations.png>] [5] [6]
-<imgs/2-tetel/Hamilton1.png, id=127, 786.94pt x 645.41125pt>
+<imgs/2-tetel/Hamilton1.png, id=131, 786.94pt x 645.41125pt>
 File: imgs/2-tetel/Hamilton1.png Graphic file (type png)
 <use imgs/2-tetel/Hamilton1.png>
 Package pdftex.def Info: imgs/2-tetel/Hamilton1.png  used on input line 199.
 (pdftex.def)             Requested size: 226.48395pt x 185.74634pt.
-<imgs/2-tetel/Hamilton2.png, id=128, 808.01875pt x 831.105pt>
+<imgs/2-tetel/Hamilton2.png, id=132, 808.01875pt x 831.105pt>
 File: imgs/2-tetel/Hamilton2.png Graphic file (type png)
 <use imgs/2-tetel/Hamilton2.png>
 Package pdftex.def Info: imgs/2-tetel/Hamilton2.png  used on input line 209.
@@ -788,7 +788,7 @@ Overfull \hbox (15.96252pt too wide) in paragraph at lines 368--369
  []
 
 [10] [11] [12] [13] [14] [15] [16] [17] [18]
-Overfull \hbox (0.71411pt too wide) in paragraph at lines 749--749
+Overfull \hbox (0.71411pt too wide) in paragraph at lines 760--760
 []\T1/lmr/bx/n/14.4 Hamilton függ-vény, ka-no-ni-kus egyen-le-tek, ka-no-ni-kus transz-
  []
 
@@ -798,24 +798,24 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
 Package rerunfilecheck Info: File `2-classical_mechanics_principles.out' has not changed.
-(rerunfilecheck)             Checksum: 460AA0E59538DE61A173EA3992EBCEA5;2342.
+(rerunfilecheck)             Checksum: 960DAC63ED68C96006FF28454FE64A26;2397.
 Package logreq Info: Writing requests to '2-classical_mechanics_principles.run.xml'.
 \openout1 = `2-classical_mechanics_principles.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 21560 strings out of 474222
- 376825 string characters out of 5748733
+ 21565 strings out of 474222
+ 376907 string characters out of 5748733
  1950975 words of memory out of 5000000
- 43297 multiletter control sequences out of 15000+600000
+ 43298 multiletter control sequences out of 15000+600000
  631638 words of font info for 91 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  95i,11n,99p,1090b,803s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf/fonts/type1/public/lm/lmbsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx8.pfb></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
-Output written on sections/2-classical_mechanics_principles.pdf (23 pages, 456769 bytes).
+Output written on sections/2-classical_mechanics_principles.pdf (23 pages, 459459 bytes).
 PDF statistics:
- 517 PDF objects out of 1000 (max. 8388607)
- 439 compressed objects within 5 object streams
- 233 named destinations out of 1000 (max. 500000)
- 88 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 525 PDF objects out of 1000 (max. 8388607)
+ 447 compressed objects within 5 object streams
+ 237 named destinations out of 1000 (max. 500000)
+ 96 words of extra memory for PDF output out of 10000 (max. 10000000)
 

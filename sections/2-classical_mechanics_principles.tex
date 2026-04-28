@@ -674,6 +674,17 @@ Ez azt jelenti, hogy a következő mennyiség megmarad:
 \end{equation}
 Ezt nevezik \textbf{Noether-tételnek} és a lényege, hogy ha a rendszer szimmetrikus egy transzformációra, akkor mindig van benne egy megmaradó mennyiség. Ez a tétel fordítva is igaz, tehát ha van egy megmaradó mennyiségünk, akkor biztosan van egy szimmetriánk is. Ez egy hatalmas horderejű felfedezés volt a 19. században, ugyanis ez egy fundamentálisan új megértést adott a fizikának ami messze túlmutat az egyszerű konzervatív térben lévő mechanikai rendszereken. Ez ugyanis mindig igaz. A szimmetriák és a megmaradó mennyiségek szoros kapcsolatban állnak egymással bármilyen rendszert is vizsgálunk. Ez annyira egy alapvető dolog, hogy manapság ha valaki egy új fizikai elméletet próbál kidolgozni, akkor az egyik első lépés a szimmetriák vizsgálata és a megmaradó mennyiségek meghatározása az elméletben.
 
+\subsubsection{Ciklikus Koordináták}
+A ciklikus (vagy ignorálható) koordináták azok az általános koordináták ($q_k$), melyektől a Lagrange függvény nem függ expliciten. Ezek a koordináták mindig valamilyen szimmetriára utalnak, és ezáltal egy megmaradó mennyiségre.
+
+A ciklikus koordinátákra mindig igaz, hogy:
+\begin{equation}
+    \frac{\partial \mathcal{L}}{\partial q_k} = 0 \implies \frac{d}{dt} p_k = 0
+\end{equation}
+Tehát az impulzus megmarad, ha $q_k$ ciklikus.
+
+Példa lehet a ciklikus koordinátákra a $V(r)$ konzervatív erőtérben a $\theta$ polárkoordináta. Ugyanis az erőtér csak az $r$-től függ, tehát a $p_\theta$ impulzusmomentum megmarad.
+
 \subsubsection*{Példa: transzlációs szimmetria}
 Legyen egy rendszer ahol van $q_1$ és $q_2$ részecske, és ezeket kis $\delta$-val eltoljuk:
 \begin{equation}
@@ -827,16 +838,28 @@ Ezek pedig a Kanonikus mozgásegyenletek a Hamiltoni képben és ezeket nevezzü
 \end{tabular}
 \end{center}
 
-\subsubsection{Ciklikus koordináták, Kanonikus transzformációk}
+\subsubsection{Kanonikus transzformációk}
 Már csak egy kérdést kell tisztázni a stacionárius hatás elvében. Mennyire jól definiált ez a hatás? Az elvet kifejezhetjük az imént bevezetett Hamilton fügvénnyel a következő alakban:
 \begin{equation}
     \delta \int_{t_1}^{t_2} \sum_k p_k \dot{q}_k - \mathcal{H}(q_k, p_k, t) dt = 0
 \end{equation}
-Ez viszont nem az egyetlen alak ami kielégíti a variációs feltételt. Át lehet ugyanis térni úgynevezett ciklikus változókra, amik csak egy tetszőleges függvény időderiváltjával térnek el a kanonikus változóktól, ezért a Hamilton féle mozgásegyenletek alakját megtartják (ezt nevezik forma invarianciának). Ezekszerint ha áttérek a $q,p \to Q,P$ ciklikus koordinátákra akkor a következőképp módosul az egyenlet:
+Ez viszont nem az egyetlen alak ami kielégíti a variációs feltételt. Át lehet ugyanis térni úgynevezett kanonikus változókra, amik csak egy tetszőleges függvény időderiváltjával térnek el az általános változóktól, ezért a Hamilton féle mozgásegyenletek alakját megtartják (ezt nevezik forma invarianciának). Ezekszerint ha áttérek a $q,p \to Q,P$ \textbf{kanonikus koordinátákra} akkor a következőképp módosul az egyenlet:
 \begin{equation}
-    \delta \int_{t_1}^{t_2} \sum_k P_k \dot{Q}_k - \mathcal{K}(Q_k, P_k, t) + \frac{dF}{dt}dt = 0
+    \delta \int_{t_1}^{t_2} \sum_k P_k \dot{Q}_k - \mathcal{K}(Q_k, P_k, t) dt = 0
 \end{equation}
-Itt $\mathcal{K}$ az új Hamilton függvény és $F$ az úgynevezett generátor függvény. Ez a generátorfüggvény jelenti a kapcsolatot a régi és az új koordináták között, emiatt négy alakja lehetséges:
+A két egyenlet akkor lesz egyenlő, ha teljesül a következő feltétel minden $k$-ra:
+\begin{equation}
+    \lambda \left[p_k \dot{q}_k - \mathcal{H}(q_k, p_k, t)\right] = P_k \dot{Q}_k - \mathcal{K}(Q_k, P_k, t) + \frac{dF}{dt}
+\end{equation}
+ahol $\lambda$ egy skálafaktor, mivel egy konstans szorzóval eltérve a variálás értéke nem változik, de ezt általában $\lambda=1$-nek szokás választani. Továbbá az integrál akkor se változik, ha egy tetszőleges függvény időbeli deriváltját hozzáadjuk az egészhez, hisz az csak egy konstans eltérést jelent, a függvény alakját nem változtatja meg (tehát a variálást se). Ezt az $F$-et nevezik \textbf{Generátor függvénynek}.
+
+Itt $\mathcal{K}$ az új Hamilton függvény (olykor "Kamilton" függvénynek is hívják).
+Ez a "Kamilton" függvényt ki lehet fejezni a Hamilton függvény és a generátor függvény segítségével:
+\begin{equation}
+    \mathcal{K}(Q_k, P_k, t) = \mathcal{H}(q(Q_k,P_k), p(Q_k, P_k), t) + \frac{\partial F}{\partial t}
+\end{equation}
+
+Ez a generátorfüggvény jelenti a kapcsolatot a régi és az új koordináták között, emiatt négy alakja lehetséges:
 \begin{equation}
     \begin{aligned}
         &F_1(q_k, Q_k) \qquad F_2(q_k, P_k) \\
@@ -860,7 +883,7 @@ Rendezzük át egy kicsit:
 \begin{equation}
     p_k\dot{q}_k - \mathcal{H} - P_k \dot{Q}_k + \mathcal{K}(Q_k, P_k, t) =  \frac{\partial F_1}{\partial q_k} \dot{q}_k + \frac{\partial F_1}{\partial Q_k} \dot{Q_k} + \frac{\partial F_1}{\partial t}
 \end{equation}
-Mivel a kanonikus és a ciklikus koordinátáknak függetleneknek kell lenniük, ezért ez az egyenlőség csak akkor lehetséges, ha az együtthatók megegyeznek. Tehát a következő feltételeknek kell teljesülnie:
+Mivel az általános és a kanonikus koordinátáknak függetleneknek kell lenniük, ezért ez az egyenlőség csak akkor lehetséges, ha az együtthatók megegyeznek. Tehát a következő feltételeknek kell teljesülnie:
 \begin{equation}
     \begin{aligned}
         \frac{\partial F_1}{\partial q_k} &= p_k \\
@@ -868,7 +891,7 @@ Mivel a kanonikus és a ciklikus koordinátáknak függetleneknek kell lenniük,
         \mathcal{K} &= \mathcal{H} + \frac{\partial F_1}{\partial t}
     \end{aligned}
 \end{equation}
-Nagyon hasonló megfontolásokkal a többit is meg lehet határozni. Látható, hogy a ciklikus koordinátákkal meg tudjuk tartani az alakját a mozgásegyenleteknek. Az előnye ennek a módszernek, hogy lehetüvé teszi, hogy úgy válasszuk meg a koordinátákat, hogy azok a lehető "legjobban" illeszkedjenek a problémához, így sokkal egyszerűbb problémákat kapva. Bár a generátorfüggvényt sok esetben triviális megválasztani, szükség esetén az eredeti Hamilton függvénnyel is lehet használni a ciklikus koordinátákat, ugyanis igazak rájuk a következő összefüggések:
+Nagyon hasonló megfontolásokkal a többit is meg lehet határozni. Látható, hogy a kanonikus koordinátákkal meg tudjuk tartani az alakját a mozgásegyenleteknek. Az előnye ennek a módszernek, hogy lehetüvé teszi, hogy úgy válasszuk meg a koordinátákat, hogy azok a lehető "legjobban" illeszkedjenek a problémához, így sokkal egyszerűbb problémákat kapva. Bár a generátorfüggvényt sok esetben triviális megválasztani, szükség esetén az eredeti Hamilton függvénnyel is lehet használni a kanonikus koordinátákat, ugyanis igazak rájuk a következő összefüggések:
 \begin{equation}
     \begin{aligned}
         -\frac{\partial \mathcal{H}}{\partial Q} &= -\frac{\partial \mathcal{K}}{\partial Q} = \dot{P} \\
